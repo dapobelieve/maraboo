@@ -9,6 +9,7 @@
           <div class="relative mb-4 flex items-center origin">
             <input
               v-model="amount"
+              placeholder="Enter amount"
               class="h-10 shadow-sm focus:outline-none w-full px-4 py-6 rounded bg-white"
               type="number"
             />
@@ -129,7 +130,7 @@ export default {
       rate: 478.63,
       fee: 2.12,
       mobileMoney: 4.0,
-      amount: 0,
+      amount: null,
     };
   },
   computed: {

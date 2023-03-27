@@ -2,7 +2,7 @@
   <main class="container mx-auto px-2">
     <section class="md:mt-[7rem] mt-[3rem]">
       <div class="md:flex">
-        <div class="w-full md:w-2/4">
+        <div class="w-full mb-8 md:mb-0 md:w-2/4">
           <div class="inline-block">
             <div
               class="px-4 shadow py-3 md:px-5 md:py-5 hover:scale-105 transition-transform duration-700 bg-white rounded md:rounded-[10px] cursor-pointer flex items-center"
