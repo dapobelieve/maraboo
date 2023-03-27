@@ -45,7 +45,7 @@
           </div>
         </div>
         <div
-          class="after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-20px] after-mt-8 after:bg-gray-700"
+          class="mb-24 after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-20px] after-mt-8 after:bg-gray-700"
         >
           <div class="flex items-center justify-between">
             <div>
@@ -62,7 +62,7 @@
             </select>
           </div>
           <div class="mt-8">
-            <div class="text-slate-500 text-sm font-bold">
+            <div class="text-slate-800 text-sm">
               <div class="block">
                 <div class="amount inline-block mb-1.5 w-28">
                   {{ mobileMoney }} CAD
@@ -80,7 +80,9 @@
                 <span class="purpose">Total fees</span>
               </div>
               <div class="block">
-                <div class="amount inline-block mb-1.5 w-28">
+                <div
+                  class="amount inline-block text-black font-bold mb-1.5 w-28"
+                >
                   {{ balance }} CAD
                 </div>
                 <span class="purpose font-bold text-black">We convert</span>
@@ -92,6 +94,27 @@
                 <span class="purpose">Real exchange rate</span>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="w-full mb-12 flex flex-col">
+          <div class="text-slate-400 mb-4">2. Your recipient gets:</div>
+          <div class="relative mb-4 flex items-center origin">
+            <input
+              v-model="amountToSend"
+              disabled
+              class="h-10 shadow-sm focus:outline-none w-full px-4 py-6 rounded bg-white"
+              type="number"
+            />
+            <select
+              name="currencies"
+              class="absolute font-sm w-[6rem] rounded-r pl-4 focus:outline-none right-0 h-full"
+            >
+              <option value="CAD">CAD</option>
+              <option selected value="XOF">XOF</option>
+            </select>
+            <div
+              class="after:content- after:absolute after:w-[1px] after:h-[80%] after:top-[0.3rem] after:right-[6rem] after:bg-gray-400"
+            ></div>
           </div>
         </div>
       </div>
@@ -112,6 +135,11 @@ export default {
   computed: {
     balance() {
       return this.amount ? this.amount - (this.mobileMoney + this.fee) : 0;
+    },
+    amountToSend() {
+      return Number(
+        (this.balance * this.rate).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]
+      );
     },
   },
 };
