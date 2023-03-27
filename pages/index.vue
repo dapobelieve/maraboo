@@ -32,12 +32,15 @@
               </h1>
             </div>
           </div>
-          <div class="mt-16 text-center md:text-left">
+          <div class="mt-16 hidden md:block text-center md:text-left">
             <GlobalMore> Learn more on Maraboo </GlobalMore>
           </div>
         </div>
         <div class="w-full md:w-2/4">
           <Calculator class="ml-auto" />
+        </div>
+        <div class="mt-16 md:hidden text-center md:text-left">
+          <GlobalMore> Learn more on Maraboo </GlobalMore>
         </div>
       </div>
     </section>
