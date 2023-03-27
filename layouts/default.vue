@@ -32,14 +32,13 @@
               role="menu"
               class="absolute shadow-lg w-56 top-9 rounded-lg ring-opacity-5 ring-1 bg-white ring-black -right-3"
             >
-              <div
+              <NuxtLink
+                to="/about"
                 class="px-4 hover:bg-gray-100 py-3 rounded-xl flex items-center text-black"
               >
                 <img class="h-4 mr-6" src="~/assets/images/about.svg" alt="" />
-                <NuxtLink to="/about" class="text-md font-medium"
-                  >About us</NuxtLink
-                >
-              </div>
+                <span class="text-md font-medium">About us</span>
+              </NuxtLink>
               <div
                 class="px-4 py-3 rounded-xl hover:bg-gray-100 flex items-center text-black"
               >
@@ -50,7 +49,8 @@
                 />
                 <a href="#" class="text-md font-medium">Contact Us</a>
               </div>
-              <div
+              <NuxtLink
+                to="/careers"
                 class="px-4 py-3 rounded-xl hover:bg-gray-100 flex items-center text-black"
               >
                 <img
@@ -58,18 +58,15 @@
                   src="~/assets/images/careers.svg"
                   alt=""
                 />
-                <NuxtLink to="/careers" class="text-md font-medium"
-                  >Careers</NuxtLink
-                >
-              </div>
-              <div
+                <span class="text-md font-medium">Careers</span>
+              </NuxtLink>
+              <NuxtLink
+                to="/legal"
                 class="px-4 hover:bg-gray-100 py-3 rounded-xl flex items-center text-black"
               >
                 <img class="h-6 mr-6" src="~/assets/images/legal.svg" alt="" />
-                <NuxtLink to="/legal" class="text-md font-medium"
-                  >Legal</NuxtLink
-                >
-              </div>
+                <span class="text-md font-medium">Legal</span>
+              </NuxtLink>
             </div>
           </div>
         </div>
