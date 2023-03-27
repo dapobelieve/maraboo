@@ -3,11 +3,12 @@
     <div class="bg-gray-50 p-4 shadow-md ring ring-1 ring-opacity-5 ring-black">
       <div class="md:m-6">
         <div
-          class="w-full mb-12 flex flex-col after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-20px] after-mt-8 after:bg-gray-700"
+          class="w-full mb-12 flex flex-col after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-20px] after-mt-8 after:bg-slate-700"
         >
           <div class="text-slate-400 mb-4">1. You send:</div>
           <div class="relative mb-4 flex items-center origin">
             <input
+              v-model="amount"
               class="h-10 shadow-sm focus:outline-none w-full px-4 py-6 rounded bg-white"
               type="number"
             />
@@ -43,7 +44,9 @@
             </div>
           </div>
         </div>
-        <div>
+        <div
+          class="after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-20px] after-mt-8 after:bg-gray-700"
+        >
           <div class="flex items-center justify-between">
             <div>
               <small class="font-extrabold text-gray-600"
@@ -59,25 +62,31 @@
             </select>
           </div>
           <div class="mt-8">
-            <div class="text-gray-500 text-sm">
+            <div class="text-slate-500 text-sm font-bold">
               <div class="block">
-                <div class="amount inline-block border w-28">4.00 CAD</div>
+                <div class="amount inline-block mb-1.5 w-28">
+                  {{ mobileMoney }} CAD
+                </div>
                 <span class="purpose">Mobile money fee</span>
               </div>
               <div class="block">
-                <div class="amount inline-block border w-28">2.12 CAD</div>
+                <div class="amount inline-block mb-1.5 w-28">{{ fee }} CAD</div>
                 <span class="purpose">Our fee</span>
               </div>
               <div class="block">
-                <div class="amount inline-block border w-28">6.12 CAD</div>
+                <div class="amount inline-block mb-1.5 w-28">
+                  {{ mobileMoney + fee }} CAD
+                </div>
                 <span class="purpose">Total fees</span>
               </div>
               <div class="block">
-                <div class="amount inline-block border w-28">93.88 CAD</div>
+                <div class="amount inline-block mb-1.5 w-28">
+                  {{ balance }} CAD
+                </div>
                 <span class="purpose font-bold text-black">We convert</span>
               </div>
               <div class="block">
-                <div class="amount inline-block border w-28">
+                <div class="amount inline-block mb-1.5 w-28">
                   {{ rate }} CAD
                 </div>
                 <span class="purpose">Real exchange rate</span>
@@ -95,9 +104,16 @@ export default {
   data() {
     return {
       rate: 478.63,
+      fee: 2.12,
+      mobileMoney: 4.0,
+      amount: 0,
     };
   },
-  computed: {},
+  computed: {
+    balance() {
+      return this.amount ? this.amount - (this.mobileMoney + this.fee) : 0;
+    },
+  },
 };
 </script>
 
