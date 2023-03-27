@@ -201,8 +201,8 @@
             Our disbursement options are:
           </p>
           <div class="w-full md:w-3/5 my-20">
-            <div class="flex items-center justify-around">
-              <div class="inline-flex flex-col items-center">
+            <div class="flex flex-col md:flex-row items-center justify-around">
+              <div class="inline-flex mb-24 md:mb-0 flex-col items-center">
                 <img
                   class="mb-4 h-16 ml-0.5"
                   src="~/assets/images/cash.svg"
@@ -210,7 +210,7 @@
                 />
                 <span class="text-lg">Cash</span>
               </div>
-              <div class="inline-flex flex-col items-center">
+              <div class="inline-flex mb-24 md:mb-0 flex-col items-center">
                 <img
                   class="mb-4 h-16 ml-0.5"
                   src="~/assets/images/mobile-money.svg"
