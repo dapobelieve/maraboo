@@ -1,5 +1,5 @@
 <template>
-  <div class="min-w-sm w-56 max-w-lg w-full">
+  <div class="min-w-sm max-w-lg w-full">
     <div class="bg-gray-50 p-4 shadow-md ring ring-1 ring-opacity-5 ring-black">
       <div class="md:m-6">
         <div

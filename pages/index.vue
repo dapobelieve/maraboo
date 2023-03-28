@@ -10,11 +10,11 @@
               <span class="font-extrabold text-purple md:text-xl"
                 >Coming soon!</span
               >
-              <span class="mx-2 md:ml-4 text-black"
+              <span class="mx-1 md:ml-4 text-black"
                 >Get notified when we launch!</span
               >
               <img
-                class="md:ml-3 h-4"
+                class="md:ml-3 h-3"
                 src="~/assets/images/arrow-right.svg"
                 alt=""
               />
