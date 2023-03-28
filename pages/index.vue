@@ -224,7 +224,7 @@
                   src="~/assets/images/bank.svg"
                   alt=""
                 />
-                <span class="text-lg">Bank</span>
+                <span id="how-it-works" class="text-lg">Bank</span>
               </div>
             </div>
           </div>
@@ -237,7 +237,7 @@
           >
             <img class="" src="~/assets/images/hands.svg" alt="" />
           </div>
-          <div id="how-it-works" class="flex relative flex-col">
+          <div class="flex relative flex-col">
             <h1
               class="font-heading text-center text-4xl md:text-6xl mb-7 text-white"
             >

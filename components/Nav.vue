@@ -47,31 +47,31 @@
           <div
             v-show="company"
             role="menu"
-            class="absolute shadow-lg w-56 top-9 rounded-lg ring-opacity-5 ring-1 bg-white ring-black -right-3"
+            class="absolute shadow-lg w-[19rem] top-9 rounded-lg ring-opacity-5 ring-1 bg-white ring-black -right-3"
           >
             <NuxtLink
               to="/about"
-              class="px-4 hover:bg-gray-100 py-3 rounded-xl flex items-center text-black"
+              class="pl-8 hover:bg-gray-100 py-6 rounded-xl flex items-center text-black"
             >
               <img class="h-4 mr-6" src="~/assets/images/about.svg" alt="" />
               <span class="text-md font-medium">About us</span>
             </NuxtLink>
             <div
-              class="px-4 py-3 rounded-xl hover:bg-gray-100 flex items-center text-black"
+              class="pl-8 py-6 rounded-xl hover:bg-gray-100 flex items-center text-black"
             >
               <img class="h-6 mr-6" src="~/assets/images/contact.svg" alt="" />
               <a href="#" class="text-md font-medium">Contact Us</a>
             </div>
             <NuxtLink
               to="/careers"
-              class="px-4 py-3 rounded-xl hover:bg-gray-100 flex items-center text-black"
+              class="pl-8 py-6 rounded-xl hover:bg-gray-100 flex items-center text-black"
             >
               <img class="h-5 mr-6" src="~/assets/images/careers.svg" alt="" />
               <span class="text-md font-medium">Careers</span>
             </NuxtLink>
             <NuxtLink
               to="/legal"
-              class="px-4 hover:bg-gray-100 py-3 rounded-xl flex items-center text-black"
+              class="pl-8 hover:bg-gray-100 py-6 rounded-xl flex items-center text-black"
             >
               <img class="h-6 mr-6" src="~/assets/images/legal.svg" alt="" />
               <span class="text-md font-medium">Legal</span>
@@ -99,12 +99,12 @@
             <div
               class="px-4 hover:bg-gray-100 py-3 rounded-xl flex items-center text-black"
             >
-              <a href="#" class="text-md font-medium">en-US</a>
+              <a href="#" class="text-md font-medium">English</a>
             </div>
             <div
               class="px-4 py-3 rounded-xl hover:bg-gray-100 flex items-center text-black"
             >
-              <a href="#" class="text-md font-medium">FR</a>
+              <a href="#" class="text-md font-medium">France</a>
             </div>
           </div>
         </div>
