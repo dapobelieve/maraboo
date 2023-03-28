@@ -2,7 +2,7 @@
   <footer class="bg-black text-white px-2">
     <div class="container mx-auto py-16">
       <div
-        class="flex flex-col md:flex-row md:justify-between md:items-center items-start mb-8"
+        class="flex flex-col md:flex-row md:justify-between after:content after:w-full after:bottom-[-67px] after:h-[1px] after:absolute relative after:bg-[#D1D1D1] md:items-center items-start mb-32"
       >
         <div class="mb-10 md:mb-0">
           <img class="h-12" src="~/assets/images/maraboo-white.svg" alt="" />
@@ -28,7 +28,6 @@
           </a>
         </div>
       </div>
-      <hr />
       <div class="leading-relaxed text-[#5C5C5C] mt-8 mb-5">
         <h6 class="md:hidden font-bold text-white mb-6">
           Made in WAEMU by Africans
