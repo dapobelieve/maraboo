@@ -1,13 +1,11 @@
 <template>
-  <header class="md:pt-6 pt-2 px-2 container mx-auto relative z-50">
+  <header class="md:pt-6 pt-2 px-2 lg:container md:mx-auto relative z-50">
     <nav
       class="font-['Open_Sans'] py-4 md:py-0 select-none flex w-full justify-between"
     >
       <NuxtLink to="/" class="flex items-center">
-        <img class="h-8 md:h-12" src="~/assets/images/maraboo.svg" alt="" />
-        <h1 class="font-heading text-2xl md:text-4xl font-extrabold">
-          Maraboo
-        </h1>
+        <img class="h-8 md:h-10" src="~/assets/images/maraboo.svg" alt="" />
+        <h1 class="font-heading text-xl md:text-3xl font-extrabold">Maraboo</h1>
       </NuxtLink>
       <div class="md:hidden block">
         <div role="button" @click.stop.exact="showMobileMenu = true">
@@ -40,7 +38,7 @@
           <a> Company </a>
           <img
             class="h-2 mt-0.5 ml-2"
-            :class="[company ? '' : '-rotate-180']"
+            :class="[company ? '-rotate-180' : '']"
             src="~/assets/images/caret-down.svg"
             alt=""
           />
@@ -109,7 +107,9 @@
           </div>
         </div>
         <div>
-          <button class="px-6 py-4 bg-black font-black text-white rounded-lg">
+          <button
+            class="px-6 lg:px-4 lg:py-3 lg:text-sm py-4 bg-black font-black text-white rounded-lg"
+          >
             Join the waitlist
           </button>
         </div>

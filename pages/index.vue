@@ -1,8 +1,8 @@
 <template>
-  <main class="container md:mx-auto px-4">
+  <main class="lg:container md:mx-auto px-4">
     <section class="md:mt-[7rem] mt-[3rem] pb-12 md:pb-32">
       <div class="md:flex items-center">
-        <div class="w-full mb-8 md:mb-0 md:w-2/4">
+        <div class="w-full mb-8 md:mb-0 md:w-3/5">
           <div class="inline-block">
             <div
               class="px-4 shadow py-3 md:px-5 md:py-5 hover:scale-105 transition-transform duration-700 bg-white rounded md:rounded-[10px] cursor-pointer flex items-center"
@@ -20,7 +20,7 @@
               />
             </div>
           </div>
-          <div class="mt-20">
+          <div class="mt-16">
             <div
               class="font-heading text-center md:text-left text-4xl md:text-6xl leading-tight"
             >
@@ -36,7 +36,7 @@
             <GlobalMore> Learn more on Maraboo </GlobalMore>
           </div>
         </div>
-        <div class="w-full flex items-center justify-center md:w-2/4">
+        <div class="w-full flex items-center justify-center md:w-2/5">
           <Calculator class="md:ml-auto" />
         </div>
         <div class="mt-16 md:hidden text-center md:text-left">
