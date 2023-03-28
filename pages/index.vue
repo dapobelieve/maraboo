@@ -1,6 +1,6 @@
 <template>
-  <main class="container mx-auto px-4">
-    <section class="md:mt-[7rem] mt-[3rem]">
+  <main class="container md:mx-auto px-4">
+    <section class="md:mt-[7rem] mt-[3rem] pb-12 md:pb-32">
       <div class="md:flex items-center">
         <div class="w-full mb-8 md:mb-0 md:w-2/4">
           <div class="inline-block">
@@ -189,7 +189,7 @@
         </div>
       </div>
     </section>
-    <section id="how-it-works" class="countries pb-28 md:py-32">
+    <section class="countries pb-28 md:py-32">
       <div class="w-full justify-center bg-white rounded-t-xl bg-white pt-28">
         <div class="flex flex-col items-center text-center justify-center">
           <h1 class="font-heading text-4xl md:text-6xl mb-7">
@@ -237,7 +237,7 @@
           >
             <img class="" src="~/assets/images/hands.svg" alt="" />
           </div>
-          <div class="flex relative flex-col">
+          <div id="how-it-works" class="flex relative flex-col">
             <h1
               class="font-heading text-center text-4xl md:text-6xl mb-7 text-white"
             >
