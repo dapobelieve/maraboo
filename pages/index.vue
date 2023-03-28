@@ -1,5 +1,5 @@
 <template>
-  <main class="container mx-auto px-2">
+  <main class="container mx-auto px-4">
     <section class="md:mt-[7rem] mt-[3rem]">
       <div class="md:flex">
         <div class="w-full mb-8 md:mb-0 md:w-2/4">
@@ -36,8 +36,8 @@
             <GlobalMore> Learn more on Maraboo </GlobalMore>
           </div>
         </div>
-        <div class="w-full md:w-2/4">
-          <Calculator class="ml-auto" />
+        <div class="w-full flex items-center justify-center md:w-2/4">
+          <Calculator class="md:ml-auto" />
         </div>
         <div class="mt-16 md:hidden text-center md:text-left">
           <GlobalMore> Learn more on Maraboo </GlobalMore>

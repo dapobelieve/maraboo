@@ -1,5 +1,5 @@
 <template>
-  <div class="min-w-sm w-[30rem] max-w-[40rem]">
+  <div class="min-w-sm w-56 max-w-lg w-full">
     <div class="bg-gray-50 p-4 shadow-md ring ring-1 ring-opacity-5 ring-black">
       <div class="md:m-6">
         <div
@@ -31,7 +31,7 @@
             <div class="mr-6">
               <img class="md:h-14" src="~/assets/images/trend.svg" />
             </div>
-            <div class="text-purple md:mr-4">
+            <div class="text-purple md:mr-24">
               <span class="mr-"> 1CAD = </span>
               <span
                 style="line-height: 2px"
