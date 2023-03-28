@@ -4,7 +4,7 @@
       <div class="flex flex-col items-center">
         <h1 class="text-purple text-2xl mb-8 font-extrabold">About Maraboo</h1>
         <h1
-          class="font-heading text-4xl md:text-6xl mb-8 max-w-[65rem] text-center md:leading-normal"
+          class="font-heading text-4xl md:text-6xl mb-8 max-w-[65rem] text-center leading-snug"
         >
           We're building borderless financial systems to connect West-Africans
           across the globe

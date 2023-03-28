@@ -8,11 +8,32 @@
         class="font-['Open_Sans'] py-4 md:py-0 select-none flex w-full justify-between"
       >
         <NuxtLink to="/" class="flex items-center">
-          <img class="h-8 md:h-16" src="~/assets/images/maraboo.svg" alt="" />
+          <img class="h-8 md:h-12" src="~/assets/images/maraboo.svg" alt="" />
           <h1 class="font-heading text-2xl md:text-4xl font-extrabold">
             Maraboo
           </h1>
         </NuxtLink>
+        <div class="md:hidden block">
+          <div role="button" @click.stop.exact="showMobileMenu = true">
+            <svg
+              data-v-1956a757=""
+              width="40"
+              height="40"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="duration-200 rotate-0"
+            >
+              <path
+                data-v-1956a757=""
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </div>
+        </div>
         <div class="md:flex hidden items-center">
           <div class="mr-12"><a> How it works</a></div>
           <div
@@ -106,6 +127,19 @@
           </div>
         </div>
       </nav>
+      <div
+        v-show="showMobileMenu"
+        class="fixed bg-white left-0 top-0 h-full w-full"
+      >
+        <div class="px-4 pt-3">
+          <NuxtLink to="/" class="flex items-center">
+            <img class="h-8 md:h-16" src="~/assets/images/maraboo.svg" alt="" />
+            <h1 class="font-heading text-2xl md:text-4xl font-extrabold">
+              Maraboo
+            </h1>
+          </NuxtLink>
+        </div>
+      </div>
     </header>
     <slot />
     <Footer />
@@ -118,6 +152,7 @@ export default {
   data() {
     return {
       image: bg,
+      showMobileMenu: false,
       company: false,
       locale: false,
     };

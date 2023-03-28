@@ -1,13 +1,13 @@
 <template>
   <main class="container mx-auto px-4">
     <section class="md:mt-[7rem] mt-[3rem]">
-      <div class="md:flex">
+      <div class="md:flex items-center">
         <div class="w-full mb-8 md:mb-0 md:w-2/4">
           <div class="inline-block">
             <div
               class="px-4 shadow py-3 md:px-5 md:py-5 hover:scale-105 transition-transform duration-700 bg-white rounded md:rounded-[10px] cursor-pointer flex items-center"
             >
-              <span class="font-extrabold text-purple md:text-xl"
+              <span class="font-extrabold text-purple md:text-lg"
                 >Coming soon!</span
               >
               <span class="mx-1 md:ml-4 text-black"
@@ -44,7 +44,7 @@
         </div>
       </div>
     </section>
-    <section class="countries py-12 2xl:py-24">
+    <section class="countries py-12 md:py-32">
       <div class="text-center">
         <h1 class="font-heading text-4xl md:text-6xl mb-4">
           Countries we support
@@ -127,7 +127,7 @@
         </div>
       </div>
     </section>
-    <section class="countries py-12 2xl:py-24">
+    <section class="countries py-12 md:py-32">
       <div class="md:flex">
         <div
           class="md:w-2/5 hidden mb-8 md:mb-0 md:flex justify-center md:mr-12"
@@ -164,7 +164,7 @@
         </div>
       </div>
     </section>
-    <section class="countries py-12 2xl:py-24">
+    <section class="countries py-12 md:py-32">
       <div class="md:flex">
         <div class="w-full md:w-3/5">
           <div class="flex text-left flex-col jusstify-center px-4 h-full">
@@ -189,7 +189,7 @@
         </div>
       </div>
     </section>
-    <section id="how-it-works" class="countries pb-28 md:py-24">
+    <section id="how-it-works" class="countries pb-28 md:py-32">
       <div class="w-full justify-center bg-white rounded-t-xl bg-white pt-28">
         <div class="flex flex-col items-center text-center justify-center">
           <h1 class="font-heading text-4xl md:text-6xl mb-7">
@@ -379,7 +379,7 @@
         </div>
       </div>
     </section>
-    <section class="data-privacy pb-28 2xl:py-24">
+    <section class="data-privacy pb-28 md:py-32">
       <div class="flex flex-col items-center">
         <h1
           class="font-heading text-4xl md:text-6xl mb-8 text-center leading-snug"
@@ -393,7 +393,7 @@
         </p>
       </div>
     </section>
-    <section class="data-privacy mb-16">
+    <section class="data-privacy mb-16 md:py-32">
       <div class="flex flex-col items-center">
         <h1
           class="font-heading text-4xl md:text-6xl mb-8 text-center leading-snug"

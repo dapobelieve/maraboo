@@ -1,9 +1,9 @@
 <template>
   <div class="min-w-sm max-w-lg w-full">
-    <div class="bg-gray-50 p-4 shadow-md ring ring-1 ring-opacity-5 ring-black">
-      <div class="md:m-6">
+    <div class="bg-gray-50 p-6 shadow-md ring ring-1 ring-opacity-5 ring-black">
+      <div class="">
         <div
-          class="w-full mb-12 flex flex-col after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-20px] after-mt-8 after:bg-slate-700"
+          class="w-full mb-4 flex flex-col after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-14px] after-mt-8 after:bg-slate-700"
         >
           <div class="text-slate-400 mb-4">1. You send:</div>
           <div class="relative mb-4 flex items-center origin">
@@ -29,9 +29,9 @@
           </div>
           <div class="inline-flex items-center ml-auto">
             <div class="mr-6">
-              <img class="md:h-14" src="~/assets/images/trend.svg" />
+              <img class="h-4 md:h-6" src="~/assets/images/trend.svg" />
             </div>
-            <div class="text-purple md:mr-24">
+            <div class="text-purple md:mr-16">
               <span class="mr-"> 1CAD = </span>
               <span
                 style="line-height: 2px"
@@ -46,9 +46,9 @@
           </div>
         </div>
         <div
-          class="mb-24 after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-20px] after-mt-8 after:bg-gray-700"
+          class="mb-4 after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-10px] after-mt-8 after:bg-gray-700"
         >
-          <div class="flex items-center justify-between">
+          <div class="flex pt-4 justify-between">
             <div>
               <small class="font-extrabold text-gray-600"
                 >Delivery method & fees</small
@@ -97,7 +97,7 @@
             </div>
           </div>
         </div>
-        <div class="w-full mb-12 flex flex-col">
+        <div class="w-full flex flex-col">
           <div class="text-slate-400 mb-4">2. Your recipient gets:</div>
           <div class="relative mb-4 flex items-center origin">
             <input
