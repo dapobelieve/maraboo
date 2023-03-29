@@ -55,17 +55,17 @@
             <div
               v-show="company"
               role="menu"
-              class="absolute shadow-lg w-56 top-9 rounded-lg ring-opacity-5 ring-1 bg-white ring-black -right-3"
+              class="absolute shadow-lg w-80 top-9 rounded-lg ring-opacity-5 ring-1 bg-white ring-black -right-3"
             >
               <NuxtLink
                 to="/about"
-                class="px-4 hover:bg-gray-100 py-3 rounded-xl flex items-center text-black"
+                class="px-6 hover:bg-gray-50 py-6 rounded-xl flex items-center text-black"
               >
                 <img class="h-4 mr-6" src="~/assets/images/about.svg" alt="" />
                 <span class="text-md font-medium">About us</span>
               </NuxtLink>
               <div
-                class="px-4 py-3 rounded-xl hover:bg-gray-100 flex items-center text-black"
+                class="px-6 py-6 rounded-xl hover:bg-gray-50 flex items-center text-black"
               >
                 <img
                   class="h-6 mr-6"
@@ -76,7 +76,7 @@
               </div>
               <NuxtLink
                 to="/careers"
-                class="px-4 py-3 rounded-xl hover:bg-gray-100 flex items-center text-black"
+                class="px-6 py-6 rounded-xl hover:bg-gray-50 flex items-center text-black"
               >
                 <img
                   class="h-5 mr-6"
@@ -87,7 +87,7 @@
               </NuxtLink>
               <NuxtLink
                 to="/legal"
-                class="px-4 hover:bg-gray-100 py-3 rounded-xl flex items-center text-black"
+                class="px-6 hover:bg-gray-50 py-6 rounded-xl flex items-center text-black"
               >
                 <img class="h-6 mr-6" src="~/assets/images/legal.svg" alt="" />
                 <span class="text-md font-medium">Legal</span>
@@ -203,7 +203,7 @@
           >
             <div class="relative">
               <h6 class="text-xl hover:text-purple">Company</h6>
-              <div v-show="mobileCompany" class="absolute w-56 top-12">
+              <div v-show="mobileCompany" class="absolute top-12">
                 <div @click="showMobileMenu = false" class="ml-4 flex flex-col">
                   <NuxtLink class="" to="about">About us</NuxtLink>
                   <NuxtLink class="mt-4">Contact us</NuxtLink>
