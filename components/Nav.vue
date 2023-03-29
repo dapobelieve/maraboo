@@ -192,7 +192,9 @@
           </div>
         </div>
         <div class="px-4">
-          <NuxtLink to="#" class="text-xl"> How it works </NuxtLink>
+          <a @click.stop="scrollIntoView" href="#how-it-works" class="text-xl">
+            How it works
+          </a>
           <div class="flex mt-8 cursor-pointer justify-between items-center">
             <div class="relative">
               <h6 class="text-xl">Company</h6>
@@ -230,6 +232,7 @@ export default {
     scrollIntoView(e) {
       const { hash } = e.target;
       document.querySelector(hash).scrollIntoView({ behavior: "smooth" });
+      this.showMobileMenu = false;
     },
   },
 };
