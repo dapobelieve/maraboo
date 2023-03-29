@@ -6,8 +6,7 @@ export default defineNuxtConfig({
       meta: [
         {
           name: "viewport",
-          content:
-            "width=1000, initial-scale=0,, maximum-scale=1.0, user-scalable=no ",
+          content: "width=1000, initial-scale=0",
         },
       ],
       link: [

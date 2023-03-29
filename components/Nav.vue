@@ -5,7 +5,7 @@
     >
       <NuxtLink to="/" class="flex items-center">
         <img class="h-8 md:h-12" src="~/assets/images/maraboo.svg" alt="" />
-        <h1 class="font-heading text-2xl md:text-4xl font-extrabold">
+        <h1 class="font-heading ml-1 text-2xl md:text-4xl font-extrabold">
           Maraboo
         </h1>
       </NuxtLink>
@@ -116,12 +116,12 @@
             <div
               class="px-4 hover:bg-gray-100 py-3 rounded-xl flex items-center text-black"
             >
-              <a href="#" class="text-md font-medium">en-US</a>
+              <a href="#" class="text-md font-medium">English</a>
             </div>
             <div
               class="px-4 py-3 rounded-xl hover:bg-gray-100 flex items-center text-black"
             >
-              <a href="#" class="text-md font-medium">FR</a>
+              <a href="#" class="text-md font-medium">Français</a>
             </div>
           </div>
         </div>
@@ -136,13 +136,83 @@
       v-show="showMobileMenu"
       class="fixed bg-white left-0 top-0 h-full w-full"
     >
-      <div class="px-4 pt-3">
-        <NuxtLink to="/" class="flex items-center">
-          <img class="h-8 md:h-16" src="~/assets/images/maraboo.svg" alt="" />
-          <h1 class="font-heading text-2xl md:text-4xl font-extrabold">
-            Maraboo
-          </h1>
-        </NuxtLink>
+      <div class="flex flex-col pt-3 h-full">
+        <div
+          class="mb-20 py-4 after:content after:absolute relative after:w-full after:h-[1px] after:bg-gray-200 after:bottom-0 flex"
+        >
+          <div
+            @click="showMobileMenu = false"
+            class="px-2 flex justify-between items-center w-full"
+          >
+            <NuxtLink to="/" class="flex items-center">
+              <img
+                class="h-8 md:h-16"
+                src="~/assets/images/maraboo.svg"
+                alt=""
+              />
+              <h1 class="font-heading text-2xl font-extrabold ml-1">Maraboo</h1>
+            </NuxtLink>
+            <div class="relative inline-flex items-center">
+              <img
+                class="h-4 w-4 mr-0.5"
+                src="~/assets/images/globe.svg"
+                alt=""
+              /><a href="#" class="text-xs" @click.stop="locale = !locale">
+                EN</a
+              >
+              <img
+                class="h-2 mt-0.5 ml-1"
+                src="~/assets/images/caret-down.svg"
+                alt=""
+              />
+              <div
+                v-show="locale"
+                role="menu"
+                class="absolute shadow-lg w-24 top-9 rounded-lg ring-opacity-5 ring-1 bg-white ring-black -right-3"
+              >
+                <div
+                  class="px-4 hover:bg-gray-100 py-3 rounded-xl flex items-center text-black"
+                >
+                  <a href="#" class="text-md font-medium">English</a>
+                </div>
+                <div
+                  class="px-4 py-3 rounded-xl hover:bg-gray-100 flex items-center text-black"
+                >
+                  <a href="#" class="text-md font-medium">Français</a>
+                </div>
+              </div>
+              <div
+                role="button"
+                @click.stop="showMobileMenu = false"
+                class="ml-5"
+              >
+                <img class="h-6" src="~/assets/images/close.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="px-4">
+          <NuxtLink to="#" class="text-xl"> How it works </NuxtLink>
+          <div class="flex mt-8 cursor-pointer justify-between items-center">
+            <div class="relative">
+              <h6 class="text-xl">Company</h6>
+              <div class="absolute w-56 top-12">
+                <div @click="showMobileMenu = false" class="ml-4 flex flex-col">
+                  <NuxtLink class="" to="about">About us</NuxtLink>
+                  <NuxtLink class="mt-4">Contact us</NuxtLink>
+                  <NuxtLink class="mt-4" to="careers">Careers</NuxtLink>
+                  <NuxtLink class="mt-4" to="legal">Legal</NuxtLink>
+                </div>
+              </div>
+            </div>
+            <img class="h-2" src="~/assets/images/caret-down.svg" alt="" />
+          </div>
+        </div>
+        <div class="mt-auto mb-10 px-8 flex justify-center">
+          <button class="bg-black text-white px-12 py-3 w-full rounded-xl">
+            Join the waitlist
+          </button>
+        </div>
       </div>
     </div>
   </header>
