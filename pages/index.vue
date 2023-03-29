@@ -3,7 +3,7 @@
     <section class="md:mt-[7rem] mt-[3rem] pb-12 md:pb-32">
       <div class="md:flex items-center">
         <div class="w-full mb-8 md:mb-0 md:w-2/4">
-
+          <div class="flex md:inline-block">
             <div
               class="px-4 shadow py-3 md:px-5 md:py-5 hover:scale-105 transition-transform duration-700 bg-white rounded md:rounded-[10px] cursor-pointer flex items-center"
             >
