@@ -49,7 +49,7 @@
           >
             <NuxtLink
               to="/about"
-              class="pl-8 hover:bg-gray-100 py-6 rounded-xl flex items-center text-black"
+              class="pl-8 hover:bg-gray-50 py-6 rounded-xl flex items-center text-black"
             >
               <img class="h-4 mr-6" src="~/assets/images/about.svg" alt="" />
               <span class="text-md font-medium">About us</span>

@@ -5,12 +5,12 @@
         <div class="w-full mb-8 md:mb-0 md:w-3/5">
           <div class="inline-block">
             <div
-              class="px-4 shadow py-3 md:px-5 md:py-5 hover:scale-105 transition-transform duration-700 bg-white rounded md:rounded-[10px] cursor-pointer flex items-center"
+              class="px-3 shadow py-2 md:px-5 md:py-5 hover:scale-105 transition-transform duration-700 bg-white rounded md:rounded-[10px] cursor-pointer flex items-center"
             >
-              <span class="font-extrabold text-purple md:text-lg"
+              <span class="font-extrabold text-sm text-purple md:text-lg"
                 >Coming soon!</span
               >
-              <span class="mx-1 md:ml-4 text-black"
+              <span class="mx-1 md:ml-4 text-sm text-black"
                 >Get notified when we launch!</span
               >
               <img
@@ -235,7 +235,7 @@
           <div
             class="hands h-[30rem] absolute bottom-0 left-0 flex justify-center w-full"
           >
-            <img class="" src="~/assets/images/hands.svg" alt="" />
+            <img class="" src="~/assets/images/image.png" alt="" />
           </div>
           <div class="flex relative flex-col">
             <h1

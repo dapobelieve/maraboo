@@ -31,7 +31,7 @@
             <div class="mr-6">
               <img class="h-4 md:h-6" src="~/assets/images/trend.svg" />
             </div>
-            <div class="text-purple md:mr-16">
+            <div class="text-purple lg:mr-16 md:mr-0">
               <span class="mr-"> 1CAD = </span>
               <span
                 style="line-height: 2px"
