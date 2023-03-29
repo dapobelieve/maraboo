@@ -192,13 +192,20 @@
           </div>
         </div>
         <div class="px-4">
-          <a @click.stop="scrollIntoView" href="#how-it-works" class="text-xl">
+          <NuxtLink
+            @click.stop="scrollIntoView"
+            href="/#how-it-works"
+            class="hover:text-purple text-xl"
+          >
             How it works
-          </a>
-          <div class="flex mt-8 cursor-pointer justify-between items-center">
+          </NuxtLink>
+          <div
+            @click="mobileCompany = !mobileCompany"
+            class="flex mt-8 cursor-pointer justify-between items-center"
+          >
             <div class="relative">
-              <h6 class="text-xl">Company</h6>
-              <div class="absolute w-56 top-12">
+              <h6 class="text-xl hover:text-purple">Company</h6>
+              <div v-show="mobileCompany" class="absolute w-56 top-12">
                 <div @click="showMobileMenu = false" class="ml-4 flex flex-col">
                   <NuxtLink class="" to="about">About us</NuxtLink>
                   <NuxtLink class="mt-4">Contact us</NuxtLink>
@@ -207,7 +214,12 @@
                 </div>
               </div>
             </div>
-            <img class="h-2" src="~/assets/images/caret-down.svg" alt="" />
+            <img
+              :class="[mobileCompany ? 'rotate-180' : '']"
+              class="h-2"
+              src="~/assets/images/caret-down.svg"
+              alt=""
+            />
           </div>
         </div>
         <div class="mt-auto mb-10 px-8 flex justify-center">
@@ -226,6 +238,7 @@ export default {
       showMobileMenu: false,
       company: false,
       locale: false,
+      mobileCompany: false,
     };
   },
   methods: {
