@@ -37,7 +37,6 @@
         <h1 class="font-heading text-4xl md:text-5xl mb-6">Our Openings:</h1>
         <div class="max-w-[46rem] leading-8">
           <p class="mb-4">Thank you for your interest in joining our team!</p>
-          <br />
           <p class="mb-4">
             While we do not currently have any open positions, we are always on
             the lookout for talented individuals who share our values and are

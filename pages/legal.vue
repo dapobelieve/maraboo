@@ -18,11 +18,10 @@
     </section>
     <section class="countries 2xl:py-24">
       <div class="w-4/5">
-        <div class="max-w-[46rem] leading-8 text-xl">
+        <div class="max-w-[46rem] leading-8 text-lg">
           <p class="mb-4">
             Thank you for your interest in our upcoming launch.
           </p>
-          <br />
           <p class="mb-4">
             We're working hard to get everything ready and ensure that we
             provide the best possible experience for our customers. Our legal
