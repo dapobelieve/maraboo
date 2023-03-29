@@ -235,7 +235,7 @@
           <div
             class="hands h-[30rem] absolute bottom-0 left-0 flex justify-center w-full"
           >
-            <img class="" src="~/assets/images/hands.svg" alt="" />
+            <img class="" src="~/assets/images/image.png" alt="" />
           </div>
           <div id="how-it-works" class="flex relative flex-col">
             <h1
