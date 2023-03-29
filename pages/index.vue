@@ -1,9 +1,9 @@
 <template>
-  <main class="lg:container md:mx-auto px-4">
+  <main class="container md:mx-auto px-4">
     <section class="md:mt-[7rem] mt-[3rem] pb-12 md:pb-32">
       <div class="md:flex items-center">
-        <div class="w-full mb-8 md:mb-0 md:w-3/5">
-          <div class="inline-block">
+        <div class="w-full mb-8 md:mb-0 md:w-2/4">
+          <div class="flex md:inline-block">
             <div
               class="px-3 shadow py-2 md:px-5 md:py-5 hover:scale-105 transition-transform duration-700 bg-white rounded md:rounded-[10px] cursor-pointer flex items-center"
             >
@@ -20,7 +20,7 @@
               />
             </div>
           </div>
-          <div class="mt-16">
+          <div class="mt-20">
             <div
               class="font-heading text-center md:text-left text-4xl md:text-6xl leading-tight"
             >
@@ -36,7 +36,7 @@
             <GlobalMore> Learn more on Maraboo </GlobalMore>
           </div>
         </div>
-        <div class="w-full flex items-center justify-center md:w-2/5">
+        <div class="w-full flex items-center justify-center md:w-2/4">
           <Calculator class="md:ml-auto" />
         </div>
         <div class="mt-16 md:hidden text-center md:text-left">
@@ -224,7 +224,7 @@
                   src="~/assets/images/bank.svg"
                   alt=""
                 />
-                <span id="how-it-works" class="text-lg">Bank</span>
+                <span class="text-lg">Bank</span>
               </div>
             </div>
           </div>
@@ -237,7 +237,7 @@
           >
             <img class="" src="~/assets/images/image.png" alt="" />
           </div>
-          <div class="flex relative flex-col">
+          <div id="how-it-works" class="flex relative flex-col">
             <h1
               class="font-heading text-center text-4xl md:text-6xl mb-7 text-white"
             >
@@ -246,7 +246,7 @@
             <div class="flex flex-col md:flex-row">
               <div class="w-full md:w-1/2">
                 <div class="md:block flex flex-col items-center">
-                  <div class="md:ml-[10rem] mb-8 md:mb-24">
+                  <div class="md:ml-[10rem] lg:ml-[5rem] mb-8 md:mb-24">
                     <div
                       class="bg-white w-80 inline-block rounded-lg px-6 py-4"
                     >
