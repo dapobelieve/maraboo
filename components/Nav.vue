@@ -157,9 +157,7 @@
                 class="h-4 w-4 mr-0.5"
                 src="~/assets/images/globe.svg"
                 alt=""
-              /><a href="#" class="text-xs" @click.stop="locale = !locale">
-                EN</a
-              >
+              /><a class="text-xs"> EN</a>
               <img
                 class="h-2 mt-0.5 ml-1"
                 src="~/assets/images/caret-down.svg"
@@ -193,7 +191,7 @@
         </div>
         <div class="px-4">
           <NuxtLink
-            @click.stop="scrollIntoView"
+            @click.stop="showMobileMenu = false"
             href="/#how-it-works"
             class="hover:text-purple text-xl"
           >
