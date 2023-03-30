@@ -401,11 +401,17 @@
         >
           Frequently Asked Questions
         </h1>
+        <em>Sending money to Africa</em>
         <div class="w-full">
+          <a
+            href="https://www.un.org/sustainabledevelopment/inequality/"
+            target="_blank"
+          ></a>
           <GlobalAccordionList>
             <GlobalAccordionItem
-              :item-id="x"
-              v-for="x in 5"
+              :item-id="id + 1"
+              :item="q"
+              v-for="(q, id) in faqs"
             ></GlobalAccordionItem>
           </GlobalAccordionList>
         </div>
@@ -413,4 +419,50 @@
     </section>
   </main>
 </template>
-<script setup></script>
+<script setup>
+import { reactive } from "vue";
+const faqs = reactive([
+  {
+    question: "What can I do with Mara.boo?",
+    answers: [
+      "Starting with Canada, you can send money in and out of WAEMU countries fast at the interbank rate. We’ll be adding the US and EU shortly after we launch, and then the rest of the world.",
+    ],
+  },
+  {
+    question: "When isMara.boo launching?",
+    answers: [
+      "Sometime in 2023. Wanna know more? Join our wait list to stay up to date on our launch!\n",
+    ],
+  },
+  {
+    question:
+      "How do I supercharge my cross-border purchasing power with Mara.boo?",
+    answers: [
+      "Download the app from your IOS and android app stores",
+      "Get a quote and provide recipient details",
+      "Perform you’re one time identity verification",
+      "Pay for your transaction in your currency of choice\n",
+      "Instantly receive more!",
+    ],
+  },
+  {
+    question: "How much can I send per day?\n",
+    answers: [
+      "You can send  up to $9,900 every 24 hours in and out of any WAEMU country",
+    ],
+  },
+  {
+    question:
+      " How fast can I transfer money in & out of Africa at the interbank rate?",
+    answers: [
+      "The great majority of transfers are completed in a few minutes\n",
+    ],
+  },
+  {
+    question: "How much does it cost to send a transfer?",
+    answers: [
+      `em - We’re delivering on UN social development goal #10  today, by reducing the cost of sending money to Africa to an average cost of 3% or less. `,
+    ],
+  },
+]);
+</script>

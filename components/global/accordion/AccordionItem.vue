@@ -9,7 +9,7 @@
         class="accordion-item-header flex justify-between items-center w-full"
       >
         <h6 class="font-bold text-xl">
-          <slot class="header">What can I do with Maraboo?</slot>
+          <h1 class="header">{{ item.question }}</h1>
         </h6>
         <svg
           width="15"
@@ -26,11 +26,7 @@
         </svg>
       </div>
       <div class="accordion-item-body" :class="[active ? 'active' : '']">
-        <slot>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, enim
-          libero? Consequatur cumque dolorem doloremque in modi optio quasi
-          voluptatibus.
-        </slot>
+        <div v-for="ans in item.answers">{{ ans }}</div>
       </div>
     </div>
   </div>
@@ -39,7 +35,7 @@
 <script>
 export default {
   inject: ["accordionState"],
-  props: ["itemId"],
+  props: ["itemId", "item"],
   computed: {
     active() {
       return Number(this.accordionState.activeItem) === Number(this.itemId);
