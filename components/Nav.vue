@@ -1,9 +1,9 @@
 <template>
   <header
-    class="bg-[url('/assets/images/bg-2.svg')] bg-cover md:py-4 bg-white relative sticky top-0 lg:px-20 lg:px-4 z-10"
+    class="bg-[url('/assets/images/bg-2.svg')] bg-cover md:py-4 bg-white relative sticky top-0 lg:px-20 lg:px-4"
   >
     <nav
-      class="font-['Open_Sans'] md:container relative md:mx-auto z-50 px-2 py-4 md:py-0 select-none flex w-full justify-between"
+      class="font-['Open_Sans'] md:container relative md:mx-auto px-2 py-4 md:py-0 select-none flex w-full justify-between"
     >
       <NuxtLink to="/" class="flex items-center">
         <img class="h-8 md:h-10" src="~/assets/images/maraboo.svg" alt="" />
@@ -34,69 +34,52 @@
       </div>
       <div class="md:flex hidden items-center">
         <div class="mr-12"><a href="#how-it-works"> How it works</a></div>
-        <ClickOutside
-          :do="
-            () => {
-              company = false;
-            }
-          "
-        >
-          <div
-            role="button"
-            @click="company = !company"
-            class="inline-flex relative cursor-pointer items-center"
-          >
-            <a> Company </a>
-            <img
-              class="h-2 mt-0.5 ml-2"
-              :class="[company ? '' : '-rotate-180']"
-              src="~/assets/images/caret-down.svg"
-              alt=""
-            />
 
-            <div
-              v-show="company"
-              role="menu"
-              class="absolute shadow-lg w-80 top-9 rounded-lg ring-opacity-5 ring-1 bg-white ring-black -right-3"
+        <div
+          role="button"
+          @click="company = !company"
+          class="inline-flex group relative cursor-pointer items-center"
+        >
+          <a> Company </a>
+          <img
+            class="h-2 mt-0.5 group-hover:-rotate-180 ml-2"
+            src="~/assets/images/caret-down.svg"
+            alt=""
+          />
+
+          <div
+            role="menu"
+            class="absolute hidden group-hover:block opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-1000 shadow-lg w-80 top-6 rounded-lg ring-opacity-5 ring-1 bg-white ring-black -right-3"
+          >
+            <NuxtLink
+              to="/about"
+              class="px-6 hover:bg-gray-50 py-6 rounded-xl flex items-center text-black"
             >
-              <NuxtLink
-                to="/about"
-                class="px-6 hover:bg-gray-50 py-6 rounded-xl flex items-center text-black"
-              >
-                <img class="h-4 mr-6" src="~/assets/images/about.svg" alt="" />
-                <span class="text-md font-medium">About us</span>
-              </NuxtLink>
-              <div
-                class="px-6 py-6 rounded-xl hover:bg-gray-50 flex items-center text-black"
-              >
-                <img
-                  class="h-6 mr-6"
-                  src="~/assets/images/contact.svg"
-                  alt=""
-                />
-                <a href="#" class="text-md font-medium">Contact Us</a>
-              </div>
-              <NuxtLink
-                to="/careers"
-                class="px-6 py-6 rounded-xl hover:bg-gray-50 flex items-center text-black"
-              >
-                <img
-                  class="h-5 mr-6"
-                  src="~/assets/images/careers.svg"
-                  alt=""
-                />
-                <span class="text-md font-medium">Careers</span>
-              </NuxtLink>
-              <NuxtLink
-                to="/legal"
-                class="px-6 hover:bg-gray-50 py-6 rounded-xl flex items-center text-black"
-              >
-                <img class="h-6 mr-6" src="~/assets/images/legal.svg" alt="" />
-                <span class="text-md font-medium">Legal</span>
-              </NuxtLink>
+              <img class="h-4 mr-6" src="~/assets/images/about.svg" alt="" />
+              <span class="text-md font-medium">About us</span>
+            </NuxtLink>
+            <div
+              class="px-6 py-6 rounded-xl hover:bg-gray-50 flex items-center text-black"
+            >
+              <img class="h-6 mr-6" src="~/assets/images/contact.svg" alt="" />
+              <a href="#" class="text-md font-medium">Contact Us</a>
             </div>
+            <NuxtLink
+              to="/careers"
+              class="px-6 py-6 rounded-xl hover:bg-gray-50 flex items-center text-black"
+            >
+              <img class="h-5 mr-6" src="~/assets/images/careers.svg" alt="" />
+              <span class="text-md font-medium">Careers</span>
+            </NuxtLink>
+            <NuxtLink
+              to="/legal"
+              class="px-6 hover:bg-gray-50 py-6 rounded-xl flex items-center text-black"
+            >
+              <img class="h-6 mr-6" src="~/assets/images/legal.svg" alt="" />
+              <span class="text-md font-medium">Legal</span>
+            </NuxtLink>
           </div>
-        </ClickOutside>
+        </div>
       </div>
       <div class="md:flex hidden items-center cursor-pointer">
         <div class="mr-8 relative inline-flex items-center">
