@@ -1,8 +1,8 @@
 <template>
   <main class="container mx-auto px-2">
-    <section class="py-12 md:py-32">
+    <section class="py-12 md:pb-32 pt-24">
       <div class="flex flex-col items-center">
-        <h1 class="text-purple text-2xl mb-8 font-extrabold">About Maraboo</h1>
+        <h1 class="text-purple text-3xl mb-8 font-extrabold">About Maraboo</h1>
         <h1
           class="font-heading text-4xl md:text-6xl mb-8 max-w-[65rem] text-center leading-snug"
         >

@@ -9,22 +9,20 @@
             <h1 class="text-purple mb-4 md:mb-14 text-2xl font-extrabold">
               Join Our Team!
             </h1>
-            <h1
-              class="font-heading text-4xl max-w-[45rem] md:text-6xl leading-none mb-4"
-            >
+            <h1 class="font-heading text-4xl md:text-6xl leading-snug mb-4">
               Come work with us
             </h1>
-            <div class="mb-16 md:mb-24">
+            <div class="mb-16 text-lg md:mb-20">
               We’re looking for great people to help us build!
             </div>
-            <div class="hidden md:block mt-16 text-left">
+            <div class="hidden md:block text-left">
               <GlobalMore> View our openings</GlobalMore>
             </div>
           </div>
         </div>
-        <div class="md:w-3/5 flex">
+        <div class="md:w-3/5 flex justify-center">
           <div>
-            <img class="" src="~/assets/images/hepta.svg" alt="" />
+            <img class="md:h-[36rem]" src="~/assets/images/hepta.svg" alt="" />
           </div>
         </div>
         <div class="md:hidden md:block mt-16 text-center">

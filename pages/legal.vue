@@ -1,12 +1,14 @@
 <template>
   <main class="container mx-auto px-2">
-    <section class="countries pt-12 2xl:pt-24">
+    <section class="countries py-12 md:py-32">
       <div class="md:flex items-center">
         <div class="w-full md:w-3/5">
           <div
             class="flex md:items-start text-left items-center flex-col h-full"
           >
-            <h1 class="text-purple mb-4 md:mb-14 text-2xl font-bold">Legal</h1>
+            <h1 class="text-purple mb-4 md:mb-14 text-3xl font-extrabold">
+              Legal
+            </h1>
             <h1
               class="font-heading text-4xl max-rem] md:text-6xl leading-snug mb-4"
             >

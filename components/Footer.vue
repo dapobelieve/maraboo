@@ -5,7 +5,7 @@
         class="flex flex-col md:flex-row md:justify-between after:content after:w-full after:bottom-[-67px] after:h-[1px] after:absolute relative after:bg-[#D1D1D1] md:items-center items-start mb-32"
       >
         <div class="mb-10 md:mb-0">
-          <img class="h-12" src="~/assets/images/maraboo-white.svg" alt="" />
+          <img class="h-10" src="~/assets/images/maraboo-white.svg" alt="" />
         </div>
         <div
           class="max-w-[15rem] w-full md:inline-flex md:items-center mb-6 md:mb-0 justify-between"

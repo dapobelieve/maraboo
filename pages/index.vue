@@ -7,9 +7,7 @@
             <div
               class="px-4 shadow py-3 md:px-4 md:py-3 hover:scale-105 transition-transform duration-700 bg-white rounded md:rounded-[10px] cursor-pointer flex items-center"
             >
-              <span class="font-extrabold text-purple md:text-lg"
-                >Coming soon!</span
-              >
+              <span class="font-bold text-purple md:text-lg">Coming soon!</span>
               <span class="mx-1 md:ml-4 text-black"
                 >Get notified when we launch!</span
               >

@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
     head: {
@@ -6,7 +5,7 @@ export default defineNuxtConfig({
       meta: [
         {
           name: "viewport",
-          content: "width=1000, initial-scale=0",
+          content: "width=1000, initial-scale=1",
         },
       ],
       link: [
@@ -22,7 +21,7 @@ export default defineNuxtConfig({
         {
           rel: "stylesheet",
           type: "text/css",
-          href: "https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;800&family=Lato:wght@400;800&family=Open+Sans:wght@400&display=swap",
+          href: "https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;800&family=Lato:wght@400;700;900&family=Open+Sans:wght@400&display=swap",
         },
       ],
     },
