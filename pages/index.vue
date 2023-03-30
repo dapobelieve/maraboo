@@ -5,7 +5,7 @@
         <div class="w-full mb-8 md:mb-0 md:w-2/4">
           <div class="flex md:inline-block">
             <div
-              class="px-4 shadow py-3 md:px-5 md:py-5 hover:scale-105 transition-transform duration-700 bg-white rounded md:rounded-[10px] cursor-pointer flex items-center"
+              class="px-4 shadow py-3 md:px-4 md:py-3 hover:scale-105 transition-transform duration-700 bg-white rounded md:rounded-[10px] cursor-pointer flex items-center"
             >
               <span class="font-extrabold text-purple md:text-lg"
                 >Coming soon!</span
@@ -22,11 +22,12 @@
           </div>
           <div class="mt-20">
             <div
-              class="font-heading text-center md:text-left text-4xl md:text-6xl leading-tight"
+              class="font-heading text-center md:text-left text-4xl md:text-5xl leading-snug"
             >
               <h1 class="max-w-[47rem]">
                 Fast transfers in & out of WAEMU countries at the
-                <span class="text-purple underline underline-offset-[13px]"
+                <span
+                  class="text-purple block underline underline-offset-[13px]"
                   >real exchange rate!</span
                 >
               </h1>

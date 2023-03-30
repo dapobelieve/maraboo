@@ -1,12 +1,12 @@
 <template>
   <main class="container mx-auto px-2">
-    <section class="countries py-12 2xl:py-24">
+    <section class="countries py-12 md:pb-32">
       <div class="md:flex items-center">
         <div class="w-full md:w-2/5">
           <div
             class="flex md:items-start text-left items-center flex-col px-4 h-full"
           >
-            <h1 class="text-purple mb-4 md:mb-14 text-2xl font-bold">
+            <h1 class="text-purple mb-4 md:mb-14 text-2xl font-extrabold">
               Join Our Team!
             </h1>
             <h1
@@ -32,7 +32,7 @@
         </div>
       </div>
     </section>
-    <section class="countries py-12 2xl:py-24">
+    <section class="countries py-12 md:py-32">
       <div class="w-4/5">
         <h1 class="font-heading text-4xl md:text-5xl mb-6">Our Openings:</h1>
         <div class="max-w-[46rem] leading-8">

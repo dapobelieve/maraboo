@@ -1,6 +1,6 @@
 <template>
   <main class="container mx-auto px-2">
-    <section class="py-12 2xl:py-24">
+    <section class="py-12 md:py-32">
       <div class="flex flex-col items-center">
         <h1 class="text-purple text-2xl mb-8 font-extrabold">About Maraboo</h1>
         <h1
@@ -20,7 +20,7 @@
         <GlobalMore> Read More </GlobalMore>
       </div>
     </section>
-    <section class="countries py-12 2xl:py-24">
+    <section class="countries py-12 md:py-32">
       <div class="md:flex">
         <div class="w-full md:w-3/5">
           <div class="flex text-left flex-col px-4 h-full">
@@ -49,7 +49,7 @@
         </div>
       </div>
     </section>
-    <section class="countries py-12 2xl:py-24">
+    <section class="countries py-12 md:py-32">
       <div class="md:flex">
         <div
           class="md:w-2/5 hidden mb-8 md:mb-0 md:flex justify-center md:mr-12"

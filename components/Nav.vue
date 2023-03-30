@@ -1,11 +1,11 @@
 <template>
-  <header class="md:pt-6 pt-2 px-2 container mx-auto relative z-50">
+  <header class="md:py-6 sticky top-0 z-30 px-20 pt-2 relative z-50">
     <nav
-      class="font-['Open_Sans'] py-4 md:py-0 select-none flex w-full justify-between"
+      class="font-['Open_Sans'] px-2 py-4 md:py-0 select-none flex w-full justify-between"
     >
       <NuxtLink to="/" class="flex items-center">
-        <img class="h-8 md:h-12" src="~/assets/images/maraboo.svg" alt="" />
-        <h1 class="font-heading ml-1 text-2xl md:text-4xl font-extrabold">
+        <img class="h-8 md:h-10" src="~/assets/images/maraboo.svg" alt="" />
+        <h1 class="font-heading text-2xl md:text-3xl mt-2 font-extrabold">
           Maraboo
         </h1>
       </NuxtLink>
@@ -126,7 +126,7 @@
           </div>
         </div>
         <div>
-          <button class="px-6 py-4 bg-black font-black text-white rounded-lg">
+          <button class="px-4 py-2 bg-black font-black text-white rounded-lg">
             Join the waitlist
           </button>
         </div>

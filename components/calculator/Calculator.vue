@@ -59,7 +59,8 @@
               class="bg-purple text-white text-sm font-bold w-40 py-1 px-2 rounded"
               id="cars"
             >
-              <option value="volvo">Cash pickup</option>
+              <option value="cash-pickup">Cash pickup</option>
+              <option value="mobile-money">Mobile Money</option>
             </select>
           </div>
           <div class="mt-8">
