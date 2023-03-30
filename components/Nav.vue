@@ -1,5 +1,5 @@
 <template>
-  <header class="md:py-4 sticky top-0 md:px-20 relative z-50">
+  <header class="md:py-4 sticky top-0 lg:px-20 lg:px-4 relative z-50">
     <nav
       class="font-['Open_Sans'] px-2 py-4 md:py-0 select-none flex w-full justify-between"
     >
