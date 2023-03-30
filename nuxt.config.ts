@@ -5,7 +5,7 @@ export default defineNuxtConfig({
       meta: [
         {
           name: "viewport",
-          content: "width=1000, initial-scale=1",
+          content: "width=device-width, initial-scale=1",
         },
       ],
       link: [
