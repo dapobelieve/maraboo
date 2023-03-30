@@ -401,7 +401,6 @@
         >
           Frequently Asked Questions
         </h1>
-        <em>Sending money to Africa</em>
         <div class="w-full">
           <a
             href="https://www.un.org/sustainabledevelopment/inequality/"
@@ -429,7 +428,7 @@ const faqs = reactive([
     ],
   },
   {
-    question: "When isMara.boo launching?",
+    question: "When is Mara.boo launching?",
     answers: [
       "Sometime in 2023. Wanna know more? Join our wait list to stay up to date on our launch!\n",
     ],
