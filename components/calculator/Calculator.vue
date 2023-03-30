@@ -90,7 +90,7 @@
                   class="w-6 after:content after:absolute after:w-0.5 after:h-full after:bg-purple after:top-[13px] after:right-[15px] relative"
                 >
                   <span
-                    class="bg-purple h-4 w-4 font-bold xl inline-flex justify-center items-center rounded-sm text-white"
+                    class="bg-purple h-4 w-4 font-bold text-2xl pb-1 inline-flex justify-center items-center rounded-sm text-white"
                     >-</span
                   >
                 </div>
@@ -104,11 +104,13 @@
                   class="w-6 after:content after:absolute after:w-0.5 after:h-full after:bg-purple after:top-[13px] after:right-[15px] relative"
                 >
                   <span
-                    class="bg-purple h-4 w-4 font-bold xl inline-flex justify-center items-center rounded-sm text-white"
+                    class="bg-purple text-lg h-4 w-4 font-bold xl inline-flex justify-center items-center rounded-sm text-white"
                     >=</span
                   >
                 </div>
-                <div class="amount inline-block text-black font-bold w-28">
+                <div
+                  class="amount inline-block text-black font-bold min-w-28 mr-2 w-28"
+                >
                   {{ balance }} CAD
                 </div>
                 <span class="purpose font-bold text-black">We convert</span>
