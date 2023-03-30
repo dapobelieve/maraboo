@@ -26,7 +26,7 @@
         </svg>
       </div>
       <div class="accordion-item-body" :class="[active ? 'active' : '']">
-        <div v-for="ans in item.answers">{{ ans }}</div>
+        <div v-html="item.answers"></div>
       </div>
     </div>
   </div>

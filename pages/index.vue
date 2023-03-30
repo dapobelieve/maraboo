@@ -401,6 +401,7 @@
         >
           Frequently Asked Questions
         </h1>
+
         <div class="w-full">
           <a
             href="https://www.un.org/sustainabledevelopment/inequality/"
@@ -436,32 +437,33 @@ const faqs = reactive([
   {
     question:
       "How do I supercharge my cross-border purchasing power with Mara.boo?",
-    answers: [
-      "Download the app from your IOS and android app stores",
-      "Get a quote and provide recipient details",
-      "Perform you’re one time identity verification",
-      "Pay for your transaction in your currency of choice\n",
-      "Instantly receive more!",
-    ],
+    answers: `<ul>
+        <li>Download the app from your IOS and android app stores</li>
+        <li>Get a quote and provide recipient details</li>
+        <li>Perform you're one time identity verification</li>
+        <li>Pay for your transaction in your currency of choice</li>
+        <li>Instantly receive more!</li>
+      </ul>`,
   },
   {
     question: "How much can I send per day?\n",
-    answers: [
-      "You can send  up to $9,900 every 24 hours in and out of any WAEMU country",
-    ],
+    answers: `<p>You can send  up to $9,900 every 24 hours in and out of any WAEMU country</p>`,
   },
   {
     question:
       " How fast can I transfer money in & out of Africa at the interbank rate?",
-    answers: [
-      "The great majority of transfers are completed in a few minutes\n",
-    ],
+    answers: "The great majority of transfers are completed in a few minutes\n",
   },
   {
     question: "How much does it cost to send a transfer?",
-    answers: [
-      `em - We’re delivering on UN social development goal #10  today, by reducing the cost of sending money to Africa to an average cost of 3% or less. `,
-    ],
+    answers: `<p>
+          <h class="font-bold">Sending money to Africa</h> - We’re delivering on
+          <a class="text-blue-400" href="https://www.un.org/sustainabledevelopment/inequality/"
+            >UN social development goal #10</a
+          >
+          today, by reducing the cost of sending money to Africa to an average
+          cost of 3% or less
+        </p>`,
   },
 ]);
 </script>
