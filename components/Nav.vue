@@ -1,6 +1,6 @@
 <template>
   <header
-    class="bg-[url('/assets/images/bg-2.svg')] bg-cover md:py-4 bg-white relative sticky top-0 lg:px-20 lg:px-4"
+    class="bg-[url('/assets/images/bg-2.svg')] bg-cover md:py-4 bg-white relative sticky top-0 lg:px-20 z-50 lg:px-4"
   >
     <nav
       class="font-['Open_Sans'] md:container relative md:mx-auto px-2 py-4 md:py-0 select-none flex w-full justify-between"
