@@ -411,8 +411,4 @@
     </section>
   </main>
 </template>
-<script setup>
-import Calculator from "~/components/calculator/Calculator";
-
-const { locale } = useI18n();
-</script>
+<script setup></script>
