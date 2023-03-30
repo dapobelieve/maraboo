@@ -1,7 +1,9 @@
 <template>
-  <header class="md:py-4 sticky top-0 lg:px-20 lg:px-4 relative z-50">
+  <header
+    class="bg-[url('/assets/images/bg-2.svg')] bg-cover md:py-4 bg-white relative sticky top-0 lg:px-20 lg:px-4 z-10"
+  >
     <nav
-      class="font-['Open_Sans'] px-2 py-4 md:py-0 select-none flex w-full justify-between"
+      class="font-['Open_Sans'] md:container relative md:mx-auto z-50 px-2 py-4 md:py-0 select-none flex w-full justify-between"
     >
       <NuxtLink to="/" class="flex items-center">
         <img class="h-8 md:h-10" src="~/assets/images/maraboo.svg" alt="" />
