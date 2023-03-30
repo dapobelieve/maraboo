@@ -431,13 +431,13 @@ const faqs = reactive([
   {
     question: "When is Mara.boo launching?",
     answers: [
-      "Sometime in 2023. Wanna know more? Join our wait list to stay up to date on our launch!\n",
+      `<p>Sometime in 2023. Wanna know more? Join our wait list to stay up to date on our launch!</p>`,
     ],
   },
   {
     question:
       "How do I supercharge my cross-border purchasing power with Mara.boo?",
-    answers: `<ul>
+    answers: `<ul class="list-disc p-0" style="list-style-type: disc !important;">
         <li>Download the app from your IOS and android app stores</li>
         <li>Get a quote and provide recipient details</li>
         <li>Perform you're one time identity verification</li>
@@ -456,13 +456,16 @@ const faqs = reactive([
   },
   {
     question: "How much does it cost to send a transfer?",
-    answers: `<p>
+    answers: `<p class="mb-4">
           <h class="font-bold">Sending money to Africa</h> - We’re delivering on
-          <a class="text-blue-400" href="https://www.un.org/sustainabledevelopment/inequality/"
+          <a class="text-blue-600" target="_blank" href="https://www.un.org/sustainabledevelopment/inequality/"
             >UN social development goal #10</a
           >
           today, by reducing the cost of sending money to Africa to an average
-          cost of 3% or less
+          cost of 3% or less.
+        </p>
+        <p>
+          <h class="font-bold">Sending money out of Africa</h> - We’re not only making sending money out of africa up to 3x cheaper than current best in class solutions but we’re also making transfers out of Africa fast and accessible to all by cutting away the red tape.
         </p>`,
   },
 ]);

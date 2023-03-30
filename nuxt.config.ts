@@ -57,4 +57,7 @@ export default defineNuxtConfig({
       },
     },
   },
+  tailwindcss: {
+    viewer: true,
+  },
 });

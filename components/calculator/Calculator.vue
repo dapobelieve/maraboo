@@ -64,35 +64,63 @@
             </select>
           </div>
           <div class="mt-8">
-            <div class="text-slate-800 text-sm">
-              <div class="block">
-                <div class="amount inline-block mb-1.5 w-28">
+            <div class="text-slate-800 flex flex-col text-sm">
+              <div class="inline-flex mb-1.5 items-center">
+                <div class="w-6">
+                  <span
+                    class="h-4 w-4 font-bold xl inline-flex justify-center items-center rounded-sm text-white"
+                  ></span>
+                </div>
+                <div class="amount inline-block w-28">
                   {{ mobileMoney }} CAD
                 </div>
                 <span class="purpose">Mobile money fee</span>
               </div>
-              <div class="block">
-                <div class="amount inline-block mb-1.5 w-28">{{ fee }} CAD</div>
+              <div class="inline-flex mb-1.5 items-center">
+                <div class="w-6">
+                  <span
+                    class="h-4 w-4 font-bold xl inline-flex justify-center items-center rounded-sm text-white"
+                  ></span>
+                </div>
+                <div class="amount inline-block w-28">{{ fee }} CAD</div>
                 <span class="purpose">Our fee</span>
               </div>
-              <div class="block">
-                <div class="amount inline-block mb-1.5 w-28">
+              <div class="inline-flex mb-1.5 items-center">
+                <div
+                  class="w-6 after:content after:absolute after:w-0.5 after:h-full after:bg-purple after:top-[13px] after:right-[15px] relative"
+                >
+                  <span
+                    class="bg-purple h-4 w-4 font-bold xl inline-flex justify-center items-center rounded-sm text-white"
+                    >-</span
+                  >
+                </div>
+                <div class="amount inline-block w-28">
                   {{ mobileMoney + fee }} CAD
                 </div>
                 <span class="purpose">Total fees</span>
               </div>
-              <div class="block">
+              <div class="inline-flex mb-1.5 items-center">
                 <div
-                  class="amount inline-block text-black font-bold mb-1.5 w-28"
+                  class="w-6 after:content after:absolute after:w-0.5 after:h-full after:bg-purple after:top-[13px] after:right-[15px] relative"
                 >
+                  <span
+                    class="bg-purple h-4 w-4 font-bold xl inline-flex justify-center items-center rounded-sm text-white"
+                    >=</span
+                  >
+                </div>
+                <div class="amount inline-block text-black font-bold w-28">
                   {{ balance }} CAD
                 </div>
                 <span class="purpose font-bold text-black">We convert</span>
               </div>
-              <div class="block">
-                <div class="amount inline-block mb-1.5 w-28">
-                  {{ rate }} CAD
+              <div class="inline-flex mb-1.5 items-center">
+                <div class="w-6">
+                  <span
+                    class="bg-purple h-4 w-4 pb-0.5 font-bold inline-flex justify-center items-center rounded-sm text-white"
+                    >x</span
+                  >
                 </div>
+                <div class="amount inline-block w-28">{{ rate }} CAD</div>
                 <span class="purpose">Real exchange rate</span>
               </div>
             </div>
