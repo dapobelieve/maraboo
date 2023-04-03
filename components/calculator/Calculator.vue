@@ -85,7 +85,7 @@
                   ></span>
                 </div>
                 <div class="amount inline-block w-28">
-                  {{ _2dp(results.mobile_fee) }} CAD
+                  {{ _2dp(results.mobile_fee) || _2dp(results.debit_fee) }} CAD
                 </div>
                 <span class="purpose">Mobile money fee</span>
               </div>
@@ -147,7 +147,7 @@
           <div class="text-slate-400 mb-4">2. Your recipient gets:</div>
           <div class="relative mb-4 flex items-center origin">
             <input
-              v-model="form.to_amount"
+              v-model="form.receive_amount"
               class="h-10 shadow-sm focus:outline-none w-full px-4 py-6 rounded bg-white"
               type="number"
             />
@@ -219,6 +219,8 @@ export default {
         cash_fee: 0,
         mobile_fee: 0,
         our_fee: 0,
+        debit_fee: 0,
+        visa_fee: 0,
         total_fees: 0,
         xof_amount: 0,
       },
@@ -242,7 +244,6 @@ export default {
   },
   methods: {
     _2dp(_number) {
-      console.log(_number);
       return Number(_number.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]);
     },
     calculate(data) {
@@ -258,7 +259,9 @@ export default {
           (from_currency && send_amount && method) ||
           (to_currency && receive_amount && method)
         ) {
-          this.results = await calculate(data);
+          const { xof_amount, ...rest } = await calculate(data);
+          this.form.receive_amount = this._2dp(xof_amount);
+          this.results = rest;
 
           this.loading = false;
         } else {
