@@ -1,24 +1,33 @@
 <template>
   <div class="min-w-sm max-w-lg w-full">
-    <div class="bg-gray-50 p-6 shadow-md ring ring-1 ring-opacity-5 ring-black">
-      <div class="">
+    <div
+      class="bg-gray-50 p-6 relative shadow-md ring ring-1 ring-opacity-5 ring-black"
+    >
+      <div
+        v-show="loading"
+        style="background-color: rgba(12, 10, 10, 83%)"
+        class="absolute top-0 left-0 w-full h-full bg-black rounded z-10"
+      ></div>
+      <div class="relative">
         <div
           class="w-full mb-4 flex flex-col after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-14px] after-mt-8 after:bg-slate-700"
         >
           <div class="text-slate-400 mb-4">1. You send:</div>
           <div class="relative mb-4 flex items-center origin">
             <input
-              v-model="amount"
+              v-model="form.send_amount"
               placeholder="Enter amount"
               class="h-10 shadow-sm focus:outline-none w-full px-4 py-6 rounded bg-white"
               type="number"
             />
             <select
               name="currencies"
+              v-model="form.from_currency"
               class="absolute font-sm w-[6rem] rounded-r pl-4 focus:outline-none right-0 h-full"
             >
-              <option selected value="CAD">CAD</option>
-              <option value="XOF">XOF</option>
+              <option v-for="curr in currencyKeys" :value="curr">
+                {{ curr.toUpperCase() }}
+              </option>
             </select>
             <div
               class="after:content- after:absolute after:w-[1px] after:h-[80%] after:top-[0.3rem] after:right-[6rem] after:bg-gray-400"
@@ -51,16 +60,20 @@
           <div class="flex pt-4 justify-between">
             <div>
               <small class="font-extrabold text-gray-600"
-                >Delivery method & fees</small
+                >Select {{ fromObject.method }} method:</small
               >
             </div>
             <select
               name="cars"
               class="bg-purple text-white text-sm font-bold w-40 py-1 px-2 rounded"
-              id="cars"
+              v-model="form.method"
             >
-              <option value="cash-pickup">Cash pickup</option>
-              <option value="mobile-money">Mobile Money</option>
+              <option
+                v-for="method in fromObject.methods"
+                :value="method.value"
+              >
+                {{ method.key }}
+              </option>
             </select>
           </div>
           <div class="mt-8">
@@ -72,7 +85,7 @@
                   ></span>
                 </div>
                 <div class="amount inline-block w-28">
-                  {{ mobileMoney }} CAD
+                  {{ _2dp(results.mobile_fee) }} CAD
                 </div>
                 <span class="purpose">Mobile money fee</span>
               </div>
@@ -82,7 +95,9 @@
                     class="h-4 w-4 font-bold xl inline-flex justify-center items-center rounded-sm text-white"
                   ></span>
                 </div>
-                <div class="amount inline-block w-28">{{ fee }} CAD</div>
+                <div class="amount inline-block w-28">
+                  {{ _2dp(results.our_fee) }} CAD
+                </div>
                 <span class="purpose">Our fee</span>
               </div>
               <div class="inline-flex mb-1.5 items-center">
@@ -95,7 +110,7 @@
                   >
                 </div>
                 <div class="amount inline-block w-28">
-                  {{ mobileMoney + fee }} CAD
+                  {{ _2dp(results.total_fees) }} CAD
                 </div>
                 <span class="purpose">Total fees</span>
               </div>
@@ -111,7 +126,7 @@
                 <div
                   class="amount inline-block text-black font-bold min-w-28 mr-2 w-28"
                 >
-                  {{ balance }} CAD
+                  {{ _2dp(results.cad_amount) }} CAD
                 </div>
                 <span class="purpose font-bold text-black">We convert</span>
               </div>
@@ -132,17 +147,18 @@
           <div class="text-slate-400 mb-4">2. Your recipient gets:</div>
           <div class="relative mb-4 flex items-center origin">
             <input
-              v-model="amountToSend"
-              disabled
+              v-model="form.to_amount"
               class="h-10 shadow-sm focus:outline-none w-full px-4 py-6 rounded bg-white"
               type="number"
             />
             <select
               name="currencies"
+              v-model="form.to_currency"
               class="absolute font-sm w-[6rem] rounded-r pl-4 focus:outline-none right-0 h-full"
             >
-              <option value="CAD">CAD</option>
-              <option selected value="XOF">XOF</option>
+              <option v-for="curr in currencyKeys" :value="curr">
+                {{ curr.toUpperCase() }}
+              </option>
             </select>
             <div
               class="after:content- after:absolute after:w-[1px] after:h-[80%] after:top-[0.3rem] after:right-[6rem] after:bg-gray-400"
@@ -155,18 +171,111 @@
 </template>
 
 <script>
+import debounce from "lodash.debounce";
+import { calculate } from "../../services/apiService";
+// import numbers from "../../numbers";
 export default {
   data() {
     return {
-      rate: 478.63,
-      fee: 2.12,
-      mobileMoney: 4.0,
-      amount: null,
+      currencies: {
+        CAD: {
+          method: "Delivery",
+          methods: [
+            {
+              key: "mobile money",
+              value: "mobile",
+            },
+            {
+              key: "cash pickup",
+              value: "cash",
+            },
+          ],
+        },
+        XOF: {
+          method: "Payment",
+          methods: [
+            {
+              key: "visa / mastercad",
+              value: "visa",
+            },
+            {
+              key: "Ecobank Debit",
+              value: "debit",
+            },
+          ],
+        },
+      },
+      loading: false,
+      form: {
+        from_currency: "CAD",
+        to_currency: "XOF",
+        send_amount: null,
+        method: null,
+        receive_amount: null,
+      },
+      rate: 478.87,
+      results: {
+        cad_amount: 0,
+        cash_fee: 0,
+        mobile_fee: 0,
+        our_fee: 0,
+        total_fees: 0,
+        xof_amount: 0,
+      },
     };
   },
+  filters: {},
+  watch: {
+    form: {
+      handler(val, oldVal) {
+        this.calculate(val);
+      },
+      immediate: true,
+      deep: true,
+    },
+    "form.from_currency"(newValue, oldValue) {
+      this.form.to_currency = newValue === "CAD" ? "XOF" : "CAD";
+    },
+    "form.to_currency"(newValue, oldValue) {
+      this.form.from_currency = newValue === "CAD" ? "XOF" : "CAD";
+    },
+  },
+  methods: {
+    _2dp(_number) {
+      console.log(_number);
+      return Number(_number.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]);
+    },
+    calculate(data) {
+      debounce(async (data) => {
+        const {
+          method,
+          from_currency,
+          send_amount,
+          receive_amount,
+          to_currency,
+        } = data;
+        if (
+          (from_currency && send_amount && method) ||
+          (to_currency && receive_amount && method)
+        ) {
+          this.results = await calculate(data);
+
+          this.loading = false;
+        } else {
+          // this.message = "Select ";
+        }
+      }, 500)(data);
+    },
+  },
   computed: {
+    currencyKeys() {
+      return Object.keys(this.currencies);
+    },
     balance() {
-      return this.amount ? this.amount - (this.mobileMoney + this.fee) : 0;
+      return 0;
+    },
+    fromObject() {
+      return this.currencies[this.form.from_currency];
     },
     amountToSend() {
       return Number(

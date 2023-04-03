@@ -23,3 +23,7 @@ Number.prototype.to2dp = function () {
   }
   return Number(this.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]);
 };
+
+module.exports = {
+  Number,
+};

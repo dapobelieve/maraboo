@@ -9,7 +9,7 @@
         class="accordion-item-header flex justify-between items-center w-full"
       >
         <h6 class="font-bold text-xl">
-          <h1 class="header">{{ item.question }}</h1>
+          {{ item.question }}
         </h6>
         <svg
           width="15"
