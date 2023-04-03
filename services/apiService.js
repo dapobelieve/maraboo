@@ -17,3 +17,11 @@ export async function calculate(data) {
     console.log(e);
   }
 }
+
+export async function exchangeRate() {
+  let res = await axios.get(
+    `https://www.api.dev.mara.boo/exchange_rates/exchange_rate?currency=XOF`
+  );
+
+  return res.data;
+}

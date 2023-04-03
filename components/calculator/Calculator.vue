@@ -172,8 +172,7 @@
 
 <script>
 import debounce from "lodash.debounce";
-import { calculate } from "../../services/apiService";
-// import numbers from "../../numbers";
+import { calculate, exchangeRate } from "../../services/apiService";
 export default {
   data() {
     return {
@@ -285,6 +284,10 @@ export default {
         (this.balance * this.rate).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]
       );
     },
+  },
+  async mounted() {
+    const { currency_value } = await exchangeRate();
+    this.rate = this._2dp(currency_value);
   },
 };
 </script>
