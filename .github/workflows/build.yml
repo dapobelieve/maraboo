@@ -1,0 +1,93 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    - name: Check out code
+      uses: actions/checkout@v2
+
+
+    - name: Setup Node.js Environment
+      uses: actions/setup-node@v2
+      with:
+        node-version: "18"
+        cache: "yarn"
+    - name: Get next version
+      uses: nick-invision/retry@v2
+      with:
+        timeout_minutes: 15
+        max_attempts: 2
+        # retry_on: error
+        command: |
+          yarn install
+          npx semantic-release --dry-run
+          cat ./artifacts/.VERSION >> $GITHUB_ENV
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ca-central-1
+
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+
+    - name: Build, tag and push image to ECR
+      env:
+        ECR_REGISTRY: 739329184067.dkr.ecr.ca-central-1.amazonaws.com
+        ECR_REPOSITORY: mb-landing
+        LATEST_IMAGE_TAG: latest
+        IMAGE_TAG: ${{ github.event.inputs.container_version }}
+      run: |
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$NEXT_VERSION .
+        docker tag $ECR_REGISTRY/$ECR_REPOSITORY:$NEXT_VERSION $ECR_REGISTRY/$ECR_REPOSITORY:latest
+        docker push --all-tags $ECR_REGISTRY/$ECR_REPOSITORY
+        
+
+    - name: Release
+      uses: nick-invision/retry@v2
+      with:
+        timeout_minutes: 15
+        max_attempts: 2
+        # retry_on: error
+        command: |
+          # yarn install
+          npx semantic-release
+          cat ./artifacts/.VERSION
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+    - name: Deploy to EC2
+      uses: appleboy/ssh-action@master
+      if: github.ref == 'refs/heads/main'
+      with:
+        host: ${{ secrets.SSH_STAGING_HOST }}
+        key: ${{ secrets.SSH_STAGING_PEM }}
+        proxy_username: ${{ secrets.SSH_STAGING_USERNAME }}
+        username: ${{ secrets.SSH_STAGING_PROXY_USERNAME }}
+        port: ${{ secrets.SSH_STAGING_PORT }}
+        proxy_host: ${{ secrets.SSH_STAGING_PROXY_HOST}}
+        proxy_key: ${{ secrets.SSH_STAGING_PEM }}
+        proxy_port: ${{ secrets.SSH_STAGING_PORT }}
+        script: |
+          cd /home/ubuntu/mb-landing
+          aws ecr get-login-password --region ca-central-1 | docker login --username AWS --password-stdin 739329184067.dkr.ecr.ca-central-1.amazonaws.com
+          docker-compose down --rmi all
+          docker-compose up -d
+
+# fixing

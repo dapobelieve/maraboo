@@ -1,6 +1,7 @@
 {
   "name": "maraboo-website",
   "private": true,
+  "repository": "git@github.com:Swapp-Capital/mb-website.git",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -10,10 +11,16 @@
   },
   "devDependencies": {
     "@nuxtjs/i18n": "^8.0.0-beta.10",
+    "@semantic-release/commit-analyzer": "github:semantic-release/commit-analyzer",
+    "@semantic-release/exec": "github:semantic-release/exec",
+    "@semantic-release/git": "github:semantic-release/git",
+    "@semantic-release/github": "github:semantic-release/github",
+    "@semantic-release/release-notes-generator": "github:semantic-release/release-notes-generator",
     "nuxt": "^3.3.2",
     "prettier": "^2.8.7",
     "sass": "^1.60.0",
-    "sass-loader": "^13.2.1"
+    "sass-loader": "^13.2.1",
+    "semantic-release": "^21.0.1"
   },
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.6.4",
