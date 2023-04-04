@@ -65,7 +65,7 @@
             <select
               name="cars"
               class="bg-purple text-white text-sm font-bold w-40 py-1 px-2 rounded"
-              v-model="form.method"
+              v-model="selectedCurrencyDefault"
             >
               <option
                 v-for="method in fromObject.methods"
@@ -234,6 +234,9 @@ export default {
       immediate: true,
       deep: true,
     },
+    "form.method"(newVal, oldVal) {
+      console.log(newVal, oldVal);
+    },
     "form.from_currency"(newValue, oldValue) {
       this.form.to_currency = newValue === "CAD" ? "XOF" : "CAD";
       this.form.send_amount = null;
@@ -249,6 +252,7 @@ export default {
     },
     calculate(data) {
       debounce(async (data) => {
+        console.log({ ...data });
         const {
           method,
           from_currency,
@@ -260,15 +264,15 @@ export default {
           (from_currency && send_amount && method) ||
           (to_currency && receive_amount && method)
         ) {
-          const { xof_amount, cad_amount, ...rest } = await calculate(data);
-          if (this.form.from_currency === "XOF") {
-            this.form.send_amount = this._2dp(cad_amount);
-          } else {
-            this.form.receive_amount = this._2dp(xof_amount);
-          }
-          this.results = { ...rest, cad_amount };
-
-          this.loading = false;
+          // const { xof_amount, cad_amount, ...rest } = await calculate(data);
+          // if (this.form.from_currency === "XOF") {
+          //   this.form.send_amount = this._2dp(cad_amount);
+          // } else {
+          //   this.form.receive_amount = this._2dp(xof_amount);
+          // }
+          // this.results = { ...rest, cad_amount };
+          //
+          // this.loading = false;
         } else {
           // this.message = "Select ";
         }
@@ -278,7 +282,7 @@ export default {
   computed: {
     computedReceiveAmount: {
       get() {
-        return this.form.receive_amount?.toLocaleString();
+        return this.form.receive_amount?.toLocaleString() || null;
       },
       set(value) {
         this.form.receive_amount = parseFloat(value.replace(/,/g, ""));
@@ -289,7 +293,9 @@ export default {
         return this.form.send_amount?.toLocaleString();
       },
       set(value) {
-        this.form.send_amount = parseFloat(value.replace(/,/g, ""));
+        this.form.send_amount = value
+          ? parseFloat(value.replace(/,/g, ""))
+          : null;
       },
     },
     computedMethodFee() {
@@ -309,16 +315,11 @@ export default {
     currencyKeys() {
       return Object.keys(this.currencies);
     },
-    balance() {
-      return 0;
-    },
     fromObject() {
       return this.currencies[this.form.from_currency];
     },
-    amountToSend() {
-      return Number(
-        (this.balance * this.rate).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]
-      );
+    selectedCurrencyDefault() {
+      return this.currencies[this.form.from_currency].methods[1].value;
     },
   },
   async mounted() {
