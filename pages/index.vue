@@ -22,7 +22,7 @@
           </div>
           <div class="mt-20">
             <div
-              class="font-heading text-center md:text-left text-4xl md:text-5xl leading-snug"
+              class="font-heading mb-8 text-center md:text-left text-4xl md:text-5xl leading-snug"
             >
               <h1 class="max-w-[47rem]">
                 Fast transfers in & out of WAEMU countries at the
@@ -32,6 +32,11 @@
                 >
               </h1>
             </div>
+            <p class="text-xl">
+              Did you know that a 10% reduction in transaction fees for <br />
+              sending money in & out of WAEMU country can boost the <br />
+              revenue of regional households by up to 16%?
+            </p>
           </div>
           <div class="mt-16 hidden md:block text-center md:text-left">
             <GlobalMore> Learn more on Maraboo </GlobalMore>

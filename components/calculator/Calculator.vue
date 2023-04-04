@@ -15,10 +15,9 @@
           <div class="text-slate-400 mb-4">1. You send:</div>
           <div class="relative mb-4 flex items-center origin">
             <input
-              v-model="form.send_amount"
+              v-model="computedSendAmount"
               placeholder="Enter amount"
               class="h-10 shadow-sm focus:outline-none w-full px-4 py-6 rounded bg-white"
-              type="number"
             />
             <select
               name="currencies"
@@ -87,7 +86,7 @@
                 <div class="amount inline-block w-28">
                   {{ computedMethodFee }} CAD
                 </div>
-                <span class="purpose">Mobile money fee</span>
+                <span class="purpose">{{ feeType }} fee</span>
               </div>
               <div class="inline-flex mb-1.5 items-center">
                 <div class="w-6">
@@ -147,9 +146,8 @@
           <div class="text-slate-400 mb-4">2. Your recipient gets:</div>
           <div class="relative mb-4 flex items-center origin">
             <input
-              v-model="form.receive_amount"
+              v-model="computedReceiveAmount"
               class="h-10 shadow-sm focus:outline-none w-full px-4 py-6 rounded bg-white"
-              type="number"
             />
             <select
               name="currencies"
@@ -173,6 +171,7 @@
 <script>
 import debounce from "lodash.debounce";
 import { calculate, exchangeRate } from "../../services/apiService";
+
 export default {
   data() {
     return {
@@ -205,6 +204,7 @@ export default {
         },
       },
       loading: false,
+      feeType: "Mobile Money",
       form: {
         from_currency: "CAD",
         to_currency: "XOF",
@@ -266,14 +266,36 @@ export default {
         } else {
           // this.message = "Select ";
         }
-      }, 500)(data);
+      }, 1000)(data);
     },
   },
   computed: {
+    computedReceiveAmount: {
+      get() {
+        return this.form.receive_amount?.toLocaleString();
+      },
+      set(value) {
+        this.form.receive_amount = parseFloat(value.replace(/,/g, ""));
+      },
+    },
+    computedSendAmount: {
+      get() {
+        return this.form.send_amount?.toLocaleString();
+      },
+      set(value) {
+        this.form.send_amount = parseFloat(value.replace(/,/g, ""));
+      },
+    },
     computedMethodFee() {
-      if (this.results.mobile_fee) return this._2dp(this.results.mobile_fee);
-      else if (this.results.debit_fee) return this._2dp(this.results.debit_fee);
-      else return 0;
+      if (this.results.mobile_fee) {
+        return this._2dp(this.results.mobile_fee);
+      } else if (this.results.debit_fee) {
+        this.feeType = "Debit ";
+        return this._2dp(this.results.debit_fee);
+      } else if (this.results.visa_fee) {
+        this.feeType = "Mastercard/visa ";
+        return this._2dp(this.results.visa_fee);
+      } else return 0;
     },
     currencyKeys() {
       return Object.keys(this.currencies);
