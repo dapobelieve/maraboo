@@ -85,7 +85,7 @@
                   ></span>
                 </div>
                 <div class="amount inline-block w-28">
-                  {{ _2dp(results.mobile_fee) || _2dp(results.debit_fee) }} CAD
+                  {{ _2dp(results?.mobile_fee) || _2dp(results.debit_fee) }} CAD
                 </div>
                 <span class="purpose">Mobile money fee</span>
               </div>
@@ -212,7 +212,7 @@ export default {
         method: null,
         receive_amount: null,
       },
-      rate: 478.87,
+      rate: 0.0,
       results: {
         cad_amount: 0,
         cash_fee: 0,
@@ -243,7 +243,9 @@ export default {
   },
   methods: {
     _2dp(_number) {
-      return Number(_number.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]);
+      return Number(
+        _number.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]
+      ).toLocaleString();
     },
     calculate(data) {
       debounce(async (data) => {
