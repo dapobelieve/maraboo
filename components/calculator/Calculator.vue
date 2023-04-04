@@ -236,9 +236,11 @@ export default {
     },
     "form.from_currency"(newValue, oldValue) {
       this.form.to_currency = newValue === "CAD" ? "XOF" : "CAD";
+      this.form.send_amount = null;
     },
     "form.to_currency"(newValue, oldValue) {
       this.form.from_currency = newValue === "CAD" ? "XOF" : "CAD";
+      this.form.receive_amount = null;
     },
   },
   methods: {
@@ -258,9 +260,13 @@ export default {
           (from_currency && send_amount && method) ||
           (to_currency && receive_amount && method)
         ) {
-          const { xof_amount, ...rest } = await calculate(data);
-          this.form.receive_amount = this._2dp(xof_amount);
-          this.results = rest;
+          const { xof_amount, cad_amount, ...rest } = await calculate(data);
+          if (this.form.from_currency === "XOF") {
+            this.form.send_amount = this._2dp(cad_amount);
+          } else {
+            this.form.receive_amount = this._2dp(xof_amount);
+          }
+          this.results = { ...rest, cad_amount };
 
           this.loading = false;
         } else {
@@ -288,6 +294,7 @@ export default {
     },
     computedMethodFee() {
       if (this.results.mobile_fee) {
+        this.feeType = "Mobile Money ";
         return this._2dp(this.results.mobile_fee);
       } else if (this.results.debit_fee) {
         this.feeType = "Debit ";
@@ -295,7 +302,9 @@ export default {
       } else if (this.results.visa_fee) {
         this.feeType = "Mastercard/visa ";
         return this._2dp(this.results.visa_fee);
-      } else return 0;
+      } else {
+        this.feeType = "Cash ";
+      }
     },
     currencyKeys() {
       return Object.keys(this.currencies);

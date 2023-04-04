@@ -428,20 +428,20 @@
 import { reactive } from "vue";
 const faqs = reactive([
   {
-    question: "What can I do with Mara.boo?",
+    question: "What can I do with Maraboo?",
     answers: [
       "Starting with Canada, you can send money in and out of WAEMU countries fast at the interbank rate. We’ll be adding the US and EU shortly after we launch, and then the rest of the world.",
     ],
   },
   {
-    question: "When is Mara.boo launching?",
+    question: "When is Maraboo launching?",
     answers: [
       `<p>Sometime in 2023. Wanna know more? Join our wait list to stay up to date on our launch!</p>`,
     ],
   },
   {
     question:
-      "How do I supercharge my cross-border purchasing power with Mara.boo?",
+      "How do I supercharge my cross-border purchasing power with Maraboo?",
     answers: `<ul class="list-disc p-0" style="list-style-type: disc !important;">
         <li>Download the app from your IOS and android app stores</li>
         <li>Get a quote and provide recipient details</li>
