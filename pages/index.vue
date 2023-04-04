@@ -149,7 +149,7 @@
             >
               Supercharge your cross-border purchasing power!
             </h1>
-            <p class="md text-xl md:mb-8 text-justify leading-relaxed">
+            <p class="text-xl md:mb-8 text-justify leading-relaxed">
               Starting with Canada, you can now send up to $9,900 every 24
               <br />
               hours in & out of WAEMU countries at the real exchange rate.

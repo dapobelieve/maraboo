@@ -33,7 +33,7 @@
     <section class="countries py-12 md:py-32">
       <div class="w-4/5">
         <h1 class="font-heading text-4xl md:text-5xl mb-6">Our Openings:</h1>
-        <div class="max-w-[46rem] leading-8">
+        <div class="max-w-[46rem] text-xl md:mb-8 text-justify leading-relaxed">
           <p class="mb-4">Thank you for your interest in joining our team!</p>
           <p class="mb-4">
             While we do not currently have any open positions, we are always on

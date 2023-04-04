@@ -209,7 +209,7 @@ export default {
         from_currency: "CAD",
         to_currency: "XOF",
         send_amount: null,
-        method: null,
+        method: "cash",
         receive_amount: null,
       },
       rate: 0.0,
