@@ -18,6 +18,9 @@
             <input
               v-model="computedSendAmount"
               placeholder="Enter amount"
+              type="text"
+              inputmode="decimal"
+              @keydown="keypressed"
               class="h-10 shadow-sm focus:outline-none w-full px-4 py-6 rounded bg-white"
             />
             <select
@@ -149,6 +152,7 @@
           <div class="relative mb-4 flex items-center origin">
             <input
               v-model="computedReceiveAmount"
+              @keydown="keypressed"
               class="h-10 shadow-sm focus:outline-none w-full px-4 py-6 rounded bg-white"
             />
             <select
@@ -275,6 +279,12 @@ export default {
     },
   },
   methods: {
+    keypressed(event) {
+      // allow only numeric keys and special keys like delete, backspace etc.
+      if (!/[\d\.\-]|Backspace/.test(event.key)) {
+        event.preventDefault();
+      }
+    },
     _2dp(_number) {
       return Number(_number.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]);
     },
@@ -302,22 +312,41 @@ export default {
   computed: {
     computedSendAmount: {
       get() {
-        return isNaN(this.form.send_amount)
-          ? null
-          : this.form.send_amount?.toLocaleString();
+        if (this.form.send_amount === null || this.form.send_amount === "") {
+          return "";
+        }
+        return this.form.send_amount.toLocaleString();
       },
       set(value) {
-        console.log(!isNaN(value));
-        this.form.send_amount =
-          value && !isNaN(value) ? parseFloat(value.replace(/,/g, "")) : null;
+        if (!value) {
+          this.form.send_amount = null;
+          return;
+        }
+        const numValue = parseFloat(value.replace(/[^0-9.]/g, ""));
+        if (!isNaN(numValue)) {
+          this.form.send_amount = numValue;
+        }
       },
     },
     computedReceiveAmount: {
       get() {
-        return this.form.receive_amount?.toLocaleString() || null;
+        if (
+          this.form.receive_amount === null ||
+          this.form.receive_amount === ""
+        ) {
+          return "";
+        }
+        return this.form.receive_amount.toLocaleString();
       },
       set(value) {
-        this.form.receive_amount = parseFloat(value.replace(/,/g, ""));
+        if (!value) {
+          this.form.receive_amount = null;
+          return;
+        }
+        const numValue = parseFloat(value.replace(/[^0-9.]/g, ""));
+        if (!isNaN(numValue)) {
+          this.form.receive_amount = numValue;
+        }
       },
     },
     computedMethodFee() {
