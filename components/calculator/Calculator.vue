@@ -86,7 +86,7 @@
                 <div class="amount inline-block w-28">
                   {{ computedMethodFee }} {{ form.from_currency }}
                 </div>
-                <span class="purpose">{{ feeType }} fee</span>
+                <span class="purpose">{{ feeType }}</span>
               </div>
               <div class="inline-flex mb-1.5 items-center">
                 <div class="w-6">
@@ -241,11 +241,11 @@ export default {
       } else {
         this.form.method = "cash";
       }
-      // this.form.send_amount = null;
+      this.form.send_amount = null;
     },
     "form.to_currency"(newValue, oldValue) {
       this.form.from_currency = newValue === "CAD" ? "XOF" : "CAD";
-      // this.form.receive_amount = null;
+      this.form.receive_amount = null;
     },
   },
   methods: {
@@ -301,17 +301,18 @@ export default {
       },
     },
     computedMethodFee() {
-      if (this.results.mobile_fee) {
-        this.feeType = "Mobile Money ";
+      if (this.form.method === "mobile") {
+        this.feeType = "Mobile Money fee";
         return this._2dp(this.results.mobile_fee);
-      } else if (this.results.debit_fee) {
-        this.feeType = "Debit ";
+      } else if (this.form.method === "debit") {
+        this.feeType = "Debit fee";
         return this._2dp(this.results.debit_fee);
-      } else if (this.results.visa_fee) {
-        this.feeType = "Mastercard/visa ";
+      } else if (this.form.method === "visa") {
+        this.feeType = "Mastercard/Visa fee";
         return this._2dp(this.results.visa_fee);
       } else {
-        this.feeType = "Cash ";
+        this.feeType = "Cash pickup fee ";
+        return 0;
       }
     },
     currencyKeys() {
