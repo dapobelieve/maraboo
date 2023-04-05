@@ -18,9 +18,6 @@
             <img class="" src="~/assets/images/linkedin.svg" alt="" />
           </a>
           <a class="mr-2" href="#">
-            <img class="" src="~/assets/images/facebook.svg" alt="" />
-          </a>
-          <a class="mr-2" href="#">
             <img class="" src="~/assets/images/twitter.svg" alt="" />
           </a>
           <a class="mr-2" href="#">
