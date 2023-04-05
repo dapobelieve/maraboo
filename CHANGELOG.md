@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Swapp-Capital/mb-website/compare/v1.0.0...v1.1.0) (2023-04-05)
+
+
+### Features
+
+* Merge pull request [#1](https://github.com/Swapp-Capital/mb-website/issues/1) from Swapp-Capital/develop ([591b995](https://github.com/Swapp-Capital/mb-website/commit/591b9955df73fa85413cbac3b2ae8e7d52f9a96c))
+
 # 1.0.0 (2023-04-04)
 
 
