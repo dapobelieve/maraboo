@@ -320,11 +320,14 @@ export default {
       this.results = { ...rest, cad_amount };
     },
     async input2Change(val) {
-      const { cad_amount } = await this.doConversion(
-        this.form.to_currency,
+      const res = await this.doConversion(
+        this.form.from_currency,
+        undefined,
         val
       );
+      const { cad_amount, ...rest } = res;
       this.form.send_amount = cad_amount;
+      this.results = { ...rest, cad_amount };
     },
     async doConversion(from_currency, send_amount, receive_amount) {
       return await calculate({
@@ -387,7 +390,9 @@ export default {
         return this._2dp(this.results.visa_fee);
       } else {
         this.feeType = "Cash pickup fee ";
-        return 0;
+        return this.results.mobile_fee
+          ? this._2dp(this.results.mobile_fee)
+          : this._2dp(this.results.cash_fee);
       }
     },
     currencyKeys() {
