@@ -13,7 +13,7 @@
           class="w-full mb-4 flex flex-col after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-14px] after-mt-8 after:bg-slate-700"
         >
           <div class="text-slate-400 mb-4">1. You send:</div>
-          {{ apiCalling }}
+          <!--          {{ apiCalling }}-->
           <div class="relative mb-4 flex items-center origin">
             <input
               v-model="computedSendAmount"
@@ -230,28 +230,35 @@ export default {
   },
   watch: {
     "form.send_amount": {
-      handler: debounce(async function (newVal, oldVal) {
+      handler: async function (newVal, oldVal) {
         if (!this.apiCalling) {
-          this.apiCallinging = true;
+          this.apiCalling = true;
           this.input1Change(newVal)
             .then(() => {
-              this.apiCalling = false;
+              // this.apiCalling = false;
             })
-            .catch();
+            .catch()
+            .finally(() => {
+              this.apiCalling = false;
+            });
         }
-      }, 500),
+      },
     },
     "form.receive_amount": {
-      handler: debounce(async function (newVal, oldVal) {
+      handler: async function (newVal, oldVal) {
         if (!this.apiCalling) {
+          // this.form.method = "debit";
           this.apiCalling = true;
           this.input2Change(newVal)
             .then(() => {
-              this.apiCalling = false;
+              // this.apiCalling = false;
             })
-            .catch();
+            .catch()
+            .finally(() => {
+              this.apiCalling = false;
+            });
         }
-      }, 500),
+      },
     },
     "form.from_currency"(newValue, oldValue) {
       this.form.to_currency = newValue === "CAD" ? "XOF" : "CAD";
@@ -272,34 +279,16 @@ export default {
       return Number(_number.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]);
     },
     async input1Change(val) {
-      const { xof_amount } = await this.doConversion(
-        this.form.from_currency,
-        val
-      );
-
+      const res = await this.doConversion(this.form.from_currency, val);
+      const { xof_amount } = res;
       this.form.receive_amount = xof_amount;
-
-      // this.apiCalling = false;
     },
     async input2Change(val) {
-      console.log("calling input2", this.apiCalling);
-      if (this.apiCalling) {
-        console.log("still calling input...");
-        return;
-      }
-
-      // this.apiCalling = true;
-      console.log("calling input2 conversion");
-      // let res = await this.doConversion(
-      //   undefined,
-      //   val,
-      //   this.form.receive_amount
-      // );
-      //
-      // console.log(res);
-      // this.form.receive_amount = xof_amount;
-
-      // this.apiCalling = false;
+      const { cad_amount } = await this.doConversion(
+        this.form.to_currency,
+        val
+      );
+      this.form.send_amount = cad_amount;
     },
     async doConversion(from_currency, send_amount, receive_amount) {
       return await calculate({
@@ -313,12 +302,14 @@ export default {
   computed: {
     computedSendAmount: {
       get() {
-        return this.form.send_amount?.toLocaleString();
+        return isNaN(this.form.send_amount)
+          ? null
+          : this.form.send_amount?.toLocaleString();
       },
       set(value) {
-        this.form.send_amount = value
-          ? parseFloat(value.replace(/,/g, ""))
-          : null;
+        console.log(!isNaN(value));
+        this.form.send_amount =
+          value && !isNaN(value) ? parseFloat(value.replace(/,/g, "")) : null;
       },
     },
     computedReceiveAmount: {
