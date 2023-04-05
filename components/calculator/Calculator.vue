@@ -235,6 +235,7 @@ export default {
     "form.method": {
       handler: async function (newVal) {
         if (this.form.send_amount) {
+          this.apiCalling = true;
           this.input1Change(this.form.send_amount)
             .then(() => {})
             .catch()
