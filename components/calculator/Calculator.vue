@@ -13,7 +13,6 @@
           class="w-full mb-4 flex flex-col after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-14px] after-mt-8 after:bg-slate-700"
         >
           <div class="text-slate-400 mb-4">1. You send:</div>
-          <!--          {{ apiCalling }}-->
           <div class="relative mb-4 flex items-center origin">
             <input
               v-model="computedSendAmount"
@@ -238,9 +237,7 @@ export default {
         if (!this.apiCalling) {
           this.apiCalling = true;
           this.input1Change(newVal)
-            .then(() => {
-              // this.apiCalling = false;
-            })
+            .then(() => {})
             .catch()
             .finally(() => {
               this.apiCalling = false;
@@ -254,9 +251,7 @@ export default {
           // this.form.method = "debit";
           this.apiCalling = true;
           this.input2Change(newVal)
-            .then(() => {
-              // this.apiCalling = false;
-            })
+            .then(() => {})
             .catch()
             .finally(() => {
               this.apiCalling = false;
