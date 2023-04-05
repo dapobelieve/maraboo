@@ -280,7 +280,6 @@ export default {
   },
   methods: {
     keypressed(event) {
-      // allow only numeric keys and special keys like delete, backspace etc.
       if (!/[\d\.\-]|Backspace/.test(event.key)) {
         event.preventDefault();
       }
@@ -291,7 +290,11 @@ export default {
     async input1Change(val) {
       const res = await this.doConversion(this.form.from_currency, val);
       const { xof_amount, cad_amount, ...rest } = res;
-      this.form.receive_amount = xof_amount;
+      if (this.form.from_currency === "XOF") {
+        this.form.receive_amount = cad_amount;
+      } else {
+        this.form.receive_amount = xof_amount;
+      }
       this.results = { ...rest, cad_amount };
     },
     async input2Change(val) {
