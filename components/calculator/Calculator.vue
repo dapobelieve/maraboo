@@ -13,6 +13,7 @@
           class="w-full mb-4 flex flex-col after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-14px] after-mt-8 after:bg-slate-700"
         >
           <div class="text-slate-400 mb-4">1. You send:</div>
+          {{ apiCalling }}
           <div class="relative mb-4 flex items-center origin">
             <input
               v-model="computedSendAmount"
@@ -224,15 +225,33 @@ export default {
         total_fees: 0,
         xof_amount: 0,
       },
+      apiCalling: false,
     };
   },
   watch: {
-    form: {
-      handler(val, oldVal) {
-        // this.calculate(val);
-      },
-      immediate: true,
-      deep: true,
+    "form.send_amount": {
+      handler: debounce(async function (newVal, oldVal) {
+        if (!this.apiCalling) {
+          this.apiCallinging = true;
+          this.input1Change(newVal)
+            .then(() => {
+              this.apiCalling = false;
+            })
+            .catch();
+        }
+      }, 500),
+    },
+    "form.receive_amount": {
+      handler: debounce(async function (newVal, oldVal) {
+        if (!this.apiCalling) {
+          this.apiCalling = true;
+          this.input2Change(newVal)
+            .then(() => {
+              this.apiCalling = false;
+            })
+            .catch();
+        }
+      }, 500),
     },
     "form.from_currency"(newValue, oldValue) {
       this.form.to_currency = newValue === "CAD" ? "XOF" : "CAD";
@@ -252,33 +271,43 @@ export default {
     _2dp(_number) {
       return Number(_number.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]);
     },
-    calculate(data) {
-      debounce(async (data) => {
-        console.log({ ...data });
-        const {
-          method,
-          from_currency,
-          send_amount,
-          receive_amount,
-          to_currency,
-        } = data;
-        if (
-          (from_currency && send_amount && method) ||
-          (to_currency && receive_amount && method)
-        ) {
-          // const { xof_amount, cad_amount, ...rest } = await calculate(data);
-          // if (this.form.from_currency === "XOF") {
-          //   this.form.send_amount = this._2dp(cad_amount);
-          // } else {
-          //   this.form.receive_amount = this._2dp(xof_amount);
-          // }
-          // this.results = { ...rest, cad_amount };
-          //
-          // this.loading = false;
-        } else {
-          // this.message = "Select ";
-        }
-      }, 1000)(data);
+    async input1Change(val) {
+      const { xof_amount } = await this.doConversion(
+        this.form.from_currency,
+        val
+      );
+
+      this.form.receive_amount = xof_amount;
+
+      // this.apiCalling = false;
+    },
+    async input2Change(val) {
+      console.log("calling input2", this.apiCalling);
+      if (this.apiCalling) {
+        console.log("still calling input...");
+        return;
+      }
+
+      // this.apiCalling = true;
+      console.log("calling input2 conversion");
+      // let res = await this.doConversion(
+      //   undefined,
+      //   val,
+      //   this.form.receive_amount
+      // );
+      //
+      // console.log(res);
+      // this.form.receive_amount = xof_amount;
+
+      // this.apiCalling = false;
+    },
+    async doConversion(from_currency, send_amount, receive_amount) {
+      return await calculate({
+        method: this.form.method,
+        from_currency,
+        send_amount,
+        receive_amount,
+      });
     },
   },
   computed: {
