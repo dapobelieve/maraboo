@@ -65,10 +65,10 @@
             <select
               name="cars"
               class="bg-purple text-white text-sm font-bold w-40 py-1 px-2 rounded"
-              v-model="selectedCurrencyDefault"
+              v-model="form.method"
             >
               <option
-                v-for="method in fromObject.methods"
+                v-for="(method, index) in fromObject.methods"
                 :value="method.value"
               >
                 {{ method.key }}
@@ -84,7 +84,7 @@
                   ></span>
                 </div>
                 <div class="amount inline-block w-28">
-                  {{ computedMethodFee }} CAD
+                  {{ computedMethodFee }} {{ form.from_currency }}
                 </div>
                 <span class="purpose">{{ feeType }} fee</span>
               </div>
@@ -95,7 +95,7 @@
                   ></span>
                 </div>
                 <div class="amount inline-block w-28">
-                  {{ _2dp(results.our_fee) }} CAD
+                  {{ _2dp(results.our_fee) }} {{ form.from_currency }}
                 </div>
                 <span class="purpose">Our fee</span>
               </div>
@@ -109,7 +109,7 @@
                   >
                 </div>
                 <div class="amount inline-block w-28">
-                  {{ _2dp(results.total_fees) }} CAD
+                  {{ _2dp(results.total_fees) }} {{ form.from_currency }}
                 </div>
                 <span class="purpose">Total fees</span>
               </div>
@@ -123,9 +123,9 @@
                   >
                 </div>
                 <div
-                  class="amount inline-block text-black font-bold min-w-28 mr-2 w-28"
+                  class="amount inline-block text-black font-bold min-w-28 w-28"
                 >
-                  {{ _2dp(results.cad_amount) }} CAD
+                  {{ _2dp(results.cad_amount) }} {{ form.from_currency }}
                 </div>
                 <span class="purpose font-bold text-black">We convert</span>
               </div>
@@ -133,8 +133,9 @@
                 <div class="w-6">
                   <span
                     class="bg-purple h-4 w-4 pb-0.5 font-bold inline-flex justify-center items-center rounded-sm text-white"
-                    >x</span
                   >
+                    {{ form.from_currency === "CAD" ? "x" : "÷" }}
+                  </span>
                 </div>
                 <div class="amount inline-block w-28">{{ rate }} CAD</div>
                 <span class="purpose">Real exchange rate</span>
@@ -225,25 +226,26 @@ export default {
       },
     };
   },
-  filters: {},
   watch: {
     form: {
       handler(val, oldVal) {
-        this.calculate(val);
+        // this.calculate(val);
       },
       immediate: true,
       deep: true,
     },
-    "form.method"(newVal, oldVal) {
-      console.log(newVal, oldVal);
-    },
     "form.from_currency"(newValue, oldValue) {
       this.form.to_currency = newValue === "CAD" ? "XOF" : "CAD";
-      this.form.send_amount = null;
+      if (newValue === "XOF") {
+        this.form.method = "debit";
+      } else {
+        this.form.method = "cash";
+      }
+      // this.form.send_amount = null;
     },
     "form.to_currency"(newValue, oldValue) {
       this.form.from_currency = newValue === "CAD" ? "XOF" : "CAD";
-      this.form.receive_amount = null;
+      // this.form.receive_amount = null;
     },
   },
   methods: {
@@ -280,14 +282,6 @@ export default {
     },
   },
   computed: {
-    computedReceiveAmount: {
-      get() {
-        return this.form.receive_amount?.toLocaleString() || null;
-      },
-      set(value) {
-        this.form.receive_amount = parseFloat(value.replace(/,/g, ""));
-      },
-    },
     computedSendAmount: {
       get() {
         return this.form.send_amount?.toLocaleString();
@@ -296,6 +290,14 @@ export default {
         this.form.send_amount = value
           ? parseFloat(value.replace(/,/g, ""))
           : null;
+      },
+    },
+    computedReceiveAmount: {
+      get() {
+        return this.form.receive_amount?.toLocaleString() || null;
+      },
+      set(value) {
+        this.form.receive_amount = parseFloat(value.replace(/,/g, ""));
       },
     },
     computedMethodFee() {
@@ -317,9 +319,6 @@ export default {
     },
     fromObject() {
       return this.currencies[this.form.from_currency];
-    },
-    selectedCurrencyDefault() {
-      return this.currencies[this.form.from_currency].methods[1].value;
     },
   },
   async mounted() {
