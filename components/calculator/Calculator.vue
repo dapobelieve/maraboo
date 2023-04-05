@@ -232,6 +232,18 @@ export default {
     };
   },
   watch: {
+    "form.method": {
+      handler: async function (newVal) {
+        if (this.form.send_amount) {
+          this.input1Change(this.form.send_amount)
+            .then(() => {})
+            .catch()
+            .finally(() => {
+              this.apiCalling = false;
+            });
+        }
+      },
+    },
     "form.send_amount": {
       handler: async function (newVal, oldVal) {
         if (!this.apiCalling) {
@@ -262,18 +274,32 @@ export default {
     "form.from_currency"(newValue, oldValue) {
       this.form.to_currency = newValue === "CAD" ? "XOF" : "CAD";
       if (newValue === "XOF") {
-        this.form.method = "debit";
+        this.form.method = "visa";
       } else {
         this.form.method = "cash";
       }
       this.form.send_amount = null;
+      this.resetResults();
     },
     "form.to_currency"(newValue, oldValue) {
       this.form.from_currency = newValue === "CAD" ? "XOF" : "CAD";
       this.form.receive_amount = null;
+      this.resetResults();
     },
   },
   methods: {
+    resetResults() {
+      this.results = {
+        cad_amount: 0,
+        cash_fee: 0,
+        mobile_fee: 0,
+        our_fee: 0,
+        debit_fee: 0,
+        visa_fee: 0,
+        total_fees: 0,
+        xof_amount: 0,
+      };
+    },
     keypressed(event) {
       if (!/[\d\.\-]|Backspace/.test(event.key)) {
         event.preventDefault();
