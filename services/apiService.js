@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function calculate(data) {
   try {
-    const { method, from_currency, send_amount, receive_amount } = data;
+    console.log({ ...data });
     let res = await axios.get(
       `https://www.api.dev.mara.boo/calculator/transaction_calculator`,
       {

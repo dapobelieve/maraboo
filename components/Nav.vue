@@ -53,27 +53,27 @@
           >
             <NuxtLink
               to="/about"
-              class="px-6 hover:bg-gray-50 py-6 rounded-xl flex items-center text-black"
+              class="px-6 hover:bg-gray-50 py-6 flex items-center text-black"
             >
               <img class="h-4 mr-6" src="~/assets/images/about.svg" alt="" />
               <span class="text-md font-medium">About us</span>
             </NuxtLink>
             <div
-              class="px-6 py-6 rounded-xl hover:bg-gray-50 flex items-center text-black"
+              class="px-6 py-6 hover:bg-gray-50 flex items-center text-black"
             >
               <img class="h-6 mr-6" src="~/assets/images/contact.svg" alt="" />
               <a href="#" class="text-md font-medium">Contact Us</a>
             </div>
             <NuxtLink
               to="/careers"
-              class="px-6 py-6 rounded-xl hover:bg-gray-50 flex items-center text-black"
+              class="px-6 py-6 hover:bg-gray-50 flex items-center text-black"
             >
               <img class="h-5 mr-6" src="~/assets/images/careers.svg" alt="" />
               <span class="text-md font-medium">Careers</span>
             </NuxtLink>
             <NuxtLink
               to="/legal"
-              class="px-6 hover:bg-gray-50 py-6 rounded-xl flex items-center text-black"
+              class="px-6 hover:bg-gray-50 py-6 flex items-center text-black"
             >
               <img class="h-6 mr-6" src="~/assets/images/legal.svg" alt="" />
               <span class="text-md font-medium">Legal</span>

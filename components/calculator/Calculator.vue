@@ -17,6 +17,9 @@
             <input
               v-model="computedSendAmount"
               placeholder="Enter amount"
+              type="text"
+              inputmode="decimal"
+              @keydown="keypressed"
               class="h-10 shadow-sm focus:outline-none w-full px-4 py-6 rounded bg-white"
             />
             <select
@@ -65,10 +68,10 @@
             <select
               name="cars"
               class="bg-purple text-white text-sm font-bold w-40 py-1 px-2 rounded"
-              v-model="selectedCurrencyDefault"
+              v-model="form.method"
             >
               <option
-                v-for="method in fromObject.methods"
+                v-for="(method, index) in fromObject.methods"
                 :value="method.value"
               >
                 {{ method.key }}
@@ -84,9 +87,9 @@
                   ></span>
                 </div>
                 <div class="amount inline-block w-28">
-                  {{ computedMethodFee }} CAD
+                  {{ computedMethodFee }} {{ form.from_currency }}
                 </div>
-                <span class="purpose">{{ feeType }} fee</span>
+                <span class="purpose">{{ feeType }}</span>
               </div>
               <div class="inline-flex mb-1.5 items-center">
                 <div class="w-6">
@@ -95,7 +98,7 @@
                   ></span>
                 </div>
                 <div class="amount inline-block w-28">
-                  {{ _2dp(results.our_fee) }} CAD
+                  {{ _2dp(results.our_fee) }} {{ form.from_currency }}
                 </div>
                 <span class="purpose">Our fee</span>
               </div>
@@ -109,7 +112,7 @@
                   >
                 </div>
                 <div class="amount inline-block w-28">
-                  {{ _2dp(results.total_fees) }} CAD
+                  {{ _2dp(results.total_fees) }} {{ form.from_currency }}
                 </div>
                 <span class="purpose">Total fees</span>
               </div>
@@ -123,9 +126,9 @@
                   >
                 </div>
                 <div
-                  class="amount inline-block text-black font-bold min-w-28 mr-2 w-28"
+                  class="amount inline-block text-black font-bold min-w-28 w-28"
                 >
-                  {{ _2dp(results.cad_amount) }} CAD
+                  {{ _2dp(results.cad_amount) }} {{ form.from_currency }}
                 </div>
                 <span class="purpose font-bold text-black">We convert</span>
               </div>
@@ -133,8 +136,9 @@
                 <div class="w-6">
                   <span
                     class="bg-purple h-4 w-4 pb-0.5 font-bold inline-flex justify-center items-center rounded-sm text-white"
-                    >x</span
                   >
+                    {{ form.from_currency === "CAD" ? "x" : "÷" }}
+                  </span>
                 </div>
                 <div class="amount inline-block w-28">{{ rate }} CAD</div>
                 <span class="purpose">Real exchange rate</span>
@@ -147,6 +151,7 @@
           <div class="relative mb-4 flex items-center origin">
             <input
               v-model="computedReceiveAmount"
+              @keydown="keypressed"
               class="h-10 shadow-sm focus:outline-none w-full px-4 py-6 rounded bg-white"
             />
             <select
@@ -223,93 +228,166 @@ export default {
         total_fees: 0,
         xof_amount: 0,
       },
+      apiCalling: false,
     };
   },
-  filters: {},
   watch: {
-    form: {
-      handler(val, oldVal) {
-        this.calculate(val);
+    "form.method": {
+      handler: async function (newVal) {
+        if (this.form.send_amount) {
+          this.apiCalling = true;
+          this.input1Change(this.form.send_amount)
+            .then(() => {})
+            .catch()
+            .finally(() => {
+              this.apiCalling = false;
+            });
+        }
       },
-      immediate: true,
-      deep: true,
     },
-    "form.method"(newVal, oldVal) {
-      console.log(newVal, oldVal);
+    "form.send_amount": {
+      handler: async function (newVal, oldVal) {
+        if (!this.apiCalling) {
+          this.apiCalling = true;
+          this.input1Change(newVal)
+            .then(() => {})
+            .catch()
+            .finally(() => {
+              this.apiCalling = false;
+            });
+        }
+      },
+    },
+    "form.receive_amount": {
+      handler: async function (newVal, oldVal) {
+        if (!this.apiCalling) {
+          // this.form.method = "debit";
+          this.apiCalling = true;
+          this.input2Change(newVal)
+            .then(() => {})
+            .catch()
+            .finally(() => {
+              this.apiCalling = false;
+            });
+        }
+      },
     },
     "form.from_currency"(newValue, oldValue) {
       this.form.to_currency = newValue === "CAD" ? "XOF" : "CAD";
+      if (newValue === "XOF") {
+        this.form.method = "visa";
+      } else {
+        this.form.method = "cash";
+      }
       this.form.send_amount = null;
+      this.resetResults();
     },
     "form.to_currency"(newValue, oldValue) {
       this.form.from_currency = newValue === "CAD" ? "XOF" : "CAD";
       this.form.receive_amount = null;
+      this.resetResults();
     },
   },
   methods: {
+    resetResults() {
+      this.results = {
+        cad_amount: 0,
+        cash_fee: 0,
+        mobile_fee: 0,
+        our_fee: 0,
+        debit_fee: 0,
+        visa_fee: 0,
+        total_fees: 0,
+        xof_amount: 0,
+      };
+    },
+    keypressed(event) {
+      if (!/[\d\.\-]|Backspace/.test(event.key)) {
+        event.preventDefault();
+      }
+    },
     _2dp(_number) {
       return Number(_number.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]);
     },
-    calculate(data) {
-      debounce(async (data) => {
-        console.log({ ...data });
-        const {
-          method,
-          from_currency,
-          send_amount,
-          receive_amount,
-          to_currency,
-        } = data;
-        if (
-          (from_currency && send_amount && method) ||
-          (to_currency && receive_amount && method)
-        ) {
-          // const { xof_amount, cad_amount, ...rest } = await calculate(data);
-          // if (this.form.from_currency === "XOF") {
-          //   this.form.send_amount = this._2dp(cad_amount);
-          // } else {
-          //   this.form.receive_amount = this._2dp(xof_amount);
-          // }
-          // this.results = { ...rest, cad_amount };
-          //
-          // this.loading = false;
-        } else {
-          // this.message = "Select ";
-        }
-      }, 1000)(data);
+    async input1Change(val) {
+      const res = await this.doConversion(this.form.from_currency, val);
+      const { xof_amount, cad_amount, ...rest } = res;
+      if (this.form.from_currency === "XOF") {
+        this.form.receive_amount = cad_amount;
+      } else {
+        this.form.receive_amount = xof_amount;
+      }
+      this.results = { ...rest, cad_amount };
+    },
+    async input2Change(val) {
+      const { cad_amount } = await this.doConversion(
+        this.form.to_currency,
+        val
+      );
+      this.form.send_amount = cad_amount;
+    },
+    async doConversion(from_currency, send_amount, receive_amount) {
+      return await calculate({
+        method: this.form.method,
+        from_currency,
+        send_amount,
+        receive_amount,
+      });
     },
   },
   computed: {
-    computedReceiveAmount: {
-      get() {
-        return this.form.receive_amount?.toLocaleString() || null;
-      },
-      set(value) {
-        this.form.receive_amount = parseFloat(value.replace(/,/g, ""));
-      },
-    },
     computedSendAmount: {
       get() {
-        return this.form.send_amount?.toLocaleString();
+        if (this.form.send_amount === null || this.form.send_amount === "") {
+          return "";
+        }
+        return this.form.send_amount.toLocaleString();
       },
       set(value) {
-        this.form.send_amount = value
-          ? parseFloat(value.replace(/,/g, ""))
-          : null;
+        if (!value) {
+          this.form.send_amount = null;
+          return;
+        }
+        const numValue = parseFloat(value.replace(/[^0-9.]/g, ""));
+        if (!isNaN(numValue)) {
+          this.form.send_amount = numValue;
+        }
+      },
+    },
+    computedReceiveAmount: {
+      get() {
+        if (
+          this.form.receive_amount === null ||
+          this.form.receive_amount === ""
+        ) {
+          return "";
+        }
+        return this.form.receive_amount.toLocaleString();
+      },
+      set(value) {
+        if (!value) {
+          this.form.receive_amount = null;
+          return;
+        }
+        const numValue = parseFloat(value.replace(/[^0-9.]/g, ""));
+        if (!isNaN(numValue)) {
+          this.form.receive_amount = numValue;
+        }
       },
     },
     computedMethodFee() {
-      if (this.results.mobile_fee) {
-        this.feeType = "Mobile Money ";
+      if (this.form.method === "mobile") {
+        this.feeType = "Mobile Money fee";
         return this._2dp(this.results.mobile_fee);
-      } else if (this.results.debit_fee) {
-        this.feeType = "Debit ";
+      } else if (this.form.method === "debit") {
+        this.feeType = "Debit fee";
         return this._2dp(this.results.debit_fee);
-      } else if (this.results.visa_fee) {
-        this.feeType = "Mastercard/visa ";
+      } else if (this.form.method === "visa") {
+        this.feeType = "Mastercard/Visa fee";
         return this._2dp(this.results.visa_fee);
       } else {
-        this.feeType = "Cash ";
+        this.feeType = "Cash pickup fee ";
+        return 0;
       }
     },
     currencyKeys() {
@@ -317,9 +395,6 @@ export default {
     },
     fromObject() {
       return this.currencies[this.form.from_currency];
-    },
-    selectedCurrencyDefault() {
-      return this.currencies[this.form.from_currency].methods[1].value;
     },
   },
   async mounted() {

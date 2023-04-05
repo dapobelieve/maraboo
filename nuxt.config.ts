@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: "Welcome to MaraBoo",
+      title: "Welcome to Maraboo",
       meta: [
         {
           name: "viewport",
