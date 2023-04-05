@@ -290,8 +290,9 @@ export default {
     },
     async input1Change(val) {
       const res = await this.doConversion(this.form.from_currency, val);
-      const { xof_amount } = res;
+      const { xof_amount, cad_amount, ...rest } = res;
       this.form.receive_amount = xof_amount;
+      this.results = { ...rest, cad_amount };
     },
     async input2Change(val) {
       const { cad_amount } = await this.doConversion(
