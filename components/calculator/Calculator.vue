@@ -246,7 +246,7 @@ export default {
       },
     },
     "form.send_amount": {
-      handler: async function (newVal, oldVal) {
+      handler: function (newVal, oldVal) {
         if (!this.apiCalling) {
           this.apiCalling = true;
           this.input1Change(newVal)
