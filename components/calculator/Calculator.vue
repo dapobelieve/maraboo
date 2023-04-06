@@ -360,8 +360,6 @@ export default {
     _2dp(_number) {
       return Number(_number.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]);
     },
-    async sendHandler(val) {},
-    async receiveHandler(val) {},
     async doConversion(from_currency, send_amount, receive_amount) {
       return await calculate({
         method: this.form.method,
