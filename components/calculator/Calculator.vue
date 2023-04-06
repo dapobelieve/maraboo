@@ -247,6 +247,10 @@ export default {
     },
     "form.send_amount": {
       handler: function (newVal, oldVal) {
+        if (newVal === null) {
+          this.resetResults();
+          this.form.receive_amount = null;
+        }
         if (!this.apiCalling) {
           this.apiCalling = true;
           this.input1Change(newVal)
@@ -260,6 +264,10 @@ export default {
     },
     "form.receive_amount": {
       handler: async function (newVal, oldVal) {
+        if (newVal === null) {
+          this.resetResults();
+          this.form.send_amount = null;
+        }
         if (!this.apiCalling) {
           // this.form.method = "debit";
           this.apiCalling = true;
