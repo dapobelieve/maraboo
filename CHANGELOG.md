@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/Swapp-Capital/mb-website/compare/v1.2.0...v1.2.1) (2023-04-06)
+
+
+### Bug Fixes
+
+* resolve calculator bug ([3a8bc73](https://github.com/Swapp-Capital/mb-website/commit/3a8bc7329db7e05f642b4f1aef1edb01cc1a7fca))
+
 # [1.2.0](https://github.com/Swapp-Capital/mb-website/compare/v1.1.0...v1.2.0) (2023-04-05)
 
 
