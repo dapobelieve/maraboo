@@ -128,7 +128,7 @@
                 <div
                   class="amount inline-block text-black font-bold min-w-28 w-28"
                 >
-                  {{ _2dp(results.cad_amount - results.total_fees) }}
+                  {{ _2dp(form.send_amount - results.total_fees) }}
                   {{ form.from_currency }}
                 </div>
                 <span class="purpose font-bold text-black">We convert</span>
