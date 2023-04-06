@@ -128,7 +128,8 @@
                 <div
                   class="amount inline-block text-black font-bold min-w-28 w-28"
                 >
-                  {{ _2dp(results.cad_amount) }} {{ form.from_currency }}
+                  {{ _2dp(results.cad_amount - results.total_fees) }}
+                  {{ form.from_currency }}
                 </div>
                 <span class="purpose font-bold text-black">We convert</span>
               </div>
@@ -152,7 +153,7 @@
             <input
               v-model="computedReceiveAmount"
               @keydown="keypressed"
-              @change="cleanup"
+              @input="cleanup"
               class="h-10 shadow-sm focus:outline-none w-full px-4 py-6 rounded bg-white"
             />
             <select
@@ -284,7 +285,7 @@ export default {
     "form.from_currency"(newValue, oldValue) {
       this.form.to_currency = newValue === "CAD" ? "XOF" : "CAD";
       if (newValue === "XOF") {
-        this.form.method = "visa";
+        this.form.method = "debit";
       } else {
         this.form.method = "cash";
       }
@@ -327,7 +328,7 @@ export default {
       if (this.form.from_currency === "XOF") {
         this.form.receive_amount = cad_amount;
       } else {
-        this.form.receive_amount = xof_amount;
+        this.form.receive_amount = this._2dp(xof_amount);
       }
       this.results = { ...rest, cad_amount };
     },
@@ -338,7 +339,7 @@ export default {
         val
       );
       const { cad_amount, ...rest } = res;
-      this.form.send_amount = cad_amount;
+      this.form.send_amount = this._2dp(cad_amount);
       this.results = { ...rest, cad_amount };
     },
     async doConversion(from_currency, send_amount, receive_amount) {
