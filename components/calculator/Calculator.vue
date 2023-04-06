@@ -9,6 +9,7 @@
         class="absolute top-0 left-0 w-full h-full bg-black rounded z-10"
       ></div>
       <div class="relative">
+        {{ activeInput }}
         <div
           class="w-full mb-4 flex flex-col after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-14px] after-mt-8 after:bg-slate-700"
         >
@@ -18,7 +19,7 @@
               v-model="computedSendAmount"
               placeholder="Enter amount"
               type="text"
-              inputmode="decimal"
+              @focus="activeInput = 'send'"
               @keydown="keypressed"
               class="h-10 shadow-sm focus:outline-none w-full px-4 py-6 rounded bg-white"
             />
@@ -153,7 +154,7 @@
             <input
               v-model="computedReceiveAmount"
               @keydown="keypressed"
-              @input="cleanup"
+              @focus="activeInput = 'receive'"
               class="h-10 shadow-sm focus:outline-none w-full px-4 py-6 rounded bg-white"
             />
             <select
@@ -220,6 +221,7 @@ export default {
         receive_amount: null,
       },
       rate: 0.0,
+      activeInput: null,
       results: {
         cad_amount: 0,
         cash_fee: 0,
@@ -235,12 +237,35 @@ export default {
   },
   watch: {
     "form.method": {
-      handler: async function (newVal) {
-        if (this.form.send_amount) {
+      handler: function (newVal) {
+        const valueToSend = this.form[`${this.activeInput}_amount`];
+        if (this.activeInput === "receive") {
           this.apiCalling = true;
-          this.input1Change(this.form.send_amount)
-            .then(() => {})
-            .catch()
+          this.doConversion(this.form.from_currency, undefined, valueToSend)
+            .then((res) => {
+              const { cad_amount, xof_amount, ...rest } = res;
+              if (this.form.from_currency === "XOF") {
+                this.form.send_amount = this._2dp(xof_amount);
+              } else {
+                this.form.send_amount = this._2dp(cad_amount);
+              }
+              this.results = { ...rest, cad_amount };
+            })
+            .finally(() => {
+              this.apiCalling = false;
+            });
+        } else {
+          this.apiCalling = true;
+          this.doConversion(this.form.from_currency, valueToSend)
+            .then((res) => {
+              const { xof_amount, cad_amount, ...rest } = res;
+              if (this.form.from_currency === "XOF") {
+                this.form.receive_amount = cad_amount;
+              } else {
+                this.form.receive_amount = this._2dp(xof_amount);
+              }
+              this.results = { ...rest, cad_amount };
+            })
             .finally(() => {
               this.apiCalling = false;
             });
@@ -248,16 +273,23 @@ export default {
       },
     },
     "form.send_amount": {
-      handler: function (newVal, oldVal) {
+      handler: async function (newVal, oldVal) {
         if (newVal === null) {
           this.resetResults();
           this.form.receive_amount = null;
         }
         if (!this.apiCalling) {
           this.apiCalling = true;
-          this.input1Change(newVal)
-            .then(() => {})
-            .catch()
+          this.doConversion(this.form.from_currency, newVal)
+            .then((res) => {
+              const { xof_amount, cad_amount, ...rest } = res;
+              if (this.form.from_currency === "XOF") {
+                this.form.receive_amount = cad_amount;
+              } else {
+                this.form.receive_amount = this._2dp(xof_amount);
+              }
+              this.results = { ...rest, cad_amount };
+            })
             .finally(() => {
               this.apiCalling = false;
             });
@@ -265,17 +297,23 @@ export default {
       },
     },
     "form.receive_amount": {
-      handler: async function (newVal, oldVal) {
+      handler: function (newVal, oldVal) {
         if (newVal === null) {
           this.resetResults();
           this.form.send_amount = null;
         }
         if (!this.apiCalling) {
-          // this.form.method = "debit";
           this.apiCalling = true;
-          this.input2Change(newVal)
-            .then(() => {})
-            .catch()
+          this.doConversion(this.form.from_currency, undefined, newVal)
+            .then((res) => {
+              const { cad_amount, xof_amount, ...rest } = res;
+              if (this.form.from_currency === "XOF") {
+                this.form.send_amount = this._2dp(xof_amount);
+              } else {
+                this.form.send_amount = this._2dp(cad_amount);
+              }
+              this.results = { ...rest, cad_amount };
+            })
             .finally(() => {
               this.apiCalling = false;
             });
@@ -322,26 +360,8 @@ export default {
     _2dp(_number) {
       return Number(_number.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]);
     },
-    async input1Change(val) {
-      const res = await this.doConversion(this.form.from_currency, val);
-      const { xof_amount, cad_amount, ...rest } = res;
-      if (this.form.from_currency === "XOF") {
-        this.form.receive_amount = cad_amount;
-      } else {
-        this.form.receive_amount = this._2dp(xof_amount);
-      }
-      this.results = { ...rest, cad_amount };
-    },
-    async input2Change(val) {
-      const res = await this.doConversion(
-        this.form.from_currency,
-        undefined,
-        val
-      );
-      const { cad_amount, ...rest } = res;
-      this.form.send_amount = this._2dp(cad_amount);
-      this.results = { ...rest, cad_amount };
-    },
+    async sendHandler(val) {},
+    async receiveHandler(val) {},
     async doConversion(from_currency, send_amount, receive_amount) {
       return await calculate({
         method: this.form.method,
