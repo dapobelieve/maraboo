@@ -152,6 +152,7 @@
             <input
               v-model="computedReceiveAmount"
               @keydown="keypressed"
+              @change="cleanup"
               class="h-10 shadow-sm focus:outline-none w-full px-4 py-6 rounded bg-white"
             />
             <select
@@ -297,6 +298,9 @@ export default {
     },
   },
   methods: {
+    cleanup(e) {
+      console.log(e.target.value);
+    },
     resetResults() {
       this.results = {
         cad_amount: 0,
