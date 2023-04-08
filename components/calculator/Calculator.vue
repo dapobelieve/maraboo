@@ -9,6 +9,7 @@
         class="absolute top-0 left-0 w-full h-full bg-black rounded z-10"
       ></div>
       <div class="relative">
+        {{ activeInput }}
         <div
           class="w-full mb-4 flex flex-col after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-14px] after-mt-8 after:bg-slate-700"
         >
@@ -25,7 +26,7 @@
             <select
               name="currencies"
               v-model="form.from_currency"
-              class="absolute font-sm w-[6rem] rounded-r pl-4 focus:outline-none right-0 h-full"
+              class="absolute font-sm w-[6rem] bg-white rounded-r pl-4 focus:outline-none right-0 h-full"
             >
               <option v-for="curr in currencyKeys" :value="curr">
                 {{ curr.toUpperCase() }}
@@ -159,7 +160,7 @@
             <select
               name="currencies"
               v-model="form.to_currency"
-              class="absolute font-sm w-[6rem] rounded-r pl-4 focus:outline-none right-0 h-full"
+              class="absolute font-sm w-[6rem] bg-white rounded-r pl-4 focus:outline-none right-0 h-full"
             >
               <option v-for="curr in currencyKeys" :value="curr">
                 {{ curr.toUpperCase() }}
@@ -178,7 +179,7 @@
 <script>
 import debounce from "lodash.debounce";
 import { calculate, exchangeRate } from "../../services/apiService";
-
+const DEBOUNCE_DELAY = 500;
 export default {
   data() {
     return {
@@ -272,52 +273,56 @@ export default {
       },
     },
     "form.send_amount": {
-      handler: async function (newVal, oldVal) {
+      handler: debounce(function (newVal, oldVal) {
         if (newVal === null) {
           this.resetResults();
           this.form.receive_amount = null;
         }
-        if (!this.apiCalling) {
-          this.apiCalling = true;
-          this.doConversion(this.form.from_currency, newVal)
-            .then((res) => {
-              const { xof_amount, cad_amount, ...rest } = res;
-              if (this.form.from_currency === "XOF") {
-                this.form.receive_amount = cad_amount;
-              } else {
-                this.form.receive_amount = this._2dp(xof_amount);
-              }
-              this.results = { ...rest, cad_amount };
-            })
-            .finally(() => {
-              this.apiCalling = false;
-            });
+        if (this.activeInput === "send") {
+          if (!this.apiCalling && newVal !== oldVal) {
+            this.apiCalling = true;
+            this.doConversion(this.form.from_currency, newVal)
+              .then((res) => {
+                const { xof_amount, cad_amount, ...rest } = res;
+                if (this.form.from_currency === "XOF") {
+                  this.form.receive_amount = cad_amount;
+                } else {
+                  this.form.receive_amount = this._2dp(xof_amount);
+                }
+                this.results = { ...rest, cad_amount };
+              })
+              .finally(() => {
+                this.apiCalling = false;
+              });
+          }
         }
-      },
+      }, DEBOUNCE_DELAY),
     },
     "form.receive_amount": {
-      handler: function (newVal, oldVal) {
+      handler: debounce(function (newVal, oldVal) {
         if (newVal === null) {
           this.resetResults();
           this.form.send_amount = null;
         }
-        if (!this.apiCalling) {
-          this.apiCalling = true;
-          this.doConversion(this.form.from_currency, undefined, newVal)
-            .then((res) => {
-              const { cad_amount, xof_amount, ...rest } = res;
-              if (this.form.from_currency === "XOF") {
-                this.form.send_amount = this._2dp(xof_amount);
-              } else {
-                this.form.send_amount = this._2dp(cad_amount);
-              }
-              this.results = { ...rest, cad_amount };
-            })
-            .finally(() => {
-              this.apiCalling = false;
-            });
+        if (this.activeInput === "receive") {
+          if (!this.apiCalling && newVal !== oldVal) {
+            this.apiCalling = true;
+            this.doConversion(this.form.from_currency, undefined, newVal)
+              .then((res) => {
+                const { cad_amount, xof_amount, ...rest } = res;
+                if (this.form.from_currency === "XOF") {
+                  this.form.send_amount = this._2dp(xof_amount);
+                } else {
+                  this.form.send_amount = this._2dp(cad_amount);
+                }
+                this.results = { ...rest, cad_amount };
+              })
+              .finally(() => {
+                this.apiCalling = false;
+              });
+          }
         }
-      },
+      }, DEBOUNCE_DELAY),
     },
     "form.from_currency"(newValue, oldValue) {
       this.form.to_currency = newValue === "CAD" ? "XOF" : "CAD";
@@ -360,12 +365,14 @@ export default {
       return Number(_number.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]);
     },
     async doConversion(from_currency, send_amount, receive_amount) {
-      return await calculate({
-        method: this.form.method,
-        from_currency,
-        send_amount,
-        receive_amount,
-      });
+      if (send_amount || receive_amount) {
+        return await calculate({
+          method: this.form.method,
+          from_currency,
+          send_amount,
+          receive_amount,
+        });
+      }
     },
   },
   computed: {
