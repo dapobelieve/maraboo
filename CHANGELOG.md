@@ -1,3 +1,16 @@
+## [1.2.1](https://github.com/Swapp-Capital/mb-website/compare/v1.2.0...v1.2.1) (2023-04-08)
+
+
+### Bug Fixes
+
+* calculator update ([d12c95c](https://github.com/Swapp-Capital/mb-website/commit/d12c95c0d6cbec1058e7f2947e6dd7a545287f62))
+* remove activeInput ([e3803fa](https://github.com/Swapp-Capital/mb-website/commit/e3803fa3b47ea1c2a6d136699c2ae91c2f1d10a7))
+* remove data prop ([7de51e2](https://github.com/Swapp-Capital/mb-website/commit/7de51e2dbd1eb24b1d429db1f97dab8922abd686))
+* reset package-lock ([6b98de1](https://github.com/Swapp-Capital/mb-website/commit/6b98de1147b67907a36227b795493164432dc1cf))
+* reset package-lock ([ab3eebd](https://github.com/Swapp-Capital/mb-website/commit/ab3eebd649a389884d9f5cc9bce10c6706877f6d))
+* reset package-lock ([6aa82c7](https://github.com/Swapp-Capital/mb-website/commit/6aa82c7823d785183c0b43a55b2cbb0aab7e8c0a))
+* resolve calculator bug ([3a8bc73](https://github.com/Swapp-Capital/mb-website/commit/3a8bc7329db7e05f642b4f1aef1edb01cc1a7fca))
+
 ## [1.2.1](https://github.com/Swapp-Capital/mb-website/compare/v1.2.0...v1.2.1) (2023-04-06)
 
 
