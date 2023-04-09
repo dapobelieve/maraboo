@@ -9,7 +9,6 @@
         class="absolute top-0 left-0 w-full h-full bg-black rounded z-10"
       ></div>
       <div class="relative">
-        {{ activeInput }}
         <div
           class="w-full mb-4 flex flex-col after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-14px] after-mt-8 after:bg-slate-700"
         >
@@ -341,9 +340,6 @@ export default {
     },
   },
   methods: {
-    cleanup(e) {
-      console.log(e.target.value);
-    },
     resetResults() {
       this.results = {
         cad_amount: 0,
