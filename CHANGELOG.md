@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/Swapp-Capital/mb-website/compare/v1.3.0...v1.3.1) (2023-04-10)
+
+
+### Bug Fixes
+
+* update ci ([5c9348c](https://github.com/Swapp-Capital/mb-website/commit/5c9348ce30a2d28fe7b4614967fe81f711b5fa08))
+
 # [1.3.0](https://github.com/Swapp-Capital/mb-website/compare/v1.2.0...v1.3.0) (2023-04-09)
 
 
