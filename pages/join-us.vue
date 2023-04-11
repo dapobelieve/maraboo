@@ -140,7 +140,7 @@ let formData = reactive({
   last_name: null,
   email: null,
 });
-let modalOpen = ref(true);
+let modalOpen = ref(false);
 let loading = ref(false);
 
 // Computed Props
