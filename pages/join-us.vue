@@ -101,7 +101,29 @@
                 We'll send you an email when we launch
               </p>
             </div>
-            <div></div>
+            <div class="socials inline-flex justify-between">
+              <a class="mr-2" href="#">
+                <img class="" src="~/assets/images/white-linkedin.svg" alt="" />
+              </a>
+              <a
+                class="mr-2"
+                target="_blank"
+                href="https://twitter.com/Grandmaraboo"
+              >
+                <img class="" src="~/assets/images/white-twitter.svg" alt="" />
+              </a>
+              <a
+                class="mr-2"
+                target="_blank"
+                href="https://www.instagram.com/grand.maraboo/"
+              >
+                <img
+                  class=""
+                  src="~/assets/images/white-instagram.svg"
+                  alt=""
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -118,7 +140,7 @@ let formData = reactive({
   last_name: null,
   email: null,
 });
-let modalOpen = ref(false);
+let modalOpen = ref(true);
 let loading = ref(false);
 
 // Computed Props
