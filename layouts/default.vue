@@ -1,6 +1,6 @@
 <template>
   <div
-    class="subpixel-antialiased bg-auto bg-no-repeat bg-cover"
+    class="subpixel-antialiased bg-auto bg-no-repeat relative bg-cover"
     :style="{ backgroundImage: `url(${image})` }"
   >
     <Nav />

@@ -23,3 +23,11 @@ export async function exchangeRate() {
 
   return res.data;
 }
+
+export async function waitList(data) {
+  let res = await axios.post(`https://api.dev.mara.boo/waitlist/waitlist`, {
+    ...data,
+  });
+
+  return res.data;
+}

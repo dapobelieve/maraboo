@@ -4,7 +4,8 @@
       <div class="md:flex items-center">
         <div class="w-full mb-8 md:mb-0 md:w-2/4">
           <div class="flex md:inline-block">
-            <div
+            <NuxtLink
+              to="/join-us"
               class="px-4 shadow py-3 md:px-4 md:py-3 hover:scale-105 transition-transform duration-700 bg-white rounded md:rounded-[10px] cursor-pointer flex items-center"
             >
               <span class="font-bold text-purple lg:text-lg text-sm"
@@ -18,7 +19,7 @@
                 src="~/assets/images/arrow-right.svg"
                 alt=""
               />
-            </div>
+            </NuxtLink>
           </div>
           <div class="mt-20">
             <div

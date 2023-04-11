@@ -1,6 +1,6 @@
 <template>
   <header
-    class="bg-[url('/assets/images/bg-2.svg')] bg-cover md:py-4 bg-white relative sticky top-0 lg:px-20 z-50 lg:px-4"
+    class="bg-[url('/assets/images/bg-2.svg')] bg-cover md:py-4 bg-white relative sticky top-0 lg:px-20 z-20 lg:px-4"
   >
     <nav
       class="font-['Open_Sans'] md:container relative md:mx-auto px-2 py-4 md:py-0 select-none flex w-full justify-between"
@@ -111,9 +111,12 @@
           </div>
         </div>
         <div>
-          <button class="px-4 py-2 bg-black font-black text-white rounded-lg">
+          <NuxtLink
+            to="/join-us"
+            class="px-6 py-3 bg-black font-black text-sm text-white rounded-lg"
+          >
             Join the waitlist
-          </button>
+          </NuxtLink>
         </div>
       </div>
     </nav>
@@ -206,9 +209,13 @@
           </div>
         </div>
         <div class="mt-auto mb-10 px-8 flex justify-center">
-          <button class="bg-black text-white px-12 py-3 w-full rounded-xl">
+          <NuxtLink
+            @click="showMobileMenu = false"
+            to="/join-us"
+            class="bg-black text-white text-center px-12 py-3 w-full rounded-xl"
+          >
             Join the waitlist
-          </button>
+          </NuxtLink>
         </div>
       </div>
     </div>
