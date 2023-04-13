@@ -1,6 +1,6 @@
 <template>
   <main class="container mx-auto px-2">
-    <section class="countries py-24 md:pb-32">
+    <section class="countries py-4 pt-8 md:pt-24 md:pb-2">
       <div class="md:flex items-center">
         <div class="w-full md:w-4/5">
           <div
@@ -9,14 +9,15 @@
             <h1 class="text-purple mb-4 md:mb-10 text-2xl font-extrabold">
               Coming Soon!
             </h1>
-            <h1 class="font-heading text-4xl md:text-6xl leading-snug mb-4">
+            <h1
+              class="font-heading text-4xl text-center md:text-left md:text-6xl leading-snug mb-4"
+            >
               Get notified when we launch!
             </h1>
           </div>
         </div>
       </div>
     </section>
-
     <section class="countries py-12 md:py-32">
       <div class="w-full md:w-2/5">
         <div>
