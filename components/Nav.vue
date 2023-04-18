@@ -87,7 +87,7 @@
         </div>
       </div>
       <div class="md:flex hidden items-center cursor-pointer">
-        <div class="mr-8 relative inline-flex items-center">
+        <div class="mr-8 group relative inline-flex items-center">
           <img
             class="h-4 w-4 mr-0.5"
             src="~/assets/images/globe.svg"
@@ -99,9 +99,8 @@
             alt=""
           />
           <div
-            v-show="locale"
             role="menu"
-            class="absolute shadow-lg w-24 top-9 rounded-lg ring-opacity-5 ring-1 bg-white ring-black -right-3"
+            class="absolute hidden group-hover:block opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-1000 shadow-lg w-40 top-6 rounded-lg ring-opacity-5 ring-1 bg-white ring-black -right-3"
           >
             <div
               class="px-4 hover:bg-gray-100 py-3 rounded-xl flex items-center text-black"
