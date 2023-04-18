@@ -468,7 +468,7 @@ const faqs = reactive([
             >UN social development goal #10</a
           >
           today, by reducing the cost of sending money to Africa to an average
-          cost of 3% or less...
+          cost of 3% or less.
         </p>
         <p>
           <h class="font-bold">Sending money out of Africa</h> - We’re not only making sending money out of africa up to 3x cheaper than current best in class solutions but we’re also making transfers out of Africa fast and accessible to all by cutting away the red tape.
