@@ -103,12 +103,12 @@
             class="absolute hidden group-hover:block opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-1000 shadow-lg w-40 top-6 rounded-lg ring-opacity-5 ring-1 bg-white ring-black -right-3"
           >
             <div
-              class="px-4 hover:bg-gray-100 py-3 rounded-xl flex items-center text-black"
+              class="px-4 hover:bg-gray-100 py-3 flex items-center text-black"
             >
               <a href="#" class="text-md font-medium">English</a>
             </div>
             <div
-              class="px-4 py-3 rounded-xl hover:bg-gray-100 flex items-center text-black"
+              class="px-4 py-3 hover:bg-gray-100 flex items-center text-black"
             >
               <a href="#" class="text-md font-medium">Français</a>
             </div>
