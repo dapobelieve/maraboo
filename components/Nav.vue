@@ -62,7 +62,12 @@
               class="px-6 py-6 hover:bg-gray-50 flex items-center text-black"
             >
               <img class="h-6 mr-6" src="~/assets/images/contact.svg" alt="" />
-              <a href="#" class="text-md font-medium">Contact Us</a>
+              <a
+                @click.stop="scrollIntoView"
+                href="#contact-us"
+                class="text-md font-medium"
+                >Contact Us</a
+              >
             </div>
             <NuxtLink
               to="/careers"
@@ -194,7 +199,12 @@
               <div v-show="mobileCompany" class="absolute top-12">
                 <div @click="showMobileMenu = false" class="ml-4 flex flex-col">
                   <NuxtLink class="" to="about">About us</NuxtLink>
-                  <NuxtLink class="mt-4">Contact us</NuxtLink>
+                  <NuxtLink
+                    @click.stop="scrollIntoView"
+                    href="#contact-us"
+                    class="mt-4"
+                    >Contact us</NuxtLink
+                  >
                   <NuxtLink class="mt-4" to="careers">Careers</NuxtLink>
                   <NuxtLink class="mt-4" to="legal">Legal</NuxtLink>
                 </div>
