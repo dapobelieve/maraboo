@@ -77,7 +77,7 @@ jobs:
 
     - name: Deploy to Hetzner beta
       uses: appleboy/ssh-action@master
-      if: github.ref == 'refs/heads/master'
+      if: github.ref == 'refs/heads/main'
       with:
         host: ${{ secrets.SSH_BETA_HOST }}
         username: ${{ secrets.SSH_STAGING_USERNAME }}
