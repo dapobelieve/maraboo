@@ -117,14 +117,15 @@
   },
   "about-us": {
     "name": "À propos de Marabo",
-    "caption": "Nous aspirons à bâtir un système financier sans frontières pour connecter les ressortissants d’Afrique de l'Ouest à travers le monde.",
-    "text": "<span class='text-purple'>Présentation de Maraboo</span>, une FinTech ouest-africaine qui propose des solutions financières innovantes, responsables et inclusives qui sont conçues pour améliorer la qualité de vie des populations de cette région.",
+    "caption": " We're building borderless financial systems to connect West-Africans\n          across the globe",
+    "text": "<span class=\"text-purple\">Introducing Maraboo</span>, a West-African\n          fintech firm offering transformative financial solutions that are\n          fair, responsible, inclusive, and designed to improve the quality of\n          life of West Africans.",
     "read-more": "En savoir plus",
     "section-2": {
-      "caption": "Notre mission principale est de rendre les transferts à l’intérieur et à l’extérieur des pays de l'UEMOA <span class='text-purple'>jusqu'à 3 fois moins chers!</span>",
-      "text": "Saviez-vous qu'une réduction de 10 % des frais de transaction pour les transferts internationaux peut augmenter jusqu'à 16 % des revenus des ménages de la région ?",
-      "we-believe": "Nous pensons que les transferts de fonds doivent être rapides, peu coûteux et avoir un impact social important.",
-      "two-birds": "D'une pierre deux coups - nous appliquons le taux de change réel à toutes nos transactions afin de vous faire économiser de l'argent et de concrétiser dès aujourd'hui l'objectif de développement social des Nations Unies consistant à réduire de manière significative le coût des envois de fonds d'ici à 2030 !"
+      "caption": " Our Core mission is to make payments in & out of WAEMU countries\n              up <span class=\"text-purple\">to 3x cheaper!</span>\n              <br class=\"hidden md:block\" />",
+      "text": "Did you know that a 10% reduction in transaction fees for sending\n              money in & out of WAEMU country can boost the revenue of regional\n              households by up to 16%?",
+      "we-believe": "We believe that remittances should be fast, low cost, and have a\n              major social impact.",
+      "two": "Two birds one stone - we apply the real exchange rate on all of\n              our transactions to save you money and make the\n              <span class=\"text-purple\"> UN social development goal </span> by\n              significantly reducing remittance cost by 2030 a reality today!"
+
     }
   },
   "careers": {
