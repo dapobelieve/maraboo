@@ -10,10 +10,10 @@
 
         <div class="others flex">
           <div id="contact-us">
-            <h1 class="text-xl font-bold mb-4">Contact Us</h1>
+            <h1 class="text-xl font-bold mb-4">{{ $t("footer.contact") }}</h1>
 
             <div class="mb-3">
-              <span class="font-bold mr-3">Email:</span>
+              <span class="font-bold mr-3">{{ $t("footer.email") }}:</span>
               <a
                 href="mailto: enquiries@mara.boo?subject=Feedback&body=Hello"
                 target="_blank"
@@ -21,19 +21,19 @@
               >
             </div>
             <div class="mb-3">
-              <span class="font-bold mr-3">Phone:</span>
+              <span class="font-bold mr-3">{{ $t("footer.phone") }}:</span>
               <a href="tel:+16136178447">+16136178447</a>
             </div>
           </div>
         </div>
         <div class="others inline-flex grow-0">
           <div>
-            <h1 class="text-xl font-bold mb-4">Address</h1>
+            <h1 class="text-xl font-bold mb-4">{{ $t("footer.address") }}</h1>
             <p>186 brambling way <br />Ottawa Ontario K2J5V6.</p>
           </div>
         </div>
         <div>
-          <h1 class="text-xl font-bold mb-4">Socials</h1>
+          <h1 class="text-xl font-bold mb-4">{{ $t("footer.socials") }}</h1>
           <div class="socials mb-8 inline-flex justify-between">
             <a class="mr-2" href="#">
               <img class="" src="~/assets/images/linkedin.svg" alt="" />
@@ -57,7 +57,7 @@
       </div>
       <div class="leading-relaxed text-[#5C5C5C] mt-8 mb-5">
         <h6 class="md:hidden font-bold text-white mb-6">
-          Made in WAEMU by Africans
+          {{ $t("footer.made-by") }}
         </h6>
         <!--        <p class="mb-2">-->
         <!--          Lorem ipsum dolor sit amet consectetur. Diam turpis eu pretium ut vel-->
@@ -87,11 +87,11 @@
         <span
           class="max-w-[15rem] text-white w-full md:inline-flex flex md:items-center md:mb-0 justify-between"
         >
-          <a class="block md:mb-0">Privacy Policy</a>
-          <a>Terms of Service</a>
+          <a class="block md:mb-0">{{ $t("footer.privacy") }}</a>
+          <a>{{ $t("footer.terms") }}</a>
         </span>
         <span class="hidden md:block text-white font-bold">
-          Made in WAEMU by Africans
+          {{ $t("footer.made-by") }}
         </span>
       </div>
     </div>

@@ -128,11 +128,29 @@
 
     }
   },
+  "legal": {
+    "name": "Legal",
+    "policy": "Privacy policy and Terms & conditions",
+    "one": "Thank you for your interest in our upcoming launch.",
+    "two": "We're working hard to get everything ready and ensure that we\n            provide the best possible experience for our customers. Our legal\n            documents are currently being finalized and will be made available\n            shortly.",
+    "three": "In the meantime, we invite you to join our waitlist to be among the\n            first to know when we launch. By joining our waitlist, you'll\n            receive exclusive updates on our progress, be the first to know when\n            we launch, and receive special offers.",
+    "four": "Thank you for your patience and support. We can't wait to share our\n            product with you!"
+  },
   "careers": {
     "join": "Join Our Team!",
     "come-work": "Come work with us",
     "we": "We’re looking for great people to help us build!",
     "view": "View our openings.",
     "opening": "<div class='w-4/5'>        <h1 class='font-heading text-4xl md:text-5xl mb-6'>Our Openings:</h1>        <div class='max-w-[46rem] text-xl md:mb-8 text-justify leading-relaxed'>          <p class='mb-4'>Thank you for your interest in joining our team!</p>          <p class='mb-4'>            While we do not currently have any open positions, we are always on            the lookout for talented individuals who share our values and are            passionate about what we do.          </p>          <p class='mb-4'>            We encourage you to submit your resume and cover letter for future            consideration, as we may have opportunities that match your skills            and experience in the near future.          </p>          <p class='mb-14'>            We promise to review every application carefully and keep them on            file should a suitable opening arise. We look forward to hearing            from you and potentially working together in the future!          </p>          <h1 class='text-4xl md:text-2xl text-black font-heading mb-8'>            Add your resume and cover letter          </h1>          <p>            Upload your resume and cover letter for future consideration, as we            may have opportunities that match your skills and experience in the            near future.          </p>        </div>      </div>"
+  },
+  "footer": {
+    "contact": "Contact Us",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "socials": "Socials",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "made-by": "Made in WAEMU by Africans"
   }
 }

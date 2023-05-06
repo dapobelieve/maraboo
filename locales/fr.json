@@ -129,6 +129,14 @@
 
     }
   },
+  "legal": {
+    "name": "Mentions légales",
+    "policy": "Politique de confidentialité  Conditions d'utilisation\n",
+    "one": "Nous vous remercions de l'intérêt que vous portez à notre prochain lancement.",
+    "two": "Nous travaillons d'arrache-pied pour que tout soit prêt et que nous puissions offrir la meilleure expérience possible à nos clients. Nos documents juridiques sont en cours de finalisation et seront bientôt disponibles.",
+    "three": "En attendant, nous vous invitons à vous inscrire sur notre liste d'attente afin d'être parmi les premiers à être informés de notre lancement. En vous inscrivant sur notre liste d'attente, vous recevrez des mises à jour exclusives sur nos progrès, vous serez les premiers à savoir quand nous serons lancés et vous recevrez des offres spéciales.",
+    "four": "Nous vous remercions de votre patience et de votre soutien. Nous sommes impatients de partager notre produit avec vous!"
+  },
   "careers": {
     "join": "Rejoignez notre équipe!",
     "come-work": "Venez travailler avec nous",
@@ -137,6 +145,11 @@
     "opening": "<div class='w-4/5'><h1 class='font-heading text-4xl md:text-5xl mb-6'>Nos offres d'emploi:</h1>        <div class='max-w-[46rem] text-xl md:mb-8 text-justify leading-relaxed'>          <p class='mb-4'>Nous vous remercions de l'intérêt que vous portez à notre équipe!</p> <p class='mb-4'>Bien que nous n'ayons actuellement aucun poste à pourvoir, nous sommes toujours à la recherche de personnes talentueuses qui partagent nos valeurs et sont passionnées par ce que nous faisons.</p>          <p class='mb-4'>Nous vous encourageons à soumettre votre curriculum vitae et votre lettre de présentation pour examen futur, car nous pourrions avoir des opportunités qui correspondent à vos compétences et à votre expérience dans un proche avenir.</p><p class='mb-14'>Nous nous engageons à examiner attentivement toutes les candidatures et à les conserver dans notre base de données jusqu’à ce qu’une opportunité appropriée se présente. Nous espérons avoir de vos nouvelles et que nous travaillerons ensemble demain !</p><h1 class='text-4xl md:text-2xl text-black font-heading mb-8'>Soumettez votre CV et votre lettre de motivation.         </h1> <p>Envoyez-nous votre CV et votre lettre de motivation pour qu'ils soient pris en considération ultérieurement, car nous pourrions avoir des opportunités correspondant à vos compétences et à votre expérience dans un avenir proche          </p>        </div>      </div>"
   },
   "footer": {
+    "contact": "Contactez nous ",
+    "phone": "Téléphone",
+    "email": "E-mail",
+    "address": "Adresse",
+    "socials": "Sociales",
     "privacy": "Politique de confidentialité",
     "terms": "Conditions d'utilisation",
     "made-by": "Made in UEMOA par des Africains"
