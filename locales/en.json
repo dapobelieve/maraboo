@@ -1,0 +1,137 @@
+{
+  "home": {
+    "nav": {
+      "home": "",
+      "how-it-works": "How it works",
+      "company": {
+        "name": "Company",
+        "about-us": "About Us",
+        "contact-us": "Contact Us",
+        "careers": "Careers",
+        "legal": "Legal"
+      },
+      "wait-list": "Join the waitlist"
+    },
+    "section1": {
+      "left": {
+        "top": {
+          "left": "Coming Soon ",
+          "right": "Get notified when we launch!"
+        },
+        "center": {
+          "l1": "Fast transfers in & out of WAEMU countries at the",
+          "l2": " real exchange rate!",
+          "l3": "Did you know that a 10% reduction in transaction fees for <br />              sending money in & out of WAEMU country can boost the <br />              revenue of regional households by up to 16%?"
+        },
+        "bottom": "Learn more on Maraboo"
+      },
+      "right": {
+        "you-send": "Vous envoyez",
+        "xchg-rate": "au taux de change réel !",
+        "select-method": "Sélectionnez le mode de livraison:",
+        "receipt-gets": "Votre destinataire reçoit:"
+      }
+    },
+    "section2": {
+      "countries": "Countries we support",
+      "text": "We support 9 markets and 2 currencies to make it easier for you to\n          transact <br /> globally. We’ll be adding more markets and currencies shortly to\n          better serve your needs."
+    },
+    "section3": {
+      "super-charge": "Supercharge your cross-border purchasing power!",
+      "text": "Starting with Canada, you can now send up to $9,900 every 24\n              <br />              hours in & out of WAEMU countries at the real exchange rate.              <br />",
+      "text-2": "Additional countries will be added shortly after launch,\n              keep an eye out"
+    },
+    "section4": {
+      "convert-currency": " Convert one currency <br class=\"hidden md:block\" />\n              to another",
+      "text": "Easily transfer funds within and outside WAEMU countries in three\n              simple steps. Our services are up to 3 times more affordable than\n              the top-performing <br />\n              alternatives."
+    },
+    "section5": {
+      "we-fast": "We are really fast!",
+      "text": "Our transfers are processed from start to finish within minutes.",
+      "text-2": "Our disbursement options are:",
+      "cash": "Cash",
+      "mobile-money": "Mobile Money",
+      "bank": "Bank",
+      "how-it-works": {
+        "name": "How it works",
+        "step-1": {
+          "name": "Step 1",
+          "text": "Create an account, tell us how much you want to send, and where to."
+        },
+        "step-2": {
+          "name": "Step 2",
+          "text": "Pay for your transaction in your <br />\n                        currency of choice; i.e. XOF, CAD or <br />\n                        another currency we support"
+        },
+        "step-3": {
+          "name": "Étape 3",
+          "one": "Your recipient receives money:",
+          "xof-in": {
+            "name": "XOF in",
+            "bank-transfer": "Bank transfer (up to 48h)",
+            "instant": "Instant cash pick up"
+          },
+          "cad-in": {
+            "name": "CAD in",
+            "interface": "interface e-transfer(instant)"
+          },
+          "text": "We'll be adding more countries soon, <br />\n                        stay tuned."
+        }
+      }
+    },
+    "section6": {
+      "how-we": {
+        "name": "How we protect your <br />\n          personal data",
+        "text": "Vos informations privées sont protégées par les technologies les plus sûres conformément aux réglementations applicables."
+      }
+    },
+    "faq": [
+      {
+        "question": "What can I do with Maraboo?",
+        "answers":
+          "Starting with Canada, you can send money in and out of WAEMU countries fast at the interbank rate. We’ll be adding the US and EU shortly after we launch, and then the rest of the world."
+
+      },
+      {
+        "question": "When is Maraboo launching?",
+        "answers":
+          "<p>Sometime in 2023. Wanna know more? Join our wait list to stay up to date on our launch!</p>"
+
+      },
+      {
+        "question": "How do I supercharge my cross-border purchasing power with Maraboo?",
+        "answers": "<ul class=\"list-disc p-0\" style=\"list-style-type: disc !important;\">      <li>Download the app from your IOS and android app stores</li>      <li>Get a quote and provide recipient details</li>      <li>Perform you're one time identity verification</li>      <li>Pay for your transaction in your currency of choice</li>      <li>Instantly receive more!</li>      </ul>"
+      },
+      {
+        "question": "How much can I send per day?",
+        "answers": "<p>You can send  up to $9,900 every 24 hours in and out of any WAEMU country</p>"
+      },
+      {
+        "question": " How fast can I transfer money in & out of Africa at the interbank rate?",
+        "answers": "The great majority of transfers are completed in a few minutes"
+      },
+      {
+        "question": "How much does it cost to send a transfer?",
+        "answers": "<p class=\"mb-4\">      <h class=\"font-bold\">Sending money to Africa</h> - We’re delivering on      <a class=\"text-blue-600\" target=\"_blank\" href=\"https://www.un.org/sustainabledevelopment/inequality/\">UN social development goal #10</a>            today, by reducing the cost of sending money to Africa to an average      cost of 3% or less      </p>      <p>      <h class=\"font-bold\">Sending money out of Africa</h> - We’re not only making sending money out of africa up to 3x cheaper than current best in class solutions but we’re also making transfers out of Africa fast and accessible to all by cutting away the red tape.      </p>"
+      }
+    ]
+  },
+  "about-us": {
+    "name": "À propos de Marabo",
+    "caption": "Nous aspirons à bâtir un système financier sans frontières pour connecter les ressortissants d’Afrique de l'Ouest à travers le monde.",
+    "text": "<span class='text-purple'>Présentation de Maraboo</span>, une FinTech ouest-africaine qui propose des solutions financières innovantes, responsables et inclusives qui sont conçues pour améliorer la qualité de vie des populations de cette région.",
+    "read-more": "En savoir plus",
+    "section-2": {
+      "caption": "Notre mission principale est de rendre les transferts à l’intérieur et à l’extérieur des pays de l'UEMOA <span class='text-purple'>jusqu'à 3 fois moins chers!</span>",
+      "text": "Saviez-vous qu'une réduction de 10 % des frais de transaction pour les transferts internationaux peut augmenter jusqu'à 16 % des revenus des ménages de la région ?",
+      "we-believe": "Nous pensons que les transferts de fonds doivent être rapides, peu coûteux et avoir un impact social important.",
+      "two-birds": "D'une pierre deux coups - nous appliquons le taux de change réel à toutes nos transactions afin de vous faire économiser de l'argent et de concrétiser dès aujourd'hui l'objectif de développement social des Nations Unies consistant à réduire de manière significative le coût des envois de fonds d'ici à 2030 !"
+    }
+  },
+  "careers": {
+    "join": "Join Our Team!",
+    "come-work": "Come work with us",
+    "we": "We’re looking for great people to help us build!",
+    "view": "View our openings.",
+    "opening": "<div class='w-4/5'>        <h1 class='font-heading text-4xl md:text-5xl mb-6'>Our Openings:</h1>        <div class='max-w-[46rem] text-xl md:mb-8 text-justify leading-relaxed'>          <p class='mb-4'>Thank you for your interest in joining our team!</p>          <p class='mb-4'>            While we do not currently have any open positions, we are always on            the lookout for talented individuals who share our values and are            passionate about what we do.          </p>          <p class='mb-4'>            We encourage you to submit your resume and cover letter for future            consideration, as we may have opportunities that match your skills            and experience in the near future.          </p>          <p class='mb-14'>            We promise to review every application carefully and keep them on            file should a suitable opening arise. We look forward to hearing            from you and potentially working together in the future!          </p>          <h1 class='text-4xl md:text-2xl text-black font-heading mb-8'>            Add your resume and cover letter          </h1>          <p>            Upload your resume and cover letter for future consideration, as we            may have opportunities that match your skills and experience in the            near future.          </p>        </div>      </div>"
+  }
+}

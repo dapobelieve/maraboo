@@ -10,6 +10,7 @@
           across the globe
         </h1>
         <p class="text-center text-lg max-w-[39rem] leading-normal">
+          <!--          <span v-html="$t('about-us.text')"> </span>-->
           <span class="text-purple">Introducing Maraboo</span>, a West-African
           fintech firm offering transformative financial solutions that are
           fair, responsible, inclusive, and designed to improve the quality of
@@ -87,3 +88,4 @@
     </section>
   </main>
 </template>
+<script setup lang="ts"></script>

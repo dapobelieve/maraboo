@@ -1,3 +1,4 @@
+// @ts-ignore
 export default defineNuxtConfig({
   app: {
     head: {
@@ -52,19 +53,11 @@ export default defineNuxtConfig({
   pages: true,
   modules: ["@nuxtjs/i18n", "@nuxtjs/tailwindcss"],
   i18n: {
-    locales: ["en", "fr"],
-    defaultLocale: "en",
-    vueI18n: {
-      legacy: false,
-      locale: "en",
-      messages: {
-        en: {
-          welcome: "Welcome",
-        },
-        fr: {
-          welcome: "Bienvenue",
-        },
-      },
-    },
+    locales: [
+      { code: "en", file: "en.json" },
+      { code: "fr", file: "fr.json" },
+    ],
+    defaultLocale: "fr",
+    langDir: "locales/",
   },
 });

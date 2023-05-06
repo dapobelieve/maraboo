@@ -5,7 +5,7 @@
     <nav
       class="font-['Open_Sans'] md:container relative md:mx-auto px-2 py-4 md:py-0 select-none flex w-full justify-between"
     >
-      <NuxtLink to="/" class="flex items-center">
+      <NuxtLink :to="localePath('/')" class="flex items-center">
         <img class="h-8 md:h-10" src="~/assets/images/maraboo.svg" alt="" />
         <h1 class="font-heading text-2xl md:text-3xl mt-2 font-extrabold">
           Maraboo
@@ -33,14 +33,16 @@
         </div>
       </div>
       <div class="md:flex hidden items-center">
-        <div class="mr-12"><a href="#how-it-works"> How it works</a></div>
+        <div class="mr-12">
+          <a href="#how-it-works"> {{ $t("home.nav.how-it-works") }}</a>
+        </div>
 
         <div
           role="button"
           @click="company = !company"
           class="inline-flex group relative cursor-pointer items-center"
         >
-          <a> Company </a>
+          <a> {{ $t("home.nav.company.name") }} </a>
           <img
             class="h-2 mt-0.5 group-hover:-rotate-180 ml-2"
             src="~/assets/images/caret-down.svg"
@@ -52,11 +54,13 @@
             class="absolute hidden group-hover:block opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-1000 shadow-lg w-80 top-6 rounded-lg ring-opacity-5 ring-1 bg-white ring-black -right-3"
           >
             <NuxtLink
-              to="/about"
+              :to="localePath('/about')"
               class="px-6 hover:bg-gray-50 py-6 flex items-center text-black"
             >
               <img class="h-4 mr-6" src="~/assets/images/about.svg" alt="" />
-              <span class="text-md font-medium">About us</span>
+              <span class="text-md font-medium">{{
+                $t("home.nav.company.about-us")
+              }}</span>
             </NuxtLink>
             <div
               class="px-6 py-6 hover:bg-gray-50 flex items-center text-black"
@@ -66,7 +70,7 @@
                 @click.stop="scrollIntoView"
                 href="#contact-us"
                 class="text-md font-medium"
-                >Contact Us</a
+                >{{ $t("home.nav.company.contact-us") }}</a
               >
             </div>
             <NuxtLink
@@ -74,14 +78,18 @@
               class="px-6 py-6 hover:bg-gray-50 flex items-center text-black"
             >
               <img class="h-5 mr-6" src="~/assets/images/careers.svg" alt="" />
-              <span class="text-md font-medium">Careers</span>
+              <span class="text-md font-medium">{{
+                $t("home.nav.company.careers")
+              }}</span>
             </NuxtLink>
             <NuxtLink
               to="/legal"
               class="px-6 hover:bg-gray-50 py-6 flex items-center text-black"
             >
               <img class="h-6 mr-6" src="~/assets/images/legal.svg" alt="" />
-              <span class="text-md font-medium">Legal</span>
+              <span class="text-md font-medium">{{
+                $t("home.nav.company.legal")
+              }}</span>
             </NuxtLink>
           </div>
         </div>
@@ -105,12 +113,20 @@
             <div
               class="px-4 hover:bg-gray-100 py-3 flex items-center text-black"
             >
-              <a href="#" class="text-md font-medium">English</a>
+              <nuxt-link
+                :to="switchLocalePath('en')"
+                class="text-md w-full font-medium"
+                >English</nuxt-link
+              >
             </div>
             <div
               class="px-4 py-3 hover:bg-gray-100 flex items-center text-black"
             >
-              <a href="#" class="text-md font-medium">Français</a>
+              <nuxt-link
+                :to="switchLocalePath('fr')"
+                class="text-md w-full font-medium"
+                >Français</nuxt-link
+              >
             </div>
           </div>
         </div>
@@ -119,7 +135,7 @@
             to="/join-us"
             class="px-6 py-3 bg-black font-black text-sm text-white rounded-lg"
           >
-            Join the waitlist
+            {{ $t("home.nav.wait-list") }}
           </NuxtLink>
         </div>
       </div>
@@ -197,15 +213,21 @@
               <h6 class="text-xl hover:text-purple">Company</h6>
               <div v-show="mobileCompany" class="absolute top-12">
                 <div @click="showMobileMenu = false" class="ml-4 flex flex-col">
-                  <NuxtLink class="" to="about">About us</NuxtLink>
+                  <NuxtLink class="" to="about">{{
+                    $t("home.nav.company.about-us")
+                  }}</NuxtLink>
                   <NuxtLink
                     @click.stop="scrollIntoView"
                     href="#contact-us"
                     class="mt-4"
-                    >Contact us</NuxtLink
+                    >{{ $t("home.nav.company.contact-us") }}</NuxtLink
                   >
-                  <NuxtLink class="mt-4" to="careers">Careers</NuxtLink>
-                  <NuxtLink class="mt-4" to="legal">Legal</NuxtLink>
+                  <NuxtLink class="mt-4" to="careers">{{
+                    $t("home.nav.company.careers")
+                  }}</NuxtLink>
+                  <NuxtLink class="mt-4" to="legal">{{
+                    $t("home.nav.company.legal")
+                  }}</NuxtLink>
                 </div>
               </div>
             </div>
