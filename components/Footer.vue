@@ -8,32 +8,10 @@
           <img class="h-10" src="~/assets/images/maraboo-white.svg" alt="" />
         </div>
 
-        <div class="others flex">
-          <div id="contact-us">
-            <h1 class="text-xl font-bold mb-4">{{ $t("footer.contact") }}</h1>
-
-            <div class="mb-3">
-              <span class="font-bold mr-3">{{ $t("footer.email") }}:</span>
-              <a
-                href="mailto: enquiries@mara.boo?subject=Feedback&body=Hello"
-                target="_blank"
-                >enquiries@mara.boo</a
-              >
-            </div>
-            <div class="mb-3">
-              <span class="font-bold mr-3">{{ $t("footer.phone") }}:</span>
-              <a href="tel:+16136178447">+16136178447</a>
-            </div>
-          </div>
-        </div>
-        <div class="others inline-flex grow-0">
-          <div>
-            <h1 class="text-xl font-bold mb-4">{{ $t("footer.address") }}</h1>
-            <p>186 brambling way <br />Ottawa Ontario K2J5V6.</p>
-          </div>
-        </div>
         <div>
-          <h1 class="text-xl font-bold mb-4">{{ $t("footer.socials") }}</h1>
+          <h1 class="text-xl font-bold mb-4 text-center">
+            {{ $t("footer.socials") }}
+          </h1>
           <div class="socials mb-8 inline-flex justify-between">
             <a class="mr-2" href="#">
               <img class="" src="~/assets/images/linkedin.svg" alt="" />
@@ -54,6 +32,30 @@
             </a>
           </div>
         </div>
+        <div class="others flex">
+          <div id="contact-us">
+            <h1 class="text-xl font-bold mb-4">{{ $t("footer.contact") }}</h1>
+
+            <div class="mb-3">
+              <span class="font-bold mr-3">{{ $t("footer.email") }}:</span>
+              <a
+                href="mailto: enquiries@mara.boo?subject=Feedback&body=Hello"
+                target="_blank"
+                >enquiries@mara.boo</a
+              >
+            </div>
+            <div class="mb-3">
+              <span class="font-bold mr-3">{{ $t("footer.phone") }}:</span>
+              <a href="tel:+16136178447">+16136178447</a>
+            </div>
+          </div>
+        </div>
+        <!--        <div class="others inline-flex grow-0">-->
+        <!--          <div>-->
+        <!--            <h1 class="text-xl font-bold mb-4">{{ $t("footer.address") }}</h1>-->
+        <!--            <p>186 brambling way <br />Ottawa Ontario K2J5V6.</p>-->
+        <!--          </div>-->
+        <!--        </div>-->
       </div>
       <div class="leading-relaxed text-[#5C5C5C] mt-8 mb-5">
         <h6 class="md:hidden font-bold text-white mb-6">
