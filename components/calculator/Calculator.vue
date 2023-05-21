@@ -13,24 +13,18 @@
           class="w-full mb-4 flex flex-col after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-14px] after-mt-8 after:bg-slate-700"
         >
           <div class="text-slate-400 mb-4">1. You send:</div>
-          <div class="relative mb-4 flex items-center origin">
+          <div
+            class="relative mb-4 pr-2 flex shadow-sm rounded bg-white items-center"
+          >
             <input
-              v-model="computedSendAmount"
+              v-model="form.send_amount"
               placeholder="Enter amount"
               type="text"
               @focus="activeInput = 'send'"
               @keydown="keypressed"
-              class="h-10 shadow-sm focus:outline-none w-full px-4 py-6 rounded bg-white"
+              class="h-10 focus:outline-none flex-grow px-4 py-6 rounded bg-white"
             />
-            <select
-              name="currencies"
-              v-model="form.from_currency"
-              class="absolute font-sm w-[6rem] bg-white rounded-r pl-4 focus:outline-none right-0 h-full"
-            >
-              <option v-for="curr in currencyKeys" :value="curr">
-                {{ curr.toUpperCase() }}
-              </option>
-            </select>
+            <CountrySelector v-model="form.from" />
             <div
               class="after:content- after:absolute after:w-[1px] after:h-[80%] after:top-[0.3rem] after:right-[6rem] after:bg-gray-400"
             ></div>
@@ -71,7 +65,7 @@
               v-model="form.method"
             >
               <option
-                v-for="(method, index) in fromObject.methods"
+                v-for="method in fromObject.methods"
                 :value="method.value"
               >
                 {{ method.key }}
@@ -87,9 +81,9 @@
                   ></span>
                 </div>
                 <div class="amount inline-block w-28">
-                  {{ computedMethodFee }} {{ form.from_currency }}
+                  {{ _2dp(results.mobile_fee) }} CAD
                 </div>
-                <span class="purpose">{{ feeType }}</span>
+                <span class="purpose">Mobile money fee</span>
               </div>
               <div class="inline-flex mb-1.5 items-center">
                 <div class="w-6">
@@ -98,7 +92,7 @@
                   ></span>
                 </div>
                 <div class="amount inline-block w-28">
-                  {{ _2dp(results.our_fee) }} {{ form.from_currency }}
+                  {{ _2dp(results.our_fee) }} CAD
                 </div>
                 <span class="purpose">Our fee</span>
               </div>
@@ -112,7 +106,7 @@
                   >
                 </div>
                 <div class="amount inline-block w-28">
-                  {{ _2dp(results.total_fees) }} {{ form.from_currency }}
+                  {{ _2dp(results.total_fees) }} CAD
                 </div>
                 <span class="purpose">Total fees</span>
               </div>
@@ -126,10 +120,9 @@
                   >
                 </div>
                 <div
-                  class="amount inline-block text-black font-bold min-w-28 w-28"
+                  class="amount inline-block text-black font-bold min-w-28 mr-2 w-28"
                 >
-                  {{ _2dp(form.send_amount - results.total_fees) }}
-                  {{ form.from_currency }}
+                  {{ _2dp(results.cad_amount) }} CAD
                 </div>
                 <span class="purpose font-bold text-black">We convert</span>
               </div>
@@ -137,9 +130,8 @@
                 <div class="w-6">
                   <span
                     class="bg-purple h-4 w-4 pb-0.5 font-bold inline-flex justify-center items-center rounded-sm text-white"
+                    >x</span
                   >
-                    {{ form.from_currency === "CAD" ? "x" : "÷" }}
-                  </span>
                 </div>
                 <div class="amount inline-block w-28">{{ rate }} CAD</div>
                 <span class="purpose">Real exchange rate</span>
@@ -149,22 +141,16 @@
         </div>
         <div class="w-full flex flex-col">
           <div class="text-slate-400 mb-4">2. Your recipient gets:</div>
-          <div class="relative mb-4 flex items-center origin">
+          <div
+            class="relative mb-4 pr-2 flex shadow-sm rounded bg-white items-center"
+          >
             <input
               v-model="computedReceiveAmount"
               @keydown="keypressed"
               @focus="activeInput = 'receive'"
-              class="h-10 shadow-sm focus:outline-none w-full px-4 py-6 rounded bg-white"
+              class="h-10 focus:outline-none flex-grow px-4 py-6 rounded bg-white"
             />
-            <select
-              name="currencies"
-              v-model="form.to_currency"
-              class="absolute font-sm w-[6rem] bg-white rounded-r pl-4 focus:outline-none right-0 h-full"
-            >
-              <option v-for="curr in currencyKeys" :value="curr">
-                {{ curr.toUpperCase() }}
-              </option>
-            </select>
+            <CountrySelector v-model="form.to" />
             <div
               class="after:content- after:absolute after:w-[1px] after:h-[80%] after:top-[0.3rem] after:right-[6rem] after:bg-gray-400"
             ></div>
@@ -177,8 +163,8 @@
 
 <script>
 import debounce from "lodash.debounce";
-import { calculate, exchangeRate } from "../../services/apiService";
-const DEBOUNCE_DELAY = 500;
+import { calculate } from "../../services/apiService";
+// import numbers from "../../numbers";
 export default {
   data() {
     return {
@@ -211,233 +197,92 @@ export default {
         },
       },
       loading: false,
-      feeType: "Mobile Money",
       form: {
+        from: {
+          name: "Canada",
+          flag: "canada",
+          currency: "cad",
+        },
+        to: {
+          name: "Côte d'Ivoire",
+          flag: "cotedivoire",
+          currency: "xof",
+        },
         from_currency: "CAD",
         to_currency: "XOF",
         send_amount: null,
-        method: "cash",
+        method: null,
         receive_amount: null,
       },
-      rate: 0.0,
-      activeInput: null,
+      rate: 478.87,
       results: {
         cad_amount: 0,
         cash_fee: 0,
         mobile_fee: 0,
         our_fee: 0,
-        debit_fee: 0,
-        visa_fee: 0,
         total_fees: 0,
         xof_amount: 0,
       },
-      apiCalling: false,
     };
   },
+  filters: {},
   watch: {
-    "form.method": {
-      handler: function (newVal) {
-        const valueToSend = this.form[`${this.activeInput}_amount`];
-        if (this.activeInput === "receive") {
-          this.apiCalling = true;
-          this.doConversion(this.form.from_currency, undefined, valueToSend)
-            .then((res) => {
-              const { cad_amount, xof_amount, ...rest } = res;
-              if (this.form.from_currency === "XOF") {
-                this.form.send_amount = this._2dp(xof_amount);
-              } else {
-                this.form.send_amount = this._2dp(cad_amount);
-              }
-              this.results = { ...rest, cad_amount };
-            })
-            .finally(() => {
-              this.apiCalling = false;
-            });
-        } else {
-          this.apiCalling = true;
-          this.doConversion(this.form.from_currency, valueToSend)
-            .then((res) => {
-              const { xof_amount, cad_amount, ...rest } = res;
-              if (this.form.from_currency === "XOF") {
-                this.form.receive_amount = cad_amount;
-              } else {
-                this.form.receive_amount = this._2dp(xof_amount);
-              }
-              this.results = { ...rest, cad_amount };
-            })
-            .finally(() => {
-              this.apiCalling = false;
-            });
-        }
+    form: {
+      handler(val, oldVal) {
+        this.calculate(val);
       },
-    },
-    "form.send_amount": {
-      handler: debounce(function (newVal, oldVal) {
-        if (newVal === null) {
-          this.resetResults();
-          this.form.receive_amount = null;
-        }
-        if (this.activeInput === "send") {
-          if (!this.apiCalling && newVal !== oldVal) {
-            this.apiCalling = true;
-            this.doConversion(this.form.from_currency, newVal)
-              .then((res) => {
-                const { xof_amount, cad_amount, ...rest } = res;
-                if (this.form.from_currency === "XOF") {
-                  this.form.receive_amount = cad_amount;
-                } else {
-                  this.form.receive_amount = this._2dp(xof_amount);
-                }
-                this.results = { ...rest, cad_amount };
-              })
-              .finally(() => {
-                this.apiCalling = false;
-              });
-          }
-        }
-      }, DEBOUNCE_DELAY),
-    },
-    "form.receive_amount": {
-      handler: debounce(function (newVal, oldVal) {
-        if (newVal === null) {
-          this.resetResults();
-          this.form.send_amount = null;
-        }
-        if (this.activeInput === "receive") {
-          if (!this.apiCalling && newVal !== oldVal) {
-            this.apiCalling = true;
-            this.doConversion(this.form.from_currency, undefined, newVal)
-              .then((res) => {
-                const { cad_amount, xof_amount, ...rest } = res;
-                if (this.form.from_currency === "XOF") {
-                  this.form.send_amount = this._2dp(xof_amount);
-                } else {
-                  this.form.send_amount = this._2dp(cad_amount);
-                }
-                this.results = { ...rest, cad_amount };
-              })
-              .finally(() => {
-                this.apiCalling = false;
-              });
-          }
-        }
-      }, DEBOUNCE_DELAY),
+      immediate: true,
+      deep: true,
     },
     "form.from_currency"(newValue, oldValue) {
       this.form.to_currency = newValue === "CAD" ? "XOF" : "CAD";
-      if (newValue === "XOF") {
-        this.form.method = "debit";
-      } else {
-        this.form.method = "cash";
-      }
-      this.form.send_amount = null;
-      this.resetResults();
     },
     "form.to_currency"(newValue, oldValue) {
       this.form.from_currency = newValue === "CAD" ? "XOF" : "CAD";
-      this.form.receive_amount = null;
-      this.resetResults();
     },
   },
   methods: {
-    resetResults() {
-      this.results = {
-        cad_amount: 0,
-        cash_fee: 0,
-        mobile_fee: 0,
-        our_fee: 0,
-        debit_fee: 0,
-        visa_fee: 0,
-        total_fees: 0,
-        xof_amount: 0,
-      };
-    },
-    keypressed(event) {
-      if (!/[\d\.\-]|Backspace/.test(event.key)) {
-        event.preventDefault();
-      }
-    },
     _2dp(_number) {
+      console.log(_number);
       return Number(_number.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]);
     },
-    async doConversion(from_currency, send_amount, receive_amount) {
-      if (send_amount || receive_amount) {
-        return await calculate({
-          method: this.form.method,
+    calculate(data) {
+      debounce(async (data) => {
+        const {
+          method,
           from_currency,
           send_amount,
           receive_amount,
-        });
-      }
+          to_currency,
+        } = data;
+        if (
+          (from_currency && send_amount && method) ||
+          (to_currency && receive_amount && method)
+        ) {
+          this.results = await calculate(data);
+
+          this.loading = false;
+        } else {
+          // this.message = "Select ";
+        }
+      }, 500)(data);
     },
   },
   computed: {
-    computedSendAmount: {
-      get() {
-        if (this.form.send_amount === null || this.form.send_amount === "") {
-          return "";
-        }
-        return this.form.send_amount.toLocaleString();
-      },
-      set(value) {
-        if (!value) {
-          this.form.send_amount = null;
-          return;
-        }
-        const numValue = parseFloat(value.replace(/[^0-9.]/g, ""));
-        if (!isNaN(numValue)) {
-          this.form.send_amount = numValue;
-        }
-      },
-    },
-    computedReceiveAmount: {
-      get() {
-        if (
-          this.form.receive_amount === null ||
-          this.form.receive_amount === ""
-        ) {
-          return "";
-        }
-        return this.form.receive_amount.toLocaleString();
-      },
-      set(value) {
-        if (!value) {
-          this.form.receive_amount = null;
-          return;
-        }
-        const numValue = parseFloat(value.replace(/[^0-9.]/g, ""));
-        if (!isNaN(numValue)) {
-          this.form.receive_amount = numValue;
-        }
-      },
-    },
-    computedMethodFee() {
-      if (this.form.method === "mobile") {
-        this.feeType = "Mobile Money fee";
-        return this._2dp(this.results.mobile_fee);
-      } else if (this.form.method === "debit") {
-        this.feeType = "Debit fee";
-        return this._2dp(this.results.debit_fee);
-      } else if (this.form.method === "visa") {
-        this.feeType = "Mastercard/Visa fee";
-        return this._2dp(this.results.visa_fee);
-      } else {
-        this.feeType = "Cash pickup fee ";
-        return this.results.mobile_fee
-          ? this._2dp(this.results.mobile_fee)
-          : this._2dp(this.results.cash_fee);
-      }
-    },
     currencyKeys() {
       return Object.keys(this.currencies);
+    },
+    balance() {
+      return 0;
     },
     fromObject() {
       return this.currencies[this.form.from_currency];
     },
-  },
-  async mounted() {
-    const { currency_value } = await exchangeRate();
-    this.rate = this._2dp(currency_value);
+    amountToSend() {
+      return Number(
+        (this.balance * this.rate).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]
+      );
+    },
   },
 };
 </script>
