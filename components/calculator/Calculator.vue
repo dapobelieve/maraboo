@@ -145,11 +145,12 @@
             class="relative mb-4 pr-2 flex shadow-sm rounded bg-white items-center"
           >
             <input
-              v-model="computedReceiveAmount"
+              v-model="form.receive_amount"
               @keydown="keypressed"
               @focus="activeInput = 'receive'"
               class="h-10 focus:outline-none flex-grow px-4 py-6 rounded bg-white"
             />
+
             <CountrySelector v-model="form.to" />
             <div
               class="after:content- after:absolute after:w-[1px] after:h-[80%] after:top-[0.3rem] after:right-[6rem] after:bg-gray-400"
@@ -211,7 +212,7 @@ export default {
         from_currency: "CAD",
         to_currency: "XOF",
         send_amount: null,
-        method: null,
+        method: "cash",
         receive_amount: null,
       },
       rate: 478.87,
@@ -243,7 +244,6 @@ export default {
   },
   methods: {
     _2dp(_number) {
-      console.log(_number);
       return Number(_number.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]);
     },
     calculate(data) {
@@ -276,7 +276,7 @@ export default {
       return 0;
     },
     fromObject() {
-      return this.currencies[this.form.from_currency];
+      return this.currencies[this.form.from.currency.toUpperCase()];
     },
     amountToSend() {
       return Number(
