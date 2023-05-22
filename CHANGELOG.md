@@ -1,3 +1,23 @@
+# [1.0.0-develop.2](https://github.com/Swapp-Capital/mb-website/compare/v1.0.0-develop.1...v1.0.0-develop.2) (2023-05-22)
+
+
+### Bug Fixes
+
+* about us ([cc6aa29](https://github.com/Swapp-Capital/mb-website/commit/cc6aa29460b684b5aa8f53a346f5e2e99605d257))
+* about us ([94eeeaa](https://github.com/Swapp-Capital/mb-website/commit/94eeeaa6de2efe2a469d5b6ba440d9c2995f3c43))
+* add clickoutside ([3fec0ed](https://github.com/Swapp-Capital/mb-website/commit/3fec0ede259cc331891cfd4055a7beec0a30bb21))
+* git configs ([343b096](https://github.com/Swapp-Capital/mb-website/commit/343b09680b7000bc263b0f47662d666397bc757f))
+* removed workspace file ([7ce28f3](https://github.com/Swapp-Capital/mb-website/commit/7ce28f394e1cc29b1f22997b79030f0490dec5e3))
+* update github actions ([c90f58f](https://github.com/Swapp-Capital/mb-website/commit/c90f58f3a5e673709bc94e0f065ed818a1fb97b9))
+
+
+### Features
+
+* country selector ([33736c3](https://github.com/Swapp-Capital/mb-website/commit/33736c31dec93884cd9b0ccb1350c25de448c466))
+* fix git ([bb7de41](https://github.com/Swapp-Capital/mb-website/commit/bb7de419503692f111a6c769df09707973e4f2cb))
+* Merge pull request [#4](https://github.com/Swapp-Capital/mb-website/issues/4) from Swapp-Capital/ch-update-footer ([436136e](https://github.com/Swapp-Capital/mb-website/commit/436136ea2b31387517154d258e3601b4930c3d3b))
+* vI18n ([8707bc1](https://github.com/Swapp-Capital/mb-website/commit/8707bc15010a207f64730708af971d5edbee9b28))
+
 # [1.0.0-develop.2](https://github.com/Swapp-Capital/mb-website/compare/v1.0.0-develop.1...v1.0.0-develop.2) (2023-05-21)
 
 
