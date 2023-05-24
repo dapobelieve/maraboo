@@ -1,0 +1,560 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"text-gra",
+				"text-gray-100 "
+			],
+			[
+				"bg-gr",
+				"bg-gray-200 "
+			],
+			[
+				"font",
+				"font-light "
+			],
+			[
+				"rin",
+				"ring-1 "
+			],
+			[
+				"inlin",
+				"inline-flex "
+			],
+			[
+				"z-",
+				"z-20 "
+			],
+			[
+				"sco",
+				"scroll-behavior"
+			],
+			[
+				"align",
+				"align-items"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"jus",
+				"justify-center "
+			],
+			[
+				"h",
+				"h-screen "
+			],
+			[
+				"bg-",
+				"bg-black "
+			],
+			[
+				"bg-yel",
+				"bg-yellow-300 "
+			],
+			[
+				"-right-4",
+				"-right-40 "
+			],
+			[
+				"du",
+				"duration-1000 "
+			],
+			[
+				"bac",
+				"backdrop-blur "
+			],
+			[
+				"w-f",
+				"w-full "
+			],
+			[
+				"dura",
+				"duration-1000 "
+			],
+			[
+				"dela",
+				"delay-1000 "
+			],
+			[
+				"Ve",
+				"VueTimepicker"
+			],
+			[
+				"item",
+				"items-center "
+			],
+			[
+				"fle",
+				"flex-col "
+			],
+			[
+				"loca",
+				"locations"
+			],
+			[
+				"white",
+				"whitespace-nowrap "
+			],
+			[
+				"overfl",
+				"overflow-hidden "
+			],
+			[
+				"shr",
+				"shrink-0 "
+			],
+			[
+				"max-w",
+				"max-w-2xl "
+			],
+			[
+				"lo",
+				"locationName"
+			],
+			[
+				"j",
+				"justify-center "
+			],
+			[
+				"just",
+				"justify-around "
+			],
+			[
+				"over",
+				"overflow-auto "
+			],
+			[
+				"bg-gra",
+				"bg-gray-300 "
+			],
+			[
+				"bacl",
+				"background-color"
+			],
+			[
+				"text-gray",
+				"text-gray-200 "
+			],
+			[
+				"out",
+				"outline-0 "
+			],
+			[
+				"selec",
+				"select-none "
+			],
+			[
+				"duration-",
+				"duration-150 "
+			],
+			[
+				"tran",
+				"transition "
+			],
+			[
+				"trans",
+				"translateY()"
+			],
+			[
+				"transition",
+				"transition-property"
+			],
+			[
+				"h-9",
+				"h-96 "
+			],
+			[
+				"border-gr",
+				"border-gray-300 "
+			],
+			[
+				"border-l",
+				"border-l-2 "
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"bg",
+				"bg-black "
+			],
+			[
+				"max-w-",
+				"max-w-4xl "
+			],
+			[
+				"text-gr",
+				"text-gray-300 "
+			],
+			[
+				"text-slate",
+				"text-slate-300 "
+			],
+			[
+				"max-w-sc",
+				"max-w-screen-sm "
+			],
+			[
+				"text-emer",
+				"text-emerald-500 "
+			],
+			[
+				"text-li",
+				"text-lime-400 "
+			],
+			[
+				"border-gree",
+				"border-green-400 "
+			],
+			[
+				"ite",
+				"items-start "
+			],
+			[
+				"al",
+				"align-top "
+			],
+			[
+				"lead",
+				"leading-3 "
+			],
+			[
+				"text-ora",
+				"text-orange-400 "
+			],
+			[
+				"w-",
+				"w-full "
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"flex-",
+				"flex-col "
+			],
+			[
+				"rota",
+				"rotate-180 "
+			],
+			[
+				"bg-ye",
+				"bg-yellow-400 "
+			],
+			[
+				"sha",
+				"shadow-md "
+			],
+			[
+				"roun",
+				"rounded-2xl "
+			],
+			[
+				"bg-green",
+				"bg-green-300 "
+			],
+			[
+				"bor",
+				"border-2 "
+			],
+			[
+				"bg-gree",
+				"bg-green-300 "
+			],
+			[
+				"bg-cyan",
+				"bg-cyan-300 "
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"mat",
+				"Material Theme: Activate theme"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/dapo/Be/product-x/components/InputComponent.vue",
+		"/Users/dapo/Be/maraboo/components/calculator/Calculator.vue",
+		"/Users/dapo/Be/maraboo/components/calculator/CountrySelector.vue",
+		"/Users/dapo/Be/vue3/vue-project/src/views/hooks.vue",
+		"/Users/dapo/Be/vue3/vue-project/src/views/watcher.vue",
+		"/Users/dapo/Be/maraboo/components/ClickOutside.vue",
+		"/Users/dapo/Be/maraboo/nuxt.config.ts",
+		"/Users/dapo/Be/website/layouts/default.vue",
+		"/Users/dapo/Be/website/pages/index.vue",
+		"/Users/dapo/Be/website/components/MobileNav.vue",
+		"/Users/dapo/Be/website/components/Left.vue",
+		"/Users/dapo/Be/website/components/Right.vue",
+		"/Users/dapo/Be/website/nuxt.config.js",
+		"/Users/dapo/Be/website/website.sublime-project",
+		"/Users/dapo/Be/website/.gitignore",
+		"/Users/dapo/Be/shutllers /pages/register/security.vue",
+		"/Users/dapo/Be/shutllers /pages/register/office-branch.vue",
+		"/Users/dapo/Be/shutllers /pages/_index.vue",
+		"/Users/dapo/Be/shutllers /pages/register/work-shifts.vue",
+		"/Users/dapo/Be/shutllers /components/modals/RegistrationCompleteModal.vue",
+		"/Users/dapo/Be/shutllers /pages/register/personal.vue",
+		"/Users/dapo/Be/shutllers /pages/register/business.vue",
+		"/Users/dapo/Be/shutllers /layouts/default.vue",
+		"/Users/dapo/Be/shutllers /pages/register.vue",
+		"/Users/dapo/Be/shutllers /components/register/Location.vue",
+		"/Users/dapo/Be/shutllers /nuxt.config.js",
+		"/Users/dapo/Be/shutllers /components/modals/WorkshiftModal.vue",
+		"/Users/dapo/Be/shutllers /components/auth/Shift.vue",
+		"/Users/dapo/Be/shutllers /components/auth/Workshift.vue",
+		"/Users/dapo/Be/shutllers /assets/css/app.scss",
+		"/Users/dapo/Be/shutllers /components/forms/ShInput.vue",
+		"/Users/dapo/Be/shutllers /pages/index.vue",
+		"/Users/dapo/Be/shutllers /components/forms/PhoneNumberComponent.vue",
+		"/Users/dapo/Be/shutllers /plugins/vue-select.js",
+		"/Users/dapo/Be/shutllers /plugins/vue-modal.js",
+		"/Users/dapo/Be/shutllers /plugins/timepicker.js",
+		"/Users/dapo/Be/shutllers /components/modals/LocationModal.vue",
+		"/Users/dapo/Be/shutllers /components/auth/Location.vue",
+		"/Users/dapo/Be/shutllers /components/auth/Security.vue",
+		"/Users/dapo/Be/shutllers /components/auth/Personal.vue",
+		"/Users/dapo/Be/shutllers /components/auth/OfficeBranch.vue",
+		"/Users/dapo/Be/shutllers /components/auth/Business.vue",
+		"/Users/dapo/Be/shutllers /components/forms/ShPassword.vue",
+		"/Users/dapo/Be/shutllers /package.json",
+		"/Users/dapo/Be/shutllers /plugins/datepicker.js",
+		"/Users/dapo/Be/shutllers /components/forms/ShDatePicker.vue",
+		"/Users/dapo/Be/shutllers /README.md",
+		"/Users/dapo/Be/shutllers /components/forms/ShSelect.vue",
+		"/Users/dapo/Be/shutllers /components/ShCard.vue",
+		"/Users/dapo/Be/shutllers /components/common/ShButton.vue",
+		"/Users/dapo/Be/shutllers /components/common/ShLoader.vue",
+		"/Users/dapo/Be/shutllers /plugins/vue-tel-input.js",
+		"/Users/dapo/Be/shutllers /components/forms/Input.vue",
+		"/Users/dapo/Be/shutllers /tailwind.config.js",
+		"/Users/dapo/Be/website/node_modules/tailwindcss/colors.js",
+		"/Users/dapo/Be/website/tailwind.config.js",
+		"/Users/dapo/Be/website/package.json",
+		"/Users/dapo/Be/website/.prettierrc",
+		"/Users/dapo/Library/Application Support/Sublime Text/Packages/User/auto_save.sublime-settings",
+		"/Users/dapo/Library/Application Support/Sublime Text/Packages/auto-save/auto_save.sublime-settings",
+		"/Users/dapo/Library/Application Support/Sublime Text/Packages/User/JsPrettier.sublime-settings",
+		"/Users/dapo/Be/bull/lib/queue.js",
+		"/Users/dapo/Be/bull/lib/timer-manager.js",
+		"/Users/dapo/Be/bouncing balls (oop ~ js)/index.html",
+		"/Users/dapo/Library/Application Support/Sublime Text/Packages/Default/Preferences.sublime-settings",
+		"/Users/dapo/Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 72.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Rust/Rust.sublime-build",
+	"project": "product-x.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"completeMo",
+				"shutllers /components/modals/RegistrationCompleteModal.vue"
+			],
+			[
+				"Phon",
+				"components/forms/PhoneNumberComponent.vue"
+			],
+			[
+				"ShIn",
+				"components/forms/ShInput.vue"
+			],
+			[
+				"worksh",
+				"components/modals/WorkshiftModal.vue"
+			],
+			[
+				"ShPass",
+				"components/forms/ShPassword.vue"
+			],
+			[
+				"color",
+				"website/node_modules/tailwindcss/colors.js"
+			],
+			[
+				"time-",
+				"lib/timer-manager.js"
+			],
+			[
+				"",
+				"index.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Be/maraboo/components/calculator/product-x.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 176.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
