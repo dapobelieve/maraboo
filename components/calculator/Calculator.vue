@@ -182,6 +182,10 @@ export default {
               key: "cash pickup",
               value: "cash",
             },
+            {
+              key: "domestic",
+              value: "domestic",
+            },
           ],
         },
         XOF: {
