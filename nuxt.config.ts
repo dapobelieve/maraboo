@@ -60,4 +60,9 @@ export default defineNuxtConfig({
     defaultLocale: "fr",
     langDir: "locales/",
   },
+  runtimeConfig: {
+    public: {
+      baseUrl: process.env.NUXT_API_BASE_URL,
+    },
+  },
 });
