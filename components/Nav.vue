@@ -100,7 +100,9 @@
             class="h-4 w-4 mr-0.5"
             src="~/assets/images/globe.svg"
             alt=""
-          /><a href="#" @click.stop="locale = !locale"> EN</a>
+          /><a href="#" class="uppercase" @click.stop="locale = !locale">
+            {{ activeLocale }}</a
+          >
           <img
             class="h-2 mt-0.5 ml-1"
             src="~/assets/images/caret-down.svg"
@@ -253,21 +255,29 @@
   </header>
 </template>
 <script>
+import { reactive, computed, toRefs } from "vue";
+import { useI18n } from "vue-i18n";
+
 export default {
-  data() {
-    return {
+  setup() {
+    const { locale } = useI18n();
+    const state = reactive({
       showMobileMenu: false,
       company: false,
       locale: false,
       mobileCompany: false,
-    };
-  },
-  methods: {
-    scrollIntoView(e) {
+      activeLocale: computed(() => locale),
+    });
+    function scrollIntoView(e) {
       const { hash } = e.target;
       document.querySelector(hash).scrollIntoView({ behavior: "smooth" });
-      this.showMobileMenu = false;
-    },
+      state.showMobileMenu = false;
+    }
+
+    return {
+      ...toRefs(state),
+      scrollIntoView,
+    };
   },
 };
 </script>

@@ -9,7 +9,7 @@ export default {
       const listener = (el) => {
         if (
           el.target === thisElement ||
-          thisElement.value.contains(el.target)
+          thisElement.value?.contains(el.target)
         ) {
           return;
         }
