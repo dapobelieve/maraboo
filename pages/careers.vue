@@ -31,7 +31,7 @@
       </div>
     </section>
     <section
-      class="countries py-12 md:py-32"
+      class="countries py-12 md:py-6"
       v-html="$t('careers.opening')"
     ></section>
   </main>
