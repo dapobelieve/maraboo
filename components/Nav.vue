@@ -132,14 +132,11 @@
             </div>
           </div>
         </div>
-        <div>
-          <NuxtLink
-            to="/join-us"
+          <NuxtLink :to="localePath('/join-us')"
             class="px-6 py-3 bg-black font-black text-sm text-white rounded-lg"
           >
-            {{ $t("home.nav.wait-list") }}
+            {{ $t("home.nav.wait-list") }} YYY
           </NuxtLink>
-        </div>
       </div>
     </nav>
     <div
@@ -160,7 +157,7 @@
                 src="~/assets/images/maraboo.svg"
                 alt=""
               />
-              <h1 class="font-heading text-2xl font-extrabold ml-1">Maraboo</h1>
+              <h1 class="font-heading text-2xl font-extrabold ml-1">Maraboo H</h1>
             </NuxtLink>
             <div class="relative inline-flex items-center">
               <img
@@ -244,10 +241,10 @@
         <div class="mt-auto mb-10 px-8 flex justify-center">
           <NuxtLink
             @click="showMobileMenu = false"
-            to="/join-us"
+            :to="localePath('/join-us')"
             class="bg-black text-white text-center px-12 py-3 w-full rounded-xl"
           >
-            Join the waitlist
+            {{ $t("home.nav.wait-list") }}
           </NuxtLink>
         </div>
       </div>
