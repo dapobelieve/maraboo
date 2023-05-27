@@ -134,7 +134,7 @@
 <script setup>
 import { computed, reactive, ref, watch } from "vue";
 import { useVuelidate } from "@vuelidate/core";
-import { waitList } from "../services/apiService";
+import useApi from '~/composables/useApi';
 import { required, email, helpers } from "@vuelidate/validators";
 let formData = reactive({
   first_name: null,
@@ -143,6 +143,8 @@ let formData = reactive({
 });
 let modalOpen = ref(false);
 let loading = ref(false);
+
+const { waitList } = useApi()
 
 // Computed Props
 const rules = computed(() => {

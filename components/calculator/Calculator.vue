@@ -165,13 +165,14 @@
 
 <script>
 import debounce from "lodash.debounce";
-import { calculate, exchangeRate } from "~/services/apiService";
 const DEBOUNCE_DELAY = 500;
 const defaultWaemu = {
   name: "Benin",
   flag: "benin",
   currency: "xof",
 };
+
+import useApi from '~/composables/useApi';
 
 const defaultCanada = {
   name: "Canada",
@@ -377,7 +378,7 @@ export default {
     },
     async doConversion(from_currency, send_amount, receive_amount) {
       if (send_amount || receive_amount) {
-        return await calculate({
+        return await useApi().calculate({
           method: this.form.method,
           from_currency: from_currency.toUpperCase(),
           send_amount,
@@ -456,7 +457,7 @@ export default {
     },
   },
   async mounted() {
-    const { currency_value } = await exchangeRate();
+    const { currency_value } = await useApi().exchangeRate();
     this.rate = this._2dp(currency_value);
   },
 };
