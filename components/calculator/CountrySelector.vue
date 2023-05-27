@@ -79,20 +79,21 @@
                 <img class="h-6 w-6 mr-3" :src="images[country.flag]" alt="" />
                 <span class="inline-flex items-center"
                   >{{ country.name }}
-                  <span
-                    class="relative group"
-                    v-if="country.flag == 'cotedivoire'"
-                  >
-                    <img
-                      class="h-3 ml-1 w-3 mt-0.5"
-                      src="~/assets/images/info.svg"
-                    />
-                    <span
-                      class="absolute group-hover:visible z-10 px-2 py-1 w-[10rem] invisible top-[-41px] left-[-70px] rounded text-center flex text-[0.65rem] bg-gray-800 text-white"
-                    >
-                      Domestic transfers are only available for Côte d'Ivoire
-                    </span>
-                  </span></span
+<!--                  <span-->
+<!--                    class="relative group"-->
+<!--                    v-if="country.flag == 'cotedivoire'"-->
+<!--                  >-->
+<!--                    <img-->
+<!--                      class="h-3 ml-1 w-3 mt-0.5"-->
+<!--                      src="~/assets/images/info.svg"-->
+<!--                    />-->
+<!--                    <span-->
+<!--                      class="absolute group-hover:visible z-10 px-2 py-1 w-[10rem] invisible top-[-41px] left-[-70px] rounded text-center flex text-[0.65rem] bg-gray-800 text-white"-->
+<!--                    >-->
+<!--                      Domestic transfers are only available for Côte d'Ivoire-->
+<!--                    </span>-->
+<!--                  </span>-->
+                </span
                 >
                 <span class="ml-auto uppercase">{{ country.currency }}</span>
               </a>

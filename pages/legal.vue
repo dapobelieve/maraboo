@@ -18,7 +18,7 @@
         </div>
       </div>
     </section>
-    <section class="countries py-12 md:py-24">
+    <section class="countries pb-8">
       <div class="w-4/5">
         <div class="max-w-[46rem] leading-8 text-lg">
           <p class="mb-4">

@@ -1,6 +1,6 @@
 <template>
   <footer class="bg-black text-white px-2">
-    <div class="container mx-auto md:py-16 py-6">
+    <div class="container mx-auto md:py-16 py-6 px-2">
       <div
         class="flex flex-col md:flex-row md:justify-between after:content after:w-full after:bottom-[-67px] after:h-[1px] after:absolute relative after:bg-[#D1D1D1] md:items-centedr items-start mb-32"
       >
@@ -13,18 +13,18 @@
             {{ $t("footer.socials") }}
           </h1>
           <div class="socials mb-8 inline-flex justify-between">
-            <a class="mr-2" href="#">
+            <a class="mr-4" href="#">
               <img class="" src="~/assets/images/linkedin.svg" alt="" />
             </a>
             <a
-              class="mr-2"
+              class="mr-4"
               target="_blank"
               href="https://twitter.com/Grandmaraboo"
             >
               <img class="" src="~/assets/images/twitter.svg" alt="" />
             </a>
             <a
-              class="mr-2"
+              class="mr-3"
               target="_blank"
               href="https://www.instagram.com/grand.maraboo/"
             >
@@ -58,7 +58,7 @@
         <!--        </div>-->
       </div>
       <div class="leading-relaxed text-[#5C5C5C] mt-8 mb-5">
-        <h6 class="md:hidden font-bold text-white mb-6">
+        <h6 class="md:hidden font-bold  mb-6">
           {{ $t("footer.made-by") }}
         </h6>
         <!--        <p class="mb-2">-->
@@ -69,14 +69,6 @@
         <!--          leo quisque. Pretium in tellus vitae risus maecenas posuere. Morbi-->
         <!--          morbi massa leo tortor cras eget massa.-->
         <!--        </p>-->
-        <p>
-          Etiam sem in scelerisque diam vulputate. Gravida dolor mi dictumst
-          nisi vitae suspendisse. Ultrices quam etiam viverra at. Massa
-          adipiscing mi lectus pellentesque. Vel eleifend suspendisse purus sit
-          at erat et. Nulla vestibulum nam curabitur aliquam id non. Facilisi
-          amet amet eu nulla orci turpis in. Pretium interdum ipsum mollis neque
-          risus purus. Malesuada nulla lectus non.
-        </p>
       </div>
 
       <div
@@ -87,12 +79,12 @@
           <span> &#169;2023 All rights reserved </span>
         </span>
         <span
-          class="max-w-[15rem] text-white w-full md:inline-flex flex md:items-center md:mb-0 justify-between"
+          class="max-w-[15rem] w-full md:inline-flex flex md:items-center md:mb-0 justify-between"
         >
           <a class="block md:mb-0">{{ $t("footer.privacy") }}</a>
           <a>{{ $t("footer.terms") }}</a>
         </span>
-        <span class="hidden md:block text-white font-bold">
+        <span class="hidden md:block  font-bold">
           {{ $t("footer.made-by") }}
         </span>
       </div>
