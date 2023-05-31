@@ -162,13 +162,21 @@
               />
               <h1 class="font-heading text-2xl font-extrabold ml-1">Maraboo</h1>
             </NuxtLink>
-            <div class="relative inline-flex items-center">
+            <div
+              @click.stop="locale = !locale"
+              class="relative inline-flex items-center"
+            >
               <img
                 class="h-4 w-4 mr-0.5"
                 src="~/assets/images/globe.svg"
                 alt=""
-              /><a class="text-xs"> EN</a>
+              /><a class="text-xs"> {{ activeLocale.toUpperCase() }}</a>
               <img
+                :class="[
+                  locale
+                    ? 'transition-transform duration-100 transform rotate-0'
+                    : 'rotate-180 transition-transform duration-100 transform',
+                ]"
                 class="h-2 mt-0.5 ml-1"
                 src="~/assets/images/caret-down.svg"
                 alt=""
@@ -176,17 +184,25 @@
               <div
                 v-show="locale"
                 role="menu"
-                class="absolute shadow-lg w-24 top-9 rounded-lg ring-opacity-5 ring-1 bg-white ring-black -right-3"
+                class="absolute shadow-lg w-24 top-8 rounded-lg ring-opacity-5 ring-1 bg-white ring-black z-10 right-3"
               >
                 <div
                   class="px-4 hover:bg-gray-100 py-3 rounded-xl flex items-center text-black"
                 >
-                  <a href="#" class="text-md font-medium">English</a>
+                  <nuxt-link
+                    :to="switchLocalePath('en')"
+                    class="text-md w-full font-medium"
+                    >English</nuxt-link
+                  >
                 </div>
                 <div
                   class="px-4 py-3 rounded-xl hover:bg-gray-100 flex items-center text-black"
                 >
-                  <a href="#" class="text-md font-medium">Français</a>
+                  <nuxt-link
+                    :to="switchLocalePath('fr')"
+                    class="text-md w-full font-medium"
+                    >Français</nuxt-link
+                  >
                 </div>
               </div>
               <div
@@ -205,14 +221,16 @@
             href="/#how-it-works"
             class="hover:text-purple text-xl"
           >
-            How it works
+            {{ $t("home.nav.how-it-works") }}
           </NuxtLink>
           <div
             @click="mobileCompany = !mobileCompany"
             class="flex mt-8 cursor-pointer justify-between items-center"
           >
             <div class="relative">
-              <h6 class="text-xl hover:text-purple">Company</h6>
+              <h6 class="text-xl hover:text-purple">
+                <a> {{ $t("home.nav.company.name") }} </a>
+              </h6>
               <div v-show="mobileCompany" class="absolute top-12">
                 <div @click="showMobileMenu = false" class="ml-4 flex flex-col">
                   <NuxtLink class="" to="about">{{
