@@ -1,3 +1,32 @@
+# [1.0.0-develop.2](https://github.com/Swapp-Capital/mb-website/compare/v1.0.0-develop.1...v1.0.0-develop.2) (2023-05-31)
+
+
+### Bug Fixes
+
+* about us ([cc6aa29](https://github.com/Swapp-Capital/mb-website/commit/cc6aa29460b684b5aa8f53a346f5e2e99605d257))
+* about us ([94eeeaa](https://github.com/Swapp-Capital/mb-website/commit/94eeeaa6de2efe2a469d5b6ba440d9c2995f3c43))
+* add clickoutside ([3fec0ed](https://github.com/Swapp-Capital/mb-website/commit/3fec0ede259cc331891cfd4055a7beec0a30bb21))
+* add example env file ([7a9c492](https://github.com/Swapp-Capital/mb-website/commit/7a9c4926b0fa8a0ca31cd43cf163dbb097dfa8d1))
+* design fixes ([d631cf3](https://github.com/Swapp-Capital/mb-website/commit/d631cf3065e003d107677b96c1960135c670b22e))
+* git configs ([343b096](https://github.com/Swapp-Capital/mb-website/commit/343b09680b7000bc263b0f47662d666397bc757f))
+* mobile i18n ([abe05b9](https://github.com/Swapp-Capital/mb-website/commit/abe05b946de03d0fd8f2cb7c3281063af7f6cf5e))
+* removed workspace file ([4e8acb3](https://github.com/Swapp-Capital/mb-website/commit/4e8acb30d9672424bb7fb618bcb5a9be3423752a))
+* removed workspace file ([edc8aa1](https://github.com/Swapp-Capital/mb-website/commit/edc8aa1e6037e5b00ee5bab8792d295d6d47bbed))
+* removed workspace file ([7ce28f3](https://github.com/Swapp-Capital/mb-website/commit/7ce28f394e1cc29b1f22997b79030f0490dec5e3))
+* return functionality to calculator ([4ff601e](https://github.com/Swapp-Capital/mb-website/commit/4ff601ec1cce58d2d6f9e7c74db83f0617f95657))
+* update github actions ([c90f58f](https://github.com/Swapp-Capital/mb-website/commit/c90f58f3a5e673709bc94e0f065ed818a1fb97b9))
+
+
+### Features
+
+* country selector ([33736c3](https://github.com/Swapp-Capital/mb-website/commit/33736c31dec93884cd9b0ccb1350c25de448c466))
+* fix git ([494d149](https://github.com/Swapp-Capital/mb-website/commit/494d1497c9e42568bab8b893415de19eae30b332))
+* fix git ([bb7de41](https://github.com/Swapp-Capital/mb-website/commit/bb7de419503692f111a6c769df09707973e4f2cb))
+* info for civ ([5847ddc](https://github.com/Swapp-Capital/mb-website/commit/5847ddcbbaafd601365389e5dd6504bd4d608f94))
+* Merge pull request [#4](https://github.com/Swapp-Capital/mb-website/issues/4) from Swapp-Capital/ch-update-footer ([436136e](https://github.com/Swapp-Capital/mb-website/commit/436136ea2b31387517154d258e3601b4930c3d3b))
+* Merge pull request [#6](https://github.com/Swapp-Capital/mb-website/issues/6) from Swapp-Capital/ft-add-domestice-to-methods ([380b566](https://github.com/Swapp-Capital/mb-website/commit/380b566778d193bf30fe9df77196b6469f60eb04))
+* vI18n ([8707bc1](https://github.com/Swapp-Capital/mb-website/commit/8707bc15010a207f64730708af971d5edbee9b28))
+
 # [1.0.0-develop.2](https://github.com/Swapp-Capital/mb-website/compare/v1.0.0-develop.1...v1.0.0-develop.2) (2023-05-25)
 
 
