@@ -13,7 +13,7 @@
             {{ $t("footer.socials") }}
           </h1>
           <div class="socials mb-8 inline-flex justify-between">
-            <a class="mr-4" href="#">
+            <a class="mr-4"  target="_blank" href="https://www.linkedin.com/company/grandmaraboo/people/?viewAsMember=true">
               <img class="" src="~/assets/images/linkedin.svg" alt="" />
             </a>
             <a
