@@ -63,7 +63,7 @@
           "text": "Pay for your transaction in your <br />\n                        currency of choice; i.e. XOF, CAD or <br />\n                        another currency we support"
         },
         "step-3": {
-          "name": "Étape 3",
+          "name": "Step 3",
           "one": "Your recipient receives money:",
           "xof-in": {
             "name": "XOF in",
@@ -72,7 +72,7 @@
           },
           "cad-in": {
             "name": "CAD in",
-            "interface": "interface e-transfer(instant)"
+            "interac": "interac e-transfer(instant)"
           },
           "text": "We'll be adding more countries soon, <br />\n                        stay tuned."
         }
@@ -81,7 +81,7 @@
     "section6": {
       "how-we": {
         "name": "How we protect your <br />\n          personal data",
-        "text": "Vos informations privées sont protégées par les technologies les plus sûres conformément aux réglementations applicables."
+        "text": "Your funds and private information are protected by the most secure technology and according to local and global regulations."
       }
     },
     "faq": [
@@ -113,7 +113,8 @@
         "question": "How much does it cost to send a transfer?",
         "answers": "<p class=\"mb-4\">      <h class=\"font-bold\">Sending money to Africa</h> - We’re delivering on      <a class=\"text-blue-600\" target=\"_blank\" href=\"https://www.un.org/sustainabledevelopment/inequality/\">UN social development goal #10</a>            today, by reducing the cost of sending money to Africa to an average      cost of 3% or less      </p>      <p>      <h class=\"font-bold\">Sending money out of Africa</h> - We’re not only making sending money out of africa up to 3x cheaper than current best in class solutions but we’re also making transfers out of Africa fast and accessible to all by cutting away the red tape.      </p>"
       }
-    ]
+    ],
+    "faq-header": "Frequently Asked Questions"
   },
   "about-us": {
     "name": "À propos de Marabo",
@@ -142,6 +143,14 @@
     "we": "We’re looking for great people to help us build!",
     "view": "View our openings.",
     "opening": "<div class='w-4/5'>        <h1 class='font-heading text-4xl md:text-5xl mb-6'>Our Openings:</h1>        <div class='max-w-[46rem] text-xl md:mb-8 text-justify leading-relaxed'>          <p class='mb-4'>Thank you for your interest in joining our team!</p>          <p class='mb-4'>            While we do not currently have any open positions, we are always on            the lookout for talented individuals who share our values and are            passionate about what we do.          </p>          <p class='mb-4'>            We encourage you to submit your resume and cover letter for future            consideration, as we may have opportunities that match your skills            and experience in the near future.          </p>          <p class='mb-20'>            We promise to review every application carefully and keep them on            file should a suitable opening arise. We look forward to hearing            from you and potentially working together in the future!          </p>          <h1 class='text-4xl md:text-2xl text-black font-heading mb-8'>            Add your resume and cover letter          </h1>          <p>            Upload your resume and cover letter for future consideration, as we            may have opportunities that match your skills and experience in the            near future.          </p>        </div>      </div>"
+  },
+  "wait-list": {
+    "coming-soon": "Coming Soon",
+    "caption": "Get Notified When We Launch",
+    "first-name": "First Name",
+    "last-name": "Last Name",
+    "email": "Email",
+    "submit": "Submit",
   },
   "footer": {
     "contact": "Contact Us",

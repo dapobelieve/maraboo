@@ -13,7 +13,11 @@
             {{ $t("footer.socials") }}
           </h1>
           <div class="socials mb-8 inline-flex justify-between">
-            <a class="mr-4"  target="_blank" href="https://www.linkedin.com/company/grandmaraboo/people/?viewAsMember=true">
+            <a
+              class="mr-4"
+              target="_blank"
+              href="https://www.linkedin.com/company/grandmaraboo/people/?viewAsMember=true"
+            >
               <img class="" src="~/assets/images/linkedin.svg" alt="" />
             </a>
             <a
@@ -45,8 +49,8 @@
               >
             </div>
             <div class="mb-3">
-              <span class="font-bold mr-3">{{ $t("footer.phone") }}:</span>
-              <a href="tel:+16136178447">+16136178447</a>
+              <!--              <span class="font-bold mr-3">{{ $t("footer.phone") }}:</span>-->
+              <!--              <a href="tel:+16136178447">+1600000000</a>-->
             </div>
           </div>
         </div>
@@ -58,7 +62,7 @@
         <!--        </div>-->
       </div>
       <div class="leading-relaxed text-[#5C5C5C] mt-8 mb-5">
-        <h6 class="md:hidden font-bold  mb-6">
+        <h6 class="md:hidden font-bold mb-6">
           {{ $t("footer.made-by") }}
         </h6>
         <!--        <p class="mb-2">-->
@@ -84,7 +88,7 @@
           <a class="block md:mb-0">{{ $t("footer.privacy") }}</a>
           <a>{{ $t("footer.terms") }}</a>
         </span>
-        <span class="hidden md:block  font-bold">
+        <span class="hidden md:block font-bold">
           {{ $t("footer.made-by") }}
         </span>
       </div>

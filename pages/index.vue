@@ -426,7 +426,7 @@
         <h1
           class="font-heading text-4xl md:text-6xl mb-8 text-center leading-snug"
         >
-          Frequently Asked Questions
+          {{ $t("home.faq-header") }}
         </h1>
 
         <div class="w-full">

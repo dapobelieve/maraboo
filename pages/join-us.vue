@@ -7,12 +7,12 @@
             class="flex md:items-start text-left items-center flex-col h-full"
           >
             <h1 class="text-purple mb-4 md:mb-10 text-2xl font-extrabold">
-              Coming Soon!
+              {{ $t("wait-list.coming-soon") }}
             </h1>
             <h1
               class="font-heading text-4xl text-center md:text-left md:text-6xl leading-snug mb-4"
             >
-              Get notified when we launch!
+              {{ $t("wait-list.caption") }}
             </h1>
           </div>
         </div>
@@ -29,9 +29,9 @@
                 v$.first_name.$error ? v$.first_name?.$errors[0]?.$message : ''
               "
               class="mb-10"
-              placeholder="First Name"
+              :placeholder="$t('wait-list.first-name')"
             >
-              <template v-slot:label>First Name</template>
+              <template v-slot:label>{{ $t("wait-list.first-name") }}</template>
             </GlobalInput>
             <GlobalInput
               v-model="formData.last_name"
@@ -40,9 +40,9 @@
                 v$.last_name.$error ? v$.last_name?.$errors[0]?.$message : ''
               "
               class="mb-10"
-              placeholder="Last Name"
+              :placeholder="$t('wait-list.last-name')"
             >
-              <template v-slot:label>Last Name</template>
+              <template v-slot:label>{{ $t("wait-list.last-name") }}</template>
             </GlobalInput>
             <GlobalInput
               v-model="formData.email"
@@ -50,9 +50,9 @@
               :errMsg="v$.email.$error ? v$.email?.$errors[0]?.$message : ''"
               class="mb-10"
               type="email"
-              placeholder="Email"
+              :placeholder="$t('wait-list.email')"
             >
-              <template v-slot:label>Email</template>
+              <template v-slot:label>{{ $t("wait-list.email") }}</template>
             </GlobalInput>
             <div>
               <button
@@ -60,7 +60,7 @@
                 @click="submit"
                 class="bg-black rounded px-12 text-sm py-3 text-white"
               >
-                {{ loading ? "loading..." : "Submit" }}
+                {{ loading ? "loading..." : $t("wait-list.submit") }}
               </button>
             </div>
           </div>
@@ -134,7 +134,7 @@
 <script setup>
 import { computed, reactive, ref, watch } from "vue";
 import { useVuelidate } from "@vuelidate/core";
-import useApi from '~/composables/useApi';
+import useApi from "~/composables/useApi";
 import { required, email, helpers } from "@vuelidate/validators";
 let formData = reactive({
   first_name: null,
@@ -144,7 +144,7 @@ let formData = reactive({
 let modalOpen = ref(false);
 let loading = ref(false);
 
-const { waitList } = useApi()
+const { waitList } = useApi();
 
 // Computed Props
 const rules = computed(() => {

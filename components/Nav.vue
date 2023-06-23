@@ -74,7 +74,7 @@
               >
             </div>
             <NuxtLink
-                :to="localePath('/careers')"
+              :to="localePath('/careers')"
               class="px-6 py-6 hover:bg-gray-50 flex items-center text-black"
             >
               <img class="h-5 mr-6" src="~/assets/images/careers.svg" alt="" />
@@ -83,7 +83,7 @@
               }}</span>
             </NuxtLink>
             <NuxtLink
-                :to="localePath('/legal')"
+              :to="localePath('/legal')"
               class="px-6 hover:bg-gray-50 py-6 flex items-center text-black"
             >
               <img class="h-6 mr-6" src="~/assets/images/legal.svg" alt="" />
@@ -132,11 +132,12 @@
             </div>
           </div>
         </div>
-          <NuxtLink :to="localePath('/join-us')"
-            class="px-6 py-3 bg-black font-black text-sm text-white rounded-lg"
-          >
-            {{ $t("home.nav.wait-list") }} YYY
-          </NuxtLink>
+        <NuxtLink
+          :to="localePath('/join-us')"
+          class="px-6 py-3 bg-black font-black text-sm text-white rounded-lg"
+        >
+          {{ $t("home.nav.wait-list") }}
+        </NuxtLink>
       </div>
     </nav>
     <div
@@ -157,7 +158,9 @@
                 src="~/assets/images/maraboo.svg"
                 alt=""
               />
-              <h1 class="font-heading text-2xl font-extrabold ml-1">Maraboo H</h1>
+              <h1 class="font-heading text-2xl font-extrabold ml-1">
+                Maraboo H
+              </h1>
             </NuxtLink>
             <div
               @click.stop="locale = !locale"
