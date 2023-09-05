@@ -6,7 +6,7 @@
   </div>
 </template>
 <script>
-import bg from "assets/images/bg-12.svg";
+import bg from "assets/images/bg.svg";
 
 export default {
   data() {

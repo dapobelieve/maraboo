@@ -1,14 +1,14 @@
 <template>
   <div
-    class="bg-gradient-to-r from-[#BDB9FB] py-6 pb-24 flex space-y-16 flex-col items-center justify-center to-[#A8B8FA]"
+    class="bg-gradient-to-r from-[#BDB9FB] py-6 px-2 pb-24 flex space-y-16 flex-col items-center justify-center to-[#A8B8FA]"
   >
     <div
-      class="container md:-mt-[9rem] px-16 md:py-12 flex bg-black text-white rounded-[40px] h-56 md:max-w-5xl w-full border border-green-500"
+      class="container md:-mt-[9rem] md:px-16 h-full px-6 py-4 md:py-12 flex bg-black text-white rounded-lg md:rounded-[40px] md:max-w-5xl w-full"
     >
-      <div class="flex items-center justify-around w-full">
-        <div>
+      <div class="md:flex items-center justify-around h-full w-full">
+        <div class="mb-4 md-mb-0">
           <h1 class="text-4xl font-heading mb-4">Join our waitlist!</h1>
-          <p class="text-left">
+          <p class="text-justify md:text-left">
             To stay up to date with our development, and to learn how you <br />
             can get the most out of Maraboo’s platform for international <br />
             transfers.
@@ -49,9 +49,9 @@
   <footer class="px-2">
     <div class="container mx-auto md:py-16 py-6 px-2">
       <div
-        class="flex md:flex-row md:justify-between after:content after:w-full after:bottom-[-67px] after:h-[1px] after:absolute relative after:bg-[#D1D1D1] md:items-centedr items-start mb-32"
+        class="md:flex md:flex-row md:justify-between after:content after:w-full after:bottom-[-67px] after:h-[1px] after:absolute relative after:bg-[#D1D1D1] items-start mb-32"
       >
-        <div class="mb-10 md:mb-0">
+        <div class="mb-10 maraboo md:mb-0">
           <div class="inline-flex mb-5 items-center">
             <img class="h-10" src="~/assets/images/maraboo.svg" alt="" />
             <h1
@@ -67,10 +67,10 @@
             designed to improve the quality of life of West Africans.
           </p>
         </div>
-        <div class="contact-us">
+        <div class="contact-us mb-8 md:mb-0">
           <h1 class="text-3xl font-bold mb-4">{{ $t("footer.contact") }}</h1>
           <div class="mb-3">
-            <span class="font-bold mr-3">{{ $t("footer.email") }}:</span>
+            <span class="font-bold mr-2">{{ $t("footer.email") }}:</span>
             <a
               href="mailto: enquiries@mara.boo?subject=Feedback&body=Hello"
               target="_blank"
@@ -78,17 +78,15 @@
             >
           </div>
           <div>
-            Canada - 169 ENTERPRISE BLVD. (YSPACE SUITE 300) MARKHAM, ON, CANADA
-            L6G-0E7 Cote D’ivoire - 25 BP 663 Abidjan 25
-          </div>
-          <div class="mb-3">
-            <!--              <span class="font-bold mr-3">{{ $t("footer.phone") }}:</span>-->
-            <!--              <a href="tel:+16136178447">+1600000000</a>-->
+            <strong> Canada </strong> - 169 ENTERPRISE BLVD. <br />(YSPACE SUITE
+            300) Markham, ON,
+            <br />
+            CANADA L6G-0E7 <br />
+            <strong>Cote D’ivoire</strong> - 25 BP 663 Abidjan 25
           </div>
         </div>
-        <div class="flex"></div>
-        <div>
-          <h1 class="text-xl font-bold mb-4 text-center">
+        <div class="socials">
+          <h1 class="text-3xl font-bold mb-4 text-">
             {{ $t("footer.socials") }}
           </h1>
           <div class="socials mb-8 inline-flex justify-between">
@@ -116,7 +114,13 @@
           </div>
         </div>
       </div>
-      <div class="leading-relaxed text-[#5C5C5C] mt-8 mb-5">
+      <div class="leading text-[#5C5C5C] mt-8 mb-5">
+        <h6 class="mb-16">
+          Grand Maraboo Technology Limited is registered as a money service
+          business with the Financial Transactions and Reports Analysis Centre
+          of Canada (FINTRAC) under registration number
+          <strong>M23345406</strong>
+        </h6>
         <h6 class="md:hidden font-bold mb-6">
           {{ $t("footer.made-by") }}
         </h6>
