@@ -22,7 +22,7 @@ export default defineNuxtConfig({
         {
           rel: "stylesheet",
           type: "text/css",
-          href: "https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;800&family=Lato:wght@400;700;900&family=Open+Sans:wght@400&display=swap",
+          href: "https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Lato:wght@400;700;900&family=Open+Sans:wght@400&display=swap",
         },
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
         {
@@ -59,6 +59,9 @@ export default defineNuxtConfig({
     ],
     defaultLocale: "fr",
     langDir: "locales/",
+    precompile: {
+      strictMessage: false,
+    },
   },
   runtimeConfig: {
     public: {

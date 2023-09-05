@@ -3,7 +3,7 @@
     <div
       role="button"
       @click.exact="toggle"
-      class="max-w-full bg-white px-8 mb-4 py-6 rounded-xl shadow-sm"
+      class="max-w-full px-8 mb-4 py-6 rounded-xl bg-gray-100 shadow-sm"
     >
       <div
         class="accordion-item-header flex justify-between items-center w-full"
@@ -26,7 +26,7 @@
         </svg>
       </div>
       <div class="accordion-item-body" :class="[active ? 'active' : '']">
-        <div v-html="item.answers"></div>
+        <div class="text-black" v-html="item.answers"></div>
       </div>
     </div>
   </div>

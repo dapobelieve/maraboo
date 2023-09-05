@@ -1,15 +1,12 @@
 <template>
-  <div
-    class="subpixel-antialiased bg-auto bg-no-repeat relative bg-cover"
-    :style="{ backgroundImage: `url(${image})` }"
-  >
+  <div class="subpixel-antialiased bg-auto relative bg-cosver">
     <Nav />
     <slot />
     <Footer />
   </div>
 </template>
 <script>
-import bg from "assets/images/bg-2.svg";
+import bg from "assets/images/bg-12.svg";
 
 export default {
   data() {
