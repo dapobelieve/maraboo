@@ -57,7 +57,7 @@ export default defineNuxtConfig({
       { code: "en", file: "en.json" },
       { code: "fr", file: "fr.json" },
     ],
-    defaultLocale: "fr",
+    defaultLocale: "en",
     langDir: "locales/",
     precompile: {
       strictMessage: false,

@@ -1,5 +1,5 @@
 <template>
-  <main class="container px-4 md:mx-auto">
+  <main class="container px-2 md:mx-auto">
     <section class="mt-[3rem] pb-12 md:mt-[7rem] md:pb-32">
       <div class="items-center md:flex">
         <div class="mb-8 w-full md:mb-0 md:w-2/4">
@@ -44,7 +44,10 @@
             </button>
             <div class="flex justify-between max-w-xs">
               <a>
-                <img class="md:h-12" src="~/assets/images/appleStore.webp" />
+                <img
+                  class="md:h-12 h-4"
+                  src="~/assets/images/appleStore.webp"
+                />
               </a>
               <a>
                 <img class="md:h-12" src="~/assets/images/playStore.webp" />
@@ -58,25 +61,25 @@
             class="people md:mr-[calc(-50vw+92%)]"
             src="~/assets/images/people-hexago.svg"
           />
-          <!--          <Calculator class="md:ml-auto" />-->
         </div>
         <div class="mt-16 text-center md:hidden md:text-left">
-          <button class="bg-black">Send money now</button>
-          <div>
-            <a>
-              <img src="~/assets/images/appleStore.webp" />
+          <button class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]">
+            Send money now
+          </button>
+          <div class="flex justify-between">
+            <a href="#">
+              <img class="h-12" src="~/assets/images/appleStore.webp" />
             </a>
-            <a>
-              <img src="~/assets/images/playStore.webp" />
+            <a href="#">
+              <img class="h-12" src="~/assets/images/playStore.webp" />
             </a>
           </div>
-          <!--          <GlobalMore> {{ $t("home.section1.left.bottom") }} </GlobalMore>-->
         </div>
       </div>
     </section>
     <section class="countries py-12 md:py-32">
-      <div class="flex w-full px-4 py-4">
-        <div class="md:w-1/2">
+      <div class="md:flex w-full px-4 py-4">
+        <div class="md:w-1/2 md:block hidden">
           <div class="flags max-w-xl flex flex-wrap">
             <CountryComponent
               v-for="(country, cIndex) in countries"
@@ -90,44 +93,55 @@
             {{ $t("home.section2.countries") }}
           </h1>
           <p class="mb-6" v-html="$t('home.section2.text')"></p>
-          <button class="bg-black mb-6 text-white px-6 py-3 rounded-[10px]">
+          <button
+            class="hidden md:block bg-black mb-6 text-white px-6 py-3 rounded-[10px]"
+          >
             Send money now
           </button>
+        </div>
+        <div class="md:hidden">
+          <div class="flags">
+            <CountryComponent
+              v-for="(country, cIndex) in countries"
+              :key="cIndex"
+              :country="country"
+            />
+          </div>
         </div>
       </div>
     </section>
     <section>
       <div
-        class="bg-[#BEBAFC] rounded-[30px] flex py-28 justify-center border"
+        class="bg-[#BEBAFC] rounded-[30px] flex md:py-28 py-8 px-2 justify-center border"
         :style="{ backgroundImage: `url(${qrBg})` }"
       >
-        <div class="max-w-7xl w-full md:flex">
+        <div class="max-w-7xl w-full md:space-y-0 space-y-8 md:flex">
           <div class="md:w-1/2 text-white flex flex-col justify-between">
             <h1
               class="font-heading drop-shadow-lg text-4xl md:text-5xl"
               style="line-height: 3.4rem !important"
             >
-              Unlock the World with <br />XOF: Your Passport to Seamless
-              Cross-Border Transfers.
+              Unlock the World with <br class="hidden md:block" />XOF: Your
+              Passport to Seamless Cross-Border Transfers.
             </h1>
-            <p class="drop-shadow-lg">
+            <p class="drop-shadow-lg mb-8 md:mb-0">
               From local to global in real time, Maraboo Magic: Discover 3x
               <br />
               Savings on international money Transfers to or from WAEMU
               countries!
             </p>
-            <div class="inline-flex align-top">
+            <div class="inline-flex">
               <img
-                class="md:h-56 mr-5 drop-shadow-lg"
+                class="md:h-56 h-32 mr-5 drop-shadow-lg"
                 src="~/assets/images/qr.svg"
               />
-              <span class="mt-10 drop-shadow-lg text-lg">
+              <span class="md:mt-10 drop-shadow-lg text-lg">
                 Scan QR code to <br />
                 download the app
               </span>
             </div>
           </div>
-          <div class="w-1/2">
+          <div class="md:w-1/2">
             <Calculator class="md:ml-auto" />
           </div>
         </div>
@@ -164,7 +178,7 @@
           class="mb-8 flex justify-center md:mb-0 md:mr-12 md:hidden md:w-2/5"
         >
           <div>
-            <img class="ml-3 h-8" src="~/assets/images/connecting.png" alt="" />
+            <img class="ml-3 h-" src="~/assets/images/connecting.png" alt="" />
           </div>
         </div>
       </div>
@@ -299,7 +313,7 @@
               <div class="w-full md:w-1/2">
                 <div class="flex justify-center">
                   <div
-                    class="inline-block rounded-lg bg-black text-white ml-[5.5rem] px-6 py-4"
+                    class="inline-block rounded-lg bg-black text-white md:ml-[5.5rem] px-6 py-4"
                   >
                     <h1 class="mb-4 text-lg font-bold text-[#F67335]">
                       {{ $t("home.section5.how-it-works.step-3.name") }}
@@ -443,14 +457,16 @@
     </section>
     <section class="data-privacy pb-28 md:py-32">
       <div class="flex items-center justify-center">
-        <div class="max-w-5xl inline-flex w-full">
-          <img src="~/assets/images/shield.png" />
+        <div
+          class="max-w-5xl inline-flex md:flex-row flex-col justify-center w-full"
+        >
+          <img src="~/assets/images/shield.png" class="mr-0" />
           <span class="md:ml-36">
             <h1
-              class="mb-8 text-left font-heading text-4xl leading-snug md:text-6xl"
+              class="mb-8 font-heading text-4xl leading-snug md:text-6xl"
               v-html="$t('home.section6.how-we.name')"
             ></h1>
-            <span class="max-w-[45rem] text-left text leading-normal">
+            <span class="max-w-[45rem] text leading-normal">
               {{ $t("home.section6.how-we.text") }}
             </span>
           </span>

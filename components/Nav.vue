@@ -147,7 +147,7 @@
           </div>
           <NuxtLink
             :to="localePath('/join-us')"
-            class="rounded-lg bg-black px-6 py-3 text-sm font-black text-white"
+            class="rounded-lg px-6 py-3 text-sm font-black bg-white text-black"
           >
             {{ $t("home.nav.wait-list") }}
           </NuxtLink>
