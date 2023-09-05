@@ -79,22 +79,21 @@
                 <img class="h-6 w-6 mr-3" :src="images[country.flag]" alt="" />
                 <span class="inline-flex items-center"
                   >{{ country.name }}
-<!--                  <span-->
-<!--                    class="relative group"-->
-<!--                    v-if="country.flag == 'cotedivoire'"-->
-<!--                  >-->
-<!--                    <img-->
-<!--                      class="h-3 ml-1 w-3 mt-0.5"-->
-<!--                      src="~/assets/images/info.svg"-->
-<!--                    />-->
-<!--                    <span-->
-<!--                      class="absolute group-hover:visible z-10 px-2 py-1 w-[10rem] invisible top-[-41px] left-[-70px] rounded text-center flex text-[0.65rem] bg-gray-800 text-white"-->
-<!--                    >-->
-<!--                      Domestic transfers are only available for Côte d'Ivoire-->
-<!--                    </span>-->
-<!--                  </span>-->
-                </span
-                >
+                  <!--                  <span-->
+                  <!--                    class="relative group"-->
+                  <!--                    v-if="country.flag == 'cotedivoire'"-->
+                  <!--                  >-->
+                  <!--                    <img-->
+                  <!--                      class="h-3 ml-1 w-3 mt-0.5"-->
+                  <!--                      src="~/assets/images/info.svg"-->
+                  <!--                    />-->
+                  <!--                    <span-->
+                  <!--                      class="absolute group-hover:visible z-10 px-2 py-1 w-[10rem] invisible top-[-41px] left-[-70px] rounded text-center flex text-[0.65rem] bg-gray-800 text-white"-->
+                  <!--                    >-->
+                  <!--                      Domestic transfers are only available for Côte d'Ivoire-->
+                  <!--                    </span>-->
+                  <!--                  </span>-->
+                </span>
                 <span class="ml-auto uppercase">{{ country.currency }}</span>
               </a>
             </li>
@@ -105,23 +104,14 @@
   </ClickOutside>
 </template>
 <script>
-import { ref, reactive, computed, watch, toRefs } from "vue";
-import { filename } from "pathe/utils";
+import { reactive, computed, toRefs } from "vue";
+import { useImages } from "~/composables/useImages";
 export default {
   props: ["modelValue"],
   setup(props, ctx) {
     const state = reactive({
-      glob: import.meta.glob("~/assets/images/*.svg", { eager: true }),
       open: false,
       quickSearch: "",
-      images: computed(() =>
-        Object.fromEntries(
-          Object.entries(state.glob).map(([key, value]) => [
-            filename(key),
-            value.default,
-          ])
-        )
-      ),
       firstCountry: computed(() => state.countries[0]),
       countries: [
         {
@@ -162,6 +152,8 @@ export default {
       ],
     });
 
+    const { images } = useImages();
+
     const filteredCountries = computed(() => {
       return state.countries.slice(1).filter((row) => {
         return Object.keys(row).some((key) => {
@@ -184,6 +176,7 @@ export default {
 
     return {
       ...toRefs(state),
+      images,
       handleSelection,
       filteredCountries,
       selected: computed(() => props.modelValue),

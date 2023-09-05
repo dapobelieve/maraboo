@@ -19,9 +19,9 @@
           "right": "Get notified when we launch!"
         },
         "center": {
-          "l1": "Fast transfers in & out of WAEMU countries at the",
+          "l1": "Global transfers to of from WAEMU countries at the",
           "l2": " real exchange rate!",
-          "l3": "Did you know that a 10% reduction in transaction fees for <br />              sending money in & out of WAEMU country can boost the <br />              revenue of regional households by up to 16%?"
+          "l3": "Did you know that a 10% reduction in transaction fees for             sending money in & out  <br />  of WAEMU country can boost the              revenue of regional households by up to 16%?"
         },
         "bottom": "Learn more on Maraboo"
       },
@@ -37,18 +37,18 @@
       "text": "We support 9 markets and 2 currencies to make it easier for you to\n          transact <br /> globally. We’ll be adding more markets and currencies shortly to\n          better serve your needs."
     },
     "section3": {
-      "super-charge": "Supercharge your cross-border purchasing power!",
-      "text": "Starting with Canada, you can now send up to $9,900 every 24\n              <br />              hours in & out of WAEMU countries at the real exchange rate.              <br />",
-      "text-2": "Additional countries will be added shortly after launch,\n              keep an eye out"
+      "super-charge": "Connecting WAEMU to the Global Payment Network!",
+      "text": "Maraboo is your wallet’s new superpower for international transfers, <span class=\"font-medium underline\">send up to <br > $9,900 daily to or from WAEMU countries at the Real Exchange</span> to pay international bills, tuition, suppliers, you name it! ",
+      "text-2": "The Journey Continues: More Countries coming soon, Keep an Eye Peeled."
     },
     "section4": {
-      "convert-currency": " Convert one currency <br class=\"hidden md:block\" />\n              to another",
-      "text": "Easily transfer funds within and outside WAEMU countries in three\n              simple steps. Our services are up to 3 times more affordable than\n              the top-performing <br />\n              alternatives."
+      "convert-currency": "Think Global, Act Local:<br /> Send and receive money.",
+      "text": "International transfers powered by Maraboo built to bring WAEMU to the world in real time. Seamlessly send and receive money across borders using diverse collection and disbursement channels to meet your personal needs or grow your business!"
     },
     "section5": {
       "we-fast": "We are really fast!",
-      "text": "Our transfers are processed from start to finish within minutes.",
-      "text-2": "Our disbursement options are:",
+      "text": "Our transfers are processed from start to finish within minutes, ",
+      "text-2": "and we offer the following disbursement options:",
       "cash": "Cash",
       "mobile-money": "Mobile Money",
       "bank": "Bank",
@@ -81,7 +81,7 @@
     "section6": {
       "how-we": {
         "name": "How we protect your <br />\n          personal data",
-        "text": "Your funds and private information are protected by the most secure technology and according to local and global regulations."
+        "text": "Rest assured, your funds and private information are safeguarded by state-of-the-art security technology, compliant with both local and global regulations"
       }
     },
     "faq": [

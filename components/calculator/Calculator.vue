@@ -1,6 +1,8 @@
 <template>
-  <div class="min-w-sm max-w-lg w-full">
-    <div class="bg-gray-50 p-6 relative shadow ring-opacity-5 ring-black">
+  <div class="min-w-sm border drop-shadow-lg rounded-[20px] max-w-lg w-full">
+    <div
+      class="bg-gray-50 p-6 relative rounded-[20px] shadow ring-opacity-5 ring-black"
+    >
       <div
         v-show="loading"
         style="background-color: rgba(12, 10, 10, 83%)"
@@ -172,7 +174,7 @@ const defaultWaemu = {
   currency: "xof",
 };
 
-import useApi from '~/composables/useApi';
+import useApi from "~/composables/useApi";
 
 const defaultCanada = {
   name: "Canada",
