@@ -19,9 +19,9 @@
           "right": "Get notified when we launch!"
         },
         "center": {
-          "l1": "Global transfers to of from WAEMU countries at the",
+          "l1": "Global transfers to or from WAEMU countries at the",
           "l2": " real exchange rate!",
-          "l3": "Did you know that a 10% reduction in transaction fees for             sending money in & out  <br />  of WAEMU country can boost the              revenue of regional households by up to 16%?"
+          "l3": "Did you know that a 10% reduction in transaction fees for             sending money in & out of WAEMU country can boost the              revenue of regional households by up to 16%?"
         },
         "bottom": "Learn more on Maraboo"
       },
@@ -47,7 +47,7 @@
     },
     "section5": {
       "we-fast": "We are really fast!",
-      "text": "Our transfers are processed from start to finish within minutes, ",
+      "text": "Our transfers are processed from start to finish within minutes.",
       "text-2": "and we offer the following disbursement options:",
       "cash": "Cash",
       "mobile-money": "Mobile Money",
@@ -117,7 +117,7 @@
     "faq-header": "Frequently Asked Questions"
   },
   "about-us": {
-    "name": "À propos de Marabo",
+    "name": "About us",
     "caption": " We're building borderless financial systems to connect West-Africans\n          across the globe",
     "text": "<span class=\"text-purple\">Introducing Maraboo</span>, a West-African\n          fintech firm offering transformative financial solutions that are\n          fair, responsible, inclusive, and designed to improve the quality of\n          life of West Africans.",
     "read-more": "En savoir plus",
@@ -125,8 +125,8 @@
       "caption": " Our Core mission is to make payments in & out of WAEMU countries\n              up <span class=\"text-purple\">to 3x cheaper!</span>\n              <br class=\"hidden md:block\" />",
       "text": "Did you know that a 10% reduction in transaction fees for sending\n              money in & out of WAEMU country can boost the revenue of regional\n              households by up to 16%?",
       "we-believe": "We believe that remittances should be fast, low cost, and have a\n              major social impact.",
-      "two": "Two birds one stone - we apply the real exchange rate on all of\n              our transactions to save you money and make the\n              <span class=\"text-purple\"> UN social development goal </span> by\n              significantly reducing remittance cost by 2030 a reality today!"
-
+      "two": "Two birds one stone - we apply the real exchange rate on all of\n              our transactions to save you money and make the\n              <span class=\"text-purple underline\"> UN social development goal </span> by\n              significantly reducing remittance cost by 2030 a reality today!",
+      "team": "Meet the team"
     }
   },
   "legal": {
@@ -150,10 +150,10 @@
     "first-name": "First Name",
     "last-name": "Last Name",
     "email": "Email",
-    "submit": "Submit",
+    "submit": "Submit"
   },
   "footer": {
-    "contact": "Contact Us",
+    "contact": "Contact us",
     "phone": "Phone",
     "email": "Email",
     "address": "Address",

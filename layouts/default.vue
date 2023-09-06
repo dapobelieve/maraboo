@@ -1,7 +1,10 @@
 <template>
-  <div class="subpixel-antialiased bg-auto relative bg-cosver">
-    <Nav />
+  <div class="subpixel-antialiased bg-auto relative bg-cover">
+    
+    <div class="px-[20px] lg:px-[0px]">
+      <Nav :bg-transparent="false"/>
     <slot />
+    </div>
     <Footer />
   </div>
 </template>
@@ -9,6 +12,7 @@
 import bg from "assets/images/bg.svg";
 
 export default {
+  
   data() {
     return {
       image: bg,
