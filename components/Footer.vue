@@ -46,7 +46,7 @@
       </div>
     </div>
   </div>
-  <footer class="px-2">
+  <footer class="px-2 lg:px-20">
     <div class="container mx-auto md:py-16 py-6 px-2">
       <div
         class="md:flex md:flex-row md:justify-between after:content after:w-full after:bottom-[-67px] after:h-[1px] after:absolute relative after:bg-[#D1D1D1] items-start mb-32"

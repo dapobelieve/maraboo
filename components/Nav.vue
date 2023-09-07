@@ -1,6 +1,6 @@
 <template>
   <header
-    class="relative sticky top-0 z-20 bg-[url('/assets/images/bg-12.svg')] bg-cover md:px-8 md:py-4 lg:px-2 lg:px-4"
+    class="relative sticky top-0 z-20 bg-[url('/assets/images/bg-12.svg')] bg-cover md:px-8 md:py-4 lg:px-20"
   >
     <div
       class="container flex items-center bg-black md:mx-auto md:rounded-[20px]"
