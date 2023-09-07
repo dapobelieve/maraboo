@@ -32,10 +32,10 @@
         class="font-heading mb-6 text-center text-white text-4xl md:text-5xl"
         style="line-height: 3.4rem !important"
       >
-      Download the app to <br /> transfer money
-        <!-- Download the App <br />
+      <!-- Download the app to <br /> transfer money -->
+        Download the App <br />
         for Money Transfers Beyond <br />
-        Borders! -->
+        Borders!
       </h1>
       <div class="flex justify-between gap-2 max-w-xs">
         <a href="#">
