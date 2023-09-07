@@ -1,9 +1,9 @@
 <template>
   <header
-    class="relative sticky top-0 z-20 bg-[url('/assets/images/bg-12.svg')] bg-cover md:px-8 md:py-4 lg:px-20"
+    class="relative sticky top-0 z-20 bg-[url('/assets/images/bg-12.svg')] pt-4 bg-white bg-cover px-4 md:px-8 md:py-4 lg:px-20"
   >
     <div
-      class="container flex items-center bg-black md:mx-auto md:rounded-[20px]"
+      class="container flex items-center bg-black px-4 md:mx-auto rounded-[20px]"
     >
       <nav
         class="relative my-4 flex w-full select-none justify-between px-2 font-['Open_Sans'] text-white md:mx-8 md:py-0"
