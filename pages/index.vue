@@ -1,7 +1,7 @@
 <template>
-  <main class="container px-2 md:mx-auto">
+  <main class="container mx-auto px-4">
     <section class="mt-[3rem] pb-12 md:mt-[7rem] md:pb-32">
-      <div class="items-center md:flex w-fit">
+      <div class="items-center md:flex">
         <div class="mb-8 w-full md:mb-0 md:w-2/4">
           <div class="flex md:inline-block">
             <NuxtLink to="/join-us"
@@ -85,7 +85,7 @@
     <section>
       <div class="bg-[#BEBAFC] rounded-[30px] flex md:py-14 py-8 px-4 md:px-8 justify-center border"
         :style="{ backgroundImage: `url(${qrBg})` }">
-        <div class="max-w-7xl w-full md:space-y-0 space-y-8 md:flex">
+        <div class="max-w-[90rem] w-full md:space-y-0 space-y-8 md:flex">
           <div class="md:w-1/2 text-white flex flex-col justify-between">
             <h1 class="font-heading drop-shadow-lg text-4xl md:text-5xl" style="line-height: 3.4rem !important">
               Unlock the World with <br class="hidden md:block" />XOF: Your

@@ -1,7 +1,7 @@
 <template>
   <div class="subpixel-antialiased bg-auto relative bg-cover">
     
-    <div class="px-[20px] lg:px-[0px]">
+    <div class="px-0">
       <Nav :bg-transparent="false"/>
     <slot />
     </div>

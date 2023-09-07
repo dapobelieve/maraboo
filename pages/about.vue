@@ -1,8 +1,8 @@
 <template>
-  <main class="container mx-auto px-4">
+  <main class="container mx-auto px-4 py-10">
     <section class="py-6 md:pb-32 pt-8">
-      <div class="flex flex-col lg:flex-row">
-        <div class="lg:w-3/4">
+      <div class="flex flex-col lg:flex-row items-center">
+        <div class="lg:w-2/4">
           <h1 class="text-purple font-heading text-lg md:text-4xl mb-8 font-bold">
             {{ $t("about-us.name") }}
           </h1>
@@ -13,8 +13,8 @@
             <span v-html="$t('about-us.text')"> </span>
           </p>
         </div>
-        <div class="flex justify-center lg:w-2/4">
-          <img class="mt-12 w-full" src="~/assets/images/about-design.svg" alt="" />
+        <div class="flex justify-center w-3/4 lg:w-2/4">
+          <img class="lg:mr-[calc(-50vw+92%)] mt-12 w-full" src="~/assets/images/about-design.svg" alt="" />
         </div>
       </div>
       <!-- <div class="mt-16 text-center">

@@ -1,6 +1,6 @@
 <template>
   <header
-    class="sticky top-0 z-20  bg-cover py-4 xl:px-4"
+    class="sticky top-0 z-20 bg-cover md:px-8 md:py-4 xl:px-4"
   >
     <div
       :class="navBg"
@@ -299,11 +299,12 @@ export default {
     navBg() {
       
       return [
-        'container',
+        'md:container',
         'flex',
         'items-center',
-        'mx-auto',
-        'rounded-[20px]', 
+        'mx-0',
+        'md:mx-auto',
+        'md:rounded-[20px]', 
          this.bgTransparent ? 'bg-transparent' : 'bg-black'
       ];
     }
