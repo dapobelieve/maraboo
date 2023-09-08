@@ -1,5 +1,5 @@
 <template>
-  <main class="container px-2 border md:mx-auto">
+  <main class="container px-2 lg:px-10 md:mx-auto">
     <section class="mt-[3rem] pb-12 md:mt-[7rem] md:pb-32">
       <div class="items-center md:flex">
         <div class="mb-8 w-full md:mb-0 md:w-2/4">
@@ -119,7 +119,7 @@
     </section>
     <section class="py-36">
       <div
-        class="unlock bg-[#BEBAFC] rounded-[30px] flex justify-center border lg:px-16 lg:py-36"
+        class="unlock bg-[#BEBAFC] rounded-[30px] flex justify-center border px-4 py-5 lg:px-16 lg:py-36"
         :style="{ backgroundImage: `url(${qrBg})` }"
       >
         <div class="max-w-[90rem] w-full md:space-y-0 space-y-8 md:flex">
@@ -486,7 +486,7 @@
         </div>
       </div>
     </section>
-    <section class="faq mb-16 px-10 md:py-32">
+    <section class="faq mb-16 lg:px-10 md:py-32">
       <div class="flex flex-col items-center">
         <h1
           class="mb-8 text-center font-heading text-4xl leading-snug md:text-6xl"
