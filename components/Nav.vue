@@ -6,7 +6,7 @@
       class="container flex items-center bg-black px-4 md:mx-auto rounded-[20px]"
     >
       <nav
-        class="relative my-4 flex w-full select-none justify-between px-2 font-['Open_Sans'] text-white md:mx-8 md:py-0"
+        class="relative my-4 flex w-full select-none justify-between px-4 font-['Open_Sans'] text-white md:mx-8 md:py-0"
       >
         <NuxtLink :to="localePath('/')" class="flex items-center">
           <img class="h-8" src="~/assets/images/maraboo-2.svg" alt="" />
@@ -39,7 +39,7 @@
         </div>
         <div class="hidden items-center md:flex">
           <div class="mr-12">
-            <a href="#how-it-works"> {{ $t("home.nav.how-it-works") }}</a>
+            <NuxtLink to="/#how-it-works"> {{ $t("home.nav.how-it-works") }}</NuxtLink>
           </div>
 
           <div
@@ -48,11 +48,11 @@
             class="group relative inline-flex cursor-pointer items-center"
           >
             <a> {{ $t("home.nav.company.name") }} </a>
-            <img
+            <!-- <img
               class="mt-0.5 ml-2 h-2 group-hover:-rotate-180"
               src="~/assets/images/caret-down.svg"
               alt=""
-            />
+            /> -->
 
             <div
               role="menu"
@@ -157,7 +157,7 @@
 
     <div
       v-show="showMobileMenu"
-      class="fixed left-0 top-0 h-full w-full bg-white"
+      class="fixed left-0 top-0 h-full w-full bg-white md:hidden"
     >
       <div class="flex h-full flex-col pt-3">
         <div
@@ -253,7 +253,7 @@
                   }}</NuxtLink>
                   <NuxtLink
                     @click.stop="scrollIntoView"
-                    href="#contact-us"
+                    href="/#contact-us"
                     class="mt-4"
                     >{{ $t("home.nav.company.contact-us") }}</NuxtLink
                   >
@@ -292,6 +292,23 @@ import { reactive, computed, toRefs } from "vue";
 import { useI18n } from "vue-i18n";
 
 export default {
+  props: {
+    bgTransparent: Boolean,
+  },
+  computed: {
+    navBg() {
+      
+      return [
+        'md:container',
+        'flex',
+        'items-center',
+        'mx-0',
+        'md:mx-auto',
+        'md:rounded-[20px]', 
+         this.bgTransparent ? 'bg-transparent' : 'bg-black'
+      ];
+    }
+  },
   setup() {
     const { locale } = useI18n();
     const state = reactive({

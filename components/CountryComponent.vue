@@ -1,7 +1,7 @@
 <template>
   <span class="flex flex-col items-center">
     <img
-      class="md:h-[4.7rem] md:w-[5.7rem] mb-2"
+      class="w-[50px] md:h-[4.7rem] md:w-[5.7rem] mb-2"
       :src="`${images[props.country.flag]}`"
       alt=""
     />
