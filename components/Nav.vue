@@ -1,6 +1,6 @@
 <template>
   <header
-    class="relative sticky top-0 z-20 bg-[url('/assets/images/bg-12.svg')] pt-4 bg-white bg-cover px-4 md:px-8 md:py-4 lg:px-20"
+    class="sticky top-0 z-20 bg-[url('/assets/images/bg-12.svg')] pt-4 bg-white bg-cover px-4 md:px-8 md:py-4 lg:px-20"
   >
     <div
       class="container flex items-center bg-black px-4 md:mx-auto rounded-[20px]"
@@ -39,7 +39,9 @@
         </div>
         <div class="hidden items-center md:flex">
           <div class="mr-12">
-            <NuxtLink to="/#how-it-works"> {{ $t("home.nav.how-it-works") }}</NuxtLink>
+            <NuxtLink to="/#how-it-works">
+              {{ $t("home.nav.how-it-works") }}</NuxtLink
+            >
           </div>
 
           <div
@@ -297,17 +299,16 @@ export default {
   },
   computed: {
     navBg() {
-      
       return [
-        'md:container',
-        'flex',
-        'items-center',
-        'mx-0',
-        'md:mx-auto',
-        'md:rounded-[20px]', 
-         this.bgTransparent ? 'bg-transparent' : 'bg-black'
+        "md:container",
+        "flex",
+        "items-center",
+        "mx-0",
+        "md:mx-auto",
+        "md:rounded-[20px]",
+        this.bgTransparent ? "bg-transparent" : "bg-black",
       ];
-    }
+    },
   },
   setup() {
     const { locale } = useI18n();
