@@ -1,10 +1,8 @@
 <template>
   <header
-    class="sticky top-0 z-20 bg-[url('/assets/images/bg-12.svg')] pt-4 bg-white bg-cover px-4 md:px-8 md:py-4 lg:px-20"
+    class="sticky top-0 z-20 bg-[url('/assets/images/bg-12.svg')] pt-4 bg-cover md:pdx-8 md:py-4"
   >
-    <div
-      class="container flex items-center bg-black px-4 md:mx-auto rounded-[20px]"
-    >
+    <div class="flex items-center bg-black rounded-[20px]">
       <nav
         class="relative my-4 flex w-full select-none justify-between px-4 font-['Open_Sans'] text-white md:mx-8 md:py-0"
       >
@@ -50,11 +48,11 @@
             class="group relative inline-flex cursor-pointer items-center"
           >
             <a> {{ $t("home.nav.company.name") }} </a>
-            <!-- <img
+            <img
               class="mt-0.5 ml-2 h-2 group-hover:-rotate-180"
-              src="~/assets/images/caret-down.svg"
+              src="~/assets/images/caret-down-white.svg"
               alt=""
-            /> -->
+            />
 
             <div
               role="menu"
@@ -156,7 +154,6 @@
         </div>
       </nav>
     </div>
-
     <div
       v-show="showMobileMenu"
       class="fixed left-0 top-0 h-full w-full bg-white md:hidden"

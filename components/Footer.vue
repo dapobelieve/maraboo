@@ -1,17 +1,20 @@
 <template>
   <div
-    class="bg-gradient-to-r from-[#BDB9FB] mt-40 py-6 px-6 pb-24 flex space-y-16 flex-col items-center justify-center to-[#A8B8FA]"
+    class="bg-gradient-to-r from-[#BDB9FB] mt-40 py-6 pb-24 flex space-y-16 flex-col items-center justify-center to-[#A8B8FA]"
   >
     <div
       class="container -mt-[9rem] md:px-16 h-full px-7 py-14 md:py-12 flex bg-black text-white rounded-3xl md:rounded-[40px] md:max-w-5xl w-full"
     >
       <div class="lg:flex items-center justify-around h-full w-full gap-10">
         <div class="mb-6 lg:mb-0 lg:w-[50%]">
-          <h1 class="text-3xl lg:text-5xl font-heading text-center lg:text-left mb-4">Join our waitlist!</h1>
+          <h1
+            class="text-3xl lg:text-5xl font-heading text-center lg:text-left mb-4"
+          >
+            Join our waitlist!
+          </h1>
           <p class="text-center lg:text-left leading-6 lg:text-xl">
-            To stay up to date with our development, and to learn how you 
-            can get the most out of Maraboo’s platform for international 
-            transfers.
+            To stay up to date with our development, and to learn how you can
+            get the most out of Maraboo’s platform for international transfers.
           </p>
         </div>
         <div class="flex text-xs lg:w-[50%]">
@@ -20,7 +23,7 @@
             class="lg:text-xl h-12 flex-grow w-full px-4 rounded rounded-e-none text-black focus-within:outline-0 border-0"
           />
           <button
-            class="lg:text-xl px-4 flex-shrink-0 py-2 bg-purple text-white rounded rounded-s-none "
+            class="lg:text-xl px-4 flex-shrink-0 py-2 bg-purple text-white rounded rounded-s-none"
           >
             Notify me
           </button>
@@ -32,7 +35,7 @@
         class="font-heading mb-6 text-center text-white text-4xl md:text-5xl"
         style="line-height: 3.4rem !important"
       >
-      <!-- Download the app to <br /> transfer money -->
+        <!-- Download the app to <br /> transfer money -->
         Download the App <br />
         for Money Transfers Beyond <br />
         Borders!
@@ -47,8 +50,8 @@
       </div>
     </div>
   </div>
-  <footer class="px-2 lg:px-20">
-    <div class="container mx-auto md:py-16 py-6 px-2">
+  <footer class="">
+    <div class="md:py-16 py-6">
       <div
         class="md:flex md:flex-row md:justify-between after:content after:w-full after:bottom-[-20px] md:after:bottom-[-40px] after:h-[1px] after:absolute relative after:bg-[#5C5C5C] items-start mb-16 md:mb-20"
       >
@@ -68,8 +71,10 @@
             designed to improve the quality of life of West Africans.
           </p>
         </div>
-        <div  class="text-center md:text-left contact-us mb-8 md:mb-0 md:w-96">
-          <h1 class="text-2xl md:text-4xl font-heading font-bold mb-4">{{ $t("footer.contact") }}</h1>
+        <div class="text-center md:text-left contact-us mb-8 md:mb-0 md:w-96">
+          <h1 class="text-2xl md:text-4xl font-heading font-bold mb-4">
+            {{ $t("footer.contact") }}
+          </h1>
           <div class="mb-3">
             <span class="font-bold mr-2">{{ $t("footer.email") }}:</span>
             <a
@@ -123,13 +128,12 @@
           <strong>M23345406</strong>
         </h6>
         <span
-          class="w-full md:hidden flex md:items-center md:mb-0 justify-around">
+          class="w-full md:hidden flex md:items-center md:mb-0 justify-around"
+        >
           <a href="" class="block md:mb-0">{{ $t("footer.privacy") }}</a>
           <a href="">{{ $t("footer.terms") }}</a>
         </span>
 
-        
-     
         <!--        <p class="mb-2">-->
         <!--          Lorem ipsum dolor sit amet consectetur. Diam turpis eu pretium ut vel-->
         <!--          risus. Tellus tempor pretium tincidunt in a eu viverra. Ultrices-->
@@ -138,20 +142,21 @@
         <!--          leo quisque. Pretium in tellus vitae risus maecenas posuere. Morbi-->
         <!--          morbi massa leo tortor cras eget massa.-->
         <!--        </p>-->
-        
       </div>
-      
 
       <div
-        class="my-10 w-full text-[#848484] text-center md:flex flex-col justify-center md:flex-row justify-between">
-      
+        class="my-10 w-full text-[#848484] text-center md:flex flex-col justify-center md:flex-row justify-between"
+      >
         <span class="md:mb-0">
           Grand Maraboo Technologies Limited
-          <span class="block md:inline-block"> &#169; 2023 All rights reserved </span>
+          <span class="block md:inline-block">
+            &#169; 2023 All rights reserved
+          </span>
         </span>
-         
+
         <span
-          class="md:flex hidden md:items-center gap-10 md:mb-0 justify-around">
+          class="md:flex hidden md:items-center gap-10 md:mb-0 justify-around"
+        >
           <a href="" class="block md:mb-0">{{ $t("footer.privacy") }}</a>
           <a href="">{{ $t("footer.terms") }}</a>
         </span>

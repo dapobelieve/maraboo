@@ -1,5 +1,5 @@
 <template>
-  <main class="container px-2 lg:px-10 md:mx-auto">
+  <main class="">
     <section class="mt-[3rem] pb-12 md:mt-[7rem] md:pb-32">
       <div class="items-center md:flex">
         <div class="mb-8 w-full md:mb-0 md:w-2/4">
@@ -84,7 +84,7 @@
       </div>
     </section>
     <section class="countries py-12 md:py-32">
-      <div class="md:flex w-full px-4 py-4">
+      <div class="md:flex w-full py-4">
         <div class="md:w-1/2 md:block hidden">
           <div class="flags max-w-xl flex flex-wrap">
             <CountryComponent
@@ -156,18 +156,16 @@
     </section>
     <section class="connecting py-12 md:py-32">
       <div class="md:flex">
-        <div
-          class="mb-4 hidden justify-center md:mb-0 md:mr-12 md:flex md:w-3/5"
-        >
+        <div class="mb-4 hidden md:mb-0 md:mr-12 md:flex md:w-1/2">
           <div>
             <img
-              class="ml-3 h-[31rem]"
+              class="h-[31rem]"
               src="~/assets/images/connecting.png"
               alt=""
             />
           </div>
         </div>
-        <div class="mb-8 md:mb-0 md:w-3/5">
+        <div class="mb-8 md:mb-0 md:w-1/2">
           <div class="flex h-full flex-col justify-center px-4">
             <h1
               class="text-justify font-heading text-4xl leading-none md:mb-8 md:text-left md:text-5xl"
@@ -195,7 +193,7 @@
     <section class="think py-12 md:py-32">
       <div class="md:flex items-center">
         <div class="w-full md:w-3/5">
-          <div class="flex h-full flex-col px-4 text-left">
+          <div class="flex h-full flex-col px-4 md:px-0 text-left">
             <h1
               class="mb-4 font-heading text-4xl leading-none md:mb-16 md:text-6xl"
               v-html="$t('home.section4.convert-currency')"
@@ -206,7 +204,7 @@
             ></div>
           </div>
         </div>
-        <div class="mr-12 flex md:w-2/5">
+        <div class="mr-12 md:mr-0 flex md:w-2/5">
           <div>
             <img class="h-96s ml-3" src="~/assets/images/think.png" alt="" />
           </div>
@@ -486,7 +484,7 @@
         </div>
       </div>
     </section>
-    <section class="faq mb-16 lg:px-10 md:py-32">
+    <section class="faq mb-16 md:py-32">
       <div class="flex flex-col items-center">
         <h1
           class="mb-8 text-center font-heading text-4xl leading-snug md:text-6xl"
