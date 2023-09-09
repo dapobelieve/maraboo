@@ -156,7 +156,7 @@
     </div>
     <div
       v-show="showMobileMenu"
-      class="fixed left-0 top-0 h-full w-full bg-white md:hidden"
+      class="fixed left-0 top-0 h-full w-full bg-black md:hidden"
     >
       <div class="flex h-full flex-col pt-3">
         <div
@@ -169,12 +169,10 @@
             <NuxtLink to="/" class="flex items-center">
               <img
                 class="h-8 md:h-16"
-                src="~/assets/images/maraboo.svg"
+                src="~/assets/images/maraboo-white.svg"
                 alt=""
               />
-              <h1 class="ml-1 font-heading text-2xl font-extrabold">
-                Maraboo H
-              </h1>
+              <h1 class="ml-1 font-heading text-2xl font-extrabold">Maraboo</h1>
             </NuxtLink>
             <div
               @click.stop="locale = !locale"
@@ -182,9 +180,11 @@
             >
               <img
                 class="mr-0.5 h-4 w-4"
-                src="~/assets/images/globe.svg"
+                src="~/assets/images/globe-white.svg"
                 alt=""
-              /><a class="text-xs"> {{ activeLocale.toUpperCase() }}</a>
+              /><a class="text-xs text-white">
+                {{ activeLocale.toUpperCase() }}</a
+              >
               <img
                 :class="[
                   locale
@@ -192,7 +192,7 @@
                     : 'rotate-180 transform transition-transform duration-100',
                 ]"
                 class="mt-0.5 ml-1 h-2"
-                src="~/assets/images/caret-down.svg"
+                src="~/assets/images/caret-down-white.svg"
                 alt=""
               />
               <div
@@ -205,7 +205,7 @@
                 >
                   <nuxt-link
                     :to="switchLocalePath('en')"
-                    class="text-md w-full font-medium"
+                    class="text-md text-black w-full font-medium"
                     >English</nuxt-link
                   >
                 </div>
@@ -229,7 +229,7 @@
             </div>
           </div>
         </div>
-        <div class="px-4">
+        <div class="px-4 text-white">
           <NuxtLink
             @click.stop="showMobileMenu = false"
             href="/#how-it-works"
@@ -246,8 +246,11 @@
                 <a> {{ $t("home.nav.company.name") }} </a>
               </h6>
               <div v-show="mobileCompany" class="absolute top-12">
-                <div @click="showMobileMenu = false" class="ml-4 flex flex-col">
-                  <NuxtLink class="" to="about">{{
+                <div
+                  @click="showMobileMenu = false"
+                  class="ml-4 text-white flex flex-col"
+                >
+                  <NuxtLink class="text-white" to="about">{{
                     $t("home.nav.company.about-us")
                   }}</NuxtLink>
                   <NuxtLink
@@ -256,7 +259,7 @@
                     class="mt-4"
                     >{{ $t("home.nav.company.contact-us") }}</NuxtLink
                   >
-                  <NuxtLink class="mt-4" to="careers">{{
+                  <NuxtLink class="mt-4 text-white" to="careers">{{
                     $t("home.nav.company.careers")
                   }}</NuxtLink>
                   <NuxtLink class="mt-4" to="legal">{{
@@ -277,7 +280,7 @@
           <NuxtLink
             @click="showMobileMenu = false"
             :to="localePath('/join-us')"
-            class="w-full rounded-xl bg-black px-12 py-3 text-center text-white"
+            class="w-full rounded-xl bg-white px-12 py-3 text-center text-black"
           >
             {{ $t("home.nav.wait-list") }}
           </NuxtLink>
