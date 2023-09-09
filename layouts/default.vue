@@ -1,6 +1,6 @@
 <template>
   <div class="subpixel-antialiased w-full bg-auto relative bg-cover">
-    <div class="flex flex-col items-center px-5 sm:px-5 lg:px-5">
+    <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
       <div class="2xl:max-w-[101rem] w-full">
         <Nav :bg-transparent="false" />
         <slot />
