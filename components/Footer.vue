@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-    <div class="flex justify-center items-center flex-col">
+    <div class="flex justify-center px-2 md:px-0 items-center flex-col">
       <h1
         class="font-heading mb-6 text-center text-white text-4xl md:text-5xl"
         style="line-height: 3.4rem !important"
@@ -71,7 +71,10 @@
             designed to improve the quality of life of West Africans.
           </p>
         </div>
-        <div class="text-center md:text-left contact-us mb-8 md:mb-0 md:w-96">
+        <div
+          id="contact-us"
+          class="text-center md:text-left contact-us mb-8 md:mb-0 md:w-96"
+        >
           <h1 class="text-2xl md:text-4xl font-heading font-bold mb-4">
             {{ $t("footer.contact") }}
           </h1>

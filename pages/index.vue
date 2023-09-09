@@ -61,7 +61,7 @@
         </div>
         <div class="flex items-center justify-center md:w-2/4">
           <img
-            class="people md:mr-[calc(-50vw+92%)]"
+            class="people md:mr-[calc(-50vw+98%)]"
             src="~/assets/images/people-hexago.svg"
           />
         </div>
