@@ -27,7 +27,7 @@
             <p class="text-left" v-html="$t('home.section1.left.center.l3')"></p>
           </div>
           <div class="mt-16 hidden text-center md:block md:text-left">
-            <NuxtLink to="/country" class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]">
+            <NuxtLink to="/exchange/send-money-from-canada" class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]">
               Send money now
             </NuxtLink>
             <div class="flex justify-between mt-10 max-w-xs">
@@ -45,7 +45,7 @@
           <img class="people md:mr-[calc(-50vw+92%)]" src="~/assets/images/people-hexago.svg" />
         </div>
         <div class="mt-16 md:hidden text-left">
-          <NuxtLink to="/country" class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]">
+          <NuxtLink to="/exchange/send-money-from-canada" class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]">
             Send money now
           </NuxtLink>
           <div class="flex justify-start gap-5 mt-10">
@@ -71,7 +71,7 @@
             {{ $t("home.section2.countries") }}
           </h1>
           <p class="mb-6" v-html="$t('home.section2.text')"></p>
-          <NuxtLink to="/country" class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]">
+          <NuxtLink to="/exchange/send-money-from-canada" class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]">
             Send money now
           </NuxtLink>
         </div>
@@ -393,7 +393,7 @@ const countries = reactive([
     flag: "benin",
   },
   {
-    name: "burkinafaso",
+    name: "Burkina Faso",
     flag: "burkinafaso",
   },
   {
@@ -414,7 +414,7 @@ const countries = reactive([
   },
   {
     name: "Guinea Bissau",
-    flag: "g-bissau",
+    flag: "guineabissau",
   },
   {
     name: "senegal",

@@ -154,7 +154,7 @@
               @focus="activeInput = 'receive'"
               class="h-10 focus:outline-none w-full px-4 py-6 rounded bg-white"
             />
-            <CountrySelector v-model="form.to" />
+            <CountrySelector v-model="form.to" :disabled="disableInput" @emitDataToParent="emitDataToParent" />
             <div
               class="after:content- after:absolute after:w-[1px] after:h-[80%] after:top-[0.3rem] after:right-[6rem] after:bg-gray-400"
             ></div>
@@ -174,7 +174,12 @@ const defaultWaemu = {
   currency: "xof",
 };
 
+// const { props } = defineProps({
+//   waemu: String
+// })
+
 import useApi from "~/composables/useApi";
+import CountrySelector from "./CountrySelector.vue";
 
 const defaultCanada = {
   name: "Canada",
@@ -182,6 +187,12 @@ const defaultCanada = {
   currency: "cad",
 };
 export default {
+  components: {
+    CountrySelector
+  },
+  props: {
+     country: String,
+  },
   data() {
     return {
       currencies: {
@@ -225,8 +236,8 @@ export default {
           currency: "cad",
         },
         to: {
-          name: "Côte d'Ivoire",
-          flag: "cotedivoire",
+          name: this.country && typeof this.country == 'string' ? this.country.replace("-", " ") : "Côte d'Ivoire",
+          flag: this.country && typeof this.country == 'string' ? this.country.toLowerCase().replace('-', "").replace("'", "i") : "cotedivoire",
           currency: "xof",
         },
         send_amount: null,
@@ -246,6 +257,7 @@ export default {
         xof_amount: 0,
       },
       apiCalling: false,
+      disabled: false,
     };
   },
   watch: {
@@ -390,6 +402,10 @@ export default {
         // throw new Error("Params incomplete");
       }
     },
+    emitDataToParent(data) {
+      //Emit an event with the data you want to pass
+      this.$emit('dataToParent', data)
+    }
   },
   computed: {
     computedSendAmount: {
@@ -457,11 +473,22 @@ export default {
     fromObject() {
       return this.currencies[this.form.from.currency.toUpperCase()];
     },
-  },
-  async mounted() {
-    const { currency_value } = await useApi().exchangeRate();
-    this.rate = this._2dp(currency_value);
-  },
+    disableInput() {
+      if (this.country && typeof this.country == 'string'){
+        return this.disabled = true;
+      }
+      else{
+        return this.disabled = false
+      }
+    },
+    async mounted() {
+      const { currency_value } = await useApi().exchangeRate();
+      this.rate = this._2dp(currency_value);
+    },
+ 
+
+
+  }
 };
 </script>
 
