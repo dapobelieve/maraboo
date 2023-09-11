@@ -1,6 +1,6 @@
 <template>
     <div>
-      <div class="bg-[#BEBAFC] lg:px-[0px] min-h-screen" :style="{ backgroundImage: `url('/unlock-bg.svg')` }">
+      <div class="bg-[#BEBAFC] min-h-screen px-5 sm:px-5 lg:px-10" :style="{ backgroundImage: `url('/unlock-bg.svg')` }">
         <Nav :bg-transparent="true" :btn-white="true" :btn-text-black="true" />
         <section class="container mx-auto px-4">
           <div class="flex md:inline-block mt-10 ms-4">
