@@ -11,6 +11,7 @@
         v-if="selected"
         @click.stop="open = !open"
         class="inline-flex h-12 px-1 items-center"
+        :disabled="disabled"
       >
         <img class="h-6 flag w-6" :src="images[selected.flag]" alt="" />
         <span class="country ml-1 uppercase text-black">
@@ -39,7 +40,7 @@
                       v-model="quickSearch"
                       @click.stop=""
                       placeholder="Search"
-                      class="w-full text-gray-500 h-8 rounded-sm border-[0.5px] border-black focus:outline-none px-3 border"
+                      class="w-full text-gray-500 h-8 rounded-sm border-[0.5px] border-black focus:outline-none px-3"
                     />
                   </span>
                 </div>
@@ -106,8 +107,11 @@
 <script>
 import { reactive, computed, toRefs } from "vue";
 import { useImages } from "~/composables/useImages";
+
+
+
 export default {
-  props: ["modelValue"],
+  props: ["modelValue", "disabled"],
   setup(props, ctx) {
     const state = reactive({
       open: false,
@@ -136,7 +140,7 @@ export default {
         },
         {
           name: "Guinea-Bissau",
-          flag: "g-bissau",
+          flag: "guineabissau",
           currency: "xof",
         },
         {
@@ -148,6 +152,11 @@ export default {
           name: "Niger",
           flag: "niger",
           currency: "xof",
+        },
+        {
+          name: "Togo",
+          flag: "togo",
+          currency: 'xof'
         },
       ],
     });
@@ -169,8 +178,10 @@ export default {
     function close() {
       state.open = false;
     }
+    
     function handleSelection(data) {
       ctx.emit("update:modelValue", data);
+      ctx.emit('emitDataToParent', data)
       close();
     }
 

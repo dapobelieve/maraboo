@@ -1,12 +1,7 @@
 <template>
     <div class="subpixel-antialiased bg-auto relative">
-      
-      <div class="bg-[#BEBAFC] lg:px-[0px] min-h-screen"  
-      :style="{ backgroundImage: `url('/unlock-bg.svg')` }">
-        <Nav :bg-transparent="true" :btn-white="true" :btn-text-black="true"/>
-        <slot />
-      </div>
-
+     <slot />
+     <Footer />
     </div>
   </template>
   <script>
