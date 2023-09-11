@@ -1,5 +1,5 @@
 <template>
-  <main class="container mx-auto px-4">
+  <main class="container px-2 lg:px-20 md:mx-auto">
     <section class="mt-[3rem] pb-12 md:mt-[7rem] md:pb-32">
       <div class="items-center md:flex">
         <div class="mb-8 w-full md:mb-0 md:w-2/4">

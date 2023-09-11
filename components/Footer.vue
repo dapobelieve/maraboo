@@ -47,8 +47,8 @@
       </div>
     </div>
   </div>
-  <footer id="contact-us" class="px-8 pt-10">
-    <div class="container mx-auto md:pt-16 py-6 px-2">
+  <footer class="px-2 lg:px-20">
+    <div class="container mx-auto md:py-16 py-6 px-2">
       <div
         class="md:flex md:flex-row md:justify-between after:content after:w-full after:bottom-[-20px] md:after:bottom-[-40px] after:h-[1px] after:absolute relative after:bg-[#5C5C5C] items-start mb-16 md:mb-20"
       >
