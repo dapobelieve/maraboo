@@ -1,5 +1,5 @@
 <template>
-  <main class="">
+  <main>
     <section class="mt-[3rem] pb-12 md:mt-[7rem] md:pb-32">
       <div class="items-center md:flex">
         <div class="mb-8 w-full md:mb-0 md:w-2/4">

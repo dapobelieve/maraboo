@@ -73,7 +73,7 @@ const countryLink = computed(() => {
     return '/exchange/send-money-from-canada'
    }
    else{
-    return `/exchange/send-money-from-${(props.country.name.replace(" ", "-"))}-to-canada`
+    return `/exchange/send-money-from-${(props.country.name.replace(" ", "-"))}-to-canada`.toLowerCase()
    }
 })
 </script>
