@@ -1,8 +1,8 @@
 <template>
-  <main class="container mx-auto px-2">
-    <section class="countries py-12 md:pb-32">
-      <div class="md:flex items-center">
-        <div class="w-full md:w-2/5">
+  <main class="w-full">
+    <section class="py-12 md:pb-32">
+      <div class="flex flex-col lg:flex-row items-start">
+        <div class="w-full md:w-2/4">
           <div
             class="flex md:items-start text-left items-center flex-col px-4 h-full"
           >
@@ -12,27 +12,21 @@
             <h1 class="font-heading text-4xl md:text-6xl leading-snug mb-4">
               {{ $t("careers.come-work") }}
             </h1>
-            <div class="mb-16 text-lg md:mb-20">
+            <div class="mb-16 md:mb-20">
               {{ $t("careers.we") }}
             </div>
-            <div class="hidden md:block text-left">
-              <GlobalMore> {{ $t("careers.view") }}</GlobalMore>
-            </div>
+            <div class="bg-reds-300" v-html="$t('careers.opening')"></div>
           </div>
         </div>
-        <div class="md:w-3/5 flex justify-center">
-          <div>
-            <img class="md:h-[36rem]" src="~/assets/images/hepta.svg" alt="" />
-          </div>
-        </div>
-        <div class="md:hidden md:block mt-16 text-center">
-          <GlobalMore> {{ $t("careers.view") }}</GlobalMore>
+        <div class="flex items-center justify-center w-full md:w-2/4">
+          <img
+            class="md:mr-[calc(-50vw+90%)] mt-12"
+            src="~/assets/images/carz.svg"
+            alt=""
+          />
         </div>
       </div>
     </section>
-    <section
-      class="countries py-12 md:py-6"
-      v-html="$t('careers.opening')"
-    ></section>
   </main>
 </template>
+<script setup lang="ts"></script>

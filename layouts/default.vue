@@ -13,7 +13,6 @@
 import bg from "assets/images/bg.svg";
 
 export default {
-  
   data() {
     return {
       image: bg,
