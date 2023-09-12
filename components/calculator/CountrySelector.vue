@@ -108,8 +108,6 @@
 import { reactive, computed, toRefs } from "vue";
 import { useImages } from "~/composables/useImages";
 
-
-
 export default {
   props: ["modelValue", "disabled"],
   setup(props, ctx) {
@@ -154,9 +152,14 @@ export default {
           currency: "xof",
         },
         {
+          name: "Senegal",
+          flag: "senegal",
+          currency: "xof",
+        },
+        {
           name: "Togo",
           flag: "togo",
-          currency: 'xof'
+          currency: "xof",
         },
       ],
     });
@@ -178,10 +181,10 @@ export default {
     function close() {
       state.open = false;
     }
-    
+
     function handleSelection(data) {
       ctx.emit("update:modelValue", data);
-      ctx.emit('emitDataToParent', data)
+      ctx.emit("emitDataToParent", data);
       close();
     }
 

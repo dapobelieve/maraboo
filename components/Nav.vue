@@ -319,15 +319,9 @@ export default {
       mobileCompany: false,
       activeLocale: computed(() => locale),
     });
-    function scrollIntoView(e) {
-      const { hash } = e.target;
-      document.querySelector(hash).scrollIntoView({ behavior: "smooth" });
-      state.showMobileMenu = false;
-    }
 
     return {
       ...toRefs(state),
-      scrollIntoView,
     };
   },
 };
