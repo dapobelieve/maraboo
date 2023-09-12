@@ -269,24 +269,20 @@
   </section>
 </template>
 
-
 <script setup>
 import { reactive, onMounted } from "vue";
 import { useI18n } from "vue-i18n";
 import Calculator from "~/components/calculator/Calculator.vue";
 const { t } = useI18n();
 
-
 function scrollIntoView(e) {
   const { hash } = e.target;
   document.querySelector(hash).scrollIntoView({ behavior: 'smooth' })
 }
 
-
 definePageMeta({
-  layout: 'country'
-})
-
+  layout: "country",
+});
 
 const faqs = reactive([
   {
@@ -314,11 +310,7 @@ const faqs = reactive([
     answers: t("home.faq.5.answers"),
   },
 ]);
-
-
-
 </script>
-
 
 <script>
 import Calculator from "~/components/calculator/Calculator.vue";

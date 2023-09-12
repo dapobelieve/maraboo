@@ -147,6 +147,11 @@
                     <p class="mt-4 mb-3" v-html="$t('home.section5.how-it-works.step-3.text')"></p>
                   </div>
                 </div>
+
+                <p
+                  class="mt-4 mb-3"
+                  v-html="$t('home.section5.how-it-works.step-3.text')"
+                ></p>
               </div>
             </div>
           </div>
@@ -202,6 +207,7 @@
               </a>
             </div>
           </div>
+          <!--  <GlobalMore> {{ $t("home.section1.left.bottom") }} </GlobalMore>-->
         </div>
       </div>
     </div>
