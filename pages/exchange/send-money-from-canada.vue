@@ -11,7 +11,7 @@
             :btn-white="true"
             :btn-text-black="true"
           />
-          <section class="container mx-auto px-4">
+          <section class="px-4">
             <div class="flex md:inline-block mt-10 ms-4">
               <NuxtLink
                 to="/join-us"
@@ -30,10 +30,8 @@
                 />
               </NuxtLink>
             </div>
-            <div
-              class="rounded-[30px] flex md:py-14 py-8 lg:px-8 justify-center"
-            >
-              <div class="max-w-7xl w-full md:space-y-0 space-y-8 md:flex">
+            <div class="rounded-[30px] flex py-8 justify-center">
+              <div class="w-full md:space-y-0 space-y-8 md:flex">
                 <div class="md:w-1/2 text-white flex flex-col justify-between">
                   <h1
                     class="font-heading drop-shadow-lg text-4xl md:text-5xl"
