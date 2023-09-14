@@ -16,6 +16,15 @@
               {{ $t("careers.we") }}
             </div>
             <div class="bg-reds-300" v-html="$t('careers.opening')"></div>
+            <div class="mt-10 w-full">
+              <FileUploader @fileSelected="data.file = event" class="mb-8" />
+              <button
+                :disabled="computedButtonState"
+                class="rounded-lg px-6 py-3 text-sm font-medium bg-black text-white"
+              >
+                Submit
+              </button>
+            </div>
           </div>
         </div>
         <div class="flex items-center justify-center w-full md:w-2/4">
@@ -27,6 +36,19 @@
         </div>
       </div>
     </section>
+    <section class="py-12 md:pb-32"></section>
   </main>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref, computed, reactive } from "vue";
+const data = reactive({
+  disabled: true,
+  file: null,
+});
+
+function handleFileUpload(e) {
+  console.log(e);
+}
+
+const computedButtonState = computed(() => bool(data.file));
+</script>
