@@ -2,7 +2,7 @@
   <header
     class="sticky top-0 z-20 bg-[url('/assets/images/bg-12.svg')] pt-4 bg-cover md:pdx-8 md:py-4"
   >
-    <div class="flex items-center bg-black rounded-[20px]">
+    <div :class="navBg">
       <nav
         class="relative my-4 flex w-full select-none justify-between px-4 font-['Open_Sans'] text-white md:mx-8 md:py-0"
       >
@@ -300,12 +300,9 @@ export default {
   computed: {
     navBg() {
       return [
-        "md:container",
         "flex",
         "items-center",
-        "mx-0",
-        "md:mx-auto",
-        "md:rounded-[20px]",
+        "rounded-[20px]",
         this.bgTransparent ? "bg-transparent" : "bg-black",
       ];
     },
