@@ -5,6 +5,7 @@
     action=""
     class="bg-gradient-to-r w-full uploader from-[#DDDDDD] to-[#F5F5F5] rounded-lg h-[20rem] p-10 flex items-center justify-center relative mb-6"
     @dragover.prevent="handleDragOver"
+    accept=".pdf,.doc,.docx,.txt,.rtf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
     @dragleave.prevent="handleDragLeave"
     :class="{ 'border-gray-600': dragging }"
   >
