@@ -61,7 +61,7 @@
             </div>
             <select
               name="cars"
-              class="bg-purple text-white text-sm font-bold w-40 py-1 px-2 rounded"
+              class="bg-purple select text-white text-sm font-bold w-40 py-1 px-2 rounded"
               v-model="form.method"
             >
               <option
@@ -498,4 +498,17 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.select {
+  padding-right: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 5px;
+  height: 34px;
+  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
+    no-repeat right #5f19f2;
+  -webkit-appearance: none;
+  background-position-x: 134px;
+}
+</style>

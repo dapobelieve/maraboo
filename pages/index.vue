@@ -117,7 +117,7 @@
     </section>
     <section class="py-12 md:py-36">
       <div
-        class="unlock bg-[#BEBAFC] rounded-[30px] flex justify-center border px-4 py-5 lg:px-16 lg:py-36"
+        class="unlock bg-[#BEBAFC] rounded-[30px] flex justify-center border px-6 py-8 lg:px-16 lg:py-36"
         :style="{ backgroundImage: `url(${qrBg})` }"
       >
         <div class="max-w-[90rem] w-full md:space-y-0 space-y-8 md:flex">
