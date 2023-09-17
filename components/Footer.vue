@@ -31,10 +31,7 @@
       </div>
     </div>
     <div class="flex justify-center px-2 md:px-0 items-center flex-col">
-      <h1
-        class="font-heading mb-6 text-center text-white text-4xl md:text-5xl"
-        style="line-height: 3.4rem !important"
-      >
+      <h1 class="font-heading mb-6 text-center text-white text-4xl md:text-5xl">
         <!-- Download the app to <br /> transfer money -->
         Download the App <br />
         for Money Transfers Beyond <br />
@@ -50,7 +47,7 @@
       </div>
     </div>
   </div>
-  <footer class="">
+  <footer class="px-5 sm:px-5 lg:px-10">
     <div class="md:py-16 py-6">
       <div
         class="md:flex md:flex-row md:justify-between after:content after:w-full after:bottom-[-20px] md:after:bottom-[-40px] after:h-[1px] after:absolute relative after:bg-[#5C5C5C] items-start mb-16 md:mb-20"
@@ -67,7 +64,6 @@
           <p class="text-center md:text-left">
             A West-African fintech firm offering transformative <br />
             financial solutions that are fair, responsible, inclusive, and
-
             designed to improve the quality of life of West Africans.
           </p>
         </div>

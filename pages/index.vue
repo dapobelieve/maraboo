@@ -1,9 +1,9 @@
 <template>
-  <main>
-    <section class="mt-[3rem] pb-12 md:mt-[7rem] md:pb-32">
-      <div class="items-center md:flex">
+  <main class="">
+    <section class="md:h-[calc(100vh-140px)]">
+      <div class="items-center md:flex h-full">
         <div class="mb-8 w-full md:mb-0 md:w-2/4">
-          <div class="flex md:inline-block">
+          <span class="flex md:inline-block">
             <NuxtLink
               to="/join-us"
               class="flex cursor-pointer items-center bg-[#F5F5F5] px-4 py-3 shadow transition-transform duration-700 hover:scale-105 rounded-[50px] md:px-4 md:py-3"
@@ -20,13 +20,10 @@
                 alt=""
               />
             </NuxtLink>
-          </div>
-          <div class="mt-20">
+          </span>
+          <div class="mt-12">
             <div class="mb-8 font-heading md:text-left">
-              <h1
-                class="max-w-[47rem] text-[32px] md:text-5xl"
-                style="line-height: 3.4rem !important"
-              >
+              <h1 class="max-w-[47rem] text-[32px] leading-tight md:text-5xl">
                 {{ $t("home.section1.left.center.l1") }}
                 <span class="block">{{
                   $t("home.section1.left.center.l2")
@@ -38,22 +35,22 @@
               v-html="$t('home.section1.left.center.l3')"
             ></p>
           </div>
-          <div class="mt-16 hidden text-center md:block md:text-left">
+          <div class="mt-16 md:block text-left">
             <NuxtLink
               to="/exchange/send-money-from-canada"
               class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]"
             >
               Send money now
             </NuxtLink>
-            <div class="flex justify-between mt-10 max-w-xs">
+            <div class="flex md:justify-between mt-10 md:max-w-xs">
               <a>
                 <img
-                  class="md:h-12 h-4"
+                  class="md:h-12 h-8 mr-2"
                   src="~/assets/images/appleStore.webp"
                 />
               </a>
               <a>
-                <img class="md:h-12" src="~/assets/images/playStore.webp" />
+                <img class="md:h-12 h-8" src="~/assets/images/playStore.webp" />
               </a>
             </div>
             <!--  <GlobalMore> {{ $t("home.section1.left.bottom") }} </GlobalMore>-->
@@ -65,22 +62,22 @@
             src="~/assets/images/people-hexago.svg"
           />
         </div>
-        <div class="mt-16 md:hidden text-left">
-          <NuxtLink
-            to="/exchange/send-money-from-canada"
-            class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]"
-          >
-            Send money now
-          </NuxtLink>
-          <div class="flex justify-start gap-5 mt-10">
-            <a href="#">
-              <img class="h-12" src="~/assets/images/appleStore.webp" />
-            </a>
-            <a href="#">
-              <img class="h-12" src="~/assets/images/playStore.webp" />
-            </a>
-          </div>
-        </div>
+        <!--        <div class="mt-16 md:hidden text-left">-->
+        <!--          <NuxtLink-->
+        <!--            to="/exchange/send-money-from-canada"-->
+        <!--            class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]"-->
+        <!--          >-->
+        <!--            Send money now-->
+        <!--          </NuxtLink>-->
+        <!--          <div class="flex justify-start gap-5 mt-10">-->
+        <!--            <a href="#">-->
+        <!--              <img class="h-12" src="~/assets/images/appleStore.webp" />-->
+        <!--            </a>-->
+        <!--            <a href="#">-->
+        <!--              <img class="h-12" src="~/assets/images/playStore.webp" />-->
+        <!--            </a>-->
+        <!--          </div>-->
+        <!--        </div>-->
       </div>
     </section>
     <section class="countries py-12 md:py-32">
@@ -98,7 +95,7 @@
           <h1 class="mb-4 font-heading text-4xl md:text-6xl">
             {{ $t("home.section2.countries") }}
           </h1>
-          <p class="mb-6" v-html="$t('home.section2.text')"></p>
+          <p class="mb-12 text-left" v-html="$t('home.section2.text')"></p>
           <NuxtLink
             to="/exchange/send-money-from-canada"
             class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]"
@@ -106,9 +103,10 @@
             Send money now
           </NuxtLink>
         </div>
-        <div class="md:hidden">
-          <div class="flags flex flex-wrap mt-12">
+        <div class="md:hidden w-full flex justify-start">
+          <div class="flags w-full max-w-sm flex flex-wrap items-center mt-12">
             <CountryComponent
+              class="shrink-0"
               v-for="(country, cIndex) in countries"
               :key="cIndex"
               :country="country"
@@ -117,26 +115,25 @@
         </div>
       </div>
     </section>
-    <section class="py-36">
+    <section class="py-12 md:py-36">
       <div
         class="unlock bg-[#BEBAFC] rounded-[30px] flex justify-center border px-4 py-5 lg:px-16 lg:py-36"
         :style="{ backgroundImage: `url(${qrBg})` }"
       >
         <div class="max-w-[90rem] w-full md:space-y-0 space-y-8 md:flex">
           <div class="md:w-1/2 text-white flex flex-col justify-between">
-            <h1
-              class="font-heading drop-shadow-lg text-4xl md:text-5xl"
-              style="line-height: 3.4rem !important"
-            >
-              Unlock the World with <br class="hidden md:block" />XOF: Your
-              Passport to Seamless Cross-Border Transfers.
-            </h1>
-            <p class="drop-shadow-lg mb-8 md:mb-0">
-              From local to global in real time, Maraboo Magic: Discover 3x
-              <br />
-              Savings on international money Transfers to or from WAEMU
-              countries!
-            </p>
+            <div>
+              <h1 class="font-heading drop-shadow-lg text-4xl mb-6 md:text-5xl">
+                Unlock the World with <br class="hidden md:block" />XOF: Your
+                Passport to Seamless Cross-Border Transfers.
+              </h1>
+              <p class="drop-shadow-lg mb-8 md:mb-0">
+                From local to global in real time, Maraboo Magic: Discover 3x
+                <br />
+                Savings on international money Transfers to or from WAEMU
+                countries!
+              </p>
+            </div>
             <div class="inline-flex">
               <img
                 class="md:h-56 h-32 mr-5 drop-shadow-lg"
@@ -195,7 +192,7 @@
         <div class="w-full md:w-3/5">
           <div class="flex h-full flex-col px-4 md:px-0 text-left">
             <h1
-              class="mb-4 font-heading text-4xl leading-none md:mb-16 md:text-6xl"
+              class="mb-4 font-heading text-4xl md:mb-16 md:text-6xl"
               v-html="$t('home.section4.convert-currency')"
             ></h1>
             <div
@@ -206,7 +203,7 @@
         </div>
         <div class="mr-12 md:mr-0 flex md:w-2/5">
           <div>
-            <img class="h-96s ml-3" src="~/assets/images/think.png" alt="" />
+            <img class="ml-3" src="~/assets/images/think.png" alt="" />
           </div>
         </div>
       </div>
@@ -222,10 +219,10 @@
             <br />
             {{ $t("home.section5.text-2") }}
           </p>
-          <div class="my-20 w-full md:w-4/5">
-            <div class="flex flex-col items-center justify-around md:flex-row">
+          <div class="my-20 w-full xl:w-4/5">
+            <div class="flex flex-col items-center justify-between sm:flex-row">
               <div
-                class="mb-10 bg-[#F5F5F5] px-10 md:max-w-[20rem] rounded-xl w-full py-8 inline-flex items-center md:mb-0"
+                class="mb-10 sm:mb-0 bg-[#F5F5F5] px-5 border lg:px-10 rounded-xl lg:w-[30%] sm:w-[32%] w-[50%] py-8 inline-flex items-center md:mb-0"
               >
                 <div class="flex items-center w-full">
                   <img
@@ -237,7 +234,7 @@
                 </div>
               </div>
               <div
-                class="mb-10 bg-[#F5F5F5] px-10 md:max-w-[20rem] rounded-xl w-full py-8 inline-flex items-center md:mb-0"
+                class="mb-10 sm:mb-0 bg-[#F5F5F5] px-5 border lg:px-10 rounded-xl lg:w-[30%] sm:w-[32%] w-[50%] py-8 inline-flex items-center md:mb-0"
               >
                 <div class="flex items-center w-full">
                   <img
@@ -251,7 +248,7 @@
                 </div>
               </div>
               <div
-                class="bg-[#F5F5F5] px-10 md:max-w-[20rem] rounded-xl w-full py-8 inline-flex items-center md:mb-0"
+                class="bg-[#F5F5F5] px-5 border lg:px-10 sm: rounded-xl lg:w-[30%] sm:w-[32%] w-[50%] py-8 inline-flex items-center md:mb-0"
               >
                 <div class="flex items-center w-full">
                   <img

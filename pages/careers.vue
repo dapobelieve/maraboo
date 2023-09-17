@@ -1,12 +1,10 @@
 <template>
   <main class="w-full">
-    <section class="py-12 md:pb-32">
+    <section class="md:pb-32">
       <div class="flex flex-col lg:flex-row items-start">
         <div class="w-full md:w-2/4">
-          <div
-            class="flex md:items-start text-left items-center flex-col px-4 h-full"
-          >
-            <h1 class="text-purple mb-4 md:mb-14 text-2xl font-extrabold">
+          <div class="flex md:items-start text-left flex-col px-4 h-full">
+            <h1 class="text-purple mb-4 md:mb-14 text-xl font-extrabold">
               {{ $t("careers.join") }}
             </h1>
             <h1 class="font-heading text-4xl md:text-6xl leading-snug mb-4">
@@ -50,5 +48,5 @@ function handleFileUpload(e) {
   console.log(e);
 }
 
-const computedButtonState = computed(() => bool(data.file));
+const computedButtonState = computed(() => !!data.file);
 </script>

@@ -21,7 +21,7 @@
         "center": {
           "l1": "Global transfers to or from WAEMU countries at the",
           "l2": " real exchange rate!",
-          "l3": "Did you know that a 10% reduction in transaction fees for             sending money in & out of WAEMU country can boost the              revenue of regional households by up to 16%?"
+          "l3": "Did you know that a 10% reduction in transaction fees for             sending money in & out <br > of WAEMU country can boost the              revenue of regional households by up to 16%?"
         },
         "bottom": "Learn more on Maraboo"
       },
@@ -34,7 +34,7 @@
     },
     "section2": {
       "countries": "Countries we support",
-      "text": "We support 9 markets and 2 currencies to make it easier for you to\n          transact <br /> globally. We’ll be adding more markets and currencies shortly to\n          better serve your needs."
+      "text": "We support 9 markets and 2 currencies to make it easier for you to transact globally. We’ll be adding more markets and currencies shortly to\n          better serve your needs."
     },
     "section3": {
       "super-charge": "Connecting WAEMU to the Global Payment Network!",

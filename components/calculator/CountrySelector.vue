@@ -19,7 +19,7 @@
         </span>
         <span>
           <img
-            class="ml-1 h-2 w-2"
+            class="ml-1 h-4 w-4"
             src="~/assets/images/caret-down.svg"
             alt=""
           />
