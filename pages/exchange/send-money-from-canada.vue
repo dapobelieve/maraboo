@@ -145,7 +145,7 @@
                           </div>
                           <div>
                             <img class="ml-3 h-4" src="~/assets/images/mali.svg" alt="" />
-                          </div>guineabissau
+                          </div>
                           <div>
                             <img class="ml-3 h-4" src="~/assets/images/togo.svg" alt="" />
                           </div>
