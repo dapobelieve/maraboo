@@ -12,42 +12,42 @@
             :btn-text-black="true"
           />
           <section class="px-4">
-            <div class="flex md:inline-block mt-10">
-              <NuxtLink
-                to="/join-us"
-                class="flex cursor-pointer items-center bg-[#F5F5F5] px-4 py-3 shadow transition-transform duration-700 hover:scale-105 rounded-[50px] md:px-4 md:py-3"
-              >
-                <span class="text-sm font-bold text-purple lg:text-lg">
-                  FINTRAC regulated
-                </span>
-                <span class="mx-1 text-[12px] text-black md:ml-4">
-                  Learn more
-                </span>
-                <img
-                  class="h-3 md:ml-3"
-                  src="~/assets/images/arrow-right.svg"
-                  alt=""
-                />
-              </NuxtLink>
-            </div>
+            <div class="flex md:inline-block mt-10"></div>
             <div class="rounded-[30px] flex py-8 justify-center">
-              <div class="w-full md:space-y-0 space-y-8 md:flex">
-                <div class="md:w-1/2 text-white flex flex-col justify-between">
-                  <h1
-                    class="font-heading drop-shadow-lg text-4xl md:text-5xl"
-                    style="line-height: 3.4rem !important"
-                  >
+              <div class="w-full md:space-y-0 md:flex items-start">
+                <div
+                  class="md:w-1/2 text-white h-full space-y-8 flex flex-col justify-between"
+                >
+                  <span>
+                    <NuxtLink
+                      to="/join-us"
+                      class="inline-flex inline cursor-pointer items-center bg-[#F5F5F5] px-4 py-3 shadow transition-transform duration-700 hover:scale-105 rounded-[50px] md:px-4 md:py-3"
+                    >
+                      <span class="text-sm font-bold text-purple lg:text-lg">
+                        FINTRAC regulated
+                      </span>
+                      <span class="mx-1 text-[12px] text-black md:ml-4">
+                        Learn more
+                      </span>
+                      <img
+                        class="h-3 md:ml-3"
+                        src="~/assets/images/arrow-right.svg"
+                        alt=""
+                      />
+                    </NuxtLink>
+                  </span>
+                  <h1 class="font-heading mb-10 text-4xl md:text-5xl">
                     Send money from {{ countryName }} to Canada at the real
                     exchange rate!
                   </h1>
-                  <p class="drop-shadow-lg mb-8 md:mb-0">
+                  <p class="drop-shadow-lg grow mb-8 md:mb-0">
                     From local to global in real time, Maraboo Magic: Discover
                     3x
                     <br />
                     Savings on international money Transfers to or from WAEMU
                     countries!
                   </p>
-                  <div class="inline-flex">
+                  <div class="inline-flex mb-auto">
                     <img
                       class="md:h-56 h-32 mr-5 drop-shadow-lg"
                       src="~/assets/images/qr.svg"
