@@ -42,15 +42,15 @@
             >
               Send money now
             </NuxtLink>
-            <div class="flex md:justify-between mt-10 md:max-w-xs">
-              <a>
+            <div class="flex md:justify-between mt-10 md:max-w-[18rem]">
+              <a href="#">
                 <img
-                  class="md:h-12 h-8 mr-2"
-                  src="~/assets/images/appleStore.webp"
+                  class="h-12 mr-2 md:mr-0"
+                  src="~/assets/images/appleStore.svg"
                 />
               </a>
-              <a>
-                <img class="md:h-12 h-8" src="~/assets/images/playStore.webp" />
+              <a href="#">
+                <img class="h-12" src="~/assets/images/playStore.svg" />
               </a>
             </div>
             <!--  <GlobalMore> {{ $t("home.section1.left.bottom") }} </GlobalMore>-->
@@ -71,10 +71,10 @@
         <!--          </NuxtLink>-->
         <!--          <div class="flex justify-start gap-5 mt-10">-->
         <!--            <a href="#">-->
-        <!--              <img class="h-12" src="~/assets/images/appleStore.webp" />-->
+        <!--              <img class="h-12" src="~/assets/images/appleStore.svg" />-->
         <!--            </a>-->
         <!--            <a href="#">-->
-        <!--              <img class="h-12" src="~/assets/images/playStore.webp" />-->
+        <!--              <img class="h-12" src="~/assets/images/playStore.svg" />-->
         <!--            </a>-->
         <!--          </div>-->
         <!--        </div>-->
