@@ -145,7 +145,7 @@
                           </div>
                           <div>
                             <img class="ml-3 h-4" src="~/assets/images/mali.svg" alt="" />
-                          </div>
+                          </div>guineabissau
                           <div>
                             <img class="ml-3 h-4" src="~/assets/images/togo.svg" alt="" />
                           </div>
@@ -153,7 +153,7 @@
                             <img class="ml-3 h-4" src="~/assets/images/niger.svg" alt="" />
                           </div>
                           <div>
-                            <img class="ml-3 h-4" src="~/assets/images/g-bissau.svg" alt="" />
+                            <img class="ml-3 h-4" src="~/assets/images/guineabissau.svg" alt="" />
                           </div>
 
                           <div>
