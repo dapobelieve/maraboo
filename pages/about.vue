@@ -2,7 +2,7 @@
   <section class="md:pb-32">
     <div class="flex flex-col lg:flex-row items-center">
       <div class="lg:w-2/4">
-        <h1 class="text-purple mb-4 md:mb-14 text-xl font-extrabold">
+        <h1 class="text-purple mb-8 md:mb-14 text-xl font-extrabold">
           {{ $t("about-us.name") }}
         </h1>
         <h1 class="font-heading text-4xl md:text-6xl mb-8 pr-10">
@@ -12,7 +12,7 @@
           <span v-html="$t('about-us.text')"> </span>
         </p>
       </div>
-      <div class="flex justify-center w-3/4 lg:w-2/4">
+      <div class="flex justify-center md:w-2/4">
         <img
           class="lg:mr-[calc(-50vw+99%)] mt-12 w-full"
           src="~/assets/images/shadow.svg"

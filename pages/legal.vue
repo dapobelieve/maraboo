@@ -1,15 +1,13 @@
 <template>
-  <section class="py-12 md:pb-32">
+  <section class="md:pb-32">
     <div class="md:flex items-center">
       <div class="w-full md:w-2/4">
-        <div
-          class="flex md:items-start md:mb-20 text-left items-center flex-col h-full"
-        >
-          <h1 class="text-purple mb-4 md:mb-14 text-3xl font-extrabold">
+        <div class="flex md:items-start text-left flex-col h-full">
+          <h1 class="text-purple mb-8 md:mb-14 text-xl font-extrabold">
             {{ $t("legal.name") }}
           </h1>
           <h1
-            class="font-heading text-4xl max-rem] md:text-6xl leading-snug mb-4"
+            class="font-heading text-4xl max-rem] md:text-4xl leading-snug mb-4"
           >
             {{ $t("legal.policy") }}
           </h1>

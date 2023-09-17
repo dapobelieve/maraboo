@@ -250,7 +250,7 @@
                   }}</NuxtLink>
                   <NuxtLink
                     @click.stop="scrollIntoView"
-                    href="/#contact-us"
+                    href="#contact-us"
                     class="mt-4"
                     >{{ $t("home.nav.company.contact-us") }}</NuxtLink
                   >
@@ -314,6 +314,7 @@ export default {
 
     function scrollIntoView(e) {
       const { hash } = e.target;
+      console.log(hash);
       document.querySelector(hash).scrollIntoView({ behavior: "smooth" });
       state.showMobileMenu = false;
     }

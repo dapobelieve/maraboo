@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-gradient-to-r from-[#BDB9FB] mt-40 py-6 pb-24 flex space-y-16 flex-col items-center justify-center to-[#A8B8FA]"
+    class="bg-gradient-to-r from-[#BDB9FB] mt-40 py-6 pb-24 px-5 flex space-y-16 flex-col items-center justify-center to-[#A8B8FA]"
   >
     <div
       class="container -mt-[9rem] md:px-16 h-full px-7 py-14 md:py-12 flex bg-black text-white rounded-3xl md:rounded-[40px] md:max-w-5xl w-full"
@@ -67,10 +67,7 @@
             designed to improve the quality of life of West Africans.
           </p>
         </div>
-        <div
-          id="contact-us"
-          class="text-center md:text-left contact-us mb-8 md:mb-0 md:w-96"
-        >
+        <div class="text-center md:text-left contact-us mb-8 md:mb-0 md:w-96">
           <h1 class="text-2xl md:text-4xl font-heading font-bold mb-4">
             {{ $t("footer.contact") }}
           </h1>
@@ -87,7 +84,8 @@
             300) Markham, ON,
             <br />
             CANADA L6G-0E7 <br />
-            <strong>Cote D’ivoire</strong> - 25 BP 663 Abidjan 25
+            <strong id="contact-us">Cote D’ivoire</strong> - 25 BP 663 Abidjan
+            25
           </div>
         </div>
         <div class="socials text-center mt-10 md:mt-0">
