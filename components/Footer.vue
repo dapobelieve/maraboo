@@ -39,10 +39,10 @@
       </h1>
       <div class="flex justify-between gap-2 max-w-xs">
         <a href="#">
-          <img class="md:h-12" src="~/assets/images/appleStore.webp" />
+          <img class="h-12" src="~/assets/images/appleStore.svg" />
         </a>
         <a href="#">
-          <img class="md:h-12" src="~/assets/images/playStore.webp" />
+          <img class="h-12" src="~/assets/images/playStore.svg" />
         </a>
       </div>
     </div>

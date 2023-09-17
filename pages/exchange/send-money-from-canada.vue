@@ -198,7 +198,7 @@
         <div class="md:flex gap-10">
           <div class="mb-8 w-full md:mb-0 md:w-2/4">
 
-            <div class="mt-20">
+            <div class="mt-0">
               <div class="mb-8 font-heading md:text-left">
                 <h1 class="max-w-[47rem] text-[32px] md:text-5xl" style="line-height: 3.4rem !important">
                   Download the Maraboo
@@ -212,12 +212,12 @@
               <a @click.stop="scrollIntoView" href="#top" class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]">
                 Send money now
               </a>
-              <div class="flex justify-between mt-10 max-w-xs">
+              <div class="flex justify-between mt-10 md:max-w-[18rem]">
                 <a>
-                  <img class="md:h-12 h-4" src="~/assets/images/appleStore.webp" />
+                  <img class="md:h-12 h-4" src="~/assets/images/appleStore.svg" />
                 </a>
                 <a>
-                  <img class="md:h-12" src="~/assets/images/playStore.webp" />
+                  <img class="md:h-12" src="~/assets/images/playStore.svg" />
                 </a>
               </div>
               <!--  <GlobalMore> {{ $t("home.section1.left.bottom") }} </GlobalMore>-->
@@ -230,12 +230,12 @@
             <a @click.stop="scrollIntoView" href="#top" class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]">
               Send money now
             </a>
-            <div class="flex justify-start gap-5 mt-10">
+            <div class="flex justify-start gap-2 mt-10">
               <a href="#">
-                <img class="h-12" src="~/assets/images/appleStore.webp" />
+                <img class="h-12" src="~/assets/images/appleStore.svg" />
               </a>
               <a href="#">
-                <img class="h-12" src="~/assets/images/playStore.webp" />
+                <img class="h-12" src="~/assets/images/playStore.svg" />
               </a>
             </div>
           </div>
