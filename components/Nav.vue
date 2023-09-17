@@ -158,7 +158,7 @@
       v-show="showMobileMenu"
       class="fixed left-0 top-0 h-full w-full bg-black md:hidden py-8 px-5"
     >
-      <div class="flex h-full flex-col mt-[45px]">
+      <div class="flex h-full flex-col">
         <div
           class="after:content relative mb-20 flex py-4 after:absolute after:bottom-0 after:h-[1px] after:w-full"
         >
