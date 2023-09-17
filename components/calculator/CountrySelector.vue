@@ -19,7 +19,7 @@
         </span>
         <span>
           <img
-            class="ml-1 h-2 w-2"
+            class="ml-1 h-4 w-4"
             src="~/assets/images/caret-down.svg"
             alt=""
           />
@@ -51,7 +51,7 @@
             </li>
             <li
               role="option"
-              @click="handleSelection(firstCountry)"
+              @click="handleSelection(firstCountry, $event)"
               class="cursor-pointer hover:bg-gray-100 py-2 px-3 rounded-lg mb-6 w-full"
             >
               <a href="#" class="flex items-center">
@@ -73,7 +73,7 @@
               v-for="country in filteredCountries"
               role="option"
               tabindex="-1"
-              @click="handleSelection(country)"
+              @click="handleSelection(country, $event)"
               class="cursor-pointer hover:bg-gray-100 py-2 px-3 rounded-lg w-full"
             >
               <a href="#" class="flex h-full items-center">
@@ -182,9 +182,10 @@ export default {
       state.open = false;
     }
 
-    function handleSelection(data) {
+    function handleSelection(data, event) {
       ctx.emit("update:modelValue", data);
       ctx.emit("emitDataToParent", data);
+      event.preventDefault();
       close();
     }
 

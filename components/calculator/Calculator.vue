@@ -14,7 +14,7 @@
         >
           <div class="text-slate-400 mb-4">1. You send:</div>
           <div
-            class="relative mb-4 pr-2 flex shadow-sm rounded bg-white items-center"
+            class="relative mb-4 pr-4 flex justify-between shadow-sm rounded bg-white items-center"
           >
             <input
               v-model="computedSendAmount"
@@ -61,7 +61,7 @@
             </div>
             <select
               name="cars"
-              class="bg-purple text-white text-sm font-bold w-40 py-1 px-2 rounded"
+              class="bg-purple select text-white text-sm font-bold w-40 py-1 px-2 rounded"
               v-model="form.method"
             >
               <option
@@ -154,7 +154,11 @@
               @focus="activeInput = 'receive'"
               class="h-10 focus:outline-none w-full px-4 py-6 rounded bg-white"
             />
-            <CountrySelector v-model="form.to" :disabled="disableInput" @emitDataToParent="emitDataToParent" />
+            <CountrySelector
+              v-model="form.to"
+              :disabled="disableInput"
+              @emitDataToParent="emitDataToParent"
+            />
             <div
               class="after:content- after:absolute after:w-[1px] after:h-[80%] after:top-[0.3rem] after:right-[6rem] after:bg-gray-400"
             ></div>
@@ -188,10 +192,10 @@ const defaultCanada = {
 };
 export default {
   components: {
-    CountrySelector
+    CountrySelector,
   },
   props: {
-     country: String,
+    country: String,
   },
   data() {
     return {
@@ -236,8 +240,14 @@ export default {
           currency: "cad",
         },
         to: {
-          name: this.country && typeof this.country == 'string' ? this.country.replace("-", " ") : "Côte d'Ivoire",
-          flag: this.country && typeof this.country == 'string' ? this.country.toLowerCase().replace('-', "").replace("'", "i") : "cotedivoire",
+          name:
+            this.country && typeof this.country == "string"
+              ? this.country.replace("-", " ")
+              : "Côte d'Ivoire",
+          flag:
+            this.country && typeof this.country == "string"
+              ? this.country.toLowerCase().replace("-", "").replace("'", "i")
+              : "cotedivoire",
           currency: "xof",
         },
         send_amount: null,
@@ -404,8 +414,8 @@ export default {
     },
     emitDataToParent(data) {
       //Emit an event with the data you want to pass
-      this.$emit('dataToParent', data)
-    }
+      this.$emit("dataToParent", data);
+    },
   },
   computed: {
     computedSendAmount: {
@@ -474,22 +484,31 @@ export default {
       return this.currencies[this.form.from.currency.toUpperCase()];
     },
     disableInput() {
-      if (this.country && typeof this.country == 'string'){
-        return this.disabled = true;
-      }
-      else{
-        return this.disabled = false
+      if (this.country && typeof this.country == "string") {
+        return (this.disabled = true);
+      } else {
+        return (this.disabled = false);
       }
     },
     async mounted() {
       const { currency_value } = await useApi().exchangeRate();
       this.rate = this._2dp(currency_value);
     },
- 
-
-
-  }
+  },
 };
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.select {
+  padding-right: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 5px;
+  height: 34px;
+  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
+    no-repeat right #5f19f2;
+  -webkit-appearance: none;
+  background-position-x: 134px;
+}
+</style>

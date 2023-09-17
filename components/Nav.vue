@@ -158,11 +158,11 @@
     </div>
     <div
       v-show="showMobileMenu"
-      class="fixed left-0 top-0 h-full w-full bg-black md:hidden"
+      class="fixed left-0 top-0 h-full w-full bg-black md:hidden py-8 px-5"
     >
-      <div class="flex h-full flex-col pt-3">
+      <div class="flex h-full flex-col">
         <div
-          class="after:content relative mb-20 flex py-4 after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-gray-200"
+          class="after:content relative mb-20 flex py-4 after:absolute after:bottom-0 after:h-[1px] after:w-full"
         >
           <div
             @click="showMobileMenu = false"
@@ -188,11 +188,6 @@
                 {{ activeLocale.toUpperCase() }}</a
               >
               <img
-                :class="[
-                  locale
-                    ? 'rotate-0 transform transition-transform duration-100'
-                    : 'rotate-180 transform transition-transform duration-100',
-                ]"
                 class="mt-0.5 ml-1 h-2"
                 src="~/assets/images/caret-down-white.svg"
                 alt=""
@@ -235,7 +230,7 @@
           <NuxtLink
             @click.stop="showMobileMenu = false"
             href="/#how-it-works"
-            class="text-xl hover:text-purple"
+            class="text-2xl hover:text-purple"
           >
             {{ $t("home.nav.how-it-works") }}
           </NuxtLink>
@@ -244,7 +239,7 @@
             class="mt-8 flex cursor-pointer items-center justify-between"
           >
             <div class="relative">
-              <h6 class="text-xl hover:text-purple">
+              <h6 class="text-2xl hover:text-purple">
                 <a> {{ $t("home.nav.company.name") }} </a>
               </h6>
               <div v-show="mobileCompany" class="absolute top-12">
@@ -258,7 +253,7 @@
                   <NuxtLink
                    @click="showMobileMenu = false" 
                     @click.stop="scrollIntoView"
-                    href="/#contact-us"
+                    href="#contact-us"
                     class="mt-4"
                     >{{ $t("home.nav.company.contact-us") }}</NuxtLink
                   >
@@ -293,7 +288,7 @@
   </header>
 </template>
 <script>
-import { reactive, computed, toRefs } from "vue";
+import { reactive, computed, toRefs, watch } from "vue";
 import { useI18n } from "vue-i18n";
 
 export default {
@@ -346,8 +341,26 @@ export default {
       activeLocale: computed(() => locale),
     });
 
+    watch(
+      () => state.showMobileMenu,
+      (newVal) => {
+        if (newVal) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "auto";
+        }
+      }
+    );
+
+    function scrollIntoView(e) {
+      const { hash } = e.target;
+      document.querySelector(hash).scrollIntoView({ behavior: "smooth" });
+      state.showMobileMenu = false;
+    }
+
     return {
       ...toRefs(state),
+      scrollIntoView,
     };
   },
 };

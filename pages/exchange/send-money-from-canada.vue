@@ -7,7 +7,7 @@
         </div>
       </div>
     </div>
-    <div class="bg-[#BEBAFC] bg-contain lg:px-[0px] min-h-screen" :style="{ backgroundImage: `url('/unlock-bg.svg')` }">
+    <div class="bg-[#BEBAFC] lg:px-[0px] min-h-screen" :style="{ backgroundImage: `url('/unlock-bg.svg')` }">
       <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
         <div class="2xl:max-w-[101rem] w-full">
           <!-- <Nav :bg-transparent="true" :btn-white="true" :btn-text-black="true" /> -->
