@@ -1,27 +1,33 @@
 <template>
   <div>
-    <div class="bg-[#BEBAFC] min-h-screen w-full" :style="{ backgroundImage: `url('/unlock-bg.svg')` }">
+    <div class="flex flex-col items-center">
+      <div class="w-full">
+        <div class="fixed z-50 top-0 left-0 right-0  w-full px-5 sm:px-5 lg:px-10">
+          <Nav :bg-transparent="true" />
+        </div>
+      </div>
+    </div>
+    <div class="bg-[#BEBAFC] bg-contain min-h-screen w-full" :style="{ backgroundImage: `url('/unlock-bg.svg')` }">
       <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
         <div class="2xl:max-w-[101rem] w-full">
 
-          <Nav :bg-transparent="true" :btn-white="true" :btn-text-black="true" />
-          <section class="container mx-auto px-4">
-            <div class="flex md:inline-block mt-10 ms-4">
-              <NuxtLink to="/join-us"
-                class="flex cursor-pointer items-center bg-[#F5F5F5] px-4 py-3 shadow transition-transform duration-700 hover:scale-105 rounded-[50px] md:px-4 md:py-3">
-                <span class="text-sm font-bold text-purple lg:text-lg">
-                  FINTRAC regulated
-                </span>
-                <span class="mx-1 text-[12px] text-black md:ml-4">
-                  Learn more
-                </span>
-                <img class="h-3 md:ml-3" src="~/assets/images/arrow-right.svg" alt="" />
-              </NuxtLink>
-            </div>
+          <section class="container mx-auto px-4 mt-[7rem]">
             <div class="rounded-[30px] flex md:py-14 py-8 lg:px-8 justify-center">
               <div class="max-w-7xl w-full md:space-y-0 space-y-8 md:flex">
                 <div class="md:w-1/2 text-white flex flex-col justify-between">
-                  <h1 class="font-heading drop-shadow-lg text-4xl md:text-5xl" style="line-height: 3.4rem !important">
+                  <div class="block mb-4 md">
+                    <NuxtLink to="/join-us"
+                      class="inline-flex cursor-pointer items-center bg-[#F5F5F5] px-4 py-3 shadow transition-transform duration-700 hover:scale-105 rounded-[50px] md:px-4 md:py-3">
+                      <span class="text-sm font-bold text-purple lg:text-lg">
+                        FINTRAC regulated
+                      </span>
+                      <span class="mx-1 text-[12px] text-black md:ml-4">
+                        Learn more
+                      </span>
+                      <img class="h-3 md:ml-3" src="~/assets/images/arrow-right.svg" alt="" />
+                    </NuxtLink>
+                  </div>
+                  <h1 class="font-heading text-[32px] md:text-5xl" style="line-height: 3.4rem !important">
                     Send money from {{ countryName }} to Canada at the real exchange rate!
                   </h1>
                   <p class="drop-shadow-lg mb-8 md:mb-0">
@@ -52,7 +58,7 @@
     <div class="my-28 px-5 lg:px-52 flex flex-col items-center justify-center text-center">
       <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
         <div class="2xl:max-w-[101rem] w-full">
-          <h1 class="mb-7 font-heading text-4xl md:text-6xl">
+          <h1 class="mb-7 font-heading text-4xl md:text-5xl">
             {{ countryName }} to Global Destinations, with 3x the Cost Efficiency
           </h1>
           <p class="text leading-relaxed lg:px-12">
@@ -72,7 +78,7 @@
     <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
       <div class="2xl:max-w-[101rem] w-full">
         <div id="how-it-works" class="relative text-black flex flex-col pt-24 items-center justify-center">
-          <h1 class="mb-9 md:mb-24 px-5 lg:px-52 text-center font-heading text-4xl md:text-6xl">
+          <h1 class="mb-9 md:mb-24 px-5 lg:px-52 text-center font-heading text-4xl md:text-5xl">
             Send money from {{ countryName }} to Canada in three easy steps
           </h1>
           <div class="flex flex-col lg:flex-row lg:gap-9">
@@ -148,10 +154,7 @@
                   </div>
                 </div>
 
-                <p
-                  class="mt-4 mb-3"
-                  v-html="$t('home.section5.how-it-works.step-3.text')"
-                ></p>
+
               </div>
             </div>
           </div>
@@ -162,11 +165,11 @@
 
   <section class="mt-[3rem] px-12 md:px-2 lg:px-12 2xl:px-96 pb-12 md:mt-[7rem] md:pb-32">
     <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
-      <div class="2xl:max-w-[101rem] w-full">
+      <div class="2xl:max-w-[80rem] w-full">
         <div class="md:flex gap-10">
           <div class="mb-8 w-full md:mb-0 md:w-2/4">
 
-            <div class="mt-20">
+            <div class="mt-0 text-center">
               <div class="mb-8 font-heading md:text-left">
                 <h1 class="max-w-[47rem] text-[32px] md:text-5xl" style="line-height: 3.4rem !important">
                   Download the Maraboo
@@ -174,7 +177,7 @@
                   easy transfers!
                 </h1>
               </div>
-              <p class="text-left" v-html="$t('home.section1.left.center.l3')"></p>
+              <p class="md:text-left" v-html="$t('home.section1.left.center.l3')"></p>
             </div>
             <div class="mt-16 hidden text-center md:block md:text-left">
               <a @click.stop="scrollIntoView" href="#top" class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]">
@@ -217,7 +220,7 @@
       <div class="max-w-5xl inline-flex md:flex-row flex-col justify-center items-center w-full">
         <img src="~/assets/images/shield.png" class="mr-0 w-1/4 mb-5" />
         <span class="md:ml-36">
-          <h1 class="mb-8 font-heading text-4xl leading-snug md:text-6xl" v-html="$t('home.section6.how-we.name')"></h1>
+          <h1 class="mb-8 font-heading text-4xl leading-snug md:text-5xl" v-html="$t('home.section6.how-we.name')"></h1>
           <span class="max-w-[45rem] text leading-normal">
             {{ $t("home.section6.how-we.text") }}
           </span>
@@ -226,11 +229,11 @@
     </div>
   </section>
 
-  <section class="mb-52 px-4 md:px-12 md:py-32">
+  <section class="mb-36 px-4 md:px-12 md:py-32">
     <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
       <div class="2xl:max-w-[101rem] w-full">
         <div class="flex flex-col items-center">
-          <h1 class="mb-14 text-center font-heading text-4xl leading-snug md:text-6xl">
+          <h1 class="mb-14 text-center font-heading text-4xl leading-snug md:text-5xl">
             {{ $t("home.faq-header") }}
           </h1>
 

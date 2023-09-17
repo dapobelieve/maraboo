@@ -1,13 +1,24 @@
 <template>
   <div>
-    <div class="bg-[#BEBAFC] lg:px-[0px] min-h-screen" :style="{ backgroundImage: `url('/unlock-bg.svg')` }">
+    <div class="flex flex-col items-center">
+      <div class="w-full">
+        <div class="fixed z-50 top-0 left-0 right-0 w-full px-5 sm:px-5 lg:px-10">
+          <Nav :bg-transparent="true" />
+        </div>
+      </div>
+    </div>
+    <div class="bg-[#BEBAFC] bg-contain lg:px-[0px] min-h-screen" :style="{ backgroundImage: `url('/unlock-bg.svg')` }">
       <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
         <div class="2xl:max-w-[101rem] w-full">
-          <Nav :bg-transparent="true" :btn-white="true" :btn-text-black="true" />
-          <section class="container mx-auto px-4">
-            <div class="flex md:inline-block mt-10 ms-4">
+          <!-- <Nav :bg-transparent="true" :btn-white="true" :btn-text-black="true" /> -->
+          <section class="container mx-auto px-4 mt-[7rem]">
+            
+            <div class="rounded-[30px] flex md:py-16 py-8 lg:px-8 justify-center">
+              <div class="max-w-7xl w-full md:space-y-0 space-y-8 md:flex">
+                <div class="md:w-1/2 text-white flex flex-col justify-between">
+                  <div class="block mb-4 md">
               <NuxtLink to="/join-us"
-                class="flex cursor-pointer items-center bg-[#F5F5F5] px-4 py-3 shadow transition-transform duration-700 hover:scale-105 rounded-[50px] md:px-4 md:py-3">
+                class="inline-flex cursor-pointer items-center bg-[#F5F5F5] px-4 py-3 shadow transition-transform duration-700 hover:scale-105 rounded-[50px] md:px-4 md:py-3">
                 <span class="text-sm font-bold text-purple lg:text-lg">
                   FINTRAC regulated
                 </span>
@@ -17,10 +28,7 @@
                 <img class="h-3 md:ml-3" src="~/assets/images/arrow-right.svg" alt="" />
               </NuxtLink>
             </div>
-            <div class="rounded-[30px] flex md:py-14 py-8 lg:px-8 justify-center">
-              <div class="max-w-7xl w-full md:space-y-0 space-y-8 md:flex">
-                <div class="md:w-1/2 text-white flex flex-col justify-between">
-                  <h1 class="font-heading drop-shadow-lg text-4xl md:text-5xl" style="line-height: 3.4rem !important">
+                  <h1 class="font-heading drop-shadow-lg text-[32px] md:text-5xl" style="line-height: 3.4rem !important">
                     Send money from Canada to {{ selectedCountry }} at the real exchange rate!
                   </h1>
                   <p class="drop-shadow-lg mb-8 md:mb-0">
@@ -51,7 +59,7 @@
     <div class="my-28 px-5 lg:px-52 flex flex-col items-center justify-center text-center">
       <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
         <div class="2xl:max-w-[101rem] w-full">
-          <h1 class="mb-7 font-heading text-4xl md:text-6xl">
+          <h1 class="mb-7 font-heading text-4xl md:text-5xl">
             From Canada to {{ selectedCountry }},
             with 3x the cost efficiency
           </h1>
@@ -72,7 +80,7 @@
     <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
       <div class="2xl:max-w-[101rem] w-full">
         <div id="how-it-works" class="relative text-black flex flex-col pt-24 items-center justify-center">
-          <h1 class="mb-9 md:mb-24 px-5 lg:px-52 text-center font-heading text-4xl md:text-6xl">
+          <h1 class="mb-9 md:mb-24 px-5 lg:px-52 text-center font-heading text-4xl md:text-5xl">
             Send money from Canada to {{ selectedCountry }} in three easy steps
           </h1>
           <div class="flex flex-col lg:flex-row lg:gap-9">
@@ -241,7 +249,7 @@
       <div class="max-w-5xl inline-flex md:flex-row flex-col justify-center items-center w-full">
         <img src="~/assets/images/shield.png" class="mr-0 w-1/4 mb-5" />
         <span class="md:ml-36">
-          <h1 class="mb-8 font-heading text-4xl leading-snug md:text-6xl" v-html="$t('home.section6.how-we.name')"></h1>
+          <h1 class="mb-8 font-heading text-4xl leading-snug md:text-5xl" v-html="$t('home.section6.how-we.name')"></h1>
           <span class="max-w-[45rem] text leading-normal">
             {{ $t("home.section6.how-we.text") }}
           </span>
@@ -250,11 +258,11 @@
     </div>
   </section>
 
-  <section class="mb-52 px-4 md:px-12 md:py-32">
+  <section class="mb-32 px-4 md:px-12 md:py-32">
     <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
       <div class="2xl:max-w-[101rem] w-full">
         <div class="flex flex-col items-center">
-          <h1 class="mb-14 text-center font-heading text-4xl leading-snug md:text-6xl">
+          <h1 class="mb-14 text-center font-heading text-4xl leading-snug md:text-5xl">
             {{ $t("home.faq-header") }}
           </h1>
 

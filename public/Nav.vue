@@ -51,7 +51,7 @@
             <a> {{ $t("home.nav.company.name") }} </a>
             <img
               class="mt-0.5 ml-2 h-2 group-hover:-rotate-180"
-              :src="isScrolled && bgTransparent ? '/caret-down.svg' : '/caret-down-white.svg'"
+              src="~/assets/images/caret-down-white.svg"
               alt=""
             />
 
@@ -112,14 +112,14 @@
           <div class="group relative mr-8 inline-flex items-center">
             <img
               class="mr-0.5 h-4 w-4"
-              :src="isScrolled && bgTransparent ? '/globe.svg' : '/globe-white.svg'"
+              src="~/assets/images/globe-white.svg"
               alt=""
             /><a href="#" class="uppercase" @click.stop="locale = !locale">
               {{ activeLocale }}</a
             >
             <img
               class="mt-0.5 ml-1 h-2"
-              :src="isScrolled && bgTransparent ? '/caret-down.svg' : '/caret-down-white.svg'"
+              src="~/assets/images/caret-down-white.svg"
               alt=""
             />
             <div
@@ -148,8 +148,7 @@
           </div>
           <NuxtLink
             :to="localePath('/join-us')"
-            class="rounded-lg px-6 py-3 text-sm font-black"
-            :class="isScrolled && bgTransparent ? 'bg-black text-white' : 'bg-white text-black'"
+            class="rounded-lg px-6 py-3 text-sm font-black bg-white text-black"
           >
             {{ $t("home.nav.wait-list") }}
           </NuxtLink>
@@ -256,7 +255,6 @@
                     $t("home.nav.company.about-us")
                   }}</NuxtLink>
                   <NuxtLink
-                   @click="showMobileMenu = false" 
                     @click.stop="scrollIntoView"
                     href="/#contact-us"
                     class="mt-4"
@@ -274,7 +272,7 @@
             <img
               :class="[mobileCompany ? 'rotate-180' : '']"
               class="h-2"
-              src="~/assets/images/caret-down-white.svg"
+              src="~/assets/images/caret-down.svg"
               alt=""
             />
           </div>
@@ -331,7 +329,7 @@ export default {
         "rounded-[20px]",
         this.bgTransparent ? "bg-transparent" : "bg-black",
         this.bgTransparent ? "block mx-auto 2xl:max-w-[101rem]" : "",
-        this.bgTransparent && this.isScrolled ? "bg-white text-black transition-all duration-500" : 'bg-black'
+        this.bgTransparent && this.isScrolled ? "bg-white text-black transition-all duration-300" : 'bg-black'
       
       ];
     },

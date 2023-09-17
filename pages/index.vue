@@ -5,7 +5,7 @@
         <div class="mb-8 w-full md:mb-0 md:w-2/4">
           <div class="flex md:inline-block">
             <NuxtLink
-              to="/join-us"
+              :to="localePath('/join-us')"
               class="flex cursor-pointer items-center bg-[#F5F5F5] px-4 py-3 shadow transition-transform duration-700 hover:scale-105 rounded-[50px] md:px-4 md:py-3"
             >
               <span class="text-sm font-bold text-purple lg:text-lg">{{
@@ -40,7 +40,7 @@
           </div>
           <div class="mt-16 hidden text-center md:block md:text-left">
             <NuxtLink
-              to="/exchange/send-money-from-canada"
+              :to="localePath('/exchange/send-money-from-canada')"
               class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]"
             >
               Send money now
@@ -67,7 +67,7 @@
         </div>
         <div class="mt-16 md:hidden text-left">
           <NuxtLink
-            to="/exchange/send-money-from-canada"
+           :to="localePath('/exchange/send-money-from-canada')"
             class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]"
           >
             Send money now
@@ -100,7 +100,7 @@
           </h1>
           <p class="mb-6" v-html="$t('home.section2.text')"></p>
           <NuxtLink
-            to="/exchange/send-money-from-canada"
+            :to="localePath('/exchange/send-money-from-canada')"
             class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]"
           >
             Send money now
@@ -168,7 +168,7 @@
         <div class="mb-8 md:mb-0 md:w-1/2">
           <div class="flex h-full flex-col justify-center px-4">
             <h1
-              class="text-justify font-heading text-4xl leading-none md:mb-8 md:text-left md:text-5xl"
+              class="text-justify font-heading text-4xl leading-none mb-4 md:mb-4 md:text-left md:text-5xl"
             >
               {{ $t("home.section3.super-charge") }}
             </h1>
@@ -177,7 +177,7 @@
               v-html="$t('home.section3.text')"
             ></p>
           </div>
-          <div class="lg:-mt-24">
+          <div class="lg:-mt-32 px-4">
             &#x2022; {{ $t("home.section3.text-2") }}.
           </div>
         </div>
@@ -195,7 +195,7 @@
         <div class="w-full md:w-3/5">
           <div class="flex h-full flex-col px-4 md:px-0 text-left">
             <h1
-              class="mb-4 font-heading text-4xl leading-none md:mb-16 md:text-6xl"
+              class="mb-4 font-heading text-4xl leading-none md:mb-4 md:text-6xl"
               v-html="$t('home.section4.convert-currency')"
             ></h1>
             <div
@@ -211,8 +211,8 @@
         </div>
       </div>
     </section>
-    <section class="fast pb-28 md:py-32">
-      <div class="w-full justify-center rounded-t-xl bg-white pt-28">
+    <section class="fast pb-28">
+      <div class="w-full justify-center rounded-t-xl bg-white pt-10">
         <div class="flex flex-col items-center justify-center text-center">
           <h1 class="mb-7 font-heading text-4xl md:text-6xl">
             {{ $t("home.section5.we-fast") }}
