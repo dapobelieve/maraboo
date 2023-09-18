@@ -14,7 +14,7 @@
         >
           <div class="text-slate-400 mb-4">1. You send:</div>
           <div
-            class="relative mb-4 pr-2 flex justify-between shadow-sm rounded bg-white items-center"
+            class="relative mb-4 pr-4 flex justify-between shadow-sm rounded bg-white items-center"
           >
             <input
               v-model="computedSendAmount"
@@ -146,7 +146,7 @@
         <div class="w-full flex flex-col">
           <div class="text-slate-400 mb-4">2. Your recipient gets:</div>
           <div
-            class="relative mb-4 pr-2 flex shadow-sm rounded bg-white items-center"
+            class="relative mb-4 pr-4 flex shadow-sm rounded bg-white items-center"
           >
             <input
               v-model="computedReceiveAmount"
