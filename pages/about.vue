@@ -61,7 +61,7 @@
       </div>
     </div>
   </section>
-  <section class="mb-52">
+  <section class="mb-52 hidden">
     <h1
       class="font-heading text-3xl max-w-[45rem] md:text-6xl leading-9 mb-4 md:mb-8"
       v-html="$t('about-us.section-2.team')"

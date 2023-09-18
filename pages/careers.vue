@@ -34,7 +34,7 @@
     <section class="">
       <div>
         <h1
-          class="text-4xl md:text-2xl text-center text-black font-heading mb-8"
+          class="text-4xl md:text-4xl text-center text-black font-heading mb-8"
         >
           Add your resume and cover letter
         </h1>
