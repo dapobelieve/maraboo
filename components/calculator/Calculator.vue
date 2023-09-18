@@ -14,7 +14,7 @@
         >
           <div class="text-slate-400 mb-4">1. You send:</div>
           <div
-            class="relative mb-4 pr-4 flex justify-between shadow-sm rounded bg-white items-center"
+            class="relative mb-4 pr-2 flex justify-between shadow-sm rounded bg-white items-center"
           >
             <input
               v-model="computedSendAmount"
