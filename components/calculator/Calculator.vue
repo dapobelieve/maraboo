@@ -178,10 +178,6 @@ const defaultWaemu = {
   currency: "xof",
 };
 
-// const { props } = defineProps({
-//   waemu: String
-// })
-
 import useApi from "~/composables/useApi";
 import CountrySelector from "./CountrySelector.vue";
 
@@ -490,10 +486,11 @@ export default {
         return (this.disabled = false);
       }
     },
-    async mounted() {
-      const { currency_value } = await useApi().exchangeRate();
-      this.rate = this._2dp(currency_value);
-    },
+  },
+  async mounted() {
+    const { currency_value } = await useApi().exchangeRate();
+    console.log(currency_value);
+    this.rate = this._2dp(currency_value);
   },
 };
 </script>
