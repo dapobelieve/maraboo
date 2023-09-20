@@ -22,28 +22,36 @@
       <div class="w-full md:w-2/5">
         <div>
           <div @submit.stop="">
-            <GlobalInput
-              v-model="formData.first_name"
-              :error="v$.first_name.$error"
-              :errMsg="
-                v$.first_name.$error ? v$.first_name?.$errors[0]?.$message : ''
-              "
-              class="mb-10"
-              :placeholder="$t('wait-list.first-name')"
-            >
-              <template v-slot:label>{{ $t("wait-list.first-name") }}</template>
-            </GlobalInput>
-            <GlobalInput
-              v-model="formData.last_name"
-              :error="v$.last_name.$error"
-              :errMsg="
-                v$.last_name.$error ? v$.last_name?.$errors[0]?.$message : ''
-              "
-              class="mb-10"
-              :placeholder="$t('wait-list.last-name')"
-            >
-              <template v-slot:label>{{ $t("wait-list.last-name") }}</template>
-            </GlobalInput>
+            <div class="md:flex w-full justify-between">
+              <GlobalInput
+                v-model="formData.first_name"
+                :error="v$.first_name.$error"
+                :errMsg="
+                  v$.first_name.$error
+                    ? v$.first_name?.$errors[0]?.$message
+                    : ''
+                "
+                class="mb-10 w-full"
+                :placeholder="$t('wait-list.first-name')"
+              >
+                <template v-slot:label>{{
+                  $t("wait-list.first-name")
+                }}</template>
+              </GlobalInput>
+              <GlobalInput
+                v-model="formData.last_name"
+                :error="v$.last_name.$error"
+                :errMsg="
+                  v$.last_name.$error ? v$.last_name?.$errors[0]?.$message : ''
+                "
+                class="mb-10 w-full ml-4"
+                :placeholder="$t('wait-list.last-name')"
+              >
+                <template v-slot:label>{{
+                  $t("wait-list.last-name")
+                }}</template>
+              </GlobalInput>
+            </div>
             <GlobalInput
               v-model="formData.email"
               :error="v$.email.$error"

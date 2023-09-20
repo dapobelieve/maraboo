@@ -2,13 +2,19 @@
   <header
     class="sticky top-0 z-20 bg-[url('/assets/images/bg-12.svg')] pt-4 bg-cover md:pdx-8 md:py-4"
   >
-    <div :class="navBg">
+    <div class="" :class="navBg">
       <nav
         class="relative my-4 flex w-full select-none justify-between px-4 font-['Open_Sans'] md:mx-8 md:py-0"
         :class="isScrolled && bgTransparent ? 'text-black' : 'text-white'"
       >
         <NuxtLink :to="localePath('/')" class="flex items-center">
-          <img class="h-8" :src="isScrolled && bgTransparent ? '/maraboo.svg' : '/maraboo-2.svg'" alt="logo" />
+          <img
+            class="h-8"
+            :src="
+              isScrolled && bgTransparent ? '/maraboo.svg' : '/maraboo-2.svg'
+            "
+            alt="logo"
+          />
           <h1
             class="ml-1 mt-2 font-heading text-2xl font-extrabold md:text-3xl"
           >
@@ -51,7 +57,11 @@
             <a> {{ $t("home.nav.company.name") }} </a>
             <img
               class="mt-0.5 ml-2 h-2 group-hover:-rotate-180"
-              :src="isScrolled && bgTransparent ? '/caret-down.svg' : '/caret-down-white.svg'"
+              :src="
+                isScrolled && bgTransparent
+                  ? '/caret-down.svg'
+                  : '/caret-down-white.svg'
+              "
               alt=""
             />
 
@@ -112,14 +122,20 @@
           <div class="group relative mr-8 inline-flex items-center">
             <img
               class="mr-0.5 h-4 w-4"
-              :src="isScrolled && bgTransparent ? '/globe.svg' : '/globe-white.svg'"
+              :src="
+                isScrolled && bgTransparent ? '/globe.svg' : '/globe-white.svg'
+              "
               alt=""
             /><a href="#" class="uppercase" @click.stop="locale = !locale">
               {{ activeLocale }}</a
             >
             <img
               class="mt-0.5 ml-1 h-2"
-              :src="isScrolled && bgTransparent ? '/caret-down.svg' : '/caret-down-white.svg'"
+              :src="
+                isScrolled && bgTransparent
+                  ? '/caret-down.svg'
+                  : '/caret-down-white.svg'
+              "
               alt=""
             />
             <div
@@ -149,7 +165,11 @@
           <NuxtLink
             :to="localePath('/join-us')"
             class="rounded-lg px-6 py-3 text-sm font-black"
-            :class="isScrolled && bgTransparent ? 'bg-black text-white' : 'bg-white text-black'"
+            :class="
+              isScrolled && bgTransparent
+                ? 'bg-black text-white'
+                : 'bg-white text-black'
+            "
           >
             {{ $t("home.nav.wait-list") }}
           </NuxtLink>
@@ -251,7 +271,7 @@
                     $t("home.nav.company.about-us")
                   }}</NuxtLink>
                   <NuxtLink
-                   @click="showMobileMenu = false" 
+                    @click="showMobileMenu = false"
                     @click.stop="scrollIntoView"
                     href="#contact-us"
                     class="mt-4"
@@ -292,31 +312,28 @@ import { reactive, computed, toRefs, watch } from "vue";
 import { useI18n } from "vue-i18n";
 
 export default {
-  data(){
+  data() {
     return {
-      isScrolled: false
-    }
-
+      isScrolled: false,
+    };
   },
   props: {
     bgTransparent: Boolean,
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener("scroll", this.handleScroll);
   },
   beforeUnmount() {
-    window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
     handleScroll() {
-      if(window.scrollY > 0){
+      if (window.scrollY > 0) {
         this.isScrolled = true;
-      }
-      else{
+      } else {
         this.isScrolled = false;
       }
-    }
-
+    },
   },
   computed: {
     navBg() {
@@ -326,8 +343,9 @@ export default {
         "rounded-[20px]",
         this.bgTransparent ? "bg-transparent" : "bg-black",
         this.bgTransparent ? "block mx-auto 2xl:max-w-[101rem]" : "",
-        this.bgTransparent && this.isScrolled ? "bg-white text-black transition-all duration-500" : 'bg-black'
-      
+        this.bgTransparent && this.isScrolled
+          ? "bg-white shadow-lg text-black transition-all duration-500"
+          : "bg-black",
       ];
     },
   },

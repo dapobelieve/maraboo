@@ -146,7 +146,7 @@
         <div class="w-full flex flex-col">
           <div class="text-slate-400 mb-4">2. {{ $t('calculator.receive') }}</div>
           <div
-            class="relative mb-4 pr-2 flex shadow-sm rounded bg-white items-center"
+            class="relative mb-4 pr-4 flex shadow-sm rounded bg-white items-center"
           >
             <input
               v-model="computedReceiveAmount"
@@ -177,10 +177,6 @@ const defaultWaemu = {
   flag: "benin",
   currency: "xof",
 };
-
-// const { props } = defineProps({
-//   waemu: String
-// })
 
 import useApi from "~/composables/useApi";
 import CountrySelector from "./CountrySelector.vue";
@@ -490,10 +486,11 @@ export default {
         return (this.disabled = false);
       }
     },
-    async mounted() {
-      const { currency_value } = await useApi().exchangeRate();
-      this.rate = this._2dp(currency_value);
-    },
+  },
+  async mounted() {
+    const { currency_value } = await useApi().exchangeRate();
+    console.log(currency_value);
+    this.rate = this._2dp(currency_value);
   },
 };
 </script>

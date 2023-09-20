@@ -462,7 +462,7 @@
         </div>
       </div>
     </section>
-    <section class="faq mb-16 md:py-32">
+    <section class="faq mb-8">
       <div class="flex flex-col items-center">
         <h1
           class="mb-8 text-center font-heading text-4xl leading-snug md:text-6xl"
