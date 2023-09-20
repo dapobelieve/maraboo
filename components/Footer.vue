@@ -52,7 +52,7 @@
       <div
         class="md:flex md:flex-row md:justify-between after:content after:w-full after:bottom-[-20px] md:after:bottom-[-40px] after:h-[1px] after:absolute relative after:bg-[#5C5C5C] items-start mb-16 md:mb-20"
       >
-        <div class="text-center md:text-left md:w-[33%] mb-10 maraboo md:mb-0">
+        <div class="text-center md:text-left mb-10 maraboo md:mb-0">
           <div class="inline-flex mb-10 items-center">
             <img class="h-7" src="~/assets/images/maraboo.svg" alt="" />
             <h1
@@ -63,8 +63,8 @@
           </div>
           <p class="text-center md:text-left">
             A West-African fintech firm offering transformative <br />
-            financial solutions that are fair, responsible, inclusive, and
-            designed to improve the quality of life of West Africans.
+            financial solutions that are fair, responsible, inclusive, <br />
+            and designed to improve the quality of life of West Africans.
           </p>
         </div>
         <div class="text-center md:text-left contact-us mb-8 md:mb-0 md:w-96">

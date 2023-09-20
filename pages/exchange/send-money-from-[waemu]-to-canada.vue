@@ -83,7 +83,7 @@
             {{ countryName }} to Global Destinations, with 3x the Cost
             Efficiency
           </h1>
-          <p class="text leading-relaxed lg:px-12">
+          <p class="text lg:px-12">
             Maraboo is your wallet’s new superpower for international transfers
             from any WAEMU country.
             <span class="underline"
@@ -287,10 +287,10 @@
         <img src="~/assets/images/shield.png" class="mr-0 w-1/4 mb-5" />
         <span class="md:ml-36">
           <h1
-            class="mb-8 font-heading text-4xl leading-snug md:text-6xl"
+            class="mb-8 font-heading text-4xl md:text-6xl"
             v-html="$t('home.section6.how-we.name')"
           ></h1>
-          <span class="max-w-[45rem] text leading-normal">
+          <span class="max-w-[45rem] text">
             {{ $t("home.section6.how-we.text") }}
           </span>
         </span>

@@ -71,7 +71,7 @@
             >
               <NuxtLink
                 :to="localePath('/about')"
-                class="flex items-center px-6 py-6 text-black hover:bg-gray-50"
+                class="flex items-center px-6 py-6 text-black hover:border- hover:bg-gray-50"
               >
                 <img class="mr-6 h-4" src="~/assets/images/about.svg" alt="" />
                 <span class="text-md font-medium">{{

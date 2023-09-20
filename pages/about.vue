@@ -26,7 +26,7 @@
       <div class="w-full">
         <div
           style="background: linear-gradient(180deg, #bebafc 0%, #a7b8fa 100%)"
-          class="flex content-center px-6 lg:px-32 lg:py-16 rounded-[15px] pt-[30px] text-center text-white flex-col h-full"
+          class="flex content-center px-6 lg:px-32 lg:py-32 rounded-[15px] pt-[30px] text-center text-white flex-col h-full"
         >
           <h1
             class="font-heading text-3xl md:text-5xl leading-9 mb-4 md:mb-8"
@@ -39,9 +39,9 @@
       </div>
     </div>
   </section>
-  <section class="countries py-12 md:py-28">
+  <section class="countries py-12 md:pt-28">
     <div class="lg:flex">
-      <div class="lg:w-3/5 mb-16 md:mb-0">
+      <div class="lg:w-2/4 mb-16 md:mb-0">
         <div class="flex flex-col justify-center px-4 h-full">
           <h1
             class="font-heading md:text-center lg:text-left text-3xl max-w-[45rem] lg:text-6xl leading-none mb-6 lg:mb-5"
@@ -55,13 +55,11 @@
         </div>
       </div>
       <div class="lg:w-2/4 mb-8 md:mb-0 flex justify-center">
-        <div>
-          <img src="~/assets/images/man-laugh.svg" alt="" />
-        </div>
+        <img class="h-[35rem]" src="~/assets/images/man-laugh.svg" alt="" />
       </div>
     </div>
   </section>
-  <section class="mb-52 hidden">
+  <section class="mb">
     <h1
       class="font-heading text-3xl max-w-[45rem] md:text-6xl leading-9 mb-4 md:mb-8"
       v-html="$t('about-us.section-2.team')"
