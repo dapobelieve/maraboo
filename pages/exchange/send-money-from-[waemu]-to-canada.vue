@@ -1,12 +1,6 @@
 <template>
   <div>
-    <div class="flex flex-col items-center">
-      <div class="w-full">
-        <div class="fixed z-50 top-0 left-0 right-0  w-full px-5 sm:px-5 lg:px-10">
-          <Nav :bg-transparent="true" />
-        </div>
-      </div>
-    </div>
+    
     <div class="bg-[#BEBAFC] min-h-screen w-full" :style="{ backgroundImage: `url('/unlock-bg.svg')` }">
       <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
         <div class="2xl:max-w-[101rem] w-full">
@@ -19,28 +13,21 @@
                     <NuxtLink to="/join-us"
                       class="inline-flex cursor-pointer items-center bg-[#F5F5F5] px-4 py-3 shadow transition-transform duration-700 hover:scale-105 rounded-[50px] md:px-4 md:py-3">
                       <span class="text-sm font-bold text-purple lg:text-lg">
-                        FINTRAC regulated
+                        FINTRAC {{  $t('from-waemu.section-1.regulated.name') }}
                       </span>
                       <span class="mx-1 text-[12px] text-black md:ml-4">
-                        Learn more
+                        {{ $t('from-waemu.section-1.regulated.learn-more') }}
                       </span>
                       <img class="h-3 md:ml-3" src="~/assets/images/arrow-right.svg" alt="" />
                     </NuxtLink>
                   </div>
                   <h1 class="font-heading text-[32px] md:text-5xl" style="line-height: 3.4rem !important">
-                    Send money from {{ countryName }} to Canada at the real exchange rate!
+                    {{ $t('from-waemu.section-1.caption.left') }} {{ countryName }}  {{ $t('from-waemu.section-1.caption.right') }}
                   </h1>
-                  <p class="drop-shadow-lg mb-8 md:mb-0">
-                    From local to global in real time, Maraboo Magic: Discover 3x
-                    <br />
-                    Savings on international money Transfers to or from WAEMU
-                    countries!
-                  </p>
+                  <p v-html="$t('from-waemu.section-1.text')" class="drop-shadow-lg mb-8 md:mt-2"></p>
                   <div class="inline-flex">
                     <img class="md:h-56 h-32 mr-5 drop-shadow-lg" src="~/assets/images/qr.svg" />
-                    <span class="md:mt-10 drop-shadow-lg text-lg">
-                      Scan QR code to <br />
-                      download the app
+                    <span v-html="$t('qr-scan')" class="md:mt-10 drop-shadow-lg text-lg">
                     </span>
                   </div>
                 </div>
@@ -59,15 +46,9 @@
       <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
         <div class="2xl:max-w-[101rem] w-full">
           <h1 class="mb-7 font-heading text-4xl md:text-6xl">
-            {{ countryName }} to Global Destinations, with 3x the Cost Efficiency
+            {{ countryName }}  {{ $t('from-waemu.section-2.caption') }} 
           </h1>
-          <p class="text leading-relaxed lg:px-12">
-            Maraboo is your wallet’s new superpower for international transfers from any WAEMU country. <span
-              class="underline">Send up to $9,900 daily at the Real Exchange</span> to pay international bills, tuition,
-            suppliers, you name it! We accept XOF payments by mobile money transfers or by processing your back card
-            <!-- <br />
-              {{ $t("home.section5.text-2") }} -->
-          </p>
+          <p v-html="$t('from-waemu.section-2.text')" class="text leading-relaxed lg:px-12"></p>
         </div>
       </div>
     </div>
@@ -79,7 +60,7 @@
       <div class="2xl:max-w-[101rem] w-full">
         <div id="how-it-works" class="relative text-black flex flex-col pt-24 items-center justify-center">
           <h1 class="mb-9 md:mb-24 px-5 lg:px-52 text-center font-heading text-4xl md:text-6xl">
-            Send money from {{ countryName }} to Canada in three easy steps
+            {{ $t('from-waemu.section-3.caption.left') }} {{ countryName }}  {{ $t('from-waemu.section-3.caption.right') }}
           </h1>
           <div class="flex flex-col lg:flex-row lg:gap-9">
             <div class="w-full">
@@ -89,12 +70,7 @@
                     <h1 class="mb-4 text-2xl font-bold text-[#F67335]">
                       {{ $t("home.section5.how-it-works.step-1.name") }}
                     </h1>
-                    <div class="inline-flex flex-col mt-6">
-                      <span>&#x2022; Create account</span>
-                      <span>&#x2022; Get a quote</span>
-                      <span>&#x2022; Verify your identity (once)</span>
-                      <span>&#x2022; Select delivery method</span>
-                    </div>
+                    <div class="inline-flex flex-col mt-6" v-html="$t('home.section5.how-it-works.step-1.text')"></div>
                   </div>
                 </div>
 
@@ -105,12 +81,7 @@
                 <h1 class="mb-4 text-2xl font-bold text-[#F67335]">
                   {{ $t("home.section5.how-it-works.step-2.name") }}
                 </h1>
-                <div class="inline-flex flex-col mt-6">
-                  <span>&#x2022; Enter recipients details</span>
-                  <span>&#x2022; Review Transaction details</span>
-                  <span>&#x2022; Pay in any currency that we support (XOF or
-                    CAD)</span>
-                </div>
+                <div class="inline-flex flex-col mt-6" v-html="$t('home.section5.how-it-works.step-2.text')"></div>
 
               </div>
             </div>
@@ -120,7 +91,7 @@
                   <h1 class="mb-4 text-2xl font-bold text-[#F67335]">
                     {{ $t("home.section5.how-it-works.step-3.name") }}
                   </h1>
-                  <p class="mt-7">Your recipient receives money:</p>
+                  <p class="mt-7">{{ $t("home.section5.how-it-works.step-3.one") }}</p>
                   <div class="-mt-5">
                     <div>
                       <div class="inline-flex items-center">
@@ -172,16 +143,14 @@
             <div class="mt-0">
               <div class="mb-8 font-heading md:text-left">
                 <h1 class="max-w-[47rem] text-[32px] md:text-5xl" style="line-height: 3.4rem !important">
-                  Download the Maraboo
-                  mobile app for quick and
-                  easy transfers!
+                  {{  $t('from-waemu.section-4.caption') }}
                 </h1>
               </div>
               <p class="md:text-left" v-html="$t('home.section1.left.center.l3')"></p>
             </div>
             <div class="mt-16 hidden text-center md:block md:text-left">
               <a @click.stop="scrollIntoView" href="#top" class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]">
-                Send money now
+                {{ $t('send-btn') }}
               </a>
               <div class="flex justify-between mt-10 md:max-w-[18rem]">
                 <a>
@@ -199,7 +168,7 @@
           </div>
           <div class="mt-16 md:hidden text-left">
             <a @click.stop="scrollIntoView" href="#top" class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]">
-              Send money now
+              {{ $t('send-btn') }}
             </a>
             <div class="flex justify-start gap-2 mt-10">
               <a href="#">
@@ -229,7 +198,7 @@
     </div>
   </section>
 
-  <section class="mb-36 px-4 md:px-12 md:py-32">
+  <section class="mb-10 px-4 md:px-12 md:py-32">
     <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
       <div class="2xl:max-w-[101rem] w-full">
         <div class="flex flex-col items-center">

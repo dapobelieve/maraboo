@@ -10,39 +10,35 @@
           <h1
             class="text-3xl lg:text-5xl font-heading text-center lg:text-left mb-4"
           >
-            Join our waitlist!
+            {{ $t('wait-list.join') }}
           </h1>
           <p class="text-center lg:text-left leading-6 lg:text-xl">
-            To stay up to date with our development, and to learn how you can
-            get the most out of Maraboo’s platform for international transfers.
+            {{ $t('wait-list.up-to-date') }}
           </p>
         </div>
         <div class="flex text-xs lg:w-[50%]">
           <input
-            placeholder="Please enter your email"
+            :placeholder="$t('wait-list.mail')"
             class="lg:text-xl h-12 flex-grow w-full px-4 rounded rounded-e-none text-black focus-within:outline-0 border-0"
           />
           <button
             class="lg:text-xl px-4 flex-shrink-0 py-2 bg-purple text-white rounded rounded-s-none"
           >
-            Notify me
+            {{ $t('wait-list.notify') }}
           </button>
         </div>
       </div>
     </div>
     <div class="flex justify-center px-2 md:px-0 items-center flex-col">
-      <h1 class="font-heading mb-6 text-center text-white text-4xl md:text-5xl">
-        <!-- Download the app to <br /> transfer money -->
-        Download the App <br />
-        for Money Transfers Beyond <br />
-        Borders!
+      <h1 v-html="$t('wait-list.download-title')" class="font-heading mb-6 text-center text-white text-4xl md:text-5xl">
+       
       </h1>
       <div class="flex justify-between gap-2 max-w-xs">
         <a href="#">
-          <img class="h-12" src="~/assets/images/appleStore.svg" />
+          <img class="h-12" src="~/assets/images/appleStore-white.svg" />
         </a>
         <a href="#">
-          <img class="h-12" src="~/assets/images/playStore.svg" />
+          <img class="h-12" src="~/assets/images/playStore-white.svg" />
         </a>
       </div>
     </div>
@@ -61,10 +57,7 @@
               Maraboo
             </h1>
           </div>
-          <p class="text-center md:text-left">
-            A West-African fintech firm offering transformative <br />
-            financial solutions that are fair, responsible, inclusive, and
-            designed to improve the quality of life of West Africans.
+          <p v-html="$t('footer.logo-caption')" class="text-center md:text-left">
           </p>
         </div>
         <div class="text-center md:text-left contact-us mb-8 md:mb-0 md:w-96">
@@ -119,9 +112,7 @@
       </div>
       <div class="leading text-center md:text-left text-[#848484] mt-8 mb-5">
         <h6 class="mb-10">
-          Grand Maraboo Technology Limited is registered as a money service
-          business with the Financial Transactions and Reports Analysis Centre
-          of Canada (FINTRAC) under registration number
+          {{ $t('footer.registered') }}
           <strong>M23345406</strong>
         </h6>
         <span
@@ -142,7 +133,7 @@
       </div>
 
       <div
-        class="my-10 w-full text-[#848484] text-center md:flex flex-col justify-center md:flex-row justify-between"
+        class="my-10 w-full text-[#848484] text-center md:flex flex-col justify-center md:flex-row md:justify-between"
       >
         <span class="md:mb-0">
           Grand Maraboo Technologies Limited
