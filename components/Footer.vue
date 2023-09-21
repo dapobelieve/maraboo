@@ -3,6 +3,7 @@
     class="bg-gradient-to-r from-[#BDB9FB] mt-40 py-6 pb-24 px-5 flex space-y-16 flex-col items-center justify-center to-[#A8B8FA]"
   >
     <div
+      v-show="!displayBlackFooterSection"
       class="container -mt-[9rem] md:px-16 h-full px-7 py-14 md:py-12 flex bg-black text-white rounded-3xl md:rounded-[40px] md:max-w-5xl w-full"
     >
       <div class="lg:flex items-center justify-around h-full w-full gap-10">
@@ -43,12 +44,12 @@
       </div>
     </div>
   </div>
-  <footer class="px-5 sm:px-5 lg:px-10">
-    <div class="md:py-16 py-6">
+  <footer class="px-5 flex justify-center sm:px-5 lg:px-10">
+    <div class="md:py-16 py-6 w-full 2xl:max-w-[101rem]">
       <div
         class="md:flex md:flex-row md:justify-between after:content after:w-full after:bottom-[-20px] md:after:bottom-[-40px] after:h-[1px] after:absolute relative after:bg-[#5C5C5C] items-start mb-16 md:mb-20"
       >
-        <div class="text-center md:text-left md:w-[33%] mb-10 maraboo md:mb-0">
+        <div class="text-center md:text-left mb-10 maraboo md:mb-0">
           <div class="inline-flex mb-10 items-center">
             <img class="h-7" src="~/assets/images/maraboo.svg" alt="" />
             <h1
@@ -131,7 +132,6 @@
         <!--          morbi massa leo tortor cras eget massa.-->
         <!--        </p>-->
       </div>
-
       <div
         class="my-10 w-full text-[#848484] text-center md:flex flex-col justify-center md:flex-row md:justify-between"
       >
@@ -161,8 +161,11 @@
   </footer>
 </template>
 
-<script>
-export default {};
+<script setup>
+import { computed } from "vue";
+const route = useRoute();
+
+const displayBlackFooterSection = computed(() => route.fullPath === "/join-us");
 </script>
 
 <style scoped></style>

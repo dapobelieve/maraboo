@@ -1,7 +1,7 @@
 <template>
   <main class="">
-    <section class="md:h-[calc(100vh-140px)] mt-8">
-      <div class="items-center md:flex h-full">
+    <section class="md:h-[calc(100vsdh-140px)] mt-8 mb-16">
+      <div class="items-end md:flex h-full">
         <div class="mb-8 w-full md:mb-0 md:w-2/4">
           <span class="flex md:inline-block">
             <NuxtLink
@@ -58,8 +58,8 @@
         </div>
         <div class="flex items-center justify-center md:w-2/4">
           <img
-            class="people md:mr-[calc(-50vw+98%)]"
-            src="~/assets/images/people-hexago.svg"
+            class="people w-full 4xl:mr-0 md:mr-[calc(-50vw+98%)]"
+            src="~/assets/images/people-hexago.webp"
           />
         </div>
         <!--        <div class="mt-16 md:hidden text-left">-->
@@ -91,14 +91,14 @@
             />
           </div>
         </div>
-        <div class="md:w-1/2">
+        <div class="md:w-1/2 mb-6 md:mb-0">
           <h1 class="mb-4 font-heading text-4xl md:text-6xl">
             {{ $t("home.section2.countries") }}
           </h1>
           <p class="mb-12 text-left" v-html="$t('home.section2.text')"></p>
           <NuxtLink
             :to="localePath('/exchange/send-money-from-canada')"
-            class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]"
+            class="bg-black mb-20 text-white px-6 py-4 rounded-[10px]"
           >
             {{  $t('send-btn') }}
           </NuxtLink>
@@ -115,9 +115,9 @@
         </div>
       </div>
     </section>
-    <section class="py-12 md:py-36">
+    <section class="py-12 unlock md:py-36">
       <div
-        class="unlock bg-[#BEBAFC] rounded-[30px] flex justify-center border px-6 py-8 lg:px-16 lg:py-36"
+        class="bg-[#BEBAFC] rounded-[30px] flex justify-center border px-6 py-8 lg:px-16 lg:py-36"
         :style="{ backgroundImage: `url(${qrBg})` }"
       >
         <div class="max-w-[90rem] w-full md:space-y-0 space-y-8 md:flex">
@@ -148,7 +148,7 @@
           <div>
             <img
               class="h-[31rem]"
-              src="~/assets/images/connecting.png"
+              src="~/assets/images/connecting.svg"
               alt=""
             />
           </div>
@@ -173,7 +173,7 @@
           class="mb-8 flex justify-center md:mb-0 md:mr-12 md:hidden md:w-2/5"
         >
           <div>
-            <img class="ml-3 h-" src="~/assets/images/connecting.png" alt="" />
+            <img class="ml-3 h-" src="~/assets/images/connecting.svg" alt="" />
           </div>
         </div>
       </div>
@@ -462,7 +462,7 @@
         </div>
       </div>
     </section>
-    <section class="faq mb-16 md:py-32">
+    <section class="faq mb-8">
       <div class="flex flex-col items-center">
         <h1
           class="mb-8 text-center font-heading text-4xl leading-snug md:text-6xl"
