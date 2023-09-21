@@ -1,7 +1,6 @@
 <template>
   <div class="subpixel-antialiased w-full bg-auto relative bg-cover">
     <div class="flex flex-col items-center px-5 sm:px-5 mb-96 lg:px-10">
-      <!-- <div class="bg-white w-full sticky z-10 h-8 top-0 left-0"></div> -->
       <div class="2xl:max-w-[101rem] relative w-full">
         <Nav :bg-transparent="false" />
         <div class="pt-10">

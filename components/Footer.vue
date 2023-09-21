@@ -47,8 +47,8 @@
       </div>
     </div>
   </div>
-  <footer class="px-5 sm:px-5 lg:px-10">
-    <div class="md:py-16 py-6">
+  <footer class="px-5 flex justify-center sm:px-5 lg:px-10">
+    <div class="md:py-16 py-6 w-full 2xl:max-w-[101rem]">
       <div
         class="md:flex md:flex-row md:justify-between after:content after:w-full after:bottom-[-20px] md:after:bottom-[-40px] after:h-[1px] after:absolute relative after:bg-[#5C5C5C] items-start mb-16 md:mb-20"
       >
@@ -140,7 +140,6 @@
         <!--          morbi massa leo tortor cras eget massa.-->
         <!--        </p>-->
       </div>
-
       <div
         class="my-10 w-full text-[#848484] text-center md:flex flex-col justify-center md:flex-row justify-between"
       >
