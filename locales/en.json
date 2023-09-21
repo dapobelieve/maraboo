@@ -21,7 +21,7 @@
         "center": {
           "l1": "Global transfers to or from WAEMU countries at the",
           "l2": " real exchange rate!",
-          "l3": "Did you know that a 10% reduction in transaction fees for             sending money in & out <br > of WAEMU country can boost the              revenue of regional households by up to 16%?"
+          "l3": "Did you know that a 10% reduction in transaction fees for sending money in & out <br class='hidden md:block' > of WAEMU country can boost the              revenue of regional households by up to 16%?"
         },
         "bottom": "Learn more on Maraboo"
       },

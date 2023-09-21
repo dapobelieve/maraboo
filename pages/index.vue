@@ -1,6 +1,6 @@
 <template>
   <main class="">
-    <section class="md:h-[calc(100vsdh-140px)] mt-8">
+    <section class="md:h-[calc(100vsdh-140px)] mt-8 mb-16">
       <div class="items-end md:flex h-full">
         <div class="mb-8 w-full md:mb-0 md:w-2/4">
           <span class="flex md:inline-block">
@@ -157,7 +157,7 @@
           <div>
             <img
               class="h-[31rem]"
-              src="~/assets/images/connecting.png"
+              src="~/assets/images/connecting.svg"
               alt=""
             />
           </div>
@@ -182,7 +182,7 @@
           class="mb-8 flex justify-center md:mb-0 md:mr-12 md:hidden md:w-2/5"
         >
           <div>
-            <img class="ml-3 h-" src="~/assets/images/connecting.png" alt="" />
+            <img class="ml-3 h-" src="~/assets/images/connecting.svg" alt="" />
           </div>
         </div>
       </div>

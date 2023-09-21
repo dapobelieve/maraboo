@@ -26,14 +26,16 @@
       <div class="w-full">
         <div
           style="background: linear-gradient(180deg, #bebafc 0%, #a7b8fa 100%)"
-          class="flex content-center px-6 lg:px-32 lg:py-32 rounded-[15px] pt-[30px] text-center text-white flex-col h-full"
+          class="flex content-center px-6 lg:px-32 lg:py-28 rounded-[15px] pt-[30px] text-center text-white flex-col h-full"
         >
           <h1
             class="font-heading text-3xl md:text-5xl leading-9 mb-4 md:mb-8"
             v-html="$t('about-us.section-2.caption')"
           ></h1>
           <div class="md:px-24 lg:px-36 text-base mb-8 leading-relaxed">
-            {{ $t("about-us.section-2.text") }}
+            Did you know that a 10% reduction in transaction fees for sending
+            money in & out of WAEMU country <br />
+            can boost the revenue of regional households by up to 16%?
           </div>
         </div>
       </div>
@@ -55,16 +57,19 @@
         </div>
       </div>
       <div class="lg:w-2/4 mb-8 md:mb-0 flex justify-center">
-        <img class="h-[35rem]" src="~/assets/images/man-laugh.svg" alt="" />
+        <img
+          class="xl:h-[35rem] h-[27em]"
+          src="~/assets/images/man-laugh.svg"
+          alt=""
+        />
       </div>
     </div>
   </section>
-  <section class="mb">
+  <section class="md:mt-[16rem]">
     <h1
       class="font-heading text-3xl max-w-[45rem] md:text-6xl leading-9 mb-4 md:mb-8"
       v-html="$t('about-us.section-2.team')"
     ></h1>
-
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
       <div v-for="team_member in teams" :key="team_member.id">
         <Team :team="team_member" />
