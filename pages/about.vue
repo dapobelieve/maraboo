@@ -61,13 +61,13 @@
       </div>
     </div>
   </section>
-  <section class="mb-52">
+  <section class="mb-52 px-4">
     <h1
       class="font-heading text-3xl max-w-[45rem] md:text-6xl leading-9 mb-4 md:mb-8"
       v-html="$t('about-us.section-2.team')"
     ></h1>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-center">
       <div v-for="team_member in teams" :key="team_member.id">
         <Team :team="team_member" />
       </div>
@@ -79,56 +79,55 @@
 const teams = [
   {
     id: 1,
+    img: "/team/Cheick.jpg",
     name: "Cheick Ouedraogo",
     job: "Founder - CEO",
   },
   {
     id: 2,
+    img: "/team/Lekan.jpg",
     name: "Olalekan Adebari",
     job: "CTO",
   },
   {
     id: 3,
-    name: "Nimrod Payne",
-    job: "Head of Compliance",
-  },
-  {
-    id: 4,
+    img: "/team/Dela.jpg",
     name: "Dela Alipui",
     job: "Head of Product Design",
   },
   {
-    id: 5,
+    id: 4,
+    img: "/team/Nick.jpg",
     name: "Nick Brisbois",
     job: "Backend Lead",
   },
   {
-    id: 6,
+    id: 5,
+    img: "/team/Eric.jpg",
     name: "Eric Lekwa",
     job: "Lead Mobile Engineer",
   },
   {
-    id: 7,
-    name: "Hanad Hassan",
-    job: "Backend Developer",
-  },
-  {
-    id: 8,
+    id: 6,
+    img: "/team/Dapo.jpg",
     name: "Abimbola Oladapo",
     job: "Full Stack Engineer",
   },
   {
-    id: 9,
+    id: 7,
+    img: "/team/Brianna.jpg",
     name: "Brianna Megrath",
     job: "Graphic Designer",
   },
   {
-    id: 10,
+    id: 8,
+    img: "/team/Alex.jpg",
     name: "Alex Pang",
     job: "Marketing",
   },
   {
-    id: 11,
+    id: 9,
+    img: "/team/Valiant.jpg",
     name: "Valiant-Joshua Bolorunduro",
     job: "Backend Developer",
   },

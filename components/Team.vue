@@ -1,6 +1,7 @@
 <template>
        <div class="my-4">
-          <div class="flex justify-center bg-gray-300 w-full h-96 rounded-3xl">
+          <div class="flex justify-center bg-gray-300 w-full rounded-3xl">
+            <img class="rounded-3xl" :src="team.img" alt="team_member"/>
           </div>
 
           <div>
