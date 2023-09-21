@@ -254,7 +254,7 @@
             {{ $t("home.nav.how-it-works") }}
           </NuxtLink>
           <div
-            @click="mobileCompany = !mobileCompany"
+            @click.prevent="mobileCompany = !mobileCompany"
             class="mt-8 flex cursor-pointer items-center justify-between"
           >
             <div class="relative">
