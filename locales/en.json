@@ -36,6 +36,9 @@
       "countries": "Countries we support",
       "text": "We support 9 markets and 2 currencies to make it easier for you to transact globally. We’ll be adding more markets and currencies shortly to\n          better serve your needs."
     },
+    "calculator": {
+      "caption": "<span> Unlock the World with <br class='hidden md:block' />XOF: Your Passport to Seamless Cross-Border Transfers. </span>"
+    },
     "section3": {
       "super-charge": "Connecting WAEMU to the Global Payment Network!",
       "text": "Maraboo is your wallet’s new superpower for international transfers, <span class=\"font-medium underline\">send up to <br > $9,900 daily to or from WAEMU countries at the Real Exchange</span> to pay international bills, tuition, suppliers, you name it! ",
@@ -56,11 +59,11 @@
         "name": "How it works",
         "step-1": {
           "name": "Step 1",
-          "text": "Create an account, tell us how much you want to send, and where to."
+          "text": "<span>&#x2022; Create account </span>  <span>&#x2022; Get a quote</span>  <span>&#x2022; Verify your identity (once)</span>  <span>&#x2022; Select delivery method </span>"
         },
         "step-2": {
           "name": "Step 2",
-          "text": "Pay for your transaction in your <br />\n                        currency of choice; i.e. XOF, CAD or <br />\n                        another currency we support"
+          "text": "<span>&#x2022; Enter recipients details</span>  <span>&#x2022; Review Transaction details</span>  <span>&#x2022; Pay in any currency that we support (XOF or CAD)</span>"
         },
         "step-3": {
           "name": "Step 3",
@@ -68,7 +71,9 @@
           "xof-in": {
             "name": "XOF in",
             "bank-transfer": "Bank transfer (up to 48h)",
-            "instant": "Instant cash pick up"
+            "instant": "Instant cash pick up",
+            "mobile": "Mobile Money",
+            "ecobank": "Ecobank transfer (instant)!"
           },
           "cad-in": {
             "name": "CAD in",
@@ -144,7 +149,68 @@
     "view": "View our openings.",
     "opening": "<div class='w-4/5'>        <h1 class='font-heading text-4xl  mb-6'>Our Openings:</h1>        <div class='max-w-[46rem] md:mb-8 text-justify leading-relaxed'>          <p class='mb-4'>Thank you for your interest in joining our team!</p>          <p class='mb-4'>            While we do not currently have any open positions, we are always on            the lookout for talented individuals who share our values and are            passionate about what we do.          </p>          <p class='mb-4'>            We encourage you to submit your resume and cover letter for future            consideration, as we may have opportunities that match your skills            and experience in the near future.          </p>          <p class='mb-20'>            We promise to review every application carefully and keep them on            file should a suitable opening arise. We look forward to hearing            from you and potentially working together in the future!          </p>                 </div>      </div>"
   },
+  "from-waemu": {
+    "section-1": {
+      "regulated": {
+        "name": "regulated",
+        "learn-more": "Learn more"
+      },
+      "caption": {
+          "left":"Send money from",
+          "right": "to Canada at the real exchange rate!"
+      },
+      "text": "<p> From local to global in real time, Maraboo Magic: Discover 3x <br />      Savings on international money Transfers to or from WAEMU countries!</p>"
+    },
+    "section-2": {
+      "caption": "to Global Destinations, with 3x the Cost Efficiency",
+      "text": "<p>   Maraboo is your wallet’s new superpower for international transfers from any WAEMU country. <span class='underline'> Send up to $9,900 daily at the Real Exchange</span> to pay international bills, tuition, suppliers, you name it! We accept XOF payments by mobile money transfers or by processing your back card </p>"
+    },
+    "section-3": {
+      "caption": {
+        "left":"Send money from",
+        "right": "to Canada in three easy steps"
+      }
+    },
+    "section-4": {
+      "caption": "Download the Maraboo mobile app for quick and easy transfers!"
+    }
+  },
+  "from-canada": {
+    "section-1": {
+      "caption": {
+          "left":"Send money from Canada to",
+          "right": "at the real exchange rate!"
+      },
+      "text": "<p> From local to global in real time, Maraboo Magic: Discover 3x <br />      Savings on international money Transfers to or from WAEMU countries!</p>"
+    },
+    "section-2": {
+      "caption": {
+            "left": "From Canada to",
+            "right": "with 3x the cost efficiency"
+      },
+      "text": "<p>   Maraboo is your wallet’s new superpower for international transfers from any WAEMU country. <span class='underline'> Send up to $9,900 daily at the Real Exchange</span> to pay international bills, tuition, suppliers, you name it! We accept XOF payments by mobile money transfers or by processing your back card </p>"
+    },
+    "section-3": {
+      "caption": {
+        "right": "in three easy steps"
+      }
+    }
+    
+  },
+  "qr-scan": "<span>  Scan QR code to <br /> download the app </span>",
+  "send-btn": "Send money now",
+  "calculator": {
+    "send": "You send:",
+    "input-placeholder": "Enter amount",
+    "exchg-rate": "at the real exchange rate!",
+    "receive": "Your recipient gets:"
+  },
   "wait-list": {
+    "join": "Join our waitlist!",
+    "up-to-date": "To stay up to date with our development, and to learn how you can get the most out of Maraboo’s platform for international transfers.",
+    "mail": "Please enter your email",
+    "notify": "Notify me",
+    "download-title": "<span>  Download the App <br /> for Money Transfers Beyond <br /> Borders! </span>",
     "coming-soon": "Coming Soon",
     "caption": "Get Notified When We Launch",
     "first-name": "First Name",
@@ -153,6 +219,8 @@
     "submit": "Submit"
   },
   "footer": {
+    "logo-caption": "<span> A West-African fintech firm offering transformative <br /> financial solutions that are fair, responsible, inclusive, and designed to improve the quality of life of West Africa </span>",
+    "registered": "Grand Maraboo Technology Limited is registered as a money service business with the Financial Transactions and Reports Analysis Centre of Canada (FINTRAC) under registration number",
     "contact": "Contact us",
     "phone": "Phone",
     "email": "Email",
