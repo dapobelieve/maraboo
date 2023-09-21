@@ -8,7 +8,7 @@
       <div
         class="accordion-item-header flex justify-between items-center w-full"
       >
-        <h6 class="font-bold text-xl">
+        <h6 class="font-bold mr-4 md:text-xl">
           {{ item.question }}
         </h6>
         <svg
@@ -16,6 +16,7 @@
           height="9"
           viewBox="0 0 15 9"
           fill="none"
+          class="shrink-0"
           :class="[active ? '-rotate-180' : '']"
           xmlns="http://www.w3.org/2000/svg"
         >

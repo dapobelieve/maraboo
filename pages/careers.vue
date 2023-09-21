@@ -31,7 +31,7 @@
         </div>
       </div>
     </section>
-    <section class="mt-32">
+    <section class="mt-16">
       <div>
         <h1
           class="text-4xl md:text-4xl text-center text-black font-heading mb-8"
