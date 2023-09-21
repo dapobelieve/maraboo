@@ -91,11 +91,6 @@ const teams = [
     job: "CTO",
   },
   {
-    id: 3,
-    name: "Nimrod Payne",
-    job: "Head of Compliance",
-  },
-  {
     id: 4,
     name: "Dela Alipui",
     job: "Head of Product Design",
