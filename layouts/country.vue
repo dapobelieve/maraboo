@@ -1,7 +1,7 @@
 <template>
   <div class="subpixel-antialiased bg-auto relative">
     <slot />
-    <Footer class="" />
+    <Footer />
   </div>
 </template>
 <style lang="scss">

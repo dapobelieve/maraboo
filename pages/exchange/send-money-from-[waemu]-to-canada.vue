@@ -15,10 +15,8 @@
     >
       <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
         <div class="2xl:max-w-[101rem] w-full">
-          <section class="px-4 mt-[7rem]">
-            <div
-              class="rounded-[30px] flex md:py-14 py-8 lg:px-8 justify-center"
-            >
+          <section class="mt-[7rem]">
+            <div class="rounded-[30px] flex md:py-14 py-8 justify-center">
               <div class="w-full md:space-y-0 space-y-8 md:flex">
                 <div class="md:w-1/2 text-white flex flex-col justify-between">
                   <div class="block mb-4 md">
@@ -75,7 +73,7 @@
     </div>
 
     <div
-      class="my-28 px-5 lg:px-52 flex flex-col items-center justify-center text-center"
+      class="my-56 px-5 lg:px-52 flex flex-col items-center justify-center text-center"
     >
       <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
         <div class="2xl:max-w-[101rem] w-full">
@@ -206,11 +204,9 @@
     </div>
   </div>
 
-  <section
-    class="mt-[3rem] px-12 md:px-2 lg:px-12 2xl:px-96 pb-12 md:mt-[7rem] md:pb-32"
-  >
+  <section class="mt-[3rem] md:px-2 2xl:px-96 pb-12 md:mt-[7rem] md:pb-32">
     <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
-      <div class="2xl:max-w-[80rem] w-full">
+      <div class="2xl:max-w-[80rsem] w-full">
         <div class="md:flex gap-10">
           <div class="mb-8 w-full md:mb-0 md:w-2/4">
             <div class="mt-0">
@@ -307,7 +303,6 @@
           >
             {{ $t("home.faq-header") }}
           </h1>
-
           <div class="w-full">
             <GlobalAccordionList>
               <GlobalAccordionItem

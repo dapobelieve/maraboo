@@ -503,8 +503,8 @@ export default {
   border: 0;
   border-radius: 5px;
   height: 34px;
-  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
-    no-repeat right #5f19f2;
+  background: url(https://maraboo.netlify.app/caret-down-white.svg) no-repeat
+    right #5f19f2;
   -webkit-appearance: none;
   background-position-x: 134px;
 }

@@ -44,7 +44,7 @@
         </div>
         <div class="hidden items-center md:flex">
           <div class="mr-12">
-            <NuxtLink to="/#how-it-works">
+            <NuxtLink to="#how-it-works">
               {{ $t("home.nav.how-it-works") }}</NuxtLink
             >
           </div>
@@ -56,7 +56,7 @@
           >
             <a> {{ $t("home.nav.company.name") }} </a>
             <img
-              class="mt-0.5 ml-2 h-2 group-hover:-rotate-180"
+              class="mt-0.5 ml-2 h-2"
               :src="
                 isScrolled && bgTransparent
                   ? '/caret-down.svg'
