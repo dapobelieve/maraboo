@@ -91,14 +91,14 @@
             />
           </div>
         </div>
-        <div class="md:w-1/2">
+        <div class="md:w-1/2 mb-6 md:mb-0">
           <h1 class="mb-4 font-heading text-4xl md:text-6xl">
             {{ $t("home.section2.countries") }}
           </h1>
           <p class="mb-12 text-left" v-html="$t('home.section2.text')"></p>
           <NuxtLink
             :to="localePath('/exchange/send-money-from-canada')"
-            class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]"
+            class="bg-black mb-20 text-white px-6 py-4 rounded-[10px]"
           >
             Send money now
           </NuxtLink>
@@ -115,9 +115,9 @@
         </div>
       </div>
     </section>
-    <section class="py-12 md:py-36">
+    <section class="py-12 unlock md:py-36">
       <div
-        class="unlock bg-[#BEBAFC] rounded-[30px] flex justify-center border px-6 py-8 lg:px-16 lg:py-36"
+        class="bg-[#BEBAFC] rounded-[30px] flex justify-center border px-6 py-8 lg:px-16 lg:py-36"
         :style="{ backgroundImage: `url(${qrBg})` }"
       >
         <div class="max-w-[90rem] w-full md:space-y-0 space-y-8 md:flex">
@@ -222,7 +222,7 @@
           <div class="my-20 w-full xl:w-4/5">
             <div class="flex flex-col items-center justify-between sm:flex-row">
               <div
-                class="mb-10 sm:mb-0 bg-[#F5F5F5] px-5 border lg:px-10 rounded-xl lg:w-[30%] sm:w-[32%] w-[50%] py-8 inline-flex items-center md:mb-0"
+                class="mb-10 sm:mb-0 bg-[#F5F5F5] px-5 border lg:px-10 rounded-xl lg:w-[30%] sm:w-[32%] w-[60%] py-8 inline-flex items-center md:mb-0"
               >
                 <div class="flex items-center w-full">
                   <img
@@ -234,7 +234,7 @@
                 </div>
               </div>
               <div
-                class="mb-10 sm:mb-0 bg-[#F5F5F5] px-5 border lg:px-10 rounded-xl lg:w-[30%] sm:w-[32%] w-[50%] py-8 inline-flex items-center md:mb-0"
+                class="mb-10 sm:mb-0 bg-[#F5F5F5] px-5 border lg:px-10 rounded-xl lg:w-[30%] sm:w-[32%] w-[60%] py-8 inline-flex items-center md:mb-0"
               >
                 <div class="flex items-center w-full">
                   <img
@@ -248,7 +248,7 @@
                 </div>
               </div>
               <div
-                class="bg-[#F5F5F5] px-5 border lg:px-10 sm: rounded-xl lg:w-[30%] sm:w-[32%] w-[50%] py-8 inline-flex items-center md:mb-0"
+                class="bg-[#F5F5F5] px-5 border lg:px-10 sm: rounded-xl lg:w-[30%] sm:w-[32%] w-[60%] py-8 inline-flex items-center md:mb-0"
               >
                 <div class="flex items-center w-full">
                   <img
