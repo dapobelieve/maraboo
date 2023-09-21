@@ -22,16 +22,16 @@
             <div class="bg-reds-300" v-html="$t('careers.opening')"></div>
           </div>
         </div>
-        <div class="md:flex hidden items-center justify-center w-full md:w-2/4">
+        <div class="md:flex hidden justify-center md:w-2/4">
           <img
-            class="md:mr-[calc(-50vw+90%)] mt-12"
+            class="lg:mr-[calc(-50vw+98%)] w-full mt-12"
             src="~/assets/images/carz.svg"
             alt=""
           />
         </div>
       </div>
     </section>
-    <section class="">
+    <section class="mt-32">
       <div>
         <h1
           class="text-4xl md:text-4xl text-center text-black font-heading mb-8"

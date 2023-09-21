@@ -14,7 +14,7 @@
       </div>
       <div class="flex justify-center md:w-2/4">
         <img
-          class="lg:mr-[calc(-50vw+99%)] mt-12 w-full"
+          class="lg:mr-[calc(-50vw+98%)] mt-12 w-full"
           src="~/assets/images/shadow.svg"
           alt=""
         />

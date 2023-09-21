@@ -71,7 +71,7 @@
             >
               <NuxtLink
                 :to="localePath('/about')"
-                class="flex items-center px-6 py-6 text-black hover:border- hover:bg-gray-50"
+                class="flex items-center px-6 py-6 text-black hover:rounded-t-lg hover:bg-gray-50"
               >
                 <img class="mr-6 h-4" src="~/assets/images/about.svg" alt="" />
                 <span class="text-md font-medium">{{
@@ -108,7 +108,7 @@
               </NuxtLink>
               <NuxtLink
                 :to="localePath('/legal')"
-                class="flex items-center px-6 py-6 text-black hover:bg-gray-50"
+                class="flex items-center px-6 py-6 text-black hover:rounded-b-lg hover:bg-gray-50"
               >
                 <img class="mr-6 h-6" src="~/assets/images/legal.svg" alt="" />
                 <span class="text-md font-medium">{{
@@ -250,7 +250,7 @@
           <NuxtLink
             @click.stop="showMobileMenu = false"
             href="/#how-it-works"
-            class="text-2xl hover:text-purple"
+            class="text-2xl"
           >
             {{ $t("home.nav.how-it-works") }}
           </NuxtLink>
@@ -259,8 +259,8 @@
             class="mt-8 flex cursor-pointer items-center justify-between"
           >
             <div class="relative">
-              <h6 class="text-2xl hover:text-purple">
-                <a> {{ $t("home.nav.company.name") }} </a>
+              <h6 class="text-2xl">
+                <span> {{ $t("home.nav.company.name") }} </span>
               </h6>
               <div v-show="mobileCompany" class="absolute top-12">
                 <div
