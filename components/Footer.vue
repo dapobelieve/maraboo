@@ -3,6 +3,7 @@
     class="bg-gradient-to-r from-[#BDB9FB] mt-40 py-6 pb-24 px-5 flex space-y-16 flex-col items-center justify-center to-[#A8B8FA]"
   >
     <div
+      v-show="!displayBlackFooterSection"
       class="container -mt-[9rem] md:px-16 h-full px-7 py-14 md:py-12 flex bg-black text-white rounded-3xl md:rounded-[40px] md:max-w-5xl w-full"
     >
       <div class="lg:flex items-center justify-around h-full w-full gap-10">
@@ -169,8 +170,11 @@
   </footer>
 </template>
 
-<script>
-export default {};
+<script setup>
+import { computed } from "vue";
+const route = useRoute();
+
+const displayBlackFooterSection = computed(() => route.fullPath === "/join-us");
 </script>
 
 <style scoped></style>
