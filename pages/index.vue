@@ -1,7 +1,7 @@
 <template>
   <main class="">
-    <section class="md:h-[calc(100vh-140px)] mt-8">
-      <div class="items-center md:flex h-full">
+    <section class="md:h-[calc(100vsdh-140px)] mt-8">
+      <div class="items-end md:flex h-full">
         <div class="mb-8 w-full md:mb-0 md:w-2/4">
           <span class="flex md:inline-block">
             <NuxtLink
@@ -58,8 +58,8 @@
         </div>
         <div class="flex items-center justify-center md:w-2/4">
           <img
-            class="people md:mr-[calc(-50vw+98%)]"
-            src="~/assets/images/people-hexago.svg"
+            class="people w-full 4xl:mr-0 md:mr-[calc(-50vw+98%)]"
+            src="~/assets/images/people-hexago.webp"
           />
         </div>
         <!--        <div class="mt-16 md:hidden text-left">-->
