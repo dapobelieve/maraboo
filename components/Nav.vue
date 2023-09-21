@@ -78,7 +78,9 @@
                   $t("home.nav.company.about-us")
                 }}</span>
               </NuxtLink>
-              <div
+              <NuxtLink
+                @click.stop="scrollIntoView"
+                to="#contact-us"
                 class="flex items-center px-6 py-6 text-black hover:bg-gray-50"
               >
                 <img
@@ -86,13 +88,10 @@
                   src="~/assets/images/contact.svg"
                   alt=""
                 />
-                <a
-                  @click.stop="scrollIntoView"
-                  href="#contact-us"
-                  class="text-md font-medium"
-                  >{{ $t("home.nav.company.contact-us") }}</a
-                >
-              </div>
+                <span class="text-md font-medium">{{
+                  $t("home.nav.company.contact-us")
+                }}</span>
+              </NuxtLink>
               <NuxtLink
                 :to="localePath('/careers')"
                 class="flex items-center px-6 py-6 text-black hover:bg-gray-50"
