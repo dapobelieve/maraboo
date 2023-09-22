@@ -6,7 +6,7 @@ export default defineNuxtConfig({
       meta: [
         {
           name: "viewport",
-          content: "width=device-width, initial-scale=1",
+          content: "width=device-width,initial-scale=1.0",
         },
       ],
       link: [
@@ -22,7 +22,7 @@ export default defineNuxtConfig({
         {
           rel: "stylesheet",
           type: "text/css",
-          href: "https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;800&family=Lato:wght@400;700;900&family=Open+Sans:wght@400&display=swap",
+          href: "https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Lato:wght@400;700;900&family=Open+Sans:wght@400&display=swap",
         },
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
         {
@@ -57,7 +57,15 @@ export default defineNuxtConfig({
       { code: "en", file: "en.json" },
       { code: "fr", file: "fr.json" },
     ],
-    defaultLocale: "fr",
+    defaultLocale: "en",
     langDir: "locales/",
+    precompile: {
+      strictMessage: false,
+    },
+  },
+  runtimeConfig: {
+    public: {
+      baseUrl: process.env.NUXT_API_BASE_URL,
+    },
   },
 });

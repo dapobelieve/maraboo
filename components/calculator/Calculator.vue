@@ -1,7 +1,7 @@
 <template>
-  <div class="min-w-sm max-w-lg w-full">
+  <div class="min-w-sm border drop-shadow-lg rounded-[20px] max-w-lg w-full">
     <div
-      class="bg-gray-50 p-6 relative shadow-md ring ring-1 ring-opacity-5 ring-black"
+      class="bg-gray-50 p-6 relative rounded-[20px] shadow ring-opacity-5 ring-black"
     >
       <div
         v-show="loading"
@@ -12,31 +12,25 @@
         <div
           class="w-full mb-4 flex flex-col after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-14px] after-mt-8 after:bg-slate-700"
         >
-          <div class="text-slate-400 mb-4">1. You send:</div>
-          <div class="relative mb-4 flex items-center origin">
+          <div class="text-slate-400 mb-4">1. {{ $t("calculator.send") }}</div>
+          <div
+            class="relative mb-4 pr-4 flex justify-between shadow-sm rounded bg-white items-center"
+          >
             <input
               v-model="computedSendAmount"
-              placeholder="Enter amount"
+              :placeholder="$t('calculator.input-placeholder')"
               type="text"
               @focus="activeInput = 'send'"
               @keydown="keypressed"
-              class="h-10 shadow-sm focus:outline-none w-full px-4 py-6 rounded bg-white"
+              class="h-10 focus:outline-none w-full px-4 py-6 rounded bg-white"
             />
-            <select
-              name="currencies"
-              v-model="form.from_currency"
-              class="absolute font-sm w-[6rem] bg-white rounded-r pl-4 focus:outline-none right-0 h-full"
-            >
-              <option v-for="curr in currencyKeys" :value="curr">
-                {{ curr.toUpperCase() }}
-              </option>
-            </select>
+            <CountrySelector v-model="form.from" />
             <div
               class="after:content- after:absolute after:w-[1px] after:h-[80%] after:top-[0.3rem] after:right-[6rem] after:bg-gray-400"
             ></div>
           </div>
           <div class="ml-8 mb-6">
-            <span class="font-bold"> at the real exchange rate!</span>
+            <span class="font-bold">{{ $t("calculator.exchg-rate") }}</span>
           </div>
           <div class="inline-flex items-center ml-auto">
             <div class="mr-6">
@@ -67,7 +61,7 @@
             </div>
             <select
               name="cars"
-              class="bg-purple text-white text-sm font-bold w-40 py-1 px-2 rounded"
+              class="bg-purple select text-white text-sm font-bold w-40 py-1 px-2 rounded"
               v-model="form.method"
             >
               <option
@@ -87,7 +81,7 @@
                   ></span>
                 </div>
                 <div class="amount inline-block w-28">
-                  {{ computedMethodFee }} {{ form.from_currency }}
+                  {{ computedMethodFee }} {{ form.from.currency.toUpperCase() }}
                 </div>
                 <span class="purpose">{{ feeType }}</span>
               </div>
@@ -98,7 +92,8 @@
                   ></span>
                 </div>
                 <div class="amount inline-block w-28">
-                  {{ _2dp(results.our_fee) }} {{ form.from_currency }}
+                  {{ _2dp(results.our_fee) }}
+                  {{ form.from.currency.toUpperCase() }}
                 </div>
                 <span class="purpose">Our fee</span>
               </div>
@@ -112,7 +107,8 @@
                   >
                 </div>
                 <div class="amount inline-block w-28">
-                  {{ _2dp(results.total_fees) }} {{ form.from_currency }}
+                  {{ _2dp(results.total_fees) }}
+                  {{ form.from.currency.toUpperCase() }}
                 </div>
                 <span class="purpose">Total fees</span>
               </div>
@@ -129,7 +125,7 @@
                   class="amount inline-block text-black font-bold min-w-28 w-28"
                 >
                   {{ _2dp(form.send_amount - results.total_fees) }}
-                  {{ form.from_currency }}
+                  {{ form.from.currency.toUpperCase() }}
                 </div>
                 <span class="purpose font-bold text-black">We convert</span>
               </div>
@@ -138,7 +134,7 @@
                   <span
                     class="bg-purple h-4 w-4 pb-0.5 font-bold inline-flex justify-center items-center rounded-sm text-white"
                   >
-                    {{ form.from_currency === "CAD" ? "x" : "÷" }}
+                    {{ form.from.currency === "CAD" ? "x" : "÷" }}
                   </span>
                 </div>
                 <div class="amount inline-block w-28">{{ rate }} CAD</div>
@@ -148,23 +144,23 @@
           </div>
         </div>
         <div class="w-full flex flex-col">
-          <div class="text-slate-400 mb-4">2. Your recipient gets:</div>
-          <div class="relative mb-4 flex items-center origin">
+          <div class="text-slate-400 mb-4">
+            2. {{ $t("calculator.receive") }}
+          </div>
+          <div
+            class="relative mb-4 pr-4 flex shadow-sm rounded bg-white items-center"
+          >
             <input
               v-model="computedReceiveAmount"
               @keydown="keypressed"
               @focus="activeInput = 'receive'"
-              class="h-10 shadow-sm focus:outline-none w-full px-4 py-6 rounded bg-white"
+              class="h-10 focus:outline-none w-full px-4 py-6 rounded bg-white"
             />
-            <select
-              name="currencies"
-              v-model="form.to_currency"
-              class="absolute font-sm w-[6rem] bg-white rounded-r pl-4 focus:outline-none right-0 h-full"
-            >
-              <option v-for="curr in currencyKeys" :value="curr">
-                {{ curr.toUpperCase() }}
-              </option>
-            </select>
+            <CountrySelector
+              v-model="form.to"
+              :disabled="disableInput"
+              @emitDataToParent="emitDataToParent"
+            />
             <div
               class="after:content- after:absolute after:w-[1px] after:h-[80%] after:top-[0.3rem] after:right-[6rem] after:bg-gray-400"
             ></div>
@@ -177,9 +173,28 @@
 
 <script>
 import debounce from "lodash.debounce";
-import { calculate, exchangeRate } from "../../services/apiService";
 const DEBOUNCE_DELAY = 500;
+const defaultWaemu = {
+  name: "Benin",
+  flag: "benin",
+  currency: "xof",
+};
+
+import useApi from "~/composables/useApi";
+import CountrySelector from "./CountrySelector.vue";
+
+const defaultCanada = {
+  name: "Canada",
+  flag: "canada",
+  currency: "cad",
+};
 export default {
+  components: {
+    CountrySelector,
+  },
+  props: {
+    country: String,
+  },
   data() {
     return {
       currencies: {
@@ -193,6 +208,10 @@ export default {
             {
               key: "cash pickup",
               value: "cash",
+            },
+            {
+              key: "domestic",
+              value: "domestic",
             },
           ],
         },
@@ -213,8 +232,22 @@ export default {
       loading: false,
       feeType: "Mobile Money",
       form: {
-        from_currency: "CAD",
-        to_currency: "XOF",
+        from: {
+          name: "Canada",
+          flag: "canada",
+          currency: "cad",
+        },
+        to: {
+          name:
+            this.country && typeof this.country == "string"
+              ? this.country.replace("-", " ")
+              : "Côte d'Ivoire",
+          flag:
+            this.country && typeof this.country == "string"
+              ? this.country.toLowerCase().replace("-", "").replace("'", "i")
+              : "cotedivoire",
+          currency: "xof",
+        },
         send_amount: null,
         method: "cash",
         receive_amount: null,
@@ -232,6 +265,7 @@ export default {
         xof_amount: 0,
       },
       apiCalling: false,
+      disabled: false,
     };
   },
   watch: {
@@ -240,10 +274,10 @@ export default {
         const valueToSend = this.form[`${this.activeInput}_amount`];
         if (this.activeInput === "receive") {
           this.apiCalling = true;
-          this.doConversion(this.form.from_currency, undefined, valueToSend)
+          this.doConversion(this.form.from.currency, undefined, valueToSend)
             .then((res) => {
               const { cad_amount, xof_amount, ...rest } = res;
-              if (this.form.from_currency === "XOF") {
+              if (this.form.from.currency === "xof") {
                 this.form.send_amount = this._2dp(xof_amount);
               } else {
                 this.form.send_amount = this._2dp(cad_amount);
@@ -255,15 +289,17 @@ export default {
             });
         } else {
           this.apiCalling = true;
-          this.doConversion(this.form.from_currency, valueToSend)
+          this.doConversion(this.form.from.currency, valueToSend)
             .then((res) => {
-              const { xof_amount, cad_amount, ...rest } = res;
-              if (this.form.from_currency === "XOF") {
-                this.form.receive_amount = cad_amount;
-              } else {
-                this.form.receive_amount = this._2dp(xof_amount);
+              if (res) {
+                const { xof_amount, cad_amount, ...rest } = res;
+                if (this.form.from.currency === "xof") {
+                  this.form.receive_amount = cad_amount;
+                } else {
+                  this.form.receive_amount = this._2dp(xof_amount);
+                }
+                this.results = { ...rest, cad_amount };
               }
-              this.results = { ...rest, cad_amount };
             })
             .finally(() => {
               this.apiCalling = false;
@@ -280,15 +316,17 @@ export default {
         if (this.activeInput === "send") {
           if (!this.apiCalling && newVal !== oldVal) {
             this.apiCalling = true;
-            this.doConversion(this.form.from_currency, newVal)
+            this.doConversion(this.form.from.currency, newVal)
               .then((res) => {
-                const { xof_amount, cad_amount, ...rest } = res;
-                if (this.form.from_currency === "XOF") {
-                  this.form.receive_amount = cad_amount;
-                } else {
-                  this.form.receive_amount = this._2dp(xof_amount);
+                if (res) {
+                  const { xof_amount, cad_amount, ...rest } = res;
+                  if (this.form.from.currency === "xof") {
+                    this.form.receive_amount = cad_amount;
+                  } else {
+                    this.form.receive_amount = this._2dp(xof_amount);
+                  }
+                  this.results = { ...rest, cad_amount };
                 }
-                this.results = { ...rest, cad_amount };
               })
               .finally(() => {
                 this.apiCalling = false;
@@ -306,10 +344,10 @@ export default {
         if (this.activeInput === "receive") {
           if (!this.apiCalling && newVal !== oldVal) {
             this.apiCalling = true;
-            this.doConversion(this.form.from_currency, undefined, newVal)
+            this.doConversion(this.form.from.currency, undefined, newVal)
               .then((res) => {
                 const { cad_amount, xof_amount, ...rest } = res;
-                if (this.form.from_currency === "XOF") {
+                if (this.form.from.currency === "xof") {
                   this.form.send_amount = this._2dp(xof_amount);
                 } else {
                   this.form.send_amount = this._2dp(cad_amount);
@@ -323,9 +361,9 @@ export default {
         }
       }, DEBOUNCE_DELAY),
     },
-    "form.from_currency"(newValue, oldValue) {
-      this.form.to_currency = newValue === "CAD" ? "XOF" : "CAD";
-      if (newValue === "XOF") {
+    "form.from.currency"(newValue, oldValue) {
+      this.form.to = newValue === "cad" ? defaultWaemu : defaultCanada;
+      if (newValue === "xof") {
         this.form.method = "debit";
       } else {
         this.form.method = "cash";
@@ -333,8 +371,8 @@ export default {
       this.form.send_amount = null;
       this.resetResults();
     },
-    "form.to_currency"(newValue, oldValue) {
-      this.form.from_currency = newValue === "CAD" ? "XOF" : "CAD";
+    "form.to.currency"(newValue, oldValue) {
+      this.form.from = newValue === "cad" ? defaultWaemu : defaultCanada;
       this.form.receive_amount = null;
       this.resetResults();
     },
@@ -357,18 +395,24 @@ export default {
         event.preventDefault();
       }
     },
-    _2dp(_number) {
-      return Number(_number.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]);
+    _2dp(_number = 0) {
+      return Number(_number?.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]);
     },
     async doConversion(from_currency, send_amount, receive_amount) {
       if (send_amount || receive_amount) {
-        return await calculate({
+        return await useApi().calculate({
           method: this.form.method,
-          from_currency,
+          from_currency: from_currency.toUpperCase(),
           send_amount,
           receive_amount,
         });
+      } else {
+        // throw new Error("Params incomplete");
       }
+    },
+    emitDataToParent(data) {
+      //Emit an event with the data you want to pass
+      this.$emit("dataToParent", data);
     },
   },
   computed: {
@@ -417,10 +461,13 @@ export default {
         return this._2dp(this.results.mobile_fee);
       } else if (this.form.method === "debit") {
         this.feeType = "Debit fee";
-        return this._2dp(this.results.debit_fee);
+        return this._2dp(this.results.debit_fee) || 0;
       } else if (this.form.method === "visa") {
         this.feeType = "Mastercard/Visa fee";
-        return this._2dp(this.results.visa_fee);
+        return this._2dp(this.results.visa_fee) || 0;
+      } else if (this.form.method === "domestic") {
+        this.feeType = "Domestic fee";
+        return 0;
       } else {
         this.feeType = "Cash pickup fee ";
         return this.results.mobile_fee
@@ -432,14 +479,34 @@ export default {
       return Object.keys(this.currencies);
     },
     fromObject() {
-      return this.currencies[this.form.from_currency];
+      return this.currencies[this.form.from.currency.toUpperCase()];
+    },
+    disableInput() {
+      if (this.country && typeof this.country == "string") {
+        return (this.disabled = true);
+      } else {
+        return (this.disabled = false);
+      }
     },
   },
   async mounted() {
-    const { currency_value } = await exchangeRate();
+    const { currency_value } = await useApi().exchangeRate();
     this.rate = this._2dp(currency_value);
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.select {
+  padding-right: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 5px;
+  height: 34px;
+  background: url(https://maraboo.netlify.app/caret-down-white.svg) no-repeat
+    right #5f19f2;
+  -webkit-appearance: none;
+  background-position-x: 134px;
+}
+</style>

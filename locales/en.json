@@ -19,9 +19,9 @@
           "right": "Get notified when we launch!"
         },
         "center": {
-          "l1": "Fast transfers in & out of WAEMU countries at the",
+          "l1": "Global transfers to or from WAEMU countries at the",
           "l2": " real exchange rate!",
-          "l3": "Did you know that a 10% reduction in transaction fees for <br />              sending money in & out of WAEMU country can boost the <br />              revenue of regional households by up to 16%?"
+          "l3": "Did you know that a 10% reduction in transaction fees for sending money in & out <br class='hidden md:block' > of WAEMU country can boost the              revenue of regional households by up to 16%?"
         },
         "bottom": "Learn more on Maraboo"
       },
@@ -34,21 +34,24 @@
     },
     "section2": {
       "countries": "Countries we support",
-      "text": "We support 9 markets and 2 currencies to make it easier for you to\n          transact <br /> globally. We’ll be adding more markets and currencies shortly to\n          better serve your needs."
+      "text": "We support 9 markets and 2 currencies to make it easier for you to transact globally. We’ll be adding more markets and currencies shortly to\n          better serve your needs."
+    },
+    "calculator": {
+      "caption": "<span> Unlock the World with <br class='hidden md:block' />XOF: Your Passport to Seamless Cross-Border Transfers. </span>"
     },
     "section3": {
-      "super-charge": "Supercharge your cross-border purchasing power!",
-      "text": "Starting with Canada, you can now send up to $9,900 every 24\n              <br />              hours in & out of WAEMU countries at the real exchange rate.              <br />",
-      "text-2": "Additional countries will be added shortly after launch,\n              keep an eye out"
+      "super-charge": "Connecting WAEMU to the Global Payment Network!",
+      "text": "Maraboo is your wallet’s new superpower for international transfers, <span class=\"font-medium underline\">send up to <br > $9,900 daily to or from WAEMU countries at the Real Exchange</span> to pay international bills, tuition, suppliers, you name it! ",
+      "text-2": "The Journey Continues: More Countries coming soon, Keep an Eye Peeled."
     },
     "section4": {
-      "convert-currency": " Convert one currency <br class=\"hidden md:block\" />\n              to another",
-      "text": "Easily transfer funds within and outside WAEMU countries in three\n              simple steps. Our services are up to 3 times more affordable than\n              the top-performing <br />\n              alternatives."
+      "convert-currency": "Think Global, Act Local:<br /> Send and receive money.",
+      "text": "International transfers powered by Maraboo built to bring WAEMU to the world in real time. Seamlessly send and receive money across borders using diverse collection and disbursement channels to meet your personal needs or grow your business!"
     },
     "section5": {
       "we-fast": "We are really fast!",
       "text": "Our transfers are processed from start to finish within minutes.",
-      "text-2": "Our disbursement options are:",
+      "text-2": "and we offer the following disbursement options:",
       "cash": "Cash",
       "mobile-money": "Mobile Money",
       "bank": "Bank",
@@ -56,23 +59,25 @@
         "name": "How it works",
         "step-1": {
           "name": "Step 1",
-          "text": "Create an account, tell us how much you want to send, and where to."
+          "text": "<span>&#x2022; Create account </span>  <span>&#x2022; Get a quote</span>  <span>&#x2022; Verify your identity (once)</span>  <span>&#x2022; Select delivery method </span>"
         },
         "step-2": {
           "name": "Step 2",
-          "text": "Pay for your transaction in your <br />\n                        currency of choice; i.e. XOF, CAD or <br />\n                        another currency we support"
+          "text": "<span>&#x2022; Enter recipients details</span>  <span>&#x2022; Review Transaction details</span>  <span>&#x2022; Pay in any currency that we support (XOF or CAD)</span>"
         },
         "step-3": {
-          "name": "Étape 3",
+          "name": "Step 3",
           "one": "Your recipient receives money:",
           "xof-in": {
             "name": "XOF in",
             "bank-transfer": "Bank transfer (up to 48h)",
-            "instant": "Instant cash pick up"
+            "instant": "Instant cash pick up",
+            "mobile": "Mobile Money",
+            "ecobank": "Ecobank transfer (instant)!"
           },
           "cad-in": {
             "name": "CAD in",
-            "interface": "interface e-transfer(instant)"
+            "interac": "interac e-transfer(instant)"
           },
           "text": "We'll be adding more countries soon, <br />\n                        stay tuned."
         }
@@ -81,7 +86,7 @@
     "section6": {
       "how-we": {
         "name": "How we protect your <br />\n          personal data",
-        "text": "Vos informations privées sont protégées par les technologies les plus sûres conformément aux réglementations applicables."
+        "text": "Rest assured, your funds and private information are safeguarded by state-of-the-art security technology, compliant with both local and global regulations"
       }
     },
     "faq": [
@@ -113,10 +118,11 @@
         "question": "How much does it cost to send a transfer?",
         "answers": "<p class=\"mb-4\">      <h class=\"font-bold\">Sending money to Africa</h> - We’re delivering on      <a class=\"text-blue-600\" target=\"_blank\" href=\"https://www.un.org/sustainabledevelopment/inequality/\">UN social development goal #10</a>            today, by reducing the cost of sending money to Africa to an average      cost of 3% or less      </p>      <p>      <h class=\"font-bold\">Sending money out of Africa</h> - We’re not only making sending money out of africa up to 3x cheaper than current best in class solutions but we’re also making transfers out of Africa fast and accessible to all by cutting away the red tape.      </p>"
       }
-    ]
+    ],
+    "faq-header": "Frequently Asked Questions"
   },
   "about-us": {
-    "name": "À propos de Marabo",
+    "name": "About us",
     "caption": " We're building borderless financial systems to connect West-Africans\n          across the globe",
     "text": "<span class=\"text-purple\">Introducing Maraboo</span>, a West-African\n          fintech firm offering transformative financial solutions that are\n          fair, responsible, inclusive, and designed to improve the quality of\n          life of West Africans.",
     "read-more": "En savoir plus",
@@ -124,8 +130,8 @@
       "caption": " Our Core mission is to make payments in & out of WAEMU countries\n              up <span class=\"text-purple\">to 3x cheaper!</span>\n              <br class=\"hidden md:block\" />",
       "text": "Did you know that a 10% reduction in transaction fees for sending\n              money in & out of WAEMU country can boost the revenue of regional\n              households by up to 16%?",
       "we-believe": "We believe that remittances should be fast, low cost, and have a\n              major social impact.",
-      "two": "Two birds one stone - we apply the real exchange rate on all of\n              our transactions to save you money and make the\n              <span class=\"text-purple\"> UN social development goal </span> by\n              significantly reducing remittance cost by 2030 a reality today!"
-
+      "two": "Two birds one stone - we apply the real exchange rate on all of\n              our transactions to save you money and make the\n              <span class=\"text-purple underline\"> UN social development goal </span> by\n              significantly reducing remittance cost by 2030 a reality today!",
+      "team": "Meet the team"
     }
   },
   "legal": {
@@ -141,14 +147,85 @@
     "come-work": "Come work with us",
     "we": "We’re looking for great people to help us build!",
     "view": "View our openings.",
-    "opening": "<div class='w-4/5'>        <h1 class='font-heading text-4xl md:text-5xl mb-6'>Our Openings:</h1>        <div class='max-w-[46rem] text-xl md:mb-8 text-justify leading-relaxed'>          <p class='mb-4'>Thank you for your interest in joining our team!</p>          <p class='mb-4'>            While we do not currently have any open positions, we are always on            the lookout for talented individuals who share our values and are            passionate about what we do.          </p>          <p class='mb-4'>            We encourage you to submit your resume and cover letter for future            consideration, as we may have opportunities that match your skills            and experience in the near future.          </p>          <p class='mb-14'>            We promise to review every application carefully and keep them on            file should a suitable opening arise. We look forward to hearing            from you and potentially working together in the future!          </p>          <h1 class='text-4xl md:text-2xl text-black font-heading mb-8'>            Add your resume and cover letter          </h1>          <p>            Upload your resume and cover letter for future consideration, as we            may have opportunities that match your skills and experience in the            near future.          </p>        </div>      </div>"
+    "opening": "<div class='w-4/5'>        <h1 class='font-heading text-4xl  mb-6'>Our Openings:</h1>        <div class='max-w-[46rem] md:mb-8 text-justify leading-relaxed'>          <p class='mb-4'>Thank you for your interest in joining our team!</p>          <p class='mb-4'>            While we do not currently have any open positions, we are always on            the lookout for talented individuals who share our values and are            passionate about what we do.          </p>          <p class='mb-4'>            We encourage you to submit your resume and cover letter for future            consideration, as we may have opportunities that match your skills            and experience in the near future.          </p>          <p class='mb-20'>            We promise to review every application carefully and keep them on            file should a suitable opening arise. We look forward to hearing            from you and potentially working together in the future!          </p>                 </div>      </div>"
+  },
+  "from-waemu": {
+    "section-1": {
+      "regulated": {
+        "name": "regulated",
+        "learn-more": "Learn more"
+      },
+      "caption": {
+          "left":"Send money from",
+          "right": "to Canada at the real exchange rate!"
+      },
+      "text": "<p> From local to global in real time, Maraboo Magic: Discover 3x <br />      Savings on international money Transfers to or from WAEMU countries!</p>"
+    },
+    "section-2": {
+      "caption": "to Global Destinations, with 3x the Cost Efficiency",
+      "text": "<p>   Maraboo is your wallet’s new superpower for international transfers from any WAEMU country. <span class='underline'> Send up to $9,900 daily at the Real Exchange</span> to pay international bills, tuition, suppliers, you name it! We accept XOF payments by mobile money transfers or by processing your back card </p>"
+    },
+    "section-3": {
+      "caption": {
+        "left":"Send money from",
+        "right": "to Canada in three easy steps"
+      }
+    },
+    "section-4": {
+      "caption": "Download the Maraboo mobile app for quick and easy transfers!"
+    }
+  },
+  "from-canada": {
+    "section-1": {
+      "caption": {
+          "left":"Send money from Canada to",
+          "right": "at the real exchange rate!"
+      },
+      "text": "<p> From local to global in real time, Maraboo Magic: Discover 3x <br />      Savings on international money Transfers to or from WAEMU countries!</p>"
+    },
+    "section-2": {
+      "caption": {
+            "left": "From Canada to",
+            "right": "with 3x the cost efficiency"
+      },
+      "text": "<p>   Maraboo is your wallet’s new superpower for international transfers from any WAEMU country. <span class='underline'> Send up to $9,900 daily at the Real Exchange</span> to pay international bills, tuition, suppliers, you name it! We accept XOF payments by mobile money transfers or by processing your back card </p>"
+    },
+    "section-3": {
+      "caption": {
+        "right": "in three easy steps"
+      }
+    }
+    
+  },
+  "qr-scan": "<span>  Scan QR code to <br /> download the app </span>",
+  "send-btn": "Send money now",
+  "calculator": {
+    "send": "You send:",
+    "input-placeholder": "Enter amount",
+    "exchg-rate": "at the real exchange rate!",
+    "receive": "Your recipient gets:"
+  },
+  "wait-list": {
+    "join": "Join our waitlist!",
+    "up-to-date": "To stay up to date with our development, and to learn how you can get the most out of Maraboo’s platform for international transfers.",
+    "mail": "Please enter your email",
+    "notify": "Notify me",
+    "download-title": "<span>  Download the App <br /> for Money Transfers Beyond <br /> Borders! </span>",
+    "coming-soon": "Coming Soon",
+    "caption": "Get Notified When We Launch",
+    "first-name": "First Name",
+    "last-name": "Last Name",
+    "email": "Email",
+    "submit": "Submit"
   },
   "footer": {
-    "contact": "Contact Us",
+    "logo-caption": "<span class='text-left'> A West-African fintech firm offering transformative <br /> financial solutions that are fair, responsible, inclusive, <br> and designed to improve the quality of life of West Africa </span>",
+    "registered": "Grand Maraboo Technology Limited is registered as a money service business with the Financial Transactions and Reports Analysis Centre of Canada (FINTRAC) under registration number",
+    "contact": "Contact us",
     "phone": "Phone",
     "email": "Email",
     "address": "Address",
-    "socials": "Socials",
+    "socials": "Follow Us",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "made-by": "Made in WAEMU by Africans"

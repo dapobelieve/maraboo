@@ -58,18 +58,40 @@ jobs:
           docker tag $ECR_REGISTRY/$ECR_REPOSITORY:$NEXT_VERSION $ECR_REGISTRY/$ECR_REPOSITORY:latest
           docker push --all-tags $ECR_REGISTRY/$ECR_REPOSITORY
 
-      - name: Release
-        uses: nick-invision/retry@v2
-        with:
-          timeout_minutes: 15
-          max_attempts: 2
-          # retry_on: error
-          command: |
-            # yarn install
-            npx semantic-release
-            cat ./artifacts/.VERSION
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    - name: Deploy to Hetzner development
+      uses: appleboy/ssh-action@master
+      if: github.ref == 'refs/heads/develop'
+      with:
+        host: ${{ secrets.SSH_STAGING_HOST }}
+        username: ${{ secrets.SSH_STAGING_USERNAME }}
+        password: ${{ secrets.SSH_PASS }}
+        port: ${{ secrets.SSH_STAGING_PORT }}
+        script: |
+          pwd
+          whoami
+          cd ~/website
+          aws ecr get-login-password --region ca-central-1 | docker login --username AWS --password-stdin 739329184067.dkr.ecr.ca-central-1.amazonaws.com
+          docker-compose down --rmi all
+          docker-compose up -d
+          
+
+    - name: Deploy to Hetzner beta
+      uses: appleboy/ssh-action@master
+      if: github.ref == 'refs/heads/main'
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_STAGING_USERNAME }}
+        port: ${{ secrets.SSH_STAGING_PORT }}
+        password: ${{ secrets.SSH_PASS }}
+        script: |
+          pwd
+          whoami
+          cd ~/website
+          aws ecr get-login-password --region ca-central-1 | docker login --username AWS --password-stdin 739329184067.dkr.ecr.ca-central-1.amazonaws.com
+          docker-compose down --rmi all
+          docker-compose up -d
+
+    
 
       - name: Deploy to Hetzner development
         uses: appleboy/ssh-action@master
@@ -84,8 +106,8 @@ jobs:
             whoami
             cd ~/website
             aws ecr get-login-password --region ca-central-1 | docker login --username AWS --password-stdin 739329184067.dkr.ecr.ca-central-1.amazonaws.com
-            docker-compose down --rmi all
-            docker-compose up -d
+            docker compose down --rmi all
+            docker compose up -d
 
       - name: Deploy to Hetzner beta
         uses: appleboy/ssh-action@master
@@ -100,8 +122,8 @@ jobs:
             whoami
             cd ~/website
             aws ecr get-login-password --region ca-central-1 | docker login --username AWS --password-stdin 739329184067.dkr.ecr.ca-central-1.amazonaws.com
-            docker-compose down --rmi all
-            docker-compose up -d
+            docker compose down --rmi all
+            docker compose up -d
 
 
 #tested

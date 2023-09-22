@@ -3,12 +3,12 @@
     <div
       role="button"
       @click.exact="toggle"
-      class="max-w-full bg-white px-8 mb-4 py-6 rounded-xl shadow-sm"
+      class="max-w-full px-8 mb-4 py-6 rounded-xl bg-gray-100 shadow-sm"
     >
       <div
         class="accordion-item-header flex justify-between items-center w-full"
       >
-        <h6 class="font-bold text-xl">
+        <h6 class="font-bold mr-4 md:text-xl">
           {{ item.question }}
         </h6>
         <svg
@@ -16,6 +16,7 @@
           height="9"
           viewBox="0 0 15 9"
           fill="none"
+          class="shrink-0"
           :class="[active ? '-rotate-180' : '']"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -26,7 +27,7 @@
         </svg>
       </div>
       <div class="accordion-item-body" :class="[active ? 'active' : '']">
-        <div v-html="item.answers"></div>
+        <div class="text-black" v-html="item.answers"></div>
       </div>
     </div>
   </div>
