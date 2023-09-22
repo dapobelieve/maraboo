@@ -1,6 +1,8 @@
 <template>
-  <div class="min-w-sm max-w-lg w-full">
-    <div class="bg-gray-50 p-6 relative shadow ring-opacity-5 ring-black">
+  <div class="min-w-sm border drop-shadow-lg rounded-[20px] max-w-lg w-full">
+    <div
+      class="bg-gray-50 p-6 relative rounded-[20px] shadow ring-opacity-5 ring-black"
+    >
       <div
         v-show="loading"
         style="background-color: rgba(12, 10, 10, 83%)"
@@ -10,13 +12,13 @@
         <div
           class="w-full mb-4 flex flex-col after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-14px] after-mt-8 after:bg-slate-700"
         >
-          <div class="text-slate-400 mb-4">1. You send:</div>
+          <div class="text-slate-400 mb-4">1. {{ $t("calculator.send") }}</div>
           <div
-            class="relative mb-4 pr-2 flex shadow-sm rounded bg-white items-center"
+            class="relative mb-4 pr-4 flex justify-between shadow-sm rounded bg-white items-center"
           >
             <input
               v-model="computedSendAmount"
-              placeholder="Enter amount"
+              :placeholder="$t('calculator.input-placeholder')"
               type="text"
               @focus="activeInput = 'send'"
               @keydown="keypressed"
@@ -28,7 +30,7 @@
             ></div>
           </div>
           <div class="ml-8 mb-6">
-            <span class="font-bold"> at the real exchange rate!</span>
+            <span class="font-bold">{{ $t("calculator.exchg-rate") }}</span>
           </div>
           <div class="inline-flex items-center ml-auto">
             <div class="mr-6">
@@ -59,7 +61,7 @@
             </div>
             <select
               name="cars"
-              class="bg-purple text-white text-sm font-bold w-40 py-1 px-2 rounded"
+              class="bg-purple select text-white text-sm font-bold w-40 py-1 px-2 rounded"
               v-model="form.method"
             >
               <option
@@ -142,9 +144,11 @@
           </div>
         </div>
         <div class="w-full flex flex-col">
-          <div class="text-slate-400 mb-4">2. Your recipient gets:</div>
+          <div class="text-slate-400 mb-4">
+            2. {{ $t("calculator.receive") }}
+          </div>
           <div
-            class="relative mb-4 pr-2 flex shadow-sm rounded bg-white items-center"
+            class="relative mb-4 pr-4 flex shadow-sm rounded bg-white items-center"
           >
             <input
               v-model="computedReceiveAmount"
@@ -152,7 +156,11 @@
               @focus="activeInput = 'receive'"
               class="h-10 focus:outline-none w-full px-4 py-6 rounded bg-white"
             />
-            <CountrySelector v-model="form.to" />
+            <CountrySelector
+              v-model="form.to"
+              :disabled="disableInput"
+              @emitDataToParent="emitDataToParent"
+            />
             <div
               class="after:content- after:absolute after:w-[1px] after:h-[80%] after:top-[0.3rem] after:right-[6rem] after:bg-gray-400"
             ></div>
@@ -165,7 +173,6 @@
 
 <script>
 import debounce from "lodash.debounce";
-import { calculate, exchangeRate } from "~/services/apiService";
 const DEBOUNCE_DELAY = 500;
 const defaultWaemu = {
   name: "Benin",
@@ -173,12 +180,21 @@ const defaultWaemu = {
   currency: "xof",
 };
 
+import useApi from "~/composables/useApi";
+import CountrySelector from "./CountrySelector.vue";
+
 const defaultCanada = {
   name: "Canada",
   flag: "canada",
   currency: "cad",
 };
 export default {
+  components: {
+    CountrySelector,
+  },
+  props: {
+    country: String,
+  },
   data() {
     return {
       currencies: {
@@ -222,8 +238,14 @@ export default {
           currency: "cad",
         },
         to: {
-          name: "Côte d'Ivoire",
-          flag: "cotedivoire",
+          name:
+            this.country && typeof this.country == "string"
+              ? this.country.replace("-", " ")
+              : "Côte d'Ivoire",
+          flag:
+            this.country && typeof this.country == "string"
+              ? this.country.toLowerCase().replace("-", "").replace("'", "i")
+              : "cotedivoire",
           currency: "xof",
         },
         send_amount: null,
@@ -243,6 +265,7 @@ export default {
         xof_amount: 0,
       },
       apiCalling: false,
+      disabled: false,
     };
   },
   watch: {
@@ -377,7 +400,7 @@ export default {
     },
     async doConversion(from_currency, send_amount, receive_amount) {
       if (send_amount || receive_amount) {
-        return await calculate({
+        return await useApi().calculate({
           method: this.form.method,
           from_currency: from_currency.toUpperCase(),
           send_amount,
@@ -386,6 +409,10 @@ export default {
       } else {
         // throw new Error("Params incomplete");
       }
+    },
+    emitDataToParent(data) {
+      //Emit an event with the data you want to pass
+      this.$emit("dataToParent", data);
     },
   },
   computed: {
@@ -454,12 +481,32 @@ export default {
     fromObject() {
       return this.currencies[this.form.from.currency.toUpperCase()];
     },
+    disableInput() {
+      if (this.country && typeof this.country == "string") {
+        return (this.disabled = true);
+      } else {
+        return (this.disabled = false);
+      }
+    },
   },
   async mounted() {
-    const { currency_value } = await exchangeRate();
+    const { currency_value } = await useApi().exchangeRate();
     this.rate = this._2dp(currency_value);
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.select {
+  padding-right: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 5px;
+  height: 34px;
+  background: url(https://maraboo.netlify.app/caret-down-white.svg) no-repeat
+    right #5f19f2;
+  -webkit-appearance: none;
+  background-position-x: 134px;
+}
+</style>

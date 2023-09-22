@@ -1,58 +1,66 @@
 <template>
   <main class="container mx-auto px-2">
-    <section class="countries py-4 pt-8 md:pt-24 md:pb-2">
+    <section class="countries py-4 pt-8 mb-12 md:pb-2">
       <div class="md:flex items-center">
         <div class="w-full md:w-4/5">
           <div
             class="flex md:items-start text-left items-center flex-col h-full"
           >
-            <h1 class="text-purple mb-4 md:mb-10 text-2xl font-extrabold">
-              Coming Soon!
+            <h1 class="text-purple mb-4 md:mb-10 text-xl font-extrabold">
+              {{ $t("wait-list.coming-soon") }}
             </h1>
             <h1
-              class="font-heading text-4xl text-center md:text-left md:text-6xl leading-snug mb-4"
+              class="font-heading text-xl text-center md:text-left md:text-6xl leading-snug mb-4"
             >
-              Get notified when we launch!
+              {{ $t("wait-list.caption") }}
             </h1>
           </div>
         </div>
       </div>
     </section>
-    <section class="countries py-12 md:py-32">
+    <section class="countries">
       <div class="w-full md:w-2/5">
         <div>
           <div @submit.stop="">
-            <GlobalInput
-              v-model="formData.first_name"
-              :error="v$.first_name.$error"
-              :errMsg="
-                v$.first_name.$error ? v$.first_name?.$errors[0]?.$message : ''
-              "
-              class="mb-10"
-              placeholder="First Name"
-            >
-              <template v-slot:label>First Name</template>
-            </GlobalInput>
-            <GlobalInput
-              v-model="formData.last_name"
-              :error="v$.last_name.$error"
-              :errMsg="
-                v$.last_name.$error ? v$.last_name?.$errors[0]?.$message : ''
-              "
-              class="mb-10"
-              placeholder="Last Name"
-            >
-              <template v-slot:label>Last Name</template>
-            </GlobalInput>
+            <div class="md:flex w-full justify-between">
+              <GlobalInput
+                v-model="formData.first_name"
+                :error="v$.first_name.$error"
+                :errMsg="
+                  v$.first_name.$error
+                    ? v$.first_name?.$errors[0]?.$message
+                    : ''
+                "
+                class="mb-10 w-full"
+                :placeholder="$t('wait-list.first-name')"
+              >
+                <template v-slot:label>{{
+                  $t("wait-list.first-name")
+                }}</template>
+              </GlobalInput>
+              <GlobalInput
+                v-model="formData.last_name"
+                :error="v$.last_name.$error"
+                :errMsg="
+                  v$.last_name.$error ? v$.last_name?.$errors[0]?.$message : ''
+                "
+                class="mb-10 w-full ml-4"
+                :placeholder="$t('wait-list.last-name')"
+              >
+                <template v-slot:label>{{
+                  $t("wait-list.last-name")
+                }}</template>
+              </GlobalInput>
+            </div>
             <GlobalInput
               v-model="formData.email"
               :error="v$.email.$error"
               :errMsg="v$.email.$error ? v$.email?.$errors[0]?.$message : ''"
               class="mb-10"
               type="email"
-              placeholder="Email"
+              :placeholder="$t('wait-list.email')"
             >
-              <template v-slot:label>Email</template>
+              <template v-slot:label>{{ $t("wait-list.email") }}</template>
             </GlobalInput>
             <div>
               <button
@@ -60,7 +68,7 @@
                 @click="submit"
                 class="bg-black rounded px-12 text-sm py-3 text-white"
               >
-                {{ loading ? "loading..." : "Submit" }}
+                {{ loading ? "loading..." : $t("wait-list.submit") }}
               </button>
             </div>
           </div>
@@ -134,7 +142,7 @@
 <script setup>
 import { computed, reactive, ref, watch } from "vue";
 import { useVuelidate } from "@vuelidate/core";
-import { waitList } from "../services/apiService";
+import useApi from "~/composables/useApi";
 import { required, email, helpers } from "@vuelidate/validators";
 let formData = reactive({
   first_name: null,
@@ -143,6 +151,8 @@ let formData = reactive({
 });
 let modalOpen = ref(false);
 let loading = ref(false);
+
+const { waitList } = useApi();
 
 // Computed Props
 const rules = computed(() => {
