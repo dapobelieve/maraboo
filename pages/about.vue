@@ -5,7 +5,7 @@
         <h1 class="text-purple mb-8 md:mb-14 text-xl font-extrabold">
           {{ $t("about-us.name") }}
         </h1>
-        <h1 class="font-heading text-4xl md:text-6xl mb-8 pr-10">
+        <h1 class="font-heading text-4xl md:text-5xl mb-8 pr-10">
           {{ $t("about-us.caption") }}
         </h1>
         <p class="text-lg max-w-[39rem] leading-normal pr-10">
