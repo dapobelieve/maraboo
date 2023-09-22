@@ -219,7 +219,7 @@
     "submit": "Submit"
   },
   "footer": {
-    "logo-caption": "<span> A West-African fintech firm offering transformative <br /> financial solutions that are fair, responsible, inclusive, and designed to improve the quality of life of West Africa </span>",
+    "logo-caption": "<span> A West-African fintech firm offering transformative <br /> financial solutions that are fair, responsible, inclusive, <br> and designed to improve the quality of life of West Africa </span>",
     "registered": "Grand Maraboo Technology Limited is registered as a money service business with the Financial Transactions and Reports Analysis Centre of Canada (FINTRAC) under registration number",
     "contact": "Contact us",
     "phone": "Phone",
