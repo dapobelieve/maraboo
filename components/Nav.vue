@@ -44,9 +44,12 @@
         </div>
         <div class="hidden items-center md:flex">
           <div class="mr-12">
-            <NuxtLink to="#how-it-works">
-              {{ $t("home.nav.how-it-works") }}</NuxtLink
-            >
+            <NuxtLink v-if="computedHowToNav" to="#how-it-works">
+              {{ $t("home.nav.how-it-works") }}
+            </NuxtLink>
+            <NuxtLink v-else to="/#how-it-works">
+              {{ $t("home.nav.how-it-works") }}
+            </NuxtLink>
           </div>
 
           <div
@@ -349,6 +352,7 @@ export default {
     },
   },
   setup() {
+    const route = useRoute();
     const { locale } = useI18n();
     const state = reactive({
       showMobileMenu: false,
@@ -358,6 +362,9 @@ export default {
       activeLocale: computed(() => locale),
     });
 
+    const computedHowToNav = computed(() => {
+      return route.path.includes("exchange");
+    });
     watch(
       () => state.showMobileMenu,
       (newVal) => {
@@ -377,6 +384,7 @@ export default {
 
     return {
       ...toRefs(state),
+      computedHowToNav,
       scrollIntoView,
     };
   },
