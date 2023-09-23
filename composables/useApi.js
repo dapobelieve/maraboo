@@ -4,7 +4,7 @@ export default function useApi() {
   const calculate = async (data) => {
     try {
       const res = await axios.get(
-        `${config.public.baseUrl}/calculator/transaction_calculator`,
+        `${config.public.NUXT_baseUrl}/calculator/transaction_calculator`,
         {
           params: {
             ...data,
@@ -20,7 +20,7 @@ export default function useApi() {
   const exchangeRate = async () => {
     try {
       const res = await axios.get(
-        `${config.public.baseUrl}/exchange_rates/exchange_rate?currency=XOF`
+        `${config.public.NUXT_baseUrl}/exchange_rates/exchange_rate?currency=XOF`
       );
       return res.data;
     } catch (error) {
@@ -31,7 +31,7 @@ export default function useApi() {
   const waitList = async (data) => {
     try {
       const res = await axios.post(
-        `${config.public.baseUrl}/waitlist/waitlist`,
+        `${config.public.NUXT_baseUrl}/waitlist/waitlist`,
         {
           ...data,
         }
