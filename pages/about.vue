@@ -11,6 +11,8 @@
         <p class="text-lg max-w-[39rem] leading-normal pr-10">
           <span v-html="$t('about-us.text')"> </span>
         </p>
+
+        <!--        lopay-->
       </div>
       <div class="flex justify-center md:w-2/4">
         <img
