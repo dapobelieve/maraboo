@@ -24,7 +24,10 @@
               @keydown="keypressed"
               class="h-10 focus:outline-none w-full px-4 py-6 rounded bg-white"
             />
-            <CountrySelector v-model="form.from" />
+            <CountrySelector 
+            v-model="form.from"  
+            :disabled="disableInput"
+            />
             <div
               class="after:content- after:absolute after:w-[1px] after:h-[80%] after:top-[0.3rem] after:right-[6rem] after:bg-gray-400"
             ></div>
@@ -151,6 +154,7 @@
             class="relative mb-4 pr-4 flex shadow-sm rounded bg-white items-center"
           >
             <input
+            disabled
               v-model="computedReceiveAmount"
               @keydown="keypressed"
               @focus="activeInput = 'receive'"
@@ -158,8 +162,8 @@
             />
             <CountrySelector
               v-model="form.to"
-              :disabled="disableInput"
               @emitDataToParent="emitDataToParent"
+              :disabled="disableInput"
             />
             <div
               class="after:content- after:absolute after:w-[1px] after:h-[80%] after:top-[0.3rem] after:right-[6rem] after:bg-gray-400"
@@ -196,6 +200,9 @@ export default {
     country: String,
   },
   data() {
+    const isCountryDefined = this.country && typeof this.country == "string";
+
+
     return {
       currencies: {
         CAD: {
@@ -207,7 +214,7 @@ export default {
             },
             {
               key: "cash pickup",
-              value: "cash",
+              value: "cash_pickup",
             },
             {
               key: "domestic",
@@ -219,13 +226,13 @@ export default {
           method: "Payment",
           methods: [
             {
-              key: "visa / mastercad",
-              value: "visa",
+              key: "interac",
+              value: "interac",
             },
-            {
-              key: "Ecobank Debit",
-              value: "debit",
-            },
+            // {
+            //   key: "Ecobank Debit",
+            //   value: "debit",
+            // },
           ],
         },
       },
@@ -233,36 +240,34 @@ export default {
       feeType: "Mobile Money",
       form: {
         from: {
-          name: "Canada",
-          flag: "canada",
-          currency: "cad",
+          name: isCountryDefined ? (isCountryDefined ? this.country.replace("-", " ") : "Côte d'Ivoire") : "Canada",
+
+          flag: isCountryDefined ? (isCountryDefined ? this.country.toLowerCase().replace("-", "").replace("'", "i")
+              : "cotedivoire") : "canada",
+
+          currency: isCountryDefined ? "xof" : "cad",
         },
         to: {
-          name:
-            this.country && typeof this.country == "string"
-              ? this.country.replace("-", " ")
-              : "Côte d'Ivoire",
-          flag:
-            this.country && typeof this.country == "string"
-              ? this.country.toLowerCase().replace("-", "").replace("'", "i")
-              : "cotedivoire",
-          currency: "xof",
+          name: isCountryDefined ? "Canada" : (isCountryDefined ? this.country.replace("-", " ") : "Côte d'Ivoire"),
+
+          flag: isCountryDefined ? "canada" : (isCountryDefined ? this.country.toLowerCase().replace("-", "").replace("'", "i")
+              : "cotedivoire"),
+
+          currency:  isCountryDefined ? "cad" : "xof",
         },
         send_amount: null,
-        method: "cash",
+        method: isCountryDefined ? "interac" : "cash_pickup",
         receive_amount: null,
       },
       rate: 0.0,
       activeInput: null,
       results: {
-        cad_amount: 0,
-        cash_fee: 0,
-        mobile_fee: 0,
+        converted: 0,
         our_fee: 0,
-        debit_fee: 0,
-        visa_fee: 0,
+        pay_in_fee: 0,
+        payout_fee: 0,
         total_fees: 0,
-        xof_amount: 0,
+        we_convert: 0,
       },
       apiCalling: false,
       disabled: false,
@@ -272,39 +277,39 @@ export default {
     "form.method": {
       handler: function (newVal) {
         const valueToSend = this.form[`${this.activeInput}_amount`];
-        if (this.activeInput === "receive") {
+        if (this.activeInput === "send") {
           this.apiCalling = true;
-          this.doConversion(this.form.from.currency, undefined, valueToSend)
-            .then((res) => {
-              const { cad_amount, xof_amount, ...rest } = res;
-              if (this.form.from.currency === "xof") {
-                this.form.send_amount = this._2dp(xof_amount);
-              } else {
-                this.form.send_amount = this._2dp(cad_amount);
-              }
-              this.results = { ...rest, cad_amount };
-            })
-            .finally(() => {
-              this.apiCalling = false;
-            });
-        } else {
-          this.apiCalling = true;
-          this.doConversion(this.form.from.currency, valueToSend)
-            .then((res) => {
-              if (res) {
-                const { xof_amount, cad_amount, ...rest } = res;
-                if (this.form.from.currency === "xof") {
-                  this.form.receive_amount = cad_amount;
-                } else {
-                  this.form.receive_amount = this._2dp(xof_amount);
-                }
-                this.results = { ...rest, cad_amount };
-              }
-            })
-            .finally(() => {
-              this.apiCalling = false;
-            });
-        }
+          // console.log(this.form.from.currency)
+          this.doConversion(this.form.from.currency, valueToSend, this.form.to.currency)
+          .then((res) => {
+            const {converted, ...rest } = res;
+            this.results = {...rest}
+            this.form.receive_amount = this._2dp(converted);
+            // console.log(this.results)
+          })
+          .finally(() => {
+            this.apiCalling = false;
+          })
+        } 
+        // else {
+        //   this.apiCalling = true;
+        //   console.log(this.form.from.currency)
+        //   this.doConversion(this.form.from.currency, valueToSend)
+        //     .then((res) => {
+        //       if (res) {
+        //         const { converted, ...rest } = res;
+        //             this.form.receive_amount = this._2dp(converted);
+        //             // console.log(converted)
+        //           // else { 
+        //           //   this.form.send_amount = this._2dp(xof_amount);
+        //           // }
+        //         this.results = { ...rest };
+        //       }
+        //     })
+        //     .finally(() => {
+        //       this.apiCalling = false;
+        //     });
+        // }
       },
     },
     "form.send_amount": {
@@ -316,16 +321,14 @@ export default {
         if (this.activeInput === "send") {
           if (!this.apiCalling && newVal !== oldVal) {
             this.apiCalling = true;
-            this.doConversion(this.form.from.currency, newVal)
+
+            this.doConversion(this.form.from.currency, newVal, this.form.to.currency)
               .then((res) => {
                 if (res) {
-                  const { xof_amount, cad_amount, ...rest } = res;
-                  if (this.form.from.currency === "xof") {
-                    this.form.receive_amount = cad_amount;
-                  } else {
-                    this.form.receive_amount = this._2dp(xof_amount);
-                  }
-                  this.results = { ...rest, cad_amount };
+                  const { converted, ...rest } = res;
+                  this.form.receive_amount = this._2dp(converted);
+
+                  this.results = { ...rest };
                 }
               })
               .finally(() => {
@@ -344,16 +347,23 @@ export default {
         if (this.activeInput === "receive") {
           if (!this.apiCalling && newVal !== oldVal) {
             this.apiCalling = true;
-            this.doConversion(this.form.from.currency, undefined, newVal)
+            this.doConversion(this.form.from.currency, Number(newVal / this.rate), this.form.to.currency)
               .then((res) => {
-                const { cad_amount, xof_amount, ...rest } = res;
-                if (this.form.from.currency === "xof") {
-                  this.form.send_amount = this._2dp(xof_amount);
-                } else {
-                  this.form.send_amount = this._2dp(cad_amount);
-                }
-                this.results = { ...rest, cad_amount };
-              })
+                const {  ...rest } = res;
+              
+                // this.form.send_amount = user_pays + total_fees
+                // this.form.send_amount = this.form.send_amount.value 
+                // if (this.form.from.currency === "xof") {
+                //   this.form.send_amount = this._2dp(xof_amount);
+                // } else {
+                //   this.form.send_amount = this._2dp(cad_amount);
+                // }
+                this.results = { ...rest };
+
+                this.form.send_amount = this._2dp(this.results.we_convert + this.results.total_fees)
+                 
+
+              })  
               .finally(() => {
                 this.apiCalling = false;
               });
@@ -364,9 +374,9 @@ export default {
     "form.from.currency"(newValue, oldValue) {
       this.form.to = newValue === "cad" ? defaultWaemu : defaultCanada;
       if (newValue === "xof") {
-        this.form.method = "debit";
+        this.form.method = "interac";
       } else {
-        this.form.method = "cash";
+        this.form.method = "cash_pickup";
       }
       this.form.send_amount = null;
       this.resetResults();
@@ -380,14 +390,12 @@ export default {
   methods: {
     resetResults() {
       this.results = {
-        cad_amount: 0,
-        cash_fee: 0,
-        mobile_fee: 0,
+        converted: 0,
         our_fee: 0,
-        debit_fee: 0,
-        visa_fee: 0,
+        pay_in_fee: 0,
+        payout_fee: 0,
         total_fees: 0,
-        xof_amount: 0,
+        we_convert: 0,
       };
     },
     keypressed(event) {
@@ -398,13 +406,14 @@ export default {
     _2dp(_number = 0) {
       return Number(_number?.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]);
     },
-    async doConversion(from_currency, send_amount, receive_amount) {
-      if (send_amount || receive_amount) {
+    async doConversion(from_currency, send_amount, to_currency) {
+      if (send_amount) {
         return await useApi().calculate({
           method: this.form.method,
           from_currency: from_currency.toUpperCase(),
-          send_amount,
-          receive_amount,
+          to_currency: to_currency.toUpperCase(),
+          amount: send_amount,
+          mode: 'send',
         });
       } else {
         // throw new Error("Params incomplete");
@@ -458,21 +467,19 @@ export default {
     computedMethodFee() {
       if (this.form.method === "mobile") {
         this.feeType = "Mobile Money fee";
-        return this._2dp(this.results.mobile_fee);
-      } else if (this.form.method === "debit") {
-        this.feeType = "Debit fee";
-        return this._2dp(this.results.debit_fee) || 0;
-      } else if (this.form.method === "visa") {
-        this.feeType = "Mastercard/Visa fee";
-        return this._2dp(this.results.visa_fee) || 0;
-      } else if (this.form.method === "domestic") {
+        // console.log(this._2dp(this.results.pay_in_fee))
+        return this._2dp(this.results.pay_in_fee + this.results.payout_fee);
+      }
+       else if (this.form.method === "interac") {
+        this.feeType = "Interac fee";
+        return this._2dp(this.results.pay_in_fee + this.results.payout_fee);
+      } 
+      else if (this.form.method === "domestic") {
         this.feeType = "Domestic fee";
-        return 0;
+        return this._2dp(this.results.pay_in_fee + this.results.payout_fee);;
       } else {
         this.feeType = "Cash pickup fee ";
-        return this.results.mobile_fee
-          ? this._2dp(this.results.mobile_fee)
-          : this._2dp(this.results.cash_fee);
+        return this._2dp(this.results.pay_in_fee + this.results.payout_fee);
       }
     },
     currencyKeys() {

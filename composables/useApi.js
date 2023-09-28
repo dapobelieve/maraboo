@@ -4,7 +4,7 @@ export default function useApi() {
   const calculate = async (data) => {
     try {
       const res = await axios.get(
-        `${config.public.baseUrl}/calculator/transaction_calculator`,
+        `${config.public.baseUrl}/calculator/transaction-calculator`,
         {
           params: {
             ...data,
