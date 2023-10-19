@@ -26,4 +26,9 @@ export default {
 html {
   scroll-behavior: smooth;
 }
+
+.show-modal  {
+  overflow-y:auto; /* Hide vertical scrollbar */
+  overflow-x:auto; /* Hide horizontal scrollbar */
+}
 </style>
