@@ -19,7 +19,7 @@
                     </p>
                 </div>
 
-                <div class="block text-[12px] font-semibold lg:flex gap-3 items-center">
+                <div class="block text-[12px] font-semibold lg:flex gap-3 items-center pb-12">
                     <div class="flex gap-3 mb-4 lg:mb-0">
                         <button @click="show = false" class="border border-black px-9 py-3 rounded-[5px]">
                             Decline all

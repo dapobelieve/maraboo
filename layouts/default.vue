@@ -27,7 +27,7 @@ html {
   scroll-behavior: smooth;
 }
 
-.show-modal  {
+body  {
   overflow-y:auto; /* Hide vertical scrollbar */
   overflow-x:auto; /* Hide horizontal scrollbar */
 }
