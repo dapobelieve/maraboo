@@ -1,9 +1,9 @@
 <template>
     <div class="subpixel-antialiased w-full bg-auto relative bg-cover">
-      <div class="flex flex-col items-center px-5 sm:px-5 mb-[15rem] lg:px-10">
+      <div class="flex flex-col items-center px-5 sm:px-5 mb-[5rem] lg:px-10">
         <div class="2xl:max-w-[101rem] relative w-full">
           <Nav :bg-transparent="false" />
-          <div class="pt-10 pb-96">
+          <div class="pt-10 md:pt-0">
             <slot />
           </div>
         </div>

@@ -6,10 +6,10 @@
             <p class="font-semibold leading-6">Last updated: October 9th, 2023</p>
         </div>
 
-        <div class="lg:w-1/3">
+        <div id="toc" class="lg:max-w-[30%] lg:fixed">
             <TableOfContent :tocs="termsOfUseToc"/>         
         </div>
-        <div class="px-5 lg:w-3/4">
+        <div class="px-5 lg:w-[65%] lg:ml-auto">
             <div class="mt-10 mb-20 hidden lg:block">
                 <h2 class="font-semibold text-6xl font-heading leading-[73px]">Terms of Use</h2>
                 <p class="font-semibold leading-8 text-xl">Last updated: October 9th, 2023</p>
@@ -124,4 +124,10 @@ const termsOfUseToc = [
 
 
 
-<style lang="scss" scoped></style>
+<style scoped>
+     @media (min-width: 1800px)  {
+       #toc{
+         max-width: 500px;
+       } 
+     }
+</style>

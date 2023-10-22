@@ -1,12 +1,12 @@
 <template>
-    <div style="background-color: rgba(0, 0, 0, 0.5);" :class="removeModal"
+    <div :style="{display: !removeTemp || !show ? 'none': 'flex', backgroundColor: 'rgba(0, 0, 0, 0.5)' }" :class="removeModal"
         class="fixed z-[1000] h-screen top-0 w-full left-0 lg:p-5">
         <div class="bg-white mt-auto animate-in duration-300 ease-in-out slide-in-from-bottom lg:slide-in-from-right"
             :class="settings ? 'no-scrollbar h-full overflow-y-auto lg:w-2/4 lg:block lg:mx-auto' : 'lg:w-2/5 lg:ml-auto'">
             <div class="p-6" :class="{ 'hidden': settings }">
                 <div class="mb-2">
-                    <img @click="show = false" class="ml-auto cursor-pointer" src="~/assets/images/close-black.svg"
-                        alt="" />
+                    <img @click="removeTemp = false" class="ml-auto cursor-pointer" src="~/assets/images/close-black.svg"
+                        alt="close-btn" />
                 </div>
                 <div class="mb-6">
                     <h2 class="mb-2 font-semibold text-3xl font-heading">Cookie Consent</h2>
@@ -19,7 +19,7 @@
                     </p>
                 </div>
 
-                <div class="block text-[12px] font-semibold lg:flex gap-3 items-center pb-12">
+                <div class="block text-[12px] font-semibold lg:flex gap-3 items-center pb-12 lg:pb-0">
                     <div class="flex gap-3 mb-4 lg:mb-0">
                         <button @click="show = false" class="border border-black px-9 py-3 rounded-[5px]">
                             Decline all
@@ -36,7 +36,7 @@
             <div v-if="settings" class="animate-in slide-in-from-bottom duration-500">
                 <div class="mb-8 p-6 flex justify-between">
                     <img @click="settings = false" class="cursor-pointer" src="~/assets/images/prev.svg" alt="prev-btn" />
-                    <img @click="show = false" class="cursor-pointer" src="~/assets/images/close-black.svg"
+                    <img @click="removeTemp = false" class="cursor-pointer" src="~/assets/images/close-black.svg"
                         alt="close-btn" />
                 </div>
 
@@ -82,6 +82,7 @@ export default {
     data() {
         return {
             settings: false,
+            removeTemp: true,
             cookies: [
                 {
                     title: "Strictly Necessary Cookies",
@@ -129,8 +130,7 @@ export default {
                 localStorage.setItem('show', false)
                 document.body.classList.remove('show-modal')
             }
-            return [this.show ? 'flex' : 'hidden']
-
+            
         }
     },
 }

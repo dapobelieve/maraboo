@@ -6,10 +6,10 @@
             <p class="font-semibold leading-6">{{ $t('privacy-policy.last-updated') }}: October 9th, 2023</p>
         </div>
 
-        <div class="lg:w-[35%]">
+        <div id="toc" class="lg:max-w-[30%] lg:fixed">
             <TableOfContent :tocs="privacyPolicyToc" />
         </div>
-        <div class="px-5 lg:w-[65%]">
+        <div class="px-5 lg:w-[65%] lg:ml-auto">
             <div class="mt-10 mb-20 hidden lg:block">
                 <h2 class="font-semibold text-6xl font-heading leading-[73px]"> {{ $t('privacy-policy.title') }} </h2>
                 <p class="font-semibold leading-8 text-xl">{{ $t('privacy-policy.last-updated') }}: October 9th, 2023</p>
@@ -305,4 +305,12 @@ const privacyPolicyToc = [
 
 
 
-<style lang="scss" scoped></style>
+<style scoped>
+
+
+   @media (min-width: 1800px)  {
+       #toc{
+         max-width: 500px;
+       } 
+   }
+</style>
