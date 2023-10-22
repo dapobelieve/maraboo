@@ -130,6 +130,10 @@ export default {
                 localStorage.setItem('show', false)
                 document.body.classList.remove('show-modal')
             }
+
+            if (!this.removeTemp) {
+                document.body.classList.remove('show-modal')
+            }
             
         }
     },
