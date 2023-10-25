@@ -120,46 +120,55 @@ export default {
           name: "Canada",
           flag: "canada",
           currency: "cad",
+          country: "canada"
         },
         {
           name: "Benin",
           flag: "benin",
           currency: "xof",
+          country: "benin"
         },
         {
           name: "Burkina Faso",
           flag: "burkinafaso",
           currency: "xof",
+          country: "burkina_faso"
         },
         {
           name: "Côte d'Ivoire",
           flag: "cotedivoire",
           currency: "xof",
+          country: "cote_d_ivoire"
         },
         {
           name: "Guinea-Bissau",
           flag: "guineabissau",
           currency: "xof",
+          country: "guinea_bissau"
         },
         {
           name: "Mali",
           flag: "mali",
           currency: "xof",
+          country: "mali"
         },
         {
           name: "Niger",
           flag: "niger",
           currency: "xof",
+          country: "niger"
         },
         {
           name: "Senegal",
           flag: "senegal",
           currency: "xof",
+          country: "senegal"
         },
         {
           name: "Togo",
           flag: "togo",
           currency: "xof",
+          country: "togo"
         },
       ],
     });

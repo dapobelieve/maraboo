@@ -14,6 +14,7 @@ export default function useApi() {
       return res.data;
     } catch (error) {
       console.log(error);
+      throw error;
     }
   };
 

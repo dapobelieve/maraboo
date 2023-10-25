@@ -1,5 +1,6 @@
 <template>
   <div class="min-w-sm border drop-shadow-lg rounded-[20px] max-w-lg w-full">
+   
     <div
       class="bg-gray-50 p-6 relative rounded-[20px] shadow ring-opacity-5 ring-black"
     >
@@ -16,10 +17,12 @@
           <div
             class="relative mb-4 pr-4 flex justify-between shadow-sm rounded bg-white items-center"
           >
+     
             <input
               v-model="computedSendAmount"
               :placeholder="$t('calculator.input-placeholder')"
               type="text"
+              :maxlength="amountLimit"
               @focus="activeInput = 'send'"
               @keydown="keypressed"
               class="h-10 focus:outline-none w-full px-4 py-6 rounded bg-white"
@@ -56,24 +59,30 @@
         <div
           class="mb-4 after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-10px] after-mt-8 after:bg-gray-700"
         >
-          <div class="flex pt-4 justify-between">
+          <div class="flex pt-4 justify-between items-center">
             <div>
-              <small class="font-extrabold text-gray-600"
-                >Select {{ fromObject.method }} method:</small
+              <small class="text-sm font-extrabold text-gray-600"
+                >Delivery method & fees</small
               >
             </div>
-            <select
+            <CustomSelect 
+              v-model="form.payout_method"  
+              :feeMethod="payOut.methods"
+              :default="payOut.methods[0].key"
+              @payOutFee="payOutFee"
+              />
+            <!-- <select
               name="cars"
               class="bg-purple select text-white text-sm font-bold w-40 py-1 px-2 rounded"
-              v-model="form.method"
+              v-model="form.payout_method"
             >
               <option
-                v-for="(method, index) in fromObject.methods"
+                v-for="(method, index) in payOut.methods"
                 :value="method.value"
               >
-                {{ method.key }}
+                {{ method.key }}  
               </option>
-            </select>
+            </select> -->
           </div>
           <div class="mt-8">
             <div class="text-slate-800 flex flex-col text-sm">
@@ -84,10 +93,22 @@
                   ></span>
                 </div>
                 <div class="amount inline-block w-28">
-                  {{ computedMethodFee }} {{ form.from.currency.toUpperCase() }}
+                  {{ computedPayoutMethodFee }} {{ form.from.currency.toUpperCase() }}
                 </div>
-                <span class="purpose">{{ feeType }}</span>
+                <span class="purpose">{{ payOutFeeType }}</span>
               </div>
+              <div class="inline-flex mb-1.5 items-center">
+                <div class="w-6">
+                  <span
+                    class="h-4 w-4 font-bold xl inline-flex justify-center items-center rounded-sm text-white"
+                  ></span>
+                </div>
+                <div class="amount inline-block w-28">
+                  {{ computedPayinMethodFee }} {{ form.from.currency.toUpperCase() }}
+                </div>
+                <span class="purpose">{{ payInFeeType }}</span>
+              </div>
+              
               <div class="inline-flex mb-1.5 items-center">
                 <div class="w-6">
                   <span
@@ -143,9 +164,35 @@
                 <div class="amount inline-block w-28">{{ rate }} CAD</div>
                 <span class="purpose">Real exchange rate</span>
               </div>
+              <div class="flex pt-6 justify-between gap-2">
+            <div>
+              <small class="text-sm font-extrabold text-gray-600"
+                >Payment method & fees</small
+              >
+            </div>
+            <CustomSelect 
+              v-model="form.payin_method"  
+              :feeMethod="payIn.methods"
+              :default="payIn.methods[0].key"
+              @payInFee="payInFee"
+              />
+            <!-- <select
+              name="cars"
+              class="bg-purple select text-white text-sm font-bold w-40 py-1 px-2 rounded"
+              v-model="form.payin_method"
+            >
+              <option
+                v-for="(method, index) in payIn.methods"
+                :value="method.value"
+              >
+                {{ method.key }}
+              </option>
+            </select> -->
+          </div>
             </div>
           </div>
         </div>
+        
         <div class="w-full flex flex-col">
           <div class="text-slate-400 mb-4">2. {{ $t('calculator.receive') }}</div>
           <div
@@ -168,6 +215,13 @@
             ></div>
           </div>
         </div>
+
+        <div v-if="calc_error" class="flex gap-2 bg-gray-100 rounded-md p-4">
+          <img src="~/assets/images/error_icon.svg" />
+          <span class="text-sm">
+            Amount Limit Exceeded
+          </span>
+         </div>
       </div>
     </div>
   </div>
@@ -202,29 +256,35 @@ export default {
 
 
     return {
+      calc_error: null,
+      country_name: "cote_d_ivoire",
       currencies: {
         CAD: {
-          method: "Delivery",
+          method: "xpresscash",
           methods: [
             {
-              key: "mobile money",
-              value: "mobile",
+              key: "Xpress Cash",
+              value: "xpresscash",
             },
             {
-              key: "cash pickup",
-              value: "cash_pickup",
+              key: "Bank Transfer (ACH)",
+              value: "bank_transfer_ach",
             },
             {
-              key: "domestic",
-              value: "domestic",
+              key: "Mobile Money",
+              value: "mobile_money",
             },
+            {
+              key: "Credit Ecobank Account",
+              value: "credit_ecobank_account"
+            }
           ],
         },
         XOF: {
-          method: "Payment",
+          method: "interac",
           methods: [
             {
-              key: "interac",
+              key: "Interac",
               value: "interac",
             },
             // {
@@ -235,7 +295,8 @@ export default {
         },
       },
       loading: false,
-      feeType: "Mobile Money",
+      payOutFeeType: "Xpress Cash",
+      payInFeeType: "Interac",
       form: {
         from: {
           name: isCountryDefined ? (isCountryDefined ? this.country.replace("-", " ") : "Côte d'Ivoire") : "Canada",
@@ -254,7 +315,8 @@ export default {
           currency:  isCountryDefined ? "cad" : "xof",
         },
         send_amount: null,
-        method: isCountryDefined ? "interac" : "cash_pickup",
+        payout_method: "xpresscash",
+        payin_method: "interac",
         receive_amount: null,
       },
       rate: 0.0,
@@ -266,18 +328,60 @@ export default {
         payout_fee: 0,
         total_fees: 0,
         we_convert: 0,
+        other_options: []
       },
       apiCalling: false,
       disabled: false,
     };
   },
   watch: {
-    "form.method": {
+    "form.payout_method": {
       handler: function (newVal) {
+        console.log(this.form.payout_method)
         const valueToSend = this.form[`${this.activeInput}_amount`];
         if (this.activeInput === "send") {
           this.apiCalling = true;
+         
           // console.log(this.form.from.currency)
+          this.doConversion(valueToSend)
+          .then((res) => {
+            const {converted, ...rest } = res;
+            this.results = {...rest}
+            this.form.receive_amount = this._2dp(converted);
+            console.log(this.results)
+          })
+          .finally(() => {
+            this.apiCalling = false;
+          })
+        } 
+        // else {
+        //   this.apiCalling = true;
+        //   console.log(this.form.from.currency)
+        //   this.doConversion(this.form.from.currency, valueToSend)
+        //     .then((res) => {
+        //       if (res) {
+        //         const { converted, ...rest } = res;
+        //             this.form.receive_amount = this._2dp(converted);
+        //             // console.log(converted)
+        //           // else { 
+        //           //   this.form.send_amount = this._2dp(xof_amount);
+        //           // }
+        //         this.results = { ...rest };
+        //       }
+        //     })
+        //     .finally(() => {
+        //       this.apiCalling = false;
+        //     });
+        // }
+      },
+    },
+    "form.payin_method": {
+      handler: function (newVal) {
+        console.log(this.form.payin_method) 
+        const valueToSend = this.form[`${this.activeInput}_amount`];
+        if (this.activeInput === "send") {
+          this.apiCalling = true;
+         
           this.doConversion(this.form.from.currency, valueToSend, this.form.to.currency)
           .then((res) => {
             const {converted, ...rest } = res;
@@ -320,13 +424,14 @@ export default {
           if (!this.apiCalling && newVal !== oldVal) {
             this.apiCalling = true;
 
-            this.doConversion(this.form.from.currency, newVal, this.form.to.currency)
+            this.doConversion(newVal)
               .then((res) => {
                 if (res) {
                   const { converted, ...rest } = res;
                   this.form.receive_amount = this._2dp(converted);
 
                   this.results = { ...rest };
+                  console.log(this.results)
                 }
               })
               .finally(() => {
@@ -371,11 +476,11 @@ export default {
     },
     "form.from.currency"(newValue, oldValue) {
       this.form.to = newValue === "cad" ? defaultWaemu : defaultCanada;
-      if (newValue === "xof") {
-        this.form.method = "interac";
-      } else {
-        this.form.method = "cash_pickup";
-      }
+      // if (newValue === "xof") {
+      //   this.form.method = "interac";
+      // } else {
+      //   this.form.method = "cash_pickup";
+      // }
       this.form.send_amount = null;
       this.resetResults();
     },
@@ -404,23 +509,38 @@ export default {
     _2dp(_number = 0) {
       return Number(_number?.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]);
     },
-    async doConversion(from_currency, send_amount, to_currency) {
-      if (send_amount) {
-        return await useApi().calculate({
-          method: this.form.method,
-          from_currency: from_currency.toUpperCase(),
-          to_currency: to_currency.toUpperCase(),
-          amount: send_amount,
-          mode: 'send',
-        });
-      } else {
-        // throw new Error("Params incomplete");
+    async doConversion(send_amount) {
+      this.calc_error = null;
+      try{
+          if (send_amount) {
+          return await useApi().calculate({
+            payin_method: this.form.payin_method,
+            payout_method: this.form.payout_method,
+            payin_market: 'canada',
+            payout_market: this.country_name,
+            amount: send_amount,
+            mode: 'send',
+          });
+          } else {
+            // throw new Error("Params incomplete");
+          }
+      }
+      catch(error){
+        this.calc_error = error.response.data.detail
       }
     },
     emitDataToParent(data) {
       //Emit an event with the data you want to pass
       this.$emit("dataToParent", data);
+      this.country_name = data.country
+      console.log(this.country_name)
     },
+    payOutFee(data){
+      this.form.payout_method = data
+    },
+    payInFee(data){
+      this.form.payin_method = data
+    }
   },
   computed: {
     computedSendAmount: {
@@ -462,29 +582,52 @@ export default {
         }
       },
     },
-    computedMethodFee() {
-      if (this.form.method === "mobile") {
-        this.feeType = "Mobile Money fee";
-        // console.log(this._2dp(this.results.pay_in_fee))
-        return this._2dp(this.results.pay_in_fee + this.results.payout_fee);
-      }
-       else if (this.form.method === "interac") {
-        this.feeType = "Interac fee";
-        return this._2dp(this.results.pay_in_fee + this.results.payout_fee);
+    computedPayoutMethodFee() {
+       if (this.form.payout_method === "xpresscash") {
+        this.payOutFeeType = "Xpress Cash fee";
+        return this._2dp(this.results.payout_fee);
       } 
-      else if (this.form.method === "domestic") {
-        this.feeType = "Domestic fee";
-        return this._2dp(this.results.pay_in_fee + this.results.payout_fee);;
-      } else {
-        this.feeType = "Cash pickup fee ";
-        return this._2dp(this.results.pay_in_fee + this.results.payout_fee);
+      else if (this.form.payout_method === "bank_transfer_ach") {
+        this.payOutFeeType = "Bank Transfer Ach fee";
+        return this._2dp(this.results.payout_fee);;
       }
+      else if (this.form.payout_method === "mobile_money") {
+        this.payOutFeeType = "Mobile Money fee";
+        // console.log(this._2dp(this.results.pay_in_fee))
+        return this._2dp(this.results.payout_fee);
+      } 
+      else if(this.form.payout_method === "credit_ecobank_account") {
+        this.payOutFeeType = "Credit Ecobank Account fee ";
+        return this._2dp(this.results.payout_fee);
+      }
+    },
+    computedPayinMethodFee() {
+       if (this.form.payin_method === "interac") {
+        this.payInFeeType = "Interac fee";
+        return this._2dp(this.results.pay_in_fee);
+      } 
+
     },
     currencyKeys() {
       return Object.keys(this.currencies);
     },
-    fromObject() {
-      return this.currencies[this.form.from.currency.toUpperCase()];
+    payOut() {
+      if(this.form.from.currency === 'cad'){
+        return this.currencies[this.form.from.currency.toUpperCase()];
+      }
+      else{
+        return this.currencies[this.form.to.currency.toUpperCase()];
+      }
+      
+    },
+    payIn() {
+      if(this.form.to.currency === 'xof'){
+        return this.currencies[this.form.to.currency.toUpperCase()]
+      }
+      else{
+        return this.currencies[this.form.from.currency.toUpperCase()];
+      }
+      
     },
     disableInput() {
       if (this.country && typeof this.country == "string") {
@@ -493,10 +636,14 @@ export default {
         return (this.disabled = false);
       }
     },
+    amountLimit(){
+      return this.form.from.currency == 'cad' ? 5 : 8
+    }
   },
   async mounted() {
     const { currency_value } = await useApi().exchangeRate();
     this.rate = this._2dp(currency_value);
+
   },
 };
 </script>
