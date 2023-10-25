@@ -263,19 +263,19 @@ export default {
           method: "xpresscash",
           methods: [
             {
-              key: "Xpress Cash",
+              key: "Xpress Cash - 6 CAD fee",
               value: "xpresscash",
             },
             {
-              key: "Bank Transfer (ACH)",
+              key: "Bank Transfer (ACH) - 6 CAD fee",
               value: "bank_transfer_ach",
             },
             {
-              key: "Mobile Money",
+              key: "Mobile Money - 6 CAD fee",
               value: "mobile_money",
             },
             {
-              key: "Credit Ecobank Account",
+              key: "Credit Ecobank Account - 2.5 CAD fee",
               value: "credit_ecobank_account"
             }
           ],
@@ -284,7 +284,7 @@ export default {
           method: "interac",
           methods: [
             {
-              key: "Interac",
+              key: "Interac - 2.5 CAD fee",
               value: "interac",
             },
             // {
