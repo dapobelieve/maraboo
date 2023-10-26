@@ -481,15 +481,47 @@
         </div>
       </div>
     </section>
+    <CookieConsent :show="show" v-if="show"/>
   </main>
 </template>
+
 <script setup>
-import { reactive, onMounted } from "vue";
+import { reactive, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import CountryComponent from "~/components/CountryComponent.vue";
+import CookieConsent from "~/components/CookieConsent.vue";
 const { t } = useI18n();
 
 import qrBg from "assets/images/unlock-bg.svg";
+
+const showModal = localStorage.getItem('show')
+const show = ref(false)
+
+const showCookieConsentModal = () => {
+  if(!showModal){
+    show.value = true
+    document.body.classList.add('show-modal')
+  }
+
+  // showModal.value = true
+  if(showModal){
+    show.value = false
+    document.body.classList.remove('show-modal')
+  }
+};
+
+
+onMounted(() => {
+  setTimeout(() => {
+    showCookieConsentModal()
+  }, 2000)
+
+});
+
+
+
+
+
 
 const faqs = reactive([
   {
@@ -559,6 +591,13 @@ const countries = reactive([
 </script>
 
 <style lang="scss">
+.show-modal  {
+  overflow-y: hidden !important; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+
+
 .flags {
   span {
     margin-right: 15px;
