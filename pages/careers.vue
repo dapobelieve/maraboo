@@ -7,7 +7,7 @@
             <h1 class="text-purple mb-8 md:mb-14 text-xl font-extrabold">
               {{ $t("careers.join") }}
             </h1>
-            <h1 class="font-heading text-4xl leading-snug mb-2">
+            <h1 class="font-heading text-4xl md:text-5xl leading-snug mb-2">
               {{ $t("careers.come-work") }}
             </h1>
 

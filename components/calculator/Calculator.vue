@@ -13,7 +13,7 @@
         <div
           class="w-full mb-4 flex flex-col after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-14px] after-mt-8 after:bg-slate-700"
         >
-          <div class="text-slate-400 mb-4">1. {{ $t('calculator.send') }}</div>
+          <div class="text-slate-400 mb-4">1. {{ $t("calculator.send") }}</div>
           <div
             class="relative mb-4 pr-4 flex justify-between shadow-sm rounded bg-white items-center"
           >
@@ -36,7 +36,7 @@
             ></div>
           </div>
           <div class="ml-8 mb-6">
-            <span class="font-bold">{{ $t('calculator.exchg-rate') }}</span>
+            <span class="font-bold">{{ $t("calculator.exchg-rate") }}</span>
           </div>
           <div class="inline-flex items-center ml-auto">
             <div class="mr-6">

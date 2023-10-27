@@ -5,7 +5,7 @@
         <h1 class="text-purple mb-8 md:mb-14 text-xl font-extrabold">
           {{ $t("about-us.name") }}
         </h1>
-        <h1 class="font-heading text-4xl md:text-6xl mb-8 pr-10">
+        <h1 class="font-heading text-4xl md:text-5xl mb-8 pr-10">
           {{ $t("about-us.caption") }}
         </h1>
         <p class="text-lg max-w-[39rem] leading-normal pr-10">
@@ -71,7 +71,7 @@
       v-html="$t('about-us.section-2.team')"
     ></h1>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-center">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <div v-for="team_member in teams" :key="team_member.id">
         <Team :team="team_member" />
       </div>

@@ -207,7 +207,7 @@
       "receive": "Votre destinataire reçoit :"
   },
   "wait-list": {
-    "join": "rejoignez notre liste d'attente!",
+    "join": "Rejoignez notre liste d'attente!",
     "up-to-date": "Pour rester au courant de nos développements et savoir comment tirer le meilleur parti de la plateforme de transferts internationaux de Maraboo.",
     "mail": "Veuillez entrer votre email",
     "notify": "Prévenez-moi",
@@ -220,7 +220,7 @@
     "submit": "Soumettre"
   },
   "footer": {
-    "logo-caption": "<span> Une société fintech ouest-africaine proposant des solutions financières transformatrices,<br /> équitables, responsables, inclusives et conçues pour améliorer la qualité de vie en Afrique de l'Ouest. </span>",
+    "logo-caption": "<span> Une société fintech ouest-africaine proposant des solutions <br /> financières transformatrices, équitables, responsables,<br /> inclusives et conçues pour améliorer la qualité de vie en <br /> Afrique de l'Ouest. </span>",
     "registered": "Grand Maraboo Technology Limited est enregistrée comme entreprise de services monétaires auprès du Centre d'analyse des opérations et déclarations financières du Canada (CANAFE) sous le numéro d'enregistrement",
     "contact": "Contactez nous ",
     "phone": "Téléphone",
