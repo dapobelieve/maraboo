@@ -6,7 +6,7 @@
       }
     "
   >
-    <div class="md:relative">
+    <div class="md:relative ml-2">
       <button
         v-if="selected"
         @click.stop="open = !open"
@@ -19,7 +19,7 @@
         </span>
         <span>
           <img
-            class="ml-1 h-4 w-4"
+            class="ml-1 h-7 w-7"
             src="~/assets/images/caret-down.svg"
             alt=""
           />

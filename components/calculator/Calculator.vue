@@ -59,9 +59,9 @@
         <div
           class="mb-4 after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-10px] after-mt-8 after:bg-gray-700"
         >
-          <div class="flex pt-4 justify-between items-center">
+          <div class="flex pt-4 gap-2 justify-between items-center">
             <div>
-              <small class="text-sm font-extrabold text-gray-600"
+              <small class="text-sm lg:text-[16px] text-gray-600"
                 >Delivery method & fees</small
               >
             </div>
@@ -162,11 +162,11 @@
                   </span>
                 </div>
                 <div class="amount inline-block w-28">{{ rate }} CAD</div>
-                <span class="purpose">Real exchange rate</span>
+                <span class="purpose font-bold">Real exchange rate</span>
               </div>
-              <div class="flex pt-6 justify-between gap-2">
+              <div class="flex py-6 pb-4 justify-between items-center gap-2">
             <div>
-              <small class="text-sm font-extrabold text-gray-600"
+              <small class="text-sm lg:text-[16px] text-gray-600"
                 >Payment method & fees</small
               >
             </div>
@@ -193,7 +193,7 @@
           </div>
         </div>
         
-        <div class="w-full flex flex-col">
+        <div class="w-full flex flex-col mt-7">
           <div class="text-slate-400 mb-4">2. {{ $t('calculator.receive') }}</div>
           <div
             class="relative mb-4 pr-4 flex shadow-sm rounded bg-white items-center"
@@ -219,7 +219,7 @@
         <div v-if="calc_error" class="flex gap-2 bg-gray-100 rounded-md p-4">
           <img src="~/assets/images/error_icon.svg" />
           <span class="text-sm">
-            Amount Limit Exceeded
+            {{  calc_error }}
           </span>
          </div>
       </div>

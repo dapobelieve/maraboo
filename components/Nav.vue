@@ -79,8 +79,7 @@
                 }}</span>
               </NuxtLink>
               <NuxtLink
-                @click.stop="scrollIntoView"
-                to="#contact-us"
+              @click.stop="contact = !contact"
                 class="flex items-center px-6 py-6 text-black hover:bg-gray-50"
               >
                 <img
@@ -92,6 +91,10 @@
                   $t("home.nav.company.contact-us")
                 }}</span>
               </NuxtLink>
+              <div class="ml-4 py-2 bg-gray-100 w-64 px-6" v-show="contact">
+                      <p class="text-gray-700 font-semibold text-sm">Email us</p>
+                      <a href="mailto:enquiries@mara.boo?subject=Feedback&body=Hello" class="font-semibold text-black">enquiries@mara.boo</a>
+                </div>
               <NuxtLink
                 :to="localePath('/careers')"
                 class="flex items-center px-6 py-6 text-black hover:bg-gray-50"
@@ -270,12 +273,14 @@
                     $t("home.nav.company.about-us")
                   }}</NuxtLink>
                   <NuxtLink
-                    @click="showMobileMenu = false"
-                    @click.stop="scrollIntoView"
-                    href="#contact-us"
+                    @click.stop="contact = !contact"
                     class="mt-4"
                     >{{ $t("home.nav.company.contact-us") }}</NuxtLink
                   >
+                  <div class="ml-4 py-2" v-show="contact">
+                      <p class="text-gray-400 text-[16px]">Email us</p>
+                      <a href="mailto:enquiries@mara.boo?subject=Feedback&body=Hello" class="text-xl">enquiries@mara.boo</a>
+                  </div>
                   <NuxtLink class="mt-4 text-white" to="careers">{{
                     $t("home.nav.company.careers")
                   }}</NuxtLink>
@@ -293,7 +298,7 @@
             />
           </div>
         </div>
-        <div class="mt-auto mb-10 flex justify-center px-8">
+        <div class="flex fixed top-auto left-0 right-0 bottom-5 justify-center px-8">
           <NuxtLink
             @click="showMobileMenu = false"
             :to="localePath('/join-us')"
@@ -355,6 +360,7 @@ export default {
       company: false,
       locale: false,
       mobileCompany: false,
+      contact: false,
       activeLocale: computed(() => locale),
     });
 

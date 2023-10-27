@@ -120,14 +120,14 @@
         class="bg-[#BEBAFC] rounded-[30px] flex justify-center border px-6 py-8 lg:px-16 lg:py-36"
         :style="{ backgroundImage: `url(${qrBg})` }"
       >
-        <div class="max-w-[90rem] w-full md:space-y-0 space-y-8 md:flex">
+        <div class="max-w-[90rem] lg:relative w-full md:space-y-0 space-y-8 md:flex">
           <div class="md:w-1/2 text-white flex flex-col justify-between">
             <div>
               <h1 v-html="$t('home.calculator.caption')" class="font-heading drop-shadow-lg text-4xl mb-6 md:text-5xl"> </h1>
               <p v-html="$t('from-waemu.section-1.text')" class="drop-shadow-lg mb-8 md:mb-0">  
               </p>
             </div>
-            <div class="inline-flex">
+            <div class="inline-flex lg:absolute lg:top-80">
               <img
                 class="md:h-56 h-32 mr-5 drop-shadow-lg"
                 src="~/assets/images/qr.svg"
