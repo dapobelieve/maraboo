@@ -30,6 +30,7 @@
             <CountrySelector 
             v-model="form.from"  
             :disabled="disableInput"
+            :waemu_coming_soon="waemu_coming_soon"
             />
             <div
               class="after:content- after:absolute after:w-[1px] after:h-[80%] after:top-[0.3rem] after:right-[6rem] after:bg-gray-400"
@@ -207,8 +208,10 @@
             />
             <CountrySelector
               v-model="form.to"
+              :cad_coming_soon="cad_coming_soon"
               @emitDataToParent="emitDataToParent"
               :disabled="disableInput"
+              :providers="computedProviders"
             />
             <div
               class="after:content- after:absolute after:w-[1px] after:h-[80%] after:top-[0.3rem] after:right-[6rem] after:bg-gray-400"
@@ -257,6 +260,8 @@ export default {
 
     return {
       calc_error: null,
+      waemu_coming_soon: true,
+      cad_coming_soon: true,
       country_name: "cote_d_ivoire",
       currencies: {
         CAD: {
@@ -332,12 +337,133 @@ export default {
       },
       apiCalling: false,
       disabled: false,
+      mobile_money_providers: [
+  {
+    "id": "5b68fe68-3a24-4341-bc09-690350fca432",
+    "provider_name": "hub2",
+    "country_code": "CI",
+    "country_name": "cote d'ivoire",
+    "operator": "Orange"
+  },
+  {
+    "id": "142691fc-3eab-4c71-810b-a33770654397",
+    "provider_name": "hub2",
+    "country_code": "CI",
+    "country_name": "cote d'ivoire",
+    "operator": "MTN"
+  },
+  {
+    "id": "18b403fc-586c-4e74-8c9b-c3b2ae110e4d",
+    "provider_name": "hub2",
+    "country_code": "CI",
+    "country_name": "cote d'ivoire",
+    "operator": "Moov"
+  },
+  {
+    "id": "d2436ca6-4f51-4d4f-9153-95628f0b70af",
+    "provider_name": "hub2",
+    "country_code": "SN",
+    "country_name": "senegal",
+    "operator": "Orange"
+  },
+  {
+    "id": "d002e6f9-f900-4cb2-8425-50d0c6bc0d15",
+    "provider_name": "hub2",
+    "country_code": "SN",
+    "country_name": "senegal",
+    "operator": "Free"
+  },
+  {
+    "id": "aca80f09-8a9f-4d2a-b7a5-d4c8111837e7",
+    "provider_name": "hub2",
+    "country_code": "SN",
+    "country_name": "senegal",
+    "operator": "Emoney"
+  },
+  {
+    "id": "5d6ed2c3-135b-4b17-b0c4-19c125b6012c",
+    "provider_name": "hub2",
+    "country_code": "CI",
+    "country_name": "cote d'ivoire",
+    "operator": "Ecobank"
+  },
+  {
+    "id": "b3cf248d-9560-4313-b439-dacb06497329",
+    "provider_name": "hub2",
+    "country_code": "ML",
+    "country_name": "mali",
+    "operator": "Orange"
+  },
+  {
+    "id": "4eec634b-0e3e-4fa9-b539-618c4ad9c871",
+    "provider_name": "hub2",
+    "country_code": "ML",
+    "country_name": "mali",
+    "operator": "Mobicash"
+  },
+  {
+    "id": "0e84ae64-39ee-4346-bd66-888f890730a5",
+    "provider_name": "hub2",
+    "country_code": "BF",
+    "country_name": "burkina faso",
+    "operator": "Orange"
+  },
+  {
+    "id": "6fc3bd0e-1869-4a57-ad91-21c2d06ea824",
+    "provider_name": "hub2",
+    "country_code": "BJ",
+    "country_name": "benin",
+    "operator": "Moov"
+  },
+  {
+    "id": "0ef69961-466f-4590-9d5f-5d64db157ebd",
+    "provider_name": "hub2",
+    "country_code": "BJ",
+    "country_name": "benin",
+    "operator": "MTN"
+  },
+  {
+    "id": "44386322-97e5-4aec-bec2-c1bea78b86e2",
+    "provider_name": "hub2",
+    "country_code": "TG",
+    "country_name": "togo",
+    "operator": "Moov"
+  },
+  {
+    "id": "4ae9aeab-f997-4f5b-84f7-29c3fbbd8d24",
+    "provider_name": "hub2",
+    "country_code": "BF",
+    "country_name": "burkina faso",
+    "operator": "Mobicash"
+  },
+  {
+    "id": "41e6f99d-7e93-4de5-85c4-d468ba45c408",
+    "provider_name": "hub2",
+    "country_code": "TG",
+    "country_name": "togo",
+    "operator": "Togocell"
+  },
+  {
+    "id": "67d7671c-c3b8-45e5-97a1-fc7e79812155",
+    "provider_name": "hub2",
+    "country_code": "SN",
+    "country_name": "senegal",
+    "operator": "Wave"
+  },
+  {
+    "id": "6e31ee64-780d-475d-8b08-90cc29fd020f",
+    "provider_name": "hub2",
+    "country_code": "CI",
+    "country_name": "cote d'ivoire",
+    "operator": "Wave"
+  }
+]
     };
   },
   watch: {
     "form.payout_method": {
       handler: function (newVal) {
-        console.log(this.form.payout_method)
+        // console.log(this.form.payout_method)
         const valueToSend = this.form[`${this.activeInput}_amount`];
         if (this.activeInput === "send") {
           this.apiCalling = true;
@@ -431,7 +557,7 @@ export default {
                   this.form.receive_amount = this._2dp(converted);
 
                   this.results = { ...rest };
-                  console.log(this.results)
+                  // console.log(this.results)
                 }
               })
               .finally(() => {
@@ -533,7 +659,7 @@ export default {
       //Emit an event with the data you want to pass
       this.$emit("dataToParent", data);
       this.country_name = data.country
-      console.log(this.country_name)
+      // console.log(this.country_name)
     },
     payOutFee(data){
       this.form.payout_method = data
@@ -638,6 +764,11 @@ export default {
     },
     amountLimit(){
       return this.form.from.currency == 'cad' ? 5 : 8
+    },
+    computedProviders() {
+      if(this.form.payout_method === 'mobile_money'){
+        return this.mobile_money_providers
+      }
     }
   },
   async mounted() {
