@@ -7,7 +7,7 @@
             {{ $t("legal.name") }}
           </h1>
           <h1
-            class="font-heading text-4xl max-rem] md:text-4xl leading-snug mb-4"
+            class="font-heading text-4xl max-rem] md:text-5xl leading-snug mb-4"
           >
             {{ $t("legal.policy") }}
           </h1>
