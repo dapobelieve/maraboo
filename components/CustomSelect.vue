@@ -7,23 +7,34 @@
     "
   >
     <div class="custom-select" @click="toggleDropdown">
-      <div class="relative select-value w-40 truncate lg:w-[220px] text-white text-sm lg:text-[16px] bg-purple font-bold  py-1 px-2 ">
+      <div :class="selectedOption == 'Interac' ? 'cursor-not-allowed text-[#1E1E1E] bg-[#C5C5C5]' : 'bg-purple text-white'" class="relative select-value w-40 truncate lg:w-[220px]  text-sm lg:text-[16px] font-bold  py-1 px-2 ">
         <span class="w-full">{{ selectedOption }}</span>
-      <span class="absolute top-0 bottom-0 right-1 lg:mr-1 flex items-center bg-purple h-100"> <img  src="https://maraboo.netlify.app/caret-down-white.svg" alt="chev"></span>
+      <span class="absolute top-0 bottom-0 right-1 lg:mr-1 flex items-center h-100"> 
+        <img class="block h-3 w-3" :src="selectedOption === 'Interac' ? '/caret-down.svg': 'https://maraboo.netlify.app/caret-down-white.svg' "  alt="chev"></span>
       </div>
-      <ul class="select-options left-[-100px] lg:left-[-40px] w-[270px]" :class="{ 'open': isOpen }">
+      <ul class="select-options left-[-100px] lg:left-[-50px] w-[280px] no-scrollbar h-[272px] overflow-y-auto" :class="{ 'open': isOpen }">
         <li
           v-for="(method, index) in feeMethod"
           :key="index"
           @click.stop="selectOption(method.key, method.value)"
-          class="truncate"
-        >
-          {{ method.key }}
-          <p class="text-[12px] italic text-gray-500" :class="{'hidden': method.value === 'interac'}"> Estimated time: 
-            <span v-if="method.value === 'bank_transfer_ach'" class="font-semibold text-black">up to 48 hours </span>
-            <span v-else class="font-semibold text-black"> Within minutes</span>
+          class="flex items-center justify-between"
+        > 
+        <div class="w-[80%]">
+          <p class="">{{ method.key }}  </p>
+          <p class="text-[12px] italic text-gray-500" :class="{'hidden': method.value === 'interac'}"> 
+            Estimated time: 
+            
+            <span v-if="method.value === 'bank_transfer_ach'" class="font-medium text-black">Up to 48 hours </span>
+
+            <span v-else class="font-medium text-black"> Within minutes</span>
         </p>
-        </li>
+        <p class="text-[#868686] pt-1 font-normal text-xs whitespace-break-spaces">{{ method.info }}</p>
+      </div> 
+
+      <div class="w-4 h-4" v-if="selectedOption === method.key">
+        <img class="w-full" src="~/assets/images/check.svg"  alt="checked" />
+      </div>
+      </li>
       </ul>
     </div>
     </ClickOutside>
@@ -47,7 +58,13 @@
         this.isOpen = false;
       },
       toggleDropdown() {
-        this.isOpen = !this.isOpen;
+        if(this.selectedOption === 'Interac'){
+          this.isOpen = false;
+        }
+        else{
+          this.isOpen = !this.isOpen;
+        }
+       
       },
       selectOption(option, value) {
         this.selectedOption = option;
@@ -60,6 +77,10 @@
   </script>
   
   <style scoped>
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
   .custom-select {
     position: relative;
     cursor: pointer;
@@ -67,8 +88,8 @@
   }
   
   .select-value {
-    padding: 10px;
-    border-radius: 4px;
+    padding: 12px 10px;
+    border-radius: 10px;
     /* background: url(https://maraboo.netlify.app/caret-down-white.svg) no-repeat right #5f19f2;
     background-position-x: 120px; */
   }

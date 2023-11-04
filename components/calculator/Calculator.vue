@@ -1,8 +1,8 @@
 <template>
-  <div id="exchange-rate" class="min-w-sm border drop-shadow-lg rounded-[20px] max-w-lg w-full">
+  <div id="exchange-rate" class="min-w-sm  border-2 border-black drop-shadow-lg rounded-[20px] max-w-lg w-full">
    
     <div
-      class="bg-gray-50 p-6 relative rounded-[20px] shadow ring-opacity-5 ring-black"
+      class="bg-white relative rounded-[20px] shadow ring-opacity-5 ring-black"
     >
       <div
         v-show="loading"
@@ -11,12 +11,10 @@
       ></div>
       <div class="relative">
         <div
-          class="w-full mb-4 flex flex-col after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-14px] after-mt-8 after:bg-slate-700"
-        >
-          <div class="text-slate-400 mb-4">1. {{ $t("calculator.send") }}</div>
-          <div
-            class="relative mb-4 pr-4 flex justify-between shadow-sm rounded bg-white items-center"
-          >
+          class="w-full mb-4 flex flex-col after:content- relative after:absolute after:w-full after:bottom-[-14px] after-mt-8 after:bg-slate-700">
+         <div class="bg-[#FAFAFB] border-b rounded-t-[20px] py-4 px-6 lg:py-5 lg:px-8">
+          <div class="mt-2 text-[#868686] text-sm"> {{ $t("calculator.send") }}</div>
+          <div class="relative flex justify-between rounded items-center">
      
             <input
               v-model="computedSendAmount"
@@ -25,7 +23,7 @@
               :maxlength="amountLimit"
               @focus="activeInput = 'send'"
               @keydown="keypressed"
-              class="h-10 focus:outline-none w-full px-4 py-6 rounded bg-white"
+              class="h-10 bg-transparent text-[28px] focus:outline-none w-full py-6"
             />
             <CountrySelector 
             v-model="form.from"  
@@ -33,142 +31,39 @@
             :waemu_coming_soon="waemu_coming_soon"
             />
             <div
-              class="after:content- after:absolute after:w-[1px] after:h-[80%] after:top-[0.3rem] after:right-[6rem] after:bg-gray-400"
+              class="after:content after:absolute after:w-[1px] after:h-[60%] after:top-[0.6rem] after:right-[6rem] after:bg-gray-400"
             ></div>
           </div>
-          <div class="ml-8 mb-6">
-            <span class="font-bold">{{ $t("calculator.exchg-rate") }}</span>
+        </div>
+        <div class="px-6 lg:px-8 my-5 flex justify-center">
+          <div>
+            <span class="font-normal text-sm lg:text-[16px]">{{ $t("calculator.exchg-rate") }}</span>
           </div>
           <div class="inline-flex items-center ml-auto">
-            <div class="mr-6">
-              <img class="h-4 md:h-6" src="~/assets/images/trend.svg" />
+            <div class="mr-2">
+              <img class="h-[10px]" src="~/assets/images/trend-green.svg" />
             </div>
-            <div class="text-purple lg:mr-16 md:mr-0">
-              <span class="mr-"> 1CAD = </span>
+            <div class="text-purple font-normal text-sm lg:text-[16px]">
+              <span> 1CAD = </span>
               <span
-                style="line-height: 2px"
-                class="text-4xl font-bold relative"
+                class="relative"
               >
-                {{ String(rate).split(".")[0] }}.<sub class="relative top-0">{{
+                {{ String(rate).split(".")[0] }}.{{
                   String(rate).split(".")[1]
-                }}</sub>
+                }}
               </span>
               XOF
             </div>
           </div>
         </div>
+        </div>
         <div
-          class="mb-4 after:content- relative after:absolute after:w-full after:h-[0.2px] after:bottom-[-10px] after-mt-8 after:bg-gray-700"
+          class="px-6 lg:px-8 mb-4 after:content- relative after:absolute after:w-full after-mt-8 after:bg-gray-700"
         >
-          <div class="flex pt-4 gap-2 justify-between items-center">
+        <div class="flex pb-4 opacity-30 justify-between items-center gap-2">
             <div>
-              <small class="text-sm lg:text-[16px] text-gray-600"
-                >Delivery method & fees</small
-              >
-            </div>
-            <CustomSelect 
-              v-model="form.payout_method"  
-              :feeMethod="payOut.methods"
-              :default="payOut.methods[0].key"
-              @payOutFee="payOutFee"
-              />
-            <!-- <select
-              name="cars"
-              class="bg-purple select text-white text-sm font-bold w-40 py-1 px-2 rounded"
-              v-model="form.payout_method"
-            >
-              <option
-                v-for="(method, index) in payOut.methods"
-                :value="method.value"
-              >
-                {{ method.key }}  
-              </option>
-            </select> -->
-          </div>
-          <div class="mt-8">
-            <div class="text-slate-800 flex flex-col text-sm">
-              <div class="inline-flex mb-1.5 items-center">
-                <div class="w-6">
-                  <span
-                    class="h-4 w-4 font-bold xl inline-flex justify-center items-center rounded-sm text-white"
-                  ></span>
-                </div>
-                <div class="amount inline-block w-28">
-                  {{ computedPayoutMethodFee }} {{ form.from.currency.toUpperCase() }}
-                </div>
-                <span class="purpose">{{ payOutFeeType }}</span>
-              </div>
-              <div class="inline-flex mb-1.5 items-center">
-                <div class="w-6">
-                  <span
-                    class="h-4 w-4 font-bold xl inline-flex justify-center items-center rounded-sm text-white"
-                  ></span>
-                </div>
-                <div class="amount inline-block w-28">
-                  {{ computedPayinMethodFee }} {{ form.from.currency.toUpperCase() }}
-                </div>
-                <span class="purpose">{{ payInFeeType }}</span>
-              </div>
-              
-              <div class="inline-flex mb-1.5 items-center">
-                <div class="w-6">
-                  <span
-                    class="h-4 w-4 font-bold xl inline-flex justify-center items-center rounded-sm text-white"
-                  ></span>
-                </div>
-                <div class="amount inline-block w-28">
-                  {{ _2dp(results.our_fee) }}
-                  {{ form.from.currency.toUpperCase() }}
-                </div>
-                <span class="purpose">Our fee</span>
-              </div>
-              <div class="inline-flex mb-1.5 items-center">
-                <div
-                  class="w-6 after:content after:absolute after:w-0.5 after:h-full after:bg-purple after:top-[13px] after:right-[15px] relative"
-                >
-                  <span
-                    class="bg-purple h-4 w-4 font-bold text-2xl pb-1 inline-flex justify-center items-center rounded-sm text-white"
-                    >-</span
-                  >
-                </div>
-                <div class="amount inline-block w-28">
-                  {{ _2dp(results.total_fees) }}
-                  {{ form.from.currency.toUpperCase() }}
-                </div>
-                <span class="purpose">Total fees</span>
-              </div>
-              <div class="inline-flex mb-1.5 items-center">
-                <div
-                  class="w-6 after:content after:absolute after:w-0.5 after:h-full after:bg-purple after:top-[13px] after:right-[15px] relative"
-                >
-                  <span
-                    class="bg-purple text-lg h-4 w-4 font-bold xl inline-flex justify-center items-center rounded-sm text-white"
-                    >=</span
-                  >
-                </div>
-                <div
-                  class="amount inline-block text-black font-bold min-w-28 w-28"
-                >
-                  {{ _2dp(form.send_amount - results.total_fees) }}
-                  {{ form.from.currency.toUpperCase() }}
-                </div>
-                <span class="purpose font-bold text-black">We convert</span>
-              </div>
-              <div class="inline-flex mb-1.5 items-center">
-                <div class="w-6">
-                  <span
-                    class="bg-purple h-4 w-4 pb-0.5 font-bold inline-flex justify-center items-center rounded-sm text-white"
-                  >
-                    {{ form.from.currency === "CAD" ? "x" : "÷" }}
-                  </span>
-                </div>
-                <div class="amount inline-block w-28">{{ rate }} CAD</div>
-                <span class="purpose font-bold">Real exchange rate</span>
-              </div>
-              <div class="flex py-6 pb-4 justify-between items-center gap-2">
-            <div>
-              <small class="text-sm lg:text-[16px] text-gray-600"
-                >Payment method & fees</small
+              <small class="text-sm lg:text-[16px] text-[#313131]"
+                >Payment method</small
               >
             </div>
             <CustomSelect 
@@ -190,21 +85,123 @@
               </option>
             </select> -->
           </div>
+          <div class="flex gap-2 justify-between items-center">
+            <div>
+              <small class="text-sm lg:text-[16px] text-black"
+                >Delivery method</small
+              >
+            </div>
+            <CustomSelect 
+              v-model="form.payout_method"  
+              :feeMethod="payOut.methods"
+              :default="'Select'"
+              @payOutFee="payOutFee"
+              />
+            <!-- <select
+              name="cars"
+              class="bg-purple select text-white text-sm font-bold w-40 py-1 px-2 rounded"
+              v-model="form.payout_method"
+            >
+              <option
+                v-for="(method, index) in payOut.methods"
+                :value="method.value"
+              >
+                {{ method.key }}  
+              </option>
+            </select> -->
+          </div>
+          <div class="mt-8">
+            <div class="text-black flex flex-col text-[16px]">
+              <div class="inline-flex mb-2 items-center justify-between pl-2">
+              
+                <div class="amount ml-3 lg:ml-6 inline-block w-28">
+                  {{ computedPayoutMethodFee }} <span class="opacity-40">{{ form.from.currency.toUpperCase() }}</span>
+                </div>
+                <span class="purpose">{{ payOutFeeType }}</span>
+              </div>
+              <div class="inline-flex mb-2 items-center justify-between pl-2">
+             
+                <div class="amount ml-3 lg:ml-6 inline-block w-28">
+                  {{ computedPayinMethodFee }} <span class="opacity-40">{{ form.from.currency.toUpperCase() }}</span>
+                </div>
+                <span class="purpose">{{ payInFeeType }}</span>
+              </div>
+              
+              <div class="inline-flex mb-2 items-center justify-between pl-2">
+              
+                <div class="amount ml-3 lg:ml-6 inline-block w-28">
+                  {{ _2dp(results.our_fee) }}
+                  <span class="opacity-40">
+                  {{ form.from.currency.toUpperCase() }}
+                  </span>
+                </div>
+                <span class="purpose">Our fee</span>
+              </div>
+              <div class="inline-flex mb-2 items-center">
+                <div
+                  class="w-6 after:content after:absolute after:w-[0.5px] after:h-[70%] after:bg-purple after:top-[20px] after:right-[12px] relative"
+                >
+                  <span
+                    class="bg-white border border-purple text-2xl pb-1 font-thin inline-flex justify-center items-center rounded-full w-5 h-5 text-purple"
+                    >-</span
+                  >
+                </div>
+                <div class="flex items-center justify-between w-full lg:pl-2">
+                <div class="amount inline-block w-28">
+                  {{ _2dp(results.total_fees) }}
+                  <span class="opacity-40">{{ form.from.currency.toUpperCase() }}</span>
+                </div>
+                <span class="purpose">Total fees</span>
+                </div>
+              </div>
+              <div class="inline-flex mb-2 items-center">
+                <div
+                  class="w-6 after:content after:absolute after:w-[0.5px] after:h-[65%] after:bg-purple after:top-[21px] after:right-[12px] relative"
+                >
+                  <span
+                    class="bg-white border border-purple pb-0.5 text-lg font-thin inline-flex justify-center items-center rounded-full w-5 h-5 text-purple"
+                    >=</span
+                  >
+                </div>
+                <div class="flex items-center justify-between w-full lg:pl-2">
+                <div
+                  class="amount inline-block text-black font-bold min-w-28 w-28"
+                >
+                  {{ _2dp(form.send_amount - results.total_fees) }}
+                  <span class="opacity-40 font-normal">{{ form.from.currency.toUpperCase() }}</span>
+                </div>
+                <span class="purpose font-bold text-black">We convert</span>
+              </div>
+              </div>
+              <div class="inline-flex mb-2 items-center">
+                <div class="w-6">
+                  <span
+                    class="bg-white border border-purple text-lg pb-1 font-thin inline-flex justify-center items-center h-5 w-5  rounded-full text-purple"
+                  >
+                    {{ form.from.currency === "cad" ? "x" : "÷" }}
+                  </span>
+                </div>
+                <div class="flex items-center justify-between w-full lg:pl-2">
+                <div class="amount inline-block w-28">{{ rate }} <span class="opacity-40">CAD</span></div>
+                <span class="purpose">Real exchange rate</span>
+                </div>
+              </div>
+             
             </div>
           </div>
         </div>
         
-        <div class="w-full flex flex-col mt-7">
-          <div class="text-slate-400 mb-4">2. {{ $t('calculator.receive') }}</div>
+        <div class="w-full flex flex-col mt-7 bg-[#FAFAFB] border-t rounded-b-[20px] py-4 px-6 lg:py-5 lg:px-8">
+          <div class="text-[#868686] text-sm">{{ $t('calculator.receive') }}</div>
           <div
-            class="relative mb-4 pr-4 flex shadow-sm rounded bg-white items-center"
+            class="relative flex rounded items-center"
           >
             <input
             disabled
               v-model="computedReceiveAmount"
               @keydown="keypressed"
               @focus="activeInput = 'receive'"
-              class="h-10 focus:outline-none w-full px-4 py-6 rounded bg-white"
+              class="h-10 bg-transparent text-[28px] focus:outline-none w-full py-6"
             />
             <CountrySelector
               v-model="form.to"
@@ -214,17 +211,30 @@
               :providers="computedProviders"
             />
             <div
-              class="after:content- after:absolute after:w-[1px] after:h-[80%] after:top-[0.3rem] after:right-[6rem] after:bg-gray-400"
+              class="after:content- after:absolute after:w-[1px] after:h-[60%] after:top-[0.6rem] after:right-[6rem] after:bg-gray-400"
             ></div>
           </div>
-        </div>
 
-        <div v-if="calc_error" class="flex gap-2 bg-gray-100 rounded-md p-4">
+               <!-- this.form.payout_method -->
+        <div v-if="form.payout_method === 'Select'" class="flex gap-2 bg-gray-100 rounded-md mt-4 p-4">
+          <img src="~/assets/images/warning_info.svg" />
+          <span class="text-sm">
+            Select a delivery method
+          </span>
+         </div>
+
+         <div v-if="send_amount && calc_error" class="flex gap-2 bg-gray-100 rounded-md mt-4 p-4">
           <img src="~/assets/images/error_icon.svg" />
           <span class="text-sm">
             {{  calc_error }}
           </span>
          </div>
+        </div>
+
+   
+
+     
+        
       </div>
     </div>
   </div>
@@ -270,18 +280,22 @@ export default {
             {
               key: "Xpress Cash - 6 CAD fee",
               value: "xpresscash",
+              info: "Withdraw cash at any Ecobank ATM or Xpress point in WAEMU"
             },
             {
               key: "Bank Transfer (ACH) - 6 CAD fee",
               value: "bank_transfer_ach",
+              info: "Send money to all banks in all WAEMU countries"
             },
             {
               key: "Mobile Money - 6 CAD fee",
               value: "mobile_money",
+              info: "Add money to the following mobile money wallets: MTN - Moov - Flooz -Orange money -Moov -Moby Cash -Free - T-money"
             },
             {
               key: "Credit Ecobank Account - 2.5 CAD fee",
-              value: "credit_ecobank_account"
+              value: "credit_ecobank_account",
+              info: "Instantly send money to any ecobank account"
             }
           ],
         },
@@ -289,7 +303,7 @@ export default {
           method: "interac",
           methods: [
             {
-              key: "Interac - 2.5 CAD fee",
+              key: "Interac",
               value: "interac",
             },
             // {
@@ -300,7 +314,7 @@ export default {
         },
       },
       loading: false,
-      payOutFeeType: "Xpress Cash",
+      payOutFeeType: "Xpress Cash fee",
       payInFeeType: "Interac",
       form: {
         from: {
@@ -320,7 +334,7 @@ export default {
           currency:  isCountryDefined ? "cad" : "xof",
         },
         send_amount: null,
-        payout_method: "xpresscash",
+        payout_method: "Select",
         payin_method: "interac",
         receive_amount: null,
       },
@@ -672,7 +686,7 @@ export default {
     computedSendAmount: {
       get() {
         if (this.form.send_amount === null || this.form.send_amount === "") {
-          return "";
+          return "0";
         }
         return this.form.send_amount.toLocaleString();
       },
@@ -693,7 +707,7 @@ export default {
           this.form.receive_amount === null ||
           this.form.receive_amount === ""
         ) {
-          return "";
+          return "0";
         }
         return this.form.receive_amount.toLocaleString();
       },
@@ -715,7 +729,7 @@ export default {
       } 
       else if (this.form.payout_method === "bank_transfer_ach") {
         this.payOutFeeType = "Bank Transfer Ach fee";
-        return this._2dp(this.results.payout_fee);;
+        return this._2dp(this.results.payout_fee);
       }
       else if (this.form.payout_method === "mobile_money") {
         this.payOutFeeType = "Mobile Money fee";
@@ -725,6 +739,9 @@ export default {
       else if(this.form.payout_method === "credit_ecobank_account") {
         this.payOutFeeType = "Credit Ecobank Account fee ";
         return this._2dp(this.results.payout_fee);
+      }
+      else{
+        return '0'
       }
     },
     computedPayinMethodFee() {

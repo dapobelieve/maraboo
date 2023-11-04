@@ -10,16 +10,16 @@
       <button
         v-if="selected"
         @click.stop="open = !open"
-        class="inline-flex h-12 px-1 items-center"
+        class="inline-flex h-12 pr-3 items-center"
         :disabled="disabled"
       >
-        <img class="h-6 flag w-6" :src="images[selected.flag]" alt="" />
+        <img class="flag w-8 h-8" :src="images[selected.flag]" alt="" />
         <span class="country ml-1 uppercase text-black">
           {{ selected.currency }}
         </span>
         <span>
           <img
-            class="ml-1 h-7 w-7"
+            class="ml-1 h-8 w-8"
             src="~/assets/images/caret-down.svg"
             alt=""
           />

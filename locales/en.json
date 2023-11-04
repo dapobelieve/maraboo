@@ -195,10 +195,10 @@
   "qr-scan": "<span>  Scan QR code to <br /> download the app </span>",
   "send-btn": "Send money now",
   "calculator": {
-    "send": "You send:",
+    "send": "YOU SEND:",
     "input-placeholder": "Enter amount",
     "exchg-rate": "at the real exchange rate!",
-    "receive": "Your recipient gets:"
+    "receive": "YOUR RECIPIENT GETS:"
   },
   "wait-list": {
     "join": "Join our waitlist!",
