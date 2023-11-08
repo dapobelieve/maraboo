@@ -8,7 +8,7 @@
   >
     <div class="custom-select" @click="toggleDropdown">
       <div :class="selectedOption == 'Interac' ? 'cursor-not-allowed text-[#1E1E1E] bg-[#C5C5C5]' : 'bg-purple text-white'" class="relative select-value w-40 truncate lg:w-[220px]  text-sm lg:text-[16px] font-bold  py-1 px-2 ">
-        <span class="w-full">{{ selectedOption }} <span v-if="fee"> - {{ fee[0].payout_fee }} CAD fee</span>  </span>
+        <span class="w-full">{{ selectedOption }} <span v-if="formattedFee"> - {{ formattedFee }} CAD fee</span>  </span>
       <span :class="selectedOption === 'Interac' ? '' : 'bg-purple'" class="absolute top-0 bottom-0 right-1 lg:mr-1 flex items-center h-100"> 
         <img class="block h-3 w-3" :src="selectedOption === 'Interac' ? '/caret-down.svg': 'https://maraboo.netlify.app/caret-down-white.svg' "  alt="chev"></span>
       </div>
@@ -70,6 +70,19 @@
         selectedOption: this.default,
         isOpen: false,
       };
+    },
+    computed: {
+      formattedFee(){
+        if(this.fee && this.fee[1] && this.fee[1].payout_fee){
+           return `${this.fee[1].payout_fee} CAD fee`;
+        }
+        // else if(this.country === 'guinea_bissau' || this.country === 'niger'){
+        //   return ""
+        // }
+        else {
+          return ""
+        }
+      }
     },
     methods: {
       close(){
