@@ -40,11 +40,13 @@
             </div>
           </div>
         </div>
+  
         <div class="px-6 lg:px-8 mb-4 after:content- relative after:absolute after:w-full after-mt-8 after:bg-gray-700">
           <div class="flex pb-4 opacity-30 justify-between items-center gap-2">
             <div>
               <small class="text-sm lg:text-[16px] text-[#313131]">Payment method</small>
             </div>
+           
             <CustomSelect v-model="form.payin_method" :feeMethod="payIn.methods" :default="payIn.methods[0].key"
               @payInFee="payInFee" />
             <!-- <select
@@ -154,7 +156,7 @@
         <div class="w-full flex flex-col mt-7 bg-[#FAFAFB] border-t rounded-b-[20px] py-4 px-6 lg:py-5 lg:px-8">
           <div class="text-[#868686] text-sm">{{ $t('calculator.receive') }}</div>
           <div class="relative flex rounded items-center">
-            <input disabled v-model="computedReceiveAmount" @keydown="keypressed" @focus="activeInput = 'receive'"
+            <input v-model="computedReceiveAmount" @keydown="keypressed" @focus="activeInput = 'receive'"
               class="h-10 bg-transparent text-[28px] focus:outline-none w-full py-6" />
             <CountrySelector v-model="form.to" :cad_coming_soon="cad_coming_soon" @emitDataToParent="emitDataToParent"
               :disabled="disableInput" :providers="computedProviders" />
@@ -273,9 +275,10 @@ export default {
           currency: "cad",
         },
         to: {
-          name: "Côte d'Ivoire",
+          name:  isCountryDefined ? this.country_name : "Cote d'Ivoire",
 
-          flag: "cotedivoire",
+          flag: isCountryDefined ? this.country.toLowerCase().replace("-", "").replace("'", "i")
+              : "cotedivoire",
 
           currency: "xof",
         },
@@ -297,6 +300,7 @@ export default {
       },
       apiCalling: false,
       disabled: false,
+      mode: 'send',
       mobile_money_providers: [
         {
           "id": "5b68fe68-3a24-4341-bc09-690350fca432",
@@ -426,17 +430,28 @@ export default {
         const valueToSend = this.form[`${this.activeInput}_amount`] || this.form.send_amount;
 
           this.apiCalling = true;
-          this.doConversion(valueToSend)
+          if(valueToSend < 10000){
+            this.mode = 'send'
+          }
+          else{
+            this.mode = 'receive'
+          }
+        
 
+          this.doConversion(valueToSend, this.mode)
             .then((res) => {
-              const { converted, ...rest } = res;
+              const { user_pays, converted, ...rest } = res;
               this.results = { ...rest }
-              this.form.receive_amount = this._2dp(converted);
+              if(this.mode === 'send'){
+            this.form.receive_amount = this._2dp(converted);
+            }
+            else {
+              this.form.send_amount = this._2dp(user_pays);
+            }
+              // this.form.receive_amount = this._2dp(converted);
 
               if (this.country_name !== 'guinea_bissau' || this.country_name !== 'niger') {
-
                   this.updateMethodKeys(this.results.other_options)
-
               }
 
 
@@ -452,13 +467,25 @@ export default {
         // console.log(this.form.payout_method)
         const valueToSend = this.form[`${this.activeInput}_amount`] || this.form.send_amount;
         this.apiCalling = true;
+        if(valueToSend < 10000){
+            this.mode = 'send'
+          }
+          else{
+            this.mode = 'receive'
+          }
+        // this.mode = 'send'
 
         // console.log(this.form.from.currency)
-        this.doConversion(valueToSend)
+        this.doConversion(valueToSend, this.mode)
           .then((res) => {
-            const { converted, ...rest } = res;
+            const {user_pays, converted, ...rest } = res;
             this.results = { ...rest }
+            if(this.mode === 'send'){
             this.form.receive_amount = this._2dp(converted);
+            }
+            else {
+              this.form.send_amount = this._2dp(user_pays);
+            }
             this.updateMethodKeys(this.results.other_options)
             // console.log(this.results)
           })
@@ -493,12 +520,25 @@ export default {
         const valueToSend = this.form[`${this.activeInput}_amount`];
         if (this.activeInput === "send") {
           this.apiCalling = true;
+          if(valueToSend < 10000){
+            this.mode = 'send'
+          }
+          else{
+            this.mode = 'receive'
+          }
+          // this.mode = 'send'
 
-          this.doConversion(this.form.from.currency, valueToSend, this.form.to.currency)
+          this.doConversion(valueToSend, this.mode)
             .then((res) => {
-              const { converted, ...rest } = res;
+              const { user_pays, converted, ...rest } = res;
               this.results = { ...rest }
-              this.form.receive_amount = this._2dp(converted);
+              if(this.mode === 'send'){
+            this.form.receive_amount = this._2dp(converted);
+            }
+            else {
+              this.form.send_amount = this._2dp(user_pays);
+            }
+              // this.form.receive_amount = this._2dp(converted);
               this.updateMethodKeys(this.results.other_options)
               // console.log(this.results)
             })
@@ -536,11 +576,13 @@ export default {
         if (this.activeInput === "send") {
           if (!this.apiCalling && newVal !== oldVal) {
             this.apiCalling = true;
+            this.mode = 'send'
 
-            this.doConversion(newVal)
+            this.doConversion(newVal, this.mode)
               .then((res) => {
                 if (res) {
                   const { converted, ...rest } = res;
+                  console.log(res)
                   this.form.receive_amount = this._2dp(converted);
 
                   this.results = { ...rest };
@@ -564,11 +606,14 @@ export default {
         if (this.activeInput === "receive") {
           if (!this.apiCalling && newVal !== oldVal) {
             this.apiCalling = true;
-            this.doConversion(this.form.from.currency, Number(newVal / this.rate), this.form.to.currency)
+            this.mode = 'receive'
+            
+            this.doConversion(newVal, this.mode)
               .then((res) => {
-                const { ...rest } = res;
+                console.log(res)
+                const { user_pays, we_convert, ...rest } = res;
 
-                // this.form.send_amount = user_pays + total_fees
+                this.form.send_amount = this._2dp(user_pays)
                 // this.form.send_amount = this.form.send_amount.value 
                 // if (this.form.from.currency === "xof") {
                 //   this.form.send_amount = this._2dp(xof_amount);
@@ -576,8 +621,8 @@ export default {
                 //   this.form.send_amount = this._2dp(cad_amount);
                 // }
                 this.results = { ...rest };
+                
 
-                this.form.send_amount = this._2dp(this.results.we_convert + this.results.total_fees)
                 this.updateMethodKeys(this.results.other_options)
 
 
@@ -650,7 +695,7 @@ export default {
     _2dp(_number = 0) {
       return Number(_number?.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]);
     },
-    async doConversion(send_amount) {
+    async doConversion(send_amount, mode) {
       this.calc_error = null;
       try {
         if (send_amount) {
@@ -660,7 +705,7 @@ export default {
             payin_market: 'canada',
             payout_market: this.country_name,
             amount: send_amount,
-            mode: 'send',
+            mode: mode,
           });
         } else {
           // throw new Error("Params incomplete");
@@ -774,11 +819,11 @@ export default {
 
     },
     disableInput() {
-      // if (this.country && typeof this.country == "string") {
-      //   return (this.disabled = true);
-      // } else {
+      if (this.country && typeof this.country == "string") {
+        return (this.disabled = true);
+      } else {
       return (this.disabled = false);
-      // }
+      }
     },
     amountLimit() {
       return this.form.from.currency == 'cad' ? 5 : 8
