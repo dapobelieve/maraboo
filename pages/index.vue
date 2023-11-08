@@ -554,34 +554,42 @@ const countries = reactive([
   {
     name: "benin",
     flag: "benin",
+    country: "benin"
   },
   {
     name: "Burkina Faso",
     flag: "burkinafaso",
+    country: "burkina_faso"
   },
   {
     name: "Cote d'voire",
     flag: "cotedivoire",
+    country: "cote_d_ivoire"
   },
   {
     name: "mali",
     flag: "mali",
+    country: "mali"
   },
   {
     name: "togo",
     flag: "togo",
+    country: "togo"
   },
   {
     name: "niger",
     flag: "niger",
+    country: "niger"
   },
   {
     name: "Guinea Bissau",
     flag: "guineabissau",
+    country: "guinea_bissau"
   },
   {
     name: "senegal",
     flag: "senegal",
+    country: "senegal"
   },
   {
     name: "canada",

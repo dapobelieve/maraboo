@@ -111,7 +111,7 @@
                   $t("home.nav.company.careers")
                 }}</span>
               </NuxtLink>
-              <NuxtLink
+              <!-- <NuxtLink
                 :to="localePath('/legal')"
                 class="flex items-center px-6 py-6 text-black hover:rounded-b-lg hover:bg-gray-50"
               >
@@ -119,7 +119,7 @@
                 <span class="text-md font-medium">{{
                   $t("home.nav.company.legal")
                 }}</span>
-              </NuxtLink>
+              </NuxtLink> -->
             </div>
           </div>
         </div>
@@ -287,9 +287,9 @@
                   <NuxtLink class="mt-4 text-white" to="careers">{{
                     $t("home.nav.company.careers")
                   }}</NuxtLink>
-                  <NuxtLink class="mt-4" to="legal">{{
+                  <!-- <NuxtLink class="mt-4" to="legal">{{
                     $t("home.nav.company.legal")
-                  }}</NuxtLink>
+                  }}</NuxtLink> -->
                 </div>
               </div>
             </div>

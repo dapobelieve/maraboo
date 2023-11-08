@@ -259,6 +259,7 @@
 </template>
 
 <script setup>
+
 import { reactive, onMounted } from "vue";
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
@@ -308,6 +309,8 @@ const faqs = reactive([
     answers: t("home.faq.5.answers"),
   },
 ]);
+
+// console.log(useRoute().query)
 </script>
 
 <style lang="scss" scoped></style>

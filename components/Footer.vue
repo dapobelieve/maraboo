@@ -125,9 +125,9 @@
         
       </div>
       <div
-        class="my-10 w-full text-[#848484] text-center md:flex flex-col justify-center md:flex-row md:justify-between"
+        class="my-10 w-full text-[#848484] text-center md:gap-10 lg:gap-0 md:flex md:flex-col md:items-center justify-center lg:flex-row md:justify-between"
       >
-        <span class="md:mb-0">
+        <span class="md:mb-0 overflow-auto">
           Grand Maraboo Technologies Limited
           <span class="block md:inline-block">
             &#169; 2023 All rights reserved
@@ -135,7 +135,7 @@
         </span>
 
         <span
-          class="md:flex hidden md:items-center gap-10 md:mb-0 justify-around"
+          class="md:flex hidden md:items-center md:gap-5 lg:gap-0 lg:w-96 md:mb-0 lg:ml-[-120px] justify-around"
         >
           <NuxtLink to="/privacy-policy" class="block md:mb-0">{{ $t("footer.privacy") }}</NuxtLink>
           <NuxtLink to="/terms-of-use">{{ $t("footer.terms") }}</NuxtLink>

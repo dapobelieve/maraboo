@@ -32,7 +32,7 @@
                 <span> 1CAD = </span>
                 <span class="relative">
                   {{ String(rate).split(".")[0] }}.{{
-                    String(rate).split(".")[1]
+                    String(rate).split(".")[1] || '0'
                   }}
                 </span>
                 XOF
@@ -144,7 +144,7 @@
                   </span>
                 </div>
                 <div class="flex items-center justify-between w-full lg:pl-2">
-                  <div class="amount inline-block w-28">{{ rate }} <span class="opacity-40">CAD</span></div>
+                  <div class="amount inline-block w-28">{{ rate }} <span class="opacity-40">XOF</span></div>
                   <span class="purpose">Real exchange rate</span>
                 </div>
               </div>
@@ -450,9 +450,8 @@ export default {
             }
               // this.form.receive_amount = this._2dp(converted);
 
-              if (this.country_name !== 'guinea_bissau' || this.country_name !== 'niger') {
-                  this.updateMethodKeys(this.results.other_options)
-              }
+             this.updateMethodKeys(this.results.other_options)
+
 
 
             })
@@ -703,7 +702,7 @@ export default {
             payin_method: this.form.payin_method,
             payout_method: this.form.payout_method,
             payin_market: 'canada',
-            payout_market: this.country_name,
+            payout_market: this.country && typeof this.country == "string" ? this.computedWaemuCountry : this.country_name,
             amount: send_amount,
             mode: mode,
           });
@@ -729,6 +728,45 @@ export default {
     }
   },
   computed: {
+    computedWaemuCountry() {
+      console.log(this.country)
+      if(this.country === 'benin'){
+         this.country_name = 'benin'
+         this.form.payout_method = 'xpresscash'
+         return this.form.payout_method
+      }
+      if(this.country === 'burkina-faso'){
+        this.country_name = 'burkina_faso'
+      }
+      if(this.country === "cote-d'voire"){
+        this.country_name = 'cote_d_ivoire'
+      }
+      if(this.country === "guinea-bissau"){
+        this.country_name = 'guinea_bissau'
+        this.form.payout_method = 'xpresscash'
+        return this.form.payout_method
+      }
+      if(this.country === "mali"){
+        this.country_name = 'mali'
+        // return this.country_name
+      }
+      if(this.country === "niger"){
+        this.country_name = 'niger'
+        this.form.payout_method = 'xpresscash'
+      }
+      if(this.country === "senegal"){
+        this.country_name = 'senegal'
+      }
+      if(this.country === "togo"){
+        this.country_name = 'togo'
+      }
+      
+      return this.country_name
+      // else{
+      //   this.country_name = 'cote_d_ivoire'
+      //   return this.country_name 
+      // }
+    },
     computedSendAmount: {
       get() {
         if (this.form.send_amount === null || this.form.send_amount === "") {
@@ -835,6 +873,8 @@ export default {
     }
   },
   async mounted() {
+ 
+
     const default_amount = this.form.send_amount;
     const { currency_value } = await useApi().exchangeRate();
     this.rate = this._2dp(currency_value);
@@ -848,6 +888,7 @@ export default {
         .then((res) => {
           if (res) {
             const { converted, ...rest } = res;
+            console.log(res)
             this.form.receive_amount = this._2dp(converted);
 
             this.results = { ...rest };

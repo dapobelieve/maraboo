@@ -12,10 +12,14 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router';
 import { computed } from "vue";
+
+const router = useRouter();
 const props = defineProps({
   country: Object,
 });
+
 
 const { images } = useImages();
 
@@ -35,4 +39,11 @@ const countryLink = computed(() => {
     )}-to-canada`.toLowerCase();
   }
 });
+
+// console.log(props.country.country)
+
+// router.push({
+//   query: props.country.country
+
+// })
 </script>
