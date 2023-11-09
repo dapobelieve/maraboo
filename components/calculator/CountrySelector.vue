@@ -108,12 +108,12 @@
               v-for="country in filteredCountries"
               role="option"
               tabindex="-1"
-              @click="handleSelection(country, $event)"
-              :class="providers ? providers.find(provider => provider.country_name ===  country.name.toLowerCase()) ? 'cursor-pointer hover:bg-gray-100 py-2 px-3 rounded-lg w-full' : 'opacity-50 cursor-not-allowed py-2 px-3 rounded-lg w-full' : 'cursor-pointer hover:bg-gray-100 py-2 px-3 rounded-lg w-full'"
+              @click="providers && providers.find(provider => provider.country_name ===  country.name.toLowerCase()) ? handleSelection(country, $event) : ''" 
+              :class="providers && providers.find(provider => provider.country_name ===  country.name.toLowerCase()) ? 'cursor-pointer hover:bg-gray-100 py-2 px-3 rounded-lg w-full' : 'opacity-50 cursor-not-allowed py-2 px-3 rounded-lg w-full'"
             >
               <a class="flex h-full items-center">
                 <img class="h-6 w-6 mr-3" :src="images[country.flag]" alt="" />
-                <span class="inline-flex items-center"
+                <span class="block lg:inline-flex items-center"
                   >{{ country.name }}
 
                   <span class="ml-1 text-[14px]">{{ providers ? providers.find(provider => provider.country_name ===  country.name.toLowerCase()) ? "" : "(Coming Soon)" : "" }}</span>

@@ -206,7 +206,7 @@ export default {
           method: "xpresscash",
           methods: [
             {
-              key: "Xpress Cash",
+              key: "Xpress Cash ",
               value: "xpresscash",
               info: "Withdraw cash at any Ecobank ATM or Xpress point in WAEMU"
             },
@@ -575,8 +575,31 @@ export default {
         if (other_options[index] && other_options[index].payout_fee) {
           const fee = `${other_options[index].payout_fee} CAD fee`;
           const splitIndex = method.key.indexOf(' - ');
+          
+          if (this.query && (this.query === 'guinea_bissau' || this.query === 'niger')) {
+            if (method.value === 'xpresscash') {
+              // Remove the value from splitIndex for 'Mobile Money'
+              method.key =  method.key.slice(0, splitIndex) + " - " + other_options[0].payout_fee + ' CAD fee'
+            } 
+            if (method.value === 'mobile_money') {
+              // Remove the value from splitIndex for 'Mobile Money'
+              method.key = `Mobile Money`;
+            }
+            if (method.value === 'bank_transfer_ach') {
+              // Add the fee to 'Bank Transfer (ACH)'
+              method.key =  method.key.slice(0, splitIndex) + " - " + other_options[1].payout_fee + ' CAD fee'
+            }
+            if (method.value === 'credit_ecobank_account') {
+              // Add the fee to 'Bank Transfer (ACH)'
+              method.key =  method.key.slice(0, splitIndex) + " - " + other_options[2].payout_fee + ' CAD fee'
+            }
 
-          if (this.country_name === 'guinea_bissau' || this.country_name === 'niger') {
+            console.log(method.value)
+            
+            
+          }
+
+          else if (this.country_name === 'guinea_bissau' || this.country_name === 'niger') {
             if (method.value === 'mobile_money') {
               // Remove the value from splitIndex for 'Mobile Money'
               method.key = `Mobile Money`;
@@ -584,7 +607,8 @@ export default {
               // Add the fee to 'Bank Transfer (ACH)'
               method.key =  method.key.slice(0, splitIndex) + " - " + other_options[1].payout_fee + ' CAD fee'
             }
-          } else {
+          } 
+          else {
             if (splitIndex !== -1) {
               // Replace the value for all other cases
               method.key = method.key.slice(0, splitIndex) + " - " + fee;
@@ -761,7 +785,11 @@ export default {
         // this.currencies['CAD'].methods.splice(1, 1)
         this.form.payout_method = 'xpresscash'
         if(this.query === 'niger' || this.query === 'guinea_bissau'){
-           this.currencies['CAD'].methods.splice(1, 1)
+          var secondMethod =  this.currencies['CAD'].methods[1]
+          
+          this.currencies['CAD'].methods[1] = this.currencies['CAD'].methods[3]
+          this.currencies['CAD'].methods[3] = secondMethod
+          //  this.currencies['CAD'].methods.splice(1, 1)
         }
     }
 

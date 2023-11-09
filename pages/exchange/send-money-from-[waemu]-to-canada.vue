@@ -313,7 +313,7 @@ const faqs = reactive([
   },
 ]);
 
-console.log(route.query.country)
+// console.log(route.query.country)
 </script>
 
 <style lang="scss" scoped></style>
