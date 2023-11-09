@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="localePath(countryLink)" class="">
+  <a @click="navigateToCountry" class="">
     <span class="flex flex-col items-center">
       <img
         class="w-[50px] md:h-[4.7rem] md:w-[5.7rem] mb-2 hover:-translate-y-1 duration-500 ease-in-out"
@@ -8,14 +8,18 @@
       />
       <small>{{ countryName }}</small>
     </span>
-  </NuxtLink>
+  </a>
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router';
 import { computed } from "vue";
+
+const router = useRouter();
 const props = defineProps({
   country: Object,
 });
+
 
 const { images } = useImages();
 
@@ -35,4 +39,25 @@ const countryLink = computed(() => {
     )}-to-canada`.toLowerCase();
   }
 });
+
+// console.log(props.country.country)
+
+const navigateToCountry = () => {
+  router.push({
+    path: countryLink.value,
+    query: {
+      'country': props.country.country
+      // Add any query parameters if needed
+      // For example: queryParameterName: 'queryParameterValue'
+    },
+  });
+};
+
+// router.push({
+//   path: countryLink.value,
+//   query: {
+//     'country': props.country.country
+//   }
+
+// })
 </script>
