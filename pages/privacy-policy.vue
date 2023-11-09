@@ -314,7 +314,7 @@
                         <li class='mb-3'>Information that is about another individual that would reveal their personal information or confidential commercial information.</li>   
                         <li class='mb-3'>Information that is prohibitively expensive to provide.</li> 
                     </ul>  
-                    <p class='mb-5'>If you are concerned about our response or would like to correct the information provided, you may contact our [Privacy Officer/[NAME OR TITLE OF APPROPRIATE CONTACT]] at [EMAIL ADDRESS OF APPROPRIATE CONTACT].</p>  
+                    <p class='mb-5'>If you are concerned about our response or would like to correct the information provided, you may contact our [Privacy Officer/[Cheick Ouedraogo] at [cheick@mara.boo].</p>  
                     <p class='mb-5'>If you delete your User Contributions from the Site, copies of your User Contributions may remain viewable in cached and archived pages or might have been copied or stored by other Site users.</p>
                 </div>
 
@@ -366,9 +366,9 @@
                     Contact information and challenging compliance
                 </h2>
                 <div>
-                    <p class='mb-5'>We welcome your questions, comments, and requests regarding this privacy policy and our privacy practices. Please contact us at: </p>  <p class='mb-5'><strong>[Privacy Officer]</strong> </p>   
+                    <p class='mb-5'>We welcome your questions, comments, and requests regarding this privacy policy and our privacy practices. Please contact us at: </p>  <p class='mb-5'><strong>[Cheick Ouedraogo]</strong> </p>   
                     <p class='mb-5'><strong>[info@mara.boo] </strong> </p>   
-                    <p class='mb-5'><strong>[and/or via our toll-free number: </strong> <br />54348658.4</p>
+                    <p class='mb-5'><strong>[and/or via our toll-free number: </strong> <br />54348658</p>
                 </div>
 
             </div>
