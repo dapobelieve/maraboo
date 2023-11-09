@@ -2,8 +2,7 @@
   <div id="exchange-rate" class="min-w-sm  border-2 border-black drop-shadow-lg rounded-[20px] max-w-lg w-full">
 
     <div class="bg-white relative rounded-[20px] shadow ring-opacity-5 ring-black">
-      <div v-show="loading" style="background-color: rgba(12, 10, 10, 83%)"
-        class="absolute top-0 left-0 w-full h-full bg-black rounded z-10"></div>
+      <div v-show="loading" style="background-color: rgba(12, 10, 10, 83%)" class="absolute top-0 left-0 w-full h-full bg-black rounded z-10"></div>
       <div class="relative">
         <div
           class="w-full mb-4 flex flex-col after:content- relative after:absolute after:w-full after:bottom-[-14px] after-mt-8 after:bg-slate-700">
@@ -49,37 +48,15 @@
            
             <CustomSelect v-model="form.payin_method" :feeMethod="payIn.methods" :default="payIn.methods[0].key"
               @payInFee="payInFee" />
-            <!-- <select
-              name="cars"
-              class="bg-purple select text-white text-sm font-bold w-40 py-1 px-2 rounded"
-              v-model="form.payin_method"
-            >
-              <option
-                v-for="(method, index) in payIn.methods"
-                :value="method.value"
-              >
-                {{ method.key }}
-              </option>
-            </select> -->
+        
           </div>
           <div class="flex gap-2 justify-between items-center">
             <div>
               <small class="text-sm lg:text-[16px] text-black">Delivery method</small>
             </div>
-            <CustomSelect v-model="form.payout_method" :feeMethod="payOut.methods" :default="payOut.methods[1].key"
-              @payOutFee="payOutFee" :country="country_name" :fee="results.other_options"/>
-            <!-- <select
-              name="cars"
-              class="bg-purple select text-white text-sm font-bold w-40 py-1 px-2 rounded"
-              v-model="form.payout_method"
-            >
-              <option
-                v-for="(method, index) in payOut.methods"
-                :value="method.value"
-              >
-                {{ method.key }}  
-              </option>
-            </select> -->
+            <CustomSelect v-model="form.payout_method" :feeMethod="payOut.methods" :default="query === 'guinea_bissau' || query === 'niger' || query === 'benin' ? (payOut.methods[0].key): (payOut.methods[1].key)"
+              @payOutFee="payOutFee" :country="country_name" :query="query" :fee="computedFee"/>
+
           </div>
           <div class="mt-8">
             <div class="text-black flex flex-col text-[16px]">
@@ -173,7 +150,7 @@
             </span>
           </div>
 
-          <div v-if="send_amount && calc_error" class="flex gap-2 bg-gray-100 rounded-md mt-4 p-4">
+          <div v-if="calc_error" class="flex gap-2 bg-gray-100 rounded-md mt-4 p-4">
             <img src="~/assets/images/error_icon.svg" />
             <span class="text-sm">
               {{ calc_error }}
@@ -213,6 +190,7 @@ export default {
   },
   props: {
     country: String,
+    query: String,
   },
   data() {
     const isCountryDefined = this.country && typeof this.country == "string";
@@ -256,10 +234,6 @@ export default {
               key: "Interac",
               value: "interac",
             },
-            // {
-            //   key: "Ecobank Debit",
-            //   value: "debit",
-            // },
           ],
         },
       },
@@ -448,11 +422,8 @@ export default {
             else {
               this.form.send_amount = this._2dp(user_pays);
             }
-              // this.form.receive_amount = this._2dp(converted);
 
              this.updateMethodKeys(this.results.other_options)
-
-
 
             })
             .finally(() => {
@@ -472,7 +443,6 @@ export default {
           else{
             this.mode = 'receive'
           }
-        // this.mode = 'send'
 
         // console.log(this.form.from.currency)
         this.doConversion(valueToSend, this.mode)
@@ -491,26 +461,6 @@ export default {
           .finally(() => {
             this.apiCalling = false;
           })
-
-        // else {
-        //   this.apiCalling = true;
-        //   console.log(this.form.from.currency)
-        //   this.doConversion(this.form.from.currency, valueToSend)
-        //     .then((res) => {
-        //       if (res) {
-        //         const { converted, ...rest } = res;
-        //             this.form.receive_amount = this._2dp(converted);
-        //             // console.log(converted)
-        //           // else { 
-        //           //   this.form.send_amount = this._2dp(xof_amount);
-        //           // }
-        //         this.results = { ...rest };
-        //       }
-        //     })
-        //     .finally(() => {
-        //       this.apiCalling = false;
-        //     });
-        // }
       },
     },
     "form.payin_method": {
@@ -525,7 +475,6 @@ export default {
           else{
             this.mode = 'receive'
           }
-          // this.mode = 'send'
 
           this.doConversion(valueToSend, this.mode)
             .then((res) => {
@@ -545,25 +494,6 @@ export default {
               this.apiCalling = false;
             })
         }
-        // else {
-        //   this.apiCalling = true;
-        //   console.log(this.form.from.currency)
-        //   this.doConversion(this.form.from.currency, valueToSend)
-        //     .then((res) => {
-        //       if (res) {
-        //         const { converted, ...rest } = res;
-        //             this.form.receive_amount = this._2dp(converted);
-        //             // console.log(converted)
-        //           // else { 
-        //           //   this.form.send_amount = this._2dp(xof_amount);
-        //           // }
-        //         this.results = { ...rest };
-        //       }
-        //     })
-        //     .finally(() => {
-        //       this.apiCalling = false;
-        //     });
-        // }
       },
     },
     "form.send_amount": {
@@ -581,7 +511,7 @@ export default {
               .then((res) => {
                 if (res) {
                   const { converted, ...rest } = res;
-                  console.log(res)
+                  // console.log(res)
                   this.form.receive_amount = this._2dp(converted);
 
                   this.results = { ...rest };
@@ -609,16 +539,10 @@ export default {
             
             this.doConversion(newVal, this.mode)
               .then((res) => {
-                console.log(res)
+                // console.log(res)
                 const { user_pays, we_convert, ...rest } = res;
 
                 this.form.send_amount = this._2dp(user_pays)
-                // this.form.send_amount = this.form.send_amount.value 
-                // if (this.form.from.currency === "xof") {
-                //   this.form.send_amount = this._2dp(xof_amount);
-                // } else {
-                //   this.form.send_amount = this._2dp(cad_amount);
-                // }
                 this.results = { ...rest };
                 
 
@@ -635,11 +559,7 @@ export default {
     },
     "form.from.currency"(newValue, oldValue) {
       this.form.to = newValue === "cad" ? defaultWaemu : defaultCanada;
-      // if (newValue === "xof") {
-      //   this.form.method = "interac";
-      // } else {
-      //   this.form.method = "cash_pickup";
-      // }
+
       this.form.send_amount = null;
       this.resetResults();
     },
@@ -702,7 +622,7 @@ export default {
             payin_method: this.form.payin_method,
             payout_method: this.form.payout_method,
             payin_market: 'canada',
-            payout_market: this.country && typeof this.country == "string" ? this.computedWaemuCountry : this.country_name,
+            payout_market: this.country && typeof this.country == "string" ? this.query : this.country_name,
             amount: send_amount,
             mode: mode,
           });
@@ -728,45 +648,6 @@ export default {
     }
   },
   computed: {
-    computedWaemuCountry() {
-      console.log(this.country)
-      if(this.country === 'benin'){
-         this.country_name = 'benin'
-         this.form.payout_method = 'xpresscash'
-         return this.form.payout_method
-      }
-      if(this.country === 'burkina-faso'){
-        this.country_name = 'burkina_faso'
-      }
-      if(this.country === "cote-d'voire"){
-        this.country_name = 'cote_d_ivoire'
-      }
-      if(this.country === "guinea-bissau"){
-        this.country_name = 'guinea_bissau'
-        this.form.payout_method = 'xpresscash'
-        return this.form.payout_method
-      }
-      if(this.country === "mali"){
-        this.country_name = 'mali'
-        // return this.country_name
-      }
-      if(this.country === "niger"){
-        this.country_name = 'niger'
-        this.form.payout_method = 'xpresscash'
-      }
-      if(this.country === "senegal"){
-        this.country_name = 'senegal'
-      }
-      if(this.country === "togo"){
-        this.country_name = 'togo'
-      }
-      
-      return this.country_name
-      // else{
-      //   this.country_name = 'cote_d_ivoire'
-      //   return this.country_name 
-      // }
-    },
     computedSendAmount: {
       get() {
         if (this.form.send_amount === null || this.form.send_amount === "") {
@@ -838,6 +719,9 @@ export default {
     currencyKeys() {
       return Object.keys(this.currencies);
     },
+    computedFee(){
+      return this.results.other_options
+    },
     payOut() {
       if (this.form.from.currency === 'cad') {
         return this.currencies[this.form.from.currency.toUpperCase()];
@@ -873,22 +757,31 @@ export default {
     }
   },
   async mounted() {
- 
+    if(this.query === 'niger' || this.query === 'guinea_bissau' || this.query === 'benin'){
+        // this.currencies['CAD'].methods.splice(1, 1)
+        this.form.payout_method = 'xpresscash'
+        if(this.query === 'niger' || this.query === 'guinea_bissau'){
+           this.currencies['CAD'].methods.splice(1, 1)
+        }
+    }
 
     const default_amount = this.form.send_amount;
     const { currency_value } = await useApi().exchangeRate();
     this.rate = this._2dp(currency_value);
 
     // console.log(default_amount)
-
+   
     if (!this.apiCalling) {
       this.apiCalling = true;
 
+      // console.log("query is", this.query)
+     
+      
       this.doConversion(default_amount)
         .then((res) => {
           if (res) {
             const { converted, ...rest } = res;
-            console.log(res)
+            // console.log(res)
             this.form.receive_amount = this._2dp(converted);
 
             this.results = { ...rest };
