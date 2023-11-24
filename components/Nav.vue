@@ -1,15 +1,20 @@
 <template>
   <header
-    class="relative sticky top-0 z-20 bg-[url('/assets/images/bg-12.svg')] bg-cover md:px-8 md:py-4 lg:px-2 lg:px-4"
+    class="sticky top-0 z-20 bg-[url('/assets/images/bg-12.svg')] pt-4 bg-cover md:pdx-8 md:py-4"
   >
-    <div
-      class="container flex items-center bg-black md:mx-auto md:rounded-[20px]"
-    >
+    <div class="" :class="navBg">
       <nav
-        class="relative my-4 flex w-full select-none justify-between px-2 font-['Open_Sans'] text-white md:mx-8 md:py-0"
+        class="relative my-4 flex w-full select-none justify-between px-4 font-['Open_Sans'] md:mx-8 md:py-0"
+        :class="isScrolled && bgTransparent ? 'text-black' : 'text-white'"
       >
         <NuxtLink :to="localePath('/')" class="flex items-center">
-          <img class="h-8" src="~/assets/images/maraboo-2.svg" alt="" />
+          <img
+            class="h-8"
+            :src="
+              isScrolled && bgTransparent ? '/maraboo.svg' : '/maraboo-2.svg'
+            "
+            alt="logo"
+          />
           <h1
             class="ml-1 mt-2 font-heading text-2xl font-extrabold md:text-3xl"
           >
@@ -39,7 +44,12 @@
         </div>
         <div class="hidden items-center md:flex">
           <div class="mr-12">
-            <a href="#how-it-works"> {{ $t("home.nav.how-it-works") }}</a>
+            <NuxtLink v-if="computedHowToNav" to="#how-it-works">
+              {{ $t("home.nav.how-it-works") }}
+            </NuxtLink>
+            <NuxtLink v-else to="/#how-it-works">
+              {{ $t("home.nav.how-it-works") }}
+            </NuxtLink>
           </div>
 
           <div
@@ -49,8 +59,12 @@
           >
             <a> {{ $t("home.nav.company.name") }} </a>
             <img
-              class="mt-0.5 ml-2 h-2 group-hover:-rotate-180"
-              src="~/assets/images/caret-down.svg"
+              class="mt-0.5 ml-2 h-2"
+              :src="
+                isScrolled && bgTransparent
+                  ? '/caret-down.svg'
+                  : '/caret-down-white.svg'
+              "
               alt=""
             />
 
@@ -60,14 +74,15 @@
             >
               <NuxtLink
                 :to="localePath('/about')"
-                class="flex items-center px-6 py-6 text-black hover:bg-gray-50"
+                class="flex items-center px-6 py-6 text-black hover:rounded-t-lg hover:bg-gray-50"
               >
                 <img class="mr-6 h-4" src="~/assets/images/about.svg" alt="" />
                 <span class="text-md font-medium">{{
                   $t("home.nav.company.about-us")
                 }}</span>
               </NuxtLink>
-              <div
+              <NuxtLink
+              @click.stop="contact = !contact"
                 class="flex items-center px-6 py-6 text-black hover:bg-gray-50"
               >
                 <img
@@ -75,13 +90,14 @@
                   src="~/assets/images/contact.svg"
                   alt=""
                 />
-                <a
-                  @click.stop="scrollIntoView"
-                  href="#contact-us"
-                  class="text-md font-medium"
-                  >{{ $t("home.nav.company.contact-us") }}</a
-                >
-              </div>
+                <span class="text-md font-medium">{{
+                  $t("home.nav.company.contact-us")
+                }}</span>
+              </NuxtLink>
+              <div class="ml-4 py-2 bg-gray-100 w-64 px-6" v-show="contact">
+                      <p class="text-gray-700 font-semibold text-sm">Email us</p>
+                      <a href="mailto:enquiries@mara.boo?subject=Feedback&body=Hello" class="font-semibold text-black">enquiries@mara.boo</a>
+                </div>
               <NuxtLink
                 :to="localePath('/careers')"
                 class="flex items-center px-6 py-6 text-black hover:bg-gray-50"
@@ -95,15 +111,15 @@
                   $t("home.nav.company.careers")
                 }}</span>
               </NuxtLink>
-              <NuxtLink
+              <!-- <NuxtLink
                 :to="localePath('/legal')"
-                class="flex items-center px-6 py-6 text-black hover:bg-gray-50"
+                class="flex items-center px-6 py-6 text-black hover:rounded-b-lg hover:bg-gray-50"
               >
                 <img class="mr-6 h-6" src="~/assets/images/legal.svg" alt="" />
                 <span class="text-md font-medium">{{
                   $t("home.nav.company.legal")
                 }}</span>
-              </NuxtLink>
+              </NuxtLink> -->
             </div>
           </div>
         </div>
@@ -111,14 +127,20 @@
           <div class="group relative mr-8 inline-flex items-center">
             <img
               class="mr-0.5 h-4 w-4"
-              src="~/assets/images/globe-white.svg"
+              :src="
+                isScrolled && bgTransparent ? '/globe.svg' : '/globe-white.svg'
+              "
               alt=""
             /><a href="#" class="uppercase" @click.stop="locale = !locale">
               {{ activeLocale }}</a
             >
             <img
               class="mt-0.5 ml-1 h-2"
-              src="~/assets/images/caret-down-white.svg"
+              :src="
+                isScrolled && bgTransparent
+                  ? '/caret-down.svg'
+                  : '/caret-down-white.svg'
+              "
               alt=""
             />
             <div
@@ -147,21 +169,25 @@
           </div>
           <NuxtLink
             :to="localePath('/join-us')"
-            class="rounded-lg px-6 py-3 text-sm font-black bg-white text-black"
+            class="rounded-lg px-6 py-3 text-sm font-black"
+            :class="
+              isScrolled && bgTransparent
+                ? 'bg-black text-white'
+                : 'bg-white text-black'
+            "
           >
             {{ $t("home.nav.wait-list") }}
           </NuxtLink>
         </div>
       </nav>
     </div>
-
     <div
       v-show="showMobileMenu"
-      class="fixed left-0 top-0 h-full w-full bg-white"
+      class="fixed left-0 top-0 h-full w-full bg-black md:hidden py-8 px-5"
     >
-      <div class="flex h-full flex-col pt-3">
+      <div class="flex h-full flex-col">
         <div
-          class="after:content relative mb-20 flex py-4 after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-gray-200"
+          class="after:content relative mb-20 flex py-4 after:absolute after:bottom-0 after:h-[1px] after:w-full"
         >
           <div
             @click="showMobileMenu = false"
@@ -170,12 +196,10 @@
             <NuxtLink to="/" class="flex items-center">
               <img
                 class="h-8 md:h-16"
-                src="~/assets/images/maraboo.svg"
+                src="~/assets/images/maraboo-white.svg"
                 alt=""
               />
-              <h1 class="ml-1 font-heading text-2xl font-extrabold">
-                Maraboo H
-              </h1>
+              <h1 class="ml-1 font-heading text-2xl font-extrabold">Maraboo</h1>
             </NuxtLink>
             <div
               @click.stop="locale = !locale"
@@ -183,17 +207,14 @@
             >
               <img
                 class="mr-0.5 h-4 w-4"
-                src="~/assets/images/globe.svg"
+                src="~/assets/images/globe-white.svg"
                 alt=""
-              /><a class="text-xs"> {{ activeLocale.toUpperCase() }}</a>
+              /><a class="text-xs text-white">
+                {{ activeLocale.toUpperCase() }}</a
+              >
               <img
-                :class="[
-                  locale
-                    ? 'rotate-0 transform transition-transform duration-100'
-                    : 'rotate-180 transform transition-transform duration-100',
-                ]"
                 class="mt-0.5 ml-1 h-2"
-                src="~/assets/images/caret-down.svg"
+                src="~/assets/images/caret-down-white.svg"
                 alt=""
               />
               <div
@@ -206,7 +227,7 @@
                 >
                   <nuxt-link
                     :to="switchLocalePath('en')"
-                    class="text-md w-full font-medium"
+                    class="text-md text-black w-full font-medium"
                     >English</nuxt-link
                   >
                 </div>
@@ -230,55 +251,61 @@
             </div>
           </div>
         </div>
-        <div class="px-4">
+        <div class="px-4 text-white">
           <NuxtLink
             @click.stop="showMobileMenu = false"
             href="/#how-it-works"
-            class="text-xl hover:text-purple"
+            class="text-2xl"
           >
             {{ $t("home.nav.how-it-works") }}
           </NuxtLink>
           <div
-            @click="mobileCompany = !mobileCompany"
+            @click.prevent="mobileCompany = !mobileCompany"
             class="mt-8 flex cursor-pointer items-center justify-between"
           >
             <div class="relative">
-              <h6 class="text-xl hover:text-purple">
-                <a> {{ $t("home.nav.company.name") }} </a>
+              <h6 class="text-2xl">
+                <span> {{ $t("home.nav.company.name") }} </span>
               </h6>
               <div v-show="mobileCompany" class="absolute top-12">
-                <div @click="showMobileMenu = false" class="ml-4 flex flex-col">
-                  <NuxtLink class="" to="about">{{
+                <div
+                  @click="showMobileMenu = false"
+                  class="ml-4 text-white flex flex-col"
+                >
+                  <NuxtLink class="text-white" to="about">{{
                     $t("home.nav.company.about-us")
                   }}</NuxtLink>
                   <NuxtLink
-                    @click.stop="scrollIntoView"
-                    href="#contact-us"
+                    @click.stop="contact = !contact"
                     class="mt-4"
                     >{{ $t("home.nav.company.contact-us") }}</NuxtLink
                   >
-                  <NuxtLink class="mt-4" to="careers">{{
+                  <div class="ml-4 py-2" v-show="contact">
+                      <p class="text-gray-400 text-[16px]">Email us</p>
+                      <a href="mailto:enquiries@mara.boo?subject=Feedback&body=Hello" class="text-xl">enquiries@mara.boo</a>
+                  </div>
+                  <NuxtLink class="mt-4 text-white" to="careers">{{
                     $t("home.nav.company.careers")
                   }}</NuxtLink>
-                  <NuxtLink class="mt-4" to="legal">{{
+                  <!-- <NuxtLink class="mt-4" to="legal">{{
                     $t("home.nav.company.legal")
-                  }}</NuxtLink>
+                  }}</NuxtLink> -->
                 </div>
               </div>
             </div>
             <img
               :class="[mobileCompany ? 'rotate-180' : '']"
               class="h-2"
-              src="~/assets/images/caret-down.svg"
+              src="~/assets/images/caret-down-white.svg"
               alt=""
             />
           </div>
         </div>
-        <div class="mt-auto mb-10 flex justify-center px-8">
+        <div class="flex fixed top-auto left-0 right-0 bottom-5 justify-center px-8">
           <NuxtLink
             @click="showMobileMenu = false"
             :to="localePath('/join-us')"
-            class="w-full rounded-xl bg-black px-12 py-3 text-center text-white"
+            class="w-full rounded-xl bg-white px-12 py-3 text-center text-black"
           >
             {{ $t("home.nav.wait-list") }}
           </NuxtLink>
@@ -288,19 +315,73 @@
   </header>
 </template>
 <script>
-import { reactive, computed, toRefs } from "vue";
+import { reactive, computed, toRefs, watch } from "vue";
 import { useI18n } from "vue-i18n";
 
 export default {
+  data() {
+    return {
+      isScrolled: false,
+    };
+  },
+  props: {
+    bgTransparent: Boolean,
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      if (window.scrollY > 0) {
+        this.isScrolled = true;
+      } else {
+        this.isScrolled = false;
+      }
+    },
+  },
+  computed: {
+    navBg() {
+      return [
+        "flex",
+        "items-center",
+        "rounded-[20px]",
+        this.bgTransparent ? "bg-transparent" : "bg-black",
+        this.bgTransparent ? "block mx-auto 2xl:max-w-[101rem]" : "",
+        this.bgTransparent && this.isScrolled
+          ? "bg-white shadow-lg text-black transition-all duration-500"
+          : "bg-black",
+      ];
+    },
+  },
   setup() {
+    const route = useRoute();
     const { locale } = useI18n();
     const state = reactive({
       showMobileMenu: false,
       company: false,
       locale: false,
       mobileCompany: false,
+      contact: false,
       activeLocale: computed(() => locale),
     });
+
+    const computedHowToNav = computed(() => {
+      return route.path.includes("exchange");
+    });
+    watch(
+      () => state.showMobileMenu,
+      (newVal) => {
+        if (newVal) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "auto";
+        }
+      }
+    );
+
     function scrollIntoView(e) {
       const { hash } = e.target;
       document.querySelector(hash).scrollIntoView({ behavior: "smooth" });
@@ -309,10 +390,16 @@ export default {
 
     return {
       ...toRefs(state),
+      computedHowToNav,
       scrollIntoView,
     };
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.scrolled {
+  background-color: #fff !important;
+  color: #111 !important;
+}
+</style>
