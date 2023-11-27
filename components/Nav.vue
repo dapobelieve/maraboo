@@ -47,7 +47,7 @@
             <NuxtLink v-if="computedHowToNav" to="#how-it-works">
               {{ $t("home.nav.how-it-works") }}
             </NuxtLink>
-            <NuxtLink v-else to="/#how-it-works">
+            <NuxtLink v-else :to="$route.path.includes('fr') ? '/fr#how-it-works' : '/#how-it-works'">
               {{ $t("home.nav.how-it-works") }}
             </NuxtLink>
           </div>

@@ -490,9 +490,11 @@ import { reactive, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import CountryComponent from "~/components/CountryComponent.vue";
 import CookieConsent from "~/components/CookieConsent.vue";
+import qrBg from "assets/images/unlock-bg.svg";
+
 const { t } = useI18n();
 
-import qrBg from "assets/images/unlock-bg.svg";
+
 
 const showModal = localStorage.getItem('show')
 const show = ref(false)
