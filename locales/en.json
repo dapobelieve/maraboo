@@ -21,7 +21,7 @@
         "center": {
           "l1": "Global transfers to or from WAEMU countries at the",
           "l2": " real exchange rate!",
-          "l3": "Did you know that a 10% reduction in transaction fees for sending money in & out <br class='hidden md:block' > of WAEMU country can boost the              revenue of regional households by up to 16%?"
+          "l3": "<p> Did you know that a 10% reduction in transaction fees for sending money in & out <br class='hidden md:block' > of WAEMU country can boost the  revenue of regional households by up to 16%? <p>"
         },
         "bottom": "Learn more on Maraboo"
       },
@@ -143,7 +143,12 @@
     "come-work": "Come work with us",
     "we": "We’re looking for great people to help us build!",
     "view": "View our openings.",
-    "opening": "<div class='w-4/5'>        <h1 class='font-heading text-4xl  mb-6'>Our Openings:</h1>        <div class='max-w-[46rem] md:mb-8 text-justify leading-relaxed'>          <p class='mb-4'>Thank you for your interest in joining our team!</p>          <p class='mb-4'>            While we do not currently have any open positions, we are always on            the lookout for talented individuals who share our values and are            passionate about what we do.          </p>          <p class='mb-4'>            We encourage you to submit your resume and cover letter for future            consideration, as we may have opportunities that match your skills            and experience in the near future.          </p>          <p class='mb-20'>            We promise to review every application carefully and keep them on            file should a suitable opening arise. We look forward to hearing            from you and potentially working together in the future!          </p>                 </div>      </div>"
+    "opening": "<div class='w-4/5'>        <h1 class='font-heading text-4xl  mb-6'>Our Openings:</h1>        <div class='max-w-[46rem] md:mb-8 text-justify leading-relaxed'>          <p class='mb-4'>Thank you for your interest in joining our team!</p>          <p class='mb-4'>            While we do not currently have any open positions, we are always on            the lookout for talented individuals who share our values and are            passionate about what we do.          </p>          <p class='mb-4'>            We encourage you to submit your resume and cover letter for future            consideration, as we may have opportunities that match your skills            and experience in the near future.          </p>          <p class='mb-20'>            We promise to review every application carefully and keep them on            file should a suitable opening arise. We look forward to hearing            from you and potentially working together in the future!          </p>                 </div>      </div>",
+    "resume": {
+      "title": "Add your resume and cover letter",
+      "caption": "Upload your resume and cover letter for future consideration, as we may have opportunities that match your skills and experience in the near future."
+    },
+    "submit": "Submit"
   },
   "from-waemu": {
     "section-1": {
@@ -211,7 +216,9 @@
     "first-name": "First Name",
     "last-name": "Last Name",
     "email": "Email",
-    "submit": "Submit"
+    "submit": "Submit",
+    "thanks": "Thank you for joining the waitlist",
+    "launch": "We'll send you an email when we launch"
   },
   "privacy-policy": {
     "title": "Privacy Policy",

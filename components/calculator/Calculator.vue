@@ -54,8 +54,8 @@
             <div>
               <small class="text-sm lg:text-[16px] text-black">Delivery method</small>
             </div>
-            <CustomSelect v-model="form.payout_method" :feeMethod="payOut.methods" :default="query === 'guinea_bissau' || query === 'niger' || query === 'benin' ? (payOut.methods[0].key): (payOut.methods[1].key)"
-              @payOutFee="payOutFee" :country="country_name" :query="query" :fee="computedFee"/>
+            <CustomSelect v-model="form.payout_method" :feeMethod="payOut.methods" :default="storedWaemuCountry === 'guinea_bissau' || storedWaemuCountry === 'niger' || storedWaemuCountry === 'benin' ? (payOut.methods[0].key): (payOut.methods[1].key)"
+              @payOutFee="payOutFee" :country="country_name" :storedWaemuCountry="storedWaemuCountry" :fee="computedFee"/>
 
           </div>
           <div class="mt-8">
@@ -190,7 +190,7 @@ export default {
   },
   props: {
     country: String,
-    query: String,
+    storedWaemuCountry: String,
   },
   data() {
     const isCountryDefined = this.country && typeof this.country == "string";
@@ -576,7 +576,7 @@ export default {
           const fee = `${other_options[index].payout_fee} CAD fee`;
           const splitIndex = method.key.indexOf(' - ');
           
-          if (this.query && (this.query === 'guinea_bissau' || this.query === 'niger')) {
+          if (this.storedWaemuCountry && (this.storedWaemuCountry === 'guinea_bissau' || this.storedWaemuCountry === 'niger')) {
             if (method.value === 'xpresscash') {
               // Remove the value from splitIndex for 'Mobile Money'
               method.key =  method.key.slice(0, splitIndex) + " - " + other_options[0].payout_fee + ' CAD fee'
@@ -646,7 +646,7 @@ export default {
             payin_method: this.form.payin_method,
             payout_method: this.form.payout_method,
             payin_market: 'canada',
-            payout_market: this.country && typeof this.country == "string" ? this.query : this.country_name,
+            payout_market: this.country && typeof this.country == "string" ? this.storedWaemuCountry : this.country_name,
             amount: send_amount,
             mode: mode,
           });
@@ -781,10 +781,10 @@ export default {
     }
   },
   async mounted() {
-    if(this.query === 'niger' || this.query === 'guinea_bissau' || this.query === 'benin'){
+    if(this.storedWaemuCountry === 'niger' || this.storedWaemuCountry === 'guinea_bissau' || this.storedWaemuCountry === 'benin'){
         // this.currencies['CAD'].methods.splice(1, 1)
         this.form.payout_method = 'xpresscash'
-        if(this.query === 'niger' || this.query === 'guinea_bissau'){
+        if(this.storedWaemuCountry === 'niger' || this.storedWaemuCountry === 'guinea_bissau'){
           var secondMethod =  this.currencies['CAD'].methods[1]
           
           this.currencies['CAD'].methods[1] = this.currencies['CAD'].methods[3]
@@ -802,7 +802,7 @@ export default {
     if (!this.apiCalling) {
       this.apiCalling = true;
 
-      // console.log("query is", this.query)
+      // console.log("storedWaemuCountry is", this.storedWaemuCountry)
      
       
       this.doConversion(default_amount)
@@ -834,7 +834,6 @@ export default {
   border-radius: 5px;
   height: 34px;
   background: url(https://maraboo.netlify.app/caret-down-white.svg) no-repeat right #5f19f2;
-  -webkit-appearance: none;
   background-position-x: 134px;
 }
 </style>

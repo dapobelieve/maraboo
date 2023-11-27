@@ -104,10 +104,10 @@
             </div>
             <div class="">
               <h1 class="font-bold text-4xl w-96 text-center leading-snug">
-                Thank you for joining the waitlist
+                {{ $t('wait-list.thanks') }}
               </h1>
               <p class="text-center my-6">
-                We'll send you an email when we launch
+                {{ $t('wait-list.launch') }}
               </p>
             </div>
             <div class="socials inline-flex justify-between">

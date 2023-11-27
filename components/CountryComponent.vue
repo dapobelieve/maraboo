@@ -1,5 +1,5 @@
 <template>
-  <a @click="navigateToCountry" class="">
+  <NuxtLink @click="navigateToCountry" class="">
     <span class="flex flex-col items-center">
       <img
         class="w-[50px] md:h-[4.7rem] md:w-[5.7rem] mb-2 hover:-translate-y-1 duration-500 ease-in-out"
@@ -8,7 +8,7 @@
       />
       <small>{{ countryName }}</small>
     </span>
-  </a>
+  </NuxtLink>
 </template>
 
 <script setup>
@@ -31,9 +31,12 @@ const countryName = computed(() => {
 
 const countryLink = computed(() => {
   if (props.country.name === "canada") {
-    return "/exchange/send-money-from-canada";
+    return router.currentRoute.value.path.includes("fr") ? "/fr/exchange/send-money-from-canada" : "/exchange/send-money-from-canada";
   } else {
-    return `/exchange/send-money-from-${props.country.name.replace(
+    return router.currentRoute.value.path.includes('fr') ? `/fr/exchange/send-money-from-${props.country.name.replace(
+      " ",
+      "-"
+    )}-to-canada`.toLowerCase() : `/exchange/send-money-from-${props.country.name.replace(
       " ",
       "-"
     )}-to-canada`.toLowerCase();
@@ -45,19 +48,15 @@ const countryLink = computed(() => {
 const navigateToCountry = () => {
   router.push({
     path: countryLink.value,
-    query: {
-      'country': props.country.country
-      // Add any query parameters if needed
-      // For example: queryParameterName: 'queryParameterValue'
-    },
+    // query: {
+    //   'country': props.country.country
+    //   // Add any query parameters if needed
+    //   // For example: queryParameterName: 'queryParameterValue'
+    // },
   });
+
+  localStorage.setItem('waemu', props.country.country)
 };
 
-// router.push({
-//   path: countryLink.value,
-//   query: {
-//     'country': props.country.country
-//   }
 
-// })
 </script>

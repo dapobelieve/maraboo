@@ -16,12 +16,12 @@
         <li
           v-for="(method, index) in feeMethod"
           :key="index"
-          @click.stop="(method.value === 'mobile_money') && ((country === 'guinea_bissau' || query === 'guinea_bissau') || (country === 'niger' || query === 'niger')) ? '' : selectOption(method.key, method.value)"
+          @click.stop="(method.value === 'mobile_money') && ((country === 'guinea_bissau' || storedWaemuCountry === 'guinea_bissau') || (country === 'niger' || storedWaemuCountry === 'niger')) ? '' : selectOption(method.key, method.value)"
           class="flex items-center justify-between"
         > 
-        <div v-if="(method.value === 'mobile_money') && ((country === 'guinea_bissau' || query === 'guinea_bissau') || (country  === 'niger' || query === 'niger'))" class="w-[80%] opacity-50 cursor-not-allowed">
+        <div v-if="(method.value === 'mobile_money') && ((country === 'guinea_bissau' || storedWaemuCountry === 'guinea_bissau') || (country === 'niger' || storedWaemuCountry === 'niger'))" class="w-[80%] opacity-50 cursor-not-allowed">
                
-          <p class="">{{ method.key }}   <span v-if="(country === 'guinea_bissau' || query === 'guinea_bissau') || (country ===  'niger' || query === 'niger')" class="text-[14px]">(Coming soon)</span></p> 
+          <p class="">{{ method.key }}   <span v-if="(country === 'guinea_bissau' || storedWaemuCountry === 'guinea_bissau') || (country === 'niger' || storedWaemuCountry === 'niger')" class="text-[14px]">(Coming soon)</span></p> 
 
           <p class="text-[12px] italic text-gray-500" :class="{'hidden': method.value === 'interac'}"> 
             Estimated time: 
@@ -64,7 +64,7 @@
         default: String,
         country: String,
         fee: Array,
-        query: String
+        storedWaemuCountry: String
     },
     data() {
       return {
@@ -75,7 +75,7 @@
     computed: {
       formattedFee(){
         if(this.fee && this.fee[0] && this.fee[0].payout_fee){
-          if(this.query === 'niger' || this.query === 'guinea_bissau' || this.query === 'benin'){
+          if(this.storedWaemuCountry === 'niger' || this.storedWaemuCountry === 'guinea_bissau' || this.storedWaemuCountry === 'benin'){
             return `${this.fee[0].payout_fee} CAD fee`;
           }
           
