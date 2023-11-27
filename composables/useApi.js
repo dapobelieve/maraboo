@@ -6,6 +6,9 @@ export default function useApi() {
       const res = await axios.get(
         `https://beta-api.mara.boo/calculator/transaction_calculator`,
         {
+          headers: {
+            "X-Origin": "admin.mara.boo",
+          },
           params: {
             ...data,
           },
@@ -21,7 +24,12 @@ export default function useApi() {
   const exchangeRate = async () => {
     try {
       const res = await axios.get(
-        `https://beta-api.mara.boo/exchange_rates/exchange_rate?currency=XOF`
+        `https://beta-api.mara.boo/exchange_rates/exchange_rate?currency=XOF`,
+        {
+          headers: {
+            "X-Origin": "admin.mara.boo",
+          },
+        }
       );
       return res.data;
     } catch (error) {
@@ -35,6 +43,11 @@ export default function useApi() {
         `https://beta-api.mara.boo/waitlist/waitlist`,
         {
           ...data,
+        },
+        {
+          headers: {
+            "X-Origin": "admin.mara.boo",
+          },
         }
       );
       return res.data;
