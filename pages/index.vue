@@ -1,279 +1,313 @@
 <template>
-  <main class="container md:mx-auto px-4">
-    <section class="md:mt-[7rem] mt-[3rem] pb-12 md:pb-32">
-      <div class="md:flex items-center">
-        <div class="w-full mb-8 md:mb-0 md:w-2/4">
-          <div class="flex md:inline-block">
+  <main class="">
+    <section class="md:h-[calc(100vsdh-140px)] mt-8 mb-16">
+      <div class="items-end md:flex h-full">
+        <div class="mb-8 w-full md:mb-0 md:w-2/4">
+          <span class="flex md:inline-block">
             <NuxtLink
-              to="/join-us"
-              class="px-4 shadow py-3 md:px-4 md:py-3 hover:scale-105 transition-transform duration-700 bg-white rounded md:rounded-[10px] cursor-pointer flex items-center"
+              :to="localePath('/join-us')"
+              class="flex cursor-pointer items-center bg-[#F5F5F5] px-4 py-3 shadow transition-transform duration-700 hover:scale-105 rounded-[50px] md:px-4 md:py-3"
             >
-              <span class="font-bold text-purple lg:text-lg text-sm">{{
+              <span class="text-sm font-bold text-purple lg:text-lg">{{
                 $t("home.section1.left.top.left")
               }}</span>
-              <span class="mx-1 md:ml-4 text-sm text-black">{{
+              <span class="mx-1 text-[12px] text-black md:ml-4">{{
                 $t("home.section1.left.top.right")
               }}</span>
               <img
-                class="md:ml-3 h-3"
+                class="h-3 md:ml-3"
                 src="~/assets/images/arrow-right.svg"
                 alt=""
               />
             </NuxtLink>
-          </div>
-          <div class="mt-20">
-            <div
-              class="font-heading mb-8 text-center md:text-left text-4xl md:text-5xl leading-snug"
-            >
-              <h1 class="max-w-[47rem]">
+          </span>
+          <div class="mt-12">
+            <div class="mb-8 font-heading md:text-left">
+              <h1 class="max-w-[47rem] text-[32px] leading-tight md:text-5xl">
                 {{ $t("home.section1.left.center.l1") }}
-                <span
-                  class="text-purple block underline underline-offset-[13px]"
-                  >{{ $t("home.section1.left.center.l2") }}</span
-                >
+                <span class="block">{{
+                  $t("home.section1.left.center.l2")
+                }}</span>
               </h1>
             </div>
-            <p class="text-xl" v-html="$t('home.section1.left.center.l3')"></p>
+            <p
+              class="text-left"
+              v-html="$t('home.section1.left.center.l3')"
+            ></p>
           </div>
-          <div class="mt-16 hidden md:block text-center md:text-left">
-            <GlobalMore> {{ $t("home.section1.left.bottom") }} </GlobalMore>
+          <div class="mt-16 md:block text-left">
+            <NuxtLink
+              :to="localePath('/exchange/send-money-from-canada')"
+              class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]"
+            >
+              {{ $t('send-btn') }}
+            </NuxtLink>
+            <div class="flex md:justify-between mt-10 md:max-w-[18rem]">
+              <a href="#">
+                <img
+                  class="h-12 mr-2 md:mr-0"
+                  src="~/assets/images/appleStore.svg"
+                />
+              </a>
+              <a href="#">
+                <img class="h-12" src="~/assets/images/playStore.svg" />
+              </a>
+            </div>
+            <!--  <GlobalMore> {{ $t("home.section1.left.bottom") }} </GlobalMore>-->
           </div>
         </div>
-        <div class="w-full flex items-center justify-center md:w-2/4">
-          <Calculator class="md:ml-auto" />
+        <div class="flex items-center justify-center md:w-2/4">
+          <img
+            class="people w-full 4xl:mr-0 md:mr-[calc(-50vw+98%)]"
+            src="~/assets/images/people-hexago.webp"
+          />
         </div>
-        <div class="mt-16 md:hidden text-center md:text-left">
-          <GlobalMore> {{ $t("home.section1.left.bottom") }} </GlobalMore>
-        </div>
+        <!--        <div class="mt-16 md:hidden text-left">-->
+        <!--          <NuxtLink-->
+        <!--            to="/exchange/send-money-from-canada"-->
+        <!--            class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]"-->
+        <!--          >-->
+        <!--            Send money now-->
+        <!--          </NuxtLink>-->
+        <!--          <div class="flex justify-start gap-5 mt-10">-->
+        <!--            <a href="#">-->
+        <!--              <img class="h-12" src="~/assets/images/appleStore.svg" />-->
+        <!--            </a>-->
+        <!--            <a href="#">-->
+        <!--              <img class="h-12" src="~/assets/images/playStore.svg" />-->
+        <!--            </a>-->
+        <!--          </div>-->
+        <!--        </div>-->
       </div>
     </section>
     <section class="countries py-12 md:py-32">
-      <div class="text-center">
-        <h1 class="font-heading text-4xl md:text-6xl mb-4">
-          {{ $t("home.section2.countries") }}
-        </h1>
-        <p class="text-xl" v-html="$t('home.section2.text')"></p>
-        <div class="items-center flex justify-center">
-          <div
-            class="flags flex justify-between w-full md:w-3/5 md:justify-center mt-12 items-center"
+      <div class="md:flex w-full py-4">
+        <div class="md:w-1/2 md:block hidden">
+          <div class="flags max-w-xl flex flex-wrap">
+            <CountryComponent
+              v-for="(country, cIndex) in countries"
+              :key="cIndex"
+              :country="country"
+            />
+          </div>
+        </div>
+        <div class="md:w-1/2 mb-6 md:mb-0">
+          <h1 class="mb-4 font-heading text-4xl md:text-6xl">
+            {{ $t("home.section2.countries") }}
+          </h1>
+          <p class="mb-12 text-left" v-html="$t('home.section2.text')"></p>
+          <NuxtLink
+            :to="localePath('/exchange/send-money-from-canada')"
+            class="bg-black mb-20 text-white px-6 py-4 rounded-[10px]"
           >
-            <span>
-              <img
-                class="md:ml-3 h-8 md:h-12"
-                src="~/assets/images/benin.svg"
-                alt=""
-              />
-            </span>
-            <span>
-              <img
-                class="md:ml-3 h-8 md:h-12"
-                src="~/assets/images/burkinafaso.svg"
-                alt=""
-              />
-            </span>
-            <span>
-              <img
-                class="md:ml-3 h-8 md:h-12"
-                src="~/assets/images/cotedivoire.svg"
-                alt=""
-              />
-            </span>
-            <span>
-              <img
-                class="md:ml-3 h-8 md:h-12"
-                src="~/assets/images/mali.svg"
-                alt=""
-              />
-            </span>
-            <span>
-              <img
-                class="md:ml-3 h-8 md:h-12"
-                src="~/assets/images/togo.svg"
-                alt=""
-              />
-            </span>
-            <span>
-              <img
-                class="md:ml-3 h-8 md:h-12"
-                src="~/assets/images/niger.svg"
-                alt=""
-              />
-            </span>
-            <span>
-              <img
-                class="md:ml-3 h-8 md:h-12"
-                src="~/assets/images/g-bissau.svg"
-                alt=""
-              />
-            </span>
-
-            <span>
-              <img
-                class="md:ml-3 h-8 md:h-12"
-                src="~/assets/images/senegal.svg"
-                alt=""
-              />
-            </span>
-            <span class="mr-2">
-              <img
-                class="md:ml-3 h-8 md:h-12"
-                src="~/assets/images/canada.svg"
-                alt=""
-              />
-            </span>
+            {{  $t('send-btn') }}
+          </NuxtLink>
+        </div>
+        <div class="md:hidden w-full flex justify-start">
+          <div class="flags w-full max-w-sm flex flex-wrap items-center mt-12">
+            <CountryComponent
+              class="shrink-0"
+              v-for="(country, cIndex) in countries"
+              :key="cIndex"
+              :country="country"
+            />
           </div>
         </div>
       </div>
     </section>
-    <section class="countries py-12 md:py-32">
-      <div class="md:flex">
-        <div
-          class="md:w-2/5 hidden mb-8 md:mb-0 md:flex justify-center md:mr-12"
-        >
-          <div>
-            <img class="ml-3" src="~/assets/images/xxx.svg" alt="" />
+    <section class="py-12 unlock md:py-36">
+      <div
+        class="bg-[#BEBAFC] rounded-[30px] flex justify-center border px-6 py-8 lg:px-16 lg:py-36"
+        :style="{ backgroundImage: `url(${qrBg})` }"
+      >
+        <div class="max-w-[90rem] lg:relative w-full md:space-y-0 space-y-8 md:flex">
+          <div class="md:w-1/2 text-white flex flex-col justify-between">
+            <div>
+              <h1 v-html="$t('home.calculator.caption')" class="font-heading drop-shadow-lg text-4xl mb-6 md:text-5xl"> </h1>
+              <p v-html="$t('from-waemu.section-1.text')" class="drop-shadow-lg mb-8 md:mb-0">  
+              </p>
+            </div>
+            <div class="inline-flex lg:absolute lg:top-80">
+              <img
+                class="md:h-56 h-32 mr-5 drop-shadow-lg"
+                src="~/assets/images/qr.svg"
+              />
+              <span v-html="$t('qr-scan')" class="md:mt-10 drop-shadow-lg text-lg">
+                    </span>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <Calculator class="md:ml-auto" />
           </div>
         </div>
-        <div class="md:w-3/5 mb-8 md:mb-0">
-          <div class="flex flex-col justify-center px-4 h-full">
+      </div>
+    </section>
+    <section class="connecting py-12 md:py-32">
+      <div class="md:flex">
+        <div class="mb-4 hidden md:mb-0 md:mr-12 md:flex md:w-1/2">
+          <div>
+            <img
+              class="h-[31rem]"
+              src="~/assets/images/connecting.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="mb-8 md:mb-0 md:w-1/2">
+          <div class="flex h-full flex-col justify-center px-4">
             <h1
-              class="font-heading md:text-left text-justify text-4xl md:text-6xl leading-none mb-8 md:mb-16"
+              class="text-justify font-heading text-4xl leading-none mb-4 md:mb-4 md:text-left md:text-5xl"
             >
               {{ $t("home.section3.super-charge") }}
             </h1>
             <p
-              class="text-xl md:mb-8 text-justify leading-relaxed"
+              class="text-justify leading-relaxed md:mb-8"
               v-html="$t('home.section3.text')"
             ></p>
-            <div class="text-xl">
-              &#x2022; {{ $t("home.section3.text-2") }}.
-            </div>
+          </div>
+          <div class="lg:-mt-32 px-4">
+            &#x2022; {{ $t("home.section3.text-2") }}.
           </div>
         </div>
         <div
-          class="md:w-2/5 md:hidden mb-8 md:mb-0 flex justify-center md:mr-12"
+          class="mb-8 flex justify-center md:mb-0 md:mr-12 md:hidden md:w-2/5"
         >
           <div>
-            <img class="ml-3" src="~/assets/images/xxx.svg" alt="" />
+            <img class="ml-3 h-" src="~/assets/images/connecting.svg" alt="" />
           </div>
         </div>
       </div>
     </section>
-    <section class="countries py-12 md:py-32">
-      <div class="md:flex">
+    <section class="think py-12 md:py-32">
+      <div class="md:flex items-center">
         <div class="w-full md:w-3/5">
-          <div class="flex text-left flex-col jusstify-center px-4 h-full">
+          <div class="flex h-full flex-col px-4 md:px-0 text-left">
             <h1
-              class="font-heading text-4xl md:text-6xl leading-none mb-4 md:mb-16"
+              class="mb-4 font-heading text-4xl md:mb-16 md:text-6xl"
               v-html="$t('home.section4.convert-currency')"
             ></h1>
             <div
-              class="md text-xl md:w-[30rem] text-left mb-8 leading-relaxed"
+              class="md mb-8 text-left text leading-relaxed md:w-[30rem]"
               v-html="$t('home.section4.text')"
             ></div>
           </div>
         </div>
-        <div class="md:w-2/5 flex mr-12">
+        <div class="mr-12 md:mr-0 flex md:w-2/5">
           <div>
-            <img class="ml-3 h-96s" src="~/assets/images/convert.svg" alt="" />
+            <img class="ml-3" src="~/assets/images/think.png" alt="" />
           </div>
         </div>
       </div>
     </section>
-    <section class="countries pb-28 md:py-32">
-      <div class="w-full justify-center bg-white rounded-t-xl bg-white pt-28">
-        <div class="flex flex-col items-center text-center justify-center">
-          <h1 class="font-heading text-4xl md:text-6xl mb-7">
+    <section class="fast pb-28">
+      <div class="w-full justify-center rounded-t-xl bg-white pt-10">
+        <div class="flex flex-col items-center justify-center text-center">
+          <h1 class="mb-7 font-heading text-4xl md:text-6xl">
             {{ $t("home.section5.we-fast") }}
           </h1>
-          <p class="leading-relaxed text-xl">
+          <p class="text leading-relaxed">
             {{ $t("home.section5.text") }}
             <br />
             {{ $t("home.section5.text-2") }}
           </p>
-          <div class="w-full md:w-3/5 my-20">
-            <div class="flex flex-col md:flex-row items-center justify-around">
-              <div class="inline-flex mb-24 md:mb-0 flex-col items-center">
-                <img
-                  class="mb-4 h-16 ml-0.5"
-                  src="~/assets/images/cash.svg"
-                  alt=""
-                />
-                <span class="text-lg"> {{ $t("home.section5.cash") }}</span>
+          <div class="my-20 w-full xl:w-4/5">
+            <div class="flex flex-col items-center justify-between sm:flex-row">
+              <div
+                class="mb-10 sm:mb-0 bg-[#F5F5F5] px-5 border lg:px-10 rounded-xl lg:w-[30%] sm:w-[32%] w-[80%] py-8 inline-flex items-center md:mb-0"
+              >
+                <div class="flex items-center w-full">
+                  <img
+                    class="h-16 mr-4"
+                    src="~/assets/images/cash.svg"
+                    alt=""
+                  />
+                  <span class="text-lg"> {{ $t("home.section5.cash") }}</span>
+                </div>
               </div>
-              <div class="inline-flex mb-24 md:mb-0 flex-col items-center">
-                <img
-                  class="mb-4 h-16 ml-0.5"
-                  src="~/assets/images/mobile-money.svg"
-                  alt=""
-                />
-                <span class="text-lg">
-                  {{ $t("home.section5.mobile-money") }}</span
-                >
+              <div
+                class="mb-10 sm:mb-0 bg-[#F5F5F5] px-5 border lg:px-10 rounded-xl lg:w-[30%] sm:w-[32%] w-[80%] py-8 inline-flex items-center md:mb-0"
+              >
+                <div class="flex items-center w-full">
+                  <img
+                    class="h-16 mr-4"
+                    src="~/assets/images/mobile-money.svg"
+                    alt=""
+                  />
+                  <span class="text-lg">
+                    {{ $t("home.section5.mobile-money") }}</span
+                  >
+                </div>
               </div>
-              <div class="inline-flex flex-col items-center">
-                <img
-                  class="mb-4 h-16 ml-0.5"
-                  src="~/assets/images/bank.svg"
-                  alt=""
-                />
-                <span id="how-it-works" class="text-lg class">
-                  {{ $t("home.section5.bank") }}</span
-                >
+              <div
+                class="bg-[#F5F5F5] px-5 border lg:px-10 sm: rounded-xl lg:w-[30%] sm:w-[32%] w-[80%] py-8 inline-flex items-center md:mb-0"
+              >
+                <div class="flex items-center w-full">
+                  <img
+                    class="h-16 mr-4"
+                    src="~/assets/images/bank.svg"
+                    alt=""
+                  />
+                  <span class="text-lg"> {{ $t("home.section5.bank") }}</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div
-          class="bg-[url('/assets/images/pattern.svg')] relative rounded-b-xl pt-24 pb-12"
+          class="relative bg-[url('/assets/images/angle.svg')] bg-[#F5F5F5] rounded-[20px] border-red-700 mt-24 pb-12"
         >
           <div
-            class="hands h-[30rem] absolute bottom-0 left-0 flex justify-center w-full"
+            class="hands absolute bottom-0 left-0 flex h-[30rem] w-full justify-center"
           >
-            <img class="" src="~/assets/images/image.png" alt="" />
+            <img
+              class="hidden md:block"
+              src="~/assets/images/image.png"
+              alt=""
+            />
           </div>
-          <div id="how-it-works" class="flex relative flex-col">
-            <h1
-              class="font-heading text-center text-4xl md:text-6xl mb-7 text-white"
-            >
+          <div
+            id="how-it-works"
+            class="relative text-black flex flex-col pt-24 rounded-20px]"
+          >
+            <h1 class="mb-7 text-center font-heading text-4xl md:text-6xl">
               {{ $t("home.section5.how-it-works.name") }}
             </h1>
             <div class="flex flex-col md:flex-row">
               <div class="w-full md:w-1/2">
-                <div class="md:block flex flex-col items-center">
-                  <div class="md:ml-[10rem] lg:ml-[5rem] mb-8 md:mb-24">
+                <div class="flex flex-col text-white items-center md:block">
+                  <div class="mb-8 md:ml-[4rem] md:mb-24 lg:ml-[5rem]">
                     <div
-                      class="bg-white w-80 inline-block rounded-lg px-6 py-4"
+                      class="inline-block bg-black w-80 rounded-lg px-6 py-4"
                     >
-                      <h1 class="font-bold text-purple text-lg mb-4">
+                      <h1 class="mb-4 text-lg font-bold text-[#F67335]">
                         {{ $t("home.section5.how-it-works.step-1.name") }}
                       </h1>
-                      <p class="mb-4">
-                        {{ $t("home.section5.how-it-works.step-1.text") }}
-                      </p>
+                      <div class="inline-flex flex-col mb-4" v-html="$t('home.section5.how-it-works.step-1.text')"></div>
                     </div>
                   </div>
-                  <div class="md:ml-16 mb-8">
+                  <div class="mb-8 md:ml-16">
                     <div
-                      class="bg-white w-80 inline-block rounded-lg px-6 md:pr-10 py-4"
+                      class="inline-block w-80 rounded-lg bg-black px-6 py-4 md:pr-10"
                     >
-                      <h1 class="font-bold text-purple text-lg mb-4">
+                      <h1 class="mb-4 text-lg font-bold text-[#F67335]">
                         {{ $t("home.section5.how-it-works.step-2.name") }}
                       </h1>
-                      <p
-                        v-html="$t('home.section5.how-it-works.step-2.text')"
-                      ></p>
+                      <div class="inline-flex flex-col" v-html="$t('home.section5.how-it-works.step-2.text')">
+                      </div>
+
                     </div>
                   </div>
                 </div>
               </div>
               <div class="w-full md:w-1/2">
                 <div class="flex justify-center">
-                  <div class="bg-white inline-block rounded-lg px-6 py-4">
-                    <h1 class="font-bold text-lg text-purple mb-4">
+                  <div
+                    class="inline-block rounded-lg bg-black text-white md:ml-[5.5rem] px-6 py-4"
+                  >
+                    <h1 class="mb-4 text-lg font-bold text-[#F67335]">
                       {{ $t("home.section5.how-it-works.step-3.name") }}
                     </h1>
-                    <p class="mb-3">Your recipient receives money:</p>
+                    <p class="mb-3">{{ $t("home.section5.how-it-works.step-3.one") }}</p>
                     <div>
                       <div class="mb-5">
                         <div class="inline-flex items-center">
@@ -284,7 +318,7 @@
                               )
                             }}:
                           </h1>
-                          <div class="flags inline-flex w-3/5 items-center">
+                          <div class="inline-flex w-3/5 items-center">
                             <div>
                               <img
                                 class="ml-3 h-4"
@@ -330,7 +364,7 @@
                             <div>
                               <img
                                 class="ml-3 h-4"
-                                src="~/assets/images/g-bissau.svg"
+                                src="~/assets/images/guineabissau.svg"
                                 alt=""
                               />
                             </div>
@@ -345,7 +379,7 @@
                           </div>
                         </div>
                         <div class="block">
-                          <div class="inline-flex ml-2 mt-2 flex-col">
+                          <div class="ml-2 mt-2 inline-flex flex-col">
                             <span
                               >&#x2022;
                               {{
@@ -377,7 +411,7 @@
                           <div class="flags inline-flex items-center">
                             <span>
                               <img
-                                class="ml-3 h-4"
+                                class="ml-3 h-4 mt-10"
                                 src="~/assets/images/canada.svg"
                                 alt=""
                               />
@@ -385,12 +419,12 @@
                           </div>
                         </div>
                         <div class="block">
-                          <div class="inline-flex ml-2 mt-2 flex-col">
+                          <div class="ml-2 mt-2 inline-flex flex-col">
                             <span
                               >&#x2022;
                               {{
                                 $t(
-                                  "home.section5.how-it-works.step-3.cad-in.interface"
+                                  "home.section5.how-it-works.step-3.cad-in.interac"
                                 )
                               }}</span
                             >
@@ -411,29 +445,32 @@
       </div>
     </section>
     <section class="data-privacy pb-28 md:py-32">
-      <div class="flex flex-col items-center">
-        <h1
-          class="font-heading text-4xl md:text-6xl mb-8 text-center leading-snug"
-          v-html="$t('home.section6.how-we.name')"
-        ></h1>
-        <p class="text-center text-lg max-w-[45rem] leading-normal">
-          {{ $t("home.section6.how-we.text") }}
-        </p>
+      <div class="flex items-center text-center md:text-left justify-center">
+        <div
+          class="max-w-5xl inline-flex md:flex-row flex-col justify-center items-center w-full"
+        >
+          <img src="~/assets/images/shield.png" class="mr-0 w-1/4 mb-5" />
+          <span class="md:ml-36">
+            <h1
+              class="mb-8 font-heading text-4xl leading-snug md:text-6xl"
+              v-html="$t('home.section6.how-we.name')"
+            ></h1>
+            <span class="max-w-[45rem] text leading-normal">
+              {{ $t("home.section6.how-we.text") }}
+            </span>
+          </span>
+        </div>
       </div>
     </section>
-    <section class="data-privacy mb-16 md:py-32">
+    <section class="faq mb-8">
       <div class="flex flex-col items-center">
         <h1
-          class="font-heading text-4xl md:text-6xl mb-8 text-center leading-snug"
+          class="mb-8 text-center font-heading text-4xl leading-snug md:text-6xl"
         >
-          Frequently Asked Questions
+          {{ $t("home.faq-header") }}
         </h1>
 
         <div class="w-full">
-          <a
-            href="https://www.un.org/sustainabledevelopment/inequality/"
-            target="_blank"
-          ></a>
           <GlobalAccordionList>
             <GlobalAccordionItem
               :item-id="id + 1"
@@ -444,12 +481,49 @@
         </div>
       </div>
     </section>
+    <CookieConsent :show="show" v-if="show"/>
   </main>
 </template>
+
 <script setup>
-import { reactive } from "vue";
+import { reactive, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
+import CountryComponent from "~/components/CountryComponent.vue";
+import CookieConsent from "~/components/CookieConsent.vue";
+import qrBg from "assets/images/unlock-bg.svg";
+
 const { t } = useI18n();
+
+
+
+const showModal = localStorage.getItem('show')
+const show = ref(false)
+
+const showCookieConsentModal = () => {
+  if(!showModal){
+    show.value = true
+    document.body.classList.add('show-modal')
+  }
+
+  // showModal.value = true
+  if(showModal){
+    show.value = false
+    document.body.classList.remove('show-modal')
+  }
+};
+
+
+onMounted(() => {
+  setTimeout(() => {
+    showCookieConsentModal()
+  }, 2000)
+
+});
+
+
+
+
+
 
 const faqs = reactive([
   {
@@ -477,4 +551,70 @@ const faqs = reactive([
     answers: t("home.faq.5.answers"),
   },
 ]);
+
+const countries = reactive([
+  {
+    name: "benin",
+    flag: "benin",
+    country: "benin"
+  },
+  {
+    name: "Burkina Faso",
+    flag: "burkinafaso",
+    country: "burkina_faso"
+  },
+  {
+    name: "Cote d'voire",
+    flag: "cotedivoire",
+    country: "cote_d_ivoire"
+  },
+  {
+    name: "mali",
+    flag: "mali",
+    country: "mali"
+  },
+  {
+    name: "togo",
+    flag: "togo",
+    country: "togo"
+  },
+  {
+    name: "niger",
+    flag: "niger",
+    country: "niger"
+  },
+  {
+    name: "Guinea Bissau",
+    flag: "guineabissau",
+    country: "guinea_bissau"
+  },
+  {
+    name: "senegal",
+    flag: "senegal",
+    country: "senegal"
+  },
+  {
+    name: "canada",
+    flag: "canada",
+  },
+]);
 </script>
+
+<style lang="scss">
+.show-modal  {
+  overflow-y: hidden !important; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+
+
+.flags {
+  span {
+    margin-right: 15px;
+    margin-bottom: 40px;
+  }
+}
+
+// .people {
+// }
+</style>

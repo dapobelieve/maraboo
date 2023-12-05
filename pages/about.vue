@@ -1,77 +1,138 @@
 <template>
-  <main class="container mx-auto px-2">
-    <section class="py-12 md:pb-32 pt-24">
-      <div class="flex flex-col items-center">
-        <h1 class="text-purple text-3xl mb-8 font-extrabold">
+  <section class="md:pb-32">
+    <div class="flex flex-col lg:flex-row items-center">
+      <div class="lg:w-2/4">
+        <h1 class="text-purple mb-8 md:mb-14 text-xl font-extrabold">
           {{ $t("about-us.name") }}
         </h1>
-        <h1
-          class="font-heading text-4xl md:text-6xl mb-8 max-w-[65rem] text-center leading-snug"
-        >
+        <h1 class="font-heading text-4xl md:text-5xl mb-8 pr-10">
           {{ $t("about-us.caption") }}
         </h1>
-        <p class="text-center text-lg max-w-[39rem] leading-normal">
+        <p class="text-lg max-w-[39rem] leading-normal pr-10">
           <span v-html="$t('about-us.text')"> </span>
         </p>
+
+        <!--        lopay-->
       </div>
-      <div class="mt-16 text-center">
-        <GlobalMore> {{ $t("about-us.read-more") }} </GlobalMore>
+      <div class="flex justify-center md:w-2/4">
+        <img
+          class="lg:mr-[calc(-50vw+98%)] mt-12 w-full"
+          src="~/assets/images/shadow.svg"
+          alt=""
+        />
       </div>
-    </section>
-    <section class="countries py-12 md:py-32">
-      <div class="md:flex">
-        <div class="w-full md:w-3/5">
-          <div class="flex text-left flex-col px-4 h-full">
-            <h1
-              class="font-heading text-4xl max-w-[45rem] md:text-6xl leading-none mb-4 md:mb-8"
-              v-html="$t('about-us.section-2.caption')"
-            ></h1>
-            <div class="md text-xl md:w-[30rem] text-left mb-8 leading-relaxed">
-              {{ $t("about-us.section-2.text") }}
-            </div>
-          </div>
-        </div>
-        <div class="md:w-2/5 flex mr-12">
-          <div>
-            <img
-              class="ml-3 h-96s"
-              src="~/assets/images/mother-child.svg"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="countries py-12 md:py-32">
-      <div class="md:flex">
+    </div>
+  </section>
+  <section class="countries py-12 md:py-0">
+    <div class="md:flex">
+      <div class="w-full">
         <div
-          class="md:w-2/5 hidden mb-8 md:mb-0 md:flex justify-center md:mr-12"
+          style="background: linear-gradient(180deg, #bebafc 0%, #a7b8fa 100%)"
+          class="flex content-center px-6 lg:px-32 lg:py-28 rounded-[15px] pt-[30px] text-center text-white flex-col h-full"
         >
-          <div>
-            <img class="ml-3" src="~/assets/images/man-laugh.svg" alt="" />
-          </div>
-        </div>
-        <div class="md:w-3/5 mb-8 md:mb-0">
-          <div class="flex flex-col justify-center px-4 h-full">
-            <h1
-              class="font-heading md:text-left text-4xl max-w-[45rem] md:text-6xl leading-none mb-8 md:mb-16"
-            >
-              {{ $t("about-us.section-2.we-believe") }}
-            </h1>
-            <p
-              class="md text-xl md:mb-8 text-justify leading-relaxed max-w-[34rem]"
-              v-html="$t('about-us.section-2.two')"
-            ></p>
-          </div>
-        </div>
-        <div
-          class="md:w-2/5 md:hidden mb-8 md:mb-0 flex justify-center md:mr-12"
-        >
-          <div>
-            <img class="ml-3" src="~/assets/images/man-laugh.svg" alt="" />
+          <h1
+            class="font-heading text-3xl md:text-5xl leading-9 mb-4 md:mb-8"
+            v-html="$t('about-us.section-2.caption')"
+          ></h1>
+          <div v-html="$t('home.section1.left.center.l3')" class="md:px-24 lg:px-36 text-base mb-8 leading-relaxed">
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+  <section class="countries py-12 md:pt-28">
+    <div class="lg:flex">
+      <div class="lg:w-2/4 mb-16 md:mb-0">
+        <div class="flex flex-col justify-center px-4 h-full">
+          <h1
+            class="font-heading md:text-center lg:text-left text-3xl max-w-[45rem] lg:text-6xl leading-none mb-6 lg:mb-5"
+          >
+            {{ $t("about-us.section-2.we-believe") }}
+          </h1>
+          <p
+            class="font-sans md:text-center lg:text-left text-base md:mb-8 text-justify leading-relaxed lg:max-w-[34rem]"
+            v-html="$t('about-us.section-2.two')"
+          ></p>
+        </div>
+      </div>
+      <div class="lg:w-2/4 mb-8 md:mb-0 flex justify-center">
+        <img
+          class="xl:h-[35rem] h-[27em]"
+          src="~/assets/images/man-laugh.svg"
+          alt=""
+        />
+      </div>
+    </div>
+  </section>
+  <section class="md:mt-[16rem]">
+    <h1
+      class="font-heading text-3xl max-w-[45rem] md:text-6xl leading-9 mb-4 md:mb-8"
+      v-html="$t('about-us.section-2.team')"
+    ></h1>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div v-for="team_member in teams" :key="team_member.id">
+        <Team :team="team_member" />
+      </div>
+    </div>
+  </section>
 </template>
+
+<script setup>
+const teams = [
+  {
+    id: 1,
+    img: "/team/Cheick.jpg",
+    name: "Cheick Ouedraogo",
+    job: "Founder - CEO",
+  },
+  {
+    id: 2,
+    img: "/team/Lekan.jpg",
+    name: "Olalekan Adebari",
+    job: "CTO",
+  },
+  {
+    id: 3,
+    img: "/team/Dela.jpg",
+    name: "Dela Alipui",
+    job: "Head of Product Design",
+  },
+  {
+    id: 4,
+    img: "/team/Nick.jpg",
+    name: "Nick Brisbois",
+    job: "Backend Lead",
+  },
+  {
+    id: 5,
+    img: "/team/Eric.jpg",
+    name: "Eric Lekwa",
+    job: "Lead Mobile Engineer",
+  },
+  {
+    id: 6,
+    img: "/team/Dapo.jpg",
+    name: "Abimbola Oladapo",
+    job: "Full Stack Engineer",
+  },
+  {
+    id: 7,
+    img: "/team/Brianna.jpg",
+    name: "Brianna Megrath",
+    job: "Graphic Designer",
+  },
+  {
+    id: 8,
+    img: "/team/Alex.jpg",
+    name: "Alex Pang",
+    job: "Marketing",
+  },
+  {
+    id: 9,
+    img: "/team/Valiant.jpg",
+    name: "Valiant-Joshua Bolorunduro",
+    job: "Backend Developer",
+  },
+];
+</script>
