@@ -50,6 +50,7 @@
             <NuxtLink v-else :to="$route.path.includes('fr') ? '/fr#how-it-works' : '/#how-it-works'">
               {{ $t("home.nav.how-it-works") }}
             </NuxtLink>
+            <!-- main-v2   -->
           </div>
 
           <div
