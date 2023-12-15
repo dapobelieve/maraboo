@@ -120,14 +120,14 @@
         class="bg-[#BEBAFC] rounded-[30px] flex justify-center border px-6 py-8 lg:px-16 lg:py-36"
         :style="{ backgroundImage: `url(${qrBg})` }"
       >
-        <div class="max-w-[90rem] w-full md:space-y-0 space-y-8 md:flex">
+        <div class="max-w-[90rem] lg:relative w-full md:space-y-0 space-y-8 md:flex">
           <div class="md:w-1/2 text-white flex flex-col justify-between">
             <div>
               <h1 v-html="$t('home.calculator.caption')" class="font-heading drop-shadow-lg text-4xl mb-6 md:text-5xl"> </h1>
               <p v-html="$t('from-waemu.section-1.text')" class="drop-shadow-lg mb-8 md:mb-0">  
               </p>
             </div>
-            <div class="inline-flex">
+            <div class="inline-flex lg:absolute lg:top-80">
               <img
                 class="md:h-56 h-32 mr-5 drop-shadow-lg"
                 src="~/assets/images/qr.svg"
@@ -481,15 +481,49 @@
         </div>
       </div>
     </section>
+    <CookieConsent :show="show" v-if="show"/>
   </main>
 </template>
+
 <script setup>
-import { reactive, onMounted } from "vue";
+import { reactive, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import CountryComponent from "~/components/CountryComponent.vue";
+import CookieConsent from "~/components/CookieConsent.vue";
+import qrBg from "assets/images/unlock-bg.svg";
+
 const { t } = useI18n();
 
-import qrBg from "assets/images/unlock-bg.svg";
+
+
+const showModal = localStorage.getItem('show')
+const show = ref(false)
+
+const showCookieConsentModal = () => {
+  if(!showModal){
+    show.value = true
+    document.body.classList.add('show-modal')
+  }
+
+  // showModal.value = true
+  if(showModal){
+    show.value = false
+    document.body.classList.remove('show-modal')
+  }
+};
+
+
+onMounted(() => {
+  setTimeout(() => {
+    showCookieConsentModal()
+  }, 2000)
+
+});
+
+
+
+
+
 
 const faqs = reactive([
   {
@@ -522,34 +556,42 @@ const countries = reactive([
   {
     name: "benin",
     flag: "benin",
+    country: "benin"
   },
   {
     name: "Burkina Faso",
     flag: "burkinafaso",
+    country: "burkina_faso"
   },
   {
     name: "Cote d'voire",
     flag: "cotedivoire",
+    country: "cote_d_ivoire"
   },
   {
     name: "mali",
     flag: "mali",
+    country: "mali"
   },
   {
     name: "togo",
     flag: "togo",
+    country: "togo"
   },
   {
     name: "niger",
     flag: "niger",
+    country: "niger"
   },
   {
     name: "Guinea Bissau",
     flag: "guineabissau",
+    country: "guinea_bissau"
   },
   {
     name: "senegal",
     flag: "senegal",
+    country: "senegal"
   },
   {
     name: "canada",
@@ -559,6 +601,13 @@ const countries = reactive([
 </script>
 
 <style lang="scss">
+.show-modal  {
+  overflow-y: hidden !important; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+
+
 .flags {
   span {
     margin-right: 15px;
