@@ -36,12 +36,10 @@
         <h1
           class="text-4xl md:text-4xl text-center text-black font-heading mb-8"
         >
-          Add your resume and cover letter
+          {{ $t('careers.resume.title') }}
         </h1>
         <p class="text-center">
-          Upload your resume and cover letter for future consideration, as we
-          may have opportunities that match your skills and experience in the
-          near future.
+          {{ $t('careers.resume.caption') }}
         </p>
         <div class="mt-10 container mx-auto max-w-4xl w-full">
           <FileUploader @fileSelected="data.file = event" class="mb-8" />
@@ -49,7 +47,7 @@
             :disabled="computedButtonState"
             class="rounded-lg px-6 py-3 text-sm font-medium bg-black text-white"
           >
-            Submit
+          {{ $t("careers.submit")  }}
           </button>
         </div>
       </div>

@@ -4,8 +4,11 @@ export default function useApi() {
   const calculate = async (data) => {
     try {
       const res = await axios.get(
-        `https://beta-api.mara.boo/calculator/transaction_calculator`,
+        `https://dev-api.mara.boo/calculator/transaction-calculator`,
         {
+          headers: {
+            "X-Origin": "admin.mara.boo",
+          },
           params: {
             ...data,
           },
@@ -14,13 +17,19 @@ export default function useApi() {
       return res.data;
     } catch (error) {
       console.log(error);
+      throw error;
     }
   };
 
   const exchangeRate = async () => {
     try {
       const res = await axios.get(
-        `https://beta-api.mara.boo/exchange_rates/exchange_rate?currency=XOF`
+        `https://dev-api.mara.boo/exchange_rates/exchange_rate?currency=XOF`,
+        {
+          headers: {
+            "X-Origin": "admin.mara.boo",
+          },
+        }
       );
       return res.data;
     } catch (error) {
@@ -31,9 +40,14 @@ export default function useApi() {
   const waitList = async (data) => {
     try {
       const res = await axios.post(
-        `https://beta-api.mara.boo/waitlist/waitlist`,
+        `https://dev-api.mara.boo/waitlist/waitlist`,
         {
           ...data,
+        },
+        {
+          headers: {
+            "X-Origin": "admin.mara.boo",
+          },
         }
       );
       return res.data;

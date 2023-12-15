@@ -39,7 +39,7 @@
                   </div>
                 </div>
                 <div id="top" class="md:w-1/2">
-                  <Calculator :country="waemu" class="md:ml-auto" />
+                  <Calculator :country="waemu" :storedWaemuCountry="storedWaemuCountry"  class="md:ml-auto" />
                 </div>
               </div>
             </div>
@@ -259,10 +259,19 @@
 </template>
 
 <script setup>
+
+import { useRoute } from "vue-router";
 import { reactive, onMounted } from "vue";
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
-const { waemu } = useRoute().params;
+
+const route = useRoute()
+// route parameter 
+const { waemu } = route.params;
+
+
+// waemu country data stored in localstorage 
+const storedWaemuCountry = localStorage.getItem('waemu')
 
 //  function that looks for a lowercase letter that begins with hyphen(-) and converts the first letter and the match to uppercase
 const capitalizeWords = (str) => {
@@ -308,6 +317,8 @@ const faqs = reactive([
     answers: t("home.faq.5.answers"),
   },
 ]);
+
+// console.log(route.query.country)
 </script>
 
 <style lang="scss" scoped></style>

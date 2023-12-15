@@ -34,10 +34,7 @@
             class="font-heading text-3xl md:text-5xl leading-9 mb-4 md:mb-8"
             v-html="$t('about-us.section-2.caption')"
           ></h1>
-          <div class="md:px-24 lg:px-36 text-base mb-8 leading-relaxed">
-            Did you know that a 10% reduction in transaction fees for sending
-            money in & out of WAEMU country <br />
-            can boost the revenue of regional households by up to 16%?
+          <div v-html="$t('home.section1.left.center.l3')" class="md:px-24 lg:px-36 text-base mb-8 leading-relaxed">
           </div>
         </div>
       </div>
