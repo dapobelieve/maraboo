@@ -87,6 +87,6 @@ jobs:
             whoami
             cd ~/website
             aws ecr get-login-password --region ca-central-1 | docker login --username AWS --password-stdin 739329184067.dkr.ecr.ca-central-1.amazonaws.com
-            docker compose down --rmi all
+            docker compose down rmi all
             docker compose up -d
 #to-main
