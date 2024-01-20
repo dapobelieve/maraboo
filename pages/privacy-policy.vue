@@ -366,9 +366,8 @@
                     Contact information and challenging compliance
                 </h2>
                 <div>
-                    <p class='mb-5'>We welcome your questions, comments, and requests regarding this privacy policy and our privacy practices. Please contact us at: </p>  <p class='mb-5'><strong>[Cheick Ouedraogo]</strong> </p>   
-                    <p class='mb-5'><strong>[info@mara.boo] </strong> </p>   
-                    <p class='mb-5'><strong>[and/or via our toll-free number: </strong> <br />54348658</p>
+                    <p class='mb-5'>We welcome your questions, comments, and requests regarding this privacy policy and our privacy practices. Please contact us at: </p>    
+                    <p class='mb-5'><strong>info@mara.boo </strong> </p>   
                 </div>
 
             </div>
