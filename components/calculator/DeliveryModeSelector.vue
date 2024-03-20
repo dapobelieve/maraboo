@@ -156,7 +156,7 @@ const modeToDisplay = computed(() => {
       return {
         name: mode.name.split('_').join(' '),
         slug: mode.name,
-        fee: `${mode.fee}${mode.fee_unit.toUpperCase()} Fee`,
+        fee: `${mode.fee}${mode.fee_unit?.toUpperCase()} Fee`,
         estimate: "within minutes",
         details: "instantly send money to any ecobank account",
         method: mode.name,

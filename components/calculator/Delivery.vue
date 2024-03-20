@@ -24,9 +24,9 @@
           <span class="space-x-2">
             <em class="text-warning">Delivery by</em>
             <template v-if="props.delivery.mode.name">
-              <span class="font-bold capitalize text-emphasis-900">{{
-                props.delivery.mode.name
-              }}</span>
+              <span class="font-bold capitalize text-emphasis-900">
+                {{ props.delivery.mode.name }}
+              </span>
             </template>
             <span v-else class="text-sm font-bold text-emphasis-100"
               >Select Delivery mode</span
