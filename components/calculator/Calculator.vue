@@ -15,7 +15,6 @@
             @step="openConfigDrawer('currency')"
           />
         </div>
-        <small>{{state.txn}}</small>
         <div class="inputs space-y-4">
           <div
             class="send relative inline-flex w-full items-center rounded-[28px] bg-[#FFFFFF0F] p-4"
