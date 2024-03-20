@@ -1,0 +1,262 @@
+{
+  "home": {
+    "nav": {
+      "home": "",
+      "how-it-works": "Fonctionnalités",
+      "company": {
+        "name": "Entreprise",
+        "about-us": "À propos de nous",
+        "contact-us": "Contactez-nous",
+        "careers": "Carrières",
+        "legal": "Juridique"
+      },
+      "wait-list": "Inscrivez-vous sur la liste d'attente"
+    },
+    "section1": {
+      "left": {
+        "top": {
+          "left": "Bientôt disponible ",
+          "right": "Recevez une notification dès notre lancement!"
+        },
+        "center": {
+          "l1": "Des transferts rapides à l'intérieur et à l’extérieur de l'UEMOA ",
+          "l2": "au taux de change réel !",
+          "l3": "Saviez-vous qu'une réduction de 10 % des frais  de  transaction pour <br /> les transferts internationaux peut augmenter jusqu'à 16 % des <br /> revenus des ménages de la région ?"
+        },
+        "bottom": "En savoir plus sur le Maraboo"
+      },
+      "right": {
+        "you-send": "Vous envoyez",
+        "xchg-rate": "au taux de change réel !",
+        "select-method": "Sélectionnez le mode de livraison:",
+        "receipt-gets": "Votre destinataire reçoit:"
+      }
+    },
+    "section2": {
+      "countries": "Pays que nous soutenons",
+      "text": "Maraboo est disponible dans 9 pays et offre des transactions en 2 devises pour faciliter vos transactions <br /> dans le monde entier. Nous ajouterons prochainement de nouveaux marchés et de nouvelles devises pour mieux répondre à vos besoins."
+    },
+    "calculator": {
+      "caption": "<span> Découvrez le monde avec <br class='hidden md:block' />XOF : votre passeport pour des transferts transfrontaliers fluides. </span>"
+    },
+    "section3": {
+      "super-charge": "Augmentez votre pouvoir d'achat à l’étranger!",
+      "text": "Vous pouvez maintenant envoyer jusqu'à 9 900 dollars canadiens toutes les 24 <br /> heures au Canada et dans les pays de l'UEMOA au taux de change réel.<br />",
+      "text-2": "D'autres pays seront ajoutés peu après le lancement, restez à l’écoute."
+    },
+    "section4": {
+      "convert-currency": "Passez d’une devise <br class=\"hidden md:block\" />  à une autre.",
+      "text": "Transférez facilement des fonds à l'intérieur et à l'extérieur des pays de l'UEMOA en trois étapes simples. Nos services sont jusqu'à 3 fois moins chers que les alternatives les plus performantes.les plus performantes"
+    },
+    "section5": {
+      "we-fast": "Nous sommes vraiment rapides!",
+      "text": "Nos transferts sont exécutés en quelques minutes.",
+      "text-2": "Nos options de décaissement sont les suivantes:",
+      "cash": "Espèces",
+      "mobile-money": "Argent mobile",
+      "bank": "Banque",
+      "how-it-works": {
+        "name": "Comment ca marche",
+        "step-1": {
+          "name": "Étape 1",
+          "text": "<span>&#x2022; Créer un compte </span>  <span>&#x2022; Obtenez un devis</span>  <span>&#x2022; Vérifiez votre identité (une fois)</span>  <span>&#x2022; Sélectionnez le mode de livraison</span>"
+        },
+        "step-2": {
+          "name": "Étape 2",
+          "text": "<span>&#x2022; Saisir les détails des destinataires </span>  <span>&#x2022; Vérifier les détails de la transaction</span>  <span>&#x2022; Payez dans n'importe quelle devise que nous prenons en charge (XOF ou CAD)</span>"
+        },
+        "step-3": {
+          "name": "Étape 3",
+          "one": "Le destinataire reçoit de l'argent:",
+          "xof-in": {
+            "name": "CFA au",
+            "bank-transfer": "Par Virement bancaire (jusqu'à 48h)",
+            "instant": "Par Retrait au guichet (immédiat)",
+            "mobile": "Argent mobile",
+            "ecobank": "Virement Ecobank (instantané)!"
+          },
+          "cad-in": {
+            "name": "CFA au",
+            "interac": "e-transfert (instantané)"
+          },
+          "text": "Nous ajouterons bientôt d'autres pays, <br /> restez à l'écoute"
+        }
+      }
+    },
+    "section6": {
+      "how-we": {
+        "name": "Comment nous protégeons vos <br /> données personnelles",
+        "text": "Vos informations privées sont protégées par les technologies les plus sûres conformément aux réglementations applicables."
+      }
+    },
+    "faq": [
+      {
+        "question": "Que puis-je faire avec Maraboo ?",
+        "answers":
+          "En commençant par le Canada, vous pouvez envoyer de l'argent rapidement à l'interbancaire à destination et en provenance des pays de l'UEMOA. Nous ajouterons les États-Unis et l'UE peu après le lancement, puis le reste du monde."
+      },
+      {
+        "question": "Quand Maraboo sera-t-il lancé ?",
+        "answers":
+          "<p>Quelque part en 2023. Vous voulez en savoir plus ? Inscrivez-vous sur notre liste d'attente pour rester informé de notre lancement !</p>"
+      },
+      {
+        "question": "Comment puis-je maximiser mon pouvoir d'achat transfrontalier avec Maraboo ?",
+        "answers": "<ul class='list-disc p-0' style='list-style-type: disc !important;'><li>Téléchargez l'application depuis les magasins d'applications IOS et Android</li><li>Obtenez un devis et fournissez les détails du destinataire</li><li>Effectuez votre vérification d'identité unique</li><li>Payez votre transaction dans votre devise de choix</li><li>Recevez instantanément plus !</li></ul>"
+      },
+      {
+        "question": "Combien puis-je envoyer par jour ?",
+        "answers": "<p>Vous pouvez envoyer jusqu'à 9 900 $ toutes les 24 heures à destination et en provenance de n'importe quel pays de l'UEMOA</p>"
+      },
+      {
+        "question": "À quelle vitesse puis-je transférer de l'argent à l'interbancaire en entrée et en sortie d'Afrique ?",
+        "answers": "La grande majorité des transferts sont effectués en quelques minutes"
+      },
+
+      {
+        "question": "Combien coûte l'envoi d'un transfert ?",
+        "answers": "<p class='mb-4'><h class='font-bold'>Envoyer de l'argent vers l'Afrique</h> - Nous répondons aujourd'hui <a class='text-blue-600' target='_blank' href='https://www.un.org/sustainabledevelopment/inequality/'>l'objectif de développement social des Nations unies #10,</a>  en réduisant le coût de l'envoi d'argent vers l'Afrique à un coût moyen de 3 % ou moins</p><p><h class='font-bold'>Envoyer de l'argent hors d'Afrique</h> - Nous ne rendons pas seulement l'envoi d'argent hors d'Afrique jusqu'à 3 fois moins cher que les solutions de référence actuelles, mais nous rendons également les transferts hors d'Afrique rapides et accessibles à tous en éliminant les formalités administratives.</p>"
+
+
+      }
+    ],
+    "faq-header": "Foire aux Questions"
+  },
+  "about-us": {
+    "name": "À propos de Marabo",
+    "caption": "Nous aspirons à bâtir un système financier sans frontières pour connecter les ressortissants d’Afrique de l'Ouest à travers le monde.",
+    "text": "<span class='text-purple'>Présentation de Maraboo</span>, une FinTech ouest-africaine qui propose des solutions financières innovantes, responsables et inclusives qui sont conçues pour améliorer la qualité de vie des populations de cette région.",
+    "read-more": "En savoir plus",
+    "section-2": {
+      "caption": "Notre mission principale est de rendre les transferts à l’intérieur et à l’extérieur des pays de l'UEMOA <span class='text-purple'>jusqu'à 3 fois moins chers!</span>",
+      "text": "Saviez-vous qu'une réduction de 10 % des frais de transaction pour les transferts internationaux peut augmenter jusqu'à 16 % des revenus des ménages de la région ?",
+      "we-believe": "Nous pensons que les transferts de fonds doivent être rapides, peu coûteux et avoir un impact social important.",
+      "two": "D'une pierre deux coups - nous appliquons le taux de change réel à toutes nos transactions afin de vous faire économiser de l'argent et de concrétiser dès<span class=\"text-purple\"> aujourd'hui l'objectif de développement social des Nations Unies consistant à</span> réduire de manière significative le coût des envois de fonds d'ici à 2030 !",
+      "team": "Rencontrer l'équipe"
+    }
+  },
+  "legal": {
+    "name": "Mentions légales",
+    "policy": "Politique de confidentialité  Conditions d'utilisation\n",
+    "one": "Nous vous remercions de l'intérêt que vous portez à notre prochain lancement.",
+    "two": "Nous travaillons d'arrache-pied pour que tout soit prêt et que nous puissions offrir la meilleure expérience possible à nos clients. Nos documents juridiques sont en cours de finalisation et seront bientôt disponibles.",
+    "three": "En attendant, nous vous invitons à vous inscrire sur notre liste d'attente afin d'être parmi les premiers à être informés de notre lancement. En vous inscrivant sur notre liste d'attente, vous recevrez des mises à jour exclusives sur nos progrès, vous serez les premiers à savoir quand nous serons lancés et vous recevrez des offres spéciales.",
+    "four": "Nous vous remercions de votre patience et de votre soutien. Nous sommes impatients de partager notre produit avec vous!"
+  },
+  "careers": {
+    "join": "Rejoignez notre équipe!",
+    "come-work": "Venez travailler avec nous",
+    "we": "Nous recherchons des personnes formidables pour nous aider à construire!",
+    "view": "Consulter nos offres d'emploi.",
+    "opening": "<div class='w-4/5'><h1 class='font-heading text-4xl  mb-6'>Nos offres d'emploi:</h1>        <div class='max-w-[46rem] text-xl md:mb-8 text-justify leading-relaxed'>          <p class='mb-4'>Nous vous remercions de l'intérêt que vous portez à notre équipe!</p> <p class='mb-4'>Bien que nous n'ayons actuellement aucun poste à pourvoir, nous sommes toujours à la recherche de personnes talentueuses qui partagent nos valeurs et sont passionnées par ce que nous faisons.</p>          <p class='mb-4'>Nous vous encourageons à soumettre votre curriculum vitae et votre lettre de présentation pour examen futur, car nous pourrions avoir des opportunités qui correspondent à vos compétences et à votre expérience dans un proche avenir.</p><p class='mb-20'>Nous nous engageons à examiner attentivement toutes les candidatures et à les conserver dans notre base de données jusqu’à ce qu’une opportunité appropriée se présente. Nous espérons avoir de vos nouvelles et que nous travaillerons ensemble demain !</p><h1 class='text-4xl md:text-2xl text-black font-heading mb-8'>Soumettez votre CV et votre lettre de motivation.         </h1> <p>Envoyez-nous votre CV et votre lettre de motivation pour qu'ils soient pris en considération ultérieurement, car nous pourrions avoir des opportunités correspondant à vos compétences et à votre expérience dans un avenir proche          </p>        </div>      </div>",
+    "resume": {
+      "title": "Ajoutez votre CV et votre lettre de motivation",
+      "caption": "Téléchargez votre CV et votre lettre de motivation pour un examen ultérieur, car nous pourrions avoir des opportunités correspondant à vos compétences et à votre expérience dans un avenir proche."
+    },
+    "submit": "Soumettre"
+  },
+  "from-waemu": {
+    "section-1": {
+      "regulated": {
+        "name": "réglementé",
+        "learn-more": "Apprendre encore plu"
+      },
+      "caption": {
+          "left":"Envoyer de l'argent depuis",
+          "right": "au Canada au taux de change réel!"
+      },
+      "text": "<p>Du local au global en temps réel, Maraboo Magic : Découvrez 3x <br />  Économisez sur les transferts d’argent internationaux vers ou depuis les pays de l’UEMOA !</p>"
+    },
+    "section-2": {
+        "caption": "vers des destinations mondiales, avec une rentabilité 3 fois supérieure",
+        "text": "<p>  Maraboo est le nouveau super pouvoir de votre portefeuille pour les transferts internationaux depuis n'importe quel pays de l'UEMOA. <span class='underline'> Envoyez jusqu'à 9 900 $ par jour au Real Exchange </span> pour payer les factures internationales, les frais de scolarité, les fournisseurs, etc. ! Nous acceptons les paiements XOF par transferts d'argent mobile ou par traitement de votre dos de carte</p>"
+    },
+    "section-3": {
+      "caption": {
+        "left":"Envoyer de l'argent depuis",
+        "right": "au Canada en trois étapes faciles"
+      }
+    },
+    "section-4": {
+      "caption": "Téléchargez l'application mobile Maraboo pour des transferts rapides et faciles !"
+    }
+  },
+  "from-canada": {
+    "section-1": {
+      "caption": {
+          "left":"Envoyez de l'argent du Canada vers",
+          "right": "au taux de change réel !"
+      },
+      "text": "<p>Du local au global en temps réel, Maraboo Magic : Découvrez 3x <br />  Économisez sur les transferts d’argent internationaux vers ou depuis les pays de l’UEMOA !</p>"
+    },
+    "section-2": {
+      "caption": {
+            "left": "Du Canada à",
+            "right": "avec 3 fois la rentabilité"
+      },
+      "text": "<p>  Maraboo est le nouveau super pouvoir de votre portefeuille pour les transferts internationaux depuis n'importe quel pays de l'UEMOA. <span class='underline'> Envoyez jusqu'à 9 900 $ par jour au Real Exchange </span> pour payer les factures internationales, les frais de scolarité, les fournisseurs, etc. ! Nous acceptons les paiements XOF par transferts d'argent mobile ou par traitement de votre dos de carte</p>"
+    },
+    "section-3": {
+      "caption": {
+        "right": "en trois étapes faciles"
+      }
+    }
+    
+  },
+  "qr-scan": "<span>  Scannez le code QR pour <br /> téléchargez l'application</span>",
+  "send-btn": "Envoyez de l'argent maintenant",
+  "calculator": {
+      "send": "Vous envoyez:",
+      "input-placeholder": "Entrer le montant",
+      "exchg-rate": "au taux de change réel!",
+      "receive": "Votre destinataire reçoit :"
+  },
+  "wait-list": {
+    "join": "Rejoignez notre liste d'attente!",
+    "up-to-date": "Pour rester au courant de nos développements et savoir comment tirer le meilleur parti de la plateforme de transferts internationaux de Maraboo.",
+    "mail": "Veuillez entrer votre email",
+    "notify": "Prévenez-moi",
+    "download-title": "<span> Téléchargez l'application <br /> pour les transferts d'argent au-delà des <br /> frontières ! </span>",
+    "coming-soon": "À venir bientôt",
+    "caption": "Soyez averti lorsque nous lançons",
+    "first-name": "Prénom",
+    "last-name": "Nom de famille",
+    "email": "Adresse e-mail",
+    "submit": "Soumettre"
+  },
+  "footer": {
+    "logo-caption": "<span> Une société fintech ouest-africaine proposant des solutions <br /> financières transformatrices, équitables, responsables,<br /> inclusives et conçues pour améliorer la qualité de vie en <br /> Afrique de l'Ouest. </span>",
+    "registered": "Grand Maraboo Technology Limited est enregistrée comme entreprise de services monétaires auprès du Centre d'analyse des opérations et déclarations financières du Canada (CANAFE) sous le numéro d'enregistrement",
+    "contact": "Contactez nous ",
+    "phone": "Téléphone",
+    "email": "E-mail",
+    "address": "Adresse",
+    "socials": "Sociales",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "made-by": "Made in UEMOA par des Africains"
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html,
+body {
+    @apply antialiased font-normal leading-loose bg-[#E3E1EB] text-[#FFFFFFA3];
+    font-family: 'Helvetica Neue', sans-serif ;
+}
+
+/******** Typography ********/
+.display-1 {
+    @apply text-5xl
+}
+
+.display-2 {
+    @apply text-7xl font-bold
+}
+
+.display-3 {
+    @apply text-8xl font-black
+}
+
+
+.text-1 {
+    @apply text-base
+}
+
+.text-2 {
+    @apply text-xl font-bold
+}
+
+.text-3 {
+    font-size: 1.75rem;
+}
+
+
+.text-4 {
+    font-size: 0.8125rem;
+}
