@@ -4,8 +4,8 @@
       <div class="container space-y-12" style="padding-bottom: 0">
         <div class="row flex flex-col items-center space-y-0 md:space-y-20">
           <div class="mb-8 text-center">
-            <h1 class="md:display-3">International Transfers</h1>
-            <h1 class="md:display-3 display-1 mb-10">
+            <h1 class="display-1">International Transfers</h1>
+            <h1 class=" display-1 mb-10">
               Built for UMOA Countries
             </h1>
             <Button class="drop-shadow-2xl">Send Money</Button>
