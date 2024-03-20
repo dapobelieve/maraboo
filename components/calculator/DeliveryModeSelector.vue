@@ -10,7 +10,7 @@
         <li
           @click.exact.stop="modeSelected(mode)"
           v-for="mode in modeToDisplay"
-          class="flex w-full items-center justify-between  space-x-8  px-3.5 py-3"
+          class="flex w-full items-center justify-between select-none space-x-8  px-3 py-3"
           :class="[
               mode.slug === state.selectedMode?.slug ? 'selected' : '',
               !mode.enabled ? 'bg-disable' : ' cursor-pointer']"
@@ -18,7 +18,7 @@
           <a class="flex grow  items-center">
             <div class="w-full max-w-xs">
               <div class="flex items-center space-x-3">
-                <h1 class="text-2 text-emphasis-900">{{ mode.name }}</h1>
+                <h1 class="text-2 shrink-0 capitalize text-emphasis-900">{{ mode.name }}</h1>
                 <span
                   class="-2 shrink-0 rounded-full border border-white p-1 px-2 text-xs"
                   >{{ mode.fee }}</span
@@ -27,8 +27,9 @@
               <div>
                 <em
                   class="text-xs capitalize text-active text-emphasis-900 text-positive"
-                  >estimated time: {{ mode.estimate }}</em
+                  >estimated time: </em
                 >
+<!--                {{ // mode.estimate }}-->
               </div>
               <div>
                 <p class="text-xs" v-html="mode.details"></p>
@@ -149,7 +150,9 @@ const displayText = computed(() => {
 
 const modeToDisplay = computed(() => {
   if (props.config.which === "delivery") {
+
     return props.delivery.country.payout.map(mode => {
+      console.log(mode)
       return {
         name: mode.name.split('_').join(' '),
         slug: mode.name,
@@ -162,6 +165,7 @@ const modeToDisplay = computed(() => {
     })
     }else {
       return props.currency.country.payin.map(mode => {
+        console.log(mode)
         return {
           name: mode.name.split('_').join(' '),
           slug: mode.name,

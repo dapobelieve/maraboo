@@ -15,7 +15,7 @@
               alt=""
               :src="images[props.delivery.country?.flag]"
             />
-            <span class="text-emphasis-900">{{
+            <span class="capitalize text-emphasis-900">{{
               props.delivery.country.name
             }}</span>
           </template>

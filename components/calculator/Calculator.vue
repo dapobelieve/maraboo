@@ -113,6 +113,7 @@
         v-model:mode="state.delivery.mode"
         v-model:config="state.config"
         v-model:delivery="state.delivery"
+        v-model:currency="state.currency"
         @country-selected="
           handleCountryOrDeliveryEvents('country-selected', $event)
         "
@@ -125,6 +126,7 @@
         v-model:mode="state.currency.mode"
         v-model:config="state.config"
         v-model:currency="state.currency"
+        v-model:delivery="state.delivery"
         @country-selected="
           handleCountryOrDeliveryEvents('country-selected', $event)
         "
@@ -284,10 +286,10 @@ function keypressed(event) {
 
 function handleCountryOrDeliveryEvents(event, data) {
   if (event === "country-selected") {
-    state[state.config.which].country = data;
+    state[state.config.which] = { ...state[state.config.which], country: data };
     state.config.tab = "mode";
   } else {
-    state[state.config.which].mode = data;
+    state[state.config.which] = { ...state[state.config.which], mode: data };
     state.config.tab = "country";
     state.config.open = false;
   }
