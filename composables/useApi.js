@@ -5,7 +5,7 @@ const defaultUrl = config.public.baseUrl;
 export default function useApi() {
   const convert = async (data) => {
     try {
-      const res = await axios.get(`calculator/transaction-calculator`, {
+      const res = await axios.get(`${defaultUrl}calculator/transaction-calculator`, {
         headers: {
           "X-Origin": "admin.mara.boo",
         },
