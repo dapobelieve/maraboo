@@ -17,6 +17,7 @@ export default {
     extend: {
       colors: {
         primary: "#5F19F2",
+        disable: "#171717",
         'emphasis': {
           100: "#7A7A7A",
           200: "#B8B8B8",

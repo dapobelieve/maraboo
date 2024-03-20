@@ -10,10 +10,12 @@
         <li
           @click.exact.stop="modeSelected(mode)"
           v-for="mode in modeToDisplay"
-          class="flex w-full items-center justify-between space-x-8 px-3.5 py-3"
-          :class="[mode.slug === state.selectedMode?.slug ? 'selected' : '']"
+          class="flex w-full items-center justify-between  space-x-8  px-3.5 py-3"
+          :class="[
+              mode.slug === state.selectedMode?.slug ? 'selected' : '',
+              !mode.enabled ? 'bg-disable' : ' cursor-pointer']"
         >
-          <a class="flex grow cursor-pointer items-center">
+          <a class="flex grow  items-center">
             <div class="w-full max-w-xs">
               <div class="flex items-center space-x-3">
                 <h1 class="text-2 text-emphasis-900">{{ mode.name }}</h1>
@@ -115,10 +117,13 @@ const state = reactive({
 });
 
 function modeSelected(mode) {
-  state.selectedMode = mode;
-  setTimeout(() => {
-    emits("modeSelected", mode);
-  }, 500);
+  if(mode.enabled) {
+    state.selectedMode = mode;
+    setTimeout(() => {
+      emits("modeSelected", mode);
+    }, 500);
+  }
+
 }
 
 watch(

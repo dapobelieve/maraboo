@@ -127,7 +127,12 @@ const props = defineProps({
   },
   country: {
     type: Object,
-    default: "",
+  },
+  delivery: {
+    type: Object,
+  },
+  currency: {
+    type: Object,
   },
 });
 
@@ -199,14 +204,25 @@ const state = reactive({
       code: "tg",
     },
   ],
-  selectedCountry: null,
+  selectedCountry: {},
 });
 
 function countrySelected(country) {
-  // console.log(props.config)
   if(props.config.which === 'currency') {
     if(!country.payin || !country?.payin.length) { return }
+    if(props.delivery?.country?.code === country.code ){
+      return
+    }
   }
+
+  if(props.config.which === 'delivery') {
+    if(!country.payout || !country?.payout.length) { return }
+    if(props.currency?.country?.code === country.code ){
+      return
+    }
+  }
+
+
   state.selectedCountry = country;
   setTimeout(() => {
     emits("countrySelected", state.selectedCountry);
