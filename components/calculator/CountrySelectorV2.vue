@@ -88,7 +88,7 @@
           @click.exact.stop="countrySelected(country)"
           v-for="country in state.countries.slice(1)"
           v-else
-          class="flex cursor-pointer px-3 py-3"
+          class="flex cursor-pointer  px-3 py-3"
           :class="[
             country.name === state.selectedCountry?.name ? 'selected' : '',
           ]"
@@ -99,7 +99,9 @@
               class="after:content text-2 relative uppercase text-emphasis-900 after:absolute after:right-[-10px] after:top-[13px] after:h-1 after:w-1 after:rounded-full after:bg-emphasis-200"
               >{{ country.currency }}</span
             >
-            <span class="text-2 text-emphasis-100">{{ country.name }}</span>
+            <span class="text-2 select-none text-emphasis-100">{{ country.name }}
+            <small class="select-none" v-if="!country.payin?.length">(Coming Soon)</small>
+            </span>
           </a>
           <img
             class="ml-auto hidden h-6 w-6"
@@ -122,7 +124,6 @@ const props = defineProps({
   },
   config: {
     type: Object,
-    default: "",
   },
   country: {
     type: Object,
@@ -202,6 +203,10 @@ const state = reactive({
 });
 
 function countrySelected(country) {
+  // console.log(props.config)
+  if(props.config.which === 'currency') {
+    if(!country.payin || !country?.payin.length) { return }
+  }
   state.selectedCountry = country;
   setTimeout(() => {
     emits("countrySelected", state.selectedCountry);
@@ -214,7 +219,6 @@ const displayText = computed(() => {
     : "Select the currency you are sending.";
 });
 
-const countryOrCurrencyList = computed(() => {});
 watch(
   () => props.country,
   (newVal) => {
@@ -229,6 +233,16 @@ watch(
   },
   { immediate: true }
 );
+
+onBeforeMount(() => {
+  state.countries.map(country => {
+    let x = props.config.services.find(val => val.country === country.code)
+    country['payin'] = x.payin
+    country['payout'] = x.payout
+  })
+})
+
+
 </script>
 
 <style lang="scss" scoped>

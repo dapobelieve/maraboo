@@ -112,6 +112,7 @@
         v-model:country="state.delivery.country"
         v-model:mode="state.delivery.mode"
         v-model:config="state.config"
+        v-model:delivery="state.delivery"
         @country-selected="
           handleCountryOrDeliveryEvents('country-selected', $event)
         "
@@ -123,6 +124,7 @@
         v-model:country="state.currency.country"
         v-model:mode="state.currency.mode"
         v-model:config="state.config"
+        v-model:currency="state.currency"
         @country-selected="
           handleCountryOrDeliveryEvents('country-selected', $event)
         "
@@ -133,7 +135,7 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
+import {reactive} from "vue";
 import debounce from "lodash.debounce";
 import Currency from "~/components/calculator/Currency.vue";
 import useApi from "~/composables/useApi";
@@ -147,6 +149,7 @@ const state = reactive({
     tab: "country",
     currentComponent: "CountrySelectorV2",
     currentComponentKey: null,
+    services: []
   },
   apiCalling: false,
   rate: "0.00",
@@ -267,8 +270,7 @@ async function exchangeRate() {
 
 async function paymentServices() {
   try {
-    const services = await useApi().paymentServices();
-    console.log(services);
+    state.config.services = await useApi().paymentServices()
   } catch (e) {
     //
   }

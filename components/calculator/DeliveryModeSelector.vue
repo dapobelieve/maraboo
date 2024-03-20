@@ -52,6 +52,12 @@ const props = defineProps({
     type: Object,
     default: "",
   },
+  currency: {
+    type: Object,
+  },
+  delivery: {
+    type: Object,
+  },
   mode: {
     type: Object,
     default: "",
@@ -137,8 +143,31 @@ const displayText = computed(() => {
 });
 
 const modeToDisplay = computed(() => {
-  if (props.config.which === "delivery") return state.modes;
-  return state.sendingModes;
+  if (props.config.which === "delivery") {
+    return props.delivery.country.payout.map(mode => {
+      return {
+        name: mode.name.split('_').join(' '),
+        slug: mode.name,
+        fee: `${mode.fee}${mode.fee_unit.toUpperCase()} Fee`,
+        estimate: "within minutes",
+        details: "instantly send money to any ecobank account",
+        method: mode.name,
+        enabled: mode.enabled
+      }
+    })
+    }else {
+      return props.currency.country.payin.map(mode => {
+        return {
+          name: mode.name.split('_').join(' '),
+          slug: mode.name,
+          fee: `${mode.fee} ${mode.fee_unit.toUpperCase()} Fee`,
+          estimate: "within minutes",
+          details: "instantly send money to any ecobank account",
+          method: mode.name,
+          enabled: mode.enabled
+        }
+      })
+  }
 });
 </script>
 
