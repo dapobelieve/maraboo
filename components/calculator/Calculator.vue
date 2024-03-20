@@ -1,7 +1,7 @@
 <template>
   <div
     id="exchange-rate"
-    class="relative flex h-[652px] space-x-8 overflow-hidden rounded-[40px] bg-black p-4 text-surface-400 md:w-[430px]"
+    class="relative flex h[652px] space-x-8 overflow-hidden rounded-[40px] bg-black p-4 text-surface-400 md:w-[430px]"
   >
     <div class="pop-in" v-if="!state.config.open">
       <div class="space-y-2">
@@ -15,6 +15,7 @@
             @step="openConfigDrawer('currency')"
           />
         </div>
+        <small>{{state.txn}}</small>
         <div class="inputs space-y-4">
           <div
             class="send relative inline-flex w-full items-center rounded-[28px] bg-[#FFFFFF0F] p-4"
@@ -79,7 +80,6 @@
               v-model="computedReceiveAmount"
               @keydown="keypressed"
               @focus="state.txn.mode = 'receive'"
-              disabled
               placeholder="0.00"
             />
             <small class="flex-none text-emphasis-100">XOF</small>
@@ -209,10 +209,12 @@ watch(
   () => state.txn.send,
   debounce(async (newVal, oldVal) => {
     try {
-      // if (state.delivery.country.name && state.currency.country.name) {
-      state.apiCalling = true;
-      await convert(parseFloat(newVal));
-      // }
+      if(state.txn.mode === 'send') {
+        if (state.delivery.country.name && state.currency.country.name  ) {
+          state.apiCalling = true;
+          await convert(parseFloat(newVal));
+        }
+      }
     } catch (e) {
     } finally {
       state.apiCalling = false;
@@ -222,7 +224,19 @@ watch(
 
 watch(
   () => state.txn.receive,
-  (newVal) => {}
+  debounce(async (newVal) => {
+    try {
+      if(state.txn.mode === 'receive') {
+        if (state.delivery.country.name && state.currency.country.name ) {
+          state.apiCalling = true;
+          await convert(parseFloat(newVal));
+        }
+      }
+    } catch (e) {
+    } finally {
+      state.apiCalling = false;
+    }
+  }, DEBOUNCE_DELAY)
 );
 
 watch(
@@ -256,8 +270,12 @@ async function convert(amount) {
       amount: amount,
       mode: state.txn.mode,
     });
-    const { converted, we_convert, our_fee } = res;
-    state.txn.receive = _2dp(converted);
+    const { converted,user_pays, we_convert, our_fee } = res;
+    if(state.txn.mode === 'send') {
+      state.txn.receive = _2dp(converted);
+    } else {
+      state.txn.send = _2dp(user_pays);
+    }
     state.txn.our_fee = _2dp(our_fee);
     state.txn.we_convert = _2dp(we_convert);
   } catch (e) {}

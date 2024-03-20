@@ -152,7 +152,6 @@ const modeToDisplay = computed(() => {
   if (props.config.which === "delivery") {
 
     return props.delivery.country.payout.map(mode => {
-      console.log(mode)
       return {
         name: mode.name.split('_').join(' '),
         slug: mode.name,
@@ -165,7 +164,6 @@ const modeToDisplay = computed(() => {
     })
     }else {
       return props.currency.country.payin.map(mode => {
-        console.log(mode)
         return {
           name: mode.name.split('_').join(' '),
           slug: mode.name,
