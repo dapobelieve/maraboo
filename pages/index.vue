@@ -218,7 +218,7 @@
                   international transactions!
                 </p>
               </Card>
-              <Card class="bg-purple-400" direction="down">
+              <Card class="bg-purple-400" direction="up">
                 <p class="display-1">
                   Did you know that a 10% reduction in transaction fees for
                   sending?

@@ -16,7 +16,7 @@
     />
     <img
       v-else-if="direction === 'up'"
-      class="absolute bottom-0 left-0 w-full"
+      class="absolute top-0 left-0 w-full"
       src="~/assets/images/up.png"
       alt=""
     />
