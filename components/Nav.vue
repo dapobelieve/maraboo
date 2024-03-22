@@ -7,7 +7,9 @@
           <img src="~/assets/images/logo.svg" alt="" />
         </NuxtLink>
         <span class="ml-auto mt-3 inline-flex items-center space-x-6">
-          <NuxtLink to="about" class="text-2 hidden text-black md:block"
+          <NuxtLink
+            to="about"
+            class="text-2 hidden font-medium text-black md:block"
             >Company</NuxtLink
           >
           <button class="rounded-full border border-surface-200 px-6 py-2.5">

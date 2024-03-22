@@ -232,7 +232,7 @@
             <Card class="display-1 flex justify-center bg-accent-200 shadow-md">
               <div class="flex w-full justify-between 2xl:max-w-7xl">
                 <div class="flex w-1/2 flex-col space-y-36">
-                  <h1 class="display-2 grow-1">
+                  <h1 class="display-2 grow-1 hidden md:block">
                     Real Talk <br />
                     from Our <br />
                     Customers
