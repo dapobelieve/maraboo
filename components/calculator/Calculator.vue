@@ -1,30 +1,33 @@
 <template>
   <div
     id="exchange-rate"
-    class="relative flex h[652px] space-x-8 overflow-hidden rounded-[40px] bg-black p-4 text-surface-400 md:w-[430px]"
+    class="h[652px] relative flex space-x-8 overflow-hidden rounded-[40px] bg-black p-4 text-surface-400 md:w-[430px]"
   >
     <div class="pop-in" v-if="!state.config.open">
       <div class="space-y-2">
         <div class="selects space-y-1">
           <Delivery
+            :config="state.config"
             :delivery="state.delivery"
             @step="openConfigDrawer('delivery')"
           />
           <Currency
+            :config="state.config"
             :currency="state.currency"
             @step="openConfigDrawer('currency')"
           />
         </div>
-        <div class="inputs space-y-4">
+        <div class="inputs text space-y-4">
           <div
+            :class="[
+              state.apiCalling ? 'text-emphasis-100' : 'text-emphasis-900',
+            ]"
             class="send relative inline-flex w-full items-center rounded-[28px] bg-[#FFFFFF0F] p-4"
           >
-            <span class="shrink-0 text-xs uppercase text-emphasis-900"
-              >You send</span
-            >
+            <span class="shrink-0 text-xs uppercase">You send</span>
 
             <input
-              class="w-full grow bg-transparent px-2 text-right text-2xl text-emphasis-900 outline-none"
+              class="w-full grow bg-transparent px-2 text-right text-2xl outline-none"
               v-model="computedSendAmount"
               @keydown="keypressed"
               @focus="state.txn.mode = 'send'"
@@ -69,13 +72,16 @@
             </div>
           </div>
           <div
+            :class="[
+              state.apiCalling ? 'text-emphasis-100' : 'text-emphasis-900',
+            ]"
             class="receive relative flex items-center justify-between rounded-[28px] bg-[#FFFFFF0F] p-4"
           >
-            <div class="flex-none shrink-0 text-xs uppercase text-emphasis-900">
+            <div class="flex-none shrink-0 text-xs uppercase">
               RECIPIENT GETS
             </div>
             <input
-              class="mr-1 w-full bg-transparent text-right text-2xl text-emphasis-900 outline-none"
+              class="mr-1 w-full bg-transparent text-right text-2xl outline-none"
               v-model="computedReceiveAmount"
               @keydown="keypressed"
               @focus="state.txn.mode = 'receive'"
@@ -136,7 +142,7 @@
 </template>
 
 <script setup>
-import {reactive} from "vue";
+import { reactive } from "vue";
 import debounce from "lodash.debounce";
 import Currency from "~/components/calculator/Currency.vue";
 import useApi from "~/composables/useApi";
@@ -150,7 +156,7 @@ const state = reactive({
     tab: "country",
     currentComponent: "CountrySelectorV2",
     currentComponentKey: null,
-    services: []
+    services: [],
   },
   apiCalling: false,
   rate: "0.00",
@@ -208,15 +214,13 @@ watch(
   () => state.txn.send,
   debounce(async (newVal, oldVal) => {
     try {
-      if(state.txn.mode === 'send') {
-        if (state.delivery.country.name && state.currency.country.name  ) {
-          state.apiCalling = true;
+      if (state.txn.mode === "send") {
+        if (state.delivery.country.name && state.currency.country.name) {
           await convert(parseFloat(newVal));
         }
       }
     } catch (e) {
     } finally {
-      state.apiCalling = false;
     }
   }, DEBOUNCE_DELAY)
 );
@@ -225,15 +229,13 @@ watch(
   () => state.txn.receive,
   debounce(async (newVal) => {
     try {
-      if(state.txn.mode === 'receive') {
-        if (state.delivery.country.name && state.currency.country.name ) {
-          state.apiCalling = true;
+      if (state.txn.mode === "receive") {
+        if (state.delivery.country.name && state.currency.country.name) {
           await convert(parseFloat(newVal));
         }
       }
     } catch (e) {
     } finally {
-      state.apiCalling = false;
     }
   }, DEBOUNCE_DELAY)
 );
@@ -250,6 +252,32 @@ watch(
   { immediate: true }
 );
 
+watch(
+  [() => state.delivery, () => state.currency],
+  async (
+    [newDeliveryVal, newCurrencyVal],
+    [oldDeliveryVal, oldCurrencyVal]
+  ) => {
+    const hasChanged =
+      JSON.stringify(newDeliveryVal) !== JSON.stringify(oldDeliveryVal) ||
+      JSON.stringify(newCurrencyVal) !== JSON.stringify(oldCurrencyVal);
+
+    const isValidDelivery =
+      newDeliveryVal.country?.name && newDeliveryVal.mode?.name;
+    const isValidCurrency =
+      newCurrencyVal.country?.name && newCurrencyVal.mode?.name;
+
+    if (hasChanged && isValidDelivery && isValidCurrency && state.txn.send) {
+      try {
+        await convert(state.txn.send);
+      } catch (error) {
+        console.error("Conversion request failed:", error);
+      }
+    }
+  },
+  { deep: true, immediate: true }
+);
+
 onBeforeMount(async () => {
   await exchangeRate();
   await paymentServices();
@@ -260,6 +288,7 @@ function _2dp(_number = 0) {
 }
 
 async function convert(amount) {
+  state.apiCalling = true;
   try {
     const res = await useApi().convert({
       payin_method: state.currency.mode.slug,
@@ -269,15 +298,18 @@ async function convert(amount) {
       amount: amount,
       mode: state.txn.mode,
     });
-    const { converted,user_pays, we_convert, our_fee } = res;
-    if(state.txn.mode === 'send') {
+    const { converted, user_pays, we_convert, our_fee } = res;
+    if (state.txn.mode === "send") {
       state.txn.receive = _2dp(converted);
     } else {
       state.txn.send = _2dp(user_pays);
     }
     state.txn.our_fee = _2dp(our_fee);
     state.txn.we_convert = _2dp(we_convert);
-  } catch (e) {}
+  } catch (e) {
+  } finally {
+    state.apiCalling = false;
+  }
 }
 
 async function exchangeRate() {
@@ -289,7 +321,7 @@ async function exchangeRate() {
 
 async function paymentServices() {
   try {
-    state.config.services = await useApi().paymentServices()
+    state.config.services = await useApi().paymentServices();
   } catch (e) {
     //
   }

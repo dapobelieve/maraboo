@@ -1,6 +1,8 @@
 <template>
   <div class="space-y-8 rounded-b-[8px] rounded-t-[28px] bg-[#FFFFFF0F] p-5">
-    <h1 class="uppercase text-emphasis-900">delivery information</h1>
+    <h1 class="text-sm font-medium uppercase text-emphasis-900">
+      delivery information
+    </h1>
     <div class="flex w-full items-center">
       <div class="grow space-y-2">
         <div class="flex items-center space-x-3">
@@ -24,17 +26,19 @@
           <span class="space-x-2">
             <em class="text-warning">Delivery by</em>
             <template v-if="props.delivery.mode.name">
-              <span class="font-bold capitalize text-emphasis-900">
+              <span class="capitalize text-emphasis-900">
                 {{ props.delivery.mode.name }}
               </span>
             </template>
-            <span v-else class="text-sm font-bold text-emphasis-100"
+            <span v-else class="text-sm text-emphasis-100"
               >Select Delivery mode</span
             >
           </span>
         </div>
       </div>
-      <button @click="emits('step')">Change</button>
+      <button :disabled="!config.services?.length" @click="emits('step')">
+        Change
+      </button>
     </div>
   </div>
 </template>
@@ -49,8 +53,19 @@ const props = defineProps({
       mode: {},
     },
   },
+  config: {
+    type: Object,
+  },
 });
 const emits = defineEmits(["step"]);
 
 const { images } = useImages();
 </script>
+<style scoped lang="scss">
+button {
+  transition: all 0.9ms ease-in-out;
+  &:disabled {
+    @apply text-emphasis-200;
+  }
+}
+</style>

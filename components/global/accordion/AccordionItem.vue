@@ -6,7 +6,7 @@
       :class="[active ? 'border-black' : ' border-white']"
     >
       <div class="accordion-item-header flex items-center justify-between">
-        <h6 class="mr-4 font-bold text-black md:text-xl">
+        <h6 class="mr-4 font-medium text-black md:text-xl">
           {{ item.question }}
         </h6>
         <svg

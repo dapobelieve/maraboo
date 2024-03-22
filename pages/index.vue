@@ -4,8 +4,8 @@
       <div class="container space-y-12" style="padding-bottom: 0">
         <div class="row flex flex-col items-center space-y-0 md:space-y-20">
           <div class="mb-8 text-center">
-            <h1 class="display-1">International Transfers</h1>
-            <h1 class=" display-1 mb-10">
+            <h1 class="display-2 font-medium">International Transfers</h1>
+            <h1 class="display-2 mb-10 font-medium">
               Built for UMOA Countries
             </h1>
             <Button class="drop-shadow-2xl">Send Money</Button>
@@ -19,8 +19,8 @@
     <section class="rounded-[40px] bg-primary">
       <div class="container">
         <div class="row justify-between space-y-8 md:flex md:space-y-0">
-          <div class="text-white md:max-w-xs">
-            <h1 class="display-2 mb-4 text-center md:text-left">
+          <div class="text-white md:max-w-sm">
+            <h1 class="display-2 mb-4 text-center font-medium md:text-left">
               Two-way Corridors
             </h1>
             <p class="text-center md:text-left">
@@ -38,7 +38,7 @@
       <div class="container">
         <div class="row flex justify-center">
           <div class="max-w-2xl text-center">
-            <h1 class="display-1">
+            <h1 class="display-1 font-medium">
               Send less with <span class="text-primary">Maraboo</span>, enjoy
               the lowest rates, receive more in real time
             </h1>
@@ -51,7 +51,7 @@
         <div class="items-start justify-between md:flex">
           <div class="">
             <div class="space-y-8 text-center md:text-left">
-              <h1 class="display-1 capitalize">
+              <h1 class="display-1 font-medium capitalize">
                 Your new <br />
                 superpower
               </h1>
@@ -65,7 +65,7 @@
             <div
               class="max-w-md rounded-[40px] border-2 border-surface-200 p-14"
             >
-              <h1 class="display-1 mb-6">Cash</h1>
+              <h1 class="display-1 mb-6 font-medium">Cash</h1>
               <p class="text-2">
                 Receive by cash at Ecobank ATMs or Xpress points
               </p>
@@ -73,13 +73,13 @@
             <div
               class="max-w-md rounded-[40px] border-2 border-surface-200 p-14"
             >
-              <h1 class="display-1 mb-6">Mobile Money</h1>
+              <h1 class="display-1 mb-6 font-medium">Mobile Money</h1>
               <p class="text-2">Send or receive using mobile money</p>
             </div>
             <div
               class="max-w-md rounded-[40px] border-2 border-surface-200 p-14"
             >
-              <h1 class="display-1 mb-6">Bank</h1>
+              <h1 class="display-1 mb-6 font-medium">Bank</h1>
               <p class="text-2">Send and receive from bank accounts</p>
             </div>
           </div>
@@ -95,7 +95,7 @@
             <div
               class="flex flex-col items-center space-y-10 md:block md:flex-row md:items-start"
             >
-              <h1 class="display-1">Why Choose us</h1>
+              <h1 class="display-1 font-medium">Why Choose us</h1>
               <p class="max-w-xs text-center md:text-left">
                 When you send money with Maraboo you not only save your time and
                 money but you a company built by native africans
@@ -107,15 +107,15 @@
           </div>
           <div class="w-full justify-between md:flex">
             <div class="mb-12 max-w-xs md:mb-0">
-              <h1 class="display-1 mb-6">The Fastest</h1>
+              <h1 class="display-1 mb-6 font-medium">The Fastest</h1>
               <p class="text-2">We complete transfers in real time</p>
             </div>
             <div class="mb-12 max-w-xs md:mb-0">
-              <h1 class="display-1 mb-6">The Cheapest</h1>
+              <h1 class="display-1 mb-6 font-medium">The Cheapest</h1>
               <p class="text-2">We give you the lowest rate every time</p>
             </div>
             <div class="mb-12 max-w-xs md:mb-0">
-              <h1 class="display-1 mb-6">The Most Versatile</h1>
+              <h1 class="display-1 mb-6 font-medium">The Most Versatile</h1>
               <p class="text-2">
                 The widest range of collection and delivery options
               </p>
@@ -130,8 +130,8 @@
           <div class="flex w-full flex-col items-center py-2 md:w-1/2">
             <div class="md:max-w-[31rem]">
               <div class="mb-8 space-y-4">
-                <h1 class="display-2 mb text-start">How it Works</h1>
-                <p class="text-2 font-bold">
+                <h1 class="display-2 mb-4 text-start">How it Works</h1>
+                <p class="text-2">
                   Sending money to or from UMOA is as easy <br />
                   as 1-2-3 with us.
                 </p>
@@ -171,7 +171,7 @@
       <div class="container">
         <div class="relative space-y-28">
           <div class="flex items-center justify-between">
-            <h1 class="display-1 capitalize">
+            <h1 class="display-2 capitalize">
               Where We <br />
               Extend our <br />support
             </h1>
@@ -195,21 +195,23 @@
     <section class="testimonials">
       <div class="container">
         <div class="flex flex-col gap-10">
-          <div class="grid gap-10 md:grid-cols-2">
-            <Card class="flex flex-col bg-accent-300">
-              <div class="flex grow items-center justify-center">
-                <img src="~/assets/images/secure.png" alt="phone-logo" />
-              </div>
-              <div>
-                <h1 class="display-2 mb-4">Securing Your Data Fortress!</h1>
-                <p class="text-2">
-                  Rest assured, your funds and private information are <br />
-                  safeguarded by state-of-the-art security technology, <br />
-                  compliant with both local and global regulations
-                </p>
-              </div>
-            </Card>
-            <div class="grid gap-10">
+          <div class="gap-10 md:flex">
+            <div class="mb-10 flex md:mb-0 md:w-3/5">
+              <Card class="flex flex-col bg-accent-300">
+                <div class="flex grow items-center justify-center">
+                  <img src="~/assets/images/secure.png" alt="phone-logo" />
+                </div>
+                <div>
+                  <h1 class="display-2 mb-12">Securing Your Data Fortress!</h1>
+                  <p class="text-2">
+                    Rest assured, your funds and private information are <br />
+                    safeguarded by state-of-the-art security technology, <br />
+                    compliant with both local and global regulations
+                  </p>
+                </div>
+              </Card>
+            </div>
+            <div class="grid gap-10 md:w-2/5">
               <Card class="bg-accent-100" direction="down">
                 <h1 class="display-2 mb-4">From local to global.</h1>
                 <p class="text-3">
@@ -324,7 +326,7 @@
               </div>
             </div>
             <button
-              class="ml-auto self-center rounded-full border-2 border-black px-6 py-2 font-bold"
+              class="ml-auto self-center rounded-full border-2 border-black px-6 py-2 font-medium"
             >
               Chat With Us
             </button>
@@ -332,7 +334,6 @@
         </Card>
       </div>
     </section>
-    <!--    <CookieConsent :show="show" v-if="show"/>-->
   </main>
 </template>
 
@@ -354,7 +355,6 @@ const showCookieConsentModal = () => {
     document.body.classList.add("show-modal");
   }
 
-  // showModal.value = true
   if (showModal) {
     show.value = false;
     document.body.classList.remove("show-modal");

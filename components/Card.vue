@@ -1,13 +1,8 @@
 <template>
   <div
-    class="relative w-full overflow-hidden rounded-[2.5rem] px-4 py-6 md:p-14"
+    class="relative w-full overflow-hidden rounded-[2.5rem] px-6 py-8 md:p-14"
   >
-    <slot
-      >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto
-      blanditiis consequatur est ex fugiat inventore laboriosam minus, nesciunt
-      non pariatur possimus quam quis recusandae sit unde veritatis voluptatum!
-      Architecto, omnis?</slot
-    >
+    <slot>Maraboo Card</slot>
     <img
       v-if="direction === 'down'"
       class="absolute bottom-0 left-0 w-full"
@@ -16,7 +11,7 @@
     />
     <img
       v-else-if="direction === 'up'"
-      class="absolute top-0 left-0 w-full"
+      class="absolute left-0 top-0 w-full"
       src="~/assets/images/up.png"
       alt=""
     />

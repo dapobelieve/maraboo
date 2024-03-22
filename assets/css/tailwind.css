@@ -6,7 +6,7 @@
 html,
 body {
     @apply antialiased font-normal leading-loose bg-[#E3E1EB] text-[#FFFFFFA3];
-    font-family: 'Helvetica Neue', sans-serif ;
+    font-family: 'Poppins', sans-serif ;
 }
 
 /******** Typography ********/
@@ -15,11 +15,11 @@ body {
 }
 
 .display-2 {
-    @apply text-7xl font-bold
+    @apply text-7xl
 }
 
 .display-3 {
-    @apply text-8xl font-black
+    @apply text-8xl
 }
 
 
@@ -28,7 +28,7 @@ body {
 }
 
 .text-2 {
-    @apply text-xl font-bold
+    @apply text-lg
 }
 
 .text-3 {
