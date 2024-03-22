@@ -14,10 +14,14 @@ export default defineNuxtConfig({
           rel: "preconnect",
           href: "https://fonts.googleapis.com",
         },
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        {
+          rel: "preconnect",
+          href: "https://fonts.gstatic.com",
+        },
         {
           rel: "stylesheet",
-          type: "text/css",
-          href: "https://fonts.cdnfonts.com/css/helvetica-neue-55?styles=15981,30135",
+          href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap",
         },
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
         {
