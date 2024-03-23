@@ -1,94 +1,90 @@
 <template>
   <div
     id="exchange-rate"
-    class="h[652px] relative flex space-x-8 overflow-hidden rounded-[40px] bg-black p-4 text-surface-400 md:w-[430px]"
+    class="relative flex h-[652px] space-x-8 overflow-hidden rounded-[40px] bg-black p-4 text-surface-400 shadow-2xl md:w-[430px]"
   >
-    <div class="pop-in" v-if="!state.config.open">
-      <div class="space-y-2">
-        <div class="selects space-y-1">
-          <Delivery
-            :config="state.config"
-            :delivery="state.delivery"
-            @step="openConfigDrawer('delivery')"
-          />
-          <Currency
-            :config="state.config"
-            :currency="state.currency"
-            @step="openConfigDrawer('currency')"
-          />
-        </div>
-        <div class="inputs text space-y-4">
-          <div
-            :class="[
-              state.apiCalling ? 'text-emphasis-100' : 'text-emphasis-900',
-            ]"
-            class="send relative inline-flex w-full items-center rounded-[28px] bg-[#FFFFFF0F] p-4"
-          >
-            <span class="shrink-0 text-xs uppercase">You send</span>
+    <div class="pop-in flex flex-col space-y-4" v-if="!state.config.open">
+      <div class="selects space-y-1">
+        <Delivery
+          :config="state.config"
+          :delivery="state.delivery"
+          @step="openConfigDrawer('delivery')"
+        />
+        <Currency
+          :config="state.config"
+          :currency="state.currency"
+          @step="openConfigDrawer('currency')"
+        />
+      </div>
+      <div class="inputs text flex h-full grow flex-col space-y-4">
+        <div
+          :class="[
+            state.apiCalling ? 'text-emphasis-100' : 'text-emphasis-900',
+          ]"
+          class="send relative inline-flex w-full items-center rounded-[28px] bg-[#FFFFFF0F] p-4"
+        >
+          <span class="shrink-0 text-xs uppercase">You send</span>
 
-            <input
-              class="w-full grow bg-transparent px-2 text-right text-2xl outline-none"
-              v-model="computedSendAmount"
-              @keydown="keypressed"
-              @focus="state.txn.mode = 'send'"
-              placeholder="0.00"
-            />
-            <small class="text-emphasis-100">CAD</small>
-          </div>
-          <div class="estimate">
-            <div class="px-6">
-              <div class="py- flex justify-between">
-                <div class="fee inline-flex space-x-4">
-                  <img src="~/assets/images/minus.svg" alt="" />
-                  <span class="text-emphasis-200">Our Fee</span>
-                </div>
-                <div class="amount space-x-1">
-                  <span class="text-emphasis-900">{{ state.txn.our_fee }}</span>
-                  <small class="currency text-emphasis-100">CAD</small>
-                </div>
+          <input
+            class="w-full grow bg-transparent px-2 text-right text-2xl outline-none"
+            v-model="computedSendAmount"
+            @keydown="keypressed"
+            @focus="state.txn.mode = 'send'"
+            placeholder="0.00"
+          />
+          <small class="text-emphasis-100">CAD</small>
+        </div>
+        <div class="estimate h-full grow">
+          <div class="space-y-4 px-6">
+            <div class="py- flex justify-between">
+              <div class="fee inline-flex space-x-4">
+                <img src="~/assets/images/minus.svg" alt="" />
+                <span class="text-emphasis-200">Our Fee</span>
               </div>
-              <div class="flex justify-between">
-                <div class="fee inline-flex space-x-4">
-                  <img src="~/assets/images/equal.svg" alt="" />
-                  <span class="text-emphasis-200">We convert</span>
-                </div>
-                <div class="amount space-x-1">
-                  <span class="text-emphasis-900">{{
-                    state.txn.we_convert
-                  }}</span>
-                  <small class="currency text-emphasis-100">CAD</small>
-                </div>
+              <div class="amount space-x-1">
+                <span class="text-emphasis-900">{{ state.txn.our_fee }}</span>
+                <small class="currency text-emphasis-100">CAD</small>
               </div>
-              <div class="flex justify-between">
-                <div class="fee inline-flex space-x-4">
-                  <img src="~/assets/images/multiply.svg" alt="" />
-                  <span class="text-emphasis-200">Real exchange rate</span>
-                </div>
-                <div class="amount space-x-1">
-                  <span class="text-emphasis-900">{{ state.rate }}</span>
-                  <small class="currency text-emphasis-100">CAD</small>
-                </div>
+            </div>
+            <div class="flex justify-between">
+              <div class="fee inline-flex space-x-4">
+                <img src="~/assets/images/equal.svg" alt="" />
+                <span class="text-emphasis-200">We convert</span>
+              </div>
+              <div class="amount space-x-1">
+                <span class="text-emphasis-900">{{
+                  state.txn.we_convert
+                }}</span>
+                <small class="currency text-emphasis-100">CAD</small>
+              </div>
+            </div>
+            <div class="flex justify-between">
+              <div class="fee inline-flex space-x-4">
+                <img src="~/assets/images/multiply.svg" alt="" />
+                <span class="text-emphasis-200">Real exchange rate</span>
+              </div>
+              <div class="amount space-x-1">
+                <span class="text-emphasis-900">{{ state.rate }}</span>
+                <small class="currency text-emphasis-100">CAD</small>
               </div>
             </div>
           </div>
-          <div
-            :class="[
-              state.apiCalling ? 'text-emphasis-100' : 'text-emphasis-900',
-            ]"
-            class="receive relative flex items-center justify-between rounded-[28px] bg-[#FFFFFF0F] p-4"
-          >
-            <div class="flex-none shrink-0 text-xs uppercase">
-              RECIPIENT GETS
-            </div>
-            <input
-              class="mr-1 w-full bg-transparent text-right text-2xl outline-none"
-              v-model="computedReceiveAmount"
-              @keydown="keypressed"
-              @focus="state.txn.mode = 'receive'"
-              placeholder="0.00"
-            />
-            <small class="flex-none text-emphasis-100">XOF</small>
-          </div>
+        </div>
+        <div
+          :class="[
+            state.apiCalling ? 'text-emphasis-100' : 'text-emphasis-900',
+          ]"
+          class="receive relative flex items-center justify-between rounded-[28px] bg-[#FFFFFF0F] p-4"
+        >
+          <div class="flex-none shrink-0 text-xs uppercase">RECIPIENT GETS</div>
+          <input
+            class="mr-1 w-full bg-transparent text-right text-2xl outline-none"
+            v-model="computedReceiveAmount"
+            @keydown="keypressed"
+            @focus="state.txn.mode = 'receive'"
+            placeholder="0.00"
+          />
+          <small class="flex-none text-emphasis-100">XOF</small>
         </div>
       </div>
     </div>
