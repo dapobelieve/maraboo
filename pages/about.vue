@@ -118,7 +118,7 @@
         <div class="grid grid-cols-3 gap-10">
           <div
             v-for="x in 12"
-            class="member inline-flex w-fit flex-col items-start justify-start overflow-hidden border border-black"
+            class="member inline-flex w-fit flex-col items-start justify-start overflow-hidden"
           >
             <div
               class="mb-6 w-40 overflow-hidden rounded-b-full rounded-t-full bg-accent-200"
