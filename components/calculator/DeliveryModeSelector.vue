@@ -10,15 +10,18 @@
         <li
           @click.exact.stop="modeSelected(mode)"
           v-for="mode in modeToDisplay"
-          class="flex w-full items-center justify-between select-none space-x-8  px-3 py-3"
+          class="flex w-full select-none items-center justify-between space-x-8 px-3 py-3"
           :class="[
-              mode.slug === state.selectedMode?.slug ? 'selected' : '',
-              !mode.enabled ? 'bg-disable' : ' cursor-pointer']"
+            mode.slug === state.selectedMode?.slug ? 'selected' : '',
+            !mode.enabled ? 'bg-disable' : ' cursor-pointer',
+          ]"
         >
-          <a class="flex grow  items-center">
+          <a class="flex grow items-center">
             <div class="w-full max-w-xs">
               <div class="flex items-center space-x-3">
-                <h1 class="text-2 shrink-0 capitalize text-emphasis-900">{{ mode.name }}</h1>
+                <h1 class="text-2 shrink-0 capitalize text-emphasis-900">
+                  {{ mode.name }}
+                </h1>
                 <span
                   class="-2 shrink-0 rounded-full border border-white p-1 px-2 text-xs"
                   >{{ mode.fee }}</span
@@ -27,9 +30,9 @@
               <div>
                 <em
                   class="text-xs capitalize text-active text-emphasis-900 text-positive"
-                  >estimated time: </em
-                >
-<!--                {{ // mode.estimate }}-->
+                  >estimated time:
+                </em>
+                <!--                {{ // mode.estimate }}-->
               </div>
               <div>
                 <p class="text-xs" v-html="mode.details"></p>
@@ -118,13 +121,12 @@ const state = reactive({
 });
 
 function modeSelected(mode) {
-  if(mode.enabled) {
+  if (mode.enabled) {
     state.selectedMode = mode;
     setTimeout(() => {
       emits("modeSelected", mode);
     }, 500);
   }
-
 }
 
 watch(
@@ -150,30 +152,33 @@ const displayText = computed(() => {
 
 const modeToDisplay = computed(() => {
   if (props.config.which === "delivery") {
-
-    return props.delivery.country.payout.map(mode => {
-      return {
-        name: mode.name.split('_').join(' '),
-        slug: mode.name,
-        fee: `${mode.fee}${mode.fee_unit?.toUpperCase()} Fee`,
-        estimate: "within minutes",
-        details: "instantly send money to any ecobank account",
-        method: mode.name,
-        enabled: mode.enabled
-      }
-    })
-    }else {
-      return props.currency.country.payin.map(mode => {
+    return props.delivery.country.payout
+      .map((mode) => {
         return {
-          name: mode.name.split('_').join(' '),
+          name: mode.name.split("_").join(" "),
+          slug: mode.name,
+          fee: `${mode.fee}${mode.fee_unit?.toUpperCase()} Fee`,
+          estimate: "within minutes",
+          details: "instantly send money to any ecobank account",
+          method: mode.name,
+          enabled: mode.enabled,
+        };
+      })
+      .sort((a, b) => a.name.localeCompare(b.name));
+  } else {
+    return props.currency.country.payin
+      .map((mode) => {
+        return {
+          name: mode.name.split("_").join(" "),
           slug: mode.name,
           fee: `${mode.fee} ${mode.fee_unit.toUpperCase()} Fee`,
           estimate: "within minutes",
           details: "instantly send money to any ecobank account",
           method: mode.name,
-          enabled: mode.enabled
-        }
+          enabled: mode.enabled,
+        };
       })
+      .sort((a, b) => a.name.localeCompare(b.name));
   }
 });
 </script>
