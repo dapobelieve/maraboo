@@ -1,7 +1,7 @@
 <template>
   <header>
-    <div class="px-10 py-5">
-      <div class="flex items-center">
+    <div class="container">
+      <div class="flex w-full items-center">
         <NuxtLink :to="localePath('/')" class="flex items-center">
           <img class="mr-2" :src="'/maraboo.svg'" alt="logo" />
           <img src="~/assets/images/logo.svg" alt="" />

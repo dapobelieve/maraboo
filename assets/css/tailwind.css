@@ -39,3 +39,18 @@ body {
 .text-4 {
     font-size: 0.8125rem;
 }
+
+
+section {
+    @apply  px-10 w-full flex justify-center;
+}
+.container {
+    @apply max-w-[1280px]  w-full mx-auto flex justify-center
+}
+.content-wrap {
+    @apply max-w-[1024px] w-full flex justify-center
+}
+
+.text-multi-color {
+    @apply bg-gradient-to-r from-active to-primary bg-clip-text text-transparent
+}
