@@ -27,7 +27,7 @@ export default {
         negative: "#F43F5E",
         positive: "#14B8A6",
         warning: "#FDBA74",
-        neutral: "#092C4C",
+        neutral: "#171717",
         accent: {
           100: "#DFD1FE",
           200: "#BFA3FB",

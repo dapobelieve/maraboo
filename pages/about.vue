@@ -2,27 +2,31 @@
   <main class="text-black">
     <section>
       <div class="container flex justify-center">
-        <div class="row space-y-12 md:max-w-5xl">
-          <div class="">
-            <h1 class="display-2">
-              We're building borderless financial systems to connect
-              West-Africans across <br class="hidden md:block" />
-              the globe
-            </h1>
-          </div>
-          <div
-            class="sspace-y-8 items-start justify-between md:relative md:flex md:space-x-8"
-          >
-            <div class="md:max-w-xs">
-              <p class="text-2 mb-10 text-center md:mb-0 md:text-left">
-                Introducing Maraboo, a West-African fintech firm offering
-                transformative financial solutions that are fair, responsible,
-                inclusive, and designed to improve the quality of life of West
-                Africans.
-              </p>
+        <div class="content-wrap">
+          <div class="space-y-20">
+            <div class="text-center">
+              <h1 class="display-2">
+                We're
+                <span class="text-multi-color"
+                  >building borderless financial systems</span
+                >
+                to connect West-Africans across the globe
+              </h1>
             </div>
-            <div class="-top-[2rem] right-0 z-10 md:absolute">
-              <img alt="" class="w-full" src="~/assets/images/space.svg" />
+            <div
+              class="items-start justify-between space-y-8 md:relative md:flex md:space-x-8"
+            >
+              <div class="md:max-w-xs">
+                <p class="text-2 mb-10 text-center md:mb-0 md:text-left">
+                  Introducing Maraboo, a West-African fintech firm offering
+                  transformative financial solutions that are fair, responsible,
+                  inclusive, and designed to improve the quality of life of West
+                  Africans.
+                </p>
+              </div>
+              <div class="-top-[2rem] right-0 z-10 md:absolute">
+                <img alt="" class="w-full" src="~/assets/images/space.svg" />
+              </div>
             </div>
           </div>
         </div>
@@ -30,60 +34,38 @@
     </section>
     <section>
       <div class="container">
-        <Card class="flex justify-center bg-surface-200 px-5 py-20 md:py-32">
-          <div class="row space-y-12 md:max-w-5xl">
-            <div>
-              <h1 class="display-2">
-                Our Core mission is to make payments in & out of WAEMU countries
-                up to 3x cheaper!
-              </h1>
-            </div>
-            <div>
-              <p class="text-2 max-w-xs">
-                Did you know that a 10% reduction in transaction fees for
-                sending money in & out of WAEMU countrycan boost the revenue of
-                regional households by up to 16%?
-              </p>
-            </div>
-          </div>
-        </Card>
-      </div>
-    </section>
-    <section class="hidden">
-      <div class="container">
-        <Card class="flex justify-center bg-surface-200 px-5 py-20 md:py-32">
-          <div class="row space-y-12 md:max-w-5xl">
-            <div>
-              <h1 class="display-1">
-                Our Core mission is to make payments in & out of WAEMU countries
-                up to 3x cheaper!
-              </h1>
-            </div>
-            <div>
-              <p class="text-2 max-w-xs">
-                Did you know that a 10% reduction in transaction fees for
-                sending money in & out of WAEMU countrycan boost the revenue of
-                regional households by up to 16%?
-              </p>
-            </div>
-          </div>
-        </Card>
-      </div>
-    </section>
-    <section class="mb-10" style="padding: 0">
-      <div class="">
         <Card
-          class="flex justify-center bg-accent-300 px-5 py-32 text-white md:px-0"
+          class="bg-coloured flex justify-center px-5 py-20 text-white md:py-32"
         >
-          <div class="row relative flex w-full space-x-12 md:max-w-5xl">
-            <div class="space-y-12">
+          <div class="row space-y-12 md:max-w-5xl">
+            <div>
+              <h1 class="display-2 text-center">
+                Our Core mission is to make payments in & out of WAEMU countries
+                up to 3x cheaper!
+              </h1>
+            </div>
+            <div class="hidden">
+              <p class="text-2 max-w-xs">
+                Did you know that a 10% reduction in transaction fees for
+                sending money in & out of WAEMU countrycan boost the revenue of
+                regional households by up to 16%?
+              </p>
+            </div>
+          </div>
+        </Card>
+      </div>
+    </section>
+    <section class="mb-10">
+      <div class="container">
+        <Card class="flex justify-center px-5 py-32 text-white md:px-0">
+          <div
+            class="content-wrap relative flex w-full justify-between space-x-12 text-black"
+          >
+            <div class="w-1/2 space-y-12">
               <div class="">
                 <h1 class="md:display-2 display-1 text-center md:text-left">
-                  We believe that <br class="hidden md:block" />
-                  remittances should <br class="hidden md:block" />
-                  be fast, low cost, <br class="hidden md:block" />
-                  and have a major <br class="hidden md:block" />
-                  social impact.
+                  We believe that remittances should be fast, low cost, and have
+                  a major social impact.
                 </h1>
               </div>
               <div>
@@ -95,10 +77,12 @@
                 </p>
               </div>
             </div>
-            <div
-              class="absolute -right-[15rem] -top-[23rem] z-10 hidden shrink-0 md:block"
-            >
-              <img alt="" src="~/assets/images/kids.png" />
+            <div class="z-10 hidden w-1/2 shrink-0 md:block">
+              <img
+                class="absolute -top-[18rem]"
+                alt=""
+                src="~/assets/images/kids.png"
+              />
             </div>
           </div>
         </Card>

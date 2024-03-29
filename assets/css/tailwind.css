@@ -40,7 +40,6 @@ body {
     font-size: 0.8125rem;
 }
 
-
 section {
     @apply  px-10 w-full flex justify-center;
 }
@@ -53,4 +52,12 @@ section {
 
 .text-multi-color {
     @apply bg-gradient-to-r from-active to-primary bg-clip-text text-transparent
+}
+
+.bord {
+    @apply border border-black
+}
+
+.bg-coloured {
+    @apply bg-gradient-to-r from-active via-primary to-accent-400
 }

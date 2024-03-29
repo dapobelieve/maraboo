@@ -2,7 +2,7 @@
   <main class="text-black">
     <section>
       <div class="container space-y-12" style="padding-bottom: 0">
-        <div class="row flex flex-col items-center space-y-0 md:space-y-20">
+        <div class="flex flex-col items-center space-y-0 md:space-y-20">
           <div class="mb-8 text-center">
             <h1 class="display-2 font-medium">International Transfers</h1>
             <h1 class="display-2 mb-10 font-medium">
@@ -17,24 +17,22 @@
         </div>
       </div>
     </section>
-    <section
-      class="to rounded-[40px] bg-gradient-to-r from-active via-primary to-accent-400"
-    >
+    <section class="bg-coloured rounded-[40px]">
       <div class="container">
-        <div
-          class="content-wrap justify-between space-y-8 md:flex md:space-y-0"
-        >
-          <div class="sticky top-52 text-white">
-            <h1 class="display-2 mb-4 text-center font-medium md:text-left">
-              Two-way Corridors
-            </h1>
-            <p class="text-center md:text-left">
-              Send money to or from any UMOA country <br />in real time at the
-              lowest rate.
-            </p>
-          </div>
-          <div class="">
-            <Calculator class="md:ml-auto" />
+        <div class="content-wrap">
+          <div class="w-full items-start justify-between md:flex">
+            <div class="sticky top-10 text-white">
+              <h1 class="display-2 mb-4 text-center font-medium md:text-left">
+                Two-way Corridors
+              </h1>
+              <p class="text-center md:text-left">
+                Send money to or from any UMOA country <br />in real time at the
+                lowest rate.
+              </p>
+            </div>
+            <div class="">
+              <Calculator class="md:ml-auto" />
+            </div>
           </div>
         </div>
       </div>
@@ -55,7 +53,7 @@
       <div class="container">
         <div class="content-wrap">
           <div class="w-full items-start justify-between md:flex">
-            <div class="sticky top-32">
+            <div class="sticky top-10">
               <div class="space-y-8 text-center md:text-left">
                 <h1 class="display-1 font-medium capitalize">
                   Your new <br />
@@ -162,43 +160,41 @@
     <section>
       <div class="container">
         <div class="content-wrap">
-          <div class="flex w-full justify-between md:grid-cols-2">
+          <div class="flex w-full justify-between">
             <div class="flex w-full flex-col items-center py-2 md:w-1/2">
-              <div class="md:max-w-[31rem]">
+              <div class="space-y-32 md:max-w-[31rem]">
                 <div class="mb-8 space-y-4">
                   <h1 class="display-2 mb-4 text-start">How it Works</h1>
                   <p class="text-2">
-                    Sending money to or from UMOA is as easy <br />
-                    as 1-2-3 with us.
+                    Sending money to or from UMOA is <br />as easy as 1-2-3 with
+                    us.
                   </p>
                 </div>
-                <div class="flex space-x-6">
+                <div class="flex space-x-8">
                   <div class="bar">
                     <div class="h-1/2 w-[3px] bg-slate-300"></div>
                   </div>
-                  <div class="steps flex flex-col">
+                  <div class="steps flex max-w-sm flex-col">
                     <div
                       v-for="step in steps"
                       class="step mb-8 flex items-start space-x-8 pb-10"
                     >
-                      <!--                      <div>-->
-                      <!--                        <h1 class="display-1">{{ step.step }}</h1>-->
-                      <!--                      </div>-->
                       <div>
+                        <small class="font-bold text-primary">{{
+                          step.step
+                        }}</small>
                         <h1 class="display-1 mb-4">{{ step.title }}</h1>
-                        <span class="text-2">
+                        <p class="text-2 leading-9">
                           {{ step.body }}
-                        </span>
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="hidden w-1/2 md:block">
-              <div class="flex w-full justify-center">
-                <img src="~/assets/images/mobile.png" alt="" />
-              </div>
+            <div class="hidden w-1/3 md:block">
+              <img class="" src="~/assets/images/phone-steps.png" alt="" />
             </div>
           </div>
         </div>
