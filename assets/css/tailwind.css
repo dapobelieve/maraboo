@@ -44,7 +44,7 @@ section {
     @apply  px-10 w-full flex justify-center;
 }
 .container {
-    @apply max-w-[1280px]  w-full mx-auto flex justify-center
+    @apply max-w-[1280px] w-full mx-auto flex  justify-center py-[128px]
 }
 .content-wrap {
     @apply max-w-[1024px] w-full flex justify-center

@@ -48,7 +48,8 @@ export default defineNuxtConfig({
     },
     "~/components",
   ],
-  css: ["~/assets/css/tailwind.css"],
+  css: ["~/assets/css/tailwind.css", "vue-final-modal/style.css"],
+
   ssr: false,
   pages: true,
   modules: ["@nuxtjs/i18n", "@nuxtjs/tailwindcss"],

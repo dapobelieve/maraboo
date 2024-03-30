@@ -9,7 +9,7 @@
               Built for
               <span class="text-multi-color">UMOA Countries</span>
             </h1>
-            <Button class="drop-shadow-2xl">Send Money</Button>
+            <Button @click="open">Send Money</Button>
           </div>
           <div class="hidden overflow-hidden md:block md:h-[34rem]">
             <img class="w-full" src="~/assets/images/the-globe.svg" alt="" />
@@ -379,11 +379,12 @@
 </template>
 
 <script setup>
+import { ModalsContainer, useModal } from "vue-final-modal";
+
 import { reactive, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import CountryComponent from "~/components/CountryComponent.vue";
-import CookieConsent from "~/components/CookieConsent.vue";
-import qrBg from "assets/images/unlock-bg.svg";
+import qr from "~/components/modals/qr.vue";
 
 const { t } = useI18n();
 
@@ -401,6 +402,16 @@ const showCookieConsentModal = () => {
     document.body.classList.remove("show-modal");
   }
 };
+
+const { open, close } = useModal({
+  component: qr,
+  attrs: {
+    title: "Hello World!",
+    onConfirm() {
+      close();
+    },
+  },
+});
 
 onMounted(() => {
   setTimeout(() => {

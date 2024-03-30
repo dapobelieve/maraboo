@@ -35,7 +35,7 @@
     <section>
       <div class="container">
         <Card
-          class="bg-coloured flex justify-center px-5 py-20 text-white md:py-32"
+          class="bg-coloured flex justify-center px-5 py-20 text-white md:py-52"
         >
           <div class="row space-y-12 md:max-w-5xl">
             <div>
@@ -55,9 +55,9 @@
         </Card>
       </div>
     </section>
-    <section class="mb-10">
+    <section>
       <div class="container">
-        <Card class="flex justify-center px-5 py-32 text-white md:px-0">
+        <Card class="flex justify-center px-5 py-36 text-white md:px-0">
           <div
             class="content-wrap relative flex w-full justify-between space-x-12 text-black"
           >
@@ -88,34 +88,43 @@
         </Card>
       </div>
     </section>
-    <section style="padding: 0" class="px-4">
-      <div class="md:px-10">
-        <img
-          class="rounded-[20px] md:rounded-[40px]"
-          src="~/assets/images/box.png"
-          alt=""
-        />
+    <section class="relative bg-[url('/assets/images/bdox.svg')] bg-cover">
+      <img
+        class="rounded-[20px] md:rounded-[40px]"
+        src="~/assets/images/box.png"
+        alt=""
+      />
+      <div class="container absolute bottom-0">
+        <div class="content-wrap">
+          <div class="display-1 w-full text-left font-medium text-white">
+            We believe that <br />
+            <span class="text-multi-color">remittances</span> should <br />
+            be <span class="text-multi-color">fast, low cost</span>.
+          </div>
+        </div>
       </div>
     </section>
     <section>
-      <div class="container">
-        <div class="grid grid-cols-3 gap-10">
-          <div
-            v-for="x in 12"
-            class="member inline-flex w-fit flex-col items-start justify-start overflow-hidden"
-          >
-            <div
-              class="mb-6 w-40 overflow-hidden rounded-b-full rounded-t-full bg-accent-200"
-            >
-              &nbsp;
-              <img
-                class="object-contain"
-                src="~/assets/images/user.png"
-                alt=""
-              />
+      <div class="container flex-col space-y-28">
+        <div class="text-center">
+          <h1 class="display-1">Meet the Team</h1>
+        </div>
+        <div class="grid w-full grid-cols-3 gap-10">
+          <div v-for="x in 9" class="member flex justify-center">
+            <div class="flex w-fit flex-col overflow-hidden">
+              <div
+                class="mb-6 w-40 overflow-hidden rounded-b-full rounded-t-full bg-accent-200"
+              >
+                &nbsp;
+                <img
+                  class="object-contain"
+                  src="~/assets/images/user.png"
+                  alt=""
+                />
+              </div>
+              <h1>Cheick Ouedraogo</h1>
+              <small>Founder - CEO</small>
             </div>
-            <h1>Cheick Ouedraogo</h1>
-            <small>Founder - CEO</small>
           </div>
         </div>
       </div>
@@ -124,84 +133,9 @@
 </template>
 
 <script setup>
-import { reactive, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
-import CountryComponent from "~/components/CountryComponent.vue";
-import CookieConsent from "~/components/CookieConsent.vue";
-import qrBg from "assets/images/unlock-bg.svg";
 
 const { t } = useI18n();
-
-const showModal = localStorage.getItem("show");
-const show = ref(false);
-
-const showCookieConsentModal = () => {
-  if (!showModal) {
-    show.value = true;
-    document.body.classList.add("show-modal");
-  }
-
-  // showModal.value = true
-  if (showModal) {
-    show.value = false;
-    document.body.classList.remove("show-modal");
-  }
-};
-
-onMounted(() => {
-  setTimeout(() => {
-    showCookieConsentModal();
-  }, 2000);
-});
-
-const countries = reactive([
-  {
-    name: "benin",
-    flag: "benin",
-    country: "benin",
-  },
-  {
-    name: "Burkina Faso",
-    flag: "burkinafaso",
-    country: "burkina_faso",
-  },
-  {
-    name: "Cote d'voire",
-    flag: "cotedivoire",
-    country: "cote_d_ivoire",
-  },
-  {
-    name: "mali",
-    flag: "mali",
-    country: "mali",
-  },
-  {
-    name: "togo",
-    flag: "togo",
-    country: "togo",
-  },
-  {
-    name: "niger",
-    flag: "niger",
-    country: "niger",
-  },
-  {
-    name: "Guinea Bissau",
-    flag: "guineabissau",
-    country: "guinea_bissau",
-  },
-  {
-    name: "senegal",
-    flag: "senegal",
-    country: "senegal",
-  },
-  {
-    name: "canada",
-    flag: "canada",
-  },
-]);
-
-const half = computed(() => Math.ceil(faqs.length / 2));
 </script>
 
 <style lang="scss" scoped>

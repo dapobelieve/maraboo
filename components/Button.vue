@@ -1,37 +1,53 @@
 <template>
   <button
-    class="h-16 rounded-full bg-primary px-8 py-2 font-medium text-white transition-colors duration-300 ease-linear hover:bg-black"
+    class="hover-effect relative h-14 overflow-hidden rounded-full px-8 py-2 font-medium text-neutral drop-shadow-2xl"
+    :class="computedClass"
   >
     <slot />
   </button>
 </template>
+<script setup>
+const props = defineProps({
+  type: {
+    type: String,
+    default: "outline",
+  },
+});
 
-<!--<style>-->
-<!--.button-bg::before,-->
-<!--.button-bg::after {-->
-<!--  content: '';-->
-<!--  position: absolute;-->
-<!--  width: 50%;-->
-<!--  height: 100%;-->
-<!--  transition: all 0.3s ease-in-out;-->
-<!--}-->
+const computedClass = computed(() => {
+  let classes = "";
 
-<!--.button-bg:hover::before {-->
-<!--  transform: scaleX(0);-->
-<!--  transform-origin: left;-->
-<!--}-->
+  if (props.type === "outline") {
+    classes += "border-2 border-neutral";
+  } else if (props.type === "no-outline") {
+  }
 
-<!--.button-bg:hover::after {-->
-<!--  transform: scaleX(0);-->
-<!--  transform-origin: right;-->
-<!--}-->
+  return classes;
+});
+</script>
+<style scoped lang="scss">
+.hover-effect {
+  position: relative;
+  z-index: 1;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    background: #0f172a;
+    transition: all 0.1s ease-in-out;
+    z-index: -1;
+  }
 
-<!--.button-bg::before {-->
-<!--  left: 0;-->
-<!--  background: var(&#45;&#45;primary-color);
-}-->
+  &:hover::after {
+    left: 0;
+    right: 0;
+  }
 
-<!--.button-bg::after {-->
-<!--  right: 0;-->
-<!--  background: var(&#45;&#45;primary-color);}-->
-<!--</style>-->
+  &:hover {
+    color: white;
+  }
+}
+</style>

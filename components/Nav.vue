@@ -1,16 +1,17 @@
 <template>
   <header>
-    <div class="container">
+    <div class="container" style="padding-bottom: 8px; padding-top: 8px">
       <div class="flex w-full items-center">
         <NuxtLink :to="localePath('/')" class="flex items-center">
           <img class="mr-2" :src="'/maraboo.svg'" alt="logo" />
           <img src="~/assets/images/logo.svg" alt="" />
         </NuxtLink>
         <span class="ml-auto mt-3 inline-flex items-center space-x-6">
-          <NuxtLink
-            to="about"
-            class="text-2 hidden font-medium text-black md:block"
-            >Company</NuxtLink
+          <Button
+            @click.stop="$router.push('/about')"
+            type="no-outline"
+            class=""
+            >Company</Button
           >
           <button class="rounded-full border border-surface-200 px-6 py-2.5">
             <div class="flex items-center space-x-4">
@@ -28,43 +29,6 @@ import { reactive, computed, toRefs, watch } from "vue";
 import { useI18n } from "vue-i18n";
 
 export default {
-  data() {
-    return {
-      isScrolled: false,
-    };
-  },
-  props: {
-    bgTransparent: Boolean,
-  },
-  mounted() {
-    window.addEventListener("scroll", this.handleScroll);
-  },
-  beforeUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
-  },
-  methods: {
-    handleScroll() {
-      if (window.scrollY > 0) {
-        this.isScrolled = true;
-      } else {
-        this.isScrolled = false;
-      }
-    },
-  },
-  computed: {
-    navBg() {
-      return [
-        "flex",
-        "items-center",
-        "rounded-[20px]",
-        this.bgTransparent ? "bg-transparent" : "bg-black",
-        this.bgTransparent ? "block mx-auto 2xl:max-w-[101rem]" : "",
-        this.bgTransparent && this.isScrolled
-          ? "bg-white shadow-lg text-black transition-all duration-500"
-          : "bg-black",
-      ];
-    },
-  },
   setup() {
     const route = useRoute();
     const { locale } = useI18n();
