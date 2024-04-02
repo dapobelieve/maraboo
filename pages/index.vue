@@ -1,17 +1,16 @@
 <template>
   <main class="text-black">
-    <section>
+    <section class="relative overflow-hidden">
       <div class="container space-y-12" style="padding-bottom: 0">
-        <div class="flex flex-col items-center space-y-0 md:space-y-20">
+        <div class="flex flex-col items-center space-y-0">
           <div class="mb-8 text-center">
-            <h1 class="display-2 font-medium">International Transfers</h1>
-            <h1 class="display-2 mb-10 font-medium">
-              Built for
+            <h1 class="display-1 font-medium">
+              International Transfers Built for
               <span class="text-multi-color">UMOA Countries</span>
             </h1>
             <Button @click="open">Send Money</Button>
           </div>
-          <div class="hidden overflow-hidden md:block md:h-[34rem]">
+          <div class="globe">
             <img class="w-full" src="~/assets/images/the-globe.svg" alt="" />
           </div>
         </div>
@@ -21,7 +20,7 @@
       <div class="container">
         <div class="content-wrap">
           <div class="w-full items-start justify-between md:flex">
-            <div class="sticky top-10 text-white">
+            <div class="top-10 text-white md:sticky">
               <h1 class="display-2 mb-4 text-center font-medium md:text-left">
                 Two-way Corridors
               </h1>
@@ -53,9 +52,9 @@
       <div class="container">
         <div class="content-wrap">
           <div class="w-full items-start justify-between md:flex">
-            <div class="sticky top-10">
+            <div class="top-10 md:sticky">
               <div class="space-y-8 text-center md:text-left">
-                <h1 class="display-1 font-medium capitalize">
+                <h1 class="display-2 font-medium capitalize">
                   Your new <br />
                   superpower
                 </h1>
@@ -72,7 +71,7 @@
                 <div
                   class="max-w-md space-y-7 rounded-[39px] bg-[#E3E1EB] p-14"
                 >
-                  <h1 class="display-1 font-medium">Cash</h1>
+                  <h1 class="display-2 font-medium">Cash</h1>
                   <p class="text-2">
                     Receive by cash at Ecobank ATMs or Xpress points
                   </p>
@@ -84,7 +83,7 @@
                 <div
                   class="max-w-md space-y-7 rounded-[40px] bg-[#E3E1EB] p-14"
                 >
-                  <h1 class="display-1 font-medium">Mobile Money</h1>
+                  <h1 class="display-2 font-medium">Mobile Money</h1>
                   <p class="text-2">Send or receive using mobile money</p>
                 </div>
               </div>
@@ -94,7 +93,7 @@
                 <div
                   class="max-w-md space-y-7 rounded-[40px] bg-[#E3E1EB] p-14"
                 >
-                  <h1 class="display-1 font-medium">Bank</h1>
+                  <h1 class="display-2 font-medium">Bank</h1>
                   <p class="text-2">Send and receive from bank accounts</p>
                 </div>
               </div>
@@ -113,7 +112,7 @@
               <div
                 class="flex flex-col items-center space-y-10 md:block md:flex-row md:items-start"
               >
-                <h1 class="display-1 font-medium">
+                <h1 class="display-2 font-medium">
                   Why <br />
                   Choose us
                 </h1>
@@ -130,7 +129,7 @@
             <div class="w-full justify-between md:flex">
               <div class="mb-12 md:mb-0">
                 <small class="font-bold">The</small>
-                <h1 class="display-1 mb-6 font-medium">Fastest</h1>
+                <h1 class="display-3 mb-6 font-medium">Fastest</h1>
                 <p class="text-2">
                   We complete transfers in real <br />
                   time
@@ -138,7 +137,7 @@
               </div>
               <div class="mb-12 md:mb-0">
                 <small class="font-bold">The</small>
-                <h1 class="display-1 mb-6 font-medium">Cheapest</h1>
+                <h1 class="display-3 mb-6 font-medium">Cheapest</h1>
                 <p class="text-2">
                   We give you the lowest rate <br />
                   every time
@@ -146,7 +145,7 @@
               </div>
               <div class="mb-12 md:mb-0">
                 <small class="font-bold">The</small>
-                <h1 class="display-1 mb-6 font-medium">Most Versatile</h1>
+                <h1 class="display-3 mb-6 font-medium">Most Versatile</h1>
                 <p class="text-2">
                   The widest range of collection <br />
                   and delivery options
@@ -183,7 +182,7 @@
                         <small class="font-bold text-primary">{{
                           step.step
                         }}</small>
-                        <h1 class="display-1 mb-4">{{ step.title }}</h1>
+                        <h1 class="display-3 mb-4">{{ step.title }}</h1>
                         <p class="text-2 leading-9">
                           {{ step.body }}
                         </p>
@@ -246,7 +245,7 @@
             </div>
             <div class="grid gap-10 md:w-2/5">
               <Card class="bg-accent-100" direction="down">
-                <h1 class="display-2 mb-4">From local to global.</h1>
+                <h1 class="display-3 mb-4">From local to global.</h1>
                 <p class="text-3">
                   Seamlessly transfer up to $9,900 daily to/from WAEMU countries
                   at the Real Exchange. Your gateway to hassle-free
@@ -254,7 +253,7 @@
                 </p>
               </Card>
               <Card class="bg-accent-100" direction="up">
-                <p class="display-1">
+                <p class="display-3">
                   Did you know that a 10% reduction in transaction fees for
                   sending?
                 </p>
@@ -360,7 +359,7 @@
                 alt="woman-logo"
               />
               <div>
-                <h1 class="display-1 mb-4">Still have questions?</h1>
+                <h1 class="display-3 mb-4">Still have questions?</h1>
                 <p class="text-2">
                   Our agents are always ready to answer your questions.
                 </p>
@@ -525,12 +524,4 @@ const steps = reactive([
 const half = computed(() => Math.ceil(faqs.length / 2));
 </script>
 
-<style lang="scss" scoped>
-* {
-  //@apply border border-red-600;
-}
-
-.container {
-  @apply py-[128px];
-}
-</style>
+<style lang="scss" scoped></style>

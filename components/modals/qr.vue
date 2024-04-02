@@ -23,7 +23,7 @@ const emit = defineEmits<{
         <img src="~/assets/images/x.svg" alt="" />
       </button>
       <div class="mb-20">
-        <h1 class="display-1 mb-6">
+        <h1 class="display-3 mb-6">
           Download the App for Money Transfers Beyond Borders!
         </h1>
         <small class="leading"

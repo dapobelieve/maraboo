@@ -5,7 +5,7 @@
         <div class="content-wrap">
           <div class="space-y-20">
             <div class="text-center">
-              <h1 class="display-2">
+              <h1 class="display-1">
                 We're
                 <span class="text-multi-color"
                   >building borderless financial systems</span
@@ -61,15 +61,13 @@
           <div
             class="content-wrap relative flex w-full justify-between space-x-12 text-black"
           >
-            <div class="w-1/2 space-y-12">
-              <div class="">
-                <h1 class="md:display-2 display-1 text-center md:text-left">
-                  We believe that remittances should be fast, low cost, and have
-                  a major social impact.
-                </h1>
-              </div>
+            <div class="space-y-12">
+              <h1 class="display-3 text-center md:text-left">
+                We believe that remittances should be fast, low cost, and have a
+                major social impact.
+              </h1>
               <div>
-                <p class="text-2 text-center md:max-w-xs md:text-left">
+                <p class="text-2 text-center md:text-left">
                   Two birds one stone - we apply the real exchange rate on all
                   of our transactions to save you money and make the UN social
                   development goal by significantly reducing remittance cost by
@@ -77,9 +75,9 @@
                 </p>
               </div>
             </div>
-            <div class="z-10 hidden w-1/2 shrink-0 md:block">
+            <div class="z-10 hidden shrink-0 md:block">
               <img
-                class="absolute -top-[18rem]"
+                class="relative -top-[18rem]"
                 alt=""
                 src="~/assets/images/kids.png"
               />
@@ -96,7 +94,7 @@
       />
       <div class="container absolute bottom-0">
         <div class="content-wrap">
-          <div class="display-1 w-full text-left font-medium text-white">
+          <div class="display-2 w-full text-left font-medium text-white">
             We believe that <br />
             <span class="text-multi-color">remittances</span> should <br />
             be <span class="text-multi-color">fast, low cost</span>.

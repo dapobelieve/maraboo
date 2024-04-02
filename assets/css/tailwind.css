@@ -5,21 +5,28 @@
 
 html,
 body {
-    @apply antialiased font-normal leading-loose bg-[#E3E1EB] text-[#FFFFFFA3];
+    @apply antialiased font-normal bg-[#E3E1EB] text-[#FFFFFFA3];
     font-family: 'Poppins', sans-serif ;
+}
+
+.globe {
+    @apply relative -bottom-[2%] md:bottom-[-6rem];
+    width: clamp(3.5rem, 96vw, 72rem);
+
 }
 
 /******** Typography ********/
 .display-1 {
-    @apply text-5xl
+    font-size: clamp(2.5rem, 118 / 1920* 100vw, 6.5rem);
+    line-height: 100%;
 }
 
 .display-2 {
-    @apply text-7xl
+    font-size: clamp(1.7rem, 118 / 1920* 100vw, 4.5rem);
 }
 
 .display-3 {
-    @apply text-8xl
+    font-size: clamp(1.5rem, 118 / 1920* 100vw, 2.85rem);
 }
 
 
@@ -41,10 +48,10 @@ body {
 }
 
 section {
-    @apply  px-10 w-full flex justify-center;
+    @apply px-6 w-full flex bord justify-center;
 }
 .container {
-    @apply max-w-[1280px] w-full mx-auto flex  justify-center py-[128px]
+    @apply max-w-[1280px]  bord w-full mx-auto flex justify-center py-[128px]
 }
 .content-wrap {
     @apply max-w-[1024px] w-full flex justify-center
@@ -55,7 +62,7 @@ section {
 }
 
 .bord {
-    @apply border border-black
+    /*@apply border border-black*/
 }
 
 .bg-coloured {
