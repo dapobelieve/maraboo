@@ -48,10 +48,10 @@ body {
 }
 
 section {
-    @apply px-6 w-full flex bord justify-center;
+    @apply px-6 w-full flex text-black justify-center;
 }
 .container {
-    @apply max-w-[1280px]  bord w-full mx-auto flex justify-center py-[128px]
+    @apply max-w-[1280px]  w-full mx-auto flex justify-center py-[128px]
 }
 .content-wrap {
     @apply max-w-[1024px] w-full flex justify-center
@@ -62,9 +62,9 @@ section {
 }
 
 .bord {
-    /*@apply border border-black*/
+    @apply border border-black
 }
 
 .bg-coloured {
-    @apply bg-gradient-to-r from-active via-primary to-accent-400
+    @apply bg-gradient-to-r from-active via-primary via-65% to-accent-400
 }

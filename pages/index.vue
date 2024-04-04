@@ -3,7 +3,7 @@
     <section class="relative overflow-hidden">
       <div class="container space-y-12" style="padding-bottom: 0">
         <div class="flex flex-col items-center space-y-0">
-          <div class="mb-8 text-center">
+          <div class="mb-8 space-y-20 text-center">
             <h1 class="display-1 font-medium">
               International Transfers Built for
               <span class="text-multi-color">UMOA Countries</span>

@@ -55,13 +55,13 @@
         </Card>
       </div>
     </section>
-    <section>
+    <section class="remit">
       <div class="container">
         <Card class="flex justify-center px-5 py-36 text-white md:px-0">
           <div
             class="content-wrap relative flex w-full justify-between space-x-12 text-black"
           >
-            <div class="space-y-12">
+            <div class="remittances space-y-12">
               <h1 class="display-3 text-center md:text-left">
                 We believe that remittances should be fast, low cost, and have a
                 major social impact.
@@ -75,9 +75,9 @@
                 </p>
               </div>
             </div>
-            <div class="z-10 hidden shrink-0 md:block">
+            <div class="kids z-10 hidden shrink-0 md:block">
               <img
-                class="relative -top-[18rem]"
+                class="g-first relative -top-[18rem]"
                 alt=""
                 src="~/assets/images/kids.png"
               />
@@ -94,7 +94,7 @@
       />
       <div class="container absolute bottom-0">
         <div class="content-wrap">
-          <div class="display-2 w-full text-left font-medium text-white">
+          <div class="display-2 fast w-full text-left font-medium text-white">
             We believe that <br />
             <span class="text-multi-color">remittances</span> should <br />
             be <span class="text-multi-color">fast, low cost</span>.
@@ -131,18 +131,30 @@
 </template>
 
 <script setup>
+import { onMounted } from "vue";
 import { useI18n } from "vue-i18n";
+const { $gsap } = useNuxtApp();
+
+onMounted(() => {
+  $gsap.to(".remittances", {
+    yPercent: -10,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".remit",
+      scrub: 5,
+    },
+  });
+
+  $gsap.to(".kids", {
+    duration: 0.5,
+    yPercent: 30,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".remit",
+      scrub: 3,
+    },
+  });
+});
 
 const { t } = useI18n();
 </script>
-
-<style lang="scss" scoped>
-section {
-  @apply px-0 md:px-20;
-  .container {
-    &:first-child {
-      @apply py-20;
-    }
-  }
-}
-</style>

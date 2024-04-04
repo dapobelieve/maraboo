@@ -3,7 +3,7 @@
     <div class="mb-[15rem] flex flex-col items-center">
       <div class="relative w-full">
         <Nav :bg-transparent="false" />
-        <div class="pt-10">
+        <div>
           <slot />
           <ModalsContainer />
         </div>

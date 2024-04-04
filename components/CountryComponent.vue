@@ -49,13 +49,6 @@ const countryLink = computed(() => {
 const navigateToCountry = () => {
   router.push({
     path: countryLink.value,
-    // query: {
-    //   'country': props.country.country
-    //   // Add any query parameters if needed
-    //   // For example: queryParameterName: 'queryParameterValue'
-    // },
   });
-
-  localStorage.setItem("waemu", props.country.country);
 };
 </script>

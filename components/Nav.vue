@@ -3,14 +3,19 @@
     <div class="container" style="padding-bottom: 8px; padding-top: 8px">
       <div class="flex w-full items-center">
         <NuxtLink :to="localePath('/')" class="flex items-center">
-          <img class="mr-2" :src="'/maraboo.svg'" alt="logo" />
-          <img src="~/assets/images/logo.svg" alt="" />
+          <div>
+            <img
+              class="h-6 md:h-8"
+              src="~/assets/images/maraboo-logo.png"
+              alt=""
+            />
+          </div>
         </NuxtLink>
         <span class="ml-auto mt-3 inline-flex items-center space-x-6">
           <Button
             @click.stop="$router.push('/about')"
             type="no-outline"
-            class=""
+            class="hidden md:block"
             >Company</Button
           >
           <button class="rounded-full border border-surface-200 px-6 py-2.5">

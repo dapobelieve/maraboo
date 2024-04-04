@@ -1,294 +1,349 @@
 <template>
-  <div>
-    
-    <div class="bg-[#BEBAFC] min-h-screen w-full" :style="{ backgroundImage: `url('/unlock-bg.svg')` }">
-      <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
-        <div class="2xl:max-w-[101rem] w-full">
-          <section class="px-4 mt-[7rem]">
-            <div
-              class="rounded-[30px] flex md:py-14 py-8 lg:px-8 justify-center"
-            >
-              <div class="w-full md:space-y-0 space-y-8 md:flex">
-                <div class="md:w-1/2 text-white flex flex-col justify-between">
-                  <div class="block mb-4 md">
-                    <NuxtLink
-                      to="/join-us"
-                      class="inline-flex cursor-pointer items-center bg-[#F5F5F5] px-4 py-3 shadow transition-transform duration-700 hover:scale-105 rounded-[50px] md:px-4 md:py-3"
-                    >
-                      <span class="text-sm font-bold text-purple lg:text-lg">
-                        FINTRAC {{  $t('from-waemu.section-1.regulated.name') }}
-                      </span>
-                      <span class="mx-1 text-[12px] text-black md:ml-4">
-                        {{ $t('from-waemu.section-1.regulated.learn-more') }}
-                      </span>
-                      <img
-                        class="h-3 md:ml-3"
-                        src="~/assets/images/arrow-right.svg"
-                        alt=""
-                      />
-                    </NuxtLink>
-                  </div>
-                  <h1 class="font-heading text-[32px] md:text-5xl" style="line-height: 3.4rem !important">
-                    {{ $t('from-waemu.section-1.caption.left') }} {{ countryName }}  {{ $t('from-waemu.section-1.caption.right') }}
-                  </h1>
-                  <p v-html="$t('from-waemu.section-1.text')" class="drop-shadow-lg mb-8 md:mt-2"></p>
-                  <div class="inline-flex">
-                    <img class="md:h-56 h-32 mr-5 drop-shadow-lg" src="~/assets/images/qr.svg" />
-                    <span v-html="$t('qr-scan')" class="md:mt-10 drop-shadow-lg text-lg">
-                    </span>
-                  </div>
-                </div>
-                <div id="top" class="md:w-1/2">
-                  <Calculator :country="waemu" :storedWaemuCountry="storedWaemuCountry"  class="md:ml-auto" />
-                </div>
-              </div>
+  <section class="py-6">
+    <div class="bg-coloured w-full rounded-[40px]">
+      <div class="container">
+        <div class="content-wraps w-full">
+          <div class="w-full items-start justify-between md:flex">
+            <div class="max-w-m top-10 text-white md:sticky">
+              <h1 class="display-1 mb-4 text-center font-medium md:text-left">
+                Send money from
+                <span class="capitalize">{{ waemuCountry }}</span> to Canada at
+                the real exchange rate
+              </h1>
+              <p class="text-2 max-w-md text-center md:text-left">
+                From local to global in real time, Maraboo Magic: Discover
+                3xSavings on international money Transfers to or from WAEMU
+                countries!
+              </p>
             </div>
-          </section>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="my-28 px-5 lg:px-52 flex flex-col items-center justify-center text-center"
-    >
-      <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
-        <div class="2xl:max-w-[101rem] w-full">
-          <h1 class="mb-7 font-heading text-4xl md:text-6xl">
-            {{ countryName }}  {{ $t('from-waemu.section-2.caption') }} 
-          </h1>
-          <p v-html="$t('from-waemu.section-2.text')" class="text leading-relaxed lg:px-12"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div
-    class="relative bg-[url('/assets/images/angle.svg')] bg-[#F5F5F5] border-red-700 my-24 pb-12"
-  >
-    <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
-      <div class="2xl:max-w-[101rem] w-full">
-        <div id="how-it-works" class="relative text-black flex flex-col pt-24 items-center justify-center">
-          <h1 class="mb-9 md:mb-24 px-5 lg:px-52 text-center font-heading text-4xl md:text-6xl">
-            {{ $t('from-waemu.section-3.caption.left') }} {{ countryName }}  {{ $t('from-waemu.section-3.caption.right') }}
-          </h1>
-          <div class="flex flex-col lg:flex-row lg:gap-9">
-            <div class="w-full">
-              <div class="flex flex-col text-black items-center md:block">
-                <div class="mb-8 md:mb-24">
-                  <div
-                    class="inline-block bg-white h-[380px] w-80 rounded-[40px] shadow-lg px-6 py-10"
-                  >
-                    <h1 class="mb-4 text-2xl font-bold text-[#F67335]">
-                      {{ $t("home.section5.how-it-works.step-1.name") }}
-                    </h1>
-                    <div class="inline-flex flex-col mt-6" v-html="$t('home.section5.how-it-works.step-1.text')"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="w-full mx-auto mb-8">
-              <div
-                class="inline-block bg-white h-[380px] w-80 rounded-[40px] shadow-lg px-6 py-10"
-              >
-                <h1 class="mb-4 text-2xl font-bold text-[#F67335]">
-                  {{ $t("home.section5.how-it-works.step-2.name") }}
-                </h1>
-                <div class="inline-flex flex-col mt-6" v-html="$t('home.section5.how-it-works.step-2.text')"></div>
-
-              </div>
-            </div>
-            <div class="w-full">
-              <div class="flex justify-center">
-                <div
-                  class="inline-block bg-white h-[380px] w-80 rounded-[40px] shadow-lg px-6 py-10"
-                >
-                  <h1 class="mb-4 text-2xl font-bold text-[#F67335]">
-                    {{ $t("home.section5.how-it-works.step-3.name") }}
-                  </h1>
-                  <p class="mt-7">{{ $t("home.section5.how-it-works.step-3.one") }}</p>
-                  <div class="-mt-5">
-                    <div>
-                      <div class="inline-flex items-center">
-                        <h1 class="m-0">
-                          {{
-                            $t("home.section5.how-it-works.step-3.cad-in.name")
-                          }}:
-                        </h1>
-                        <div class="flags inline-flex items-center">
-                          <span>
-                            <img
-                              class="ml-3 h-4 mt-10"
-                              src="~/assets/images/canada.svg"
-                              alt=""
-                            />
-                          </span>
-                        </div>
-                      </div>
-                      <div class="block -mt-8">
-                        <div class="ml-2 inline-flex flex-col">
-                          <span
-                            >&#x2022;
-                            {{
-                              $t(
-                                "home.section5.how-it-works.step-3.cad-in.interac"
-                              )
-                            }}</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-
-                    <p
-                      class="mt-4 mb-3"
-                      v-html="$t('home.section5.how-it-works.step-3.text')"
-                    ></p>
-                  </div>
-                </div>
-              </div>
+            <div class="">
+              <Calculator class="md:ml-auto" />
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <section
-    class="mt-[3rem] px-12 md:px-2 lg:px-12 2xl:px-96 pb-12 md:mt-[7rem] md:pb-32"
-  >
-    <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
-      <div class="2xl:max-w-[80rem] w-full">
-        <div class="md:flex gap-10">
-          <div class="mb-8 w-full md:mb-0 md:w-2/4">
-            <div class="mt-0">
-              <div class="mb-8 font-heading md:text-left">
-                <h1 class="max-w-[47rem] text-[32px] md:text-5xl" style="line-height: 3.4rem !important">
-                  {{  $t('from-waemu.section-4.caption') }}
-                </h1>
-              </div>
-              <p
-                class="md:text-left"
-                v-html="$t('home.section1.left.center.l3')"
-              ></p>
-            </div>
-            <div class="mt-16 hidden text-center md:block md:text-left">
-              <a @click.stop="scrollIntoView" href="#top" class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]">
-                {{ $t('send-btn') }}
-              </a>
-              <div class="flex justify-between mt-10 md:max-w-[18rem]">
-                <a>
-                  <img
-                    class="md:h-12 h-4"
-                    src="~/assets/images/appleStore.svg"
-                  />
-                </a>
-                <a>
-                  <img class="md:h-12" src="~/assets/images/playStore.svg" />
-                </a>
-              </div>
-              <!--  <GlobalMore> {{ $t("home.section1.left.bottom") }} </GlobalMore>-->
-            </div>
-          </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="content-wrap">
+        <div class="w-full space-y-20">
           <div
-            class="block mx-auto lg:flex items-center justify-center w-[80%] md:w-[500px]"
+            class="why-us relative flex w-full flex-col md:flex-row md:text-justify"
           >
-            <img
-              class="h-full w-full content-center"
-              src="~/assets/images/iphone-hexagon-2.png"
+            <div
+              class="flex flex-col items-center space-y-10 md:block md:flex-row md:items-start"
+            >
+              <h1 class="display-2 font-medium">
+                Why <br />
+                Choose us
+              </h1>
+              <p class="max-w-sm text-center leading-6 md:text-left">
+                When you send money with Maraboo you <br />
+                not only save your time and money but you <br />
+                a company built by native africans
+              </p>
+            </div>
+            <div class="-top-44 right-0 flex justify-center md:absolute">
+              <img alt="" class="h-96" src="~/assets/images/rats.png" />
+            </div>
+          </div>
+          <div class="w-full justify-between md:flex">
+            <div class="mb-12 md:mb-0">
+              <small class="font-bold">The</small>
+              <h1 class="display-3 mb-6 font-medium">Fastest</h1>
+              <p class="text-2">
+                We complete transfers in real <br />
+                time
+              </p>
+            </div>
+            <div class="mb-12 md:mb-0">
+              <small class="font-bold">The</small>
+              <h1 class="display-3 mb-6 font-medium">Cheapest</h1>
+              <p class="text-2">
+                We give you the lowest rate <br />
+                every time
+              </p>
+            </div>
+            <div class="mb-12 md:mb-0">
+              <small class="font-bold">The</small>
+              <h1 class="display-3 mb-6 font-medium">Most Versatile</h1>
+              <p class="text-2">
+                The widest range of collection <br />
+                and delivery options
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="content-wrap">
+        <div class="flex w-full justify-between">
+          <div class="flex w-full flex-col items-center py-2 md:w-1/2">
+            <div class="space-y-32 md:max-w-[31rem]">
+              <div class="mb-8 space-y-4">
+                <h1 class="display-2 mb-4 text-start">How it Works</h1>
+                <p class="text-2">
+                  Sending money to or from UMOA is <br />as easy as 1-2-3 with
+                  us.
+                </p>
+              </div>
+              <div class="flex space-x-8">
+                <div class="bar">
+                  <div class="h-1/2 w-[3px] bg-slate-300"></div>
+                </div>
+                <div class="steps flex max-w-sm flex-col">
+                  <div
+                    v-for="step in steps"
+                    class="step mb-8 flex items-start space-x-8 pb-10"
+                  >
+                    <div>
+                      <small class="font-bold text-primary">{{
+                        step.step
+                      }}</small>
+                      <h1 class="display-3 mb-4">{{ step.title }}</h1>
+                      <p class="text-2 leading-9">
+                        {{ step.body }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hidden w-1/3 md:block">
+            <img class="" src="~/assets/images/phone-steps.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="extend-brand">
+    <div class="container">
+      <div class="content-wrap">
+        <div class="relative w-full space-y-28">
+          <div class="flex items-center justify-between">
+            <h1 class="display-2 capitalize">
+              Where We <br />
+              Extend our <br />support
+            </h1>
+            <div class="absolute -top-52 right-0 hidden md:block">
+              <img src="~/assets/images/globe-stand.svg" alt="" />
+            </div>
+          </div>
+          <div class="flags flex w-full flex-wrap items-center gap-y-14">
+            <CountryComponent
+              class="w-1/4"
+              v-for="(country, cIndex) in countries"
+              :key="cIndex"
+              :country="country"
             />
           </div>
-          <div class="mt-16 md:hidden text-left">
-            <a @click.stop="scrollIntoView" href="#top" class="bg-black mb-6 text-white px-6 py-4 rounded-[10px]">
-              {{ $t('send-btn') }}
-            </a>
-            <div class="flex justify-start gap-2 mt-10">
-              <a href="#">
-                <img class="h-12" src="~/assets/images/appleStore.svg" />
-              </a>
-              <a href="#">
-                <img class="h-12" src="~/assets/images/playStore.svg" />
-              </a>
-            </div>
-          </div>
-          <!--  <GlobalMore> {{ $t("home.section1.left.bottom") }} </GlobalMore>-->
         </div>
       </div>
     </div>
   </section>
-  <section class="data-privacy py-20 px-8">
-    <div class="flex items-center text-center md:text-left justify-center">
-      <div
-        class="max-w-5xl inline-flex md:flex-row flex-col justify-center items-center w-full"
-      >
-        <img src="~/assets/images/shield.png" class="mr-0 w-1/4 mb-5" />
-        <span class="md:ml-36">
-          <h1
-            class="mb-8 font-heading text-4xl leading-snug md:text-6xl"
-            v-html="$t('home.section6.how-we.name')"
-          ></h1>
-          <span class="max-w-[45rem] text leading-normal">
-            {{ $t("home.section6.how-we.text") }}
-          </span>
-        </span>
+  <section class="testimonials">
+    <div class="container">
+      <div class="flex flex-col gap-10">
+        <div class="gap-10 md:flex">
+          <div class="mb-10 flex md:mb-0 md:w-3/5">
+            <Card class="flex flex-col bg-accent-100">
+              <div class="flex grow items-center justify-center">
+                <img src="~/assets/images/secure.png" alt="phone-logo" />
+              </div>
+              <div>
+                <h1 class="display-2 mb-12">Securing Your Data Fortress!</h1>
+                <p class="text-2">
+                  Rest assured, your funds and private information are <br />
+                  safeguarded by state-of-the-art security technology, <br />
+                  compliant with both local and global regulations
+                </p>
+              </div>
+            </Card>
+          </div>
+          <div class="grid gap-10 md:w-2/5">
+            <Card class="bg-accent-100" direction="down">
+              <h1 class="display-3 mb-4">From local to global.</h1>
+              <p class="text-3">
+                Seamlessly transfer up to $9,900 daily to/from WAEMU countries
+                at the Real Exchange. Your gateway to hassle-free international
+                transactions!
+              </p>
+            </Card>
+            <Card class="bg-accent-100" direction="up">
+              <p class="display-3">
+                Did you know that a 10% reduction in transaction fees for
+                sending?
+              </p>
+            </Card>
+          </div>
+        </div>
+        <div class="">
+          <Card
+            class="display-1 flex justify-center bg-neutral text-white shadow-md"
+          >
+            <div class="content-wrap">
+              <div class="flex w-full justify-between 2xl:max-w-7xl">
+                <div class="flex w-1/2 flex-col space-y-36">
+                  <h1 class="display-2 grow-1 hidden md:block">
+                    Real Talk <br />
+                    from Our <br />
+                    Customers
+                  </h1>
+                  <div
+                    class="relative flex max-w-[9rem] items-center justify-between p-4"
+                  >
+                    <button
+                      class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 opacity-70 shadow"
+                    >
+                      <span class="text-xl"
+                        ><img
+                          class="rotate-180"
+                          src="~/assets/images/tabler-icon-chevron-right.png"
+                      /></span>
+                    </button>
+
+                    <button
+                      class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 opacity-70 shadow"
+                    >
+                      <span class="text-xl">
+                        <img
+                          src="~/assets/images/tabler-icon-chevron-right.png"
+                        />
+                      </span>
+                    </button>
+                  </div>
+                </div>
+                <div class="flex w-1/2 flex-col items-center">
+                  <div class="mb-8 inline-flex flex-col items-center">
+                    <img
+                      class="mb-4"
+                      src="~/assets/images/customer.png"
+                      alt=""
+                    />
+                    <small class="text-1">John Doe . Canada</small>
+                  </div>
+                  <div>
+                    <p class="max-w-xs text-center text-2xl">
+                      “I love that Maraboo gives me the real exchange rate. It
+                      means more of my money goes to my loved ones in Togo.”
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
       </div>
     </div>
   </section>
-
-  <section class="mb-10 px-4 md:px-12 md:py-32">
-    <div class="flex flex-col items-center px-5 sm:px-5 lg:px-10">
-      <div class="2xl:max-w-[101rem] w-full">
-        <div class="flex flex-col items-center">
-          <h1
-            class="mb-14 text-center font-heading text-4xl leading-snug md:text-6xl"
-          >
-            {{ $t("home.faq-header") }}
-          </h1>
-
-          <div class="w-full">
-            <GlobalAccordionList>
+  <section class="faq">
+    <div class="container">
+      <div class="flex flex-col items-center space-y-32">
+        <h1 class="font-heading display-2 text-center leading-snug md:text-6xl">
+          {{ $t("home.faq-header") }}
+        </h1>
+        <div class="flex w-full">
+          <GlobalAccordionList class="w-full gap-10 md:flex">
+            <div class="md:w-1/2">
               <GlobalAccordionItem
                 :item-id="id + 1"
                 :item="q"
-                v-for="(q, id) in faqs"
+                v-for="(q, id) in faqs.slice(0, half)"
               ></GlobalAccordionItem>
-            </GlobalAccordionList>
-          </div>
+            </div>
+            <div class="md:w-1/2">
+              <GlobalAccordionItem
+                :item-id="id + 4"
+                :item="q"
+                v-for="(q, id) in faqs.slice(half)"
+              ></GlobalAccordionItem>
+            </div>
+          </GlobalAccordionList>
         </div>
       </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <Card class="bg-accent-200 p-8 md:p-10">
+        <div class="items-center md:flex">
+          <div class="mb-4 flex md:space-x-8">
+            <img
+              src="~/assets/images/woman.svg"
+              class="hidden md:block"
+              alt="woman-logo"
+            />
+            <div>
+              <h1 class="display-3 mb-4">Still have questions?</h1>
+              <p class="text-2">
+                Our agents are always ready to answer your questions.
+              </p>
+            </div>
+          </div>
+          <button
+            class="ml-auto self-center rounded-full border-2 border-black px-6 py-2 font-medium"
+          >
+            Chat With Us
+          </button>
+        </div>
+      </Card>
     </div>
   </section>
 </template>
 
 <script setup>
+import { ModalsContainer, useModal } from "vue-final-modal";
+import { useRouter } from "vue-router";
 
-import { useRoute } from "vue-router";
-import { reactive, onMounted } from "vue";
+import { reactive, onMounted, onBeforeMount, ref } from "vue";
 import { useI18n } from "vue-i18n";
+import CountryComponent from "~/components/CountryComponent.vue";
+import qr from "~/components/modals/qr.vue";
+import { useRoute } from "#app";
+
 const { t } = useI18n();
 
-const route = useRoute()
-// route parameter 
-const { waemu } = route.params;
+const route = useRoute();
 
+const showModal = localStorage.getItem("show");
+const show = ref(false);
+const waemuCountry = ref(null);
 
-// waemu country data stored in localstorage 
-const storedWaemuCountry = localStorage.getItem('waemu')
+const showCookieConsentModal = () => {
+  if (!showModal) {
+    show.value = true;
+    document.body.classList.add("show-modal");
+  }
 
-//  function that looks for a lowercase letter that begins with hyphen(-) and converts the first letter and the match to uppercase
-const capitalizeWords = (str) => {
-  return str
-    .toLowerCase()
-    .replace(/(^|-)([a-z])/g, (match) => match.toUpperCase());
+  if (showModal) {
+    show.value = false;
+    document.body.classList.remove("show-modal");
+  }
 };
 
-const countryName = capitalizeWords(waemu);
+const { open, close } = useModal({
+  component: qr,
+  attrs: {
+    title: "Hello World!",
+    onConfirm() {
+      close();
+    },
+  },
+});
 
-function scrollIntoView(e) {
-  const { hash } = e.target;
-  document.querySelector(hash).scrollIntoView({ behavior: "smooth" });
-}
+onMounted(() => {
+  setTimeout(() => {
+    showCookieConsentModal();
+  }, 2000);
+});
 
-definePageMeta({
-  layout: "country",
+onBeforeMount(() => {
+  waemuCountry.value = route.params.waemu;
 });
 
 const faqs = reactive([
@@ -318,7 +373,81 @@ const faqs = reactive([
   },
 ]);
 
-// console.log(route.query.country)
-</script>
+const countries = reactive([
+  {
+    name: "benin",
+    flag: "benin",
+    country: "benin",
+  },
+  {
+    name: "Burkina Faso",
+    flag: "burkinafaso",
+    country: "burkina_faso",
+  },
+  {
+    name: "Cote d'voire",
+    flag: "cotedivoire",
+    country: "cote_d_ivoire",
+  },
+  {
+    name: "mali",
+    flag: "mali",
+    country: "mali",
+  },
+  {
+    name: "togo",
+    flag: "togo",
+    country: "togo",
+  },
+  {
+    name: "niger",
+    flag: "niger",
+    country: "niger",
+  },
+  {
+    name: "Guinea Bissau",
+    flag: "guineabissau",
+    country: "guinea_bissau",
+  },
+  {
+    name: "senegal",
+    flag: "senegal",
+    country: "senegal",
+  },
+  {
+    name: "canada",
+    flag: "canada",
+  },
+]);
 
-<style lang="scss" scoped></style>
+const steps = reactive([
+  {
+    step: "01",
+    title: "Sign up",
+    body:
+      "Lorem ipsum dolor sit amet consectetur. Nunc pulvinar " +
+      "nam purus nunc interdum lorem. Venenatis nisl " +
+      "pulvinar urna facilisi eget vel fringilla",
+  },
+  {
+    step: "02",
+    title: "Download the App and Verify your Identity",
+    body:
+      "Lorem ipsum dolor sit amet consectetur. Nunc pulvinar " +
+      "nam purus nunc interdum lorem. Venenatis nisl " +
+      "pulvinar urna facilisi eget vel fringilla",
+  },
+  {
+    step: "03",
+    title: "Send Less",
+    body: "Enjoy the lowest rates, send up to $9,900 every day",
+  },
+  {
+    step: "04",
+    title: "Receive More",
+    body: "Receive in real time by cash, mobile money or bank",
+  },
+]);
+
+const half = computed(() => Math.ceil(faqs.length / 2));
+</script>
