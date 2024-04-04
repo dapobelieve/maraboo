@@ -2,15 +2,32 @@
   <section class="py-6">
     <div class="bg-coloured w-full rounded-[40px]">
       <div class="container">
-        <div class="content-wraps w-full">
+        <div class="content-wraps w-full px-4">
           <div class="w-full items-start justify-between md:flex">
             <div class="max-w-m top-10 text-white md:sticky">
-              <h1 class="display-1 mb-4 text-center font-medium md:text-left">
+              <h1 class="display-2 mb-4 text-left font-medium">
                 Send money from
-                <span class="capitalize">{{ waemuCountry }}</span> to Canada at
-                the real exchange rate
+                <span class="inline-flex items-center">
+                  <img
+                    class="mr-2 h-6 w-6 md:h-14 md:w-14"
+                    :src="images[waemuCountry.flag]"
+                    alt=""
+                  /><span class="mr-3 capitalize"
+                    >{{ waemuCountry.name }}
+                  </span>
+                  to
+                </span>
+                <br />
+                <span class="inline-flex items-center"
+                  ><img
+                    class="mr-2 h-6 w-6 md:h-14 md:w-14"
+                    :src="images['canada']"
+                    alt=""
+                  /><span>Canada</span>
+                </span>
+                <br />at the real <br />exchange rate
               </h1>
-              <p class="text-2 max-w-md text-center md:text-left">
+              <p class="text-2 max-w-md text-left md:text-center">
                 From local to global in real time, Maraboo Magic: Discover
                 3xSavings on international money Transfers to or from WAEMU
                 countries!
@@ -305,9 +322,10 @@ import { useI18n } from "vue-i18n";
 import CountryComponent from "~/components/CountryComponent.vue";
 import qr from "~/components/modals/qr.vue";
 import { useRoute } from "#app";
+import { useImages } from "~/composables/useImages";
 
 const { t } = useI18n();
-
+const { images } = useImages();
 const route = useRoute();
 
 const showModal = localStorage.getItem("show");
@@ -340,10 +358,6 @@ onMounted(() => {
   setTimeout(() => {
     showCookieConsentModal();
   }, 2000);
-});
-
-onBeforeMount(() => {
-  waemuCountry.value = route.params.waemu;
 });
 
 const faqs = reactive([
@@ -419,6 +433,10 @@ const countries = reactive([
     flag: "canada",
   },
 ]);
+onBeforeMount(() => {
+  waemuCountry.value = countries.find((c) => c.name == route.params.waemu);
+  // waemuCountry.value = route.params.waemu;
+});
 
 const steps = reactive([
   {

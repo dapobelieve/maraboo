@@ -146,7 +146,7 @@ onMounted(() => {
   });
 
   $gsap.to(".kids", {
-    duration: 0.5,
+    duration: 0.2,
     yPercent: 30,
     ease: "none",
     scrollTrigger: {
