@@ -400,11 +400,11 @@ const { open: openQr, close } = useModal({
   },
 });
 
-const { open: openCookie } = useModal({
+const { open: openCookie, close: closeCookie } = useModal({
   component: cookie,
   attrs: {
-    onConfirm() {
-      // close();
+    onClose() {
+      closeCookie();
     },
   },
 });
