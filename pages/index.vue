@@ -8,7 +8,7 @@
               International Transfers Built for
               <span class="text-multi-color">UMOA Countries</span>
             </h1>
-            <Button @click="open">Send Money</Button>
+            <Button @click="openQr">Send Money</Button>
           </div>
           <div class="globe">
             <img class="w-full" src="~/assets/images/the-globe.svg" alt="" />
@@ -384,25 +384,13 @@ import { reactive, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import CountryComponent from "~/components/CountryComponent.vue";
 import qr from "~/components/modals/qr.vue";
+import cookie from "~/components/modals/cookie.vue";
 
 const { t } = useI18n();
 
-const showModal = localStorage.getItem("show");
 const show = ref(false);
 
-const showCookieConsentModal = () => {
-  if (!showModal) {
-    show.value = true;
-    document.body.classList.add("show-modal");
-  }
-
-  if (showModal) {
-    show.value = false;
-    document.body.classList.remove("show-modal");
-  }
-};
-
-const { open, close } = useModal({
+const { open: openQr, close } = useModal({
   component: qr,
   attrs: {
     title: "Hello World!",
@@ -412,9 +400,18 @@ const { open, close } = useModal({
   },
 });
 
+const { open: openCookie } = useModal({
+  component: cookie,
+  attrs: {
+    onConfirm() {
+      // close();
+    },
+  },
+});
+
 onMounted(() => {
   setTimeout(() => {
-    showCookieConsentModal();
+    openCookie();
   }, 2000);
 });
 

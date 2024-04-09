@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { VueFinalModal } from "vue-final-modal";
 
-defineProps<{
-  title?: string;
-}>();
-
 const emit = defineEmits<{
   (e: "confirm"): void;
 }>();
