@@ -15,12 +15,16 @@ const props = defineProps({
     type: String,
     default: "outline",
   },
+  size: {
+    type: String,
+    default: "md",
+  },
 });
 
 const circle = ref(null);
 
 const computedClass = computed(() => {
-  let classes = "";
+  let classes = "shadow-md text-white";
 
   if (props.type === "outline") {
     classes += "border-2 border-neutral";
