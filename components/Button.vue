@@ -15,6 +15,10 @@ const props = defineProps({
     type: String,
     default: "outline",
   },
+  animate: {
+    type: Boolean,
+    default: false,
+  },
   size: {
     type: String,
     default: "md",
@@ -24,29 +28,35 @@ const props = defineProps({
 const circle = ref(null);
 
 const computedClass = computed(() => {
-  let classes = "shadow-md text-white";
+  let classes = "";
 
   if (props.type === "outline") {
-    classes += "border-2 border-neutral";
+    classes = "border-2 border-neutral";
+  } else if (props.type === "tint") {
+    classes = "tint text-white ";
+  } else if (props.type === "active") {
+    classes = "bg-black text-white";
   }
-
+  if (props.animate) {
+    classes += " btn-animate";
+  }
   return classes;
 });
 
 function handleMouseMove(event) {
-  const buttonRect = event.target.getBoundingClientRect();
-  circle.value.style.top = `${event.clientY - buttonRect.top}px`;
-  circle.value.style.left = `${event.clientX - buttonRect.left}px`;
-  // circle.value.style.top = "4px";
-  // circle.value.style.left = "4px";
+  console.log(props.animate);
+  if (props.animate) {
+    const buttonRect = event.target.getBoundingClientRect();
+    circle.value.style.top = `${event.clientY - buttonRect.top}px`;
+    circle.value.style.left = `${event.clientX - buttonRect.left}px`;
+  }
 }
 </script>
 <style scoped lang="scss">
-.button {
-  cursor: pointer;
-  place-items: center;
-  position: relative;
-
+.tint {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+.btn-animate {
   &:hover {
     span {
       position: relative;
@@ -58,6 +68,11 @@ function handleMouseMove(event) {
       transition: scale 0.3s ease-in-out;
     }
   }
+}
+.button {
+  cursor: pointer;
+  place-items: center;
+  position: relative;
 }
 
 .circle {

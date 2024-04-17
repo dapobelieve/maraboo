@@ -68,3 +68,7 @@ section {
 .bg-coloured {
     @apply bg-gradient-to-r from-active via-primary via-65% to-accent-400
 }
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}

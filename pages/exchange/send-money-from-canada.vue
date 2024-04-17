@@ -143,7 +143,7 @@
           </div>
           <div class="hidden w-1/2 md:block">
             <div class="flex w-full justify-center">
-              <img src="~/assets/images/mobile.png" alt="" />
+              <img src="~/assets/images/mobile-1.png" alt="" />
             </div>
           </div>
         </div>
@@ -328,25 +328,11 @@ import qrBg from "assets/images/unlock-bg.svg";
 
 const { t } = useI18n();
 
-const showModal = localStorage.getItem("show");
 const show = ref(false);
-
-const showCookieConsentModal = () => {
-  if (!showModal) {
-    show.value = true;
-    document.body.classList.add("show-modal");
-  }
-
-  // showModal.value = true
-  if (showModal) {
-    show.value = false;
-    document.body.classList.remove("show-modal");
-  }
-};
 
 onMounted(() => {
   setTimeout(() => {
-    showCookieConsentModal();
+    // showCookieConsentModal();
   }, 2000);
 });
 

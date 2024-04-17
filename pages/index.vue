@@ -8,7 +8,7 @@
               International Transfers Built for
               <span class="text-multi-color">UMOA Countries</span>
             </h1>
-            <Button @click="openQr">Send Money</Button>
+            <Button animate @click="openQr">Send Money</Button>
           </div>
           <div class="globe">
             <img class="w-full" src="~/assets/images/the-globe.svg" alt="" />
@@ -157,43 +157,51 @@
       </div>
     </section>
     <section>
-      <div class="container">
-        <div class="content-wrap">
-          <div class="flex w-full justify-between">
-            <div class="flex w-full flex-col items-center py-2 md:w-1/2">
-              <div class="space-y-32 md:max-w-[31rem]">
-                <div class="mb-8 space-y-4">
-                  <h1 class="display-2 mb-4 text-start">How it Works</h1>
-                  <p class="text-2">
-                    Sending money to or from UMOA is <br />as easy as 1-2-3 with
-                    us.
-                  </p>
+      <div class="container relative overflow-hidden" style="height: 80vh">
+        <div class="content-wrap sticky">
+          <div class="bord flex w-full justify-between bg-cyan-400">
+            <div class="flex w-full flex-col py-2">
+              <div class="mb-8 space-y-4">
+                <h1 class="display-2 mb-4 text-start">How it Works</h1>
+                <p class="text-2">
+                  Sending money to or from UMOA is <br />as easy as 1-2-3 with
+                  us.
+                </p>
+              </div>
+              <div class="flex space-x-8">
+                <div class="bar">
+                  <div class="h-1/2 w-[3px] bg-slate-300"></div>
                 </div>
-                <div class="flex space-x-8">
-                  <div class="bar">
-                    <div class="h-1/2 w-[3px] bg-slate-300"></div>
-                  </div>
-                  <div class="steps flex max-w-sm flex-col">
-                    <div
-                      v-for="step in steps"
-                      class="step mb-8 flex items-start space-x-8 pb-10"
-                    >
-                      <div>
-                        <small class="font-bold text-primary">{{
-                          step.step
-                        }}</small>
-                        <h1 class="display-3 mb-4">{{ step.title }}</h1>
-                        <p class="text-2 leading-9">
-                          {{ step.body }}
-                        </p>
-                      </div>
+                <div class="steps flex max-w-sm flex-col">
+                  <div
+                    v-for="(step, index) in steps"
+                    class="mb-8 flex items-start space-x-8 pb-10"
+                    :class="`step-${index}`"
+                  >
+                    {{ index }}
+                    <div>
+                      <small class="font-bold text-primary">{{
+                        step.step
+                      }}</small>
+                      <h1 class="display-3 mb-4">{{ step.title }}</h1>
+                      <p class="text-2 leading-9">
+                        {{ step.body }}
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="hidden w-1/3 md:block">
-              <img class="" src="~/assets/images/phone-steps.png" alt="" />
+            <div class="hidden md:block">
+              <img
+                v-for="(image, imgIndex) in images.slice(0, 1)"
+                class="w-full"
+                :src="image.src"
+                :key="imgIndex"
+                :class="`image-${imgIndex}`"
+                alt=""
+                style="visibility: hidden"
+              />
             </div>
           </div>
         </div>
@@ -378,8 +386,8 @@
 </template>
 
 <script setup>
-import { ModalsContainer, useModal } from "vue-final-modal";
-
+import { useModal } from "vue-final-modal";
+const { $gsap } = useNuxtApp();
 import { reactive, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import CountryComponent from "~/components/CountryComponent.vue";
@@ -389,6 +397,42 @@ import cookie from "~/components/modals/cookie.vue";
 const { t } = useI18n();
 
 const show = ref(false);
+
+const steps = reactive([
+  {
+    step: "01",
+    title: "Sign up",
+    body:
+      "Lorem ipsum dolor sit amet consectetur. Nunc pulvinar " +
+      "nam purus nunc interdum lorem. Venenatis nisl " +
+      "pulvinar urna facilisi eget vel fringilla",
+  },
+  {
+    step: "02",
+    title: "Download the App and Verify your Identity",
+    body:
+      "Lorem ipsum dolor sit amet consectetur. Nunc pulvinar " +
+      "nam purus nunc interdum lorem. Venenatis nisl " +
+      "pulvinar urna facilisi eget vel fringilla",
+  },
+  {
+    step: "03",
+    title: "Send Less",
+    body: "Enjoy the lowest rates, send up to $9,900 every day",
+  },
+]);
+
+const images = [
+  {
+    src: "https://res.cloudinary.com/believe/image/upload/v1713280088/maraboo/mobile-1.png",
+  },
+  {
+    src: "https://res.cloudinary.com/believe/image/upload/v1713280088/maraboo/mobile-2.png",
+  },
+  {
+    src: "https://res.cloudinary.com/believe/image/upload/v1713280088/maraboo/mobile-3.png",
+  },
+];
 
 const { open: openQr, close } = useModal({
   component: qr,
@@ -410,10 +454,33 @@ const { open: openCookie, close: closeCookie } = useModal({
 });
 
 onMounted(() => {
+  steps.forEach((step, index) => {
+    $gsap.to(`.image-${index}`, {
+      scrollTrigger: {
+        trigger: `.step-${index}`,
+        start: "top center", // Adjust as needed for your layout
+        end: "bottom center",
+        toggleActions: "play none none reset",
+        onEnter: () => showImage(index),
+        onLeaveBack: () => hideImage(index),
+      },
+      opacity: 1, // Ensure your CSS starts with opacity: 0 for all images
+      duration: 0.5,
+    });
+  });
+  openCookie();
   setTimeout(() => {
-    openCookie();
+    // openCookie();
   }, 2000);
 });
+
+function showImage(index) {
+  document.querySelector(`.image-${index}`).style.visibility = "visible";
+}
+
+function hideImage(index) {
+  document.querySelector(`.image-${index}`).style.display = "hidden";
+}
 
 const faqs = reactive([
   {
@@ -486,35 +553,6 @@ const countries = reactive([
   {
     name: "canada",
     flag: "canada",
-  },
-]);
-
-const steps = reactive([
-  {
-    step: "01",
-    title: "Sign up",
-    body:
-      "Lorem ipsum dolor sit amet consectetur. Nunc pulvinar " +
-      "nam purus nunc interdum lorem. Venenatis nisl " +
-      "pulvinar urna facilisi eget vel fringilla",
-  },
-  {
-    step: "02",
-    title: "Download the App and Verify your Identity",
-    body:
-      "Lorem ipsum dolor sit amet consectetur. Nunc pulvinar " +
-      "nam purus nunc interdum lorem. Venenatis nisl " +
-      "pulvinar urna facilisi eget vel fringilla",
-  },
-  {
-    step: "03",
-    title: "Send Less",
-    body: "Enjoy the lowest rates, send up to $9,900 every day",
-  },
-  {
-    step: "04",
-    title: "Receive More",
-    body: "Receive in real time by cash, mobile money or bank",
   },
 ]);
 
