@@ -72,3 +72,7 @@ section {
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
+
+.scroller {
+    height: 100vh;
+}

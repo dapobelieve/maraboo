@@ -1,5 +1,5 @@
 <template>
-  <main class="text-black">
+  <main class="h-full text-black">
     <section class="relative overflow-hidden">
       <div class="container space-y-12" style="padding-bottom: 0">
         <div class="flex flex-col items-center space-y-0">
@@ -8,7 +8,7 @@
               International Transfers Built for
               <span class="text-multi-color">UMOA Countries</span>
             </h1>
-            <Button animate @click="openQr">Send Money</Button>
+            <Button class="h-16" animate @click="openQr">Send Money</Button>
           </div>
           <div class="globe">
             <img class="w-full" src="~/assets/images/the-globe.svg" alt="" />
@@ -20,7 +20,7 @@
       <div class="container">
         <div class="content-wrap">
           <div class="w-full items-start justify-between md:flex">
-            <div class="top-10 text-white md:sticky">
+            <div class="two-way bord text-white">
               <h1 class="display-2 mb-4 text-center font-medium md:text-left">
                 Two-way Corridors
               </h1>
@@ -156,11 +156,11 @@
         </div>
       </div>
     </section>
-    <section>
-      <div class="container relative overflow-hidden" style="height: 80vh">
-        <div class="content-wrap sticky">
-          <div class="bord flex w-full justify-between bg-cyan-400">
-            <div class="flex w-full flex-col py-2">
+    <section class="x-section">
+      <div class="container">
+        <div class="content-wrap">
+          <div class="flex w-full items-start justify-between">
+            <div class="relative flex w-full flex-col py-2">
               <div class="mb-8 space-y-4">
                 <h1 class="display-2 mb-4 text-start">How it Works</h1>
                 <p class="text-2">
@@ -170,13 +170,12 @@
               </div>
               <div class="flex space-x-8">
                 <div class="bar">
-                  <div class="h-1/2 w-[3px] bg-slate-300"></div>
+                  <div class="bg-slate0 h-1/2 w-[3px]"></div>
                 </div>
-                <div class="steps flex max-w-sm flex-col">
+                <div class="steps flex max-w-sm flex-col border">
                   <div
                     v-for="(step, index) in steps"
-                    class="mb-8 flex items-start space-x-8 pb-10"
-                    :class="`step-${index}`"
+                    class="step-item mb-8 flex items-start space-x-8 pb-10"
                   >
                     {{ index }}
                     <div>
@@ -192,16 +191,14 @@
                 </div>
               </div>
             </div>
-            <div class="hidden md:block">
-              <img
-                v-for="(image, imgIndex) in images.slice(0, 1)"
-                class="w-full"
-                :src="image.src"
+            <div style="width: 750px" class="img-step-wrapper">
+              <div
+                v-for="(image, imgIndex) in images"
                 :key="imgIndex"
-                :class="`image-${imgIndex}`"
-                alt=""
-                style="visibility: hidden"
-              />
+                class="img-step blue"
+              >
+                <img :src="image.src" alt="" />
+              </div>
             </div>
           </div>
         </div>
@@ -210,8 +207,8 @@
     <section class="extend-brand">
       <div class="container">
         <div class="content-wrap">
-          <div class="relative w-full space-y-28">
-            <div class="flex items-center justify-between">
+          <div class="w-full space-y-28">
+            <div class="relative flex items-center justify-between">
               <h1 class="display-2 capitalize">
                 Where We <br />
                 Extend our <br />support
@@ -385,9 +382,33 @@
   </main>
 </template>
 
+<style lang="scss" scoped>
+.panssdel {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img-step-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 78vh;
+}
+</style>
+
 <script setup>
 import { useModal } from "vue-final-modal";
+import Scrollbar from "smooth-scrollbar";
 const { $gsap } = useNuxtApp();
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { reactive, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import CountryComponent from "~/components/CountryComponent.vue";
@@ -454,33 +475,63 @@ const { open: openCookie, close: closeCookie } = useModal({
 });
 
 onMounted(() => {
-  steps.forEach((step, index) => {
-    $gsap.to(`.image-${index}`, {
-      scrollTrigger: {
-        trigger: `.step-${index}`,
-        start: "top center", // Adjust as needed for your layout
-        end: "bottom center",
-        toggleActions: "play none none reset",
-        onEnter: () => showImage(index),
-        onLeaveBack: () => hideImage(index),
-      },
-      opacity: 1, // Ensure your CSS starts with opacity: 0 for all images
-      duration: 0.5,
-    });
+  let bodyScrollBar = Scrollbar.init(document.body, {
+    damping: 0.1,
+    delegateTo: document,
   });
-  openCookie();
-  setTimeout(() => {
-    // openCookie();
-  }, 2000);
+
+  ScrollTrigger.scrollerProxy(".scroller", {
+    scrollTop(value) {
+      if (arguments.length) {
+        bodyScrollBar.scrollTop = value;
+      }
+      return bodyScrollBar.scrollTop;
+    },
+  });
+  bodyScrollBar.addListener(ScrollTrigger.update);
+
+  $gsap.set(".img-step", {
+    zIndex: (i, target, targets) => targets.length - i,
+  });
+  let images = $gsap.utils.toArray(".img-step");
+  images.forEach((image, i) => {
+    let tl = $gsap.timeline({
+      scrollTrigger: {
+        trigger: ".x-section",
+        scroller: ".scroller",
+        start: () => "top -" + window.innerHeight * (i + 0.5),
+        end: () => "+=" + window.innerHeight,
+        scrub: true,
+        toggleActions: "play none reverse none",
+        invalidateOnRefresh: true,
+      },
+    });
+
+    tl.to(image, { height: 0 });
+  });
+
+  ScrollTrigger.create({
+    trigger: ".x-section",
+    scroller: ".scroller",
+    start: () => "top top",
+    end: () => "+=" + (images.length + 1) * window.innerHeight,
+    scrub: true,
+    // markers: true,
+    pin: true,
+    invalidateOnRefresh: true,
+  });
+
+  ScrollTrigger.create({
+    trigger: ".two-way",
+    scroller: ".scroller",
+    start: () => "top 30%",
+    end: () => "bottom 27%",
+    scrub: true,
+    markers: true,
+    pin: true,
+    invalidateOnRefresh: true,
+  });
 });
-
-function showImage(index) {
-  document.querySelector(`.image-${index}`).style.visibility = "visible";
-}
-
-function hideImage(index) {
-  document.querySelector(`.image-${index}`).style.display = "hidden";
-}
 
 const faqs = reactive([
   {
@@ -558,5 +609,3 @@ const countries = reactive([
 
 const half = computed(() => Math.ceil(faqs.length / 2));
 </script>
-
-<style lang="scss" scoped></style>

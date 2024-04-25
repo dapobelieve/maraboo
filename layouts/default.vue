@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full bg-auto bg-cover">
+  <div class="scroller relative w-full bg-auto bg-cover">
     <div class="mb-[15rem] flex flex-col items-center">
       <div class="relative w-full">
         <Nav :bg-transparent="false" />
@@ -16,10 +16,6 @@
 import { ModalsContainer } from "vue-final-modal";
 </script>
 <style lang="scss">
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   overflow-y: auto;
   overflow-x: auto;

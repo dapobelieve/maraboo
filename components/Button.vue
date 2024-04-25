@@ -44,7 +44,6 @@ const computedClass = computed(() => {
 });
 
 function handleMouseMove(event) {
-  console.log(props.animate);
   if (props.animate) {
     const buttonRect = event.target.getBoundingClientRect();
     circle.value.style.top = `${event.clientY - buttonRect.top}px`;

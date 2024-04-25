@@ -53,6 +53,7 @@ export default defineNuxtConfig({
   ssr: false,
   pages: true,
   modules: ["@nuxtjs/i18n", "@nuxtjs/tailwindcss"],
+
   i18n: {
     locales: [
       { code: "en", file: "en.json" },
