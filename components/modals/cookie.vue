@@ -3,7 +3,7 @@ import { VueFinalModal } from "vue-final-modal";
 import { ref } from "vue";
 
 const state = reactive({
-  settings: true,
+  settings: false,
   cookies: [
     {
       title: "Strictly Necessary Cookies",
@@ -33,7 +33,6 @@ function close() {
   emit("close");
 }
 
-const accordionOpen = ref<boolean>(false);
 const toggleActive = ref<boolean>(false);
 
 const emit = defineEmits<{
@@ -72,11 +71,11 @@ const emit = defineEmits<{
           "Settings" below.</small
         >
         <div class="mt-4">
-          <Button type="tint" class="mr-4">Decline All</Button>
+          <Button @click="close" type="tint" class="mr-4">Decline All</Button>
           <Button type="tint" @click="state.settings = true" class="mr-4"
             >Settings</Button
           >
-          <Button type="active">Accept All</Button>
+          <Button @click="close" type="active">Accept All</Button>
         </div>
       </div>
       <div

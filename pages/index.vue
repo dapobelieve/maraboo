@@ -386,7 +386,6 @@
   overflow: hidden;
   width: 450px;
   height: 80vh;
-  background-color: fuchsia;
 }
 
 .step-item {
@@ -480,6 +479,9 @@ const { open: openCookie, close: closeCookie } = useModal({
 });
 
 onMounted(() => {
+  setTimeout(() => {
+    openCookie();
+  }, 5000);
   let bodyScrollBar = Scrollbar.init(document.body, {
     damping: 0.1,
     delegateTo: document,
@@ -533,9 +535,9 @@ onMounted(() => {
         invalidateOnRefresh: true,
       },
     });
-    tl.to(step, { duration: 0.33, opacity: 1, y: "50%" }).to(
+    tl.to(step, { duration: 0.13, opacity: 1, y: "50%" }).to(
       step,
-      { duration: 0.33, opacity: 0, y: "0%" },
+      { duration: 0.13, opacity: 0, y: "0%" },
       0.66
     );
   });
@@ -566,9 +568,9 @@ onMounted(() => {
     trigger: ".superpower",
     scroller: ".scroller",
     start: () => "top 10%",
-    end: () => "bottom  ",
+    end: () => "bottom 35%",
     scrub: true,
-    // markers: true,
+    markers: true,
     pin: true,
     invalidateOnRefresh: true,
   });
