@@ -1,7 +1,7 @@
 <template>
   <div
     id="exchange-rate"
-    class="relative flex h-[652px] space-x-8 overflow-hidden rounded-[40px] bg-black p-4 text-surface-400 shadow-2xl md:w-[430px]"
+    class="relative flex h-[652px] space-x-8 overflow-hidden rounded-[40px] bg-neutral p-4 text-surface-400 shadow-2xl md:w-[430px]"
   >
     <div class="pop-in flex flex-col space-y-4" v-if="!state.config.open">
       <div class="selects space-y-1">

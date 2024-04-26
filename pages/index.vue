@@ -10,7 +10,7 @@
                 $t("home.section1.umoa")
               }}</span>
             </h1>
-            <Button class="h-16 capitalize" animate @click="openQr">{{
+            <Button class="h-[5rem] capitalize" animate @click="openQr">{{
               $t("home.section1.send")
             }}</Button>
           </div>
@@ -59,24 +59,22 @@
     <section>
       <div class="container">
         <div class="content-wrap">
-          <div class="w-full items-start justify-between md:flex">
-            <div class="supower">
-              <div class="space-y-8 text-center md:text-left">
-                <h1
-                  class="display-2 font-medium capitalize"
-                  v-html="$t('home.section4.left.super-power')"
-                ></h1>
-                <p class="text-2" v-html="$t('home.section4.left.offer')"></p>
-              </div>
+          <div class="h-full w-full items-start justify-between md:flex">
+            <div class="superpower h-full space-y-8 text-center md:text-left">
+              <h1
+                class="display-2 font-medium capitalize"
+                v-html="$t('home.section4.left.super-power')"
+              ></h1>
+              <p class="text-2" v-html="$t('home.section4.left.offer')"></p>
             </div>
-            <div class="superpower flex flex-col space-y-10">
+            <div class="flex flex-col space-y-10">
               <div
                 class="rounded-[40px] bg-gradient-to-r from-active to-accent-400 p-0.5"
               >
                 <div
                   class="max-w-md space-y-7 rounded-[39px] bg-[#E3E1EB] p-14"
                 >
-                  <h1 class="display-2 font-medium capitalize">
+                  <h1 class="display-3 font-medium capitalize">
                     {{ $t("home.section4.right.cash.top") }}
                   </h1>
                   <p class="text-2">
@@ -90,7 +88,7 @@
                 <div
                   class="max-w-md space-y-7 rounded-[40px] bg-[#E3E1EB] p-14"
                 >
-                  <h1 class="display-2 font-medium">
+                  <h1 class="display-3 font-medium">
                     {{ $t("home.section4.right.money.top") }}
                   </h1>
                   <p class="text-2">
@@ -104,7 +102,7 @@
                 <div
                   class="max-w-md space-y-7 rounded-[40px] bg-[#E3E1EB] p-14"
                 >
-                  <h1 class="display-2 font-medium">
+                  <h1 class="display-3 font-medium">
                     {{ $t("home.section4.right.bank.top") }}
                   </h1>
                   <p class="text-2">
@@ -136,7 +134,7 @@
                   v-html="$t('home.section5.about')"
                 ></p>
               </div>
-              <div class="-top-44 right-0 flex justify-center md:absolute">
+              <div class="-top-44 ml-auto flex justify-center">
                 <img alt="" src="~/assets/images/choose.svg" />
               </div>
             </div>
@@ -167,9 +165,7 @@
                 <h1 class="display-2 mb-4 text-start">
                   {{ $t("home.section6.how.name") }}
                 </h1>
-                <p class="text-2">
-                  {{ $t("home.section6.how.text") }}
-                </p>
+                <p class="text-2" v-html="$t('home.section6.how.text')"></p>
               </div>
               <div class="flex space-x-8">
                 <div class="bar">
@@ -178,7 +174,7 @@
                 <div class="steps flex max-w-sm flex-col border">
                   <div
                     v-for="(step, index) in steps"
-                    class="step-item mb-8 flex items-start space-x-8 pb-10"
+                    class="step-item mb-8 flex items-start space-x-8 px-4 pb-10"
                   >
                     <div>
                       <small class="font-bold text-primary">{{
@@ -533,6 +529,7 @@ onMounted(() => {
         end: () => "+=" + window.innerHeight,
         scrub: true,
         toggleActions: "play none reverse none",
+        // toggleClass: "bg-blue-500",
         invalidateOnRefresh: true,
       },
     });
@@ -557,8 +554,8 @@ onMounted(() => {
   ScrollTrigger.create({
     trigger: ".two-way",
     scroller: ".scroller",
-    start: () => "top 30%",
-    end: () => "bottom 27%",
+    start: () => "top 10%",
+    end: () => "bottom",
     scrub: true,
     // markers: true,
     pin: true,
@@ -568,13 +565,15 @@ onMounted(() => {
   ScrollTrigger.create({
     trigger: ".superpower",
     scroller: ".scroller",
-    start: () => "top 30%",
-    end: () => "bottom 61%",
+    start: () => "top 10%",
+    end: () => "bottom  ",
     scrub: true,
     // markers: true,
-    pin: ".supower",
+    pin: true,
     invalidateOnRefresh: true,
   });
+
+  ScrollTrigger.disable();
 });
 
 const faqs = reactive([

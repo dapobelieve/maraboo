@@ -11,8 +11,7 @@ body {
 
 .globe {
     @apply relative -bottom-[2%] md:bottom-[-6rem];
-    width: clamp(3.5rem, 96vw, 72rem);
-
+    width: clamp(3.5rem, 96vw, 60rem);
 }
 
 /******** Typography ********/
@@ -23,10 +22,12 @@ body {
 
 .display-2 {
     font-size: clamp(1.7rem, 118 / 1920* 100vw, 4.5rem);
+    line-height: 100%;
 }
 
 .display-3 {
     font-size: clamp(1.5rem, 118 / 1920* 100vw, 2.85rem);
+    line-height: 100%;
 }
 
 
