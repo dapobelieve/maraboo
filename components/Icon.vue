@@ -70,6 +70,7 @@ import {
   IconAlertHexagonFilled,
   IconAlertTriangleFilled,
   IconArrowsExchange2,
+  IconCaretDownFilled,
 } from "@tabler/icons-vue";
 
 const iconMap = {
@@ -113,6 +114,7 @@ const iconMap = {
   "arrow-narrow-up": IconArrowNarrowUp,
   "arrow-narrow-down": IconArrowNarrowDown,
   "caret-down": IconCaretDown,
+  "caret-down-filled": IconCaretDownFilled,
   "calendar-event": IconCalendarEvent,
   clock: IconClock,
   lock: IconLock,

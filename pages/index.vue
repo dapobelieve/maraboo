@@ -5,10 +5,14 @@
         <div class="flex flex-col items-center space-y-0">
           <div class="mb-8 space-y-20 text-center">
             <h1 class="display-1 font-medium">
-              International Transfers Built for
-              <span class="text-multi-color">UMOA Countries</span>
+              {{ $t("home.section1.intl") }}
+              <span class="text-multi-color">{{
+                $t("home.section1.umoa")
+              }}</span>
             </h1>
-            <Button class="h-16" animate @click="openQr">Send Money</Button>
+            <Button class="h-16 capitalize" animate @click="openQr">{{
+              $t("home.section1.send")
+            }}</Button>
           </div>
           <div class="globe">
             <img class="w-full" src="~/assets/images/the-globe.svg" alt="" />
@@ -20,14 +24,14 @@
       <div class="container">
         <div class="content-wrap">
           <div class="w-full items-start justify-between md:flex">
-            <div class="two-way bord text-white">
+            <div class="two-way text-white">
               <h1 class="display-2 mb-4 text-center font-medium md:text-left">
-                Two-way Corridors
+                {{ $t("home.section2.left.one") }}
               </h1>
-              <p class="text-center md:text-left">
-                Send money to or from any UMOA country <br />in real time at the
-                lowest rate.
-              </p>
+              <p
+                class="text-center md:text-left"
+                v-html="$t('home.section2.left.two')"
+              ></p>
             </div>
             <div class="">
               <Calculator class="md:ml-auto" />
@@ -41,8 +45,12 @@
         <div class="content-wrap">
           <div class="text-center">
             <h1 class="display-2">
-              Send less with <span class="text-multi-color">Maraboo</span>,
-              enjoy the lowest rates, receive more in real time
+              {{ $t("home.section3.left.one") }}
+              <span
+                class="text-multi-color"
+                v-html="$t('home.section3.left.two')"
+              ></span
+              >, {{ $t("home.section3.left.three") }}
             </h1>
           </div>
         </div>
@@ -52,28 +60,27 @@
       <div class="container">
         <div class="content-wrap">
           <div class="w-full items-start justify-between md:flex">
-            <div class="top-10 md:sticky">
+            <div class="supower">
               <div class="space-y-8 text-center md:text-left">
-                <h1 class="display-2 font-medium capitalize">
-                  Your new <br />
-                  superpower
-                </h1>
-                <p class="text-2">
-                  We offer the widest rage of payment and <br />
-                  disbursements methods to meet all your needs
-                </p>
+                <h1
+                  class="display-2 font-medium capitalize"
+                  v-html="$t('home.section4.left.super-power')"
+                ></h1>
+                <p class="text-2" v-html="$t('home.section4.left.offer')"></p>
               </div>
             </div>
-            <div class="flex flex-col space-y-10">
+            <div class="superpower flex flex-col space-y-10">
               <div
                 class="rounded-[40px] bg-gradient-to-r from-active to-accent-400 p-0.5"
               >
                 <div
                   class="max-w-md space-y-7 rounded-[39px] bg-[#E3E1EB] p-14"
                 >
-                  <h1 class="display-2 font-medium">Cash</h1>
+                  <h1 class="display-2 font-medium capitalize">
+                    {{ $t("home.section4.right.cash.top") }}
+                  </h1>
                   <p class="text-2">
-                    Receive by cash at Ecobank ATMs or Xpress points
+                    {{ $t("home.section4.right.cash.bottom") }}
                   </p>
                 </div>
               </div>
@@ -83,8 +90,12 @@
                 <div
                   class="max-w-md space-y-7 rounded-[40px] bg-[#E3E1EB] p-14"
                 >
-                  <h1 class="display-2 font-medium">Mobile Money</h1>
-                  <p class="text-2">Send or receive using mobile money</p>
+                  <h1 class="display-2 font-medium">
+                    {{ $t("home.section4.right.money.top") }}
+                  </h1>
+                  <p class="text-2">
+                    {{ $t("home.section4.right.money.bottom") }}
+                  </p>
                 </div>
               </div>
               <div
@@ -93,8 +104,12 @@
                 <div
                   class="max-w-md space-y-7 rounded-[40px] bg-[#E3E1EB] p-14"
                 >
-                  <h1 class="display-2 font-medium">Bank</h1>
-                  <p class="text-2">Send and receive from bank accounts</p>
+                  <h1 class="display-2 font-medium">
+                    {{ $t("home.section4.right.bank.top") }}
+                  </h1>
+                  <p class="text-2">
+                    {{ $t("home.section4.right.bank.bottom") }}
+                  </p>
                 </div>
               </div>
             </div>
@@ -112,15 +127,14 @@
               <div
                 class="flex flex-col items-center space-y-10 md:block md:flex-row md:items-start"
               >
-                <h1 class="display-2 font-medium">
-                  Why <br />
-                  Choose us
-                </h1>
-                <p class="max-w-sm text-center leading-6 md:text-left">
-                  When you send money with Maraboo you <br />
-                  not only save your time and money but you <br />
-                  a company built by native africans
-                </p>
+                <h1
+                  class="display-2 font-medium"
+                  v-html="$t('home.section5.what')"
+                ></h1>
+                <p
+                  class="max-w-sm text-center leading-6 md:text-left"
+                  v-html="$t('home.section5.about')"
+                ></p>
               </div>
               <div class="-top-44 right-0 flex justify-center md:absolute">
                 <img alt="" src="~/assets/images/choose.svg" />
@@ -128,28 +142,16 @@
             </div>
             <div class="w-full justify-between md:flex">
               <div class="mb-12 md:mb-0">
-                <small class="font-bold">The</small>
-                <h1 class="display-3 mb-6 font-medium">Fastest</h1>
-                <p class="text-2">
-                  We complete transfers in real <br />
-                  time
-                </p>
+                <div v-html="$t('home.section5.one.top')"></div>
+                <div v-html="$t('home.section5.one.bottom')"></div>
               </div>
               <div class="mb-12 md:mb-0">
-                <small class="font-bold">The</small>
-                <h1 class="display-3 mb-6 font-medium">Cheapest</h1>
-                <p class="text-2">
-                  We give you the lowest rate <br />
-                  every time
-                </p>
+                <div v-html="$t('home.section5.two.top')"></div>
+                <div v-html="$t('home.section5.two.bottom')"></div>
               </div>
               <div class="mb-12 md:mb-0">
-                <small class="font-bold">The</small>
-                <h1 class="display-3 mb-6 font-medium">Most Versatile</h1>
-                <p class="text-2">
-                  The widest range of collection <br />
-                  and delivery options
-                </p>
+                <div v-html="$t('home.section5.three.top')"></div>
+                <div v-html="$t('home.section5.three.bottom')"></div>
               </div>
             </div>
           </div>
@@ -162,10 +164,11 @@
           <div class="flex w-full items-start justify-between">
             <div class="relative flex w-full flex-col py-2">
               <div class="mb-8 space-y-4">
-                <h1 class="display-2 mb-4 text-start">How it Works</h1>
+                <h1 class="display-2 mb-4 text-start">
+                  {{ $t("home.section6.how.name") }}
+                </h1>
                 <p class="text-2">
-                  Sending money to or from UMOA is <br />as easy as 1-2-3 with
-                  us.
+                  {{ $t("home.section6.how.text") }}
                 </p>
               </div>
               <div class="flex space-x-8">
@@ -527,8 +530,19 @@ onMounted(() => {
     start: () => "top 30%",
     end: () => "bottom 27%",
     scrub: true,
-    markers: true,
+    // markers: true,
     pin: true,
+    invalidateOnRefresh: true,
+  });
+
+  ScrollTrigger.create({
+    trigger: ".superpower",
+    scroller: ".scroller",
+    start: () => "top 30%",
+    end: () => "bottom 61%",
+    scrub: true,
+    // markers: true,
+    pin: ".supower",
     invalidateOnRefresh: true,
   });
 });

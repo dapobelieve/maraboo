@@ -2,91 +2,109 @@
   "home": {
     "nav": {
       "home": "",
-      "how-it-works": "Fonctionnalités",
+      "how-it-works": "How it works",
       "company": {
-        "name": "Entreprise",
-        "about-us": "À propos de nous",
-        "contact-us": "Contactez-nous",
-        "careers": "Carrières",
-        "legal": "Juridique"
+        "name": "Company",
+        "about-us": "About Us",
+        "contact-us": "Contact Us",
+        "careers": "Careers",
+        "legal": "Legal"
       },
-      "wait-list": "Inscrivez-vous sur la liste d'attente"
+      "wait-list": "Join the waitlist"
     },
     "section1": {
-      "left": {
-        "top": {
-          "left": "Bientôt disponible ",
-          "right": "Recevez une notification dès notre lancement!"
-        },
-        "center": {
-          "l1": "Des transferts rapides à l'intérieur et à l’extérieur de l'UEMOA ",
-          "l2": "au taux de change réel !",
-          "l3": "Saviez-vous qu'une réduction de 10 % des frais  de  transaction pour <br /> les transferts internationaux peut augmenter jusqu'à 16 % des <br /> revenus des ménages de la région ?"
-        },
-        "bottom": "En savoir plus sur le Maraboo"
-      },
-      "right": {
-        "you-send": "Vous envoyez",
-        "xchg-rate": "au taux de change réel !",
-        "select-method": "Sélectionnez le mode de livraison:",
-        "receipt-gets": "Votre destinataire reçoit:"
-      }
+      "intl": "Transferts internationaux conçus pour les pays",
+      "umoa": "de l'UMOA",
+      "send": "envoyer de l'argent"
     },
     "section2": {
-      "countries": "Pays que nous soutenons",
-      "text": "Maraboo est disponible dans 9 pays et offre des transactions en 2 devises pour faciliter vos transactions <br /> dans le monde entier. Nous ajouterons prochainement de nouveaux marchés et de nouvelles devises pour mieux répondre à vos besoins."
-    },
-    "calculator": {
-      "caption": "<span> Découvrez le monde avec <br class='hidden md:block' />XOF : votre passeport pour des transferts transfrontaliers fluides. </span>"
+      "left": {
+        "one": "Corridors bi-directionnels",
+        "two": "Envoyez de l'argent vers ou depuis n'importe quel pays de l'UMOA  <br />country en temps réel au taux \n le plus bas.."
+      }
     },
     "section3": {
-      "super-charge": "Augmentez votre pouvoir d'achat à l’étranger!",
-      "text": "Vous pouvez maintenant envoyer jusqu'à 9 900 dollars canadiens toutes les 24 <br /> heures au Canada et dans les pays de l'UEMOA au taux de change réel.<br />",
-      "text-2": "D'autres pays seront ajoutés peu après le lancement, restez à l’écoute."
+      "left": {
+        "one": "Send less with",
+        "two": "Maraboo",
+        "three": "enjoy the lowest rates, receive more in real time"
+      }
     },
     "section4": {
-      "convert-currency": "Passez d’une devise <br class=\"hidden md:block\" />  à une autre.",
-      "text": "Transférez facilement des fonds à l'intérieur et à l'extérieur des pays de l'UEMOA en trois étapes simples. Nos services sont jusqu'à 3 fois moins chers que les alternatives les plus performantes.les plus performantes"
+      "left": {
+        "super-power": "Your new <br />\nsuperpower",
+        "offer": "We offer the widest rage of payment and <br />\n                  disbursements methods to meet all your needs"
+      },
+      "right": {
+        "cash": {
+          "top": "cash",
+          "bottom": "Receive by cash at Ecobank ATMs or Xpress points"
+        },
+        "money": {
+          "top": "Mobile Money",
+          "bottom": "Send or receive using mobile money"
+        },
+        "bank": {
+          "top": "Bank",
+          "bottom": "Send and receive from bank accounts"
+        }
+      }
     },
     "section5": {
-      "we-fast": "Nous sommes vraiment rapides!",
-      "text": "Nos transferts sont exécutés en quelques minutes.",
-      "text-2": "Nos options de décaissement sont les suivantes:",
-      "cash": "Espèces",
-      "mobile-money": "Argent mobile",
-      "bank": "Banque",
+      "what": "Why <br />\n                  Choose us",
+      "about": "When you send money with Maraboo you <br />\n                  not only save your time and money but you <br />\n                  a company built by native africans",
+      "one": {
+        "top": " <small class=\"font-bold\">The</small>\n                <h1 class=\"display-3 mb-6 font-medium\">Fastest</h1>",
+        "bottom": "<p class=\"text-2\">\n                  We complete transfers in real <br />\n                  time\n                </p>"
+      },
+      "two": {
+        "top": " <small class=\"font-bold\">The</small>\n                <h1 class=\"display-3 mb-6 font-medium\">Cheapest</h1>",
+        "bottom": "<p class=\"text-2\">\n                  We give you the lowest rate <br />\n                  every time\n                </p>"
+      },
+      "three": {
+        "top": "<small class=\"font-bold\">The</small>\n                <h1 class=\"display-3 mb-6 font-medium\">Most Versatile</h1>",
+        "bottom": "<p class=\"text-2\">\n                  The widest range of collection <br />\n                  and delivery options\n                </p>"
+      }
+    },
+    "section5s": {
+      "we-fast": "We are really fast!",
+      "text": "Our transfers are processed from start to finish within minutes.",
+      "text-2": "and we offer the following disbursement options:",
+      "cash": "Cash",
+      "mobile-money": "Mobile Money",
+      "bank": "Bank",
       "how-it-works": {
-        "name": "Comment ca marche",
+        "name": "How it works",
         "step-1": {
-          "name": "Étape 1",
-          "text": "<span>&#x2022; Créer un compte </span>  <span>&#x2022; Obtenez un devis</span>  <span>&#x2022; Vérifiez votre identité (une fois)</span>  <span>&#x2022; Sélectionnez le mode de livraison</span>"
+          "name": "Step 1",
+          "text": "<span>&#x2022; Create account </span>  <span>&#x2022; Get a quote</span>  <span>&#x2022; Verify your identity (once)</span>  <span>&#x2022; Select delivery method </span>"
         },
         "step-2": {
-          "name": "Étape 2",
-          "text": "<span>&#x2022; Saisir les détails des destinataires </span>  <span>&#x2022; Vérifier les détails de la transaction</span>  <span>&#x2022; Payez dans n'importe quelle devise que nous prenons en charge (XOF ou CAD)</span>"
+          "name": "Step 2",
+          "text": "<span>&#x2022; Enter recipients details</span>  <span>&#x2022; Review Transaction details</span>  <span>&#x2022; Pay in any currency that we support (XOF or CAD)</span>"
         },
         "step-3": {
-          "name": "Étape 3",
-          "one": "Le destinataire reçoit de l'argent:",
+          "name": "Step 3",
+          "one": "Your recipient receives money:",
           "xof-in": {
-            "name": "CFA au",
-            "bank-transfer": "Par Virement bancaire (jusqu'à 48h)",
-            "instant": "Par Retrait au guichet (immédiat)",
-            "mobile": "Argent mobile",
-            "ecobank": "Virement Ecobank (instantané)!"
+            "name": "XOF in",
+            "bank-transfer": "Bank transfer (up to 48h)",
+            "instant": "Instant cash pick up",
+            "mobile": "Mobile Money",
+            "ecobank": "Ecobank transfer (instant)!"
           },
           "cad-in": {
-            "name": "CFA au",
-            "interac": "e-transfert (instantané)"
+            "name": "CAD in",
+            "interac": "interac e-transfer(instant)"
           },
-          "text": "Nous ajouterons bientôt d'autres pays, <br /> restez à l'écoute"
+          "text": "We'll be adding more countries soon, <br />\n                        stay tuned."
         }
       }
     },
     "section6": {
       "how-we": {
-        "name": "Comment nous protégeons vos <br /> données personnelles",
-        "text": "Vos informations privées sont protégées par les technologies les plus sûres conformément aux réglementations applicables."
+        "name": "How we protect your <br />\n          personal data",
+        "text": "Rest assured, your funds and private information are safeguarded by state-of-the-art security technology, compliant with both local and global regulations"
       }
     },
     "faq": [
@@ -112,7 +130,6 @@
         "question": "À quelle vitesse puis-je transférer de l'argent à l'interbancaire en entrée et en sortie d'Afrique ?",
         "answers": "La grande majorité des transferts sont effectués en quelques minutes"
       },
-
       {
         "question": "Combien coûte l'envoi d'un transfert ?",
         "answers": "<p class='mb-4'><h class='font-bold'>Envoyer de l'argent vers l'Afrique</h> - Nous répondons aujourd'hui <a class='text-blue-600' target='_blank' href='https://www.un.org/sustainabledevelopment/inequality/'>l'objectif de développement social des Nations unies #10,</a>  en réduisant le coût de l'envoi d'argent vers l'Afrique à un coût moyen de 3 % ou moins</p><p><h class='font-bold'>Envoyer de l'argent hors d'Afrique</h> - Nous ne rendons pas seulement l'envoi d'argent hors d'Afrique jusqu'à 3 fois moins cher que les solutions de référence actuelles, mais nous rendons également les transferts hors d'Afrique rapides et accessibles à tous en éliminant les formalités administratives.</p>"
@@ -125,7 +142,7 @@
   "about-us": {
     "name": "À propos de Marabo",
     "caption": "Nous aspirons à bâtir un système financier sans frontières pour connecter les ressortissants d’Afrique de l'Ouest à travers le monde.",
-    "text": "<span class='text-purple'>Présentation de Maraboo</span>, une FinTech ouest-africaine qui propose des solutions financières innovantes, responsables et inclusives qui sont conçues pour améliorer la qualité de vie des populations de cette région.",
+    "text": "<span class='text-purple'>Présentation de Maraboo</span>, une FinTech ouest-africaine qui propose des solutions financières innovantes, responsables et inclusives qui sont conçues pour amélkmpkpmpiorer la qualité de vie des populations de cette région.",
     "read-more": "En savoir plus",
     "section-2": {
       "caption": "Notre mission principale est de rendre les transferts à l’intérieur et à l’extérieur des pays de l'UEMOA <span class='text-purple'>jusqu'à 3 fois moins chers!</span>",
@@ -136,80 +153,79 @@
     }
   },
   "legal": {
-    "name": "Mentions légales",
-    "policy": "Politique de confidentialité  Conditions d'utilisation\n",
-    "one": "Nous vous remercions de l'intérêt que vous portez à notre prochain lancement.",
-    "two": "Nous travaillons d'arrache-pied pour que tout soit prêt et que nous puissions offrir la meilleure expérience possible à nos clients. Nos documents juridiques sont en cours de finalisation et seront bientôt disponibles.",
-    "three": "En attendant, nous vous invitons à vous inscrire sur notre liste d'attente afin d'être parmi les premiers à être informés de notre lancement. En vous inscrivant sur notre liste d'attente, vous recevrez des mises à jour exclusives sur nos progrès, vous serez les premiers à savoir quand nous serons lancés et vous recevrez des offres spéciales.",
-    "four": "Nous vous remercions de votre patience et de votre soutien. Nous sommes impatients de partager notre produit avec vous!"
+    "name": "Legal",
+    "policy": "Privacy policy and Terms & conditions",
+    "one": "Thank you for your interest in our upcoming launch.",
+    "two": "We're working hard to get everything ready and ensure that we\n            provide the best possible experience for our customers. Our legal\n            documents are currently being finalized and will be made available\n            shortly.",
+    "three": "In the meantime, we invite you to join our waitlist to be among the\n            first to know when we launch. By joining our waitlist, you'll\n            receive exclusive updates on our progress, be the first to know when\n            we launch, and receive special offers.",
+    "four": "Thank you for your patience and support. We can't wait to share our\n            product with you!"
   },
   "careers": {
-    "join": "Rejoignez notre équipe!",
-    "come-work": "Venez travailler avec nous",
-    "we": "Nous recherchons des personnes formidables pour nous aider à construire!",
-    "view": "Consulter nos offres d'emploi.",
-    "opening": "<div class='w-4/5'><h1 class='font-heading text-4xl  mb-6'>Nos offres d'emploi:</h1>        <div class='max-w-[46rem] text-xl md:mb-8 text-justify leading-relaxed'>          <p class='mb-4'>Nous vous remercions de l'intérêt que vous portez à notre équipe!</p> <p class='mb-4'>Bien que nous n'ayons actuellement aucun poste à pourvoir, nous sommes toujours à la recherche de personnes talentueuses qui partagent nos valeurs et sont passionnées par ce que nous faisons.</p>          <p class='mb-4'>Nous vous encourageons à soumettre votre curriculum vitae et votre lettre de présentation pour examen futur, car nous pourrions avoir des opportunités qui correspondent à vos compétences et à votre expérience dans un proche avenir.</p><p class='mb-20'>Nous nous engageons à examiner attentivement toutes les candidatures et à les conserver dans notre base de données jusqu’à ce qu’une opportunité appropriée se présente. Nous espérons avoir de vos nouvelles et que nous travaillerons ensemble demain !</p><h1 class='text-4xl md:text-2xl text-black font-heading mb-8'>Soumettez votre CV et votre lettre de motivation.         </h1> <p>Envoyez-nous votre CV et votre lettre de motivation pour qu'ils soient pris en considération ultérieurement, car nous pourrions avoir des opportunités correspondant à vos compétences et à votre expérience dans un avenir proche          </p>        </div>      </div>",
+    "join": "Join Our Team!",
+    "come-work": "Come work with us",
+    "we": "We’re looking for great people to help us build!",
+    "view": "View our openings.",
+    "opening": "<div class='w-4/5'>        <h1 class='font-heading text-4xl  mb-6'>Our Openings:</h1>        <div class='max-w-[46rem] md:mb-8 text-justify leading-relaxed'>          <p class='mb-4'>Thank you for your interest in joining our team!</p>          <p class='mb-4'>            While we do not currently have any open positions, we are always on            the lookout for talented individuals who share our values and are            passionate about what we do.          </p>          <p class='mb-4'>            We encourage you to submit your resume and cover letter for future            consideration, as we may have opportunities that match your skills            and experience in the near future.          </p>          <p class='mb-20'>            We promise to review every application carefully and keep them on            file should a suitable opening arise. We look forward to hearing            from you and potentially working together in the future!          </p>                 </div>      </div>",
     "resume": {
-      "title": "Ajoutez votre CV et votre lettre de motivation",
-      "caption": "Téléchargez votre CV et votre lettre de motivation pour un examen ultérieur, car nous pourrions avoir des opportunités correspondant à vos compétences et à votre expérience dans un avenir proche."
+      "title": "Add your resume and cover letter",
+      "caption": "Upload your resume and cover letter for future consideration, as we may have opportunities that match your skills and experience in the near future."
     },
-    "submit": "Soumettre"
+    "submit": "Submit"
   },
   "from-waemu": {
     "section-1": {
       "regulated": {
-        "name": "réglementé",
-        "learn-more": "Apprendre encore plu"
+        "name": "regulated",
+        "learn-more": "Learn more"
       },
       "caption": {
-          "left":"Envoyer de l'argent depuis",
-          "right": "au Canada au taux de change réel!"
+        "left": "Send money from",
+        "right": "to Canada at the real exchange rate!"
       },
-      "text": "<p>Du local au global en temps réel, Maraboo Magic : Découvrez 3x <br />  Économisez sur les transferts d’argent internationaux vers ou depuis les pays de l’UEMOA !</p>"
+      "text": "<p> From local to global in real time, Maraboo Magic: Discover 3x <br />      Savings on international money Transfers to or from WAEMU countries!</p>"
     },
     "section-2": {
-        "caption": "vers des destinations mondiales, avec une rentabilité 3 fois supérieure",
-        "text": "<p>  Maraboo est le nouveau super pouvoir de votre portefeuille pour les transferts internationaux depuis n'importe quel pays de l'UEMOA. <span class='underline'> Envoyez jusqu'à 9 900 $ par jour au Real Exchange </span> pour payer les factures internationales, les frais de scolarité, les fournisseurs, etc. ! Nous acceptons les paiements XOF par transferts d'argent mobile ou par traitement de votre dos de carte</p>"
+      "caption": "to Global Destinations, with 3x the Cost Efficiency",
+      "text": "<p>   Maraboo is your wallet’s new superpower for international transfers from any WAEMU country. <span class='underline'> Send up to $9,900 daily at the Real Exchange</span> to pay international bills, tuition, suppliers, you name it! We accept XOF payments by mobile money transfers or by processing your back card </p>"
     },
     "section-3": {
       "caption": {
-        "left":"Envoyer de l'argent depuis",
-        "right": "au Canada en trois étapes faciles"
+        "left": "Send money from",
+        "right": "to Canada in three easy steps"
       }
     },
     "section-4": {
-      "caption": "Téléchargez l'application mobile Maraboo pour des transferts rapides et faciles !"
+      "caption": "Download the Maraboo mobile app for quick and easy transfers!"
     }
   },
   "from-canada": {
     "section-1": {
       "caption": {
-          "left":"Envoyez de l'argent du Canada vers",
-          "right": "au taux de change réel !"
+        "left": "Send money from Canada to",
+        "right": "at the real exchange rate!"
       },
-      "text": "<p>Du local au global en temps réel, Maraboo Magic : Découvrez 3x <br />  Économisez sur les transferts d’argent internationaux vers ou depuis les pays de l’UEMOA !</p>"
+      "text": "<p> From local to global in real time, Maraboo Magic: Discover 3x <br />      Savings on international money Transfers to or from WAEMU countries!</p>"
     },
     "section-2": {
       "caption": {
-            "left": "Du Canada à",
-            "right": "avec 3 fois la rentabilité"
+        "left": "From Canada to",
+        "right": "with 3x the cost efficiency"
       },
-      "text": "<p>  Maraboo est le nouveau super pouvoir de votre portefeuille pour les transferts internationaux depuis n'importe quel pays de l'UEMOA. <span class='underline'> Envoyez jusqu'à 9 900 $ par jour au Real Exchange </span> pour payer les factures internationales, les frais de scolarité, les fournisseurs, etc. ! Nous acceptons les paiements XOF par transferts d'argent mobile ou par traitement de votre dos de carte</p>"
+      "text": "<p>   Maraboo is your wallet’s new superpower for international transfers from any WAEMU country. <span class='underline'> Send up to $9,900 daily at the Real Exchange</span> to pay international bills, tuition, suppliers, you name it! We accept XOF payments by mobile money transfers or by processing your back card </p>"
     },
     "section-3": {
       "caption": {
-        "right": "en trois étapes faciles"
+        "right": "in three easy steps"
       }
     }
-    
   },
-  "qr-scan": "<span>  Scannez le code QR pour <br /> téléchargez l'application</span>",
-  "send-btn": "Envoyez de l'argent maintenant",
+  "qr-scan": "<span>  Scan QR code to <br /> download the app </span>",
+  "send-btn": "Send money now",
   "calculator": {
-      "send": "Vous envoyez:",
-      "input-placeholder": "Entrer le montant",
-      "exchg-rate": "au taux de change réel!",
-      "receive": "Votre destinataire reçoit :"
+    "send": "YOU SEND:",
+    "input-placeholder": "Enter amount",
+    "exchg-rate": "at the real exchange rate!",
+    "receive": "YOUR RECIPIENT GETS:"
   },
   "wait-list": {
     "join": "Rejoignez notre liste d'attente!",
@@ -237,26 +253,3 @@
     "made-by": "Made in UEMOA par des Africains"
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

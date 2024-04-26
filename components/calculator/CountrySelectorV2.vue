@@ -88,7 +88,7 @@
           @click.exact.stop="countrySelected(country)"
           v-for="country in state.countries.slice(1)"
           v-else
-          class="flex cursor-pointer  px-3 py-3"
+          class="flex cursor-pointer px-3 py-3"
           :class="[
             country.name === state.selectedCountry?.name ? 'selected' : '',
           ]"
@@ -99,8 +99,11 @@
               class="after:content text-2 relative uppercase text-emphasis-900 after:absolute after:right-[-10px] after:top-[13px] after:h-1 after:w-1 after:rounded-full after:bg-emphasis-200"
               >{{ country.currency }}</span
             >
-            <span class="text-2 select-none text-emphasis-100">{{ country.name }}
-            <small class="select-none" v-if="!country.payin?.length">(Coming Soon)</small>
+            <span class="text-2 select-none text-emphasis-100"
+              >{{ country.name }}
+              <small class="select-none" v-if="!country.payin?.length"
+                >(Coming Soon)</small
+              >
             </span>
           </a>
           <img
@@ -208,20 +211,23 @@ const state = reactive({
 });
 
 function countrySelected(country) {
-  if(props.config.which === 'currency') {
-    if(!country.payin || !country?.payin.length) { return }
-    if(props.delivery?.country?.code === country.code ){
-      return
+  if (props.config.which === "currency") {
+    if (!country.payin || !country?.payin.length) {
+      return;
+    }
+    if (props.delivery?.country?.code === country.code) {
+      return;
     }
   }
 
-  if(props.config.which === 'delivery') {
-    if(!country.payout || !country?.payout.length) { return }
-    if(props.currency?.country?.code === country.code ){
-      return
+  if (props.config.which === "delivery") {
+    if (!country.payout || !country?.payout.length) {
+      return;
+    }
+    if (props.currency?.country?.code === country.code) {
+      return;
     }
   }
-
 
   state.selectedCountry = country;
   setTimeout(() => {
@@ -251,14 +257,12 @@ watch(
 );
 
 onBeforeMount(() => {
-  state.countries.map(country => {
-    let x = props.config.services.find(val => val.country === country.code)
-    country['payin'] = x.payin
-    country['payout'] = x.payout
-  })
-})
-
-
+  state.countries.map((country) => {
+    let x = props.config.services.find((val) => val.country === country.code);
+    country["payin"] = x.payin;
+    country["payout"] = x.payout;
+  });
+});
 </script>
 
 <style lang="scss" scoped>
@@ -271,16 +275,22 @@ onBeforeMount(() => {
 
 @keyframes slideInTopFastToSlow {
   0% {
-    transform: translateX(-100%);
     opacity: 0;
+    transform: translateX(2000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-30px);
+  }
+  80% {
+    transform: translateX(10px);
   }
   100% {
     transform: translateX(0);
-    opacity: 1;
   }
 }
 
 .dynamic-enter {
-  animation: slideInTopFastToSlow 300ms forwards;
+  animation: slideInTopFastToSlow 1000ms ease both;
 }
 </style>

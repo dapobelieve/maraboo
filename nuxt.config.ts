@@ -49,11 +49,9 @@ export default defineNuxtConfig({
     "~/components",
   ],
   css: ["~/assets/css/tailwind.css", "vue-final-modal/style.css"],
-
   ssr: false,
   pages: true,
   modules: ["@nuxtjs/i18n", "@nuxtjs/tailwindcss"],
-
   i18n: {
     locales: [
       { code: "en", file: "en.json" },

@@ -13,50 +13,63 @@
       "wait-list": "Join the waitlist"
     },
     "section1": {
-      "left": {
-        "top": {
-          "left": "Coming Soon ",
-          "right": "Get notified when we launch!"
-        },
-        "center": {
-          "l1": "Global transfers to or from WAEMU countries at the",
-          "l2": " real exchange rate!",
-          "l3": "<p> Did you know that a 10% reduction in transaction fees for sending money in & out <br class='hidden md:block' > of WAEMU country can boost the  revenue of regional households by up to 16%? <p>"
-        },
-        "bottom": "Learn more on Maraboo"
-      },
-      "right": {
-        "you-send": "Vous envoyez",
-        "xchg-rate": "au taux de change réel !",
-        "select-method": "Sélectionnez le mode de livraison:",
-        "receipt-gets": "Votre destinataire reçoit:"
-      }
+      "intl": "International Transfers Built for",
+      "umoa": "UMOA Countries",
+      "send": "Send Money"
     },
     "section2": {
-      "countries": "Countries we support",
-      "text": "We support 9 markets and 2 currencies to make it easier for you to transact globally. We’ll be adding more markets and currencies shortly to\n          better serve your needs."
-    },
-    "calculator": {
-      "caption": "<span> Unlock the World with <br class='hidden md:block' />XOF: Your Passport to Seamless Cross-Border Transfers. </span>"
+      "left": {
+        "one": "Two-way Corridors",
+        "two": "Send money to or from any UMOA country <br />in real time at the\n                lowest rate."
+      }
     },
     "section3": {
-      "super-charge": "Connecting WAEMU to the Global Payment Network!",
-      "text": "Maraboo is your wallet’s new superpower for international transfers, <span class=\"font-medium underline\">send up to <br > $9,900 daily to or from WAEMU countries at the Real Exchange</span> to pay international bills, tuition, suppliers, you name it! ",
-      "text-2": "The Journey Continues: More Countries coming soon, Keep an Eye Peeled."
+      "left": {
+        "one": "Send less with",
+        "two": "Maraboo",
+        "three": "enjoy the lowest rates, receive more in real time"
+      }
     },
     "section4": {
-      "convert-currency": "Think Global, Act Local:<br /> Send and receive money.",
-      "text": "International transfers powered by Maraboo built to bring WAEMU to the world in real time. Seamlessly send and receive money across borders using diverse collection and disbursement channels to meet your personal needs or grow your business!"
+      "left": {
+      "super-power": "Your new <br />\nsuperpower",
+      "offer": "We offer the widest rage of payment and <br />\n                  disbursements methods to meet all your needs"
+      },
+      "right": {
+        "cash": {
+          "top": "cash",
+          "bottom": "Receive by cash at Ecobank ATMs or Xpress points"
+        },
+        "money": {
+          "top": "Mobile Money",
+          "bottom": "Send or receive using mobile money"
+        },
+        "bank": {
+          "top": "Bank",
+          "bottom": "Send and receive from bank accounts"
+        }
+      }
     },
     "section5": {
-      "we-fast": "We are really fast!",
-      "text": "Our transfers are processed from start to finish within minutes.",
-      "text-2": "and we offer the following disbursement options:",
-      "cash": "Cash",
-      "mobile-money": "Mobile Money",
-      "bank": "Bank",
-      "how-it-works": {
+      "what": "Why <br />\n                  Choose us",
+      "about": "When you send money with Maraboo you <br />\n                  not only save your time and money but you <br />\n                  a company built by native africans",
+      "one": {
+        "top": " <small class=\"font-bold\">The</small>\n                <h1 class=\"display-3 mb-6 font-medium\">Fastest</h1>",
+        "bottom": "<p class=\"text-2\">\n                  We complete transfers in real <br />\n                  time\n                </p>"
+      },
+      "two": {
+        "top": " <small class=\"font-bold\">The</small>\n                <h1 class=\"display-3 mb-6 font-medium\">Cheapest</h1>",
+        "bottom": "<p class=\"text-2\">\n                  We give you the lowest rate <br />\n                  every time\n                </p>"
+      },
+      "three": {
+        "top": "<small class=\"font-bold\">The</small>\n                <h1 class=\"display-3 mb-6 font-medium\">Most Versatile</h1>",
+        "bottom": "<p class=\"text-2\">\n                  The widest range of collection <br />\n                  and delivery options\n                </p>"
+      }
+    },
+    "section6": {
+      "how": {
         "name": "How it works",
+        "text": " Sending money to or from UMOA is <br />as easy as 1-2-3 with\n                  us.",
         "step-1": {
           "name": "Step 1",
           "text": "<span>&#x2022; Create account </span>  <span>&#x2022; Get a quote</span>  <span>&#x2022; Verify your identity (once)</span>  <span>&#x2022; Select delivery method </span>"
@@ -83,7 +96,7 @@
         }
       }
     },
-    "section6": {
+    "section6d": {
       "how-we": {
         "name": "How we protect your <br />\n          personal data",
         "text": "Rest assured, your funds and private information are safeguarded by state-of-the-art security technology, compliant with both local and global regulations"

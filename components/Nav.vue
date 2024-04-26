@@ -14,16 +14,12 @@
         <span class="ml-auto mt-3 inline-flex items-center space-x-6">
           <Button
             @click.stop="$router.push('/about')"
+            animate
             type="no-outline"
             class="hidden md:block"
             >Company</Button
           >
-          <button class="rounded-full border border-surface-200 px-6 py-2.5">
-            <div class="flex items-center space-x-4">
-              <img src="~/assets/images/en.svg" />
-              <span class="font-extrabold text-black">EN</span>
-            </div>
-          </button>
+          <LanguageSelector />
         </span>
       </div>
     </div>
