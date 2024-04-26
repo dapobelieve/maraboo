@@ -180,7 +180,6 @@
                     v-for="(step, index) in steps"
                     class="step-item mb-8 flex items-start space-x-8 pb-10"
                   >
-                    {{ index }}
                     <div>
                       <small class="font-bold text-primary">{{
                         step.step
@@ -386,18 +385,25 @@
 </template>
 
 <style lang="scss" scoped>
-.panssdel {
+.text-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 450px;
+  height: 80vh;
+  background-color: fuchsia;
+}
+
+.step-item {
   position: absolute;
   left: 0%;
-  top: 0%;
+  top: 50%;
   right: 0%;
   bottom: 0%;
   z-index: 1;
   width: 100%;
   height: 100%;
-  background-position: 50% 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
+  transform: translateY(100%);
+  opacity: 0;
 }
 
 .img-step-wrapper {
@@ -511,6 +517,30 @@ onMounted(() => {
     });
 
     tl.to(image, { height: 0 });
+  });
+
+  $gsap.set(".step-item", {
+    zIndex: (i, target, targets) => targets.length - i,
+  });
+  let steps = $gsap.utils.toArray(".step-item");
+
+  steps.forEach((step, i) => {
+    var tl = $gsap.timeline({
+      scrollTrigger: {
+        trigger: ".x-section",
+        scroller: ".scroller",
+        start: () => "top -" + window.innerHeight * i,
+        end: () => "+=" + window.innerHeight,
+        scrub: true,
+        toggleActions: "play none reverse none",
+        invalidateOnRefresh: true,
+      },
+    });
+    tl.to(step, { duration: 0.33, opacity: 1, y: "50%" }).to(
+      step,
+      { duration: 0.33, opacity: 0, y: "0%" },
+      0.66
+    );
   });
 
   ScrollTrigger.create({
