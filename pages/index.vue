@@ -572,8 +572,6 @@ onMounted(() => {
     pin: true,
     invalidateOnRefresh: true,
   });
-
-  ScrollTrigger.disable();
 });
 
 const faqs = reactive([
