@@ -570,7 +570,7 @@ onMounted(() => {
     start: () => "top 10%",
     end: () => "bottom 35%",
     scrub: true,
-    markers: true,
+    // markers: true,
     pin: true,
     invalidateOnRefresh: true,
   });
