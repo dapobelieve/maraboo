@@ -28,7 +28,14 @@ const state = reactive({
   ],
 });
 
-function close() {
+function close(action?: string) {
+  if (action === "decline") {
+    localStorage.setItem("cookie", JSON.stringify({ decline: true }));
+  }
+
+  if (action === "accept-all") {
+    localStorage.setItem("cookie", JSON.stringify({ " accept-all": true }));
+  }
   state.settings = false;
   emit("close");
 }
@@ -71,11 +78,13 @@ const emit = defineEmits<{
           "Settings" below.</small
         >
         <div class="mt-4">
-          <Button @click="close" type="tint" class="mr-4">Decline All</Button>
+          <Button @click="close('decline')" type="tint" class="mr-4"
+            >Decline All</Button
+          >
           <Button type="tint" @click="state.settings = true" class="mr-4"
             >Settings</Button
           >
-          <Button @click="close" type="active">Accept All</Button>
+          <Button @click="close('accept-all')" type="active">Accept All</Button>
         </div>
       </div>
       <div

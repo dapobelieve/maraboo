@@ -189,13 +189,16 @@
                 </div>
               </div>
             </div>
-            <div style="width: 750px" class="img-step-wrapper">
-              <div
-                v-for="(image, imgIndex) in images"
-                :key="imgIndex"
-                class="img-step blue"
-              >
-                <img :src="image.src" alt="" />
+            <div style="width: 750px" class="relative px-8">
+              <img src="~/assets/images/mobile.png" alt="" />
+              <div class="img-step-wrapper absolute left-0 top-[76px]">
+                <div
+                  v-for="(image, imgIndex) in images"
+                  :key="imgIndex"
+                  class="img-step blue absoslute left-[4px] top-0"
+                >
+                  <img :src="image.src" alt="" />
+                </div>
               </div>
             </div>
           </div>
@@ -402,9 +405,11 @@
 }
 
 .img-step-wrapper {
-  position: relative;
+  //position: relative;
   overflow: hidden;
-  height: 78vh;
+  height: 55vh;
+  left: 101px;
+  width: 260px;
 }
 </style>
 
@@ -449,13 +454,13 @@ const steps = reactive([
 
 const images = [
   {
-    src: "https://res.cloudinary.com/believe/image/upload/v1713280088/maraboo/mobile-1.png",
+    src: "https://res.cloudinary.com/believe/image/upload/v1713280088/maraboo/1.png",
   },
   {
-    src: "https://res.cloudinary.com/believe/image/upload/v1713280088/maraboo/mobile-2.png",
+    src: "https://res.cloudinary.com/believe/image/upload/v1713280088/maraboo/2.png",
   },
   {
-    src: "https://res.cloudinary.com/believe/image/upload/v1713280088/maraboo/mobile-3.png",
+    src: "https://res.cloudinary.com/believe/image/upload/v1713280088/maraboo/3.png",
   },
 ];
 
@@ -478,10 +483,18 @@ const { open: openCookie, close: closeCookie } = useModal({
   },
 });
 
+function cookieSettins() {
+  let cookie = JSON.parse(localStorage.getItem("cookie"));
+  if (!cookie.decline || !cookie["accept-all"]) {
+    // openCookie();
+  }
+}
+
 onMounted(() => {
   setTimeout(() => {
-    openCookie();
+    cookieSettins();
   }, 5000);
+
   let bodyScrollBar = Scrollbar.init(document.body, {
     damping: 0.1,
     delegateTo: document,
@@ -531,7 +544,6 @@ onMounted(() => {
         end: () => "+=" + window.innerHeight,
         scrub: true,
         toggleActions: "play none reverse none",
-        // toggleClass: "bg-blue-500",
         invalidateOnRefresh: true,
       },
     });
@@ -548,7 +560,6 @@ onMounted(() => {
     start: () => "top top",
     end: () => "+=" + (images.length + 1) * window.innerHeight,
     scrub: true,
-    // markers: true,
     pin: true,
     invalidateOnRefresh: true,
   });
