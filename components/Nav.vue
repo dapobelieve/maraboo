@@ -16,7 +16,7 @@
             @click.stop="$router.push('/about')"
             animate
             type="no-outline"
-            class="hidden md:block"
+            class="btn-lg hidden md:block"
             >Company</Button
           >
           <LanguageSelector />

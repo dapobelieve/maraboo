@@ -35,11 +35,11 @@ const countryLink = computed(() => {
       : "/exchange/send-money-from-canada";
   } else {
     return router.currentRoute.value.path.includes("fr")
-      ? `/fr/exchange/send-money-from-${props.country.name.replace(
+      ? `/fr/exchange/send-money-from-${props.country.country.replace(
           " ",
           "-"
         )}-to-canada`.toLowerCase()
-      : `/exchange/send-money-from-${props.country.name.replace(
+      : `/exchange/send-money-from-${props.country.country.replace(
           " ",
           "-"
         )}-to-canada`.toLowerCase();

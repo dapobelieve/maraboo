@@ -3,7 +3,10 @@
     id="exchange-rate"
     class="relative flex h-[652px] space-x-8 overflow-hidden rounded-[40px] bg-neutral p-4 text-surface-400 shadow-2xl md:w-[430px]"
   >
-    <div class="pop-in flex flex-col space-y-4" v-if="!state.config.open">
+    <div
+      class="dynamic-enter flex flex-col space-y-4"
+      v-if="!state.config.open"
+    >
       <div class="selects space-y-1">
         <Delivery
           :config="state.config"
@@ -359,17 +362,22 @@ function closeConfigDrawer() {
 <style scoped lang="scss">
 @keyframes slideInTopFastToSlow {
   0% {
-    transform: translateY(-100%);
     opacity: 0;
+    transform: translateX(2000px);
   }
-
-  100% {
-    transform: translateY(0);
+  60% {
     opacity: 1;
+    transform: translateX(-30px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 
-.pop-in {
-  animation: slideInTopFastToSlow 300ms forwards;
+.dynamic-enter {
+  animation: slideInTopFastToSlow 1000ms ease both;
 }
 </style>

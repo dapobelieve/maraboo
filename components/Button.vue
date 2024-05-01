@@ -1,7 +1,7 @@
 <template>
   <button
     @mousemove="handleMouseMove"
-    class="button relative h-14 overflow-hidden rounded-full px-8 py-2 font-medium text-neutral drop-shadow-2xl"
+    class="button btn overflow-hidden py-2 font-medium text-neutral"
     :class="computedClass"
   >
     <div ref="circle" class="circle"></div>
@@ -72,6 +72,31 @@ function handleMouseMove(event) {
   cursor: pointer;
   place-items: center;
   position: relative;
+}
+
+.btn {
+  @apply relative min-h-fit rounded-full  drop-shadow-2xl;
+  &.btn-xl {
+    @apply h-[5rem] px-8;
+    &.btn-circle {
+      @apply w-12;
+    }
+    * {
+      @apply space-x-3;
+    }
+  }
+  &.btn-lg {
+    @apply h-14 px-8;
+    &.btn-circle {
+      @apply w-12;
+    }
+    * {
+      @apply space-x-3;
+    }
+  }
+  &.btn-circle {
+    @apply min-w-fit p-0;
+  }
 }
 
 .circle {

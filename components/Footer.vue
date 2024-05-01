@@ -51,7 +51,7 @@
                       >
                     </li>
                     <li>
-                      <nuxt-link to="terms-of-use" href="#" class="text-1"
+                      <nuxt-link to="terms-of-use" class="text-1"
                         >Terms of Service</nuxt-link
                       >
                     </li>
@@ -91,14 +91,7 @@
                 </ul>
               </div>
             </div>
-            <button
-              class="rounded-full border border-surface-200 px-6 py-2.5 text-white"
-            >
-              <div class="flex items-center space-x-4">
-                <img src="~/assets/images/en.svg" />
-                <span class="font-extrabold">EN</span>
-              </div>
-            </button>
+            <LanguageSelector class="text-white" />
           </div>
         </div>
         <div class="my-20 w-full text-center">

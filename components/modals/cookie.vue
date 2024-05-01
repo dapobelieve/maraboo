@@ -78,13 +78,18 @@ const emit = defineEmits<{
           "Settings" below.</small
         >
         <div class="mt-4">
-          <Button @click="close('decline')" type="tint" class="mr-4"
+          <Button @click="close('decline')" type="tint" class="btn-lg mr-4"
             >Decline All</Button
           >
-          <Button type="tint" @click="state.settings = true" class="mr-4"
+          <Button type="tint" @click="state.settings = true" class="btn-lg mr-4"
             >Settings</Button
           >
-          <Button @click="close('accept-all')" type="active">Accept All</Button>
+          <Button
+            @click="close('accept-all')"
+            class="btn-lg text-white"
+            type="active"
+            >Accept All</Button
+          >
         </div>
       </div>
       <div

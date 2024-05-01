@@ -2,31 +2,32 @@
   <main class="text-black">
     <section>
       <div class="container flex justify-center">
-        <div class="content-wrap">
-          <div class="space-y-20">
-            <div class="text-center">
-              <h1 class="display-1">
-                We're
-                <span class="text-multi-color"
-                  >building borderless financial systems</span
-                >
-                to connect West-Africans across the globe
-              </h1>
+        <div class="space-y-20">
+          <div class="text-center">
+            <h1 class="display-2">
+              We're
+              <span class="text-multi-color"
+                >building borderless <br />
+                financial systems</span
+              >
+              to <br />
+              connect West-Africans <br />
+              across the globe
+            </h1>
+          </div>
+          <div
+            class="items-start justify-between space-y-8 md:relative md:flex md:space-x-8"
+          >
+            <div class="md:max-w-xs">
+              <p class="text-2 mb-10 text-center md:mb-0 md:text-left">
+                Introducing Maraboo, a West-African fintech firm offering
+                transformative financial solutions that are fair, responsible,
+                inclusive, and designed to improve the quality of life of West
+                Africans.
+              </p>
             </div>
-            <div
-              class="items-start justify-between space-y-8 md:relative md:flex md:space-x-8"
-            >
-              <div class="md:max-w-xs">
-                <p class="text-2 mb-10 text-center md:mb-0 md:text-left">
-                  Introducing Maraboo, a West-African fintech firm offering
-                  transformative financial solutions that are fair, responsible,
-                  inclusive, and designed to improve the quality of life of West
-                  Africans.
-                </p>
-              </div>
-              <div class="-top-[2rem] right-0 z-10 md:absolute">
-                <img alt="" class="w-full" src="~/assets/images/space.svg" />
-              </div>
+            <div class="">
+              <img alt="" class="w-full" src="~/assets/images/space.svg" />
             </div>
           </div>
         </div>
@@ -113,7 +114,6 @@
               <div
                 class="mb-6 w-40 overflow-hidden rounded-b-full rounded-t-full bg-accent-200"
               >
-                &nbsp;
                 <img
                   class="object-contain"
                   src="~/assets/images/user.png"

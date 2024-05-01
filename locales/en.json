@@ -69,31 +69,7 @@
     "section6": {
       "how": {
         "name": "How it works",
-        "text": " Sending money to or from UMOA is <br />as easy as 1-2-3 with\n                  us.",
-        "step-1": {
-          "name": "Step 1",
-          "text": "<span>&#x2022; Create account </span>  <span>&#x2022; Get a quote</span>  <span>&#x2022; Verify your identity (once)</span>  <span>&#x2022; Select delivery method </span>"
-        },
-        "step-2": {
-          "name": "Step 2",
-          "text": "<span>&#x2022; Enter recipients details</span>  <span>&#x2022; Review Transaction details</span>  <span>&#x2022; Pay in any currency that we support (XOF or CAD)</span>"
-        },
-        "step-3": {
-          "name": "Step 3",
-          "one": "Your recipient receives money:",
-          "xof-in": {
-            "name": "XOF in",
-            "bank-transfer": "Bank transfer (up to 48h)",
-            "instant": "Instant cash pick up",
-            "mobile": "Mobile Money",
-            "ecobank": "Ecobank transfer (instant)!"
-          },
-          "cad-in": {
-            "name": "CAD in",
-            "interac": "interac e-transfer(instant)"
-          },
-          "text": "We'll be adding more countries soon, <br />\n                        stay tuned."
-        }
+        "text": " Sending money to or from UMOA is <br />as easy as 1-2-3 with\nus."
       }
     },
     "section6d": {

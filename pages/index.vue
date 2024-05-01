@@ -1,5 +1,5 @@
 <template>
-  <main class="h-full text-black">
+  <main class="text-black">
     <section class="relative overflow-hidden">
       <div class="container space-y-12" style="padding-bottom: 0">
         <div class="flex flex-col items-center space-y-0">
@@ -10,7 +10,7 @@
                 $t("home.section1.umoa")
               }}</span>
             </h1>
-            <Button class="h-[5rem] capitalize" animate @click="openQr">{{
+            <Button class="btn-xl capitalize" animate @click="openQr">{{
               $t("home.section1.send")
             }}</Button>
           </div>
@@ -281,25 +281,22 @@
                     <div
                       class="relative flex max-w-[9rem] items-center justify-between p-4"
                     >
-                      <button
-                        class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 opacity-70 shadow"
+                      <Button
+                        class="btn-xl btn-circle rounded-full border border-surface-300"
                       >
-                        <span class="text-xl"
-                          ><img
-                            class="rotate-180"
-                            src="~/assets/images/tabler-icon-chevron-right.png"
-                        /></span>
-                      </button>
-
-                      <button
-                        class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 opacity-70 shadow"
-                      >
-                        <span class="text-xl">
-                          <img
-                            src="~/assets/images/tabler-icon-chevron-right.png"
-                          />
-                        </span>
-                      </button>
+                        <Icon
+                          icon="chevron-right"
+                          size="2rem"
+                          class="font-extrabold text-surface-400"
+                        ></Icon>
+                      </Button>
+                      <Button class="rounded-full border border-surface-300">
+                        <Icon
+                          icon="caret-down-filled"
+                          size="2rem"
+                          class="text-surface-400"
+                        ></Icon>
+                      </Button>
                     </div>
                   </div>
                   <div class="flex w-1/2 flex-col items-center">
@@ -483,16 +480,16 @@ const { open: openCookie, close: closeCookie } = useModal({
   },
 });
 
-function cookieSettins() {
+function cookieSettings() {
+  // openCookie();
   let cookie = JSON.parse(localStorage.getItem("cookie"));
   if (!cookie.decline || !cookie["accept-all"]) {
-    // openCookie();
   }
 }
 
 onMounted(() => {
   setTimeout(() => {
-    cookieSettins();
+    cookieSettings();
   }, 5000);
 
   let bodyScrollBar = Scrollbar.init(document.body, {
@@ -558,7 +555,7 @@ onMounted(() => {
     trigger: ".x-section",
     scroller: ".scroller",
     start: () => "top top",
-    end: () => "+=" + (images.length + 1) * window.innerHeight,
+    end: () => "+=" + images.length * window.innerHeight,
     scrub: true,
     pin: true,
     invalidateOnRefresh: true,

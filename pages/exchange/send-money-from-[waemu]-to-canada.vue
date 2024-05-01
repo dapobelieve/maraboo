@@ -10,10 +10,10 @@
                 <span class="inline-flex items-center">
                   <img
                     class="mr-2 h-6 w-6 md:h-14 md:w-14"
-                    :src="images[waemuCountry.flag]"
+                    :src="images[waemuCountry?.flag]"
                     alt=""
                   /><span class="mr-3 capitalize"
-                    >{{ waemuCountry.name }}
+                    >{{ waemuCountry?.name }}
                   </span>
                   to
                 </span>
@@ -27,7 +27,7 @@
                 </span>
                 <br />at the real <br />exchange rate
               </h1>
-              <p class="text-2 max-w-md text-left md:text-center">
+              <p class="text-2 max-w-md text-center md:text-left">
                 From local to global in real time, Maraboo Magic: Discover
                 3xSavings on international money Transfers to or from WAEMU
                 countries!
@@ -332,18 +332,6 @@ const showModal = localStorage.getItem("show");
 const show = ref(false);
 const waemuCountry = ref(null);
 
-const showCookieConsentModal = () => {
-  if (!showModal) {
-    show.value = true;
-    document.body.classList.add("show-modal");
-  }
-
-  if (showModal) {
-    show.value = false;
-    document.body.classList.remove("show-modal");
-  }
-};
-
 const { open, close } = useModal({
   component: qr,
   attrs: {
@@ -352,12 +340,6 @@ const { open, close } = useModal({
       close();
     },
   },
-});
-
-onMounted(() => {
-  setTimeout(() => {
-    showCookieConsentModal();
-  }, 2000);
 });
 
 const faqs = reactive([
@@ -433,9 +415,11 @@ const countries = reactive([
     flag: "canada",
   },
 ]);
-onBeforeMount(() => {
-  waemuCountry.value = countries.find((c) => c.name == route.params.waemu);
-  // waemuCountry.value = route.params.waemu;
+
+onMounted(() => {
+  waemuCountry.value = countries.find(
+    (c) => c.country === route.params.waemu.replace("-", "_")
+  );
 });
 
 const steps = reactive([
@@ -459,11 +443,6 @@ const steps = reactive([
     step: "03",
     title: "Send Less",
     body: "Enjoy the lowest rates, send up to $9,900 every day",
-  },
-  {
-    step: "04",
-    title: "Receive More",
-    body: "Receive in real time by cash, mobile money or bank",
   },
 ]);
 
