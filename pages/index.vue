@@ -23,18 +23,18 @@
     <section class="bg-coloured rounded-[40px]">
       <div class="container">
         <div class="content-wrap">
-          <div class="w-full items-start justify-between md:flex">
-            <div class="two-way text-white">
-              <h1 class="display-2 mb-4 text-center font-medium md:text-left">
+          <div class="w-full items-start justify-between lg:flex">
+            <div class="two-way mb-10 text-white lg:mb-0">
+              <h1 class="display-2 mb-4 text-center font-medium lg:text-left">
                 {{ $t("home.section2.left.one") }}
               </h1>
               <p
-                class="text-center md:text-left"
+                class="text-center lg:text-left"
                 v-html="$t('home.section2.left.two')"
               ></p>
             </div>
-            <div class="">
-              <Calculator class="md:ml-auto" />
+            <div class="flex justify-center lg:justify-end">
+              <Calculator class="lg:ml-auto" />
             </div>
           </div>
         </div>
@@ -59,20 +59,22 @@
     <section>
       <div class="container">
         <div class="content-wrap">
-          <div class="h-full w-full items-start justify-between md:flex">
-            <div class="superpower h-full space-y-8 text-center md:text-left">
+          <div class="h-full w-full items-start justify-between lg:flex">
+            <div
+              class="superpower mb-10 space-y-8 text-center lg:mb-0 lg:h-full lg:text-left"
+            >
               <h1
                 class="display-2 font-medium capitalize"
                 v-html="$t('home.section4.left.super-power')"
               ></h1>
               <p class="text-2" v-html="$t('home.section4.left.offer')"></p>
             </div>
-            <div class="flex flex-col space-y-10">
+            <div class="flex flex-col items-center space-y-10">
               <div
                 class="rounded-[40px] bg-gradient-to-r from-active to-accent-400 p-0.5"
               >
                 <div
-                  class="max-w-md space-y-7 rounded-[39px] bg-[#E3E1EB] p-14"
+                  class="max-w-sm space-y-7 rounded-[39px] bg-[#E3E1EB] p-14 lg:max-w-md"
                 >
                   <h1 class="display-3 font-medium capitalize">
                     {{ $t("home.section4.right.cash.top") }}
@@ -86,7 +88,7 @@
                 class="rounded-[40px] bg-gradient-to-r from-active to-accent-400 p-0.5"
               >
                 <div
-                  class="max-w-md space-y-7 rounded-[40px] bg-[#E3E1EB] p-14"
+                  class="max-w-sm space-y-7 rounded-[40px] bg-[#E3E1EB] p-14 lg:max-w-md"
                 >
                   <h1 class="display-3 font-medium">
                     {{ $t("home.section4.right.money.top") }}
@@ -100,7 +102,7 @@
                 class="rounded-[40px] bg-gradient-to-r from-active to-accent-400 p-0.5"
               >
                 <div
-                  class="max-w-md space-y-7 rounded-[40px] bg-[#E3E1EB] p-14"
+                  class="max-w-sm space-y-7 rounded-[40px] bg-[#E3E1EB] p-14 lg:max-w-md"
                 >
                   <h1 class="display-3 font-medium">
                     {{ $t("home.section4.right.bank.top") }}
@@ -120,34 +122,34 @@
         <div class="content-wrap">
           <div class="w-full space-y-20">
             <div
-              class="why-us relative flex w-full flex-col md:flex-row md:text-justify"
+              class="why-us relative flex w-full flex-col lg:flex-row lg:text-justify"
             >
               <div
-                class="flex flex-col items-center space-y-10 md:block md:flex-row md:items-start"
+                class="mb-8 flex flex-col items-center space-y-10 lg:mb-0 lg:block lg:flex-row lg:items-start"
               >
                 <h1
                   class="display-2 font-medium"
                   v-html="$t('home.section5.what')"
                 ></h1>
                 <p
-                  class="max-w-sm text-center leading-6 md:text-left"
+                  class="max-w-sm text-center leading-6 lg:text-left"
                   v-html="$t('home.section5.about')"
                 ></p>
               </div>
-              <div class="-top-44 ml-auto flex justify-center">
+              <div class="flex justify-center lg:ml-auto">
                 <img alt="" src="~/assets/images/choose.svg" />
               </div>
             </div>
-            <div class="w-full justify-between md:flex">
-              <div class="mb-12 md:mb-0">
+            <div class="w-full justify-between lg:flex">
+              <div class="mb-12 lg:mb-0">
                 <div v-html="$t('home.section5.one.top')"></div>
                 <div v-html="$t('home.section5.one.bottom')"></div>
               </div>
-              <div class="mb-12 md:mb-0">
+              <div class="mb-12 lg:mb-0">
                 <div v-html="$t('home.section5.two.top')"></div>
                 <div v-html="$t('home.section5.two.bottom')"></div>
               </div>
-              <div class="mb-12 md:mb-0">
+              <div class="mb-12 lg:mb-0">
                 <div v-html="$t('home.section5.three.top')"></div>
                 <div v-html="$t('home.section5.three.bottom')"></div>
               </div>
@@ -159,7 +161,7 @@
     <section class="x-section">
       <div class="container">
         <div class="content-wrap">
-          <div class="flex w-full items-start justify-between">
+          <div class="w-full items-start justify-between lg:flex">
             <div class="relative flex w-full flex-col py-2">
               <div class="mb-8 space-y-4">
                 <h1 class="display-2 mb-4 text-start">
@@ -171,10 +173,10 @@
                 <div class="bar">
                   <div class="bg-slate0 h-1/2 w-[3px]"></div>
                 </div>
-                <div class="steps flex max-w-sm flex-col border">
+                <div class="steps flex max-w-sm flex-col">
                   <div
                     v-for="(step, index) in steps"
-                    class="step-item mb-8 flex items-start space-x-8 px-4 pb-10"
+                    class="step-item mb-8 flex items-start space-x-8 px-4 pb-10 opacity-100 lg:absolute"
                   >
                     <div>
                       <small class="font-bold text-primary">{{
@@ -189,7 +191,10 @@
                 </div>
               </div>
             </div>
-            <div style="width: 750px" class="relative overflow-hidden px-8">
+            <div
+              style="width: 750px"
+              class="relative hidden overflow-hidden px-8 lg:block"
+            >
               <img src="~/assets/images/mobile.png" alt="" />
               <div class="img-step-wrapper absolute left-0 top-[76px]">
                 <div
@@ -209,16 +214,15 @@
       <div class="container">
         <div class="content-wrap">
           <div class="w-full space-y-28">
-            <div class="relative flex items-center justify-between">
-              <h1 class="display-2 capitalize">
-                Where We <br />
-                Extend our <br />support
+            <div class="relative items-center justify-between lg:flex">
+              <h1 class="display-2 mb-20 capitalize">
+                Where We Extend our support
               </h1>
-              <div class="hidden md:block">
+              <div class="lg:block">
                 <img src="~/assets/images/globe-stand.svg" alt="" />
               </div>
             </div>
-            <div class="flags flex w-full flex-wrap items-center gap-y-14">
+            <div class="flags flex w-full flex-wrap gap-y-14 lg:items-center">
               <CountryComponent
                 class="w-1/4"
                 v-for="(country, cIndex) in countries"
@@ -233,8 +237,8 @@
     <section class="testimonials">
       <div class="container">
         <div class="flex flex-col gap-10">
-          <div class="gap-10 md:flex">
-            <div class="mb-10 flex md:mb-0 md:w-3/5">
+          <div class="gap-10 lg:flex">
+            <div class="mb-10 flex lg:mb-0 lg:w-3/5">
               <Card class="flex flex-col bg-accent-100">
                 <div class="flex grow items-center justify-center">
                   <img src="~/assets/images/secure.png" alt="phone-logo" />
@@ -249,7 +253,7 @@
                 </div>
               </Card>
             </div>
-            <div class="grid gap-10 md:w-2/5">
+            <div class="grid gap-10 lg:w-2/5">
               <Card class="bg-accent-100" direction="down">
                 <h1 class="display-3 mb-4">From local to global.</h1>
                 <p class="text-3">
@@ -271,35 +275,39 @@
               class="display-1 flex justify-center bg-neutral text-white shadow-md"
             >
               <div class="content-wrap">
-                <div class="flex w-full justify-between 2xl:max-w-7xl">
-                  <div class="flex w-1/2 flex-col space-y-36">
-                    <h1 class="display-2 grow-1 hidden md:block">
+                <div
+                  class="flex w-full justify-center lg:justify-between 2xl:max-w-7xl"
+                >
+                  <div class="hidden w-1/2 flex-col space-y-36 lg:flex">
+                    <h1 class="display-2 grow-1 lg:block">
                       Real Talk <br />
                       from Our <br />
                       Customers
                     </h1>
                     <div
-                      class="relative flex max-w-[9rem] items-center justify-between p-4"
+                      class="relative hidden max-w-[9rem] items-center space-x-6 p-4 lg:flex"
                     >
                       <Button
-                        class="btn-xl btn-circle rounded-full border border-surface-300"
+                        class="btn-xl btn-circle shrink-0 rounded-full border border-surface-300"
                       >
                         <Icon
-                          icon="chevron-right"
-                          size="2rem"
+                          icon="chevron-left"
+                          size="4rem"
                           class="font-extrabold text-surface-400"
                         ></Icon>
                       </Button>
-                      <Button class="rounded-full border border-surface-300">
+                      <Button
+                        class="btn-xl btn-circle shrink-0 rounded-full border border-surface-300"
+                      >
                         <Icon
-                          icon="caret-down-filled"
-                          size="2rem"
-                          class="text-surface-400"
+                          icon="chevron-right"
+                          size="4rem"
+                          class="font-extrabold text-surface-400"
                         ></Icon>
                       </Button>
                     </div>
                   </div>
-                  <div class="flex w-1/2 flex-col items-center">
+                  <div class="flex flex-col items-center lg:w-1/2">
                     <div class="mb-8 inline-flex flex-col items-center">
                       <img
                         class="mb-4"
@@ -314,6 +322,26 @@
                         means more of my money goes to my loved ones in Togo.”
                       </p>
                     </div>
+                    <div class="mt-8 flex items-center space-x-6 p-4 lg:hidden">
+                      <Button
+                        class="btn-xl btn-circle shrink-0 rounded-full border border-surface-300"
+                      >
+                        <Icon
+                          icon="chevron-left"
+                          size="4rem"
+                          class="font-extrabold text-surface-400"
+                        ></Icon>
+                      </Button>
+                      <Button
+                        class="btn-xl btn-circle shrink-0 rounded-full border border-surface-300"
+                      >
+                        <Icon
+                          icon="chevron-right"
+                          size="4rem"
+                          class="font-extrabold text-surface-400"
+                        ></Icon>
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -326,20 +354,20 @@
       <div class="container">
         <div class="flex flex-col items-center space-y-32">
           <h1
-            class="font-heading display-2 text-center leading-snug md:text-6xl"
+            class="font-heading display-2 text-center leading-snug lg:text-6xl"
           >
             {{ $t("home.faq-header") }}
           </h1>
           <div class="flex w-full">
-            <GlobalAccordionList class="w-full gap-10 md:flex">
-              <div class="md:w-1/2">
+            <GlobalAccordionList class="w-full gap-10 lg:flex">
+              <div class="lg:w-1/2">
                 <GlobalAccordionItem
                   :item-id="id + 1"
                   :item="q"
                   v-for="(q, id) in faqs.slice(0, half)"
                 ></GlobalAccordionItem>
               </div>
-              <div class="md:w-1/2">
+              <div class="lg:w-1/2">
                 <GlobalAccordionItem
                   :item-id="id + 4"
                   :item="q"
@@ -353,12 +381,12 @@
     </section>
     <section>
       <div class="container">
-        <Card class="bg-accent-200 p-8 md:p-10">
-          <div class="items-center md:flex">
-            <div class="mb-4 flex md:space-x-8">
+        <Card class="bg-accent-200 p-8 lg:p-10">
+          <div class="items-center lg:flex">
+            <div class="mb-4 flex lg:space-x-8">
               <img
                 src="~/assets/images/woman.svg"
-                class="hidden md:block"
+                class="hidden lg:block"
                 alt="woman-logo"
               />
               <div>
@@ -389,9 +417,8 @@
 }
 
 .step-item {
-  position: absolute;
   left: 0%;
-  top: 50%;
+  top: 84%;
   right: 0%;
   bottom: 0%;
   z-index: 1;
@@ -487,13 +514,33 @@ function cookieSettings() {
   // }
 }
 
+function handleResize() {
+  console.log(window.innerWidth);
+  if (window.innerWidth < 1000) {
+    $gsap.globalTimeline.clear();
+    ScrollTrigger.disable();
+
+    const _steps = document.querySelector(".step-item");
+    _steps.forEach((step) => {
+      step.style.opacity = "1";
+    });
+  } else {
+    ScrollTrigger.enable();
+  }
+}
 onMounted(() => {
+  initScrollTriggers();
+  handleResize();
+});
+
+onMounted(() => {
+  window.addEventListener("resize", handleResize);
   setTimeout(() => {
     cookieSettings();
   }, 5000);
 });
 
-onMounted(() => {
+function initScrollTriggers() {
   let bodyScrollBar = Scrollbar.init(document.body, {
     damping: 0.1,
     delegateTo: document,
@@ -573,10 +620,9 @@ onMounted(() => {
   ScrollTrigger.create({
     trigger: ".two-way",
     scroller: ".scroller",
-    start: () => "top 10%",
+    start: () => "top 18%",
     end: () => "bottom",
     scrub: true,
-    // markers: true,
     pin: true,
     invalidateOnRefresh: true,
   });
@@ -591,7 +637,7 @@ onMounted(() => {
     pin: true,
     invalidateOnRefresh: true,
   });
-});
+}
 
 const faqs = reactive([
   {

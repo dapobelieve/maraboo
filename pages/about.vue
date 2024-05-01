@@ -103,7 +103,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <section class="hidden">
       <div class="container flex-col space-y-28">
         <div class="text-center">
           <h1 class="display-1">Meet the Team</h1>

@@ -79,11 +79,11 @@ function handleMouseMove(event) {
   &.btn-xl {
     @apply h-[5rem] px-8;
     &.btn-circle {
-      @apply w-12;
+      @apply w-20;
     }
-    * {
-      @apply space-x-3;
-    }
+    //* {
+    //  @apply space-x-3;
+    //}
   }
   &.btn-lg {
     @apply h-14 px-8;
