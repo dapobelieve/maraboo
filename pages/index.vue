@@ -189,13 +189,13 @@
                 </div>
               </div>
             </div>
-            <div style="width: 750px" class="relative px-8">
+            <div style="width: 750px" class="relative overflow-hidden px-8">
               <img src="~/assets/images/mobile.png" alt="" />
               <div class="img-step-wrapper absolute left-0 top-[76px]">
                 <div
                   v-for="(image, imgIndex) in images"
                   :key="imgIndex"
-                  class="img-step blue absoslute left-[4px] top-0"
+                  class="img-step blue absoslute"
                 >
                   <img :src="image.src" alt="" />
                 </div>
@@ -214,7 +214,7 @@
                 Where We <br />
                 Extend our <br />support
               </h1>
-              <div class="absolute -top-52 right-0 hidden md:block">
+              <div class="hidden md:block">
                 <img src="~/assets/images/globe-stand.svg" alt="" />
               </div>
             </div>
@@ -482,16 +482,18 @@ const { open: openCookie, close: closeCookie } = useModal({
 
 function cookieSettings() {
   // openCookie();
-  let cookie = JSON.parse(localStorage.getItem("cookie"));
-  if (!cookie.decline || !cookie["accept-all"]) {
-  }
+  // let cookie = JSON.parse(localStorage.getItem("cookie"));
+  // if (!cookie.decline || !cookie["accept-all"]) {
+  // }
 }
 
 onMounted(() => {
   setTimeout(() => {
     cookieSettings();
   }, 5000);
+});
 
+onMounted(() => {
   let bodyScrollBar = Scrollbar.init(document.body, {
     damping: 0.1,
     delegateTo: document,
@@ -537,25 +539,32 @@ onMounted(() => {
       scrollTrigger: {
         trigger: ".x-section",
         scroller: ".scroller",
-        start: () => "top -" + window.innerHeight * i,
-        end: () => "+=" + window.innerHeight,
+        start: () => (i === 0 ? "top top" : "top -" + window.innerHeight * i),
+        end: () =>
+          i === steps.length - 1 ? "bottom bottom" : "+=" + window.innerHeight,
         scrub: true,
         toggleActions: "play none reverse none",
         invalidateOnRefresh: true,
       },
     });
-    tl.to(step, { duration: 0.13, opacity: 1, y: "50%" }).to(
-      step,
-      { duration: 0.13, opacity: 0, y: "0%" },
-      0.66
-    );
+    if (i === steps.length - 1) {
+      tl.to(step, { duration: 0.13, opacity: 1, y: "50%" }); // Keep the last element visible
+    } else {
+      tl.to(step, { duration: 0.13, opacity: 1, y: "50%" }).to(
+        step,
+        { duration: 0.13, opacity: 0, y: "0%" },
+        0.66
+      );
+    }
   });
 
   ScrollTrigger.create({
     trigger: ".x-section",
     scroller: ".scroller",
     start: () => "top top",
-    end: () => "+=" + images.length * window.innerHeight,
+    end: () => {
+      return "+=" + images.length * window.innerHeight;
+    },
     scrub: true,
     pin: true,
     invalidateOnRefresh: true,
