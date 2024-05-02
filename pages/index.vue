@@ -176,7 +176,7 @@
                 <div class="steps flex max-w-sm flex-col">
                   <div
                     v-for="(step, index) in steps"
-                    class="step-item mb-8 flex items-start space-x-8 px-4 pb-10 opacity-100 lg:absolute"
+                    class="step-item mb-8 flex transform-none items-start space-x-8 px-4 pb-10 opacity-100 md:translate-y-full md:transform-gpu lg:absolute"
                   >
                     <div>
                       <small class="font-bold text-primary">{{
@@ -293,7 +293,7 @@
                         <Icon
                           icon="chevron-left"
                           size="4rem"
-                          class="font-extrabold text-surface-400"
+                          class="ml-1 font-extrabold text-surface-400"
                         ></Icon>
                       </Button>
                       <Button
@@ -302,7 +302,7 @@
                         <Icon
                           icon="chevron-right"
                           size="4rem"
-                          class="font-extrabold text-surface-400"
+                          class="ml-2 font-extrabold text-surface-400"
                         ></Icon>
                       </Button>
                     </div>
@@ -424,7 +424,6 @@
   z-index: 1;
   width: 100%;
   height: 100%;
-  transform: translateY(100%);
   opacity: 0;
 }
 
@@ -442,7 +441,7 @@ import { useModal } from "vue-final-modal";
 import Scrollbar from "smooth-scrollbar";
 const { $gsap } = useNuxtApp();
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { reactive, onMounted, ref } from "vue";
+import { reactive, onMounted, nextTick, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import CountryComponent from "~/components/CountryComponent.vue";
 import qr from "~/components/modals/qr.vue";
@@ -515,15 +514,14 @@ function cookieSettings() {
 }
 
 function handleResize() {
-  console.log(window.innerWidth);
   if (window.innerWidth < 1000) {
     $gsap.globalTimeline.clear();
-    ScrollTrigger.disable();
 
-    const _steps = document.querySelector(".step-item");
+    const _steps = document.querySelectorAll(".step-item");
     _steps.forEach((step) => {
       step.style.opacity = "1";
     });
+    ScrollTrigger.disable();
   } else {
     ScrollTrigger.enable();
   }
