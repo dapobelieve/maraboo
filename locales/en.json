@@ -69,14 +69,40 @@
     "section6": {
       "how": {
         "name": "How it works",
-        "text": " Sending money to or from UMOA is <br />as easy as 1-2-3 with\nus."
+        "text": " Sending money to or from UMOA is <br />as easy as 1-2-3 with\nus.",
+        "steps": [
+          {
+            "step": "01",
+            "title": "Sign Up",
+            "body": "Lorem ipsum dolor sit amet consectetur. Nunc pulvinar \" +\n      \"nam purus nunc interdum lorem. Venenatis nisl \" +\n  \"pulvinar urna facilisi eget vel fringilla"
+          },
+          {
+            "step": "02",
+            "title": "Download the App and Verify your Identity",
+            "body": "Lorem ipsum dolor sit amet consectetur. Nunc pulvinar \" +\n      \"nam purus nunc interdum lorem. Venenatis nisl \" +\n  \"pulvinar urna facilisi eget vel fringilla"
+          },
+          {
+            "step": "03",
+            "title": "Send Less",
+            "body": "Enjoy the lowest rates, send up to $9,900 every day"
+          }
+        ]
       }
     },
-    "section6d": {
-      "how-we": {
-        "name": "How we protect your <br />\n          personal data",
-        "text": "Rest assured, your funds and private information are safeguarded by state-of-the-art security technology, compliant with both local and global regulations"
-      }
+    "section7": "Where We Extend <br />\n                our support",
+    "section8": {
+      "secure": {
+        "title": "Securing Your Data Fortress!",
+        "body": " Rest assured, your funds and private information are <br />\n                    safeguarded by state-of-the-art security technology, <br />\n                    compliant with both local and global regulations"
+      },
+      "from": {
+        "title": "From local to global.",
+        "body": "Seamlessly transfer up to $9,900 daily to/from WAEMU countries\n                  at the Real Exchange. Your gateway to hassle-free\n                  international transactions!"
+      },
+      "did": "Did you know that a 10% reduction in transaction fees for\n                  sending?"
+    },
+    "section9": {
+      "head": "Real Talk <br class=\"hidden md:block\" />\n                      from Our <br class=\"hidden md:block\" />\n                      Customers"
     },
     "faq": [
       {

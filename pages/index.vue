@@ -33,7 +33,7 @@
                 v-html="$t('home.section2.left.two')"
               ></p>
             </div>
-            <div class="flex justify-center lg:justify-end">
+            <div class="calculator flex justify-center lg:justify-end">
               <Calculator class="lg:ml-auto" />
             </div>
           </div>
@@ -61,7 +61,7 @@
         <div class="content-wrap">
           <div class="h-full w-full items-start justify-between lg:flex">
             <div
-              class="superpower mb-10 space-y-8 text-center lg:mb-0 lg:h-full lg:text-left"
+              class="superpower mb-10 space-y-8 text-center lg:mb-0 lg:text-left"
             >
               <h1
                 class="display-2 font-medium capitalize"
@@ -69,7 +69,7 @@
               ></h1>
               <p class="text-2" v-html="$t('home.section4.left.offer')"></p>
             </div>
-            <div class="flex flex-col items-center space-y-10">
+            <div class="superpower-steps flex flex-col items-center space-y-10">
               <div
                 class="rounded-[40px] bg-gradient-to-r from-active to-accent-400 p-0.5"
               >
@@ -161,7 +161,7 @@
     <section class="x-section">
       <div class="container">
         <div class="content-wrap">
-          <div class="w-full items-start justify-between lg:flex">
+          <div class="h-screen w-full items-start justify-between lg:flex">
             <div class="relative flex w-full flex-col py-2">
               <div class="mb-8 space-y-4">
                 <h1 class="display-2 mb-4 text-start">
@@ -169,15 +169,36 @@
                 </h1>
                 <p class="text-2" v-html="$t('home.section6.how.text')"></p>
               </div>
-              <div class="flex space-x-8">
+              <div class="flex lg:space-x-8">
                 <div class="bar">
-                  <div class="bg-slate0 h-1/2 w-[3px]"></div>
+                  <div class="bg-slate h-1/2 w-[3px]"></div>
                 </div>
-                <div class="steps flex max-w-sm flex-col">
+                <!--  desktop-->
+                <div class="steps hidden max-w-sm flex-col lg:flex">
                   <div
                     v-for="(step, index) in steps"
-                    class="step-item mb-8 flex transform-none items-start space-x-8 px-4 pb-10 opacity-100 md:translate-y-full md:transform-gpu lg:absolute"
+                    class="step-item mb-8 flex transform-none items-start space-x-8 px-4 pb-10 opacity-100 md:translate-y-full lg:absolute"
                   >
+                    <div>
+                      <small class="font-bold text-primary">{{
+                        step.step
+                      }}</small>
+                      <h1 class="display-3 mb-4">{{ step.title }}</h1>
+                      <p class="text-2 leading-9">
+                        {{ step.body }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!--  ipad n mobile -->
+                <div class="steps flex max-w-sm flex-col lg:hidden">
+                  <div
+                    v-for="(step, index) in steps"
+                    class="mb-8 flex flex-col items-start px-4 pb-10 opacity-100"
+                  >
+                    <div>
+                      <img :src="images[index].src" alt="" />
+                    </div>
                     <div>
                       <small class="font-bold text-primary">{{
                         step.step
@@ -191,12 +212,9 @@
                 </div>
               </div>
             </div>
-            <div
-              style="width: 750px"
-              class="relative hidden overflow-hidden px-8 lg:block"
-            >
-              <img src="~/assets/images/mobile.png" alt="" />
-              <div class="img-step-wrapper absolute left-0 top-[76px]">
+            <div style="width: 750px" class="relative hidden px-8 lg:block">
+              <img class="invisible" src="~/assets/images/mobile.png" alt="" />
+              <div class="img-step-wrapper bord absolute left-0 top-[76px]">
                 <div
                   v-for="(image, imgIndex) in images"
                   :key="imgIndex"
@@ -215,9 +233,10 @@
         <div class="content-wrap">
           <div class="w-full space-y-28">
             <div class="relative items-center justify-between lg:flex">
-              <h1 class="display-2 mb-20 capitalize">
-                Where We Extend our support
-              </h1>
+              <h1
+                class="display-2 mb-20 capitalize"
+                v-html="$t('home.section7')"
+              ></h1>
               <div class="lg:block">
                 <img src="~/assets/images/globe-stand.svg" alt="" />
               </div>
@@ -244,28 +263,26 @@
                   <img src="~/assets/images/secure.png" alt="phone-logo" />
                 </div>
                 <div>
-                  <h1 class="display-2 mb-12">Securing Your Data Fortress!</h1>
-                  <p class="text-2">
-                    Rest assured, your funds and private information are <br />
-                    safeguarded by state-of-the-art security technology, <br />
-                    compliant with both local and global regulations
-                  </p>
+                  <h1 class="display-2 mb-12">
+                    {{ $t("home.section8.secure.title") }}
+                  </h1>
+                  <p
+                    class="text-2"
+                    v-html="$t('home.section8.secure.body')"
+                  ></p>
                 </div>
               </Card>
             </div>
             <div class="grid gap-10 lg:w-2/5">
               <Card class="bg-accent-100" direction="down">
-                <h1 class="display-3 mb-4">From local to global.</h1>
-                <p class="text-3">
-                  Seamlessly transfer up to $9,900 daily to/from WAEMU countries
-                  at the Real Exchange. Your gateway to hassle-free
-                  international transactions!
-                </p>
+                <h1 class="display-3 mb-4">
+                  {{ $t("home.section8.from.title") }}
+                </h1>
+                <p class="text-3" v-html="$t('home.section8.from.body')"></p>
               </Card>
               <Card class="bg-accent-100" direction="up">
                 <p class="display-3">
-                  Did you know that a 10% reduction in transaction fees for
-                  sending?
+                  {{ $t("home.section8.did") }}
                 </p>
               </Card>
             </div>
@@ -279,11 +296,10 @@
                   class="flex w-full justify-center lg:justify-between 2xl:max-w-7xl"
                 >
                   <div class="hidden w-1/2 flex-col space-y-36 lg:flex">
-                    <h1 class="display-2 grow-1 lg:block">
-                      Real Talk <br />
-                      from Our <br />
-                      Customers
-                    </h1>
+                    <h1
+                      class="display-2 grow-1 lg:block"
+                      v-html="$t('home.section9.head')"
+                    ></h1>
                     <div
                       class="relative hidden max-w-[9rem] items-center space-x-6 p-4 lg:flex"
                     >
@@ -308,6 +324,10 @@
                     </div>
                   </div>
                   <div class="flex flex-col items-center lg:w-1/2">
+                    <h1
+                      class="display-3 lg:block"
+                      v-html="$t('home.section9.head')"
+                    ></h1>
                     <div class="mb-8 inline-flex flex-col items-center">
                       <img
                         class="mb-4"
@@ -383,13 +403,13 @@
       <div class="container">
         <Card class="bg-accent-200 p-8 lg:p-10">
           <div class="items-center lg:flex">
-            <div class="mb-4 flex lg:space-x-8">
+            <div class="mb-4 flex space-x-4 lg:space-x-8">
               <img
                 src="~/assets/images/woman.svg"
-                class="hidden lg:block"
+                class="block"
                 alt="woman-logo"
               />
-              <div>
+              <div class="pt-4">
                 <h1 class="display-3 mb-4">Still have questions?</h1>
                 <p class="text-2">
                   Our agents are always ready to answer your questions.
@@ -397,7 +417,7 @@
               </div>
             </div>
             <button
-              class="ml-auto self-center rounded-full border-2 border-black px-6 py-2 font-medium"
+              class="ml-auto w-full self-center rounded-full border-2 border-black px-6 py-2 font-medium lg:w-fit"
             >
               Chat With Us
             </button>
@@ -424,13 +444,15 @@
   z-index: 1;
   width: 100%;
   height: 100%;
+  position: absolute;
+  transform: translateY(100%);
   opacity: 0;
 }
 
 .img-step-wrapper {
   //position: relative;
-  overflow: hidden;
-  height: 55vh;
+  //overflow: hidden;
+  height: 534px;
   left: 101px;
   width: 260px;
 }
@@ -441,7 +463,7 @@ import { useModal } from "vue-final-modal";
 import Scrollbar from "smooth-scrollbar";
 const { $gsap } = useNuxtApp();
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { reactive, onMounted, nextTick, ref } from "vue";
+import { reactive, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import CountryComponent from "~/components/CountryComponent.vue";
 import qr from "~/components/modals/qr.vue";
@@ -453,37 +475,31 @@ const show = ref(false);
 
 const steps = reactive([
   {
-    step: "01",
-    title: "Sign up",
-    body:
-      "Lorem ipsum dolor sit amet consectetur. Nunc pulvinar " +
-      "nam purus nunc interdum lorem. Venenatis nisl " +
-      "pulvinar urna facilisi eget vel fringilla",
+    step: t("home.section6.how.steps[0].step"),
+    title: t("home.section6.how.steps[0].title"),
+    body: t("home.section6.how.steps[0].body"),
   },
   {
-    step: "02",
-    title: "Download the App and Verify your Identity",
-    body:
-      "Lorem ipsum dolor sit amet consectetur. Nunc pulvinar " +
-      "nam purus nunc interdum lorem. Venenatis nisl " +
-      "pulvinar urna facilisi eget vel fringilla",
+    step: t("home.section6.how.steps[1].step"),
+    title: t("home.section6.how.steps[1].title"),
+    body: t("home.section6.how.steps[1].body"),
   },
   {
-    step: "03",
-    title: "Send Less",
-    body: "Enjoy the lowest rates, send up to $9,900 every day",
+    step: t("home.section6.how.steps[2].step"),
+    title: t("home.section6.how.steps[2].title"),
+    body: t("home.section6.how.steps[2].body"),
   },
 ]);
 
 const images = [
   {
-    src: "https://res.cloudinary.com/believe/image/upload/v1713280088/maraboo/1.png",
+    src: "https://res.cloudinary.com/believe/image/upload/v1713280088/maraboo/old/prev/1.png",
   },
   {
-    src: "https://res.cloudinary.com/believe/image/upload/v1713280088/maraboo/2.png",
+    src: "https://res.cloudinary.com/believe/image/upload/v1713280088/maraboo/old/prev/2.png",
   },
   {
-    src: "https://res.cloudinary.com/believe/image/upload/v1713280088/maraboo/3.png",
+    src: "https://res.cloudinary.com/believe/image/upload/v1713280088/maraboo/old/prev/3.png",
   },
 ];
 
@@ -525,6 +541,8 @@ function handleResize() {
   } else {
     ScrollTrigger.enable();
   }
+
+  // ScrollTrigger.refresh();
 }
 onMounted(() => {
   initScrollTriggers();
@@ -616,23 +634,42 @@ function initScrollTriggers() {
   });
 
   ScrollTrigger.create({
-    trigger: ".two-way",
+    trigger: ".calculator",
     scroller: ".scroller",
-    start: () => "top 18%",
-    end: () => "bottom",
+    // start: () => "top 208px",
+    start: () => {
+      const twowaytHeight = document.querySelector(".two-way").offsetHeight;
+      return `top ${twowaytHeight}px`;
+    },
+    // end: () => "bottom top",
+    end: () => {
+      const target = document.querySelector(".calculator").offsetHeight;
+      const twowaytHeight = document.querySelector(".two-way").offsetHeight;
+      const newHeight = target - twowaytHeight;
+      return `bottom ${newHeight - 25}px`;
+    },
     scrub: true,
-    pin: true,
+    // markers: true,
+    pin: ".two-way",
     invalidateOnRefresh: true,
   });
 
   ScrollTrigger.create({
-    trigger: ".superpower",
+    trigger: ".superpower-steps",
     scroller: ".scroller",
-    start: () => "top 10%",
-    end: () => "bottom 35%",
+    start: () => {
+      const twowaytHeight = document.querySelector(".superpower").offsetHeight;
+      return `top ${twowaytHeight}px`;
+    },
+    end: () => {
+      const target = document.querySelector(".superpower-steps").offsetHeight;
+      const twowaytHeight = document.querySelector(".superpower").offsetHeight;
+      const newHeight = target - twowaytHeight;
+      return `bottom ${newHeight - 90}px`;
+    },
     scrub: true,
     // markers: true,
-    pin: true,
+    pin: ".superpower",
     invalidateOnRefresh: true,
   });
 }
