@@ -161,7 +161,7 @@
     <section class="x-section">
       <div class="container">
         <div class="content-wrap">
-          <div class="h-screen w-full items-start justify-between lg:flex">
+          <div class="w-full items-start justify-between lg:flex">
             <div class="relative flex w-full flex-col py-2">
               <div class="mb-8 space-y-4">
                 <h1 class="display-2 mb-4 text-start">
@@ -191,7 +191,7 @@
                   </div>
                 </div>
                 <!--  ipad n mobile -->
-                <div class="steps flex max-w-sm flex-col lg:hidden">
+                <div class="flex max-w-sm flex-col lg:hidden">
                   <div
                     v-for="(step, index) in steps"
                     class="mb-8 flex flex-col items-start px-4 pb-10 opacity-100"
@@ -220,7 +220,7 @@
                   :key="imgIndex"
                   class="img-step blue absoslute"
                 >
-                  <img :src="image.src" alt="" />
+                  <img :src="image.src" alt="" class="" />
                 </div>
               </div>
             </div>
@@ -573,7 +573,8 @@ function initScrollTriggers() {
   bodyScrollBar.addListener(ScrollTrigger.update);
 
   $gsap.set(".img-step", {
-    zIndex: (i, target, targets) => targets.length - i,
+    // zIndex: (i, target, targets) => targets.length - i,
+    // paddingBottom: "12px",
   });
   let images = $gsap.utils.toArray(".img-step");
   images.forEach((image, i) => {
