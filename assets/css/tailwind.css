@@ -55,10 +55,10 @@ section {
     @apply px-6 w-full flex text-black justify-center;
 }
 .container {
-    @apply max-w-[1280px]  w-full mx-auto flex justify-center py-10 md:py-[128px]
+    @apply max-w-[1280px]  w-full mx-auto flex justify-center py-5 md:py-[128px]
 }
 .content-wrap {
-    @apply max-w-[1024px] w-full flex justify-center
+    @apply max-w-[1024px] py-10 lg:py-0 w-full flex justify-center
 }
 
 .text-multi-color {

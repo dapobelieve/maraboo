@@ -25,13 +25,10 @@
         <div class="content-wrap">
           <div class="w-full items-start justify-between lg:flex">
             <div class="two-way mb-10 text-white lg:mb-0">
-              <h1 class="display-2 mb-4 text-center font-medium lg:text-left">
+              <h1 class="display-2 mb-4 text-left font-medium">
                 {{ $t("home.section2.left.one") }}
               </h1>
-              <p
-                class="text-center lg:text-left"
-                v-html="$t('home.section2.left.two')"
-              ></p>
+              <p class="text-left" v-html="$t('home.section2.left.two')"></p>
             </div>
             <div class="calculator flex justify-center lg:justify-end">
               <Calculator class="lg:ml-auto" />
@@ -44,7 +41,7 @@
       <div class="container">
         <div class="content-wrap">
           <div class="text-center">
-            <h1 class="display-2">
+            <h1 class="display-1">
               {{ $t("home.section3.left.one") }}
               <span
                 class="text-multi-color"
@@ -137,7 +134,7 @@
                 ></p>
               </div>
               <div class="flex justify-center lg:ml-auto">
-                <img alt="" src="~/assets/images/choose.svg" />
+                <!--                <img alt="" src="~/assets/images/choose.svg" />-->
               </div>
             </div>
             <div class="w-full justify-between lg:flex">

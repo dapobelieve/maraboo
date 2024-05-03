@@ -1,14 +1,15 @@
 <template>
   <header>
-    <div class="container" style="padding-bottom: 8px; padding-top: 8px">
+    <div class="container px-3 py-0.5 md:px-0">
       <div class="flex w-full items-center">
         <NuxtLink :to="localePath('/')" class="flex items-center">
           <div>
             <img
-              class="h-6 md:h-8"
+              class="hidden h-6 md:h-8 lg:block"
               src="~/assets/images/maraboo-logo.png"
               alt=""
             />
+            <img class="h-10 lg:hidden" src="~/assets/images/logo.png" alt="" />
           </div>
         </NuxtLink>
         <span class="ml-auto mt-3 inline-flex items-center space-x-6">

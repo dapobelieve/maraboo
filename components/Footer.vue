@@ -1,10 +1,12 @@
 <template>
-  <footer class="flex justify-center bg-neutral px-5 pb-5 pt-20 md:px-10">
+  <footer
+    class="flex justify-center bg-neutral px-5 pb-5 pt-5 md:px-10 md:pt-20"
+  >
     <div class="container">
       <div class="w-full">
         <div class="flex flex-col items-center justify-center">
           <div class="w-full space-y-12 text-white md:px-12">
-            <h1 class="display-2">
+            <h1 class="display-2 text-center md:text-left">
               Download the App for <br />
               Money Transfers Beyond <br />
               Borders!
