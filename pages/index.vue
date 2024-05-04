@@ -15,7 +15,7 @@
             }}</Button>
           </div>
           <div class="globe">
-            <img class="w-full" src="~/assets/images/the-globe.svg" alt="" />
+<!--            <img class="w-full" src="~/assets/images/the-globe.svg" alt="" />-->
           </div>
         </div>
       </div>
