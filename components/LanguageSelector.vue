@@ -24,7 +24,7 @@
             src="~/assets/images/fr.png"
             alt=""
           />
-          <span class="select-text font-extrabold text-white">{{
+          <span class="select-text font-extrabold">{{
             state.lang === "en" ? "EN" : "FR"
           }}</span>
           <Icon

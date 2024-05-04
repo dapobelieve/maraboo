@@ -25,34 +25,35 @@
     },
     "section3": {
       "left": {
-        "one": "Send less with",
+        "one": "Envoyez moins avec ",
         "two": "Maraboo",
-        "three": "enjoy the lowest rates, receive more in real time"
+        "three": "profitez des tarifs les plus bas, recevez davantage en temps réel"
       }
     },
     "section4": {
       "left": {
         "super-power": "Your new <br />\nsuperpower",
-        "offer": "We offer the widest rage of payment and <br />\n                  disbursements methods to meet all your needs"
+        "offer": "Nous offrons la plus large gamme de méthodes de paiement <br > et de versements pour répondre à tous vos besoins."
       },
       "right": {
         "cash": {
           "top": "cash",
-          "bottom": "Receive by cash at Ecobank ATMs or Xpress points"
+          "bottom": "Recevez en espèces aux guichets automatiques Ecobank ou aux points Xpress."
         },
         "money": {
           "top": "Mobile Money",
-          "bottom": "Send or receive using mobile money"
+          "bottom": "Envoyez ou recevez de l'argent via le mobile money."
         },
         "bank": {
           "top": "Bank",
-          "bottom": "Send and receive from bank accounts"
+          "bottom": "Envoyez et recevez depuis des comptes bancaires."
         }
       }
     },
+
     "section5": {
       "what": "Why <br />\n                  Choose us",
-      "about": "When you send money with Maraboo you <br />\n                  not only save your time and money but you <br />\n                  a company built by native africans",
+      "about": "Lorsque vous envoyez de l'argent avec Maraboo, non <br />\n                  seulement vous économisez du temps et de l'argent, mais vous soutenez <br />également une entreprise fondée et dirigée par des Africains africans",
       "one": {
         "top": " <small class=\"font-bold\">The</small>\n                <h1 class=\"display-3 mb-6 font-medium\">Fastest</h1>",
         "bottom": "<p class=\"text-2\">\n                  We complete transfers in real <br />\n                  time\n                </p>"

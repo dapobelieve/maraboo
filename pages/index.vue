@@ -104,7 +104,7 @@
                 ></p>
               </div>
               <div class="flex justify-center lg:ml-auto">
-                <!--                <img alt="" src="~/assets/images/choose.svg" />-->
+                <img alt="" src="~/assets/images/choose.svg" />
               </div>
             </div>
             <div class="w-full justify-between lg:flex">

@@ -2,23 +2,26 @@
   <section class="py-6">
     <div class="bg-coloured w-full rounded">
       <div class="container">
-        <div class="content-wraps w-full px-4">
-          <div class="w-full items-start justify-between md:flex">
-            <div class="max-w-m top-10 text-white md:sticky">
-              <h1 class="display-2 mb-4 text-left font-medium">
+        <div class="w-full items-start justify-between lg:flex">
+            <div class="max-w-xl text-white">
+              <h1 class="display-2 mb-4 ">
                 Send money from
                 <span class="inline-flex items-center">
-                  <img class="mr-2 h-6 w-6 md:h-14 md:w-14" :src="images[waemuCountry?.flag]" alt />
-                  <span class="mr-3 capitalize">{{ waemuCountry?.name }}</span>
+                  <img
+                    class="mr-2 h-6 w-6 md:h-14 md:w-14"
+                    :src="images[waemuCountry?.flag]"
+                    alt=""
+                  />{{ waemuCountry?.name }}
+                  </span>
                   to
+                <span class="inline-flex items-center"
+                  ><img
+                    class="mr-2 h-6 w-6 md:h-14 md:w-14"
+                    :src="images['canada']"
+                    alt=""
+                  /><span>Canada</span>
                 </span>
-                <br />
-                <span class="inline-flex items-center">
-                  <img class="mr-2 h-6 w-6 md:h-14 md:w-14" :src="images['canada']" alt />
-                  <span>Canada</span>
-                </span>
-                <br />at the real
-                <br />exchange rate
+                at the real exchange rate
               </h1>
               <p class="text-2 max-w-md text-center md:text-left">
                 From local to global in real time, Maraboo Magic: Discover
@@ -26,11 +29,10 @@
                 countries!
               </p>
             </div>
-            <div class>
-              <Calculator class="md:ml-auto" />
+            <div class="calculator flex justify-center lg:justify-end">
+              <Calculator class="lg:ml-auto" />
             </div>
           </div>
-        </div>
       </div>
     </div>
   </section>
@@ -38,46 +40,37 @@
     <div class="container">
       <div class="content-wrap">
         <div class="w-full space-y-20">
-          <div class="why-us relative flex w-full flex-col md:flex-row md:text-justify">
-            <div class="flex flex-col items-center space-y-10 md:block md:flex-row md:items-start">
-              <h1 class="display-2 font-medium">
-                Why
-                <br />Choose us
-              </h1>
-              <p class="max-w-sm text-center leading-6 md:text-left">
-                When you send money with Maraboo you
-                <br />not only save your time and money but you
-                <br />a company built by native africans
-              </p>
+          <div
+              class="why-us relative flex w-full flex-col lg:flex-row lg:text-justify"
+          >
+            <div
+                class="mb-8 flex flex-col items-center space-y-10 lg:mb-0 lg:block lg:flex-row lg:items-start"
+            >
+              <h1
+                  class="display-2 font-medium"
+                  v-html="$t('home.section5.what')"
+              ></h1>
+              <p
+                  class="max-w-sm text-center leading-6 lg:text-left"
+                  v-html="$t('home.section5.about')"
+              ></p>
             </div>
-            <div class="-top-44 right-0 flex justify-center md:absolute">
-              <img alt class="h-96" src="~/assets/images/rats.png" />
+            <div class="flex justify-center lg:ml-auto">
+              <img alt="" class="h-96" src="~/assets/images/rats.png" />
             </div>
           </div>
-          <div class="w-full justify-between md:flex">
-            <div class="mb-12 md:mb-0">
-              <small class="font-bold">The</small>
-              <h1 class="display-3 mb-6 font-medium">Fastest</h1>
-              <p class="text-2">
-                We complete transfers in real
-                <br />time
-              </p>
+          <div class="w-full justify-between lg:flex">
+            <div class="mb-12 lg:mb-0">
+              <div v-html="$t('home.section5.one.top')"></div>
+              <div v-html="$t('home.section5.one.bottom')"></div>
             </div>
-            <div class="mb-12 md:mb-0">
-              <small class="font-bold">The</small>
-              <h1 class="display-3 mb-6 font-medium">Cheapest</h1>
-              <p class="text-2">
-                We give you the lowest rate
-                <br />every time
-              </p>
+            <div class="mb-12 lg:mb-0">
+              <div v-html="$t('home.section5.two.top')"></div>
+              <div v-html="$t('home.section5.two.bottom')"></div>
             </div>
-            <div class="mb-12 md:mb-0">
-              <small class="font-bold">The</small>
-              <h1 class="display-3 mb-6 font-medium">Most Versatile</h1>
-              <p class="text-2">
-                The widest range of collection
-                <br />and delivery options
-              </p>
+            <div class="mb-12 lg:mb-0">
+              <div v-html="$t('home.section5.three.top')"></div>
+              <div v-html="$t('home.section5.three.bottom')"></div>
             </div>
           </div>
         </div>
@@ -119,7 +112,7 @@
             </div>
           </div>
           <div class="hidden w-1/3 md:block">
-            <img class src="~/assets/images/phone-steps.png" alt />
+
           </div>
         </div>
       </div>
