@@ -20,7 +20,7 @@
     "section2": {
       "left": {
         "one": "Two-way Corridors",
-        "two": "Send money to or from any UMOA country <br />in real time at the\n                lowest rate."
+        "two": "Send money to or from any UMOA country <br />in real time at the                lowest rate."
       }
     },
     "section3": {
@@ -32,8 +32,8 @@
     },
     "section4": {
       "left": {
-      "super-power": "Your new <br />\nsuperpower",
-      "offer": "We offer the widest rage of payment and <br />\n                  disbursements methods to meet all your needs"
+      "super-power": "Your new <br />superpower",
+      "offer": "We offer the widest rage of payment and <br />                  disbursements methods to meet all your needs"
       },
       "right": {
         "cash": {
@@ -51,35 +51,35 @@
       }
     },
     "section5": {
-      "what": "Why <br class='hidden md:block' />\n                  Choose us",
-      "about": "When you send money with Maraboo you <br />\n                  not only save your time and money but you <br />\n                  a company built by native africans",
+      "what": "Why <br class='hidden md:block' />                  Choose us",
+      "about": "When you send money with Maraboo you <br />                  not only save your time and money but you <br />                  a company built by native africans",
       "one": {
-        "top": " <small class=\"font-bold\">The</small>\n                <h1 class=\"display-3 mb-6 font-medium\">Fastest</h1>",
-        "bottom": "<p class=\"text-2\">\n                  We complete transfers in real <br />\n                  time\n                </p>"
+        "top": " <small class=\"font-bold\">The</small>                <h1 class=\"display-3 mb-6 font-medium\">Fastest</h1>",
+        "bottom": "<p class=\"text-2\">                  We complete transfers in real <br />                  time                </p>"
       },
       "two": {
-        "top": " <small class=\"font-bold\">The</small>\n                <h1 class=\"display-3 mb-6 font-medium\">Cheapest</h1>",
-        "bottom": "<p class=\"text-2\">\n                  We give you the lowest rate <br />\n                  every time\n                </p>"
+        "top": " <small class=\"font-bold\">The</small>                <h1 class=\"display-3 mb-6 font-medium\">Cheapest</h1>",
+        "bottom": "<p class=\"text-2\">                  We give you the lowest rate <br />                  every time                </p>"
       },
       "three": {
-        "top": "<small class=\"font-bold\">The</small>\n                <h1 class=\"display-3 mb-6 font-medium\">Most Versatile</h1>",
-        "bottom": "<p class=\"text-2\">\n                  The widest range of collection <br />\n                  and delivery options\n                </p>"
+        "top": "<small class=\"font-bold\">The</small>                <h1 class=\"display-3 mb-6 font-medium\">Most Versatile</h1>",
+        "bottom": "<p class=\"text-2\">                  The widest range of collection <br />                  and delivery options                </p>"
       }
     },
     "section6": {
       "how": {
         "name": "How it works",
-        "text": " Sending money to or from UMOA is <br />as easy as 1-2-3 with\nus.",
+        "text": " Sending money to or from UMOA is <br />as easy as 1-2-3 withus.",
         "steps": [
           {
             "step": "01",
             "title": "Sign Up",
-            "body": "Lorem ipsum dolor sit amet consectetur. Nunc pulvinar \" +\n      \"nam purus nunc interdum lorem. Venenatis nisl \" +\n  \"pulvinar urna facilisi eget vel fringilla"
+            "body": "Lorem ipsum dolor sit amet consectetur. Nunc pulvinar \" +      \"nam purus nunc interdum lorem. Venenatis nisl \" +  \"pulvinar urna facilisi eget vel fringilla"
           },
           {
             "step": "02",
             "title": "Download the App and Verify your Identity",
-            "body": "Lorem ipsum dolor sit amet consectetur. Nunc pulvinar \" +\n      \"nam purus nunc interdum lorem. Venenatis nisl \" +\n  \"pulvinar urna facilisi eget vel fringilla"
+            "body": "Lorem ipsum dolor sit amet consectetur. Nunc pulvinar \" +      \"nam purus nunc interdum lorem. Venenatis nisl \" +  \"pulvinar urna facilisi eget vel fringilla"
           },
           {
             "step": "03",
@@ -89,15 +89,15 @@
         ]
       }
     },
-    "section7": "Where We Extend <br />\n                our support",
+    "section7": "Where We Extend <br />                our support",
     "section8": {
       "secure": {
         "title": "Securing Your Data Fortress!",
-        "body": " Rest assured, your funds and private information are <br />\n                    safeguarded by state-of-the-art security technology, <br />\n                    compliant with both local and global regulations"
+        "body": " Rest assured, your funds and private information are <br />                    safeguarded by state-of-the-art security technology, <br />                    compliant with both local and global regulations"
       },
       "from": {
         "title": "From local to global.",
-        "body": "Seamlessly transfer up to $9,900 daily to/from WAEMU countries\n                  at the Real Exchange. Your gateway to hassle-free\n                  international transactions!"
+        "body": "Seamlessly transfer up to $9,900 daily to/from WAEMU countries                  at the Real Exchange. Your gateway to hassle-free                  international transactions!"
       },
       "did": "Did you know that a 10% reduction in transaction fees for sending money in & out of UMOA country can boost the revenue of regional households by up to 16%?"
     },
@@ -138,15 +138,15 @@
     "faq-header": "Frequently Asked Questions"
   },
   "about-us": {
-    "name": "About us",
-    "caption": " We're building borderless financial systems to connect West-Africans\n          across the globe",
-    "text": "<span class=\"text-purple\">Introducing Maraboo</span>, a West-African\n          fintech firm offering transformative financial solutions that are\n          fair, responsible, inclusive, and designed to improve the quality of\n          life of West Africans.",
-    "read-more": "En savoir plus",
-    "section-2": {
-      "caption": " Our Core mission is to make payments in & out of WAEMU countries\n              up <span class=\"text-purple\">to 3x cheaper!</span>\n              <br class=\"hidden md:block\" />",
-      "text": "Did you know that a 10% reduction in transaction fees for sending\n              money in & out of WAEMU country can boost the revenue of regional\n              households by up to 16%?",
-      "we-believe": "We believe that remittances should be fast, low cost, and have a\n              major social impact.",
-      "two": "Two birds one stone - we apply the real exchange rate on all of\n              our transactions to save you money and make the\n              <span class=\"text-purple underline\"> UN social development goal </span> by\n              significantly reducing remittance cost by 2030 a reality today!",
+    "name": " We're              <span class=\"text-multi-color\"                >building borderless <br />                financial systems</span              >              to <br />              connect West-Africans <br />              across the globe",
+    "caption": "Introducing Maraboo, a West-African fintech firm offering\n                transformative financial solutions that are fair, responsible,\n                inclusive, and designed to improve the quality of life of West\n                Africans.",
+
+    "our": "Our Core mission is to make payments in & out of WAEMU countries\n              up to 3x cheaper!",
+    "section2": {
+      "caption": " We believe that remittances should be fast, low cost, and have a\n                major social impact.",
+      "text": "Two birds one stone - we apply the real exchange rate on all\n                  of our transactions to save you money and make the UN social\n                  development goal by significantly reducing remittance cost by\n                  2030 a reality today!",
+      "we-believe": " We believe that <br />\n            <span class=\"text-multi-color\">remittances</span> should <br />\n            be <span class=\"text-multi-color\">fast, low cost</span>.",
+
       "team": "Meet the team"
     }
   },
@@ -154,9 +154,9 @@
     "name": "Legal",
     "policy": "Privacy policy and Terms & conditions",
     "one": "Thank you for your interest in our upcoming launch.",
-    "two": "We're working hard to get everything ready and ensure that we\n            provide the best possible experience for our customers. Our legal\n            documents are currently being finalized and will be made available\n            shortly.",
-    "three": "In the meantime, we invite you to join our waitlist to be among the\n            first to know when we launch. By joining our waitlist, you'll\n            receive exclusive updates on our progress, be the first to know when\n            we launch, and receive special offers.",
-    "four": "Thank you for your patience and support. We can't wait to share our\n            product with you!"
+    "two": "We're working hard to get everything ready and ensure that we            provide the best possible experience for our customers. Our legal            documents are currently being finalized and will be made available            shortly.",
+    "three": "In the meantime, we invite you to join our waitlist to be among the            first to know when we launch. By joining our waitlist, you'll            receive exclusive updates on our progress, be the first to know when            we launch, and receive special offers.",
+    "four": "Thank you for your patience and support. We can't wait to share our            product with you!"
   },
   "careers": {
     "join": "Join Our Team!",
@@ -332,7 +332,7 @@
   },
   "footer": {
     "caption": "A West-African fintech firm offering transformative financial                  <br />                  solutions that are fair, responsible, inclusive,and designed                  <br />                  to improve the quality of life of West Africa.",
-    "registered": "Grand Maraboo Technology Limited is registered as a money service\n            business with the Financial <br />\n            Transactions and Reports Analysis Centre of Canada (FINTRAC) under\n            registration number M23345406",
+    "registered": "Grand Maraboo Technology Limited is registered as a money service            business with the Financial <br />            Transactions and Reports Analysis Centre of Canada (FINTRAC) under            registration number M23345406",
     "copy": "Grand Maraboo Technologies Limited © 2023 All rights reserved",
     "contact": "Contact us",
     "phone": "Phone",
