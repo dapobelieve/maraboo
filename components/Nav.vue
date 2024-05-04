@@ -1,7 +1,7 @@
 <template>
   <header>
     <!--    <div class="px-8 py-0.5 md:px-0">-->
-    <div class="flex w-full items-center px-3 md:px-0">
+    <div class="flex w-full items-center px-3 md:px-3">
       <NuxtLink :to="localePath('/')" class="flex items-center">
         <div>
           <img

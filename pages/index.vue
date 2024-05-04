@@ -41,7 +41,7 @@
       <div class="container">
         <div class="content-wrap">
           <div class="text-center">
-            <h1 class="display-1">
+            <h1 class="display-2">
               {{ $t("home.section3.left.one") }}
               <span
                 class="text-multi-color"
@@ -155,11 +155,11 @@
         </div>
       </div>
     </section>
-    <section class="x-section">
+    <section class="x-section lg:h-screen">
       <div class="container">
         <div class="content-wrap">
           <div class="w-full items-start justify-between lg:flex">
-            <div class="relative flex w-full flex-col py-2">
+            <div class="flex-col relative flex w-full">
               <div class="mb-8 space-y-4">
                 <h1 class="display-2 mb-4 text-start">
                   {{ $t("home.section6.how.name") }}
@@ -171,10 +171,10 @@
                   <div class="bg-slate h-1/2 w-[3px]"></div>
                 </div>
                 <!--  desktop-->
-                <div class="steps hidden max-w-sm flex-col lg:flex">
+                <div class="steps hidden bg-amber-600 max-w-sm flex-col lg:flex">
                   <div
                     v-for="(step, index) in steps"
-                    class="step-item mb-8 flex transform-none items-start space-x-8 px-4 pb-10 opacity-100 md:translate-y-full lg:absolute"
+                    class="step-item mb-8 flex items-start space-x-8 px-4 pb-10 opacity-100 md:transslate-y-full lg:absolute"
                   >
                     <div>
                       <small class="font-bold text-primary">{{
@@ -209,13 +209,15 @@
                 </div>
               </div>
             </div>
-            <div style="width: 750px" class="relative hidden px-8 lg:block">
-              <img class="invisible" src="~/assets/images/mobile.png" alt="" />
-              <div class="img-step-wrapper bord absolute left-0 top-[76px]">
+            <div
+              style="width: 750px"
+              class="relative hidden px-8 w-full lg:block"
+            >
+              <div class="img-step-wrapper w-full top-[46px]">
                 <div
                   v-for="(image, imgIndex) in images"
                   :key="imgIndex"
-                  class="img-step blue absoslute"
+                  class="img-step blue s"
                 >
                   <img :src="image.src" alt="" class="" />
                 </div>
@@ -539,8 +541,11 @@ function initScrollTriggers() {
   bodyScrollBar.addListener(ScrollTrigger.update);
 
   $gsap.set(".img-step", {
-    // zIndex: (i, target, targets) => targets.length - i,
-    // paddingBottom: "12px",
+    zIndex: (i, target, targets) => {
+      console.log(target)
+      return targets.length - i
+    },
+    marginBottom: "72px"
   });
   let images = $gsap.utils.toArray(".img-step");
   images.forEach((image, i) => {
@@ -556,12 +561,13 @@ function initScrollTriggers() {
       },
     });
 
-    tl.to(image, { height: 0 });
+    tl.to(image, { height: 0, marginBottom: 0 });
   });
 
   $gsap.set(".step-item", {
     zIndex: (i, target, targets) => targets.length - i,
   });
+
   let steps = $gsap.utils.toArray(".step-item");
 
   steps.forEach((step, i) => {
@@ -727,10 +733,10 @@ const half = computed(() => Math.ceil(faqs.length / 2));
 
 .step-item {
   left: 0%;
-  top: 84%;
+  top: 176%;
   right: 0%;
-  bottom: 0%;
-  z-index: 1;
+  //bottom: 0%;
+  z-index: 10;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -739,10 +745,9 @@ const half = computed(() => Math.ceil(faqs.length / 2));
 }
 
 .img-step-wrapper {
-  //position: relative;
-  //overflow: hidden;
   height: 534px;
-  left: 101px;
-  width: 260px;
+  //left: 101px;
+  //width: 500px;
+  //margin-bottom: 44px;
 }
 </style>
