@@ -50,7 +50,7 @@ const emit = defineEmits<{
 <template>
   <VueFinalModal
     class="flex w-full items-center justify-center p-4 text-white"
-    content-class="bg-primary absolute bottom-10 right-10 pt-2 pb-6 w-[600px] rounded-[40px]"
+    content-class="bg-primary absolute bottom-10 right-10 pt-2 pb-6 w-[600px] rounded"
     content-transition="vfm-slide-down"
     :click-to-close="false"
     :esc-to-close="false"

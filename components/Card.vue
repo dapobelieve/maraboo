@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="relative w-full overflow-hidden rounded-[2.5rem] px-6 py-8 md:p-14"
-  >
+  <div class="relative w-full overflow-hidden rounded px-6 py-8 md:p-14">
     <slot>Maraboo Card</slot>
     <img
       v-if="direction === 'down'"

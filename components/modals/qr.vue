@@ -9,7 +9,7 @@ const emit = defineEmits<{
 <template>
   <VueFinalModal
     class="flex items-center justify-center text-white"
-    content-class="bg-primary px-8 py-12 w-[600px] rounded-[40px]"
+    content-class="bg-primary px-8 py-12 w-[600px] rounded"
   >
     <div class="relative flex flex-col items-center text-center">
       <button

@@ -99,10 +99,15 @@
         "title": "From local to global.",
         "body": "Seamlessly transfer up to $9,900 daily to/from WAEMU countries\n                  at the Real Exchange. Your gateway to hassle-free\n                  international transactions!"
       },
-      "did": "Did you know that a 10% reduction in transaction fees for\n                  sending?"
+      "did": "Did you know that a 10% reduction in transaction fees for sending money in & out of UMOA country can boost the revenue of regional households by up to 16%?"
     },
     "section9": {
-      "head": "Real Talk <br class=\"hidden md:block\" />\n                      from Our <br class=\"hidden md:block\" />\n                      Customers"
+      "head": "Real Talk <br class=\"hidden md:block\" />  from Our <br class=\"hidden md:block\" /> Customer"
+    },
+    "section10": {
+      "head": "Still have questions?",
+      "body": "Our agents are always ready to answer your questions.",
+      "chat": "Chat With Us"
     },
     "faq": [
       {
@@ -326,8 +331,9 @@
 
   },
   "footer": {
-    "logo-caption": "<span class='text-left'> A West-African fintech firm offering transformative <br /> financial solutions that are fair, responsible, inclusive, <br> and designed to improve the quality of life of West Africa </span>",
-    "registered": "Grand Maraboo Technology Limited is registered as a money service business with the Financial Transactions and Reports Analysis Centre of Canada (FINTRAC) under registration number",
+    "caption": "A West-African fintech firm offering transformative financial                  <br />                  solutions that are fair, responsible, inclusive,and designed                  <br />                  to improve the quality of life of West Africa.",
+    "registered": "Grand Maraboo Technology Limited is registered as a money service\n            business with the Financial <br />\n            Transactions and Reports Analysis Centre of Canada (FINTRAC) under\n            registration number M23345406",
+    "copy": "Grand Maraboo Technologies Limited © 2023 All rights reserved",
     "contact": "Contact us",
     "phone": "Phone",
     "email": "Email",

@@ -1,6 +1,6 @@
 <template>
   <main class="text-black">
-    <section class="rounded-[40px] bg-primary">
+    <section class="rounded bg-primary">
       <div class="container">
         <div class="row justify-between space-y-8 md:flex md:space-y-0">
           <div class="text-white md:max-w-xs">
@@ -44,23 +44,17 @@
             </div>
           </div>
           <div class="flex flex-col space-y-10">
-            <div
-              class="max-w-md rounded-[40px] border-2 border-surface-200 p-14"
-            >
+            <div class="max-w-md rounded border-2 border-surface-200 p-14">
               <h1 class="display-1 mb-6">Cash</h1>
               <p class="text-2">
                 Receive by cash at Ecobank ATMs or Xpress points
               </p>
             </div>
-            <div
-              class="max-w-md rounded-[40px] border-2 border-surface-200 p-14"
-            >
+            <div class="max-w-md rounded border-2 border-surface-200 p-14">
               <h1 class="display-1 mb-6">Mobile Money</h1>
               <p class="text-2">Send or receive using mobile money</p>
             </div>
-            <div
-              class="max-w-md rounded-[40px] border-2 border-surface-200 p-14"
-            >
+            <div class="max-w-md rounded border-2 border-surface-200 p-14">
               <h1 class="display-1 mb-6">Bank</h1>
               <p class="text-2">Send and receive from bank accounts</p>
             </div>

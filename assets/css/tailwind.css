@@ -55,7 +55,7 @@ section {
     @apply px-6 w-full flex text-black justify-center;
 }
 .container {
-    @apply max-w-[1280px]  w-full mx-auto flex justify-center py-5 md:py-[128px]
+    @apply max-w-[1280px]  w-full mx-auto flex justify-center py-20 md:py-[128px]
 }
 .content-wrap {
     @apply max-w-[1024px] py-10 lg:py-0 w-full flex justify-center
@@ -75,6 +75,11 @@ section {
 
 .no-scrollbar::-webkit-scrollbar {
     display: none;
+}
+
+.rounded {
+    @apply lg:rounded-[2.5rem] rounded-[1.8rem]
+
 }
 
 .scroller {

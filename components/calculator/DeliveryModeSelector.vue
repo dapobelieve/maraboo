@@ -209,6 +209,6 @@ const modeToDisplay = computed(() => {
 }
 
 .dynamic-enter {
-  animation: slideInTopFastToSlow 1000ms ease both;
+  animation: slideInTopFastToSlow 800ms ease both;
 }
 </style>

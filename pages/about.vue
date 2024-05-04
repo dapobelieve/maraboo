@@ -34,27 +34,25 @@
       </div>
     </section>
     <section>
-      <div class="container">
-        <Card
-          class="bg-coloured flex justify-center px-5 py-20 text-white md:py-52"
-        >
-          <div class="row space-y-12 md:max-w-5xl">
-            <div>
-              <h1 class="display-2 text-center">
-                Our Core mission is to make payments in & out of WAEMU countries
-                up to 3x cheaper!
-              </h1>
-            </div>
-            <div class="hidden">
-              <p class="text-2 max-w-xs">
-                Did you know that a 10% reduction in transaction fees for
-                sending money in & out of WAEMU countrycan boost the revenue of
-                regional households by up to 16%?
-              </p>
-            </div>
+      <Card
+        class="bg-coloured flex justify-center px-5 py-20 text-white md:py-52"
+      >
+        <div class="row space-y-12 md:max-w-5xl">
+          <div>
+            <h1 class="display-2 text-center">
+              Our Core mission is to make payments in & out of WAEMU countries
+              up to 3x cheaper!
+            </h1>
           </div>
-        </Card>
-      </div>
+          <div class="hidden">
+            <p class="text-2 max-w-xs">
+              Did you know that a 10% reduction in transaction fees for sending
+              money in & out of WAEMU countrycan boost the revenue of regional
+              households by up to 16%?
+            </p>
+          </div>
+        </div>
+      </Card>
     </section>
     <section class="remit">
       <div class="container">
@@ -89,7 +87,7 @@
     </section>
     <section class="relative bg-[url('/assets/images/bdox.svg')] bg-cover">
       <img
-        class="rounded-[20px] md:rounded-[40px]"
+        class="rounded-[20px] md:rounded"
         src="~/assets/images/box.png"
         alt=""
       />

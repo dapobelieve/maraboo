@@ -20,7 +20,7 @@
         </div>
       </div>
     </section>
-    <section class="bg-coloured rounded-[40px]">
+    <section class="bg-coloured rounded">
       <div class="container">
         <div class="content-wrap">
           <div class="w-full items-start justify-between lg:flex">
@@ -68,10 +68,10 @@
             </div>
             <div class="superpower-steps flex flex-col items-center space-y-10">
               <div
-                class="rounded-[40px] bg-gradient-to-r from-active to-accent-400 p-0.5"
+                class="rounded bg-gradient-to-r from-active to-accent-400 p-0.5"
               >
                 <div
-                  class="max-w-sm space-y-7 rounded-[39px] bg-[#E3E1EB] p-14 lg:max-w-md"
+                  class="max-w-sm space-y-7 rounded bg-[#E3E1EB] p-14 lg:max-w-md"
                 >
                   <h1 class="display-3 font-medium capitalize">
                     {{ $t("home.section4.right.cash.top") }}
@@ -82,10 +82,10 @@
                 </div>
               </div>
               <div
-                class="rounded-[40px] bg-gradient-to-r from-active to-accent-400 p-0.5"
+                class="rounded bg-gradient-to-r from-active to-accent-400 p-0.5"
               >
                 <div
-                  class="max-w-sm space-y-7 rounded-[40px] bg-[#E3E1EB] p-14 lg:max-w-md"
+                  class="max-w-sm space-y-7 rounded bg-[#E3E1EB] p-14 lg:max-w-md"
                 >
                   <h1 class="display-3 font-medium">
                     {{ $t("home.section4.right.money.top") }}
@@ -96,10 +96,10 @@
                 </div>
               </div>
               <div
-                class="rounded-[40px] bg-gradient-to-r from-active to-accent-400 p-0.5"
+                class="rounded bg-gradient-to-r from-active to-accent-400 p-0.5"
               >
                 <div
-                  class="max-w-sm space-y-7 rounded-[40px] bg-[#E3E1EB] p-14 lg:max-w-md"
+                  class="max-w-sm space-y-7 rounded bg-[#E3E1EB] p-14 lg:max-w-md"
                 >
                   <h1 class="display-3 font-medium">
                     {{ $t("home.section4.right.bank.top") }}
@@ -196,7 +196,7 @@
                     <div>
                       <img :src="images[index].src" alt="" />
                     </div>
-                    <div>
+                    <div class="space-y-4">
                       <small class="font-bold text-primary">{{
                         step.step
                       }}</small>
@@ -231,7 +231,7 @@
           <div class="w-full space-y-28">
             <div class="relative items-center justify-between lg:flex">
               <h1
-                class="display-2 mb-20 capitalize"
+                class="display-1 mb-20 capitalize"
                 v-html="$t('home.section7')"
               ></h1>
               <div class="lg:block">
@@ -260,7 +260,7 @@
                   <img src="~/assets/images/secure.png" alt="phone-logo" />
                 </div>
                 <div>
-                  <h1 class="display-2 mb-12">
+                  <h1 class="display-1 mb-12">
                     {{ $t("home.section8.secure.title") }}
                   </h1>
                   <p
@@ -272,13 +272,13 @@
             </div>
             <div class="grid gap-10 lg:w-2/5">
               <Card class="bg-accent-100" direction="down">
-                <h1 class="display-3 mb-4">
+                <h1 class="display-1 mb-6">
                   {{ $t("home.section8.from.title") }}
                 </h1>
-                <p class="text-3" v-html="$t('home.section8.from.body')"></p>
+                <p class="text-2" v-html="$t('home.section8.from.body')"></p>
               </Card>
               <Card class="bg-accent-100" direction="up">
-                <p class="display-3">
+                <p class="text-2">
                   {{ $t("home.section8.did") }}
                 </p>
               </Card>
@@ -320,9 +320,9 @@
                       </Button>
                     </div>
                   </div>
-                  <div class="flex flex-col items-center lg:w-1/2">
+                  <div class="flex flex-col items-center space-y-8">
                     <h1
-                      class="display-3 lg:block"
+                      class="display-3 text-center lg:hidden"
                       v-html="$t('home.section9.head')"
                     ></h1>
                     <div class="mb-8 inline-flex flex-col items-center">
@@ -346,7 +346,7 @@
                         <Icon
                           icon="chevron-left"
                           size="4rem"
-                          class="font-extrabold text-surface-400"
+                          class="ml-1 font-extrabold text-surface-400"
                         ></Icon>
                       </Button>
                       <Button
@@ -355,7 +355,7 @@
                         <Icon
                           icon="chevron-right"
                           size="4rem"
-                          class="font-extrabold text-surface-400"
+                          class="ml-2 font-extrabold text-surface-400"
                         ></Icon>
                       </Button>
                     </div>
@@ -369,7 +369,7 @@
     </section>
     <section class="faq">
       <div class="container">
-        <div class="flex flex-col items-center space-y-32">
+        <div class="flex flex-col items-center space-y-12 lg:space-y-16">
           <h1
             class="font-heading display-2 text-center leading-snug lg:text-6xl"
           >
@@ -407,16 +407,16 @@
                 alt="woman-logo"
               />
               <div class="pt-4">
-                <h1 class="display-3 mb-4">Still have questions?</h1>
-                <p class="text-2">
-                  Our agents are always ready to answer your questions.
-                </p>
+                <h1 class="display-3 mb-4">
+                  {{ $t("home.section10.head") }}
+                </h1>
+                <p class="text-2">{{ $t("home.section10.body") }}</p>
               </div>
             </div>
             <button
               class="ml-auto w-full self-center rounded-full border-2 border-black px-6 py-2 font-medium lg:w-fit"
             >
-              Chat With Us
+              {{ $t("home.section10.chat") }}
             </button>
           </div>
         </Card>
@@ -424,37 +424,6 @@
     </section>
   </main>
 </template>
-
-<style lang="scss" scoped>
-.text-wrap {
-  position: relative;
-  overflow: hidden;
-  width: 450px;
-  height: 80vh;
-}
-
-.step-item {
-  left: 0%;
-  top: 84%;
-  right: 0%;
-  bottom: 0%;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transform: translateY(100%);
-  opacity: 0;
-}
-
-.img-step-wrapper {
-  //position: relative;
-  //overflow: hidden;
-  height: 534px;
-  left: 101px;
-  width: 260px;
-}
-</style>
-
 <script setup>
 import { useModal } from "vue-final-modal";
 import Scrollbar from "smooth-scrollbar";
@@ -748,3 +717,32 @@ const countries = reactive([
 
 const half = computed(() => Math.ceil(faqs.length / 2));
 </script>
+<style lang="scss" scoped>
+.text-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 450px;
+  height: 80vh;
+}
+
+.step-item {
+  left: 0%;
+  top: 84%;
+  right: 0%;
+  bottom: 0%;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.img-step-wrapper {
+  //position: relative;
+  //overflow: hidden;
+  height: 534px;
+  left: 101px;
+  width: 260px;
+}
+</style>

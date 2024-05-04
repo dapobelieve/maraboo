@@ -2,7 +2,7 @@
   <div class="accordion-item">
     <div
       @click.exact="toggle"
-      class="mb-10 cursor-pointer rounded-[2.5rem] border bg-gray-100 px-5 py-4 transition-all duration-700 ease-in-out md:px-10 md:py-7"
+      class="mb-10 cursor-pointer rounded border bg-gray-100 px-5 py-4 transition-all duration-700 ease-in-out md:px-10 md:py-7"
       :class="[active ? 'border-black' : ' border-white']"
     >
       <div class="accordion-item-header flex items-center justify-between">

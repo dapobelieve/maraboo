@@ -1,6 +1,6 @@
 <template>
   <section class="py-6">
-    <div class="bg-coloured w-full rounded-[40px]">
+    <div class="bg-coloured w-full rounded">
       <div class="container">
         <div class="content-wraps w-full px-4">
           <div class="w-full items-start justify-between md:flex">
