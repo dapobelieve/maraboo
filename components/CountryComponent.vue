@@ -1,12 +1,12 @@
 <template>
   <NuxtLink @click="navigateToCountry" class="cursor-pointer">
-    <div class="flex flex-col items-start">
+    <div class="flex flex-col items-start space-y-5">
       <img
-        class="mb-2 duration-500 ease-in-out hover:-translate-y-1"
+        class="drop-shadow-2xl duration-500 ease-in-out hover:-translate-y-1"
         :src="`${flags[props.country.flag]}`"
-        alt=""
+        alt
       />
-      <small class="text-lg">{{ countryName }}</small>
+      <small class="text-2">{{ countryName }}</small>
     </div>
   </NuxtLink>
 </template>

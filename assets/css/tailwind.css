@@ -2,86 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-
 html,
 body {
-    @apply antialiased font-normal bg-[#E3E1EB] text-[#FFFFFFA3];
-    font-family: 'Poppins', sans-serif ;
+  @apply bg-[#E3E1EB] font-normal text-[#FFFFFFA3] antialiased;
+  font-family: "Poppins", sans-serif;
 }
 
 .globe {
-    @apply relative -bottom-[2%] md:bottom-[-6rem];
-    width: clamp(3.5rem, 96vw, 60rem);
+  @apply relative -bottom-[2%] md:bottom-[-6rem];
+  width: clamp(3.5rem, 96vw, 48rem);
 }
 
 /******** Typography ********/
 .display-1 {
-    font-size: clamp(2.5rem, 118 / 1920* 100vw, 6.5rem);
-    line-height: 100%;
-    font-weight: 500;
+  font-size: min(max(60px, 11.111vw), 128px);
+  @apply tracking-tighter;
 }
 
 .display-2 {
-    font-size: clamp(1.7rem, 118 / 1920* 100vw, 4.5rem);
-    line-height: 100%;
-    font-weight: 500;
+  font-size: min(max(48px, 5.556vw), 80px);
+  line-height: 115%;
+  letter-spacing: -2.2px;
 }
 
 .display-3 {
-    font-size: clamp(1.5rem, 118 / 1920* 100vw, 2.85rem);
-    line-height: 100%;
-    font-weight: 500;
+  font-size: min(max(32px, 4.676vw), 44px);
 }
 
+.display-1,
+.display-2 {
+  @apply font-medium;
+  line-height: 100%;
+}
 
 .text-1 {
-    @apply text-base
+  @apply text-base;
 }
 
 .text-2 {
-    @apply text-lg
+  @apply text-xl;
 }
 
 .text-3 {
-    font-size: 1.75rem;
+  font-size: 1.75rem;
 }
 
-
 .text-4 {
-    font-size: 0.8125rem;
+  font-size: 0.8125rem;
 }
 
 section {
-    @apply px-6 w-full flex text-black justify-center;
+  @apply flex w-full justify-center px-6 text-black;
 }
 .container {
-    @apply max-w-[1280px]  w-full mx-auto flex justify-center py-20 md:py-[128px]
+  @apply mx-auto flex w-full max-w-[1280px] justify-center py-32;
 }
 .content-wrap {
-    @apply max-w-[1024px] py-10 lg:py-0 w-full flex justify-center
+  @apply flex w-full max-w-[1024px] justify-center;
+}
+
+.col-left {
+  @apply max-w-[512px];
 }
 
 .text-multi-color {
-    @apply bg-gradient-to-r from-active to-primary bg-clip-text text-transparent
+  @apply bg-gradient-to-r from-active to-primary bg-clip-text text-transparent;
 }
 
 .bord {
-    @apply border border-black
+  @apply border border-black;
 }
 
 .bg-coloured {
-    @apply bg-gradient-to-r from-active via-primary via-65% to-accent-400
+  @apply bg-gradient-to-r from-active via-primary via-65% to-accent-400;
 }
 
 .no-scrollbar::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .rounded {
-    @apply lg:rounded-[2.5rem] rounded-[1.8rem]
-
+  @apply rounded-[1.8rem] lg:rounded-[2.5rem];
 }
 
 .scroller {
-    height: 100vh;
+  height: 100vh;
 }

@@ -1,21 +1,25 @@
 <template>
-  <main class="text-black">
+  <main>
     <section class="relative overflow-hidden">
-      <div class="container space-y-12" style="padding-bottom: 0">
-        <div class="flex flex-col items-center space-y-0">
+      <div class="container !pt-24 !pb-0 space-y-12">
+        <div class="flex flex-col items-center">
           <div class="mb-8 space-y-20 text-center">
             <h1 class="display-1 font-medium">
               {{ $t("home.section1.intl") }}
-              <span class="text-multi-color">{{
+              <span class="text-multi-color">
+                {{
                 $t("home.section1.umoa")
-              }}</span>
+                }}
+              </span>
             </h1>
-            <Button class="btn-xl capitalize" animate @click="openQr">{{
+            <Button class="btn-xl capitalize" animate @click="openQr">
+              {{
               $t("home.section1.send")
-            }}</Button>
+              }}
+            </Button>
           </div>
           <div class="globe">
-            <img class="w-full" src="~/assets/images/the-globe.svg" alt="" />
+            <img class="w-full" src="~/assets/images/globe-intro.svg" alt />
           </div>
         </div>
       </div>
@@ -24,10 +28,8 @@
       <div class="container">
         <div class="content-wrap">
           <div class="w-full items-start justify-between lg:flex">
-            <div class="two-way mb-10 text-white lg:mb-0">
-              <h1 class="display-2 mb-4 text-left font-medium">
-                {{ $t("home.section2.left.one") }}
-              </h1>
+            <div class="two-way space-y-10 text-white lg:mb-0">
+              <h1 class="display-2 mb-10 text-left">{{ $t("home.section2.left.one") }}</h1>
               <p class="text-left" v-html="$t('home.section2.left.two')"></p>
             </div>
             <div class="calculator flex justify-center lg:justify-end">
@@ -46,8 +48,8 @@
               <span
                 class="text-multi-color"
                 v-html="$t('home.section3.left.two')"
-              ></span
-              >, {{ $t("home.section3.left.three") }}
+              ></span>
+              , {{ $t("home.section3.left.three") }}
             </h1>
           </div>
         </div>
@@ -57,56 +59,29 @@
       <div class="container">
         <div class="content-wrap">
           <div class="h-full w-full items-start justify-between lg:flex">
-            <div
-              class="superpower mb-10 space-y-8 text-center lg:mb-0 lg:text-left"
-            >
-              <h1
-                class="display-2 font-medium capitalize"
-                v-html="$t('home.section4.left.super-power')"
-              ></h1>
+            <div class="superpower space-y-10 text-center lg:mb-0 lg:text-left">
+              <h1 class="display-2" v-html="$t('home.section4.left.super-power')"></h1>
               <p class="text-2" v-html="$t('home.section4.left.offer')"></p>
             </div>
             <div class="superpower-steps flex flex-col items-center space-y-10">
-              <div
-                class="rounded bg-gradient-to-r from-active to-accent-400 p-0.5"
-              >
-                <div
-                  class="max-w-sm space-y-7 rounded bg-[#E3E1EB] p-14 lg:max-w-md"
-                >
-                  <h1 class="display-3 font-medium capitalize">
-                    {{ $t("home.section4.right.cash.top") }}
-                  </h1>
-                  <p class="text-2">
-                    {{ $t("home.section4.right.cash.bottom") }}
-                  </p>
+              <div class="rounded bg-gradient-to-r from-active to-accent-400 p-0.5">
+                <div class="max-w-sm space-y-7 rounded bg-[#E3E1EB] p-14 lg:max-w-md">
+                  <h1
+                    class="display-3 font-medium capitalize"
+                  >{{ $t("home.section4.right.cash.top") }}</h1>
+                  <p class="text-2">{{ $t("home.section4.right.cash.bottom") }}</p>
                 </div>
               </div>
-              <div
-                class="rounded bg-gradient-to-r from-active to-accent-400 p-0.5"
-              >
-                <div
-                  class="max-w-sm space-y-7 rounded bg-[#E3E1EB] p-14 lg:max-w-md"
-                >
-                  <h1 class="display-3 font-medium">
-                    {{ $t("home.section4.right.money.top") }}
-                  </h1>
-                  <p class="text-2">
-                    {{ $t("home.section4.right.money.bottom") }}
-                  </p>
+              <div class="rounded bg-gradient-to-r from-active to-accent-400 p-0.5">
+                <div class="max-w-sm space-y-7 rounded bg-[#E3E1EB] p-14 lg:max-w-md">
+                  <h1 class="display-3 font-medium">{{ $t("home.section4.right.money.top") }}</h1>
+                  <p class="text-2">{{ $t("home.section4.right.money.bottom") }}</p>
                 </div>
               </div>
-              <div
-                class="rounded bg-gradient-to-r from-active to-accent-400 p-0.5"
-              >
-                <div
-                  class="max-w-sm space-y-7 rounded bg-[#E3E1EB] p-14 lg:max-w-md"
-                >
-                  <h1 class="display-3 font-medium">
-                    {{ $t("home.section4.right.bank.top") }}
-                  </h1>
-                  <p class="text-2">
-                    {{ $t("home.section4.right.bank.bottom") }}
-                  </p>
+              <div class="rounded bg-gradient-to-r from-active to-accent-400 p-0.5">
+                <div class="max-w-sm space-y-7 rounded bg-[#E3E1EB] p-14 lg:max-w-md">
+                  <h1 class="display-3 font-medium">{{ $t("home.section4.right.bank.top") }}</h1>
+                  <p class="text-2">{{ $t("home.section4.right.bank.bottom") }}</p>
                 </div>
               </div>
             </div>
@@ -118,16 +93,11 @@
       <div class="container">
         <div class="content-wrap">
           <div class="w-full space-y-20">
-            <div
-              class="why-us relative flex w-full flex-col lg:flex-row lg:text-justify"
-            >
+            <div class="why-us relative flex w-full flex-col lg:flex-row lg:text-justify">
               <div
-                class="mb-8 flex flex-col items-center space-y-10 lg:mb-0 lg:block lg:flex-row lg:items-start"
+                class="flex flex-col items-center space-y-10 lg:mb-0 lg:block lg:flex-row lg:items-start"
               >
-                <h1
-                  class="display-2 font-medium"
-                  v-html="$t('home.section5.what')"
-                ></h1>
+                <h1 class="display-2" v-html="$t('home.section5.what')"></h1>
                 <p
                   class="max-w-sm text-center leading-6 lg:text-left"
                   v-html="$t('home.section5.about')"
@@ -160,10 +130,8 @@
         <div class="content-wrap">
           <div class="w-full items-start justify-between lg:flex">
             <div class="flex-col relative flex w-full">
-              <div class="mb-8 space-y-4">
-                <h1 class="display-2 mb-4 text-start">
-                  {{ $t("home.section6.how.name") }}
-                </h1>
+              <div class="mb-8 space-y-10">
+                <h1 class="display-2 text-start">{{ $t("home.section6.how.name") }}</h1>
                 <p class="text-2" v-html="$t('home.section6.how.text')"></p>
               </div>
               <div class="flex lg:space-x-8">
@@ -177,13 +145,13 @@
                     class="step-item mb-8 flex items-start space-x-8 px-4 pb-10 opacity-100 md:transslate-y-full lg:absolute"
                   >
                     <div>
-                      <small class="font-bold text-primary">{{
+                      <small class="font-bold text-primary">
+                        {{
                         step.step
-                      }}</small>
+                        }}
+                      </small>
                       <h1 class="display-3 mb-4">{{ step.title }}</h1>
-                      <p class="text-2 leading-9">
-                        {{ step.body }}
-                      </p>
+                      <p class="text-2 leading-9">{{ step.body }}</p>
                     </div>
                   </div>
                 </div>
@@ -194,32 +162,25 @@
                     class="mb-8 flex flex-col items-start px-4 pb-10 opacity-100"
                   >
                     <div>
-                      <img :src="images[index].src" alt="" />
+                      <img :src="images[index].src" alt />
                     </div>
                     <div class="space-y-4">
-                      <small class="font-bold text-primary">{{
+                      <small class="font-bold text-primary">
+                        {{
                         step.step
-                      }}</small>
+                        }}
+                      </small>
                       <h1 class="display-3 mb-4">{{ step.title }}</h1>
-                      <p class="text-2 leading-9">
-                        {{ step.body }}
-                      </p>
+                      <p class="text-2 leading-9">{{ step.body }}</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div
-              style="width: 750px"
-              class="relative hidden px-8 w-full lg:block"
-            >
+            <div style="width: 750px" class="relative hidden px-8 w-full lg:block">
               <div class="img-step-wrapper w-full top-[46px]">
-                <div
-                  v-for="(image, imgIndex) in images"
-                  :key="imgIndex"
-                  class="img-step blue s"
-                >
-                  <img :src="image.src" alt="" class="" />
+                <div v-for="(image, imgIndex) in images" :key="imgIndex" class="img-step blue s">
+                  <img :src="image.src" alt class />
                 </div>
               </div>
             </div>
@@ -229,25 +190,20 @@
     </section>
     <section class="extend-brand">
       <div class="container">
-        <div class="content-wrap">
-          <div class="w-full space-y-28">
-            <div class="relative items-center justify-between lg:flex">
-              <h1
-                class="display-1 mb-20 capitalize"
-                v-html="$t('home.section7')"
-              ></h1>
-              <div class="lg:block">
-                <img src="~/assets/images/globe-stand.svg" alt="" />
-              </div>
+        <div class="content-wrap !flex-col w-full space-y-32">
+          <div class="justify-between items-end lg:flex">
+            <h1 class="display-2 col-left" v-html="$t('home.section7')"></h1>
+            <div class="lg:block">
+              <img src="~/assets/images/globe-stand.svg" alt />
             </div>
-            <div class="flags flex w-full flex-wrap gap-y-14 lg:items-center">
-              <CountryComponent
-                class="w-1/4"
-                v-for="(country, cIndex) in countries"
-                :key="cIndex"
-                :country="country"
-              />
-            </div>
+          </div>
+          <div class="flags flex w-full flex-wrap gap-y-14 lg:items-center">
+            <CountryComponent
+              class="w-1/4"
+              v-for="(country, cIndex) in countries"
+              :key="cIndex"
+              :country="country"
+            />
           </div>
         </div>
       </div>
@@ -262,110 +218,84 @@
                   <img src="~/assets/images/secure.png" alt="phone-logo" />
                 </div>
                 <div>
-                  <h1 class="display-1 mb-12">
-                    {{ $t("home.section8.secure.title") }}
-                  </h1>
-                  <p
-                    class="text-2"
-                    v-html="$t('home.section8.secure.body')"
-                  ></p>
+                  <h1 class="display-1 mb-12">{{ $t("home.section8.secure.title") }}</h1>
+                  <p class="text-2" v-html="$t('home.section8.secure.body')"></p>
                 </div>
               </Card>
             </div>
             <div class="grid gap-10 lg:w-2/5">
               <Card class="bg-accent-100" direction="down">
-                <h1 class="display-1 mb-6">
-                  {{ $t("home.section8.from.title") }}
-                </h1>
+                <h1 class="display-1 mb-6">{{ $t("home.section8.from.title") }}</h1>
                 <p class="text-2" v-html="$t('home.section8.from.body')"></p>
               </Card>
               <Card class="bg-accent-100" direction="up">
-                <p class="text-2">
-                  {{ $t("home.section8.did") }}
-                </p>
+                <p class="text-2">{{ $t("home.section8.did") }}</p>
               </Card>
             </div>
           </div>
-          <div class="">
-            <Card
-              class="display-1 flex justify-center bg-neutral text-white shadow-md"
-            >
-              <div class="content-wrap">
-                <div
-                  class="flex w-full justify-center lg:justify-between 2xl:max-w-7xl"
-                >
-                  <div class="hidden w-1/2 flex-col space-y-36 lg:flex">
-                    <h1
-                      class="display-2 grow-1 lg:block"
-                      v-html="$t('home.section9.head')"
-                    ></h1>
-                    <div
-                      class="relative hidden max-w-[9rem] items-center space-x-6 p-4 lg:flex"
+
+          <Card class="flex justify-center bg-neutral text-white !py-24">
+            <div class="content-wrap">
+              <div class="flex w-full justify-between">
+                <div class="hidden flex-col lg:flex max-w-[412px] justify-between">
+                  <h1 class="display-2 lg:block" v-html="$t('home.section9.head')"></h1>
+                  <div class="relative hidden space-x-10 lg:flex">
+                    <Button
+                      class="btn-xl btn-circle shrink-0 rounded-full border border-surface-300"
                     >
-                      <Button
-                        class="btn-xl btn-circle shrink-0 rounded-full border border-surface-300"
-                      >
-                        <Icon
-                          icon="chevron-left"
-                          size="4rem"
-                          class="ml-1 font-extrabold text-surface-400"
-                        ></Icon>
-                      </Button>
-                      <Button
-                        class="btn-xl btn-circle shrink-0 rounded-full border border-surface-300"
-                      >
-                        <Icon
-                          icon="chevron-right"
-                          size="4rem"
-                          class="ml-2 font-extrabold text-surface-400"
-                        ></Icon>
-                      </Button>
-                    </div>
+                      <Icon
+                        icon="chevron-left"
+                        size="4rem"
+                        class="ml-1 font-extrabold text-surface-400"
+                      ></Icon>
+                    </Button>
+                    <Button
+                      class="btn-xl btn-circle shrink-0 rounded-full border border-surface-300"
+                    >
+                      <Icon
+                        icon="chevron-right"
+                        size="4rem"
+                        class="ml-2 font-extrabold text-surface-400"
+                      ></Icon>
+                    </Button>
                   </div>
-                  <div class="flex flex-col items-center space-y-8">
-                    <h1
-                      class="display-3 text-center lg:hidden"
-                      v-html="$t('home.section9.head')"
-                    ></h1>
-                    <div class="mb-8 inline-flex flex-col items-center">
-                      <img
-                        class="mb-4"
-                        src="~/assets/images/customer.png"
-                        alt=""
-                      />
-                      <small class="text-1">John Doe . Canada</small>
-                    </div>
-                    <div>
-                      <p class="max-w-xs text-center text-2xl">
-                        “I love that Maraboo gives me the real exchange rate. It
-                        means more of my money goes to my loved ones in Togo.”
-                      </p>
-                    </div>
-                    <div class="mt-8 flex items-center space-x-6 p-4 lg:hidden">
-                      <Button
-                        class="btn-xl btn-circle shrink-0 rounded-full border border-surface-300"
-                      >
-                        <Icon
-                          icon="chevron-left"
-                          size="4rem"
-                          class="ml-1 font-extrabold text-surface-400"
-                        ></Icon>
-                      </Button>
-                      <Button
-                        class="btn-xl btn-circle shrink-0 rounded-full border border-surface-300"
-                      >
-                        <Icon
-                          icon="chevron-right"
-                          size="4rem"
-                          class="ml-2 font-extrabold text-surface-400"
-                        ></Icon>
-                      </Button>
-                    </div>
+                </div>
+                <div class="flex flex-col items-center space-y-10 max-w-[512px]">
+                  <h1 class="display-3 text-center lg:hidden" v-html="$t('home.section9.head')"></h1>
+                  <div class="space-y-5 inline-flex flex-col items-center">
+                    <img src="~/assets/images/customer.png" alt />
+                    <div class="text-2">John Doe . Canada</div>
+                  </div>
+
+                  <p class="text-center text-3">
+                    “I love that Maraboo gives me the real exchange rate. It
+                    means more of my money goes to my loved ones in Togo.”
+                  </p>
+
+                  <div class="flex items-center space-x-6 p-4 lg:hidden">
+                    <Button
+                      class="btn-xl btn-circle shrink-0 rounded-full border border-surface-300"
+                    >
+                      <Icon
+                        icon="chevron-left"
+                        size="4rem"
+                        class="ml-1 font-extrabold text-surface-400"
+                      ></Icon>
+                    </Button>
+                    <Button
+                      class="btn-xl btn-circle shrink-0 rounded-full border border-surface-300"
+                    >
+                      <Icon
+                        icon="chevron-right"
+                        size="4rem"
+                        class="ml-2 font-extrabold text-surface-400"
+                      ></Icon>
+                    </Button>
                   </div>
                 </div>
               </div>
-            </Card>
-          </div>
+            </div>
+          </Card>
         </div>
       </div>
     </section>
@@ -374,9 +304,7 @@
         <div class="flex flex-col items-center space-y-12 lg:space-y-16">
           <h1
             class="font-heading display-2 text-center leading-snug lg:text-6xl"
-          >
-            {{ $t("home.faq-header") }}
-          </h1>
+          >{{ $t("home.faq-header") }}</h1>
           <div class="flex w-full">
             <GlobalAccordionList class="w-full gap-10 lg:flex">
               <div class="lg:w-1/2">
@@ -403,23 +331,15 @@
         <Card class="bg-accent-200 p-8 lg:p-10">
           <div class="items-center lg:flex">
             <div class="mb-4 flex space-x-4 lg:space-x-8">
-              <img
-                src="~/assets/images/woman.svg"
-                class="block"
-                alt="woman-logo"
-              />
+              <img src="~/assets/images/woman.svg" class="block" alt="woman-logo" />
               <div class="pt-4">
-                <h1 class="display-3 mb-4">
-                  {{ $t("home.section10.head") }}
-                </h1>
+                <h1 class="display-3 mb-4">{{ $t("home.section10.head") }}</h1>
                 <p class="text-2">{{ $t("home.section10.body") }}</p>
               </div>
             </div>
             <button
               class="ml-auto w-full self-center rounded-full border-2 border-black px-6 py-2 font-medium lg:w-fit"
-            >
-              {{ $t("home.section10.chat") }}
-            </button>
+            >{{ $t("home.section10.chat") }}</button>
           </div>
         </Card>
       </div>

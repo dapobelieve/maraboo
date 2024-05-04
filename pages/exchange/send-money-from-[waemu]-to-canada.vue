@@ -8,24 +8,17 @@
               <h1 class="display-2 mb-4 text-left font-medium">
                 Send money from
                 <span class="inline-flex items-center">
-                  <img
-                    class="mr-2 h-6 w-6 md:h-14 md:w-14"
-                    :src="images[waemuCountry?.flag]"
-                    alt=""
-                  /><span class="mr-3 capitalize"
-                    >{{ waemuCountry?.name }}
-                  </span>
+                  <img class="mr-2 h-6 w-6 md:h-14 md:w-14" :src="images[waemuCountry?.flag]" alt />
+                  <span class="mr-3 capitalize">{{ waemuCountry?.name }}</span>
                   to
                 </span>
                 <br />
-                <span class="inline-flex items-center"
-                  ><img
-                    class="mr-2 h-6 w-6 md:h-14 md:w-14"
-                    :src="images['canada']"
-                    alt=""
-                  /><span>Canada</span>
+                <span class="inline-flex items-center">
+                  <img class="mr-2 h-6 w-6 md:h-14 md:w-14" :src="images['canada']" alt />
+                  <span>Canada</span>
                 </span>
-                <br />at the real <br />exchange rate
+                <br />at the real
+                <br />exchange rate
               </h1>
               <p class="text-2 max-w-md text-center md:text-left">
                 From local to global in real time, Maraboo Magic: Discover
@@ -33,7 +26,7 @@
                 countries!
               </p>
             </div>
-            <div class="">
+            <div class>
               <Calculator class="md:ml-auto" />
             </div>
           </div>
@@ -45,24 +38,20 @@
     <div class="container">
       <div class="content-wrap">
         <div class="w-full space-y-20">
-          <div
-            class="why-us relative flex w-full flex-col md:flex-row md:text-justify"
-          >
-            <div
-              class="flex flex-col items-center space-y-10 md:block md:flex-row md:items-start"
-            >
+          <div class="why-us relative flex w-full flex-col md:flex-row md:text-justify">
+            <div class="flex flex-col items-center space-y-10 md:block md:flex-row md:items-start">
               <h1 class="display-2 font-medium">
-                Why <br />
-                Choose us
+                Why
+                <br />Choose us
               </h1>
               <p class="max-w-sm text-center leading-6 md:text-left">
-                When you send money with Maraboo you <br />
-                not only save your time and money but you <br />
-                a company built by native africans
+                When you send money with Maraboo you
+                <br />not only save your time and money but you
+                <br />a company built by native africans
               </p>
             </div>
             <div class="-top-44 right-0 flex justify-center md:absolute">
-              <img alt="" class="h-96" src="~/assets/images/rats.png" />
+              <img alt class="h-96" src="~/assets/images/rats.png" />
             </div>
           </div>
           <div class="w-full justify-between md:flex">
@@ -70,24 +59,24 @@
               <small class="font-bold">The</small>
               <h1 class="display-3 mb-6 font-medium">Fastest</h1>
               <p class="text-2">
-                We complete transfers in real <br />
-                time
+                We complete transfers in real
+                <br />time
               </p>
             </div>
             <div class="mb-12 md:mb-0">
               <small class="font-bold">The</small>
               <h1 class="display-3 mb-6 font-medium">Cheapest</h1>
               <p class="text-2">
-                We give you the lowest rate <br />
-                every time
+                We give you the lowest rate
+                <br />every time
               </p>
             </div>
             <div class="mb-12 md:mb-0">
               <small class="font-bold">The</small>
               <h1 class="display-3 mb-6 font-medium">Most Versatile</h1>
               <p class="text-2">
-                The widest range of collection <br />
-                and delivery options
+                The widest range of collection
+                <br />and delivery options
               </p>
             </div>
           </div>
@@ -104,7 +93,8 @@
               <div class="mb-8 space-y-4">
                 <h1 class="display-2 mb-4 text-start">How it Works</h1>
                 <p class="text-2">
-                  Sending money to or from UMOA is <br />as easy as 1-2-3 with
+                  Sending money to or from UMOA is
+                  <br />as easy as 1-2-3 with
                   us.
                 </p>
               </div>
@@ -113,18 +103,15 @@
                   <div class="h-1/2 w-[3px] bg-slate-300"></div>
                 </div>
                 <div class="steps flex max-w-sm flex-col">
-                  <div
-                    v-for="step in steps"
-                    class="step mb-8 flex items-start space-x-8 pb-10"
-                  >
+                  <div v-for="step in steps" class="step mb-8 flex items-start space-x-8 pb-10">
                     <div>
-                      <small class="font-bold text-primary">{{
+                      <small class="font-bold text-primary">
+                        {{
                         step.step
-                      }}</small>
+                        }}
+                      </small>
                       <h1 class="display-3 mb-4">{{ step.title }}</h1>
-                      <p class="text-2 leading-9">
-                        {{ step.body }}
-                      </p>
+                      <p class="text-2 leading-9">{{ step.body }}</p>
                     </div>
                   </div>
                 </div>
@@ -132,7 +119,7 @@
             </div>
           </div>
           <div class="hidden w-1/3 md:block">
-            <img class="" src="~/assets/images/phone-steps.png" alt="" />
+            <img class src="~/assets/images/phone-steps.png" alt />
           </div>
         </div>
       </div>
@@ -144,11 +131,12 @@
         <div class="relative w-full space-y-28">
           <div class="flex items-center justify-between">
             <h1 class="display-2 capitalize">
-              Where We <br />
-              Extend our <br />support
+              Where We
+              <br />Extend our
+              <br />support
             </h1>
             <div class="absolute -top-52 right-0 hidden md:block">
-              <img src="~/assets/images/globe-stand.svg" alt="" />
+              <img src="~/assets/images/globe-stand.svg" alt />
             </div>
           </div>
           <div class="flags flex w-full flex-wrap items-center gap-y-14">
@@ -175,9 +163,9 @@
               <div>
                 <h1 class="display-2 mb-12">Securing Your Data Fortress!</h1>
                 <p class="text-2">
-                  Rest assured, your funds and private information are <br />
-                  safeguarded by state-of-the-art security technology, <br />
-                  compliant with both local and global regulations
+                  Rest assured, your funds and private information are
+                  <br />safeguarded by state-of-the-art security technology,
+                  <br />compliant with both local and global regulations
                 </p>
               </div>
             </Card>
@@ -199,57 +187,39 @@
             </Card>
           </div>
         </div>
-        <div class="">
-          <Card
-            class="display-1 flex justify-center bg-neutral text-white shadow-md"
-          >
-            <div class="content-wrap">
-              <div class="flex w-full justify-between 2xl:max-w-7xl">
-                <div class="flex w-1/2 flex-col space-y-36">
-                  <h1 class="display-2 grow-1 hidden md:block">
-                    Real Talk <br />
-                    from Our <br />
-                    Customers
-                  </h1>
-                  <div
-                    class="relative flex max-w-[9rem] items-center justify-between p-4"
+        <div class>
+          <Card class="flex justify-center bg-neutral text-white">
+            <div class="content-wrap flex-col justify-between">
+              <div class="flex max-w-[412px]">
+                <h1 class="display-2 hidden md:block">Real Talk from Our Customers</h1>
+                <div class="space-x-10">
+                  <button
+                    class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 opacity-70 shadow"
                   >
-                    <button
-                      class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 opacity-70 shadow"
-                    >
-                      <span class="text-xl"
-                        ><img
-                          class="rotate-180"
-                          src="~/assets/images/tabler-icon-chevron-right.png"
-                      /></span>
-                    </button>
+                    <span class="text-xl">
+                      <img class="rotate-180" src="~/assets/images/tabler-icon-chevron-right.png" />
+                    </span>
+                  </button>
 
-                    <button
-                      class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 opacity-70 shadow"
-                    >
-                      <span class="text-xl">
-                        <img
-                          src="~/assets/images/tabler-icon-chevron-right.png"
-                        />
-                      </span>
-                    </button>
-                  </div>
+                  <button
+                    class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 opacity-70 shadow"
+                  >
+                    <span class="text-xl">
+                      <img src="~/assets/images/tabler-icon-chevron-right.png" />
+                    </span>
+                  </button>
                 </div>
-                <div class="flex w-1/2 flex-col items-center">
-                  <div class="mb-8 inline-flex flex-col items-center">
-                    <img
-                      class="mb-4"
-                      src="~/assets/images/customer.png"
-                      alt=""
-                    />
-                    <small class="text-1">John Doe . Canada</small>
-                  </div>
-                  <div>
-                    <p class="max-w-xs text-center text-2xl">
-                      “I love that Maraboo gives me the real exchange rate. It
-                      means more of my money goes to my loved ones in Togo.”
-                    </p>
-                  </div>
+              </div>
+              <div class="flex flex-col items-center space-y-10 max-w-[512px]">
+                <div class="mb-8 inline-flex flex-col items-center space-y-5">
+                  <img src="~/assets/images/customer.png" alt />
+                  <p class="text-2 font-medium">John Doe . Canada</p>
+                </div>
+                <div>
+                  <p class="max-w-xs text-center text-2xl">
+                    “I love that Maraboo gives me the real exchange rate. It
+                    means more of my money goes to my loved ones in Togo.”
+                  </p>
                 </div>
               </div>
             </div>
@@ -261,9 +231,9 @@
   <section class="faq">
     <div class="container">
       <div class="flex flex-col items-center space-y-32">
-        <h1 class="font-heading display-2 text-center leading-snug md:text-6xl">
-          {{ $t("home.faq-header") }}
-        </h1>
+        <h1
+          class="font-heading display-2 text-center leading-snug md:text-6xl"
+        >{{ $t("home.faq-header") }}</h1>
         <div class="flex w-full">
           <GlobalAccordionList class="w-full gap-10 md:flex">
             <div class="md:w-1/2">
@@ -274,11 +244,7 @@
               ></GlobalAccordionItem>
             </div>
             <div class="md:w-1/2">
-              <GlobalAccordionItem
-                :item-id="id + 4"
-                :item="q"
-                v-for="(q, id) in faqs.slice(half)"
-              ></GlobalAccordionItem>
+              <GlobalAccordionItem :item-id="id + 4" :item="q" v-for="(q, id) in faqs.slice(half)"></GlobalAccordionItem>
             </div>
           </GlobalAccordionList>
         </div>
@@ -290,23 +256,15 @@
       <Card class="bg-accent-200 p-8 md:p-10">
         <div class="items-center md:flex">
           <div class="mb-4 flex md:space-x-8">
-            <img
-              src="~/assets/images/woman.svg"
-              class="hidden md:block"
-              alt="woman-logo"
-            />
+            <img src="~/assets/images/woman.svg" class="hidden md:block" alt="woman-logo" />
             <div>
               <h1 class="display-3 mb-4">Still have questions?</h1>
-              <p class="text-2">
-                Our agents are always ready to answer your questions.
-              </p>
+              <p class="text-2">Our agents are always ready to answer your questions.</p>
             </div>
           </div>
           <button
             class="ml-auto self-center rounded-full border-2 border-black px-6 py-2 font-medium"
-          >
-            Chat With Us
-          </button>
+          >Chat With Us</button>
         </div>
       </Card>
     </div>

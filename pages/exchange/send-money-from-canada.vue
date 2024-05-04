@@ -10,7 +10,7 @@
               rate
             </p>
           </div>
-          <div class="">
+          <div class>
             <Calculator class="md:ml-auto" />
           </div>
         </div>
@@ -21,7 +21,8 @@
         <div class="row flex justify-center">
           <div class="max-w-2xl text-center">
             <h1 class="display-1">
-              Send less with <span class="text-primary">Maraboo</span>, enjoy
+              Send less with
+              <span class="text-primary">Maraboo</span>, enjoy
               the lowest rates, receive more in real time
             </h1>
           </div>
@@ -31,11 +32,11 @@
     <section>
       <div class="container">
         <div class="items-start justify-between md:flex">
-          <div class="">
+          <div class>
             <div class="space-y-8 text-center md:text-left">
               <h1 class="display-1 capitalize">
-                Your new <br />
-                superpower
+                Your new
+                <br />superpower
               </h1>
               <p class="text-2 max-w-xs">
                 We offer the widest rage of payment and disbursements methods to
@@ -46,9 +47,7 @@
           <div class="flex flex-col space-y-10">
             <div class="max-w-md rounded border-2 border-surface-200 p-14">
               <h1 class="display-1 mb-6">Cash</h1>
-              <p class="text-2">
-                Receive by cash at Ecobank ATMs or Xpress points
-              </p>
+              <p class="text-2">Receive by cash at Ecobank ATMs or Xpress points</p>
             </div>
             <div class="max-w-md rounded border-2 border-surface-200 p-14">
               <h1 class="display-1 mb-6">Mobile Money</h1>
@@ -65,12 +64,8 @@
     <section>
       <div class="container">
         <div class="space-y-20">
-          <div
-            class="why-us relative flex w-full flex-col md:flex-row md:text-justify"
-          >
-            <div
-              class="flex flex-col items-center space-y-10 md:block md:flex-row md:items-start"
-            >
+          <div class="why-us relative flex w-full flex-col md:flex-row md:text-justify">
+            <div class="flex flex-col items-center space-y-10 md:block md:flex-row md:items-start">
               <h1 class="display-1">Why Choose us</h1>
               <p class="max-w-xs text-center md:text-left">
                 When you send money with Maraboo you not only save your time and
@@ -78,7 +73,7 @@
               </p>
             </div>
             <div class="-top-44 right-0 flex justify-center md:absolute">
-              <img alt="" src="~/assets/images/choose.svg" />
+              <img alt src="~/assets/images/choose.svg" />
             </div>
           </div>
           <div class="w-full justify-between md:flex">
@@ -92,9 +87,7 @@
             </div>
             <div class="mb-12 max-w-xs md:mb-0">
               <h1 class="display-1 mb-6">The Most Versatile</h1>
-              <p class="text-2">
-                The widest range of collection and delivery options
-              </p>
+              <p class="text-2">The widest range of collection and delivery options</p>
             </div>
           </div>
         </div>
@@ -108,8 +101,8 @@
               <div class="mb-8 space-y-4">
                 <h1 class="display-2 mb text-start">How it Works</h1>
                 <p class="text-2 font-bold">
-                  Sending money to or from UMOA is as easy <br />
-                  as 1-2-3 with us.
+                  Sending money to or from UMOA is as easy
+                  <br />as 1-2-3 with us.
                 </p>
               </div>
               <div class="flex space-x-6">
@@ -117,18 +110,13 @@
                   <div class="h-1/2 w-[3px] bg-slate-300"></div>
                 </div>
                 <div class="steps flex flex-col">
-                  <div
-                    v-for="step in steps"
-                    class="step mb-8 flex items-start space-x-8 pb-10"
-                  >
+                  <div v-for="step in steps" class="step mb-8 flex items-start space-x-8 pb-10">
                     <div>
                       <h1 class="display-1">{{ step.step }}</h1>
                     </div>
                     <div>
                       <h1 class="display-1 mb-4">{{ step.title }}</h1>
-                      <span class="text-2">
-                        {{ step.body }}
-                      </span>
+                      <span class="text-2">{{ step.body }}</span>
                     </div>
                   </div>
                 </div>
@@ -137,7 +125,7 @@
           </div>
           <div class="hidden w-1/2 md:block">
             <div class="flex w-full justify-center">
-              <img src="~/assets/images/mobile-1.png" alt="" />
+              <img src="~/assets/images/mobile-1.png" alt />
             </div>
           </div>
         </div>
@@ -148,11 +136,12 @@
         <div class="relative">
           <div class="flex items-center justify-between">
             <h1 class="display-2 capitalize">
-              Where We <br />
-              Extend our <br />support
+              Where We
+              <br />Extend our
+              <br />support
             </h1>
             <div class="absolute -top-52 right-0 hidden md:block">
-              <img src="~/assets/images/globe-stand.svg" alt="" />
+              <img src="~/assets/images/globe-stand.svg" alt />
             </div>
           </div>
           <div class="flags mt-12 flex w-full items-center">
@@ -175,13 +164,13 @@
             <Card class="bg-accent-300 p-14 shadow-md">
               <img src="~/assets/images/secure.svg" alt="phone-logo" />
               <h1 class="display-2 mb-4">
-                Securing Your <br />
-                Data Fortress!
+                Securing Your
+                <br />Data Fortress!
               </h1>
               <p class="text-2">
-                Rest assured, your funds and private information are <br />
-                safeguarded by state-of-the-art security technology, <br />
-                compliant with both local and global regulations
+                Rest assured, your funds and private information are
+                <br />safeguarded by state-of-the-art security technology,
+                <br />compliant with both local and global regulations
               </p>
             </Card>
             <div class="grid gap-10">
@@ -201,45 +190,37 @@
               </Card>
             </div>
           </div>
-          <div class="">
-            <Card
-              class="display-1 flex justify-center bg-accent-200 p-14 shadow-md"
-            >
+          <div class>
+            <Card class="display-1 flex justify-center bg-accent-200 p-14 shadow-md">
               <div class="flex w-full justify-between 2xl:max-w-7xl">
                 <div class="flex w-1/2 flex-col space-y-36">
                   <h1 class="display-2 grow-1">
-                    Real Talk <br />
-                    from Our <br />
-                    Customers
+                    Real Talk
+                    <br />from Our
+                    <br />Customers
                   </h1>
-                  <div
-                    class="relative flex max-w-[9rem] items-center justify-between p-4"
-                  >
+                  <div class="relative flex max-w-[9rem] items-center justify-between p-4">
                     <button
                       class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 opacity-70 shadow"
                     >
-                      <span class="text-xl"
-                        ><img
-                          class="rotate-180"
-                          src="~/assets/images/tabler-icon-chevron-right.png"
-                      /></span>
+                      <span class="text-xl">
+                        <img class="rotate-180" src="~/assets/images/tabler-icon-chevron-right.png" />
+                      </span>
                     </button>
 
                     <button
                       class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 opacity-70 shadow"
                     >
                       <span class="text-xl">
-                        <img
-                          src="~/assets/images/tabler-icon-chevron-right.png"
-                        />
+                        <img src="~/assets/images/tabler-icon-chevron-right.png" />
                       </span>
                     </button>
                   </div>
                 </div>
                 <div class="flex w-1/2 flex-col items-center">
-                  <div class="mb-8 inline-flex flex-col items-center">
-                    <img class="mb-4" src="~/assets/images/customer.png" />
-                    <small class="text-1">John Doe . Canada</small>
+                  <div class="flex-col items-center">
+                    <img src="~/assets/images/customer.png" />
+                    <p class="text-1">John Doe . Canada</p>
                   </div>
                   <div>
                     <p class="max-w-xs text-center text-2xl">
@@ -259,9 +240,7 @@
         <div class="flex flex-col items-center space-y-32">
           <h1
             class="font-heading display-2 text-center leading-snug md:text-6xl"
-          >
-            {{ $t("home.faq-header") }}
-          </h1>
+          >{{ $t("home.faq-header") }}</h1>
           <div class="flex w-full">
             <GlobalAccordionList class="w-full gap-10 md:flex">
               <div class="md:w-1/2">
@@ -288,23 +267,15 @@
         <Card class="bg-accent-200 p-8 md:p-10">
           <div class="items-center md:flex">
             <div class="mb-4 flex md:space-x-8">
-              <img
-                src="~/assets/images/woman.svg"
-                class="hidden md:block"
-                alt="woman-logo"
-              />
+              <img src="~/assets/images/woman.svg" class="hidden md:block" alt="woman-logo" />
               <div>
                 <h1 class="display-1 mb-4">Still have questions?</h1>
-                <p class="text-2">
-                  Our agents are always ready to answer your questions.
-                </p>
+                <p class="text-2">Our agents are always ready to answer your questions.</p>
               </div>
             </div>
             <button
               class="ml-auto self-center rounded-full border-2 border-black px-6 py-2 font-bold"
-            >
-              Chat With Us
-            </button>
+            >Chat With Us</button>
           </div>
         </Card>
       </div>
@@ -437,14 +408,14 @@ const half = computed(() => Math.ceil(faqs.length / 2));
 </script>
 
 <style lang="scss" scoped>
-section {
-  @apply px-0 md:px-20;
-  .container {
-    &:first-child {
-      @apply px-2 py-20;
-    }
-  }
-}
+// section {
+//   @apply px-0 md:px-20;
+//   .container {
+//     &:first-child {
+//       @apply px-2 py-20;
+//     }
+//   }
+// }
 
 .flags {
   span {
