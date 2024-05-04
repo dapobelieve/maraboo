@@ -114,7 +114,7 @@
             </div>
           </div>
           <div class="hidden w-1/3 md:block">
-            <img class="" src="~/assets/images/phone-steps.png" alt="" />
+
           </div>
         </div>
       </div>
