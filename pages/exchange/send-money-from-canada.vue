@@ -137,7 +137,7 @@
           </div>
           <div class="hidden w-1/2 md:block">
             <div class="flex w-full justify-center">
-              <img src="~/assets/images/mobile-1.png" alt="" />
+<!--              <img src="~/assets/images/mobile-1.png" alt="" />-->
             </div>
           </div>
         </div>
