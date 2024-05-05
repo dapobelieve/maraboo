@@ -26,7 +26,7 @@ body {
 }
 
 .display-3 {
-  font-size: min(max(32px, 4.676vw), 44px);
+  font-size: min(max(32px, 3.476vw), 44px);
 }
 
 .display-1,
@@ -58,11 +58,11 @@ section {
   @apply mx-auto flex w-full max-w-[1280px] justify-center py-32;
 }
 .content-wrap {
-  @apply flex w-full max-w-[1024px] justify-center;
+  @apply mx-auto flex w-full max-w-[832px] justify-center lg:max-w-[1024px];
 }
 
-.col-left {
-  @apply max-w-[512px];
+.sub-content {
+  @apply max-w-[640px] lg:max-w-[512px];
 }
 
 .text-multi-color {

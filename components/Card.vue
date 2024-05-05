@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative w-full rounded px-6 py-8 md:p-14"
+    class="relative w-full rounded p-5 lg:p-14 items-center"
     :class="[direction ? 'overflow-hidden' : '']"
   >
     <slot>Maraboo Card</slot>
@@ -8,13 +8,13 @@
       v-if="direction === 'down'"
       class="absolute bottom-0 left-0 w-full"
       src="~/assets/images/down.png"
-      alt=""
+      alt
     />
     <img
       v-else-if="direction === 'up'"
       class="absolute left-0 top-0 w-full"
       src="~/assets/images/up.png"
-      alt=""
+      alt
     />
   </div>
 </template>

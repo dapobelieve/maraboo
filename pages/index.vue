@@ -59,29 +59,27 @@
       <div class="container">
         <div class="content-wrap">
           <div class="h-full w-full items-start justify-between lg:flex">
-            <div class="superpower space-y-10 text-center lg:mb-0 lg:text-left">
+            <div class="superpower space-y-10 sub-content">
               <h1 class="display-2" v-html="$t('home.section4.left.super-power')"></h1>
-              <p class="text-2" v-html="$t('home.section4.left.offer')"></p>
+              <p class="text-2 max-w-sm" v-html="$t('home.section4.left.offer')"></p>
             </div>
-            <div class="superpower-steps flex flex-col items-center space-y-10">
-              <div class="rounded bg-gradient-to-r from-active to-accent-400 p-0.5">
-                <div class="max-w-sm space-y-7 rounded bg-[#E3E1EB] p-14 lg:max-w-md">
-                  <h1
-                    class="display-3 font-medium capitalize"
-                  >{{ $t("home.section4.right.cash.top") }}</h1>
-                  <p class="text-2">{{ $t("home.section4.right.cash.bottom") }}</p>
+            <div class="superpower-steps flex flex-col items-center space-y-10 max-w-md">
+              <div class="rounded bg-gradient-to-r from-active to-accent-400 p-0.5 w-full">
+                <div class="space-y-4 rounded bg-[#E3E1EB] p-10">
+                  <h1 class="display-3">{{ $t("home.section4.right.cash.top") }}</h1>
+                  <p class="text-1">{{ $t("home.section4.right.cash.bottom") }}</p>
                 </div>
               </div>
-              <div class="rounded bg-gradient-to-r from-active to-accent-400 p-0.5">
-                <div class="max-w-sm space-y-7 rounded bg-[#E3E1EB] p-14 lg:max-w-md">
-                  <h1 class="display-3 font-medium">{{ $t("home.section4.right.money.top") }}</h1>
-                  <p class="text-2">{{ $t("home.section4.right.money.bottom") }}</p>
+              <div class="rounded bg-gradient-to-r from-active to-accent-400 p-0.5 w-full">
+                <div class="space-y-4 rounded bg-[#E3E1EB] p-10">
+                  <h1 class="display-3">{{ $t("home.section4.right.money.top") }}</h1>
+                  <p class="text-1">{{ $t("home.section4.right.money.bottom") }}</p>
                 </div>
               </div>
-              <div class="rounded bg-gradient-to-r from-active to-accent-400 p-0.5">
-                <div class="max-w-sm space-y-7 rounded bg-[#E3E1EB] p-14 lg:max-w-md">
-                  <h1 class="display-3 font-medium">{{ $t("home.section4.right.bank.top") }}</h1>
-                  <p class="text-2">{{ $t("home.section4.right.bank.bottom") }}</p>
+              <div class="rounded bg-gradient-to-r from-active to-accent-400 p-0.5 w-full">
+                <div class="space-y-4 rounded bg-[#E3E1EB] p-10">
+                  <h1 class="display-3">{{ $t("home.section4.right.bank.top") }}</h1>
+                  <p class="text-1">{{ $t("home.section4.right.bank.bottom") }}</p>
                 </div>
               </div>
             </div>
@@ -92,32 +90,27 @@
     <section>
       <div class="container">
         <div class="content-wrap">
-          <div class="w-full space-y-20">
-            <div class="why-us relative flex w-full flex-col lg:flex-row lg:text-justify">
-              <div
-                class="flex flex-col items-center space-y-10 lg:mb-0 lg:block lg:flex-row lg:items-start"
-              >
+          <div class="flex flex-col space-y-20 w-full">
+            <div class="why-us flex w-full flex-col lg:flex-row lg:items-end justify-between">
+              <div class="flex flex-col space-y-8 sub-content">
                 <h1 class="display-2" v-html="$t('home.section5.what')"></h1>
-                <p
-                  class="max-w-sm text-center leading-6 lg:text-left"
-                  v-html="$t('home.section5.about')"
-                ></p>
+                <p class="lg:max-w-md" v-html="$t('home.section5.about')"></p>
               </div>
-              <div class="flex justify-center lg:ml-auto">
-                <img alt="" src="~/assets/images/choose.svg" />
+              <div class="lg:flex hidden">
+                <img alt src="~/assets/images/choose.svg" />
               </div>
             </div>
-            <div class="w-full justify-between lg:flex">
-              <div class="mb-12 lg:mb-0">
-                <div v-html="$t('home.section5.one.top')"></div>
+            <div class="w-full gap-10 grid grid-cols-1 lg:grid-cols-3">
+              <div class="space-y-5">
+                <div class="leading-[1.25]" v-html="$t('home.section5.one.top')"></div>
                 <div v-html="$t('home.section5.one.bottom')"></div>
               </div>
-              <div class="mb-12 lg:mb-0">
-                <div v-html="$t('home.section5.two.top')"></div>
+              <div class="space-y-5">
+                <div class="leading-[1.25]" v-html="$t('home.section5.two.top')"></div>
                 <div v-html="$t('home.section5.two.bottom')"></div>
               </div>
-              <div class="mb-12 lg:mb-0">
-                <div v-html="$t('home.section5.three.top')"></div>
+              <div class="space-y-5">
+                <div class="leading-[1.25]" v-html="$t('home.section5.three.top')"></div>
                 <div v-html="$t('home.section5.three.bottom')"></div>
               </div>
             </div>
@@ -191,15 +184,14 @@
     <section class="extend-brand">
       <div class="container">
         <div class="content-wrap !flex-col w-full space-y-32">
-          <div class="justify-between items-end lg:flex">
-            <h1 class="display-2 col-left" v-html="$t('home.section7')"></h1>
-            <div class="lg:block">
+          <div class="justify-between items-end space-y-10 sub-content">
+            <h1 class="display-2 max-w-full lg:max-w-[512px]" v-html="$t('home.section7')"></h1>
+            <div class="hidden lg:block">
               <img src="~/assets/images/globe-stand.svg" alt />
             </div>
           </div>
-          <div class="flags flex w-full flex-wrap gap-y-14 lg:items-center">
+          <div class="flags w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-10">
             <CountryComponent
-              class="w-1/4"
               v-for="(country, cIndex) in countries"
               :key="cIndex"
               :country="country"
@@ -208,38 +200,47 @@
         </div>
       </div>
     </section>
-    <section class="testimonials">
+    <section class="testimonials !px-0 md:!px-6">
       <div class="container">
-        <div class="flex flex-col gap-10">
-          <div class="gap-10 lg:flex">
-            <div class="mb-10 flex lg:mb-0 lg:w-3/5">
-              <Card class="flex flex-col bg-accent-100">
+        <div class="grid grid-row-2 gap-6 lg:gap-10 w-full">
+          <div class="grid grid-col-2 gap-6 lg:gap-10 lg:flex">
+            <div class="gap-6 lg:gap-10 flex lg:w-3/5">
+              <Card class="flex flex-col bg-accent-100 space-y-10">
                 <div class="flex grow items-center justify-center">
                   <img src="~/assets/images/secure.png" alt="phone-logo" />
                 </div>
-                <div>
-                  <h1 class="display-1 mb-12">{{ $t("home.section8.secure.title") }}</h1>
+                <div class="space-y-6 sub-content">
+                  <h1 class="display-2">{{ $t("home.section8.secure.title") }}</h1>
                   <p class="text-2" v-html="$t('home.section8.secure.body')"></p>
                 </div>
               </Card>
             </div>
-            <div class="grid gap-10 lg:w-2/5">
-              <Card class="bg-accent-100" direction="down">
-                <h1 class="display-1 mb-6">{{ $t("home.section8.from.title") }}</h1>
-                <p class="text-2" v-html="$t('home.section8.from.body')"></p>
+            <div class="grid lg:grid-rows-2 gap-6 lg:gap-10 lg:w-2/5">
+              <Card
+                class="bg-accent-100 space-y-6 !justify-end flex flex-col row-span-2"
+                direction="down"
+              >
+                <div class="sub-content space-y-6">
+                  <h1 class="display-2">{{ $t("home.section8.from.title") }}</h1>
+                  <p class="text-2" v-html="$t('home.section8.from.body')"></p>
+                </div>
               </Card>
-              <Card class="bg-accent-100" direction="up">
-                <p class="text-2">{{ $t("home.section8.did") }}</p>
+              <Card class="bg-accent-100 !justify-end flex flex-col" direction="up">
+                <div class="sub-content space-y-6">
+                  <p class="text-2">{{ $t("home.section8.did") }}</p>
+                </div>
               </Card>
             </div>
           </div>
 
           <Card class="flex justify-center bg-neutral text-white !py-24">
             <div class="content-wrap">
-              <div class="flex w-full justify-between">
-                <div class="hidden flex-col lg:flex max-w-[412px] justify-between">
-                  <h1 class="display-2 lg:block" v-html="$t('home.section9.head')"></h1>
-                  <div class="relative hidden space-x-10 lg:flex">
+              <div class="flex w-full justify-between lg:flex-row flex-col items-center space-y-14">
+                <div
+                  class="flex-col lg:flex lg:max-w-[416px] justify-between lg:h-full sub-content"
+                >
+                  <h1 class="display-2" v-html="$t('home.section9.head')"></h1>
+                  <div class="relative space-x-10 lg:flex hidden">
                     <Button
                       class="btn-xl btn-circle shrink-0 rounded-full border border-surface-300"
                     >
@@ -260,38 +261,15 @@
                     </Button>
                   </div>
                 </div>
-                <div class="flex flex-col items-center space-y-10 max-w-[512px]">
-                  <h1 class="display-3 text-center lg:hidden" v-html="$t('home.section9.head')"></h1>
+                <div class="flex flex-col items-center space-y-10 lg:max-w-[512px] sub-content">
                   <div class="space-y-5 inline-flex flex-col items-center">
                     <img src="~/assets/images/customer.png" alt />
                     <div class="text-2">John Doe . Canada</div>
                   </div>
-
                   <p class="text-center text-3">
                     “I love that Maraboo gives me the real exchange rate. It
                     means more of my money goes to my loved ones in Togo.”
                   </p>
-
-                  <div class="flex items-center space-x-6 p-4 lg:hidden">
-                    <Button
-                      class="btn-xl btn-circle shrink-0 rounded-full border border-surface-300"
-                    >
-                      <Icon
-                        icon="chevron-left"
-                        size="4rem"
-                        class="ml-1 font-extrabold text-surface-400"
-                      ></Icon>
-                    </Button>
-                    <Button
-                      class="btn-xl btn-circle shrink-0 rounded-full border border-surface-300"
-                    >
-                      <Icon
-                        icon="chevron-right"
-                        size="4rem"
-                        class="ml-2 font-extrabold text-surface-400"
-                      ></Icon>
-                    </Button>
-                  </div>
                 </div>
               </div>
             </div>

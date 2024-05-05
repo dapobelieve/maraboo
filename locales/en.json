@@ -32,12 +32,12 @@
     },
     "section4": {
       "left": {
-      "super-power": "Your new <br />superpower",
-      "offer": "We offer the widest rage of payment and <br />                  disbursements methods to meet all your needs"
+        "super-power": "Your new superpower",
+        "offer": "We offer the widest rage of payment and                 disbursements methods to meet all your needs"
       },
       "right": {
         "cash": {
-          "top": "cash",
+          "top": "Cash",
           "bottom": "Receive by cash at Ecobank ATMs or Xpress points"
         },
         "money": {
@@ -52,18 +52,18 @@
     },
     "section5": {
       "what": "Why <br class='hidden md:block' />                  Choose us",
-      "about": "When you send money with Maraboo you <br />                  not only save your time and money but you <br />                  a company built by native africans",
+      "about": "<p class=\"text-2\"> When you send money with Maraboo you not only save your time and money but you a company built by native africans</p>",
       "one": {
-        "top": " <small class=\"font-bold\">The</small>                <h1 class=\"display-3 mb-6 font-medium\">Fastest</h1>",
-        "bottom": "<p class=\"text-2\">                  We complete transfers in real <br />                  time                </p>"
+        "top": " <small class=\"font-bold text-multi-color\">The</small>  <h1 class=\"display-3\">Fastest</h1>",
+        "bottom": "<p class=\"text-1\"> We complete transfers in real time                </p>"
       },
       "two": {
-        "top": " <small class=\"font-bold\">The</small>                <h1 class=\"display-3 mb-6 font-medium\">Cheapest</h1>",
-        "bottom": "<p class=\"text-2\">                  We give you the lowest rate <br />                  every time                </p>"
+        "top": " <small class=\"font-bold text-multi-color\">The</small>                <h1 class=\"display-3\">Cheapest</h1>",
+        "bottom": "<p class=\"text-1\">                  We give you the lowest rate               every time                </p>"
       },
       "three": {
-        "top": "<small class=\"font-bold\">The</small>                <h1 class=\"display-3 mb-6 font-medium\">Most Versatile</h1>",
-        "bottom": "<p class=\"text-2\">                  The widest range of collection <br />                  and delivery options                </p>"
+        "top": "<small class=\"font-bold text-multi-color\">The</small>                <h1 class=\"display-3\">Most Versatile</h1>",
+        "bottom": "<p class=\"text-1\">                  The widest range of collection and delivery options                </p>"
       }
     },
     "section6": {
@@ -89,20 +89,20 @@
         ]
       }
     },
-    "section7": "Where We Extend <br />                our support",
+    "section7": "Where We Extend our support",
     "section8": {
       "secure": {
         "title": "Securing Your Data Fortress!",
-        "body": " Rest assured, your funds and private information are <br />                    safeguarded by state-of-the-art security technology, <br />                    compliant with both local and global regulations"
+        "body": " Rest assured, your funds and private information are safeguarded by state-of-the-art security technology, compliant with both local and global regulations"
       },
       "from": {
         "title": "From local to global.",
-        "body": "Seamlessly transfer up to $9,900 daily to/from WAEMU countries                  at the Real Exchange. Your gateway to hassle-free                  international transactions!"
+        "body": "Seamlessly transfer up to $9,900 daily to/from WAEMU countries at the Real Exchange. Your gateway to hassle-free international transactions!"
       },
       "did": "Did you know that a 10% reduction in transaction fees for sending money in & out of UMOA country can boost the revenue of regional households by up to 16%?"
     },
     "section9": {
-      "head": "Real Talk <br class=\"hidden md:block\" />  from Our <br class=\"hidden md:block\" /> Customer"
+      "head": "Real Talk from Our Customer"
     },
     "section10": {
       "head": "Still have questions?",
@@ -261,7 +261,6 @@
       "provided-info": {
         "title": "Information You Provide to Us",
         "content": "<p class='mb-5'>The information we collect directly from you on or through our Site may include:</p>   <ul class='pl-12 mb-5' style='line-height:35px; list-style-type: disc;'>   <li class='mb-3'> Information that you provide by filling in forms on our Site. This includes information provided at the time of registering to use our Site, subscribing to our service, posting material, or requesting further services. We may also ask you for information when you report a problem with our Site.</li>  <li class='mb-3'>Records and copies of your correspondence (including email addresses), if you contact us.</li>  <li class='mb-3'>Details of transactions you carry out through our Site and of the fulfillment of your orders. You may be required to provide financial information before placing an order through our Site.</li></ul>  <p> You may also provide information to be published or displayed (hereinafter, “posted”) on public areas of the Site or transmitted to other users of the Site or third parties (collectively, “User Contributions”). Your User Contributions are posted on and transmitted to others at your own risk. Although we limit access to certain pages/you may set certain privacy settings for such information by logging into your account profile, please be aware that no security measures are perfect. Additionally, we cannot control the actions of other users of the Site with whom you may choose to share your User Contributions. Therefore, we cannot and do not guarantee that unauthorized persons will not view your User Contributions. </p>"
-
       },
       "cookies-info": {
         "title": "Information We Collect Through Cookies and Other Automatic Data Collection Technologies",
@@ -273,8 +272,8 @@
       }
     },
     "how-we-use-info": {
-        "title": "How we use your information",
-        "use-info": "<p class='mb-5'>We use information that we collect about you or that you provide to us, including any personal information:</p>  <ul class='pl-12 mb-5' style='line-height:35px; list-style-type: disc;'>  <li class='mb-3'>To present our Site and its contents to you.</li>   <li class='mb-3'>To provide you with information, products, or services that you request from us.</li>   <li class='mb-3'>To fulfill the purposes for which you provided the information or that were described when it was collected, or any other purpose for which you provide it.</li>   <li class='mb-3'>To provide you with notices about your account/subscription, including expiration and renewal notices.</li>   <li class='mb-3'>To carry out our obligations and enforce our rights arising from any contracts with you, including for billing and collection or to comply with legal requirements.</li>    <li class='mb-3'>To notify you about changes to our Site or any products or services we offer or provide though it. </li>  <li class='mb-3'>To improve our Site, products or services, marketing, or customer relationships and experiences. </li>  <li class='mb-3'>To allow you to participate in interactive features, social media, or similar features on our Site.</li>  <li class='mb-3'>To measure or understand the effectiveness of the advertising we serve to you and others, and to deliver relevant advertising to you. </li>  <li class='mb-3'>To enhance the safety and security of our users and services, including by protecting you and the Company from errors, misrepresentations, fraud, and/or contraventions of laws or criminal activity. </li>  <li class='mb-3'>For customer support.</li>  <li class='mb-3'>For research and development. </li>  <li class='mb-3'>To enable communications between users. </li>  <li class='mb-3'>In connection with legal proceedings. </li>   <li class='mb-3'>In any other way we may describe when you provide the information. </li>  <li class='mb-3'>For any other purpose with your consent. </li> </ul> <p class='mb-5'>We may also use your information to contact you about our own and third-parties’ goods and services, as permitted by law. If you do not want us to use your information in this way, please [check the relevant box located on the form on which we collect your data [(the registration form)][,adjust your user preferences in your account profile] [,use the unsubscribe mechanism at the bottom of our e-mails] [and][or][e-mail us at [EMAIL ADDRESS]]. For more information, see Choices About How We Use and Disclose Your Information. [NTD: company to confirm] </p>  <p class='mb-5'>We may use the information we have collected from you to enable us to display advertisements to our advertisers' target audiences. Even though we do not disclose your personal information for these purposes without your consent, if you click on or otherwise interact with an advertisement, the advertiser may assume that you meet its target criteria. </p>"
+      "title": "How we use your information",
+      "use-info": "<p class='mb-5'>We use information that we collect about you or that you provide to us, including any personal information:</p>  <ul class='pl-12 mb-5' style='line-height:35px; list-style-type: disc;'>  <li class='mb-3'>To present our Site and its contents to you.</li>   <li class='mb-3'>To provide you with information, products, or services that you request from us.</li>   <li class='mb-3'>To fulfill the purposes for which you provided the information or that were described when it was collected, or any other purpose for which you provide it.</li>   <li class='mb-3'>To provide you with notices about your account/subscription, including expiration and renewal notices.</li>   <li class='mb-3'>To carry out our obligations and enforce our rights arising from any contracts with you, including for billing and collection or to comply with legal requirements.</li>    <li class='mb-3'>To notify you about changes to our Site or any products or services we offer or provide though it. </li>  <li class='mb-3'>To improve our Site, products or services, marketing, or customer relationships and experiences. </li>  <li class='mb-3'>To allow you to participate in interactive features, social media, or similar features on our Site.</li>  <li class='mb-3'>To measure or understand the effectiveness of the advertising we serve to you and others, and to deliver relevant advertising to you. </li>  <li class='mb-3'>To enhance the safety and security of our users and services, including by protecting you and the Company from errors, misrepresentations, fraud, and/or contraventions of laws or criminal activity. </li>  <li class='mb-3'>For customer support.</li>  <li class='mb-3'>For research and development. </li>  <li class='mb-3'>To enable communications between users. </li>  <li class='mb-3'>In connection with legal proceedings. </li>   <li class='mb-3'>In any other way we may describe when you provide the information. </li>  <li class='mb-3'>For any other purpose with your consent. </li> </ul> <p class='mb-5'>We may also use your information to contact you about our own and third-parties’ goods and services, as permitted by law. If you do not want us to use your information in this way, please [check the relevant box located on the form on which we collect your data [(the registration form)][,adjust your user preferences in your account profile] [,use the unsubscribe mechanism at the bottom of our e-mails] [and][or][e-mail us at [EMAIL ADDRESS]]. For more information, see Choices About How We Use and Disclose Your Information. [NTD: company to confirm] </p>  <p class='mb-5'>We may use the information we have collected from you to enable us to display advertisements to our advertisers' target audiences. Even though we do not disclose your personal information for these purposes without your consent, if you click on or otherwise interact with an advertisement, the advertiser may assume that you meet its target criteria. </p>"
     },
     "disclosure": {
       "title": "Disclosure of your information",
@@ -328,7 +327,6 @@
       "title": "Contact information and challenging compliance",
       "content": "<p class='mb-5'>We welcome your questions, comments, and requests regarding this privacy policy and our privacy practices. Please contact us at: </p>  <p class='mb-5'><strong>[Privacy Officer]</strong> </p>   <p class='mb-5'><strong>[PHYSICAL ADDRESS and/or EMAIL ADDRESS]</strong> </p>   <p class='mb-5'><strong>[and/or via our toll-free number: </strong> </p>"
     }
-
   },
   "footer": {
     "caption": "A West-African fintech firm offering transformative financial                  <br />                  solutions that are fair, responsible, inclusive,and designed                  <br />                  to improve the quality of life of West Africa.",
