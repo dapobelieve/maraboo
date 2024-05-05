@@ -1,9 +1,9 @@
 <template>
   <main>
     <section class="relative overflow-hidden">
-      <div class="container !pt-24 !pb-0 space-y-12">
+      <div class="container lg:!pt-24 !pb-0 space-y-12">
         <div class="flex flex-col items-center">
-          <div class="mb-8 space-y-20 text-center">
+          <div class="space-y-10 lg:space-y-20 text-center">
             <h1 class="display-1 font-medium">
               {{ $t("home.section1.intl") }}
               <span class="text-multi-color">
@@ -27,8 +27,8 @@
     <section class="bg-coloured rounded">
       <div class="container">
         <div class="content-wrap">
-          <div class="w-full items-start justify-between lg:flex">
-            <div class="two-way space-y-10 text-white lg:mb-0">
+          <div class="w-full items-start justify-between flex-col flex lg:flex-row">
+            <div class="two-way text-white lg:mb-0 sub-content space-y-10">
               <h1 class="display-2 mb-10 text-left">{{ $t("home.section2.left.one") }}</h1>
               <p class="text-left" v-html="$t('home.section2.left.two')"></p>
             </div>
@@ -42,8 +42,8 @@
     <section>
       <div class="container">
         <div class="content-wrap">
-          <div class="text-center">
-            <h1 class="display-2">
+          <div class="text-center lg:!pt-24">
+            <h1 class="display-2 !font-normal">
               {{ $t("home.section3.left.one") }}
               <span
                 class="text-multi-color"
@@ -65,21 +65,21 @@
             </div>
             <div class="superpower-steps flex flex-col items-center space-y-10 max-w-md">
               <div class="rounded bg-gradient-to-r from-active to-accent-400 p-0.5 w-full">
-                <div class="space-y-4 rounded bg-[#E3E1EB] p-10">
+                <div class="space-y-4 rounded bg-[#E3E1EB] p-6 lg:p-10">
                   <h1 class="display-3">{{ $t("home.section4.right.cash.top") }}</h1>
-                  <p class="text-1">{{ $t("home.section4.right.cash.bottom") }}</p>
+                  <p class="text-2">{{ $t("home.section4.right.cash.bottom") }}</p>
                 </div>
               </div>
               <div class="rounded bg-gradient-to-r from-active to-accent-400 p-0.5 w-full">
-                <div class="space-y-4 rounded bg-[#E3E1EB] p-10">
+                <div class="space-y-4 rounded bg-[#E3E1EB] p-6 lg:p-10">
                   <h1 class="display-3">{{ $t("home.section4.right.money.top") }}</h1>
-                  <p class="text-1">{{ $t("home.section4.right.money.bottom") }}</p>
+                  <p class="text-2">{{ $t("home.section4.right.money.bottom") }}</p>
                 </div>
               </div>
               <div class="rounded bg-gradient-to-r from-active to-accent-400 p-0.5 w-full">
-                <div class="space-y-4 rounded bg-[#E3E1EB] p-10">
+                <div class="space-y-4 rounded bg-[#E3E1EB] p-6 lg:p-10">
                   <h1 class="display-3">{{ $t("home.section4.right.bank.top") }}</h1>
-                  <p class="text-1">{{ $t("home.section4.right.bank.bottom") }}</p>
+                  <p class="text-2">{{ $t("home.section4.right.bank.bottom") }}</p>
                 </div>
               </div>
             </div>
@@ -184,8 +184,8 @@
     <section class="extend-brand">
       <div class="container">
         <div class="content-wrap !flex-col w-full space-y-32">
-          <div class="justify-between items-end space-y-10 sub-content">
-            <h1 class="display-2 max-w-full lg:max-w-[512px]" v-html="$t('home.section7')"></h1>
+          <div class="lg:flex justify-between items-end space-y-10">
+            <h1 class="display-2 max-w-full sub-content" v-html="$t('home.section7')"></h1>
             <div class="hidden lg:block">
               <img src="~/assets/images/globe-stand.svg" alt />
             </div>
@@ -264,7 +264,7 @@
                 <div class="flex flex-col items-center space-y-10 lg:max-w-[512px] sub-content">
                   <div class="space-y-5 inline-flex flex-col items-center">
                     <img src="~/assets/images/customer.png" alt />
-                    <div class="text-2">John Doe . Canada</div>
+                    <div class="text-2 font-medium">John Doe . Canada</div>
                   </div>
                   <p class="text-center text-3">
                     “I love that Maraboo gives me the real exchange rate. It
@@ -279,47 +279,43 @@
     </section>
     <section class="faq">
       <div class="container">
-        <div class="flex flex-col items-center space-y-12 lg:space-y-16">
-          <h1
-            class="font-heading display-2 text-center leading-snug lg:text-6xl"
-          >{{ $t("home.faq-header") }}</h1>
-          <div class="flex w-full">
-            <GlobalAccordionList class="w-full gap-10 lg:flex">
-              <div class="lg:w-1/2">
-                <GlobalAccordionItem
-                  :item-id="id + 1"
-                  :item="q"
-                  v-for="(q, id) in faqs.slice(0, half)"
-                ></GlobalAccordionItem>
+        <div class="flex flex-col items-center space-y-20">
+          <h1 class="display-2 text-center max-w-3xl">{{ $t("home.faq-header") }}</h1>
+          <div class="grid grid-cols-1 gap-6 lg:gap-10">
+            <div class="flex w-full">
+              <GlobalAccordionList class="w-full gap-6 lg:gap-10 grid grid-cols-1 lg:grid-cols-2">
+                <div class="space-y-6 lg:space-y-10">
+                  <GlobalAccordionItem
+                    :item-id="id + 1"
+                    :item="q"
+                    v-for="(q, id) in faqs.slice(0, half)"
+                  ></GlobalAccordionItem>
+                </div>
+                <div class="space-y-6 lg:space-y-10">
+                  <GlobalAccordionItem
+                    :item-id="id + 4"
+                    :item="q"
+                    v-for="(q, id) in faqs.slice(half)"
+                  ></GlobalAccordionItem>
+                </div>
+              </GlobalAccordionList>
+            </div>
+            <Card class="bg-accent-200 p-4 md:p-8 lg:p-14">
+              <div class="items-center lg:flex space-y-8">
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-x-10">
+                  <img src="~/assets/images/woman.svg" class="block w-16 lg:w-20" alt="woman-logo" />
+                  <div class="flex flex-col space-y-1">
+                    <h1 class="display-3">{{ $t("home.section10.head") }}</h1>
+                    <p class="text-2">{{ $t("home.section10.body") }}</p>
+                  </div>
+                </div>
+                <button
+                  class="ml-auto w-full self-center rounded-full border-2 border-black px-6 py-2 font-medium lg:w-fit"
+                >{{ $t("home.section10.chat") }}</button>
               </div>
-              <div class="lg:w-1/2">
-                <GlobalAccordionItem
-                  :item-id="id + 4"
-                  :item="q"
-                  v-for="(q, id) in faqs.slice(half)"
-                ></GlobalAccordionItem>
-              </div>
-            </GlobalAccordionList>
+            </Card>
           </div>
         </div>
-      </div>
-    </section>
-    <section>
-      <div class="container">
-        <Card class="bg-accent-200 p-8 lg:p-10">
-          <div class="items-center lg:flex">
-            <div class="mb-4 flex space-x-4 lg:space-x-8">
-              <img src="~/assets/images/woman.svg" class="block" alt="woman-logo" />
-              <div class="pt-4">
-                <h1 class="display-3 mb-4">{{ $t("home.section10.head") }}</h1>
-                <p class="text-2">{{ $t("home.section10.body") }}</p>
-              </div>
-            </div>
-            <button
-              class="ml-auto w-full self-center rounded-full border-2 border-black px-6 py-2 font-medium lg:w-fit"
-            >{{ $t("home.section10.chat") }}</button>
-          </div>
-        </Card>
       </div>
     </section>
   </main>

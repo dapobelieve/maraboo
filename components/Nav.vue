@@ -1,29 +1,24 @@
 <template>
   <header>
-    <!--    <div class="px-8 py-0.5 md:px-0">-->
-    <div class="flex w-full items-center px-3 md:px-3">
-      <NuxtLink :to="localePath('/')" class="flex items-center">
-        <div>
-          <img
-            class="hidden h-6 md:h-8 lg:block"
-            src="~/assets/images/maraboo-logo.png"
-            alt=""
-          />
-          <img class="h-10 lg:hidden" src="~/assets/images/logo.png" alt="" />
-        </div>
-      </NuxtLink>
-      <span class="ml-auto mt-3 inline-flex items-center space-x-6">
-        <Button
-          @click.stop="$router.push('/about')"
-          animate
-          type="no-outline"
-          class="btn-lg hidden md:block"
-          >Company</Button
-        >
-        <LanguageSelector />
-      </span>
+    <div class="px-4 sm:px-6 !pb-2 !pt-4 lg:!pt-6 2xl:!pt-10">
+      <div class="flex w-full items-center !p-0 container">
+        <NuxtLink :to="localePath('/')" class="flex items-center">
+          <div>
+            <img class="hidden h-6 md:h-7 lg:block" src="~/assets/images/maraboo-logo.png" alt />
+            <img class="h-6 lg:hidden" src="~/assets/images/logo.png" alt />
+          </div>
+        </NuxtLink>
+        <span class="ml-auto inline-flex items-center space-x-6">
+          <Button
+            @click.stop="$router.push('/about')"
+            animate
+            type="no-outline"
+            class="btn-lg hidden md:block"
+          >Company</Button>
+          <LanguageSelector />
+        </span>
+      </div>
     </div>
-    <!--    </div>-->
   </header>
 </template>
 <script>
