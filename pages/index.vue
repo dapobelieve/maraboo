@@ -12,7 +12,7 @@
                 }}
               </span>
             </h1>
-            <Button class="btn-xl capitalize" animate @click="openQr">
+            <Button class="btn-xl capitalize" animate @click="openQr()">
               {{
               $t("home.section1.send")
               }}
@@ -28,7 +28,7 @@
       <div class="container">
         <div class="content-wrap">
           <div class="w-full items-start justify-between lg:flex">
-            <div class="two-way space-y-10 mb-20 text-white lg:mb-0">
+            <div class="two-way sub-content space-y-10 mb-20 text-white lg:mb-0">
               <h1 class="display-2 mb-5 lg:mb-10 text-left">{{ $t("home.section2.left.one") }}</h1>
               <p class="text-left" v-html="$t('home.section2.left.two')"></p>
             </div>

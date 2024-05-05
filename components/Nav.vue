@@ -1,6 +1,5 @@
 <template>
   <header>
-    <!--    <div class="px-8 py-0.5 md:px-0">-->
     <div class="flex w-full items-center px-3 md:px-3">
       <NuxtLink :to="localePath('/')" class="flex items-center">
         <div>
@@ -14,7 +13,7 @@
       </NuxtLink>
       <span class="ml-auto mt-3 inline-flex items-center space-x-6">
         <Button
-          @click.stop="$router.push('/about')"
+          @click.stop="$router.push(localePath('/about'));"
           animate
           type="no-outline"
           class="btn-lg hidden md:block"
@@ -23,7 +22,6 @@
         <LanguageSelector />
       </span>
     </div>
-    <!--    </div>-->
   </header>
 </template>
 <script>
@@ -57,16 +55,16 @@ export default {
       }
     );
 
-    function scrollIntoView(e) {
-      const { hash } = e.target;
-      document.querySelector(hash).scrollIntoView({ behavior: "smooth" });
-      state.showMobileMenu = false;
-    }
+    // function scrollIntoView(e) {
+    //   const { hash } = e.target;
+    //   document.querySelector(hash).scrollIntoView({ behavior: "smooth" });
+    //   state.showMobileMenu = false;
+    // }
 
     return {
       ...toRefs(state),
       computedHowToNav,
-      scrollIntoView,
+      // scrollIntoView,
     };
   },
 };

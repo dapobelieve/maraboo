@@ -1,7 +1,7 @@
 <template>
   <div
     id="exchange-rate"
-    class="relative flex h-[652px] w-full min-w-fit max-w-[530px] space-x-8 overflow-hidden rounded bg-neutral p-4 text-surface-400 shadow-2xl"
+    class="relative flex h-[652px] w-full min-w-fit max-w-[530px] w-full space-x-8 overflow-hidden rounded bg-neutral p-4 text-surface-400 shadow-2xl"
   >
     <div
       class="dynamic-enter flex flex-col space-y-4"

@@ -79,6 +79,7 @@ const state = reactive({
 function switchLang(lang) {
   state.lang = lang;
   setLocale(lang);
+
   setTimeout(() => {
     state.show = false;
   }, 500);
