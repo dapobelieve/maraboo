@@ -640,8 +640,5 @@ const half = computed(() => Math.ceil(faqs.length / 2));
 
 .img-step-wrapper {
   height: 534px;
-  //left: 101px;
-  //width: 500px;
-  //margin-bottom: 44px;
 }
 </style>
