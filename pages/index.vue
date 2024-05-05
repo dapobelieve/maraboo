@@ -27,9 +27,10 @@
     <section class="bg-coloured rounded">
       <div class="container">
         <div class="content-wrap">
-          <div class="w-full items-start justify-between flex-col flex lg:flex-row">
-            <div class="two-way text-white lg:mb-0 sub-content space-y-10">
-              <h1 class="display-2 mb-10 text-left">{{ $t("home.section2.left.one") }}</h1>
+
+          <div class="w-full items-start justify-between lg:flex">
+            <div class="two-way space-y-10 mb-20 text-white lg:mb-0">
+              <h1 class="display-2 mb-5 lg:mb-10 text-left">{{ $t("home.section2.left.one") }}</h1>
               <p class="text-left" v-html="$t('home.section2.left.two')"></p>
             </div>
             <div class="calculator flex justify-center lg:justify-end">
@@ -58,7 +59,7 @@
     <section>
       <div class="container">
         <div class="content-wrap">
-          <div class="h-full w-full items-start justify-between lg:flex">
+          <div class="h-full w-full items-start space-y-16 lg:space-y-0 justify-between lg:flex">
             <div class="superpower space-y-10 sub-content">
               <h1 class="display-2" v-html="$t('home.section4.left.super-power')"></h1>
               <p class="text-2 max-w-sm" v-html="$t('home.section4.left.offer')"></p>
@@ -172,7 +173,7 @@
             </div>
             <div style="width: 750px" class="relative hidden px-8 w-full lg:block">
               <div class="img-step-wrapper w-full top-[46px]">
-                <div v-for="(image, imgIndex) in images" :key="imgIndex" class="img-step blue s">
+                <div v-for="(image, imgIndex) in images" :key="imgIndex" class="img-step blue">
                   <img :src="image.src" alt class />
                 </div>
               </div>
@@ -406,6 +407,7 @@ function handleResize() {
 
   // ScrollTrigger.refresh();
 }
+
 onMounted(() => {
   initScrollTriggers();
   handleResize();
@@ -503,17 +505,15 @@ function initScrollTriggers() {
   ScrollTrigger.create({
     trigger: ".calculator",
     scroller: ".scroller",
-    // start: () => "top 208px",
     start: () => {
       const twowaytHeight = document.querySelector(".two-way").offsetHeight;
       return `top ${twowaytHeight}px`;
     },
-    // end: () => "bottom top",
     end: () => {
       const target = document.querySelector(".calculator").offsetHeight;
       const twowaytHeight = document.querySelector(".two-way").offsetHeight;
       const newHeight = target - twowaytHeight;
-      return `bottom ${newHeight - 25}px`;
+      return `bottom ${newHeight + 85}px`;
     },
     scrub: true,
     // markers: true,
@@ -532,7 +532,7 @@ function initScrollTriggers() {
       const target = document.querySelector(".superpower-steps").offsetHeight;
       const twowaytHeight = document.querySelector(".superpower").offsetHeight;
       const newHeight = target - twowaytHeight;
-      return `bottom ${newHeight - 90}px`;
+      return `bottom ${newHeight + 170}px`;
     },
     scrub: true,
     // markers: true,
