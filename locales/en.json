@@ -138,14 +138,15 @@
     "faq-header": "Frequently Asked Questions"
   },
   "about-us": {
-    "name": " We're              <span class=\"text-multi-color\"                >building borderless <br />                financial systems</span              >              to <br />              connect West-Africans <br />              across the globe",
-    "caption": "Introducing Maraboo, a West-African fintech firm offering\n                transformative financial solutions that are fair, responsible,\n                inclusive, and designed to improve the quality of life of West\n                Africans.",
+    "name": "We're <span class=\"text-multi-color\">building borderless financial systems</span>   to              connect West-Africans across the globe",
 
-    "our": "Our Core mission is to make payments in & out of WAEMU countries\n              up to 3x cheaper!",
+    "caption": "Introducing Maraboo, a West-African fintech firm offering                transformative financial solutions that are fair, responsible,                inclusive, and designed to improve the quality of life of West                Africans.",
+
+    "our": "Our Core mission is to make payments in & out of WAEMU countries              up to 3x cheaper!",
     "section2": {
-      "caption": " We believe that remittances should be fast, low cost, and have a\n                major social impact.",
-      "text": "Two birds one stone - we apply the real exchange rate on all\n                  of our transactions to save you money and make the UN social\n                  development goal by significantly reducing remittance cost by\n                  2030 a reality today!",
-      "we-believe": " We believe that <br />\n            <span class=\"text-multi-color\">remittances</span> should <br />\n            be <span class=\"text-multi-color\">fast, low cost</span>.",
+      "caption": " We believe that remittances should be fast, low cost, and have a                major social impact.",
+      "text": "Two birds one stone - we apply the real exchange rate on all                  of our transactions to save you money and make the UN social                  development goal by significantly reducing remittance cost by                  2030 a reality today!",
+      "we-believe": " We believe that <br />            <span class=\"text-multi-color\">remittances</span> should <br />            be <span class=\"text-multi-color\">fast, low cost</span>.",
 
       "team": "Meet the team"
     }
