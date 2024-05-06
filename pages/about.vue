@@ -6,8 +6,8 @@
           <div class="text-center">
             <h1 class="display-1" v-html="$t('about-us.name')"></h1>
           </div>
-          <div class="w-full justify-around items-center lg:flex">
-              <p class="text-2 md:max-w-xs leading-9   md:mb-0 md:text-left">{{ $t("about-us.caption") }}</p>
+          <div class="w-full justify-around flex-col lg:flex-row items-center flex">
+              <p class="text-2 md:max-w-xs leading-9 mb-8 lg:mb-0 md:mb-0 md:text-left">{{ $t("about-us.caption") }}</p>
               <img alt="" class="h-96" src="~/assets/images/space.png" />
           </div>
         </div>
