@@ -144,8 +144,16 @@
   },
   "about-us": {
     "name": "À propos de Marabo",
+    "our": "Notre mission principale est d'effectuer des paiements dans et hors des pays de l'UEMOA jusqu'à 3 fois moins cher !",
     "caption": "Nous aspirons à bâtir un système financier sans frontières pour connecter les ressortissants d’Afrique de l'Ouest à travers le monde.",
     "text": "<span class='text-purple'>Présentation de Maraboo</span>, une FinTech ouest-africaine qui propose des solutions financières innovantes, responsables et inclusives qui sont conçues pour amélkmpkpmpiorer la qualité de vie des populations de cette région.",
+    "section2": {
+      "caption": " Nous pensons que les envois de fonds doivent être rapides, peu coûteux et avoir un impact social majeur.",
+      "text": "D'une pierre deux coups : nous appliquons le taux de change réel sur toutes nos transactions pour vous faire économiser de l'argent et faire de l'objectif de développement social des Nations Unies en réduisant considérablement le coût des envois de fonds d'ici 2030 une réalité aujourd'hui !",
+      "we-believe": " We believe that <br />            <span class=\"text-multi-color\">remittances</span> should <br />            be <span class=\"text-multi-color\">fast, low cost</span>.",
+
+      "team": "Meet the team"
+    },
     "read-more": "En savoir plus",
     "section-2": {
       "caption": "Notre mission principale est de rendre les transferts à l’intérieur et à l’extérieur des pays de l'UEMOA <span class='text-purple'>jusqu'à 3 fois moins chers!</span>",
