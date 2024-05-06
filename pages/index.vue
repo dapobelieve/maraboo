@@ -241,7 +241,7 @@ function handleResize() {
     ScrollTrigger.enable();
   }
 
-  // ScrollTrigger.refresh();
+  ScrollTrigger.refresh();
 }
 
 onMounted(() => {
