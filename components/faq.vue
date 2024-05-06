@@ -5,8 +5,8 @@
         <h1
             class="font-heading display-2 text-center leading-snug lg:text-6xl"
         >{{ $t("home.faq-header") }}</h1>
-        <div class="flex w-full">
-          <GlobalAccordionList class="w-full gap-10 lg:flex">
+        <div class="flex w-full ">
+          <GlobalAccordionList class="w-full space-y-8 lg:flex">
             <div class="lg:w-1/2 space-y-8">
               <GlobalAccordionItem
                   :item-id="id + 1"

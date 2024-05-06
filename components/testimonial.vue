@@ -1,7 +1,7 @@
 <template>
   <section class="testimonials">
     <div class="container">
-      <div class="content-wrap">
+      <div class="content-wrap bg-blue-300">
         <div class="grid grid-row-2 gap-6 lg:gap-10 w-full">
           <div class="grid grid-col-2 gap-6 lg:gap-10 lg:flex">
             <div class="gap-6 lg:gap-10 flex lg:w-3/5">
@@ -33,7 +33,7 @@
             </div>
           </div>
 
-          <Card class="flex justify-center bg-neutral text-white !py-24">
+          <Card class="flex justify-center w-full bg-neutral text-white !py-24">
             <div class="content-wrap">
               <div class="flex w-full justify-between lg:flex-row flex-col items-center space-y-14">
                 <div
@@ -61,7 +61,7 @@
                     </Button>
                   </div>
                 </div>
-                <div class="flex flex-col items-center space-y-10 sub-content">
+                <div class="flex flex-col  items-center space-y-10 sub-content">
                   <swiper
                       :slides-per-view="1"
                       :modules="modules"
@@ -71,7 +71,7 @@
                       :pagination="{ clickable: true }"
                       :space-between="50"
                       @swiper="onSwiper"
-                      class="lg:max-w-[512px] w-full">
+                      class="w-full hidden">
                     <swiper-slide v-for="(x, index) in 3">
                       <div class="flex flex-col items-center space-y-10 w-full sub-content">
                         <img src="~/assets/images/customer.png" alt />
@@ -118,9 +118,6 @@
   top: 30px !important;
 }
 
-* {
-  //border: 1px solid red;
-}
 </style>
 <script setup>
 

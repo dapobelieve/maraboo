@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative w-full rounded p-4 sm:p-8 lg:p-14 items-center"
+    class=" w-full rounded p-4 sm:p-8 lg:p-14 items-center"
     :class="[direction ? 'overflow-hidden' : '']"
   >
     <slot>Maraboo Card</slot>
