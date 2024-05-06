@@ -1,7 +1,7 @@
 <template>
   <section class="testimonials">
     <div class="container">
-      <div class="content-wrap bg-blue-300">
+      <div class="content-wrap relative bg-blue-300">
         <div class="grid grid-row-2 gap-6 lg:gap-10 w-full">
           <div class="grid grid-col-2 gap-6 lg:gap-10 lg:flex">
             <div class="gap-6 lg:gap-10 flex lg:w-3/5">
@@ -33,7 +33,7 @@
             </div>
           </div>
 
-          <Card class="flex justify-center w-full bg-neutral text-white !py-24">
+          <Card class="flex justify-center bg-neutral text-white !py-24">
             <div class="content-wrap">
               <div class="flex w-full justify-between lg:flex-row flex-col items-center space-y-14">
                 <div
