@@ -1,7 +1,7 @@
 <template>
   <section class="testimonials">
     <div class="container">
-      <div class="content-wrap relative bg-blue-300">
+      <div class="content-wrap relative">
         <div class="grid grid-row-2 gap-6 lg:gap-10 w-full">
           <div class="grid grid-col-2 gap-6 lg:gap-10 lg:flex">
             <div class="gap-6 lg:gap-10 flex lg:w-3/5">
