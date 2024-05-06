@@ -55,15 +55,15 @@
       "about": "<p class=\"text-2\"> When you send money with Maraboo you not only save your time and money but you a company built by native africans</p>",
       "one": {
         "top": " <small class=\"font-bold text-multi-color\">The</small>  <h1 class=\"display-3\">Fastest</h1>",
-        "bottom": "<p class=\"text-1\"> We complete transfers in real time                </p>"
+        "bottom": "<p class=\"text-2\"> We complete transfers in real time                </p>"
       },
       "two": {
         "top": " <small class=\"font-bold text-multi-color\">The</small>                <h1 class=\"display-3\">Cheapest</h1>",
-        "bottom": "<p class=\"text-1\">                  We give you the lowest rate               every time                </p>"
+        "bottom": "<p class=\"text-2\">                  We give you the lowest rate               every time                </p>"
       },
       "three": {
         "top": "<small class=\"font-bold text-multi-color\">The</small>                <h1 class=\"display-3\">Most Versatile</h1>",
-        "bottom": "<p class=\"text-1\">                  The widest range of collection and delivery options                </p>"
+        "bottom": "<p class=\"text-2\">                  The widest range of collection and delivery options                </p>"
       }
     },
     "section6": {

@@ -1,5 +1,5 @@
 <template>
-  <div class="accordion-list select-none outline-none">
+  <div class="accordion-list select-none">
     <slot></slot>
   </div>
 </template>

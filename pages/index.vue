@@ -1,9 +1,9 @@
 <template>
   <main>
     <section class="relative overflow-hidden">
-      <div class="container !pt-24 !pb-0 space-y-12">
+      <div class="container lg:!pt-24 !pb-0 space-y-12">
         <div class="flex flex-col items-center">
-          <div class="mb-8 space-y-20 text-center">
+          <div class="space-y-10 lg:space-y-20 text-center">
             <h1 class="display-1 font-medium">
               {{ $t("home.section1.intl") }}
               <span class="text-multi-color">
@@ -27,8 +27,9 @@
     <section class="bg-coloured rounded">
       <div class="container">
         <div class="content-wrap">
+
           <div class="w-full items-start justify-between lg:flex">
-            <div class="two-way sub-content space-y-10 mb-20 text-white lg:mb-0">
+            <div class="two-way space-y-10 mb-20 text-white lg:mb-0">
               <h1 class="display-2 mb-5 lg:mb-10 text-left">{{ $t("home.section2.left.one") }}</h1>
               <p class="text-left" v-html="$t('home.section2.left.two')"></p>
             </div>
@@ -42,8 +43,8 @@
     <section>
       <div class="container">
         <div class="content-wrap">
-          <div class="text-center">
-            <h1 class="display-2">
+          <div class="text-center lg:!pt-24">
+            <h1 class="display-2 !font-normal">
               {{ $t("home.section3.left.one") }}
               <span
                 class="text-multi-color"
@@ -65,21 +66,21 @@
             </div>
             <div class="superpower-steps flex flex-col items-center space-y-10 max-w-md">
               <div class="rounded bg-gradient-to-r from-active to-accent-400 p-0.5 w-full">
-                <div class="space-y-4 rounded bg-[#E3E1EB] p-10">
+                <div class="space-y-4 rounded bg-[#E3E1EB] p-6 lg:p-10">
                   <h1 class="display-3">{{ $t("home.section4.right.cash.top") }}</h1>
-                  <p class="text-1">{{ $t("home.section4.right.cash.bottom") }}</p>
+                  <p class="text-2">{{ $t("home.section4.right.cash.bottom") }}</p>
                 </div>
               </div>
               <div class="rounded bg-gradient-to-r from-active to-accent-400 p-0.5 w-full">
-                <div class="space-y-4 rounded bg-[#E3E1EB] p-10">
+                <div class="space-y-4 rounded bg-[#E3E1EB] p-6 lg:p-10">
                   <h1 class="display-3">{{ $t("home.section4.right.money.top") }}</h1>
-                  <p class="text-1">{{ $t("home.section4.right.money.bottom") }}</p>
+                  <p class="text-2">{{ $t("home.section4.right.money.bottom") }}</p>
                 </div>
               </div>
               <div class="rounded bg-gradient-to-r from-active to-accent-400 p-0.5 w-full">
-                <div class="space-y-4 rounded bg-[#E3E1EB] p-10">
+                <div class="space-y-4 rounded bg-[#E3E1EB] p-6 lg:p-10">
                   <h1 class="display-3">{{ $t("home.section4.right.bank.top") }}</h1>
-                  <p class="text-1">{{ $t("home.section4.right.bank.bottom") }}</p>
+                  <p class="text-2">{{ $t("home.section4.right.bank.bottom") }}</p>
                 </div>
               </div>
             </div>
@@ -87,37 +88,7 @@
         </div>
       </div>
     </section>
-    <section>
-      <div class="container">
-        <div class="content-wrap">
-          <div class="flex flex-col space-y-20 w-full">
-            <div class="why-us flex w-full flex-col lg:flex-row lg:items-end justify-between">
-              <div class="flex flex-col space-y-8 sub-content">
-                <h1 class="display-2" v-html="$t('home.section5.what')"></h1>
-                <p class="lg:max-w-md" v-html="$t('home.section5.about')"></p>
-              </div>
-              <div class="lg:flex hidden">
-                <img alt src="~/assets/images/choose.svg" />
-              </div>
-            </div>
-            <div class="w-full gap-10 grid grid-cols-1 lg:grid-cols-3">
-              <div class="space-y-5">
-                <div class="leading-[1.25]" v-html="$t('home.section5.one.top')"></div>
-                <div v-html="$t('home.section5.one.bottom')"></div>
-              </div>
-              <div class="space-y-5">
-                <div class="leading-[1.25]" v-html="$t('home.section5.two.top')"></div>
-                <div v-html="$t('home.section5.two.bottom')"></div>
-              </div>
-              <div class="space-y-5">
-                <div class="leading-[1.25]" v-html="$t('home.section5.three.top')"></div>
-                <div v-html="$t('home.section5.three.bottom')"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <WhyChoose />
     <section class="x-section lg:h-screen">
       <div class="container">
         <div class="content-wrap">
@@ -171,7 +142,7 @@
               </div>
             </div>
             <div style="width: 750px" class="relative hidden px-8 w-full lg:block">
-              <div class="img-step-wrapper w-fu top-[46px]">
+              <div class="img-step-wrapper w-full top-[46px]">
                 <div v-for="(image, imgIndex) in images" :key="imgIndex" class="img-step blue">
                   <img :src="image.src" alt class />
                 </div>

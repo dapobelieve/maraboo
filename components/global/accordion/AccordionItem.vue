@@ -2,17 +2,15 @@
   <div class="accordion-item">
     <div
       @click.exact="toggle"
-      class="mb-10 cursor-pointer rounded border bg-gray-100 px-5 py-4 transition-all duration-700 ease-in-out md:px-10 md:py-7"
-      :class="[active ? 'border-black' : ' border-white']"
+      class="cursor-pointer rounded border bg-gray-100 transition-all duration-700 ease-in-out p-4 md:p-8 lg:p-14"
+      :class="[active ? 'border-neutral' : ' border-white']"
     >
-      <div class="accordion-item-header flex items-center justify-between">
-        <h6 class="mr-4 font-medium text-black md:text-xl">
-          {{ item.question }}
-        </h6>
+      <div class="accordion-item-header flex items-center justify-between space-x-4">
+        <h3 class="text-3">{{ item.question }}</h3>
         <svg
-          width="40"
-          height="41"
-          class="shrink-0 transition-all duration-200"
+          width="32"
+          height="32"
+          class="shrink-0 transition-all duration-200 stroke-neutral"
           :class="[active ? '-rotate-45' : '']"
           viewBox="0 0 40 41"
           fill="none"
@@ -20,7 +18,6 @@
         >
           <path
             d="M19.9997 8.37109V31.7044M8.33301 20.0378H31.6663"
-            stroke="black"
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -31,7 +28,7 @@
         class="accordion-item-body flex flex-wrap transition-max-height duration-700 ease-in-out"
         :class="[active ? 'active' : '']"
       >
-        <div class="text-justify text-black" v-html="item.answers"></div>
+        <div class="text-justify" v-html="item.answers"></div>
       </div>
     </div>
   </div>
