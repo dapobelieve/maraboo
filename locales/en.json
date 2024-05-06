@@ -74,7 +74,7 @@
           {
             "step": "01",
             "title": "Sign Up",
-            "body": "Lorem ipsum dolor sit amet consectetur. Nunc pulvinar \" +      \"nam purus nunc interdum lorem. Venenatis nisl \" +  \"pulvinar urna facilisi eget vel fringilla"
+            "body": "Download the app and verify your identity"
           },
           {
             "step": "02",
@@ -335,6 +335,7 @@
     "copy": "Grand Maraboo Technologies Limited © 2023 All rights reserved",
     "contact": "Contact us",
     "phone": "Phone",
+    "download": " Download the App for <br />             Money Transfers Beyond <br />             Borders!",
     "email": "Email",
     "address": "Address",
     "socials": "Follow Us",

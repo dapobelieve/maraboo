@@ -20,6 +20,7 @@
     "lenis": "^1.0.44",
     "lodash.debounce": "^4.0.8",
     "smooth-scrollbar": "^8.8.4",
+    "swiper": "^11.1.1",
     "vue-final-modal": "^4.5.4"
   },
   "devDependencies": {

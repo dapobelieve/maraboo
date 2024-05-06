@@ -1,15 +1,13 @@
 <template>
   <footer
-    class="flex justify-center bg-neutral px-5 pb-5 pt-14 md:px-10 md:pt-20"
+    class="flex justify-center bg-neutral text-white px-5 pb-5 pt-14 md:px-10 md:pt-20"
   >
     <div class="container">
       <div class="w-full">
         <div class="w-full text-white lg:px-12">
           <div class="flex flex-col items-center justify-center space-y-12">
-            <h1 class="display-2 text-center md:text-left">
-              Download the App for <br />
-              Money Transfers Beyond <br />
-              Borders!
+            <h1 class="display-2 text-center md:text-left" v-html="$t('footer.download')">
+
             </h1>
             <div class="flex items-center space-x-4 lg:hidden">
               <a href="#" target="_blank"

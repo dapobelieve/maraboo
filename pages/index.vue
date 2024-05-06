@@ -1,6 +1,6 @@
 <template>
   <main>
-    <section class="relative overflow-hidden">
+    <section class="relative  overflow-hidden">
       <div class="container lg:!pt-24 !pb-0 space-y-12">
         <div class="flex flex-col items-center">
           <div class="space-y-10 lg:space-y-20 text-center">
@@ -24,7 +24,7 @@
         </div>
       </div>
     </section>
-    <section class="bg-coloured rounded">
+    <section class="bg-coloured  rounded">
       <div class="container">
         <div class="content-wrap">
 
@@ -40,7 +40,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <section class="">
       <div class="container">
         <div class="content-wrap">
           <div class="text-center lg:!pt-24">
@@ -56,7 +56,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <section class="">
       <div class="container">
         <div class="content-wrap">
           <div class="h-full w-full items-start space-y-16 lg:space-y-0 justify-between lg:flex">
@@ -88,7 +88,7 @@
         </div>
       </div>
     </section>
-    <WhyChoose />
+    <WhyChoose class="" />
     <section class="x-section lg:h-screen">
       <div class="container">
         <div class="content-wrap">
@@ -152,8 +152,8 @@
         </div>
       </div>
     </section>
-    <Extend />
-    <Faq />
+    <Extend class="" />
+    <Faq class="" />
    <Testimonial />
     <Chat />
   </main>

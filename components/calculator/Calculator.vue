@@ -1,10 +1,10 @@
 <template>
   <div
     id="exchange-rate"
-    class="relative flex h-[652px] w-full n-w-fit max-w-[530px]  space-x-8 overflow-hidden rounded bg-neutral p-4 text-surface-400 shadow-2xl"
+    class="relative flex h-[652px] w-full max-w-[530px]  space-x-8 overflow-hidden rounded bg-neutral p-4 text-surface-400 shadow-2xl"
   >
     <div
-      class="dynamic-enter flex flex-col space-y-4"
+      class="dynamic-enter flex flex-col  space-y-4"
       v-if="!state.config.open"
     >
       <div class="selects space-y-1">

@@ -112,33 +112,6 @@ const { open, close } = useModal({
   },
 });
 
-const faqs = reactive([
-  {
-    question: t("home.faq[0].question"),
-    answers: t("home.faq[0].answers"),
-  },
-  {
-    question: t("home.faq[1].question"),
-    answers: t("home.faq[1].answers"),
-  },
-  {
-    question: t("home.faq.2.question"),
-    answers: t("home.faq.2.answers"),
-  },
-  {
-    question: t("home.faq.3.question"),
-    answers: t("home.faq.3.answers"),
-  },
-  {
-    question: t("home.faq.4.question"),
-    answers: t("home.faq.4.answers"),
-  },
-  {
-    question: t("home.faq.5.question"),
-    answers: t("home.faq.5.answers"),
-  },
-]);
-
 const countries = reactive([
   {
     name: "benin",
@@ -216,5 +189,4 @@ const steps = reactive([
   },
 ]);
 
-const half = computed(() => Math.ceil(faqs.length / 2));
 </script>

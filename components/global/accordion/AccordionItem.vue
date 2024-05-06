@@ -1,8 +1,8 @@
 <template>
-  <div class="accordion-item">
+  <div class="accordion-">
     <div
       @click.exact="toggle"
-      class="cursor-pointer rounded border bg-gray-100 transition-all duration-700 ease-in-out p-4 md:p-8 lg:p-14"
+      class="cursor-pointer rounded border bg-gray-100 transition-all duration-700 ease-in-out p-4 md:p-8 "
       :class="[active ? 'border-neutral' : ' border-white']"
     >
       <div class="accordion-item-header flex items-center justify-between space-x-4">

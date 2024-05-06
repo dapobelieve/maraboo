@@ -20,7 +20,7 @@
     "section2": {
       "left": {
         "one": "Corridors bi-directionnels",
-        "two": "Envoyez de l'argent vers ou depuis n'importe quel pays de l'UMOA  <br />country en temps réel au taux \n le plus bas.."
+        "two": "Envoyez de l'argent vers ou depuis n'importe quel pays de l'UMOA  <br />country en temps réel au taux le plus bas.."
       }
     },
     "section3": {
@@ -32,7 +32,7 @@
     },
     "section4": {
       "left": {
-        "super-power": "Your new <br />\nsuperpower",
+        "super-power": "Votre nouveau <br />superpuissance",
         "offer": "Nous offrons la plus large gamme de méthodes de paiement <br > et de versements pour répondre à tous vos besoins."
       },
       "right": {
@@ -52,61 +52,63 @@
     },
 
     "section5": {
-      "what": "Why <br />\n                  Choose us",
-      "about": "Lorsque vous envoyez de l'argent avec Maraboo, non <br />\n                  seulement vous économisez du temps et de l'argent, mais vous soutenez <br />également une entreprise fondée et dirigée par des Africains africans",
+      "what": "Pourquoi nous?",
+      "about": "Lorsque vous envoyez de l'argent avec Maraboo, non <br />seulement vous économisez du temps et de l'argent, mais vous soutenez <br />également une entreprise fondée et dirigée par des Africains africans",
       "one": {
-        "top": " <small class=\"font-bold\">The</small>\n                <h1 class=\"display-3 mb-6 font-medium\">Fastest</h1>",
-        "bottom": "<p class=\"text-2\">\n                  We complete transfers in real <br />\n                  time\n                </p>"
+        "top": " <small class=\"font-bold\">Le </small>               <h1 class=\"display-3 mb-6 font-medium\">Plus Rapide</h1>",
+        "bottom": "<p class=\"text-2\">Nous effectuons les transferts <br />en temps réel.</p>"
       },
       "two": {
-        "top": " <small class=\"font-bold\">The</small>\n                <h1 class=\"display-3 mb-6 font-medium\">Cheapest</h1>",
-        "bottom": "<p class=\"text-2\">\n                  We give you the lowest rate <br />\n                  every time\n                </p>"
+        "top": " <small class=\"font-bold\">Le </small>               <h1 class=\"display-3 mb-6 font-medium\">Moins Cher</h1>",
+        "bottom": "<p class=\"text-2\">Nous vous offrons le tarif le plus bas <br /> à chaque fois</p>"
       },
       "three": {
-        "top": "<small class=\"font-bold\">The</small>\n                <h1 class=\"display-3 mb-6 font-medium\">Most Versatile</h1>",
-        "bottom": "<p class=\"text-2\">\n                  The widest range of collection <br />\n                  and delivery options\n                </p>"
-      }
-    },
-    "section5s": {
-      "we-fast": "We are really fast!",
-      "text": "Our transfers are processed from start to finish within minutes.",
-      "text-2": "and we offer the following disbursement options:",
-      "cash": "Cash",
-      "mobile-money": "Mobile Money",
-      "bank": "Bank",
-      "how-it-works": {
-        "name": "How it works",
-        "step-1": {
-          "name": "Step 1",
-          "text": "<span>&#x2022; Create account </span>  <span>&#x2022; Get a quote</span>  <span>&#x2022; Verify your identity (once)</span>  <span>&#x2022; Select delivery method </span>"
-        },
-        "step-2": {
-          "name": "Step 2",
-          "text": "<span>&#x2022; Enter recipients details</span>  <span>&#x2022; Review Transaction details</span>  <span>&#x2022; Pay in any currency that we support (XOF or CAD)</span>"
-        },
-        "step-3": {
-          "name": "Step 3",
-          "one": "Your recipient receives money:",
-          "xof-in": {
-            "name": "XOF in",
-            "bank-transfer": "Bank transfer (up to 48h)",
-            "instant": "Instant cash pick up",
-            "mobile": "Mobile Money",
-            "ecobank": "Ecobank transfer (instant)!"
-          },
-          "cad-in": {
-            "name": "CAD in",
-            "interac": "interac e-transfer(instant)"
-          },
-          "text": "We'll be adding more countries soon, <br />\n                        stay tuned."
-        }
+        "top": "<small class=\"font-bold\">Le</small> <h1 class=\"display-3 mb-6 font-medium\">Plus Polyvalent</h1>",
+        "bottom": "<p class=\"text-2\"> La plus large d'options de collecte  <br />et de livraison.</p>"
       }
     },
     "section6": {
-      "how-we": {
-        "name": "How we protect your <br />\n          personal data",
-        "text": "Rest assured, your funds and private information are safeguarded by state-of-the-art security technology, compliant with both local and global regulations"
+      "how": {
+        "name": "Comment ça fonctionne",
+        "text": "nvoyer de l'argent vers ou depuis l'UMOA est aussi  <br />simple que 1-2-3 avec nous.",
+        "steps": [
+          {
+            "step": "01",
+            "title": "Inscrivez-vous",
+            "body": "Recevez en temps réel en espèces, via mobile money ou en banque."
+          },
+          {
+            "step": "02",
+            "title": "Téléchargez l'application et vérifiez votre identité",
+            "body": "Bénéficiez des tarifs les plus bas, envoyez jusqu'à 9 900 $ par jour."
+          },
+          {
+            "step": "03",
+            "title": "Envoyez moins",
+            "body": "Bénéficiez des tarifs les plus bas, envoyez jusqu'à 9 900 $ par jour."
+          }
+        ]
       }
+    },
+    "section7": "Nous sommes disponibles dans les pays suivants",
+    "section8": {
+      "secure": {
+        "title": "Securing Your Data Fortress!",
+        "body": " Rest assured, your funds and private information are safeguarded by state-of-the-art security technology, compliant with both local and global regulations"
+      },
+      "from": {
+        "title": "From local to global.",
+        "body": "Seamlessly transfer up to $9,900 daily to/from WAEMU countries at the Real Exchange. Your gateway to hassle-free international transactions!"
+      },
+      "did": "Did you know that a 10% reduction in transaction fees for sending money in & out of UMOA country can boost the revenue of regional households by up to 16%?"
+    },
+    "section9": {
+      "head": "Real Talk from Our Customer"
+    },
+    "section10": {
+      "head": "Still have questions?",
+      "body": "Our agents are always ready to answer your questions.",
+      "chat": "Chat With Us"
     },
     "faq": [
       {
@@ -157,9 +159,9 @@
     "name": "Legal",
     "policy": "Privacy policy and Terms & conditions",
     "one": "Thank you for your interest in our upcoming launch.",
-    "two": "We're working hard to get everything ready and ensure that we\n            provide the best possible experience for our customers. Our legal\n            documents are currently being finalized and will be made available\n            shortly.",
-    "three": "In the meantime, we invite you to join our waitlist to be among the\n            first to know when we launch. By joining our waitlist, you'll\n            receive exclusive updates on our progress, be the first to know when\n            we launch, and receive special offers.",
-    "four": "Thank you for your patience and support. We can't wait to share our\n            product with you!"
+    "two": "We're working hard to get everything ready and ensure that we           provide the best possible experience for our customers. Our legal           documents are currently being finalized and will be made available           shortly.",
+    "three": "In the meantime, we invite you to join our waitlist to be among the           first to know when we launch. By joining our waitlist, you'll           receive exclusive updates on our progress, be the first to know when           we launch, and receive special offers.",
+    "four": "Thank you for your patience and support. We can't wait to share our           product with you!"
   },
   "careers": {
     "join": "Join Our Team!",
@@ -242,10 +244,12 @@
     "submit": "Soumettre"
   },
   "footer": {
-    "logo-caption": "<span> Une société fintech ouest-africaine proposant des solutions <br /> financières transformatrices, équitables, responsables,<br /> inclusives et conçues pour améliorer la qualité de vie en <br /> Afrique de l'Ouest. </span>",
+    "caption": "Une société fintech ouest-africaine proposant des solutions <br /> financières transformatrices, équitables, responsables,<br /> inclusives et conçues pour améliorer la qualité de vie en <br /> Afrique de l'Ouest.",
     "registered": "Grand Maraboo Technology Limited est enregistrée comme entreprise de services monétaires auprès du Centre d'analyse des opérations et déclarations financières du Canada (CANAFE) sous le numéro d'enregistrement",
     "contact": "Contactez nous ",
+    "copy": "Grand Maraboo Technologies Limitée © 2023 Tous droits réservés ",
     "phone": "Téléphone",
+    "download": "Téléchargez l'application pour <br />Transferts d'argent au-delà <br />Les frontières!",
     "email": "E-mail",
     "address": "Adresse",
     "socials": "Sociales",

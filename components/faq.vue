@@ -7,14 +7,14 @@
         >{{ $t("home.faq-header") }}</h1>
         <div class="flex w-full">
           <GlobalAccordionList class="w-full gap-10 lg:flex">
-            <div class="lg:w-1/2">
+            <div class="lg:w-1/2 space-y-8">
               <GlobalAccordionItem
                   :item-id="id + 1"
                   :item="q"
                   v-for="(q, id) in faqs.slice(0, half)"
               ></GlobalAccordionItem>
             </div>
-            <div class="lg:w-1/2">
+            <div class="lg:w-1/2 space-y-8">
               <GlobalAccordionItem
                   :item-id="id + 4"
                   :item="q"
