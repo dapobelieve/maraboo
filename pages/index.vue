@@ -90,7 +90,7 @@
     <WhyChoose class="" />
     <section class="x-section lg:h-screen">
       <div class="container">
-        <div class="content-wrap">
+        <div class="content-wrap ">
           <div class="w-full items-start justify-between lg:flex">
             <div class="flex-col relative flex w-full">
               <div class="mb-8 space-y-10">
@@ -141,9 +141,9 @@
               </div>
             </div>
             <div style="width: 750px" class="relative hidden px-8 w-full lg:block">
-              <div class="img-step-wrapper w-full top-[46px]">
-                <div v-for="(image, imgIndex) in images" :key="imgIndex" class="img-step blue">
-                  <img :src="image.src" alt class />
+              <div class="img-step-wrapper w-full">
+                <div v-for="(image, imgIndex) in images" :key="imgIndex" class="img-step">
+                  <img :src="image.src" alt class="md:h-[700px] " />
                 </div>
               </div>
             </div>
@@ -241,7 +241,7 @@ function handleResize() {
     ScrollTrigger.enable();
   }
 
-  ScrollTrigger.refresh();
+  // ScrollTrigger.refresh();
 }
 
 onMounted(() => {
@@ -328,7 +328,7 @@ function initScrollTriggers() {
   ScrollTrigger.create({
     trigger: ".x-section",
     scroller: ".scroller",
-    start: () => "top 5px",
+    start: () => "top -50px",
     end: () => {
       return "+=" + images.length * window.innerHeight;
     },
