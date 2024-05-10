@@ -71,15 +71,16 @@
                       :pagination="{ clickable: true }"
                       @swiper="onSwiper"
                       class="hidden">
-                    <swiper-slide v-for="(x, index) in 3" class="w-full hidden">
+                    <swiper-slide v-for="(x, index) in 3" class="w-full">
                       <div class="flex flex-col items-center space-y-10 w-full sub-content">
                         <img src="~/assets/images/customer.png" alt />
                         <div class="text-2">John Doe {{index+1}} . Canada</div>
-                      </div>
-                      <p class="text-center  text-3">
+
+                      <p class="text-center max-w-s text-3">
                         “I love that Maraboo gives me the real exchange rate. It
                         means more of my money goes to my loved ones in Togo.”
                       </p>
+                      </div>
                     </swiper-slide>
                   </swiper>
 
@@ -139,9 +140,17 @@
   background: whitesmoke !important;
 }
 
-:deep(.swiper-pagination) {
-  bottom: 185px !important;
+@media screen and (max-width: 768px) {
+  :deep(.swiper-pagination) {
+    bottom: 185px !important;
+  }
 }
+
+:deep(.swiper-pagination) {
+  bottom: 100px !important;
+  left: 270px;
+}
+
 
 
 </style>
