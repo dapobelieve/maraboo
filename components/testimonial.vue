@@ -1,5 +1,5 @@
 <template>
-  <section class="testimonials">
+  <section class="testimonials border-red-500">
     <div class="container">
       <div class="content-wrap">
         <div class="grid grid-row-2 gap-6 lg:gap-10 w-full">
@@ -34,11 +34,10 @@
           </div>
 
           <!--  Testimonials-->
-          <Card class="flex justify-center bg-neutral text-white !py-24">
-            <div class="content-wrap">
-              <div class="flex w-full justify-between lg:flex-row flex-col items-center space-y-14">
+          <Card class="flex justify-center bg-neutral overflow-hidden text-white !py-24">
+            <div class="flex w-full justify-between lg:flex-row flex-col items-center space-y-16 lg:space-y-0 space-x-8">
                 <div
-                    class="flex-col lg:flex lg:max-w-[416px] justify-between lg:h-full sub-content"
+                    class="flex-col lg:flex lg:max-w-[416px] justify-between space-y-16 lg:h-full sub-content"
                 >
                   <h1 class="display-2 text-center lg:text-left" v-html="$t('home.section9.head')"></h1>
                   <div class="relative space-x-10 lg:flex hidden">
@@ -62,28 +61,29 @@
                     </Button>
                   </div>
                 </div>
-                <div class="flex flex-col  items-center space-y-10 sub-content">
+                <div class="flex dswiper flex-col items-center space-y-10 sub-content">
                   <swiper
-                      :slides-per-view="1"
+                      :slides-per-view="'auto'"
                       :modules="modules"
                       slide-next-class=".btn-right"
                       loop
                       :navigation="navs"
                       :pagination="{ clickable: true }"
-                      :space-between="50"
                       @swiper="onSwiper"
-                      class="w-full hidden">
-                    <swiper-slide v-for="(x, index) in 3">
+                      class="hidden">
+                    <swiper-slide v-for="(x, index) in 3" class="w-full hidden">
                       <div class="flex flex-col items-center space-y-10 w-full sub-content">
                         <img src="~/assets/images/customer.png" alt />
                         <div class="text-2">John Doe {{index+1}} . Canada</div>
                       </div>
-                      <p class="text-center text-3">
+                      <p class="text-center  text-3">
                         “I love that Maraboo gives me the real exchange rate. It
                         means more of my money goes to my loved ones in Togo.”
                       </p>
                     </swiper-slide>
                   </swiper>
+
+                  <!--   mobile-->
                   <div class="relative space-x-10 lg:lg:hidden block">
                     <Button
                         class="btn-xl swiper-btn-left btn-circle shrink-0 rounded-full border border-surface-300"
@@ -106,7 +106,6 @@
                   </div>
                 </div>
               </div>
-            </div>
           </Card>
         </div>
       </div>
@@ -114,10 +113,36 @@
   </section>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .swiper-pagination {
-  top: 30px !important;
+
 }
+
+.swiper {
+  position: static;
+}
+
+
+.dswiper  .swiper-slide {
+  width: 100%;
+  flex-shrink: 0;
+  display: block;
+  height: 100%;
+  max-height: 100%;
+}
+
+:deep(.swiper-pagination-bullet-active) {
+  background: white !important;
+}
+
+:deep(.swiper-pagination-bullet) {
+  background: whitesmoke !important;
+}
+
+:deep(.swiper-pagination) {
+  bottom: 185px !important;
+}
+
 
 </style>
 <script setup>

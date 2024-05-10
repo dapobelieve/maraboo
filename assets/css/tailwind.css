@@ -62,7 +62,7 @@ section {
 }
 
 .sub-content {
-  @apply max-w-[640px] lg:max-w-[512px] xl:max-w-[640px];
+  @apply max-w-[640px] lg:max-w-[512px] xl:max-w-[640px] w-full;
 }
 
 .text-multi-color {

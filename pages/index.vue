@@ -88,21 +88,25 @@
       </div>
     </section>
     <WhyChoose class="" />
-    <section class="x-section lg:h-screen">
+    <section class="x-section lg:h-screen bord hidden">
       <div class="container">
-        <div class="content-wrap ">
+        <div class="content-wrap bord">
           <div class="w-full items-start justify-between lg:flex">
-            <div class="flex-col relative flex w-full">
-              <div class="mb-8 space-y-10">
+            <div class="flex-col relative flex h-full  w-full">
+              <div class="bg-yellow-300  space-y-10">
                 <h1 class="display-2 text-start">{{ $t("home.section6.how.name") }}</h1>
                 <p class="text-2" v-html="$t('home.section6.how.text')"></p>
               </div>
-              <div class="flex lg:space-x-8">
-                <div class="bar">
-                  <div class="bg-slate h-1/2 w-[3px]"></div>
-                </div>
+              <div class="flex grssow items-end h-fsull lg:space-x-8">
+<!--                <div class="bar">-->
+<!--                  <div class="bg-slate h-1/2 w-[3px]"></div>-->
+<!--                </div>-->
                 <!--  desktop-->
-                <div class="steps hidden bg-amber-600 max-w-sm flex-col lg:flex">
+                <div class="bg-red-300 hidden">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab architecto blanditiis esse excepturi expedita laudantium obcaecati optio possimus, quasi, quibusdam quidem reiciendis sed, sit voluptas? Adipisci earum eveniet sunt.
+
+                </div>
+                <div class="steps hidden max-w-sm flex-col lg:flex">
                   <div
                     v-for="(step, index) in steps"
                     class="step-item mb-8 flex items-start space-x-8 px-4 pb-10 opacity-100 md:transslate-y-full lg:absolute"
@@ -140,7 +144,7 @@
                 </div>
               </div>
             </div>
-            <div style="width: 750px" class="relative hidden px-8 w-full lg:block">
+            <div style="width: 750px" class="relative hidden px-8 w-full lgd:block">
               <div class="img-step-wrapper w-full">
                 <div v-for="(image, imgIndex) in images" :key="imgIndex" class="img-step">
                   <img :src="image.src" alt class="md:h-[700px] " />
@@ -279,21 +283,22 @@ function initScrollTriggers() {
     marginBottom: "72px"
   });
   let images = $gsap.utils.toArray(".img-step");
-  images.forEach((image, i) => {
-    let tl = $gsap.timeline({
-      scrollTrigger: {
-        trigger: ".x-section",
-        scroller: ".scroller",
-        start: () => "top -" + window.innerHeight * (i + 0.5),
-        end: () => "+=" + window.innerHeight,
-        scrub: true,
-        toggleActions: "play none reverse none",
-        invalidateOnRefresh: true,
-      },
-    });
-
-    tl.to(image, { height: 0, marginBottom: 0 });
-  });
+  // images.forEach((image, i) => {
+  //   let tl = $gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".x-section",
+  //       scroller: ".scroller",
+  //       start: () => "top -" + window.innerHeight * (i + 0.5),
+  //       end: () => "+=" + window.innerHeight,
+  //       scrub: true,
+  //       markers: true,
+  //       toggleActions: "play none reverse none",
+  //       invalidateOnRefresh: true,
+  //     },
+  //   });
+  //
+  //   tl.to(image, { height: 0, marginBottom: 0 });
+  // });
 
   $gsap.set(".step-item", {
     zIndex: (i, target, targets) => targets.length - i,
@@ -310,6 +315,7 @@ function initScrollTriggers() {
         end: () =>
           i === steps.length - 1 ? "bottom bottom" : "+=" + window.innerHeight,
         scrub: true,
+        // markers: true,
         toggleActions: "play none reverse none",
         invalidateOnRefresh: true,
       },
@@ -328,13 +334,15 @@ function initScrollTriggers() {
   ScrollTrigger.create({
     trigger: ".x-section",
     scroller: ".scroller",
-    start: () => "top -50px",
+    start: () => "top top",
     end: () => {
       return "+=" + images.length * window.innerHeight;
     },
     scrub: true,
+    // markers: true,
     pin: true,
     invalidateOnRefresh: true,
+    // toggleClass: 'bg-blue-600'
   });
 
   ScrollTrigger.create({
