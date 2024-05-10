@@ -71,6 +71,8 @@ import {
   IconAlertTriangleFilled,
   IconArrowsExchange2,
   IconCaretDownFilled,
+    IconBrandGooglePlay,
+    IconBrandApple,
 } from "@tabler/icons-vue";
 
 const iconMap = {
@@ -81,6 +83,8 @@ const iconMap = {
   "trending-up": IconTrendingUp,
   x: IconX,
   "circle-x": IconCircleX,
+  'google-play': IconBrandGooglePlay,
+  'app-store': IconBrandApple,
   "circle-x-filled": IconCircleXFilled,
   adjustments: IconAdjustments,
   "arrow-left-right": IconArrowLeftRight,

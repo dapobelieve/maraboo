@@ -105,7 +105,6 @@ const waemuCountry = ref(null);
 const { open, close } = useModal({
   component: qr,
   attrs: {
-    title: "Hello World!",
     onConfirm() {
       close();
     },

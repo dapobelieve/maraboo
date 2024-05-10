@@ -97,7 +97,6 @@ const show = ref(false);
 const { open: openQr, close } = useModal({
   component: qr,
   attrs: {
-    title: "Hello World!",
     onConfirm() {
       close();
     },
