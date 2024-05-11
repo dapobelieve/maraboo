@@ -12,6 +12,11 @@
       },
       "wait-list": "Join the waitlist"
     },
+    "modal": {
+      "title": "Download the App for Money Transfers Beyond Borders!",
+      "sub":   "Available on",
+      "scan": "Scan QR code to download for"
+    },
     "section1": {
       "intl": "International Transfers Built for",
       "umoa": "UMOA Countries",

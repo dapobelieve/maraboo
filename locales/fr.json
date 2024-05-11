@@ -4,13 +4,18 @@
       "home": "",
       "how-it-works": "How it works",
       "company": {
-        "name": "Company",
+        "name": "Entreprise",
         "about-us": "About Us",
         "contact-us": "Contact Us",
         "careers": "Careers",
         "legal": "Legal"
       },
       "wait-list": "Join the waitlist"
+    },
+    "modal": {
+      "title": "Téléchargez l'application pour les transferts d'argent au-delà des frontières!",
+      "sub":   "Disponible sur",
+      "scan": "Scannez le code QR pour télécharger"
     },
     "section1": {
       "intl": "Transferts internationaux conçus pour les pays",

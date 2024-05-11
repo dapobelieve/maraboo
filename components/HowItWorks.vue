@@ -1,5 +1,5 @@
 <template>
-  <section class="x-section lg:h-screen">
+  <section class="x-section lg:h-screen bord">
     <div class="container">
       <div class="content-wrap relative">
         <div class="w-full items-start justify-between lg:flex">
@@ -96,10 +96,10 @@ const steps = reactive([
 
 const images = [
   {
-    src: "https://res.cloudinary.com/believe/image/upload/v1713280088/maraboo/old/prev/1.png",
+    src: "https://res.cloudinary.com/believe/image/upload/v1715419809/maraboo/1.png",
   },
   {
-    src: "https://res.cloudinary.com/believe/image/upload/v1713280088/maraboo/old/prev/2.png",
+    src: "https://res.cloudinary.com/believe/image/upload/v1715419808/maraboo/2.png",
   },
   {
     src: "https://res.cloudinary.com/believe/image/upload/v1713280088/maraboo/old/prev/3.png",
@@ -190,7 +190,9 @@ function initScrollTriggers() {
     },
     scrub: true,
     pin: true,
+    // markers: true,
     invalidateOnRefresh: true,
+    anticipatePin: true
   });
 
   ScrollTrigger.create({
@@ -204,7 +206,7 @@ function initScrollTriggers() {
       const target = document.querySelector(".calculator").offsetHeight;
       const twowaytHeight = document.querySelector(".two-way").offsetHeight;
       const newHeight = target - twowaytHeight;
-      return `bottom ${newHeight + 85}px`;
+      return `bottom ${newHeight + 90}px`;
     },
     scrub: true,
     pin: ".two-way",

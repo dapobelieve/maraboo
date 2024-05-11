@@ -17,7 +17,7 @@
           animate
           type="no-outline"
           class="btn-lg hidden md:block"
-          >Company</Button
+          > {{ $t("home.nav.company.name") }}</Button
         >
         <LanguageSelector />
       </span>

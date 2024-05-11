@@ -12,10 +12,10 @@
       </button>
       <div class="mb-10">
         <h1 class="display-3 mb-6">
-          Download the App for Money Transfers Beyond Borders!
+          {{ $t("home.modal.title") }}
         </h1>
         <small class="leading"
-          >Available on</small
+          > {{ $t("home.modal.sub") }}</small
         >
       </div>
       <div class="flex flex-col items-center space-y-5 text-center">
@@ -40,7 +40,7 @@
           <img v-if="state.code == 'Android'" class="h-36" src="~/assets/images/PlayStore.png" alt="" />
           <img v-else class="h-36" src="~/assets/images/Apple.png" alt="" />
         </div>
-        <small class="leading-1">Scan QR code to download for
+        <small class="leading-1"> {{ $t("home.modal.scan") }}
           <span class="min-w-xs inline-block text-left w-[54px]">
           {{state.code}}
         </span></small>
