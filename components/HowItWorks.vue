@@ -1,5 +1,5 @@
 <template>
-  <section class="x-section lg:h-screen bord">
+  <section class="x-section lg:h-screen">
     <div class="container">
       <div class="content-wrap relative">
         <div class="w-full items-start justify-between lg:flex">
