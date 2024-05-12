@@ -181,10 +181,15 @@ function initScrollTriggers() {
     }
   });
 
+  const breakpoint = 1440
+
+  const start = window.innerWidth <= breakpoint ? 'top -75px' : 'top top'
+
+
   ScrollTrigger.create({
     trigger: ".x-section",
     scroller: ".scroller",
-    start: () => "top top",
+    start: start,
     end: () => {
       return "+=" + images.length * (window.innerHeight - 200);
     },
