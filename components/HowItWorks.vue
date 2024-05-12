@@ -102,7 +102,7 @@ const images = [
     src: "https://res.cloudinary.com/believe/image/upload/v1715419808/maraboo/2.png",
   },
   {
-    src: "https://res.cloudinary.com/believe/image/upload/v1713280088/maraboo/old/prev/3.png",
+    src: "https://res.cloudinary.com/believe/image/upload/v1715500736/maraboo/3.png",
   },
 ];
 
