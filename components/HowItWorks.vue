@@ -195,7 +195,6 @@ function initScrollTriggers() {
     },
     scrub: true,
     pin: true,
-    // markers: true,
     invalidateOnRefresh: true,
     anticipatePin: true
   });

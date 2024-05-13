@@ -15,24 +15,26 @@
         WESTERN COUNTRIES
       </div>
       <ul role="listbox" class="space-y-3">
+<!--        @click.exact.stop="countrySelected(country)"-->
         <li
-          @click.exact.stop="countrySelected(country)"
+
           v-for="country in state.firstCountry"
           v-if="props.config.which === 'delivery'"
           :class="[
             country.name === state.selectedCountry?.name ? 'selected' : '',
           ]"
-          class="flex cursor-pointer px-3 py-3"
+          class="flex cursor-poisnter text-gray-600 items-center px-3 py-3"
         >
           <a class="flex items-center">
             <img class="mr-3 h-6 w-6" :src="images[country.flag]" alt="" />
-            <span class="text-2 text-emphasis-900">{{ country.name }}</span>
+            <span class="text-2 tsext-emphasis-900">{{ country.name }}</span>
           </a>
           <img
             class="ml-auto hidden h-6 w-6"
             src="~/assets/images/icon-check.svg"
             alt=""
           />
+          <small class="select-none ml-auto">(Coming Soon)</small>
         </li>
         <li
           @click.exact.stop="countrySelected(country)"
@@ -56,6 +58,7 @@
             src="~/assets/images/icon-check.svg"
             alt=""
           />
+
         </li>
       </ul>
     </div>
@@ -63,7 +66,7 @@
       class="umoa-list"
       :class="{ invisible: visibleList !== 'both' && visibleList !== 'umoa' }"
     >
-      <div class="text-4 mb-4 uppercase text-emphasis-100">UMOA COUNTRIES</div>
+      <div class="text-4 mb-4 uppercase text-emphasis-100">WAEMU COUNTRIES</div>
       <ul role="listbox" class="space-y-3">
         <li
           @click.exact.stop="countrySelected(country)"

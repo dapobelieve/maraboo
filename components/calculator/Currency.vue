@@ -7,7 +7,7 @@
       <div class="grow space-y-2">
         <div class="flex items-center space-x-3">
           <template v-if="props.currency.country?.country">
-            <img class="h-8 w-8" :src="images[props.currency.country?.flag]" />
+            <img alt="" class="h-8 w-8" :src="images[props.currency.country?.flag]" />
             <span class="uppercase text-emphasis-100">{{
               props.currency.country.currency
             }}</span>

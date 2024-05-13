@@ -18,13 +18,19 @@
         >
           <a class="flex grow items-center">
             <div class="w-full max-w-xs">
-              <div class="flex items-center space-x-3">
+              <div class="flex items-center space-x-2">
                 <h1 class="text-2 shrink-0 capitalize text-emphasis-900">
                   {{ mode.name }}
                 </h1>
                 <span
+                    v-if="mode.enabled"
                   class="-2 shrink-0 rounded-full border border-white p-1 px-2 text-xs"
                   >{{ mode.fee }}</span
+                >
+                <span
+                    v-else
+                    class="-2 shrink-0 rounded-full border border-white p-1 px-2 text-xs"
+                >Temporarily Disabled</span
                 >
               </div>
               <div>
