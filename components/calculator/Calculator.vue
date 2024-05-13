@@ -214,7 +214,7 @@ watch(
   debounce(async (newVal, oldVal) => {
     try {
       if (state.txn.mode === "send") {
-        if (state.delivery.country.name && state.currency.country.name) {
+        if (state.delivery.country.name && state.currency.country.name && newVal !== 0) {
           await convert(parseFloat(newVal));
         }
       }
