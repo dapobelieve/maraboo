@@ -76,8 +76,8 @@
     <WhyChoose class="" />
     <HowItWorks />
     <Extend class="" />
+    <Testimonial />
     <Faq class="" />
-   <Testimonial />
     <Chat />
   </main>
 </template>

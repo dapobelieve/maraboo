@@ -28,7 +28,7 @@
         class="accordion-item-body flex flex-wrap transition-max-height duration-700 ease-in-out"
         :class="[active ? 'active' : '']"
       >
-        <div class="text-justify" v-html="item.answers"></div>
+        <div class="text-justify bg-gray-100 select-none" v-html="item.answers"></div>
       </div>
     </div>
   </div>

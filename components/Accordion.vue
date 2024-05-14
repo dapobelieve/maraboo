@@ -1,20 +1,4 @@
-<script setup lang="ts">
-import { ref, onMounted } from 'vue'
 
-const accordionOpen = ref<boolean>(false)
-const toggleActive = ref<boolean>(false)
-
-
-const props = defineProps<{
-    title: string
-    id: string
-    active?: boolean
-}>()
-
-onMounted(() => {
-    accordionOpen.value = props.active
-})
-</script>
 
 <template>
     <div class="py-4 p-6">
@@ -32,10 +16,10 @@ onMounted(() => {
                             :class="{ '!rotate-180': accordionOpen }" />
                     </svg>
                     <span>{{ title }}</span>
-                </div>      
+                </div>
                 <span v-if="id == 'cookies-0'" class="text-xs">Always active</span>
                   <!-- Switch Container -->
-                <div v-if="id != 'cookies-0'" @click.stop="toggleActive = !toggleActive" class="w-11 h-5 flex items-center rounded-full p-1 duration-300 ease-in-out" :class="toggleActive ? 'bg-black' : 'bg-[#EAEAEA]'">           
+                <div v-if="id != 'cookies-0'" @click.stop="toggleActive = !toggleActive" class="w-11 h-5 flex items-center rounded-full p-1 duration-300 ease-in-out" :class="toggleActive ? 'bg-black' : 'bg-[#EAEAEA]'">
                     <!-- Switch -->
                     <div class="bg-white w-[18px] h-[18px] rounded-full shadow-md transform duration-300 ease-in-out" :class="{'translate-x-5': toggleActive}"></div>
                 </div>
@@ -54,3 +38,21 @@ onMounted(() => {
         </div>
     </div>
 </template>
+
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
+const accordionOpen = ref<boolean>(false)
+const toggleActive = ref<boolean>(false)
+
+
+const props = defineProps<{
+  title: string
+  id: string
+  active?: boolean
+}>()
+
+onMounted(() => {
+  accordionOpen.value = props.active
+})
+</script>
