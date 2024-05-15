@@ -1,10 +1,10 @@
 <template>
-  <section class="x-section lg:h-screen">
+  <section ref="xsection" class="x-section lg:h-screen">
     <div class="container">
       <div class="content-wrap relative">
         <div class="w-full items-start justify-between lg:flex">
           <div class="flex-col overflsow-hidden relative flex h-full  w-full">
-            <div class="space-y-10">
+            <div class="space-y-10 mb-9 lg:mb-0">
               <h1 class="display-2 text-start">{{ $t("home.section6.how.name") }}</h1>
               <p class="text-2" v-html="$t('home.section6.how.text')"></p>
             </div>
@@ -16,6 +16,7 @@
               <div class="w-full hidden flex-col max-w-smd text-wrap lg:flex">
                 <div
                     v-for="(step, index) in steps"
+                    ref="stepItem"
                     class="step-item mb-8 w-full flex items-start psx-4"
                 >
                   <div class="">
@@ -54,7 +55,7 @@
           <div class="relative hidden w-full lg:block">
             <div class="w-full flex justify-center">
               <div class="img-step-wrapper ">
-                <div v-for="(image, imgIndex) in images" :key="imgIndex" class="img-step">
+                <div v-for="(image, imgIndex) in images" :key="imgIndex" ref="imgStep" class="img-step">
                   <img :src="image.src" alt class="md:h-[700px] " />
                 </div>
               </div>
@@ -67,13 +68,16 @@
 </template>
 <script setup>
 
-import {onMounted, reactive} from "vue";
+import {onMounted, reactive, ref} from "vue";
 import Scrollbar from "smooth-scrollbar";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 const { $gsap } = useNuxtApp();
 import {useI18n} from "vue-i18n";
 const { t } = useI18n();
 
+const imgStep = ref(null)
+const stepItem = ref(null)
+const xsection = ref(null)
 const steps = reactive([
   {
     step: t("home.section6.how.steps[0].step"),
@@ -124,13 +128,13 @@ function initScrollTriggers() {
 
   bodyScrollBar.addListener(ScrollTrigger.update);
 
-  $gsap.set(".img-step", {
+  $gsap.set(imgStep.value, {
     zIndex: (i, target, targets) => {
       return targets.length - i
     },
     marginBottom: "72px"
   });
-  let images = $gsap.utils.toArray(".img-step");
+  let images = $gsap.utils.toArray(imgStep.value);
 
   images.forEach((image, i) => {
     let tl = $gsap.timeline({
@@ -149,17 +153,17 @@ function initScrollTriggers() {
     tl.to(image, { height: 0, marginBottom: 0 });
   });
 
-  $gsap.set(".step-item", {
+  $gsap.set(stepItem.value, {
     zIndex: (i, target, targets) => targets.length - i,
     // top: (i) => i === 1 ? '-176px' : '0'
   });
 
-  let steps = $gsap.utils.toArray(".step-item");
+  let steps = $gsap.utils.toArray(stepItem.value);
 
   steps.forEach((step, i) => {
     var tl = $gsap.timeline({
       scrollTrigger: {
-        trigger: ".x-section",
+        trigger: xsection.value,
         scroller: ".scroller",
         start: () => (i === 0 ? "top top" : "top -" + window.innerHeight * i),
         end: () =>
@@ -187,7 +191,7 @@ function initScrollTriggers() {
 
 
   ScrollTrigger.create({
-    trigger: ".x-section",
+    trigger: xsection.value,
     scroller: ".scroller",
     start: start,
     end: () => {
@@ -199,23 +203,7 @@ function initScrollTriggers() {
     anticipatePin: true
   });
 
-  ScrollTrigger.create({
-    trigger: ".calculator",
-    scroller: ".scroller",
-    start: () => {
-      const twowaytHeight = document.querySelector(".two-way").offsetHeight;
-      return `top ${twowaytHeight}px`;
-    },
-    end: () => {
-      const target = document.querySelector(".calculator").offsetHeight;
-      const twowaytHeight = document.querySelector(".two-way").offsetHeight;
-      const newHeight = target - twowaytHeight;
-      return `bottom ${newHeight + 90}px`;
-    },
-    scrub: true,
-    pin: ".two-way",
-    invalidateOnRefresh: true,
-  });
+
 
   ScrollTrigger.create({
     trigger: ".superpower-steps",
@@ -240,10 +228,8 @@ function initScrollTriggers() {
 function handleResize() {
   if (window.innerWidth < 1000) {
     // $gsap.globalTimeline.clear();
-
-    const _steps = document.querySelectorAll(".step-item");
-    _steps.forEach((step) => {
-      step.style.opacity = "1";
+    stepItems.forEach((step) => {
+      step.value.style.opacity = "1";
     });
     ScrollTrigger.disable();
   } else {
@@ -252,17 +238,21 @@ function handleResize() {
 
 }
 
-onMounted(() => {
-  initScrollTriggers();
-  handleResize();
-});
+const isMobile = () => window.innerWidth <= 1000;
 
 onMounted(() => {
-  window.addEventListener("resize", handleResize);
-  setTimeout(() => {
-    // cookieSettings();
-  }, 5000);
+  if (isMobile()) {
+    return;
+  }
+  initScrollTriggers();
 });
+
+// onMounted(() => {
+//   window.addEventListener("resize", handleResize);
+//   setTimeout(() => {
+//     // cookieSettings();
+//   }, 5000);
+// });
 
 </script>
 
