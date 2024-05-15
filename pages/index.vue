@@ -19,7 +19,7 @@
             </Button>
           </div>
           <div class="globe">
-            <img class="w-full" src="~/assets/images/globe-intro.svg" alt />
+            <img class="w-full" src="https://res.cloudinary.com/believe/image/upload/v1715805451/maraboo/globe-intro.svg" alt />
           </div>
         </div>
       </div>

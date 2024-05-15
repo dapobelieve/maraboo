@@ -169,7 +169,6 @@ function initScrollTriggers() {
         end: () =>
             i === steps.length - 1 ? "bottom bottom" : "+=" + window.innerHeight,
         scrub: true,
-        // markers: true,
         toggleActions: "play none reverse none",
         invalidateOnRefresh: true,
       },
