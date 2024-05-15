@@ -126,7 +126,7 @@
                 </ul>
               </div>
             </div>
-            <LanguageSelector class="text-white" />
+            <LanguageSelector class="text-white lang-select" />
           </div>
         </div>
         <div class="my-20 w-full text-center">
@@ -152,4 +152,13 @@ const route = useRoute();
 const displayBlackFooterSection = computed(() => route.fullPath === "/join-us");
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+
+:deep(.lang-select button) {
+  @apply hover:bg-neutral;
+  span {
+    @apply text-white
+  }
+}
+
+</style>
