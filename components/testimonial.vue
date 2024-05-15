@@ -42,7 +42,7 @@
                   <h1 class="display-2 text-center lg:text-left" v-html="$t('home.section9.head')"></h1>
                   <div class="relative space-x-10 lg:flex hidden">
                     <Button
-                        class="btn-xl swiper-btn-left btn-circle shrink-0 rounded-full border border-surface-300"
+                        class="btn-xl swiper-btn-left text-center btn-circle shrink-0 rounded-full border border-surface-300"
                     >
                       <Icon
                           icon="chevron-left"
@@ -115,10 +115,6 @@
 </template>
 
 <style lang="scss" scoped>
-.swiper-pagination {
-
-}
-
 .swiper {
   position: static;
 }

@@ -68,15 +68,17 @@
       </div>
     </div>
   </ClickOutside>
-</template>switchLocalePath
+</template>
 <script setup lang="ts">
-const router = useRoute();
-const { locale, setLocale, } = useI18n();
+const route = useRoute();
+const router = useRouter()
+const { setLocale, } = useI18n();
 const switchLocalePath = useSwitchLocalePath()
 const state = reactive({
   show: false,
   lang: "en",
 });
+
 
 function switchLang(lang) {
   state.lang = lang;
@@ -89,6 +91,6 @@ function switchLang(lang) {
 }
 
 onMounted(() => {
-  router.path.includes('fr') ? state.lang = 'fr' : state.lang = 'en'
+  route.path.includes('fr') ? state.lang = 'fr' : state.lang = 'en'
 })
 </script>
