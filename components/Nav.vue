@@ -1,6 +1,6 @@
 <template>
-  <header>
-    <div class="flex w-full items-center px-3 md:px-3">
+  <header class="z-20  sticky top-0">
+    <div class="flex w-full items-center shadow-2sxl bg-[#E3E1EB] rounded px-3">
       <NuxtLink :to="localePath('/')" class="flex items-center">
         <div>
           <img
@@ -11,7 +11,7 @@
           <img class="h-10 lg:hidden" src="~/assets/images/logo.png" alt="" />
         </div>
       </NuxtLink>
-      <span class="ml-auto mt-3 inline-flex items-center space-x-6">
+      <span class="ml-auto inline-flex items-center space-x-6">
         <Button
           @click.stop="$router.push(localePath('/about'));"
           animate
@@ -21,7 +21,6 @@
         >
         <LanguageSelector />
       </span>
-
     </div>
   </header>
 </template>

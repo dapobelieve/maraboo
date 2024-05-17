@@ -10,7 +10,7 @@
                   <img src="~/assets/images/secure.png" alt="phone-logo" />
                 </div>
                 <div class="space-y-6 sub-content">
-                  <h1 class="display-2">{{ $t("home.section8.secure.title") }}</h1>
+                  <h1 class="display-3">{{ $t("home.section8.secure.title") }}</h1>
                   <p class="text-2" v-html="$t('home.section8.secure.body')"></p>
                 </div>
               </Card>
@@ -21,7 +21,7 @@
                   direction="down"
               >
                 <div class="sub-content space-y-6">
-                  <h1 class="display-2">{{ $t("home.section8.from.title") }}</h1>
+                  <h1 class="display-3">{{ $t("home.section8.from.title") }}</h1>
                   <p class="text-2" v-html="$t('home.section8.from.body')"></p>
                 </div>
               </Card>
@@ -35,76 +35,51 @@
 
           <!--  Testimonials-->
           <Card class="flex justify-center bg-neutral overflow-hidden text-white !py-24">
-            <div class="flex w-full justify-between lg:flex-row flex-col items-center space-y-16 lg:space-y-0 space-x-8">
-                <div
-                    class="flex-col lg:flex lg:max-w-[416px] justify-between space-y-16 lg:h-full sub-content"
-                >
-                  <h1 class="display-2 text-center lg:text-left" v-html="$t('home.section9.head')"></h1>
-                  <div class="relative space-x-10 lg:flex hidden">
-                    <Button
-                        class="btn-xl swiper-btn-left text-center btn-circle shrink-0 rounded-full border border-surface-300"
-                    >
-                      <Icon
-                          icon="chevron-left"
-                          size="4rem"
-                          class="ml-1 font-extrabold text-surface-400"
-                      ></Icon>
-                    </Button>
-                    <Button
-                        class="btn-xl swiper-btn-right btn-circle shrink-0 rounded-full border border-surface-300"
-                    >
-                      <Icon
-                          icon="chevron-right"
-                          size="4rem"
-                          class="ml-2 font-extrabold text-surface-400"
-                      ></Icon>
-                    </Button>
-                  </div>
-                </div>
-                <div class="flex dswiper flex-col items-center space-y-10 sub-content">
-                  <swiper
-                      :slides-per-view="'auto'"
-                      :modules="modules"
-                      slide-next-class=".btn-right"
-                      loop
-                      :navigation="navs"
-                      :pagination="{ clickable: true }"
-                      @swiper="onSwiper"
-                      class="hidden">
-                    <swiper-slide v-for="(x, index) in 3" class="w-full">
-                      <div class="flex flex-col items-center space-y-10 w-full sub-content">
-                        <img src="~/assets/images/customer.png" alt />
-                        <div class="text-2">John Doe {{index+1}} . Canada</div>
+            <div class="flex w-full justify-center lg:flex-row flex-col space-y-16 lg:space-y-0 space-x-8">
+                <div class="flex dswiper items-center  justify-between w-full space-y-10">
+                  <Button
+                      class="btn-xl hidden lg:block swiper-btn-left btn-circle shrink-0 rounded-full border border-surface-300"
+                  >
+                    <Icon
+                        icon="chevron-left"
+                        size="4rem"
+                        class="ml-1 font-extrabold text-surface-400"
+                    ></Icon>
+                  </Button>
 
-                      <p class="text-center max-w-s text-3">
-                        “I love that Maraboo gives me the real exchange rate. It
-                        means more of my money goes to my loved ones in Togo.”
-                      </p>
-                      </div>
-                    </swiper-slide>
-                  </swiper>
+                  <div class="max-w-[600px] w-full flex justify-center">
+                    <swiper
+                        :slides-per-view="'auto'"
+                        :modules="modules"
+                        slide-next-class=".btn-right"
+                        loop
+                        :navigation="navs"
+                        :pagination="{ clickable: true }"
+                        @swiper="onSwiper">
+                      <swiper-slide v-for="(x, index) in 3">
+                        <div class="flex flex-col items-center space-y-10 w-full sub-content">
+                          <img src="~/assets/images/customer.png" alt />
+                          <div class="text-2">John Doe {{index+1}} . Canada</div>
 
-                  <!--   mobile-->
-                  <div class="relative space-x-10 lg:lg:hidden block">
-                    <Button
-                        class="btn-xl swiper-btn-left btn-circle shrink-0 rounded-full border border-surface-300"
-                    >
-                      <Icon
-                          icon="chevron-left"
-                          size="4rem"
-                          class="ml-1 font-extrabold text-surface-400"
-                      ></Icon>
-                    </Button>
-                    <Button
-                        class="btn-xl swiper-btn-right btn-circle shrink-0 rounded-full border border-surface-300"
-                    >
-                      <Icon
-                          icon="chevron-right"
-                          size="4rem"
-                          class="ml-2 font-extrabold text-surface-400"
-                      ></Icon>
-                    </Button>
+                          <p class="text-center max-w-s text-3">
+                            “I love that Maraboo gives me the real exchange rate. It
+                            means more of my money goes to my loved ones in Togo.”
+                          </p>
+                        </div>
+                      </swiper-slide>
+                    </swiper>
                   </div>
+
+                  <Button
+                      class="btn-xl hidden lg:block swiper-btn-right btn-circle shrink-0 rounded-full border border-surface-300"
+                  >
+                    <Icon
+                        icon="chevron-right"
+                        size="4rem"
+                        class="ml-2 font-extrabold text-surface-400"
+                    ></Icon>
+                  </Button>
+
                 </div>
               </div>
           </Card>
@@ -140,9 +115,13 @@
   }
 }
 
+:deep(.swiper) {
+  width: fit-content !important;
+}
+
 :deep(.swiper-pagination) {
-  bottom: 100px !important;
-  left: 270px;
+  bottom: 57px !important;
+  left: 0px;
 }
 
 

@@ -1,66 +1,60 @@
 <template>
-  <section ref="xsection" class="x-section lg:h-screen">
+  <section ref="xsection" class="x-section">
     <div class="container">
       <div class="content-wrap relative">
-        <div class="w-full items-start justify-between lg:flex">
-          <div class="flex-col overflsow-hidden relative flex h-full  w-full">
-            <div class="space-y-10 mb-9 lg:mb-0">
+        <div class="w-full space-y-32">
+          <div class=" flex">
+            <div class="space-y-10 mb-9 lg:mb-0 flex flex-col items-center w-full">
               <h1 class="display-2 text-start">{{ $t("home.section6.how.name") }}</h1>
               <p class="text-2" v-html="$t('home.section6.how.text')"></p>
             </div>
-            <div class="flex grow items-end lg:space-x-8">
-              <!--                <div class="bar">-->
-              <!--                  <div class="bg-slate h-1/2 w-[3px]"></div>-->
-              <!--                </div>-->
-              <!--  desktop-->
-              <div class="w-full hidden flex-col max-w-smd text-wrap lg:flex">
-                <div
-                    v-for="(step, index) in steps"
-                    ref="stepItem"
-                    class="step-item mb-8 w-full flex items-start psx-4"
-                >
-                  <div class="">
-                    <small class="font-bold text-primary">
-                      {{
-                        step.step
-                      }}
-                    </small>
-                    <h1 class="display-3 mb-4">{{ step.title }}</h1>
-                    <p class="text-2 leading-9">{{ step.body }}</p>
-                  </div>
-                </div>
-              </div>
-              <!--  ipad n mobile -->
-              <div class="flex max-w-sm flex-col lg:hidden">
-                <div
-                    v-for="(step, index) in steps"
-                    class="mb-8 flex flex-col items-start px-4 pb-10 opacity-100"
-                >
-                  <div>
-                    <img :src="images[index].src" alt />
-                  </div>
-                  <div class="space-y-4">
-                    <small class="font-bold text-primary">
-                      {{
-                        step.step
-                      }}
-                    </small>
-                    <h1 class="display-3 mb-4">{{ step.title }}</h1>
-                    <p class="text-2 leading-9">{{ step.body }}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
-          <div class="relative hidden w-full lg:block">
-            <div class="w-full flex justify-center">
-              <div class="img-step-wrapper ">
-                <div v-for="(image, imgIndex) in images" :key="imgIndex" ref="imgStep" class="img-step">
-                  <img :src="image.src" alt class="md:h-[700px] " />
-                </div>
-              </div>
-            </div>
-          </div>
+         <div class="space-y-12">
+           <div class="bg-white p-12 justify-between overflow-clip rounded flex">
+             <div class="max-w-md">
+               <span class="font-bold text-primary">{{  steps[0].step }}</span>
+               <h1 class="display-3">{{  steps[0].title }}</h1>
+               <p class="text-2">{{
+                   steps[0].body
+                 }}</p>
+             </div>
+             <div class="w-full flex justify-center">
+               <div class="h-[25rems]">
+                 <img class="bg-cover " alt="" :src="images[0].src">
+               </div>
+             </div>
+           </div>
+           <div class="flex lg:flex-row flex-col lg:space-x-12 space-x-0 lg:space-y-0 space-y-6 justify-between itesms-start ">
+             <div class="bg-white w-full space-y-10 p-8 px-6 lg:px-12 h-[700px] overflow-clip rounded flex flex-col">
+               <div class="max-w-md">
+                 <span class="font-bold text-primary">{{  steps[1].step }}</span>
+                 <h1 class="display-3">{{  steps[1].title }}</h1>
+                 <p class="text-2">{{
+                     steps[1].body
+                   }}</p>
+               </div>
+               <div class="w-full flex justify-center">
+                 <div class="h-[25rem] w-[300px]">
+                   <img class="drop-shadow-2xl shadow-2xl" alt="" :src="images[1].src">
+                 </div>
+               </div>
+             </div>
+             <div class="bg-white w-full space-y-10 p-8 px-6 lg:px-12 h-[700px] overflow-clip rounded flex flex-col">
+               <div class="max-w-md">
+                 <span class="font-bold text-primary">{{  steps[2].step }}</span>
+                 <h1 class="display-3">{{ steps[2].title }}</h1>
+                 <p class="text-2">{{
+                     steps[2].body
+                   }}</p>
+               </div>
+               <div class="w-full flex justify-center">
+                 <div class="h-[25rem]">
+                   <img class="drop-shadow-2xl shadow-2xl" alt="" :src="images[2].src">
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
         </div>
       </div>
     </div>
@@ -240,11 +234,11 @@ function handleResize() {
 const isMobile = () => window.innerWidth <= 1000;
 
 onMounted(() => {
-  if (isMobile()) {
-    return;
-  }
-
-  initScrollTriggers();
+  // if (isMobile()) {
+  //   return;
+  // }
+  //
+  // initScrollTriggers();
 });
 
 // onMounted(() => {
@@ -256,29 +250,29 @@ onMounted(() => {
 
 </script>
 
-<style lang="scss" scoped>
-.text-wrap {
-  //position: relative;
-  overflow: hidden;
-  width: 450px;
-  //height: 80vh;
-  background-color: red;
-}
+<!--<style lang="scss" scoped>-->
+<!--.text-wrap {-->
+<!--  //position: relative;-->
+<!--  overflow: hidden;-->
+<!--  width: 450px;-->
+<!--  //height: 80vh;-->
+<!--  background-color: red;-->
+<!--}-->
 
-.step-item {
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transform: translateY(100%);
-  opacity: 0;
-}
+<!--.step-item {-->
+<!--  left: 0;-->
+<!--  top: 0;-->
+<!--  right: 0;-->
+<!--  bottom: 0;-->
+<!--  z-index: 10;-->
+<!--  width: 100%;-->
+<!--  height: 100%;-->
+<!--  position: absolute;-->
+<!--  transform: translateY(100%);-->
+<!--  opacity: 0;-->
+<!--}-->
 
-.img-step-wrapper {
-  height: 534px;
-}
-</style>
+<!--.img-step-wrapper {-->
+<!--  height: 534px;-->
+<!--}-->
+<!--</style>-->

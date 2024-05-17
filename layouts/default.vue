@@ -1,7 +1,7 @@
 <template>
-  <div class="scroller relative w-full bg-auto bg-cover">
+  <div class="scroller w-full">
     <div class="mb-[5rem] flex flex-col items-center">
-      <div class="relative w-full">
+      <div class=" w-full">
         <Nav :bg-transparent="false" />
         <div>
           <slot />

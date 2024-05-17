@@ -36,8 +36,8 @@
           </span>
         </div>
       </div>
-      <button :disabled="!config.services?.length" @click="emits('step')">
-        Change
+      <button :disabled="!config.services?.length" class="text-sm font-bold bg-[#d0d0d038] px-3 py-1 rounded" @click="emits('step')">
+        Select
       </button>
     </div>
   </div>

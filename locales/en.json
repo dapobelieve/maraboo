@@ -37,8 +37,8 @@
     },
     "section4": {
       "left": {
-        "super-power": "Your new superpower",
-        "offer": "We offer the widest rage of payment and                 disbursements methods to meet all your needs"
+        "super-power": "Your New Superpower",
+        "offer": "We offer the widest rage of payment and disbursements methods to meet all your needs"
       },
       "right": {
         "cash": {
@@ -74,17 +74,17 @@
     "section6": {
       "how": {
         "name": "How it works",
-        "text": " Sending money to or from UMOA is <br />as easy as 1-2-3 withus.",
+        "text": " Sending money to or from UMOA is as easy as 1-2-3 withus.",
         "steps": [
           {
             "step": "01",
-            "title": "Sign Up",
+            "title": "Join the Movement",
             "body": "Download the app and verify your identity"
           },
           {
             "step": "02",
             "title": "Download the App and Verify your Identity",
-            "body": "Lorem ipsum dolor sit amet consectetur. Nunc pulvinar \" +      \"nam purus nunc interdum lorem. Venenatis nisl \" +  \"pulvinar urna facilisi eget vel fringilla"
+            "body": ""
           },
           {
             "step": "03",

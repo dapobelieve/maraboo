@@ -32,44 +32,36 @@ const isMobile = () => window.innerWidth <= 1000;
 
 
 onMounted(() => {
-  if (isMobile()) {
-    return; // Do nothing if it's a mobile device
-  }
+  // if (isMobile()) {
+  //   return; // Do nothing if it's a mobile device
+  // }
 
-  let bodyScrollBar = Scrollbar.init(document.body, {
-    damping: 0.1,
-    delegateTo: document,
-  });
+  // let bodyScrollBar = Scrollbar.init(document.body, {
+  //   damping: 0.1,
+  //   delegateTo: document,
+  // });
 
-  ScrollTrigger.scrollerProxy(".scroller", {
-    scrollTop(value) {
-      if (arguments.length) {
-        bodyScrollBar.scrollTop = value;
-      }
-      return bodyScrollBar.scrollTop;
-    },
-  });
-
-  ScrollTrigger.create({
-    trigger: calculator.value,
-    scroller: '.scroller',
-    start: () => {
-      const twowayHeight = twoWay.value?.offsetHeight;
-      return `top ${twowayHeight}px`;
-    },
-    endTrigger: content.value,
-    end: () => {
-      const target = content.value?.offsetHeight;
-      const twowaytHeight =  twoWay.value?.offsetHeight;
-      const newHeight = target - twowaytHeight;
-      return `bottom ${newHeight + 10}px`;
-    },
-    scrub: true,
-    pin: twoWay.value,
-    invalidateOnRefresh: true,
-  });
-
-  ScrollTrigger.addEventListener('refreshInit', () => bodyScrollBar.update());
-  ScrollTrigger.refresh();
+  // ScrollTrigger.scrollerProxy(".scroller", {
+  //   scrollTop(value) {
+  //     if (arguments.length) {
+  //       bodyScrollBar.scrollTop = value;
+  //     }
+  //     return bodyScrollBar.scrollTop;
+  //   },
+  // });
+  //
+  // ScrollTrigger.create({
+  //   trigger: calculator.value,
+  //   scroller: '.scroller',
+  //   start: "top center-=100",
+  //   end: "bottom center+=100",
+  //   scrub: true,
+  //   markers: true,
+  //   pin: twoWay.value,
+  //   invalidateOnRefresh: true,
+  // });
+  //
+  // ScrollTrigger.addEventListener('refreshInit', () => bodyScrollBar.update());
+  // ScrollTrigger.refresh();
 })
 </script>

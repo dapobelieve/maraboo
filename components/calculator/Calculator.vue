@@ -67,7 +67,7 @@
                 <span class="text-emphasis-200">Real exchange rate</span>
               </div>
               <div class="amount space-x-1">
-                <span class="text-emphasis-900">{{ state.rate }}</span>
+                <span class="text-active">{{ state.rate }}</span>
                 <small class="currency text-emphasis-100">CAD</small>
               </div>
             </div>
