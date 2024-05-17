@@ -1,6 +1,6 @@
 <template>
   <header class="z-20  sticky top-0">
-    <div class="flex w-full items-center shadow-2sxl bg-[#E3E1EB] rounded px-3">
+    <div class="flex w-full items-center shadow-2sxl py-2 bg-[#E3E1EB] rounded px-3">
       <NuxtLink :to="localePath('/')" class="flex items-center">
         <div>
           <img
