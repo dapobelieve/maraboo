@@ -10,7 +10,7 @@
             </div>
           </div>
          <div class="space-y-12">
-           <div class="bg-white p-12 justify-between overflow-clip rounded flex">
+           <div class="bg-white p-12 justify-between h-[700px] overflow-clip rounded flex">
              <div class="max-w-md">
                <span class="font-bold text-primary">{{  steps[0].step }}</span>
                <h1 class="display-3">{{  steps[0].title }}</h1>
@@ -18,9 +18,9 @@
                    steps[0].body
                  }}</p>
              </div>
-             <div class="w-full flex justify-center">
-               <div class="h-[25rems]">
-                 <img class="bg-cover " alt="" :src="images[0].src">
+             <div class="w-full flex justify-end">
+               <div class="h-[25rem] w-[300px]">
+                 <img class="drop-shadow-2xl" alt="" :src="images[0].src">
                </div>
              </div>
            </div>
