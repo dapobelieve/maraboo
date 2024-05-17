@@ -29,8 +29,8 @@
             </div>
             <div class="lg:flex h-52 lg:w-full">
               <img
-                src="~/assets/images/body.png"
-                class="mb-10 bg-cover md:mb-0"
+                src="~/assets/images/mock-up.png"
+                class="mb-10 md:mb-0"
                 alt="phone-logo"
               />
               <Button class="btn-lg ml-auto shrink-0">Download Now</Button>
