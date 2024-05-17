@@ -74,7 +74,6 @@
       </div>
     </section>
     <WhyChoose />
-    <HowItWorks />
     <Extend />
     <Testimonial />
     <Faq />

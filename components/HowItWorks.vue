@@ -243,6 +243,7 @@ onMounted(() => {
   if (isMobile()) {
     return;
   }
+
   initScrollTriggers();
 });
 
