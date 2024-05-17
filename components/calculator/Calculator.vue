@@ -378,6 +378,6 @@ function closeConfigDrawer() {
 }
 
 .dynamic-enter {
-  animation: slideInTopFastToSlow 100ms ease both;
+  animation: slideInTopFastToSlow 50ms ease both;
 }
 </style>
