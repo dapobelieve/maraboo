@@ -11,16 +11,16 @@
           </div>
          <div class="space-y-12">
            <div class="bg-white p-12 justify-between h-[700px] overflow-clip rounded flex">
-             <div class="max-w-md">
+             <div class="max-w-lg w-full">
                <span class="font-bold text-primary">{{  steps[0].step }}</span>
                <h1 class="display-3">{{  steps[0].title }}</h1>
                <p class="text-2">{{
                    steps[0].body
                  }}</p>
              </div>
-             <div class="w-full flex justify-end">
-               <div class="h-[25rem] w-[300px]">
-                 <img class="drop-shadow-2xl" alt="" :src="images[0].src">
+             <div class="w-full flex  justify-center">
+               <div class="h-[25rem] w-[350px]">
+                 <img class="drop-shadow-2xl relative top-[84px]]" alt="" :src="images[0].src">
                </div>
              </div>
            </div>
@@ -249,30 +249,3 @@ onMounted(() => {
 // });
 
 </script>
-
-<!--<style lang="scss" scoped>-->
-<!--.text-wrap {-->
-<!--  //position: relative;-->
-<!--  overflow: hidden;-->
-<!--  width: 450px;-->
-<!--  //height: 80vh;-->
-<!--  background-color: red;-->
-<!--}-->
-
-<!--.step-item {-->
-<!--  left: 0;-->
-<!--  top: 0;-->
-<!--  right: 0;-->
-<!--  bottom: 0;-->
-<!--  z-index: 10;-->
-<!--  width: 100%;-->
-<!--  height: 100%;-->
-<!--  position: absolute;-->
-<!--  transform: translateY(100%);-->
-<!--  opacity: 0;-->
-<!--}-->
-
-<!--.img-step-wrapper {-->
-<!--  height: 534px;-->
-<!--}-->
-<!--</style>-->
