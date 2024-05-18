@@ -1,6 +1,6 @@
 <template>
-  <header class="z-20  sticky top-0">
-    <div class="flex w-full items-center shadow-2sxl py-2 bg-[#E3E1EB] rounded px-3">
+  <header class="z-20 " :class="{'sticky': isSticky}">
+    <div class="flex navbar w-full items-center py-2 bg-[#E3E1EB] px-6">
       <NuxtLink :to="localePath('/')" class="flex items-center">
         <div>
           <img
@@ -38,6 +38,7 @@ export default {
       locale: false,
       mobileCompany: false,
       contact: false,
+      isSticky: false,
       activeLocale: computed(() => locale),
     });
 
@@ -55,24 +56,48 @@ export default {
       }
     );
 
-    // function scrollIntoView(e) {
-    //   const { hash } = e.target;
-    //   document.querySelector(hash).scrollIntoView({ behavior: "smooth" });
-    //   state.showMobileMenu = false;
-    // }
+   function handleScroll() {
+      state.isSticky = window.scrollY > 100;
+    }
+    onMounted(() => {
+      window.addEventListener('scroll', handleScroll)
+    })
+
+    onBeforeMount(() => {
+      window.removeEventListener('scroll', handleScroll);
+    })
 
     return {
       ...toRefs(state),
       computedHowToNav,
-      // scrollIntoView,
     };
   },
 };
 </script>
 
-<style scoped>
-.scrolled {
-  background-color: #fff !important;
-  color: #111 !important;
+<style scoped lang="scss">
+.navbar {
+  transition: top 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+
+.sticky {
+  position: sticky;
+  top: -100px;
+  animation: slideDown 0.3s forwards;
+  width: 100%;
+  @apply px-20 bg-transparent;
+
+  .navbar {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    @apply rounded-full shadow-2xl
+  }
+}
+
+@keyframes slideDown {
+  to {
+    top: 5px;
+  }
 }
 </style>
