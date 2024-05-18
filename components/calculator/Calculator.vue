@@ -297,13 +297,13 @@ async function convert(amount) {
       amount: amount,
       mode: state.txn.mode,
     });
-    const { converted, user_pays, we_convert, our_fee } = res;
+    const { converted, user_pays, we_convert, our_fee, total_fees } = res;
     if (state.txn.mode === "send") {
       state.txn.receive = _2dp(converted);
     } else {
       state.txn.send = _2dp(user_pays);
     }
-    state.txn.our_fee = _2dp(our_fee);
+    state.txn.our_fee = _2dp(total_fees);
     state.txn.we_convert = _2dp(we_convert);
   } catch (e) {
   } finally {
