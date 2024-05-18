@@ -10,8 +10,8 @@
             </div>
           </div>
          <div class="space-y-12">
-           <div class="bg-white p-12 justify-between h-[700px] overflow-clip rounded flex">
-             <div class="max-w-lg w-full">
+           <div class="bg-white p-8 px-6 justify-between h-[700px] overflow-clip rounded lg:flex">
+             <div class="max-w-lg mb-10 w-full">
                <span class="font-bold text-primary">{{  steps[0].step }}</span>
                <h1 class="display-3">{{  steps[0].title }}</h1>
                <p class="text-2">{{
@@ -20,7 +20,7 @@
              </div>
              <div class="w-full flex  justify-center">
                <div class="h-[25rem] w-[350px]">
-                 <img class="drop-shadow-2xl relative top-[84px]]" alt="" :src="images[0].src">
+                 <img class="drop-shadow-2xl relative lg:top-[44px]" alt="" :src="images[0].src">
                </div>
              </div>
            </div>
