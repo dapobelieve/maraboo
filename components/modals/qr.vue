@@ -1,11 +1,11 @@
 <template>
   <VueFinalModal
     class="flex items-center justify-center text-white"
-    content-class="bg-primary px-2 py-6 w-[600px] rounded"
+    content-class="bg-primary lg:px-4 lg:py-12 px-2 py-6 w-[600px] rounded"
   >
     <div class="relative flex flex-col items-center text-center">
       <button
-        class="bg-[#d0d0d038] absolute lg:-top-8 right-0 rounded-full p-1"
+        class="bg-[#d0d0d038] absolute -top-8 right-0 rounded-full p-1"
         @click.stop="emit('confirm')"
       >
         <img src="~/assets/images/x.svg" alt="" />
