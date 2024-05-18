@@ -87,7 +87,7 @@ export default {
   top: -100px;
   animation: slideDown 0.3s forwards;
   width: 100%;
-  @apply px-20 bg-transparent;
+  @apply lg:px-20 bg-transparent;
 
   .navbar {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
