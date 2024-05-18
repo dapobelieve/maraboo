@@ -20,7 +20,7 @@
              </div>
              <div class="w-full flex  justify-center">
                <div class="h-[25rem] w-[350px]">
-                 <img class="drop-shadow-2xl relative lg:top-[44px]" alt="" :src="images[0].src">
+                 <img class="drop-shadow-2xl shadow-2xl relative lg:top-[44px]" alt="" :src="images[0].src">
                </div>
              </div>
            </div>

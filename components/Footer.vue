@@ -28,11 +28,13 @@
               ></a>
             </div>
             <div class="lg:flex h-52 lg:w-full">
-              <img
-                src="~/assets/images/mock-up.png"
-                class="mb-10 md:mb-0"
-                alt="phone-logo"
-              />
+             <div class="lg:w-[400px] w-[200px]">
+               <img
+                   src="~/assets/images/body.png"
+                   class="mb-10 md:mb-0 bg-contain "
+                   alt="phone-logo"
+               />
+             </div>
               <Button class="btn-lg ml-auto shrink-0">Download Now</Button>
             </div>
           </div>
