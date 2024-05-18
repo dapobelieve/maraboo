@@ -10,7 +10,7 @@
             </div>
           </div>
          <div class="space-y-12">
-           <div class="bg-white p-8 px-6 justify-between h-[700px] overflow-clip rounded lg:flex">
+           <div class="bg-white p-8 px-6 justify-between h-[500px] overflow-clip rounded lg:flex">
              <div class="max-w-lg mb-10 w-full">
                <span class="font-bold text-primary">{{  steps[0].step }}</span>
                <h1 class="display-3">{{  steps[0].title }}</h1>
@@ -25,7 +25,7 @@
              </div>
            </div>
            <div class="flex lg:flex-row flex-col lg:space-x-12 space-x-0 lg:space-y-0 space-y-6 justify-between itesms-start ">
-             <div class="bg-white w-full space-y-10 p-8 px-6 lg:px-12 h-[700px] overflow-clip rounded flex flex-col">
+             <div class="bg-white w-full space-y-10 p-8 px-6 lg:px-12 h-[500px] lg:h-[700px] overflow-clip rounded flex flex-col">
                <div class="max-w-md">
                  <span class="font-bold text-primary">{{  steps[1].step }}</span>
                  <h1 class="display-3">{{  steps[1].title }}</h1>
@@ -39,7 +39,7 @@
                  </div>
                </div>
              </div>
-             <div class="bg-white w-full space-y-10 p-8 px-6 lg:px-12 h-[700px] overflow-clip rounded flex flex-col">
+             <div class="bg-white w-full space-y-10 p-8 px-6 lg:px-12 h-[500px] lg:h-[700px] overflow-clip rounded flex flex-col">
                <div class="max-w-md">
                  <span class="font-bold text-primary">{{  steps[2].step }}</span>
                  <h1 class="display-3">{{ steps[2].title }}</h1>
