@@ -1,7 +1,7 @@
 <template>
   <div class="space-y-8 rounded-b-[8px] rounded-t-[28px] bg-[#FFFFFF0F] p-5">
     <h1 class="text-sm font-medium uppercase text-emphasis-900">
-      delivery information
+      send money to
     </h1>
     <div class="flex w-full items-center">
       <div class="grow space-y-2">

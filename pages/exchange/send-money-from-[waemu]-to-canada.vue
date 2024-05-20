@@ -2,37 +2,39 @@
   <section class="py-6">
     <div class="bg-coloured w-full rounded">
       <div class="container">
-        <div class="w-full items-start justify-between lg:flex">
-            <div class="max-w-xl text-white">
-              <h1 class="display-2 mb-4 ">
-                Send money from
-                <span class="inline-flex items-center">
+       <div class="content-wrap">
+         <div class="w-full items-start justify-between lg:flex">
+           <div class="max-w-xl text-white">
+             <h1 class="display-2 mb-4 ">
+               Send money from
+               <span class="inline-flex items-center">
                   <img
-                    class="mr-2 h-6 w-6 md:h-14 md:w-14"
-                    :src="images[waemuCountry?.flag]"
-                    alt=""
+                      class="mr-2 h-6 w-6 md:h-14 md:w-14"
+                      :src="images[waemuCountry?.flag]"
+                      alt=""
                   />{{ waemuCountry?.name }}
                   </span>
-                  to
-                <span class="inline-flex items-center"
-                  ><img
-                    class="mr-2 h-6 w-6 md:h-14 md:w-14"
-                    :src="images['canada']"
-                    alt=""
-                  /><span>Canada</span>
+               to
+               <span class="inline-flex items-center"
+               ><img
+                   class="mr-2 h-6 w-6 md:h-14 md:w-14"
+                   :src="images['canada']"
+                   alt=""
+               /><span>Canada</span>
                 </span>
-                at the real exchange rate
-              </h1>
-              <p class="text-2 max-w-md text-center md:text-left">
-                From local to global in real time, Maraboo Magic: Discover
-                3xSavings on international money Transfers to or from WAEMU
-                countries!
-              </p>
-            </div>
-            <div class="calculator flex justify-center lg:justify-end">
-              <Calculator class="lg:ml-auto" />
-            </div>
-          </div>
+               at the real exchange rate
+             </h1>
+             <p class="text-2 max-w-md text-center md:text-left">
+               From local to global in real time, Maraboo Magic: Discover
+               3xSavings on international money Transfers to or from WAEMU
+               countries!
+             </p>
+           </div>
+           <div class="calculator flex justify-center lg:justify-end">
+             <Calculator class="lg:ml-auto" />
+           </div>
+         </div>
+       </div>
       </div>
     </div>
   </section>

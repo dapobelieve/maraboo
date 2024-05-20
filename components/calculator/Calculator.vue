@@ -64,7 +64,7 @@
             <div class="flex justify-between">
               <div class="fee inline-flex space-x-4">
                 <img src="~/assets/images/multiply.svg" alt="" />
-                <span class="text-emphasis-200">Real exchange rate</span>
+                <span class="text-emphasis-200">Exchange rate</span>
               </div>
               <div class="amount space-x-1">
                 <span class="text-active">{{ state.rate }}</span>
