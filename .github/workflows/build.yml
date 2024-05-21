@@ -74,7 +74,7 @@ jobs:
             docker compose down --rmi all
             docker compose up -d
 
-      - name: Deploy to Hetzner development
+      - name: Deploy to EC2 development
         uses: appleboy/ssh-action@master
         if: github.ref == 'refs/heads/develop'
         with:
