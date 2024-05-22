@@ -56,18 +56,18 @@
       }
     },
     "section5": {
-      "what": "Why <br class='hidden md:block' />                  Choose us",
+      "what": "Why <br class='hidden md:block' /> Choose us",
       "about": "<p class=\"text-2\"> When you send money with Maraboo you not only save your time and money but you a company built by native africans</p>",
       "one": {
-        "top": " <small class=\"font-bold text-multi-color\">The</small>  <h1 class=\"display-3\">Fastest</h1>",
-        "bottom": "<p class=\"text-2\"> We complete transfers in real time                </p>"
+        "top": "<h1 class=\"display-3\">Lighting fast</h1>",
+        "bottom": "<p class=\"text-2\"> Complete your transaction end-to-end within minutes, with the broadest selection of delivery options.</p>"
       },
       "two": {
-        "top": " <small class=\"font-bold text-multi-color\">The</small>                <h1 class=\"display-3\">Cheapest</h1>",
-        "bottom": "<p class=\"text-2\">                  We give you the lowest rate               every time                </p>"
+        "top": "<h1 class=\"display-3\">Cost Effective</h1>",
+        "bottom": "<p class=\"text-2\">Save up to 14% on fees compared to competitors.</p>"
       },
       "three": {
-        "top": "<small class=\"font-bold text-multi-color\">The</small>                <h1 class=\"display-3\">Most Versatile</h1>",
+        "top": "<h1 class=\"display-3\">Transfer Freedom</h1>",
         "bottom": "<p class=\"text-2\">                  The widest range of collection and delivery options                </p>"
       }
     },
@@ -101,7 +101,7 @@
         "body": " Rest assured, your funds and private information are safeguarded by state-of-the-art security technology, compliant with both local and global regulations"
       },
       "from": {
-        "title": "From local to global.",
+        "title": "From Grassroots to global.",
         "body": "Seamlessly transfer up to $9,900 daily to/from WAEMU countries at the Real Exchange. Your gateway to hassle-free international transactions!"
       },
       "did": "Did you know that a 10% reduction in transaction fees for sending money in & out of UMOA country can boost the revenue of regional households by up to 16%?"
@@ -143,14 +143,14 @@
     "faq-header": "Frequently Asked Questions"
   },
   "about-us": {
-    "name": "We're <span class=\"text-multi-color\">building borderless financial systems</span>   to              connect West-Africans across the globe",
-    "caption": "Introducing Maraboo, a West-African fintech firm offering                transformative financial solutions that are fair, responsible,                inclusive, and designed to improve the quality of life of West                Africans.",
+    "name": "We're <span class=\"text-multi-color\">revolutionizing international money transfers</span> across UOMA countries.",
+    "caption": "Founded in 2022, Maraboo is a West African fintech firm offering transformative financial solutions that are fair, responsible, inclusive, and designed to improve the quality of life of West Africans.",
 
     "our": "Our Core mission is to make payments in & out of WAEMU countries              up to 3x cheaper!",
     "section2": {
-      "caption": " We believe that remittances should be fast, low cost, and have a                major social impact.",
-      "text": "Two birds one stone - we apply the real exchange rate on all                  of our transactions to save you money and make the UN social                  development goal by significantly reducing remittance cost by                  2030 a reality today!",
-      "we-believe": " We believe that <br />            <span class=\"text-multi-color\">remittances</span> should <br />            be <span class=\"text-multi-color\">fast, low cost</span>.",
+      "caption": "How are we delivering on our mission?",
+      "text": "We've established payment rails connecting 157 banks, 12 mobile money operators, numerous businesses and universities, and over 1000 ATM and in-person cash pickup locations across 9 countries from scratch. Stay tuned and follow our growth!",
+      "we-believe": "We believe in  <span class=\"text-multi-color\">Africans powering African solutions.</span>",
 
       "team": "Meet the team"
     }
@@ -334,7 +334,7 @@
     }
   },
   "footer": {
-    "caption": "A West-African fintech firm offering transformative financial                  <br />                  solutions that are fair, responsible, inclusive,and designed                  <br />                  to improve the quality of life of West Africa.",
+    "caption": "A West-African fintech firm offering transformative <br /> financial solutions that are fair, responsible, inclusive, <br /> and designed to improve the quality of life of West Africans.",
     "registered": "Grand Maraboo Technology Limited is registered as a money service            business with the Financial <br />            Transactions and Reports Analysis Centre of Canada (FINTRAC) under            registration number M23345406",
     "copy": "Grand Maraboo Technologies Limited © 2023 All rights reserved",
     "contact": "Contact us",

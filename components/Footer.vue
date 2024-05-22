@@ -117,7 +117,7 @@
                   <li class="justify-center md:flex">
                     <a href="#" class="text-1 mb-6 block"
                       >Canada: <br />
-                      169 Enterprise Blvd (YSPACE SUITE 300), <br />
+                      169 L'Enterprise Blvd (YSPACE SUITE 300), <br />
                       Markham, ON, L6G 0E7
                     </a>
                     <a href="#" class="text-1 ml-auto"
