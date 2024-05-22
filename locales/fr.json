@@ -78,18 +78,18 @@
         "steps": [
           {
             "step": "01",
-            "title": "Inscrivez-vous",
-            "body": "Recevez en temps réel en espèces, via mobile money ou en banque."
+            "title": "Rejoignez le mouvement Africain",
+            "body": "Profitez dès aujourd'hui de transferts internationaux sécurisé. Téléchargez l'application et vérifiez votre identité."
           },
           {
             "step": "02",
-            "title": "Téléchargez l'application et vérifiez votre identité",
-            "body": "Bénéficiez des tarifs les plus bas, envoyez jusqu'à 9 900 $ par jour."
+            "title": "Payez moins",
+            "body": "Optimisez vos économies avec Maraboo : taux préférentiels, transferts instantanés, limite quotidienne de 9 900 $."
           },
           {
             "step": "03",
-            "title": "Envoyez moins",
-            "body": "Bénéficiez des tarifs les plus bas, envoyez jusqu'à 9 900 $ par jour."
+            "title": "Recevez plus",
+            "body": "Recevez instantanément des paiements internationaux par banque, mobile money, espèces ou direct directement des entreprises."
           }
         ]
       }
@@ -97,22 +97,22 @@
     "section7": "Nous sommes disponibles dans les pays suivants",
     "section8": {
       "secure": {
-        "title": "Securing Your Data Fortress!",
-        "body": " Rest assured, your funds and private information are safeguarded by state-of-the-art security technology, compliant with both local and global regulations"
+        "title": "SNous gardons vos données personnelles en sécurité!",
+        "body": "Rassurez-vous, vos fonds et informations privées sont protégés par une technologie de sécurité de pointe conforme aux réglementations locales et mondiales."
       },
       "from": {
         "title": "From local to global.",
         "body": "Seamlessly transfer up to $9,900 daily to/from WAEMU countries at the Real Exchange. Your gateway to hassle-free international transactions!"
       },
-      "did": "Did you know that a 10% reduction in transaction fees for sending money in & out of UMOA country can boost the revenue of regional households by up to 16%?"
+      "did": "En réduisant les frais de transaction de 10 % sur les transferts internationaux vers les pays de l'UMOA, on peut augmenter le revenu des ménages régionaux jusqu'à 16 %."
     },
     "section9": {
-      "head": "Vrai discours de notre client"
+      "head": "Témoignages de nos clients"
     },
     "section10": {
       "head": "Vous avez encore des questions ?",
-      "body": "Nos agents sont toujours prêts à répondre à vos questions.",
-      "chat": "Discute avec nous"
+      "body": "Nos agents sont toujours prêts à vous aider.",
+      "chat": "Discutez avec nous"
     },
     "faq": [
       {
