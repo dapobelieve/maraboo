@@ -59,22 +59,22 @@
       "what": "Pourquoi nous?",
       "about": "Lorsque vous envoyez de l'argent avec Maraboo, non <br />seulement vous économisez du temps et de l'argent, mais vous soutenez <br />également une entreprise fondée et dirigée par des Africains africans",
       "one": {
-        "top": " <small class=\"font-bold\">Le </small>               <h1 class=\"display-3 mb-6 font-medium\">Plus Rapide</h1>",
+        "top": "<h1 class=\"display-3 mb-6 font-medium\">Plus Rapide</h1>",
         "bottom": "<p class=\"text-2\">Nous effectuons les transferts <br />en temps réel.</p>"
       },
       "two": {
-        "top": " <small class=\"font-bold\">Le </small>               <h1 class=\"display-3 mb-6 font-medium\">Moins Cher</h1>",
+        "top": "<h1 class=\"display-3 mb-6 font-medium\">Moins Cher</h1>",
         "bottom": "<p class=\"text-2\">Nous vous offrons le tarif le plus bas <br /> à chaque fois</p>"
       },
       "three": {
-        "top": "<small class=\"font-bold\">Le</small> <h1 class=\"display-3 mb-6 font-medium\">Plus Polyvalent</h1>",
+        "top": "<h1 class=\"display-3 mb-6 font-medium\">Plus Polyvalent</h1>",
         "bottom": "<p class=\"text-2\"> La plus large d'options de collecte  <br />et de livraison.</p>"
       }
     },
     "section6": {
       "how": {
         "name": "Comment ça fonctionne",
-        "text": "nvoyer de l'argent vers ou depuis l'UMOA est aussi  <br />simple que 1-2-3 avec nous.",
+        "text": "Envoyer de l'argent à l'international est aussi <br /> simple que 1-2-3.",
         "steps": [
           {
             "step": "01",
