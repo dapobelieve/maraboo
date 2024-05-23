@@ -39,18 +39,23 @@
         "offer": "Nous offrons la plus large gamme de méthodes de paiement <br > et de versements pour répondre à tous vos besoins."
       },
       "right": {
-        "cash": {
-          "top": "Cash",
-          "bottom": "Recevez en espèces aux guichets automatiques Ecobank ou aux points Xpress."
+        "bank": {
+          "top": "Bank",
+          "bottom": "Bank-to-bank cross-border transactions completed in minutes."
+        },
+        "bill": {
+          "top": "Bill Payment",
+          "bottom": "Direct payments to businesses and universities streamlined."
         },
         "money": {
           "top": "Mobile Money",
-          "bottom": "Envoyez ou recevez de l'argent via le mobile money."
+          "bottom": "Seamless interoperability across multiple telcos."
         },
-        "bank": {
-          "top": "Bank",
-          "bottom": "Envoyez et recevez depuis des comptes bancaires."
+        "cash": {
+          "top": "Cash",
+          "bottom": "Instant cash pickups at any Ecobank ATM and Xpress point."
         }
+
       }
     },
     "section5": {
