@@ -30,34 +30,37 @@
     },
     "section3": {
       "left": {
-        "one": "Send less with",
-        "two": "Maraboo",
-        "three": "enjoy the lowest rates, receive more in real time"
+        "body": " <h1 class=\"display-2 !font-normal\">\n              <span class=\"text-multi-color\">Save</span> on Cross-border Payments, <span class=\"text-multi-color\">Receive more</span>  Instantly.\n            </h1>"
       }
     },
     "section4": {
       "left": {
-        "super-power": "Your New Superpower",
-        "offer": "We offer the widest rage of payment and disbursements methods to meet all your needs"
+        "super-power": "Your New Superpower<span class=\"text-multi-color\">.</span>",
+        "offer": "Unlocking Financial Connectivity: Francophone Africa and Beyond."
       },
       "right": {
-        "cash": {
-          "top": "Cash",
-          "bottom": "Receive by cash at Ecobank ATMs or Xpress points"
+        "bank": {
+          "top": "Bank",
+          "bottom": "Bank-to-bank cross-border transactions completed in minutes."
+        },
+        "bill": {
+          "top": "Bill Payment",
+          "bottom": "Direct payments to businesses and universities streamlined."
         },
         "money": {
           "top": "Mobile Money",
-          "bottom": "Send or receive using mobile money"
+          "bottom": "Seamless interoperability across multiple telcos."
         },
-        "bank": {
-          "top": "Bank",
-          "bottom": "Send and receive from bank accounts"
+        "cash": {
+          "top": "Cash",
+          "bottom": "Instant cash pickups at any Ecobank ATM and Xpress point."
         }
+
       }
     },
     "section5": {
-      "what": "Why <br class='hidden md:block' /> Choose us",
-      "about": "<p class=\"text-2\"> When you send money with Maraboo you not only save your time and money but you a company built by native africans</p>",
+      "what": "Why <br class='hidden md:block'/> Choose us",
+      "about": "<p class=\"text-2\"> We're building the ultimate platform for seamless UMOA international payments, making cross-border transactions effortless.</p>",
       "one": {
         "top": "<h1 class=\"display-3\">Lighting fast</h1>",
         "bottom": "<p class=\"text-2\"> Complete your transaction end-to-end within minutes, with the broadest selection of delivery options.</p>"
@@ -68,7 +71,7 @@
       },
       "three": {
         "top": "<h1 class=\"display-3\">Transfer Freedom</h1>",
-        "bottom": "<p class=\"text-2\">                  The widest range of collection and delivery options                </p>"
+        "bottom": "<p class=\"text-2\">Send up to $9,900 every 25 hours hassle-free.</p>"
       }
     },
     "section6": {
@@ -94,17 +97,37 @@
         ]
       }
     },
-    "section7": "Where We Extend our support",
+    "section7": "We Currently Operate in the Following Countries:",
     "section8": {
       "secure": {
         "title": "Securing Your Data Fortress!",
         "body": " Rest assured, your funds and private information are safeguarded by state-of-the-art security technology, compliant with both local and global regulations"
       },
       "from": {
-        "title": "From Grassroots to global.",
-        "body": "Seamlessly transfer up to $9,900 daily to/from WAEMU countries at the Real Exchange. Your gateway to hassle-free international transactions!"
+        "title": "From Grassroots to Global.",
+        "body": "Connecting over 40 million Francophone African businesses and families with affordable, real-time cross-border payment solutions!"
       },
-      "did": "Did you know that a 10% reduction in transaction fees for sending money in & out of UMOA country can boost the revenue of regional households by up to 16%?"
+      "did": {
+        "title": "Did you know",
+        "body": "Cutting transaction fees by 10% for UMOA money transfers could fuel regional household income by up to 16%!"
+      },
+      "comments": [
+        {
+          "image": "https://res.cloudinary.com/believe/image/upload/v1716467496/maraboo/t1.jpg",
+          "name": "Aïcha Traore",
+          "comment": "I live in Canada and run a business in Côte d'Ivoire remotely. With Maraboo, I can transfer funds from my Canadian bank to my Ivorian bank in minutes."
+        },
+        {
+          "image": "https://res.cloudinary.com/believe/image/upload/v1716467496/maraboo/t2.jpg",
+          "name": "Sero Razack",
+          "comment": "Maraboo has revolutionized our e-commerce business at Ahiyoyo, making it easy to receive and make payments to customers and suppliers in UMOA countries."
+        },
+        {
+          "image": "https://res.cloudinary.com/believe/image/upload/v1716468412/maraboo/t3.png",
+          "name": "Olivier Compaore",
+          "comment": "Paying my kid's tuition at the University of Ottawa was always a hassle and costly. With Maraboo, I can pay in local currency"
+        }
+      ]
     },
     "section9": {
       "head": "Real Talk from Our Customers"

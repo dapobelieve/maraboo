@@ -28,15 +28,7 @@
     <section>
       <div class="container">
         <div class="content-wrap">
-          <div class="text-center lg:!pt-24">
-            <h1 class="display-2 !font-normal">
-              {{ $t("home.section3.left.one") }}
-              <span
-                class="text-multi-color"
-                v-html="$t('home.section3.left.two')"
-              ></span>
-              , {{ $t("home.section3.left.three") }}
-            </h1>
+          <div class="text-center lg:!pt-24"  v-html="$t('home.section3.left.body')">
           </div>
         </div>
       </div>
