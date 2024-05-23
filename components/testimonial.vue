@@ -57,7 +57,7 @@
                         :navigation="navs"
                         :pagination="{ clickable: true }"
                         @swiper="onSwiper">
-                      <swiper-slide v-for="(x, comment) in comments">
+                      <swiper-slide v-for="(comment, x) in comments">
                         <div class="flex flex-col items-center space-y-10 w-full sub-content">
                           <img class="h-20 rounded-full" :src="comment.image" alt />
                           <div class="text-2">{{ comment.name }} . Canada</div>
@@ -137,17 +137,29 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import {useI18n} from "vue-i18n";
 
+const { t } = useI18n();
+
 const navs = {
   nextEl: '.swiper-btn-right',
   prevEl: '.swiper-btn-left',
 }
 
 const comments = reactive([
-  Array.from({ length: 3 }, (_, i) => ({
-    name: t(`home.section8.comments[${i}].name`),
-    image:  t(`home.section8.comments[${i}].image`),
-    comment:  t(`home.section8.comments[${i}].comment`),
-  }))
+  {
+    name: t(`home.section8.comments[0].name`),
+    image:  t(`home.section8.comments[0].image`),
+    comment:  t(`home.section8.comments[0].comment`),
+  },
+  {
+    name: t(`home.section8.comments[1].name`),
+    image:  t(`home.section8.comments[1].image`),
+    comment:  t(`home.section8.comments[1].comment`),
+  },
+  {
+    name: t(`home.section8.comments[2].name`),
+    image:  t(`home.section8.comments[2].image`),
+    comment:  t(`home.section8.comments[2].comment`),
+  }
 ])
 
 const modules = reactive([
@@ -157,8 +169,5 @@ const modules = reactive([
 const onSwiper = (swiper) => {
   // console.log(swiper);
 };
-
-
-const { t } = useI18n();
 
 </script>
