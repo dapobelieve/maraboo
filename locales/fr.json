@@ -30,9 +30,7 @@
     },
     "section3": {
       "left": {
-        "one": "Envoyez moins avec ",
-        "two": "Maraboo",
-        "three": "profitez des tarifs les plus bas, recevez davantage en temps réel"
+        "body": " <h1 class=\"display-2 !font-normal\">\n              <span class=\"text-multi-color\">Save</span> on Cross-border Payments, <span class=\"text-multi-color\">Receive more</span>  Instantly.\n            </h1>"
       }
     },
     "section4": {
@@ -42,7 +40,7 @@
       },
       "right": {
         "cash": {
-          "top": "cash",
+          "top": "Cash",
           "bottom": "Recevez en espèces aux guichets automatiques Ecobank ou aux points Xpress."
         },
         "money": {
@@ -104,7 +102,27 @@
         "title": "From local to global.",
         "body": "Seamlessly transfer up to $9,900 daily to/from WAEMU countries at the Real Exchange. Your gateway to hassle-free international transactions!"
       },
-      "did": "En réduisant les frais de transaction de 10 % sur les transferts internationaux vers les pays de l'UMOA, on peut augmenter le revenu des ménages régionaux jusqu'à 16 %."
+      "did": {
+        "title": "Did you know",
+        "body": "Cutting transaction fees by 10% for UMOA money transfers could fuel regional household income by up to 16%!"
+      },
+      "comments": [
+        {
+          "image": "https://res.cloudinary.com/believe/image/upload/v1716467496/maraboo/t1.jpg",
+          "name": "Aïcha Traore",
+          "comment": "Je vis au Canada et je gère une entreprise en Côte d'Ivoire à distance. Avec Maraboo, je peux transférer des fonds de ma banque canadienne à ma banque ivoirienne en quelques minutes"
+        },
+        {
+          "image": "https://res.cloudinary.com/believe/image/upload/v1716467496/maraboo/t2.jpg",
+          "name": "Sero Razack",
+          "comment": "Maraboo a transformé notre entreprise de commerce électronique Ahiyoyo, en rendant les paiements avec nos clients et fournisseurs dans les pays de l'UMOA simples et rapides."
+        },
+        {
+          "image": "https://res.cloudinary.com/believe/image/upload/v1716468412/maraboo/t3.png",
+          "name": "Olivier Compaore",
+          "comment": "Payer les frais de scolarité de mon enfant à l'Université d'Ottawa était toujours compliqué et coûteux. Avec Maraboo, je peux payer en monnaie locale."
+        }
+      ]
     },
     "section9": {
       "head": "Témoignages de nos clients"

@@ -5,7 +5,9 @@
         <div class="w-full space-y-20">
           <div class="w-full space-y-16 lg:space-y-0 ">
             <div class="superpower flex flex-col items-center text-center space-y-10">
-              <h1 class="display-2" v-html="$t('home.section4.left.super-power')"></h1>
+              <h1 class="display-2" v-html="$t('home.section4.left.super-power')">
+
+              </h1>
               <p class="text-2 sub-content text-center" v-html="$t('home.section4.left.offer')"></p>
             </div>
           </div>
@@ -15,22 +17,29 @@
                 <div class="inline-flex space-x-3 items-start ">
                   <img alt="" src="~/assets/images/check.png" class="mt-1">
                   <div class="space-y-3">
-                    <h1 class="font-medium text-3xl">Cash</h1>
-                    <p>Receive by cash at Ecobank ATMs or Xpress points</p>
+                    <h1 class="font-medium text-3xl">{{ $t('home.section4.right.bank.top') }}</h1>
+                    <p>{{ $t('home.section4.right.bank.bottom') }}</p>
+                  </div>
+                </div>
+                <div class="inline-flex space-x-3 items-start ">
+                  <img alt="" src="~/assets/images/check.png" class="mt-1">
+                  <div class="space-y-3">
+                    <h1 class="font-medium text-3xl">{{ $t('home.section4.right.bill.top') }}</h1>
+                    <p>{{ $t('home.section4.right.bill.bottom') }}</p>
                   </div>
                 </div>
                 <div class="inline-flex space-x-3 items-start " >
                   <img alt="" src="~/assets/images/check.png" class="mt-1">
                   <div class="space-y-3">
-                    <h1 class="font-medium text-3xl">Mobile Money</h1>
-                    <p>Receive by cash at Ecobank ATMs or Xpress points</p>
+                    <h1 class="font-medium text-3xl">{{ $t('home.section4.right.money.top') }}</h1>
+                    <p>{{ $t('home.section4.right.money.bottom') }}</p>
                   </div>
                 </div>
                 <div class="inline-flex space-x-3 items-start">
                   <img alt="" src="~/assets/images/check.png" class="mt-1">
                   <div class="space-y-3">
-                    <h1 class="font-medium text-3xl">Bank</h1>
-                    <p>Send and receive from bank accounts</p>
+                    <h1 class="font-medium text-3xl">{{ $t('home.section4.right.cash.top') }}</h1>
+                    <p>{{ $t('home.section4.right.cash.bottom') }}</p>
                   </div>
                 </div>
               </div>

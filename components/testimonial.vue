@@ -27,7 +27,8 @@
               </Card>
               <Card class="bg-accent-100 !justify-end flex flex-col" direction="up">
                 <div class="sub-content space-y-6">
-                  <p class="text-2">{{ $t("home.section8.did") }}</p>
+                  <h1 class="display-3">{{ $t("home.section8.did.title") }}</h1>
+                  <p class="text-2">{{ $t("home.section8.did.body") }}</p>
                 </div>
               </Card>
             </div>
@@ -56,14 +57,15 @@
                         :navigation="navs"
                         :pagination="{ clickable: true }"
                         @swiper="onSwiper">
-                      <swiper-slide v-for="(x, index) in 3">
+                      <swiper-slide v-for="(x, comment) in comments">
                         <div class="flex flex-col items-center space-y-10 w-full sub-content">
-                          <img src="~/assets/images/customer.png" alt />
-                          <div class="text-2">John Doe {{index+1}} . Canada</div>
+                          <img class="h-20 rounded-full" :src="comment.image" alt />
+                          <div class="text-2">{{ comment.name }} . Canada</div>
 
                           <p class="text-center max-w-s text-3">
-                            “I love that Maraboo gives me the real exchange rate. It
-                            means more of my money goes to my loved ones in Togo.”
+                            “{{
+                              comment.comment
+                            }}”
                           </p>
                         </div>
                       </swiper-slide>
@@ -79,7 +81,6 @@
                         class="ml-2 font-extrabold text-surface-400"
                     ></Icon>
                   </Button>
-
                 </div>
               </div>
           </Card>
@@ -140,6 +141,14 @@ const navs = {
   nextEl: '.swiper-btn-right',
   prevEl: '.swiper-btn-left',
 }
+
+const comments = reactive([
+  Array.from({ length: 3 }, (_, i) => ({
+    name: t(`home.section8.comments[${i}].name`),
+    image:  t(`home.section8.comments[${i}].image`),
+    comment:  t(`home.section8.comments[${i}].comment`),
+  }))
+])
 
 const modules = reactive([
   Navigation,
