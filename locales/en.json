@@ -167,15 +167,14 @@
     "faq-header": "Frequently Asked Questions"
   },
   "about-us": {
-    "name": "We're <span class=\"text-multi-color\">revolutionizing international money transfers</span> across UOMA countries.",
+    "name": "We're revolutionizing international money transfers across WAEMU countries.",
     "caption": "Founded in 2022, Maraboo is a West African fintech firm offering transformative financial solutions that are fair, responsible, inclusive, and designed to improve the quality of life of West Africans.",
 
-    "our": "Our Core mission is to make payments in & out of WAEMU countries              up to 3x cheaper!",
+    "our": "Our mission is to make cross-border payments in UOMA countries faster and more affordable.",
     "section2": {
       "caption": "How are we delivering on our mission?",
       "text": "We've established payment rails connecting 157 banks, 12 mobile money operators, numerous businesses and universities, and over 1000 ATM and in-person cash pickup locations across 9 countries from scratch. Stay tuned and follow our growth!",
       "we-believe": "We believe in  <span class=\"text-multi-color\">Africans powering African solutions.</span>",
-
       "team": "Meet the team"
     }
   },

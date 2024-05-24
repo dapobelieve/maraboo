@@ -7,7 +7,7 @@
             <h1 class="display-1" v-html="$t('about-us.name')"></h1>
           </div>
           <div class="w-full justify-around flex-col lg:flex-row items-center flex">
-              <p class="text-2 md:max-w-xs leading-9 mb-8 lg:mb-0 md:mb-0 md:text-left">{{ $t("about-us.caption") }}</p>
+              <p class="text-2 md:max-w-md leading-9 mb-8 lg:mb-0 md:mb-0 md:text-left">{{ $t("about-us.caption") }}</p>
               <img alt="" class="h-96" src="~/assets/images/space.png" />
           </div>
         </div>
@@ -16,7 +16,7 @@
     <section style="padding: 0">
       <Card class="bg-coloured flex items-center px-5 py-20 text-white md:py-52">
        <div class="container">
-         <h1 class="display-1 text-center">{{ $t("about-us.our") }}</h1>
+         <h1 class="display-2 text-center">{{ $t("about-us.our") }}</h1>
        </div>
       </Card>
     </section>
@@ -26,7 +26,7 @@
           <div class="content-wrap relative flex w-full justify-between space-x-12 text-black">
             <div class="remittances space-y-12">
               <h1 class="display-3 text-center md:text-left">{{ $t("about-us.section2.caption") }}</h1>
-              <div>
+              <div class="max-w-md">
                 <p class="text-2 text-center md:text-left">{{ $t("about-us.section2.text") }}</p>
               </div>
             </div>
