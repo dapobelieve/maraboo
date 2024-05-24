@@ -82,7 +82,7 @@
   <Extend />
   <Faq />
   <Testimonial />
-  <Chat />
+<!--  <Chat />-->
 </template>
 
 <script setup>

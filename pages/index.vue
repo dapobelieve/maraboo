@@ -39,7 +39,7 @@
     <Extend />
     <Testimonial />
     <Faq />
-    <Chat />
+<!--    <Chat />-->
   </main>
 </template>
 <script setup>

@@ -38,7 +38,7 @@
           <small class="text-emphasis-100">CAD</small>
         </div>
         <div class="estimate h-full grow">
-          <div class="space-y-4 px-6">
+          <div class="space-y-4 lg:px-6 px-2">
             <div class="py- flex justify-between">
               <div class="fee inline-flex space-x-4">
                 <img src="~/assets/images/minus.svg" alt="" />
