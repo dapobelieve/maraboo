@@ -9,7 +9,7 @@
               <p class="lg:max-w-md" v-html="$t('home.section5.about')"></p>
             </div>
             <div class="lg:flex hidden">
-              <img alt src="~/assets/images/choose.svg" />
+              <img class="h-96" alt src="~/assets/images/rats.png" />
             </div>
           </div>
           <div class="w-full gap-10 grid grid-cols-1 lg:grid-cols-3">

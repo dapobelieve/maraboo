@@ -18,70 +18,71 @@
       "scan": "Scannez le code QR pour télécharger"
     },
     "section1": {
-      "intl": "Transferts internationaux conçus pour les pays",
-      "umoa": "de l'UMOA",
+      "intl": "Transferts internationaux conçus pour ",
+      "umoa": "les pays de l'UMOA",
       "send": "envoyer de l'argent"
     },
     "section2": {
       "left": {
-        "one": "Corridors bi-directionnels",
-        "two": "Envoyez de l'argent vers ou depuis n'importe quel pays de l'UMOA  <br />country en temps réel au taux le plus bas.."
+        "one": "Plongez dans un univers de finance sans frontières.",
+        "two": "Envoyez de l'argent vers ou depuis n'importe quel pays de l'UMOA  country en temps réel au taux le plus bas.."
       }
     },
     "section3": {
       "left": {
-        "body": " <h1 class=\"display-2 !font-normal\">\n              <span class=\"text-multi-color\">Save</span> on Cross-border Payments, <span class=\"text-multi-color\">Receive more</span>  Instantly.\n            </h1>"
+        "body": " <h1 class=\"display-2 !font-normal\"><span class=\"text-multi-color\">Économisez</span> sur les paiements transfrontaliers, <span class=\"text-multi-color\">recevez instantanément</span> plus.            </h1>"
+
       }
     },
     "section4": {
       "left": {
-        "super-power": "Votre nouveau <br />superpuissance",
-        "offer": "Nous offrons la plus large gamme de méthodes de paiement <br > et de versements pour répondre à tous vos besoins."
+        "super-power": "Votre nouveau super-pouvoir.",
+        "offer": "Libérer la connectivité financière : l'Afrique de l'Ouest et au-delà."
       },
       "right": {
         "bank": {
-          "top": "Bank",
-          "bottom": "Bank-to-bank cross-border transactions completed in minutes."
+          "top": "Banque",
+          "bottom": "Transferts interbancaires transfrontaliers, achevées en quelques minutes."
         },
         "bill": {
-          "top": "Bill Payment",
-          "bottom": "Direct payments to businesses and universities streamlined."
+          "top": "Paiement de facture",
+          "bottom": "Paiements transfrontaliers directs vers les entreprises et les universités, facilités."
         },
         "money": {
           "top": "Mobile Money",
-          "bottom": "Seamless interoperability across multiple telcos."
+          "bottom": "Interopérabilité entre plusieurs opérateurs télécoms."
         },
         "cash": {
-          "top": "Cash",
-          "bottom": "Instant cash pickups at any Ecobank ATM and Xpress point."
+          "top": "Espèces",
+          "bottom": "Retraits d'argent instantanés dans n'importe quel guichet automatique Ecobank et point Xpress."
         }
 
       }
     },
     "section5": {
-      "what": "Pourquoi nous?",
-      "about": "Lorsque vous envoyez de l'argent avec Maraboo, non <br />seulement vous économisez du temps et de l'argent, mais vous soutenez <br />également une entreprise fondée et dirigée par des Africains africans",
+      "what": "Qu'est-ce qui <br class='hidden md:block'/> nous distingue ?",
+      "about": "Nous avons développé la meilleure plateforme pour des transferts internationaux sans faille dans les pays de l'UMOA, rendant les paiements transfrontaliers simples et abordables.",
       "one": {
-        "top": "<h1 class=\"display-3 mb-6 font-medium\">Plus Rapide</h1>",
-        "bottom": "<p class=\"text-2\">Nous effectuons les transferts <br />en temps réel.</p>"
+        "top": "<h1 class=\"display-3 mb-6 font-medium\">Ultra-rapide</h1>",
+        "bottom": "<p class=\"text-2\">Effectuez vos transferts de bout en bout en quelques minutes, bénéficiant de la plus large sélection de méthodes de livraison.</p>"
       },
       "two": {
-        "top": "<h1 class=\"display-3 mb-6 font-medium\">Moins Cher</h1>",
-        "bottom": "<p class=\"text-2\">Nous vous offrons le tarif le plus bas <br /> à chaque fois</p>"
+        "top": "<h1 class=\"display-3 mb-6 font-medium\">Économique</h1>",
+        "bottom": "<p class=\"text-2\">Économisez jusqu'à 14% sur les frais par rapport à nos concurrents.</p>"
       },
       "three": {
-        "top": "<h1 class=\"display-3 mb-6 font-medium\">Plus Polyvalent</h1>",
-        "bottom": "<p class=\"text-2\"> La plus large d'options de collecte  <br />et de livraison.</p>"
+        "top": "<h1 class=\"display-3 mb-6 font-medium\"Liberté de transfert</h1>",
+        "bottom": "<p class=\"text-2\">Envoyez jusqu'à 9 900 $ toutes les 25 heures sans tracas.</p>"
       }
     },
     "section6": {
       "how": {
-        "name": "Comment ça fonctionne",
-        "text": "Envoyer de l'argent à l'international est aussi <br /> simple que 1-2-3.",
+        "name": "Comment fonctionne la plateforme.",
+        "text": "Envoyer de l'argent à l'international est aussi simple que 1-2-3.",
         "steps": [
           {
             "step": "01",
-            "title": "Rejoignez le mouvement Africain",
+            "title": "Téléchargez l'application",
             "body": "Profitez dès aujourd'hui de transferts internationaux sécurisé. Téléchargez l'application et vérifiez votre identité."
           },
           {
@@ -97,20 +98,21 @@
         ]
       }
     },
-    "section7": "Nous sommes disponibles dans les pays suivants",
+    "section7": "Présents dans les pays suivants",
     "section8": {
       "secure": {
-        "title": "SNous gardons vos données personnelles en sécurité!",
+        "title": "Nous gardons vos données personnelles en sécurité!",
         "body": "Rassurez-vous, vos fonds et informations privées sont protégés par une technologie de sécurité de pointe conforme aux réglementations locales et mondiales."
       },
       "from": {
-        "title": "From local to global.",
-        "body": "Seamlessly transfer up to $9,900 daily to/from WAEMU countries at the Real Exchange. Your gateway to hassle-free international transactions!"
+        "title": "Des paiements locaux à l'échelle internationale.",
+        "body": "Nous connectons les pays de l'UMOA entre eux et avec le reste du monde en proposant des transferts internationaux abordables, effectués en temps réel. Envoyez jusqu'à 9 900 $ toutes les 25 heures."
       },
       "did": {
-        "title": "Did you know",
-        "body": "Cutting transaction fees by 10% for UMOA money transfers could fuel regional household income by up to 16%!"
+        "title": "Saviez-vous que ?",
+        "body": "En réduisant les frais de transaction de 10 % sur les transferts internationaux vers les pays de l'UMOA, on peut augmenter le revenu des ménages régionaux jusqu'à 16 %."
       },
+      "real": " <h1 class=\"text-center display-2\">Témoignages de nos <br> Clients</h1>",
       "comments": [
         {
           "image": "https://res.cloudinary.com/believe/image/upload/v1716467496/maraboo/t1.jpg",

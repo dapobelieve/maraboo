@@ -36,7 +36,10 @@
 
           <!--  Testimonials-->
           <Card class="flex justify-center bg-neutral overflow-hidden text-white !py-24">
-            <div class="flex w-full justify-center lg:flex-row flex-col space-y-16 lg:space-y-0 space-x-8">
+            <div class="flex w-full justify-center items-center flex-col space-y-16 lg:space-y-0 space-x-8">
+              <div class="masx-w-lg mb-8 w-full" v-html="$t('home.section8.real')">
+
+              </div>
                 <div class="flex dswiper items-center  justify-between w-full space-y-10">
                   <Button
                       class="btn-xl hidden lg:block swiper-btn-left btn-circle shrink-0 rounded-full border border-surface-300"

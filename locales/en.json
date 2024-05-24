@@ -24,8 +24,8 @@
     },
     "section2": {
       "left": {
-        "one": "Two-way Corridors",
-        "two": "Effortless, secure international transfers <br /> to and from UMOA countries, in real-time!"
+        "one": "Enter a World of Borderless Finance.",
+        "two": "Securely move money in real-time between, from, and to UMOA countries through our  corridors."
       }
     },
     "section3": {
@@ -111,6 +111,7 @@
         "title": "Did you know",
         "body": "Cutting transaction fees by 10% for UMOA money transfers could fuel regional household income by up to 16%!"
       },
+      "real": " <h1 class=\"text-center display-2\">Real Talk From Our <br> Customers</h1>",
       "comments": [
         {
           "image": "https://res.cloudinary.com/believe/image/upload/v1716467496/maraboo/t1.jpg",
