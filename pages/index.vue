@@ -20,7 +20,7 @@
           </div>
           <div class="globe">
             <Vue3Lottie
-                animationLink="https://res.cloudinary.com/believe/raw/upload/v1716805890/maraboo/maraboo-lottie.json"
+                animationLink="https://res.cloudinary.com/believe/raw/upload/v1716805890/maraboo/mara-2.json"
             />
 <!--            <img class="w-full" src="https://res.cloudinary.com/believe/image/upload/v1715805451/maraboo/globe-intro.svg" alt />-->
           </div>
