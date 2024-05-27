@@ -9,8 +9,8 @@ body {
 }
 
 .globe {
-  @apply relative -bottom-[2%] md:bottom-[-6rem];
-  width: clamp(3.5rem, 96vw, 48rem);
+  /*@apply relative -bottom-[2%] md:bottom-[-6rem];*/
+  /*width: clamp(3.5rem, 96vw, 48rem);*/
 }
 
 /******** Typography ********/

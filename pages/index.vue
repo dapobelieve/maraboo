@@ -19,7 +19,10 @@
             </Button>
           </div>
           <div class="globe">
-            <img class="w-full" src="https://res.cloudinary.com/believe/image/upload/v1715805451/maraboo/globe-intro.svg" alt />
+            <Vue3Lottie
+                animationLink="https://res.cloudinary.com/believe/raw/upload/v1716805890/maraboo/maraboo-lottie.json"
+            />
+<!--            <img class="w-full" src="https://res.cloudinary.com/believe/image/upload/v1715805451/maraboo/globe-intro.svg" alt />-->
           </div>
         </div>
       </div>
@@ -49,7 +52,7 @@ import {  onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import qr from "~/components/modals/qr.vue";
 import cookie from "~/components/modals/cookie.vue";
-
+import { Vue3Lottie } from 'vue3-lottie'
 const { t } = useI18n();
 
 const show = ref(false);
